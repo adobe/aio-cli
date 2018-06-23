@@ -1,0 +1,74 @@
+{
+  "name": "@adobe/aio-cli",
+  "description": "Adobe I/O Extensible CLI",
+  "version": "1.0.9",
+  "author": "Adobe Systems Inc.",
+  "bin": {
+    "aio": "./bin/run"
+  },
+  "bugs": "https://github.com/adobe/aio-cli/issues",
+  "dependencies": {
+    "@adobe/aio-cli-plugin-config": "^1",
+    "@adobe/aio-cli-plugin-console": "^1",
+    "@adobe/aio-cli-plugin-jwt-auth": "^1",
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^1",
+    "@oclif/plugin-plugins": "^1.2.0",
+    "tslib": "^1"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1",
+    "@oclif/test": "^1",
+    "@oclif/tslint": "^1",
+    "@types/chai": "^4",
+    "@types/mocha": "^5",
+    "@types/node": "^10",
+    "chai": "^4",
+    "chalk": "^2.4.1",
+    "globby": "^8",
+    "mocha": "^5",
+    "mocha-junit-reporter": "^1.17.0",
+    "mocha-multi": "^1.0.1",
+    "nyc": "^11",
+    "ts-node": "^6",
+    "tslint": "^5",
+    "typescript": "^2.8"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/adobe/aio-cli",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "Apache-2.0",
+  "main": "lib/index.js",
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "aio",
+    "plugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-plugins",
+      "@adobe/aio-cli-plugin-config",
+      "@adobe/aio-cli-plugin-jwt-auth",
+      "@adobe/aio-cli-plugin-console"
+    ]
+  },
+  "repository": "adobe/aio-cli",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "posttest": "tsc -p test --noEmit && tslint -p test -t stylish",
+    "prepack": "rm -rf lib && tsc && oclif-dev manifest && oclif-dev readme",
+    "test": "nyc mocha --forbid-only \"test/**/*.test.ts\" --reporter mocha-multi --reporter-options dot=-,mocha-junit-reporter=test-results.xml",
+    "version": "oclif-dev readme && git add README.md",
+    "link": "ln -s \"$(pwd)\"/bin/run /usr/local/bin/aio",
+    "unlink": "rm /usr/local/bin/aio"
+  },
+  "types": "lib/index.d.ts"
+}
