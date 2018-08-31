@@ -35,7 +35,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (-v|--version|version)
-@adobe/aio-cli/1.0.9 darwin-x64 node-v8.9.4
+@adobe/aio-cli/1.0.9 darwin-x64 node-v8.11.4
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -255,7 +255,7 @@ EXAMPLE
   $ aio plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.5.2/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.6.2/src/commands/plugins/index.ts)_
 
 ## `aio plugins:install PLUGIN...`
 
@@ -290,7 +290,7 @@ EXAMPLES
   $ aio plugins:install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.5.2/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.6.2/src/commands/plugins/install.ts)_
 
 ## `aio plugins:link PLUGIN`
 
@@ -317,7 +317,7 @@ EXAMPLE
   $ aio plugins:link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.5.2/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.6.2/src/commands/plugins/link.ts)_
 
 ## `aio plugins:uninstall PLUGIN...`
 
@@ -339,7 +339,7 @@ ALIASES
   $ aio plugins:remove
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.5.2/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.6.2/src/commands/plugins/uninstall.ts)_
 
 ## `aio plugins:update`
 
@@ -354,5 +354,5 @@ OPTIONS
   -v, --verbose
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.5.2/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.6.2/src/commands/plugins/update.ts)_
 <!-- commandsstop -->
