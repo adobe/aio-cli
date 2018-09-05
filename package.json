@@ -8,9 +8,9 @@
   },
   "bugs": "https://github.com/adobe/aio-cli/issues",
   "dependencies": {
-    "@adobe/aio-cli-plugin-config": "^1",
-    "@adobe/aio-cli-plugin-console": "^1",
-    "@adobe/aio-cli-plugin-jwt-auth": "^1",
+    "@adobe/aio-cli-plugin-config": "^1.0.5",
+    "@adobe/aio-cli-plugin-console": "^1.0.10",
+    "@adobe/aio-cli-plugin-jwt-auth": "^1.0.7",
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^1",
