@@ -1,7 +1,7 @@
 {
   "name": "@adobe/aio-cli",
   "description": "Adobe I/O Extensible CLI",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "author": "Adobe Systems Inc.",
   "bin": {
     "aio": "./bin/run"

@@ -37,7 +37,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (-v|--version|version)
-@adobe/aio-cli/1.0.9 darwin-x64 node-v8.11.4
+@adobe/aio-cli/1.1.0 darwin-x64 node-v8.11.2
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -78,7 +78,7 @@ EXAMPLES
   $ aio config:clear
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.4/src/commands/config/index.js)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.5/src/commands/config/index.js)_
 
 ## `aio config:clear`
 
@@ -89,7 +89,7 @@ USAGE
   $ aio config:clear
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.4/src/commands/config/clear.js)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.5/src/commands/config/clear.js)_
 
 ## `aio config:delete [KEY]`
 
@@ -103,7 +103,7 @@ ALIASES
   $ aio config:del
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.4/src/commands/config/delete.js)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.5/src/commands/config/delete.js)_
 
 ## `aio config:get [KEY]`
 
@@ -114,7 +114,7 @@ USAGE
   $ aio config:get [KEY]
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.4/src/commands/config/get.js)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.5/src/commands/config/get.js)_
 
 ## `aio config:set [KEY] [VALUE]`
 
@@ -131,7 +131,7 @@ OPTIONS
                              application/json)
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.4/src/commands/config/set.js)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.5/src/commands/config/set.js)_
 
 ## `aio console`
 
@@ -141,6 +141,9 @@ List or select console integrations for the Adobe I/O Runtime
 USAGE
   $ aio console
 
+OPTIONS
+  -p, --passphrase=passphrase  the passphrase for the private-key
+
 EXAMPLES
   $ aio console:list-integrations
   $ aio console:ls
@@ -148,7 +151,7 @@ EXAMPLES
   $ aio console:sel INTEGRATION_ID
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.0.9/src/commands/console/index.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.0.10/src/commands/console/index.js)_
 
 ## `aio console:list-integrations`
 
@@ -159,14 +162,15 @@ USAGE
   $ aio console:list-integrations
 
 OPTIONS
-  -p, --page=page          [default: 1] page number
-  -s, --pageSize=pageSize  [default: 20] size of a page (max 50)
+  -p, --page=page              [default: 1] page number
+  -p, --passphrase=passphrase  the passphrase for the private-key
+  -s, --pageSize=pageSize      [default: 20] size of a page (max 50)
 
 ALIASES
   $ aio console:ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.0.9/src/commands/console/list-integrations.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.0.10/src/commands/console/list-integrations.js)_
 
 ## `aio console:select-integration [INTEGRATION_ID]`
 
@@ -176,6 +180,10 @@ selects an integration and writes the .wskprops file to the local machine
 USAGE
   $ aio console:select-integration [INTEGRATION_ID]
 
+OPTIONS
+  -p, --passphrase=passphrase  the passphrase for the private-key
+  -w, --overwrite              overwrite the .wskprops file if it exists
+
 DESCRIPTION
   Run 'console:ls' to get a list of integrations to select from.
   The .wskprops file will be written to your home folder, and will overwrite the existing file.
@@ -184,7 +192,7 @@ ALIASES
   $ aio console:sel
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.0.9/src/commands/console/select-integration.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.0.10/src/commands/console/select-integration.js)_
 
 ## `aio help [COMMAND]`
 
@@ -210,6 +218,9 @@ get the access token for the Adobe I/O Console
 ```
 USAGE
   $ aio jwt-auth:access-token
+
+OPTIONS
+  -p, --passphrase=passphrase  the passphrase for the private-key
 
 DESCRIPTION
   You must have a 'jwt-auth' key in your config, that has all your config data in .json format:
@@ -240,7 +251,7 @@ EXAMPLE
   }
 ```
 
-_See code: [@adobe/aio-cli-plugin-jwt-auth](https://github.com/adobe/aio-cli-plugin-jwt-auth/blob/v1.0.6/src/commands/jwt-auth/access-token.js)_
+_See code: [@adobe/aio-cli-plugin-jwt-auth](https://github.com/adobe/aio-cli-plugin-jwt-auth/blob/v1.0.7/src/commands/jwt-auth/access-token.js)_
 
 ## `aio plugins`
 
