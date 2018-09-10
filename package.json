@@ -13,7 +13,9 @@
     "@adobe/aio-cli-plugin-jwt-auth": "^1.0.7",
     "@oclif/command": "^1",
     "@oclif/config": "^1",
+    "@oclif/plugin-autocomplete": "^0.1.0",
     "@oclif/plugin-help": "^1",
+    "@oclif/plugin-not-found": "^1.2.0",
     "@oclif/plugin-plugins": "^1.2.0",
     "tslib": "^1"
   },
@@ -55,6 +57,8 @@
     "plugins": [
       "@oclif/plugin-help",
       "@oclif/plugin-plugins",
+      "@oclif/plugin-autocomplete",
+      "@oclif/plugin-not-found",
       "@adobe/aio-cli-plugin-config",
       "@adobe/aio-cli-plugin-jwt-auth",
       "@adobe/aio-cli-plugin-console"
