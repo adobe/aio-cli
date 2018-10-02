@@ -37,7 +37,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (-v|--version|version)
-@adobe/aio-cli/1.1.0 darwin-x64 node-v8.11.2
+@adobe/aio-cli/1.2.0 darwin-x64 node-v8.11.2
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -46,8 +46,9 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`aio autocomplete [SHELL]`](#aio-autocomplete-shell)
 * [`aio config`](#aio-config)
-* [`aio config:clear`](#aio-configclear)
+* [`aio config:clear [KEY]`](#aio-configclear-key)
 * [`aio config:delete [KEY]`](#aio-configdelete-key)
 * [`aio config:get [KEY]`](#aio-configget-key)
 * [`aio config:set [KEY] [VALUE]`](#aio-configset-key-value)
@@ -61,6 +62,29 @@ USAGE
 * [`aio plugins:link PLUGIN`](#aio-pluginslink-plugin)
 * [`aio plugins:uninstall PLUGIN...`](#aio-pluginsuninstall-plugin)
 * [`aio plugins:update`](#aio-pluginsupdate)
+
+## `aio autocomplete [SHELL]`
+
+display autocomplete installation instructions
+
+```
+USAGE
+  $ aio autocomplete [SHELL]
+
+ARGUMENTS
+  SHELL  shell type
+
+OPTIONS
+  -r, --refresh-cache  Refresh cache (ignores displaying instructions)
+
+EXAMPLES
+  $ aio autocomplete
+  $ aio autocomplete bash
+  $ aio autocomplete zsh
+  $ aio autocomplete --refresh-cache
+```
+
+_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v0.1.0/src/commands/autocomplete/index.ts)_
 
 ## `aio config`
 
@@ -78,18 +102,18 @@ EXAMPLES
   $ aio config:clear
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.5/src/commands/config/index.js)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.6/src/commands/config/index.js)_
 
-## `aio config:clear`
+## `aio config:clear [KEY]`
 
-clears all persistent config values
+clears all persistent config values, or for a specific key
 
 ```
 USAGE
-  $ aio config:clear
+  $ aio config:clear [KEY]
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.5/src/commands/config/clear.js)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.6/src/commands/config/clear.js)_
 
 ## `aio config:delete [KEY]`
 
@@ -103,7 +127,7 @@ ALIASES
   $ aio config:del
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.5/src/commands/config/delete.js)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.6/src/commands/config/delete.js)_
 
 ## `aio config:get [KEY]`
 
@@ -114,7 +138,7 @@ USAGE
   $ aio config:get [KEY]
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.5/src/commands/config/get.js)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.6/src/commands/config/get.js)_
 
 ## `aio config:set [KEY] [VALUE]`
 
@@ -131,7 +155,7 @@ OPTIONS
                              application/json)
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.5/src/commands/config/set.js)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.6/src/commands/config/set.js)_
 
 ## `aio console`
 
@@ -151,7 +175,7 @@ EXAMPLES
   $ aio console:sel INTEGRATION_ID
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.0.10/src/commands/console/index.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.0.11/src/commands/console/index.js)_
 
 ## `aio console:list-integrations`
 
@@ -170,7 +194,7 @@ ALIASES
   $ aio console:ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.0.10/src/commands/console/list-integrations.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.0.11/src/commands/console/list-integrations.js)_
 
 ## `aio console:select-integration [INTEGRATION_ID]`
 
@@ -192,7 +216,7 @@ ALIASES
   $ aio console:sel
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.0.10/src/commands/console/select-integration.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.0.11/src/commands/console/select-integration.js)_
 
 ## `aio help [COMMAND]`
 
@@ -251,7 +275,7 @@ EXAMPLE
   }
 ```
 
-_See code: [@adobe/aio-cli-plugin-jwt-auth](https://github.com/adobe/aio-cli-plugin-jwt-auth/blob/v1.0.7/src/commands/jwt-auth/access-token.js)_
+_See code: [@adobe/aio-cli-plugin-jwt-auth](https://github.com/adobe/aio-cli-plugin-jwt-auth/blob/v1.0.8/src/commands/jwt-auth/access-token.js)_
 
 ## `aio plugins`
 
