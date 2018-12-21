@@ -46,44 +46,44 @@ after(async () => {
 
 describe('config command existence tests', () => {
   test
-  .stdout()
-  .command(['config'])
-  .it('checks existence of config command', ctx => {
+    .stdout()
+    .command(['config'])
+    .it('checks existence of config command', ctx => {
     // it should fail if command not found
-    expect(ctx.stdout).to.exist
-  })
+      expect(ctx.stdout).to.exist
+    })
 
   test
-  .stdout()
-  .command(['config:set'])
-  .it('checks existence of config:set command', ctx => {
+    .stdout()
+    .command(['config:set'])
+    .it('checks existence of config:set command', ctx => {
     // it should fail if command not found
-    expect(ctx.stdout).to.exist
-  })
+      expect(ctx.stdout).to.exist
+    })
 
   test
-  .stdout()
-  .command(['config:get'])
-  .it('checks existence of config:get command', ctx => {
+    .stdout()
+    .command(['config:get'])
+    .it('checks existence of config:get command', ctx => {
     // it should fail if command not found
-    expect(ctx.stdout).to.exist
-  })
+      expect(ctx.stdout).to.exist
+    })
 
   test
-  .stdout()
-  .command(['config:del'])
-  .it('checks existence of config:del command', ctx => {
+    .stdout()
+    .command(['config:del'])
+    .it('checks existence of config:del command', ctx => {
     // it should fail if command not found
-    expect(ctx.stdout).to.exist
-  })
+      expect(ctx.stdout).to.exist
+    })
 
   test
-  .stdout()
-  .command(['config:delete'])
-  .it('checks existence of config:delete command', ctx => {
+    .stdout()
+    .command(['config:delete'])
+    .it('checks existence of config:delete command', ctx => {
     // it should fail if command not found
-    expect(ctx.stdout).to.exist
-  })
+      expect(ctx.stdout).to.exist
+    })
 
   // test
   // .stdout()
@@ -96,34 +96,34 @@ describe('config command existence tests', () => {
 
 describe('jwt-auth command existence tests', () => {
   test
-  .stdout()
-  .command(['jwt-auth:access-token'])
-  .catch('missing config data: jwt-auth')
-  .it('checks existence of jwt-auth:access-token command', ctx => {
+    .stdout()
+    .command(['jwt-auth:access-token'])
+    .catch('missing config data: jwt-auth')
+    .it('checks existence of jwt-auth:access-token command', ctx => {
     // Error is thrown above
     // it should fail if command not found
-    expect(ctx.stdout).to.exist
-  })
+      expect(ctx.stdout).to.exist
+    })
 })
 
 describe('console command existence tests', () => {
   test
-  .stdout()
-  .command(['console:list-integrations'])
-  .catch('missing config data: jwt-auth')
-  .it('checks existence of console:list-integrations command', ctx => {
+    .stdout()
+    .command(['console:list-integrations'])
+    .catch('missing config data: jwt-auth')
+    .it('checks existence of console:list-integrations command', ctx => {
     // Error is thrown above
     // it should fail if command not found
-    expect(ctx.stdout).to.exist
-  })
+      expect(ctx.stdout).to.exist
+    })
 
   test
-  .stdout()
-  .command(['console:select-integration'])
-  .catch('missing expected integration identifier.')
-  .it('checks existence of console:select-integration command', ctx => {
+    .stdout()
+    .command(['console:select-integration'])
+    .catch('missing expected integration identifier.')
+    .it('checks existence of console:select-integration command', ctx => {
     // Error is thrown above
     // it should fail if command not found
-    expect(ctx.stdout).to.exist
-  })
+      expect(ctx.stdout).to.exist
+    })
 })

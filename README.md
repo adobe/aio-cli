@@ -10,7 +10,7 @@ OF ANY KIND, either express or implied. See the License for the specific languag
 governing permissions and limitations under the License.
 -->
 [![Build Status](https://travis-ci.org/adobe/aio-cli.svg?branch=master)](https://travis-ci.org/adobe/aio-cli)
-[![Build status](https://ci.appveyor.com/api/projects/status/j25h949babwn50ck?svg=true)](https://ci.appveyor.com/project/shazron/aio-cli)
+[![Build status](https://ci.appveyor.com/api/projects/status/j25h949babwn50ck?svg=true)](https://ci.appveyor.com/project/shazron/aio-cli) [![Greenkeeper badge](https://badges.greenkeeper.io/adobe/aio-cli.svg)](https://greenkeeper.io/)
 
 aio-cli
 =======
