@@ -37,7 +37,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (-v|--version|version)
-@adobe/aio-cli/1.2.1 darwin-x64 node-v8.9.4
+@adobe/aio-cli/1.2.2 darwin-x64 node-v8.11.2
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -175,7 +175,7 @@ EXAMPLES
   $ aio console:sel INTEGRATION_ID
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.1.0/src/commands/console/index.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.0.11/src/commands/console/index.js)_
 
 ## `aio console:list-integrations`
 
@@ -194,7 +194,7 @@ ALIASES
   $ aio console:ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.1.0/src/commands/console/list-integrations.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.0.11/src/commands/console/list-integrations.js)_
 
 ## `aio console:select-integration [INTEGRATION_ID]`
 
@@ -216,7 +216,7 @@ ALIASES
   $ aio console:sel
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.1.0/src/commands/console/select-integration.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.0.11/src/commands/console/select-integration.js)_
 
 ## `aio help [COMMAND]`
 
