@@ -41,7 +41,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (-v|--version|version)
-@adobe/aio-cli/1.2.2 darwin-x64 node-v8.11.2
+@adobe/aio-cli/1.3.0 darwin-x64 node-v8.14.0
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -179,7 +179,7 @@ EXAMPLES
   $ aio console:sel INTEGRATION_ID
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.0.11/src/commands/console/index.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.1.1/src/commands/console/index.js)_
 
 ## `aio console:list-integrations`
 
@@ -198,7 +198,7 @@ ALIASES
   $ aio console:ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.0.11/src/commands/console/list-integrations.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.1.1/src/commands/console/list-integrations.js)_
 
 ## `aio console:select-integration [INTEGRATION_ID]`
 
@@ -220,7 +220,7 @@ ALIASES
   $ aio console:sel
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.0.11/src/commands/console/select-integration.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.1.1/src/commands/console/select-integration.js)_
 
 ## `aio help [COMMAND]`
 
@@ -237,7 +237,7 @@ OPTIONS
   --all  see all commands in CLI
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v1.2.11/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.4/src/commands/help.ts)_
 
 ## `aio jwt-auth:access-token`
 
@@ -279,7 +279,7 @@ EXAMPLE
   }
 ```
 
-_See code: [@adobe/aio-cli-plugin-jwt-auth](https://github.com/adobe/aio-cli-plugin-jwt-auth/blob/v1.0.8/src/commands/jwt-auth/access-token.js)_
+_See code: [@adobe/aio-cli-plugin-jwt-auth](https://github.com/adobe/aio-cli-plugin-jwt-auth/blob/v1.0.9/src/commands/jwt-auth/access-token.js)_
 
 ## `aio plugins`
 
