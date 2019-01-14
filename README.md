@@ -41,7 +41,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (-v|--version|version)
-@adobe/aio-cli/1.3.0 darwin-x64 node-v8.14.0
+@adobe/aio-cli/1.3.1 darwin-x64 node-v8.14.0
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -58,6 +58,7 @@ USAGE
 * [`aio config:set [KEY] [VALUE]`](#aio-configset-key-value)
 * [`aio console`](#aio-console)
 * [`aio console:list-integrations`](#aio-consolelist-integrations)
+* [`aio console:reset-integration [INTEGRATION_ID]`](#aio-consolereset-integration-integration-id)
 * [`aio console:select-integration [INTEGRATION_ID]`](#aio-consoleselect-integration-integration-id)
 * [`aio help [COMMAND]`](#aio-help-command)
 * [`aio jwt-auth:access-token`](#aio-jwt-authaccess-token)
@@ -179,7 +180,7 @@ EXAMPLES
   $ aio console:sel INTEGRATION_ID
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.1.1/src/commands/console/index.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.2.0/src/commands/console/index.js)_
 
 ## `aio console:list-integrations`
 
@@ -198,7 +199,25 @@ ALIASES
   $ aio console:ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.1.1/src/commands/console/list-integrations.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.2.0/src/commands/console/list-integrations.js)_
+
+## `aio console:reset-integration [INTEGRATION_ID]`
+
+resets an integration's .wskprops auth hash.
+
+```
+USAGE
+  $ aio console:reset-integration [INTEGRATION_ID]
+
+DESCRIPTION
+  after running this command all clients will need to run `console:select-integration` 
+  to get a new auth hash in their .wskprops file
+
+ALIASES
+  $ aio console:reset
+```
+
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.2.0/src/commands/console/reset-integration.js)_
 
 ## `aio console:select-integration [INTEGRATION_ID]`
 
@@ -220,7 +239,7 @@ ALIASES
   $ aio console:sel
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.1.1/src/commands/console/select-integration.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.2.0/src/commands/console/select-integration.js)_
 
 ## `aio help [COMMAND]`
 
