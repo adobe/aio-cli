@@ -1,29 +1,52 @@
-## 1. Increment a version
+## 1. Update your plugins
+
+```
+rm -rf node_modules
+npm install
+npm outdated @adobe/aio-cli-plugin-console @adobe/aio-cli-plugin-jwt-auth @adobe/aio-cli-plugin-config
+``` 
+
+If there is a `major` version update in any of the plugins, only update the `major` version of the CLI.
+Else if there is a `minor` version update in any of the plugins, only update the `minor` version of the CLI.
+Else if there is a `patch` version update in any of the plugins, only update the `patch` version of the CLI.
+
+Update the updated module(s). For example, if it was the console plugin:
+```
+npm install @adobe/aio-cli-plugin-console@latest --save
+```
+
+## 2. Test with the updated modules (if any)
+
+```
+npm test
+```
+
+## 3. Increment a version
 
 ```
 npm --no-git-tag-version version [major | minor | patch]
 # get the package.json version in a variable
 export PKG_VER=`node -e "console.log(require('./package.json').version)"`
 ```
-## 2. Commit the changed files
+## 4. Commit the changed files
 ```
 git commit -m "Incremented version to $PKG_VER" package.json README.md
 ```
 
-## 3. Tag a version
+## 5. Tag a version
 
 ```
 git tag $PKG_VER
 ```
 
-## 4. Push version and tag
+## 6. Push version and tag
 
 ```
 git push origin master
 git push origin $PKG_VER
 ```
 
-## 5. publish to npm
+## 7. publish to npm
 
 ```
 npm publish
