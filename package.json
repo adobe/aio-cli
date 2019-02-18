@@ -30,7 +30,7 @@
     "chai": "^4",
     "chalk": "^2.4.1",
     "globby": "^8",
-    "mocha": "^5",
+    "mocha": "^6.0.0",
     "mocha-junit-reporter": "^1.17.0",
     "mocha-multi": "^1.0.1",
     "nyc": "^13.1.0",
