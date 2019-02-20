@@ -12,6 +12,6 @@ OF ANY KIND, either express or implied. See the License for the specific languag
 governing permissions and limitations under the License.
 */
 
-require('@oclif/command').run()
+require('../src/').run()
 .then(require('@oclif/command/flush'))
 .catch(require('@oclif/errors/handle')) 
