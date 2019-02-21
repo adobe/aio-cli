@@ -71,7 +71,7 @@
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tsc -p test --skipLibCheck --noEmit && tslint -p test -t stylish",
     "prepack": "rm -rf lib && tsc && oclif-dev manifest && oclif-dev readme",
-    "test": "jest --coverage && nyc mocha --forbid-only \"test/**/*.test.ts\" --reporter mocha-multi --reporter-options dot=-,mocha-junit-reporter=test-results.xml",
+    "test": "jest test/*.test.js --coverage && nyc mocha --forbid-only \"test/**/*.test.ts\" --reporter mocha-multi --reporter-options dot=-,mocha-junit-reporter=test-results.xml",
     "version": "oclif-dev readme && git add README.md",
     "link": "ln -s \"$(pwd)\"/bin/run /usr/local/bin/aio",
     "unlink": "rm /usr/local/bin/aio"
