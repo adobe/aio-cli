@@ -17,6 +17,7 @@
     "@oclif/plugin-help": "^2.1.4",
     "@oclif/plugin-not-found": "^1.2.0",
     "@oclif/plugin-plugins": "^1.2.0",
+    "jest": "^24.1.0",
     "tslib": "^1",
     "tsutils": "^3.8.0"
   },
@@ -70,7 +71,7 @@
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tsc -p test --skipLibCheck --noEmit && tslint -p test -t stylish",
     "prepack": "rm -rf lib && tsc && oclif-dev manifest && oclif-dev readme",
-    "test": "nyc mocha --forbid-only \"test/**/*.test.ts\" --reporter mocha-multi --reporter-options dot=-,mocha-junit-reporter=test-results.xml",
+    "test": "jest --coverage && nyc mocha --forbid-only \"test/**/*.test.ts\" --reporter mocha-multi --reporter-options dot=-,mocha-junit-reporter=test-results.xml",
     "version": "oclif-dev readme && git add README.md",
     "link": "ln -s \"$(pwd)\"/bin/run /usr/local/bin/aio",
     "unlink": "rm /usr/local/bin/aio"

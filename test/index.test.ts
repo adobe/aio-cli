@@ -11,10 +11,12 @@ governing permissions and limitations under the License.
 */
 
 import {expect, test} from '@oclif/test'
+
 const chalk = require('chalk')
 const Config = require('@adobe/aio-cli-plugin-config')
 const fs = require('fs')
 const path = require('path')
+const Runner = require('../src/')
 
 before(async () => {
   // tslint:disable
@@ -55,7 +57,7 @@ describe('config command existence tests', () => {
 
   test
     .stdout()
-    .command(['config:set'])
+    .command(['config', 'set'])
     .it('checks existence of config:set command', ctx => {
     // it should fail if command not found
       expect(ctx.stdout).to.exist
@@ -63,7 +65,7 @@ describe('config command existence tests', () => {
 
   test
     .stdout()
-    .command(['config:get'])
+    .command(['config', 'get'])
     .it('checks existence of config:get command', ctx => {
     // it should fail if command not found
       expect(ctx.stdout).to.exist
@@ -71,7 +73,7 @@ describe('config command existence tests', () => {
 
   test
     .stdout()
-    .command(['config:del'])
+    .command(['config', 'del'])
     .it('checks existence of config:del command', ctx => {
     // it should fail if command not found
       expect(ctx.stdout).to.exist
@@ -79,7 +81,7 @@ describe('config command existence tests', () => {
 
   test
     .stdout()
-    .command(['config:delete'])
+    .command(['config', 'delete'])
     .it('checks existence of config:delete command', ctx => {
     // it should fail if command not found
       expect(ctx.stdout).to.exist
@@ -125,5 +127,15 @@ describe('console command existence tests', () => {
     // Error is thrown above
     // it should fail if command not found
       expect(ctx.stdout).to.exist
+    })
+})
+
+describe('Runner', () => {
+  test
+    .stdout()
+    .it('exists and exports a `run` function', () => {
+      expect(Runner).to.exist
+      expect(Runner.run).to.exist
+      expect(typeof Runner.run).to.equal('function')
     })
 })
