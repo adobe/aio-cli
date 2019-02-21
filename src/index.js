@@ -32,15 +32,12 @@ const preRun = async function (argv, opts) {
   for (let x = firstFlag; x > -1; x--) {
     subCommand = argv.slice(0, x).join(':');
       //if (config.findTopic(subCommand)) { // <= this works but does not support aliases
-      if (config.findCommand(subCommand)) {
-      //if(this.config.commandIDs.indexOf(subCommand) > -1) {
-      //console.log('found : ' + subCommand);
+    if (config.findCommand(subCommand)) {
       argv = [subCommand].concat(argv.slice(x));
       break;
     }
   }
 
-  //console.log('argv = ' + argv);
   // the second parameter is the root path to the CLI containing the command
   return run(argv, config.options)
 
