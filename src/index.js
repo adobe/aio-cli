@@ -17,8 +17,12 @@ const preRun = async function (argv, opts) {
   if (!argv) {
     argv = process.argv.slice(2);
   }
-    
-  const config = await Config.load(opts || module.parent && module.parent.parent && module.parent.parent.filename || __dirname);
+
+  // oclif originally included the following too ... 
+  // this resulted in an uncovered line in the tests, and it appeared to never happen anyway
+  // seem like it would only 
+    //||  module.parent && module.parent.parent && module.parent.parent.filename 
+  const config = await Config.load(opts || __dirname);
 
   let subCommand = argv[0];
 
