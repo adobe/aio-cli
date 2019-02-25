@@ -1,5 +1,5 @@
 const { stdout } = require('stdout-stderr')
-const fs = require.requireActual('fs')
+// const fs = require.requireActual('fs')
 
 jest.setTimeout(3000)
 jest.useFakeTimers()

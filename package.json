@@ -16,14 +16,22 @@
     "@oclif/plugin-autocomplete": "^0.1.0",
     "@oclif/plugin-help": "^2.1.4",
     "@oclif/plugin-not-found": "^1.2.0",
-    "@oclif/plugin-plugins": "^1.2.0",
-    "jest": "^24.1.0",
-    "jest-junit": "^6.3.0",
-    "jest-plugin-fs": "^2.9.0"
+    "@oclif/plugin-plugins": "^1.2.0"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1",
-    "@oclif/test": "^1"
+    "@oclif/test": "^1",
+    "eslint": "^5",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-jest": "^22.1.2",
+    "eslint-plugin-import": "^2.13.10",
+    "eslint-plugin-node": "^7.0.0",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-config-oclif": "^1",
+    "jest": "^24.1.0",
+    "jest-junit": "^6.3.0",
+    "jest-plugin-fs": "^2.9.0"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -79,7 +87,7 @@
   "repository": "adobe/aio-cli",
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
-    "posttest": "",
+    "posttest": "eslint src test",
     "prepack": "rm -rf lib && tsc && oclif-dev manifest && oclif-dev readme",
     "test": "jest --ci",
     "version": "oclif-dev readme && git add README.md",
