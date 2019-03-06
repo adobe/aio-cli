@@ -17,6 +17,8 @@ jest.mock('@oclif/config', () => {
 
 jest.mock('@oclif/command', () => {
   return {
+    // note: arrow function won't work because Command is extended and called with new
+    Command:function(){},
     run: function (cmd) {
       return cmd
     }

@@ -13,7 +13,6 @@
 const { Command, run } = require('@oclif/command')
 const Config = require("@oclif/config")
 
-
 class AIOCommand extends Command { }
 
 AIOCommand.run =  async (argv, opts) => {
@@ -50,4 +49,4 @@ AIOCommand.run =  async (argv, opts) => {
 
 }
 
-module.exports = {run:AIOCommand.run}
+module.exports = AIOCommand
