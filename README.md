@@ -41,7 +41,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (-v|--version|version)
-@adobe/aio-cli/1.3.1 darwin-x64 node-v8.14.0
+@adobe/aio-cli/1.4.0 darwin-x64 node-v8.14.0
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -56,10 +56,10 @@ USAGE
 * [`aio config:delete [KEY]`](#aio-configdelete-key)
 * [`aio config:get [KEY]`](#aio-configget-key)
 * [`aio config:set [KEY] [VALUE]`](#aio-configset-key-value)
-* [`aio console`](#aio-console)
+* [`aio console SUB-COMMAND`](#aio-console-sub-command)
 * [`aio console:list-integrations`](#aio-consolelist-integrations)
-* [`aio console:reset-integration [INTEGRATION_ID]`](#aio-consolereset-integration-integration-id)
-* [`aio console:select-integration [INTEGRATION_ID]`](#aio-consoleselect-integration-integration-id)
+* [`aio console:reset-integration [INTEGRATION_ID]`](#aio-consolereset-integration-integration_id)
+* [`aio console:select-integration [INTEGRATION_ID]`](#aio-consoleselect-integration-integration_id)
 * [`aio help [COMMAND]`](#aio-help-command)
 * [`aio jwt-auth:access-token`](#aio-jwt-authaccess-token)
 * [`aio plugins`](#aio-plugins)
@@ -107,7 +107,7 @@ EXAMPLES
   $ aio config:clear
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.6/src/commands/config/index.js)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.7/src/commands/config/index.js)_
 
 ## `aio config:clear [KEY]`
 
@@ -118,7 +118,7 @@ USAGE
   $ aio config:clear [KEY]
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.6/src/commands/config/clear.js)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.7/src/commands/config/clear.js)_
 
 ## `aio config:delete [KEY]`
 
@@ -132,7 +132,7 @@ ALIASES
   $ aio config:del
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.6/src/commands/config/delete.js)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.7/src/commands/config/delete.js)_
 
 ## `aio config:get [KEY]`
 
@@ -143,7 +143,7 @@ USAGE
   $ aio config:get [KEY]
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.6/src/commands/config/get.js)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.7/src/commands/config/get.js)_
 
 ## `aio config:set [KEY] [VALUE]`
 
@@ -160,27 +160,29 @@ OPTIONS
                              application/json)
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.6/src/commands/config/set.js)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.7/src/commands/config/set.js)_
 
-## `aio console`
+## `aio console SUB-COMMAND`
 
 List or select console integrations for the Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio console
-
-OPTIONS
-  -p, --passphrase=passphrase  the passphrase for the private-key
+  $ aio console SUB-COMMAND
 
 EXAMPLES
   $ aio console:list-integrations
   $ aio console:ls
+  $ aio console list-integrations
   $ aio console:select-integration INTEGRATION_ID
   $ aio console:sel INTEGRATION_ID
+  $ aio console select-integration INTEGRATION_ID
+  $ aio console:reset-integration INTEGRATION_ID
+  $ aio console:reset INTEGRATION_ID
+  $ aio console reset-integration INTEGRATION_ID
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.2.0/src/commands/console/index.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.3.1/src/commands/console/index.js)_
 
 ## `aio console:list-integrations`
 
@@ -192,14 +194,14 @@ USAGE
 
 OPTIONS
   -p, --page=page              [default: 1] page number
-  -p, --passphrase=passphrase  the passphrase for the private-key
+  -r, --passphrase=passphrase  the passphrase for the private-key
   -s, --pageSize=pageSize      [default: 20] size of a page (max 50)
 
 ALIASES
   $ aio console:ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.2.0/src/commands/console/list-integrations.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.3.1/src/commands/console/list-integrations.js)_
 
 ## `aio console:reset-integration [INTEGRATION_ID]`
 
@@ -217,7 +219,7 @@ ALIASES
   $ aio console:reset
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.2.0/src/commands/console/reset-integration.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.3.1/src/commands/console/reset-integration.js)_
 
 ## `aio console:select-integration [INTEGRATION_ID]`
 
@@ -233,13 +235,14 @@ OPTIONS
 
 DESCRIPTION
   Run 'console:ls' to get a list of integrations to select from.
-  The .wskprops file will be written to your home folder, and will overwrite the existing file.
+  The .wskprops file will be written to your home folder, and you will be prompted whether you want to overwrite an 
+  existing file.
 
 ALIASES
   $ aio console:sel
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.2.0/src/commands/console/select-integration.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.3.1/src/commands/console/select-integration.js)_
 
 ## `aio help [COMMAND]`
 
@@ -256,7 +259,7 @@ OPTIONS
   --all  see all commands in CLI
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.4/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.6/src/commands/help.ts)_
 
 ## `aio jwt-auth:access-token`
 
@@ -315,7 +318,7 @@ EXAMPLE
   $ aio plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.6.2/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.7/src/commands/plugins/index.ts)_
 
 ## `aio plugins:install PLUGIN...`
 
@@ -329,6 +332,7 @@ ARGUMENTS
   PLUGIN  plugin to install
 
 OPTIONS
+  -f, --force    yarn install with force flag
   -h, --help     show CLI help
   -v, --verbose
 
@@ -350,7 +354,7 @@ EXAMPLES
   $ aio plugins:install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.6.2/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.7/src/commands/plugins/install.ts)_
 
 ## `aio plugins:link PLUGIN`
 
@@ -377,7 +381,7 @@ EXAMPLE
   $ aio plugins:link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.6.2/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.7/src/commands/plugins/link.ts)_
 
 ## `aio plugins:uninstall PLUGIN...`
 
@@ -399,7 +403,7 @@ ALIASES
   $ aio plugins:remove
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.6.2/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.7/src/commands/plugins/uninstall.ts)_
 
 ## `aio plugins:update`
 
@@ -414,5 +418,5 @@ OPTIONS
   -v, --verbose
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.6.2/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.7/src/commands/plugins/update.ts)_
 <!-- commandsstop -->
