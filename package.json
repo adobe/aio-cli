@@ -38,7 +38,7 @@
   },
   "files": [
     "/bin",
-    "/lib",
+    "/src",
     "/oclif.manifest.json"
   ],
   "homepage": "https://github.com/adobe/aio-cli",
