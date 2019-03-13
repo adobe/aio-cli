@@ -1,6 +1,5 @@
 
 const testCommand = require('../src/index')
-// const { stdout } = require('stdout-stderr')
 
 
 jest.mock('@oclif/config', () => {
