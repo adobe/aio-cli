@@ -42,7 +42,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (-v|--version|version)
-@adobe/aio-cli/1.4.1 darwin-x64 node-v8.14.0
+@adobe/aio-cli/1.5.0 darwin-x64 node-v8.15.0
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -57,7 +57,7 @@ USAGE
 * [`aio config:delete [KEY]`](#aio-configdelete-key)
 * [`aio config:get [KEY]`](#aio-configget-key)
 * [`aio config:set [KEY] [VALUE]`](#aio-configset-key-value)
-* [`aio console SUB-COMMAND`](#aio-console-sub-command)
+* [`aio console`](#aio-console)
 * [`aio console:list-integrations`](#aio-consolelist-integrations)
 * [`aio console:reset-integration [INTEGRATION_ID]`](#aio-consolereset-integration-integration_id)
 * [`aio console:select-integration [INTEGRATION_ID]`](#aio-consoleselect-integration-integration_id)
@@ -163,13 +163,16 @@ OPTIONS
 
 _See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.7/src/commands/config/set.js)_
 
-## `aio console SUB-COMMAND`
+## `aio console`
 
 List or select console integrations for the Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio console SUB-COMMAND
+  $ aio console
+
+OPTIONS
+  -p, --passphrase=passphrase  the passphrase for the private-key
 
 EXAMPLES
   $ aio console:list-integrations
@@ -183,7 +186,7 @@ EXAMPLES
   $ aio console reset-integration INTEGRATION_ID
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.3.1/src/commands/console/index.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.4.0/src/commands/console/index.js)_
 
 ## `aio console:list-integrations`
 
@@ -202,7 +205,7 @@ ALIASES
   $ aio console:ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.3.1/src/commands/console/list-integrations.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.4.0/src/commands/console/list-integrations.js)_
 
 ## `aio console:reset-integration [INTEGRATION_ID]`
 
@@ -220,7 +223,7 @@ ALIASES
   $ aio console:reset
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.3.1/src/commands/console/reset-integration.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.4.0/src/commands/console/reset-integration.js)_
 
 ## `aio console:select-integration [INTEGRATION_ID]`
 
@@ -243,7 +246,7 @@ ALIASES
   $ aio console:sel
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.3.1/src/commands/console/select-integration.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.4.0/src/commands/console/select-integration.js)_
 
 ## `aio help [COMMAND]`
 
