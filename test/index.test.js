@@ -1,13 +1,12 @@
 
 const testCommand = require('../src/index')
 
-
 jest.mock('@oclif/config', () => {
   return {
-    "load": () => {
+    'load': () => {
       return {
-        "findCommand": (cmd) => {
-          return [ "a", "a:b", "a:b:c", "a:b:c:d"].indexOf(cmd) > -1
+        'findCommand': (cmd) => {
+          return [ 'a', 'a:b', 'a:b:c', 'a:b:c:d' ].indexOf(cmd) > -1
         }
       }
     }
@@ -17,7 +16,7 @@ jest.mock('@oclif/config', () => {
 jest.mock('@oclif/command', () => {
   return {
     // note: arrow function won't work because Command is extended and called with new
-    Command:function(){},
+    Command: function () {},
     run: function (cmd) {
       return cmd
     }
@@ -25,7 +24,6 @@ jest.mock('@oclif/command', () => {
 })
 
 describe('run command', () => {
-
   test('index exports a run function', async () => {
     expect(typeof testCommand.run).toEqual('function')
   })
@@ -38,29 +36,27 @@ describe('run command', () => {
   })
 
   test('run using process.argv', async () => {
-      let temp = process.argv
-      process.argv = [0,0,'a']
-      let result = await testCommand.run()
-      expect(result[0]).toEqual('a')
-      process.argv = temp;
+    let temp = process.argv
+    process.argv = [0, 0, 'a']
+    let result = await testCommand.run()
+    expect(result[0]).toEqual('a')
+    process.argv = temp
   })
 
-
   test('run function properly reforms args', async () => {
-
-    let result = await testCommand.run(['a','c','d'])
+    let result = await testCommand.run(['a', 'c', 'd'])
     expect(result[0]).toEqual('a')
 
     // [a,b,c,d] => a:b:c:d
-    result = await testCommand.run(['a','b','c','d'])
+    result = await testCommand.run(['a', 'b', 'c', 'd'])
     expect(result[0]).toEqual('a:b:c:d')
 
     // [a,b,c,-f,d] => a:b:c -f d
-    result = await testCommand.run(['a','b','c','-f','d'])
+    result = await testCommand.run(['a', 'b', 'c', '-f', 'd'])
     expect(result[0]).toEqual('a:b:c')
 
     // [a:b, c:d] => a:b:c:d
-    result = await testCommand.run(['a:b','c:d'])
+    result = await testCommand.run(['a:b', 'c:d'])
     expect(result[0]).toEqual('a:b:c:d')
 
     // [a:b:c:d] => a:b:c:d
@@ -68,17 +64,11 @@ describe('run command', () => {
     expect(result[0]).toEqual('a:b:c:d')
 
     // [a:b:c, d] => a:b:c:d
-    result = await testCommand.run(['a:b:c','d'])
+    result = await testCommand.run(['a:b:c', 'd'])
     expect(result[0]).toEqual('a:b:c:d')
 
     // [a b:c:d] => a:b:c:d
-    result = await testCommand.run(['a','b:c:d'])
+    result = await testCommand.run(['a', 'b:c:d'])
     expect(result[0]).toEqual('a:b:c:d')
   })
-
 })
-
-
-
-
-

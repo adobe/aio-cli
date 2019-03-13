@@ -5,17 +5,18 @@
         "jest": true
     },
     "parserOptions": {
-        "ecmaVersion": 2017
+        "ecmaVersion": 2018
     },
     "plugins": [
         "jest"
     ],
     "extends": [
         "plugin:jest/recommended",
-        "eslint:recommended",
-        
+        "standard"
     ],
     "rules": {
         "no-var": 2
+    },
+    "globals": {
     }
-}
+  }
