@@ -11,25 +11,25 @@
  */
 
 const { Command, run } = require('@oclif/command')
-const Config = require("@oclif/config")
+const Config = require('@oclif/config')
 
 class AIOCommand extends Command { }
 
-AIOCommand.run =  async (argv, opts) => {
+AIOCommand.run = async (argv, opts) => {
   if (!argv) {
     argv = process.argv.slice(2)
   }
 
-  // oclif originally included the following too ... 
+  // oclif originally included the following too ...
   // this resulted in an uncovered line in the tests, and it appeared to never happen anyway
-  // seem like it would only 
-    //||  module.parent && module.parent.parent && module.parent.parent.filename 
-  const config = await Config.load(opts || __dirname);
+  // seem like it would only
+  // ||  module.parent && module.parent.parent && module.parent.parent.filename
+  const config = await Config.load(opts || __dirname)
 
   let subCommand = argv[0]
 
   // 1. find the first flag ( note: there could be none ... )
-  let firstFlag = argv.slice().findIndex(elem => elem.indexOf('-') == 0)
+  let firstFlag = argv.slice().findIndex(elem => elem.indexOf('-') === 0)
   if (firstFlag < 0) {
     firstFlag = argv.length
   }
@@ -37,7 +37,7 @@ AIOCommand.run =  async (argv, opts) => {
   // and looking up in this.config.commandIDs
   for (let x = firstFlag; x > -1; x--) {
     subCommand = argv.slice(0, x).join(':')
-      //if (config.findTopic(subCommand)) { // <= this works but does not support aliases
+    // if (config.findTopic(subCommand)) { // <= this works but does not support aliases
     if (config.findCommand(subCommand)) {
       argv = [subCommand].concat(argv.slice(x))
       break
@@ -46,7 +46,6 @@ AIOCommand.run =  async (argv, opts) => {
 
   // the second parameter is the root path to the CLI containing the command
   return run(argv, config.options)
-
 }
 
 module.exports = AIOCommand
