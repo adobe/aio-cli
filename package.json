@@ -21,6 +21,7 @@
   "devDependencies": {
     "@oclif/dev-cli": "^1",
     "@oclif/test": "^1",
+    "codecov": "^3.2.0",
     "eslint": "^5",
     "eslint-config-oclif": "^1",
     "eslint-config-standard": "^12.0.0",
