@@ -16,7 +16,8 @@
     "@oclif/plugin-autocomplete": "^0.1.0",
     "@oclif/plugin-help": "^2.1.4",
     "@oclif/plugin-not-found": "^1.2.0",
-    "@oclif/plugin-plugins": "^1.2.0"
+    "@oclif/plugin-plugins": "^1.2.0",
+    "node-fetch": "^2.5.0"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1",
@@ -50,7 +51,7 @@
   "license": "Apache-2.0",
   "main": "lib/index.js",
   "oclif": {
-    "commands": "./lib/commands",
+    "commands": "./src/commands",
     "bin": "aio",
     "plugins": [
       "@oclif/plugin-help",
