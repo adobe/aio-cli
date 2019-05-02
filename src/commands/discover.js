@@ -19,9 +19,8 @@ const fetch = require('node-fetch')
 let url = 'https://registry.npmjs.org/-/v1/search?&text=aio-cli-plugin'
 
 class DiscoCommand extends Command {
-  async run() {
-
-    //const {flags} = this.parse(DiscoCommand)
+  async run () {
+    // const {flags} = this.parse(DiscoCommand)
 
     return fetch(url)
       .then(res => res.json())
@@ -57,9 +56,9 @@ class DiscoCommand extends Command {
 }
 
 DiscoCommand.description = `Discover plugins to install
-...
-`
 
+To install a plugin, run 'aio plugins install NAME'
+`
 
 DiscoCommand.aliases = ['plugins:discover']
 
