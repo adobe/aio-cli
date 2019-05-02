@@ -20,3 +20,9 @@ script:
 
 after_success:
 - ./node_modules/.bin/codecov
+
+# safelist (prevent double builds in PRs)
+branches:
+  only:
+  - master
+  - /^greenkeeper/.*$/
