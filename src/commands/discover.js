@@ -15,14 +15,15 @@ const { cli } = require('cli-ux')
 const fetch = require('node-fetch')
 
 // todo: future use keywords ecosytem:aio-cli-plugin
-let url = 'https://registry.npmjs.org/-/v1/search?text=aio-cli-plugin'
+// use size+from to do paging ?
+let url = 'https://registry.npmjs.org/-/v1/search?&text=aio-cli-plugin'
 
 class DiscoCommand extends Command {
   async run() {
 
     //const {flags} = this.parse(DiscoCommand)
 
-    fetch(url)
+    return fetch(url)
       .then(res => res.json())
       .then(json => {
         let options = { year: 'numeric',
@@ -41,11 +42,16 @@ class DiscoCommand extends Command {
           description: {
             get: row => `${row.package.description}`
           },
-          date: {
+          published: {
             get: row => `${new Date(row.package.date).toLocaleDateString('en',options)}`
           }
         }
-        cli.table(json.objects, columns)
+        // skip ones that aren't from us
+        let adobeOnly = json.objects.filter(elem => elem.package.scope === 'adobe')
+        cli.table(adobeOnly, columns)
+      })
+      .catch(err => {
+        this.error('Oops:' + err)
       })
   }
 }
