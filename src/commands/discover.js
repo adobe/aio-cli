@@ -10,9 +10,10 @@
  * governing permissions and limitations under the License.
  */
 
-const {Command, flags} = require('@oclif/command')
+const { Command, flags } = require('@oclif/command')
 const { cli } = require('cli-ux')
 const fetch = require('node-fetch')
+const inquirer = require('inquirer')
 
 // todo: future use keywords ecosytem:aio-cli-plugin
 // use size+from to do paging ?
@@ -20,34 +21,55 @@ let url = 'https://registry.npmjs.org/-/v1/search?&text=aio-cli-plugin'
 
 class DiscoCommand extends Command {
   async run () {
-    // const {flags} = this.parse(DiscoCommand)
+    const { flags } = this.parse(DiscoCommand)
 
     return fetch(url)
       .then(res => res.json())
       .then(json => {
-        let options = { year: 'numeric',
-          month: 'long',
-          day: 'numeric' }
-
-        const columns = {
-          name: {
-            width: 10,
-            get: row => `${row.package.name}`
-          },
-          version: {
-            minWidth: 10,
-            get: row => `${row.package.version}`
-          },
-          description: {
-            get: row => `${row.package.description}`
-          },
-          published: {
-            get: row => `${new Date(row.package.date).toLocaleDateString('en',options)}`
-          }
-        }
-        // skip ones that aren't from us
         let adobeOnly = json.objects.filter(elem => elem.package.scope === 'adobe')
-        cli.table(adobeOnly, columns)
+
+        if (flags.install) {
+
+          // todo: remove already installed plugins
+          let inqChoices = adobeOnly.map(el => {
+            return { 
+              name: `${el.package.name}@${el.package.version}`,
+              value: el.package.name }
+          })
+          inquirer.prompt([{
+            name: 'plugins',
+            message: 'select plugins to install',
+            type: 'checkbox',
+            choices: inqChoices
+          }]).then(responses => {
+            // this.log('responses = ', responses)
+            // TODO: install them
+          })
+        } else {
+          let options = { year: 'numeric',
+            month: 'long',
+            day: 'numeric' }
+
+          const columns = {
+            name: {
+              width: 10,
+              get: row => `${row.package.name}`
+            },
+            version: {
+              minWidth: 10,
+              get: row => `${row.package.version}`
+            },
+            description: {
+              get: row => `${row.package.description}`
+            },
+            published: {
+              get: row => `${new Date(row.package.date).toLocaleDateString('en', options)}`
+            }
+          }
+          // skip ones that aren't from us
+          
+          cli.table(adobeOnly, columns)
+        }
       })
       .catch(err => {
         this.error('Oops:' + err)
@@ -61,5 +83,11 @@ To install a plugin, run 'aio plugins install NAME'
 `
 
 DiscoCommand.aliases = ['plugins:discover']
+DiscoCommand.flags = {
+  install: flags.boolean({
+    char: 'i',
+    default: false
+  })
+}
 
 module.exports = DiscoCommand
