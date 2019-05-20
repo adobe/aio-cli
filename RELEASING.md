@@ -51,3 +51,13 @@ git push origin $PKG_VER
 ```
 npm publish
 ```
+
+## 8. prepare the next pre-release
+
+```
+npm --no-git-tag-version version prerelease --preid=dev
+git add . 
+git commit -m "bumped master prerelease"
+git push origin master
+```
+
