@@ -11,28 +11,33 @@
  */
 
 const { Command, flags } = require('@oclif/command')
+const plugins = require('@oclif/plugin-plugins')
 const { cli } = require('cli-ux')
 const fetch = require('node-fetch')
 const inquirer = require('inquirer')
 
 // todo: future use keywords ecosytem:aio-cli-plugin
 // use size+from to do paging ?
-let url = 'https://registry.npmjs.org/-/v1/search?&text=aio-cli-plugin'
+let url = 'https://api.npms.io/v2/search?q=aio-cli-plugin'
 
 class DiscoCommand extends Command {
+  async _installPlugins (list) {
+    for (let x = 0; x < list.length; x++) {
+      await this.config.runCommand('plugins:install', [list[x]])
+    }
+  }
   async run () {
     const { flags } = this.parse(DiscoCommand)
 
     return fetch(url)
       .then(res => res.json())
       .then(json => {
-        let adobeOnly = json.objects.filter(elem => elem.package.scope === 'adobe')
+        let adobeOnly = json.results.filter(elem => elem.package.scope === 'adobe')
 
         if (flags.install) {
-
           // todo: remove already installed plugins
           let inqChoices = adobeOnly.map(el => {
-            return { 
+            return {
               name: `${el.package.name}@${el.package.version}`,
               value: el.package.name }
           })
@@ -41,9 +46,8 @@ class DiscoCommand extends Command {
             message: 'select plugins to install',
             type: 'checkbox',
             choices: inqChoices
-          }]).then(responses => {
-            // this.log('responses = ', responses)
-            // TODO: install them
+          }]).then(response => {
+            this._installPlugins(response.plugins)
           })
         } else {
           let options = { year: 'numeric',
@@ -67,7 +71,6 @@ class DiscoCommand extends Command {
             }
           }
           // skip ones that aren't from us
-          
           cli.table(adobeOnly, columns)
         }
       })
