@@ -26,8 +26,17 @@ class DiscoCommand extends Command {
       await this.config.runCommand('plugins:install', [list[x]])
     }
   }
+  _getInstalledPlugins () {
+    let map = {}
+    this.config.commands.forEach(elem => {
+      map[elem.pluginName] = elem.pluginType
+    })
+    return Object.keys(map)
+  }
   async run () {
     const { flags } = this.parse(DiscoCommand)
+
+    let installedPlugins = this._getInstalledPlugins()
 
     return fetch(url)
       .then(res => res.json())
@@ -35,12 +44,22 @@ class DiscoCommand extends Command {
         let adobeOnly = json.results.filter(elem => elem.package.scope === 'adobe')
 
         if (flags.install) {
-          // todo: remove already installed plugins
           let inqChoices = adobeOnly.map(el => {
             return {
               name: `${el.package.name}@${el.package.version}`,
               value: el.package.name }
           })
+
+          // remove already installed plugins
+          inqChoices = inqChoices.filter(el => {
+            return installedPlugins.indexOf(el.value) < 0
+          })
+
+          if (inqChoices.length < 1) {
+            this.log('All available plugins appear to be installed.')
+            return
+          }
+
           inquirer.prompt([{
             name: 'plugins',
             message: 'select plugins to install',
