@@ -11,14 +11,18 @@
  */
 
 const { Command, flags } = require('@oclif/command')
-const plugins = require('@oclif/plugin-plugins')
 const { cli } = require('cli-ux')
 const fetch = require('node-fetch')
 const inquirer = require('inquirer')
 
 // todo: future use keywords ecosytem:aio-cli-plugin
-// use size+from to do paging ?
-let url = 'https://api.npms.io/v2/search?q=aio-cli-plugin'
+// use size + from to do paging ?
+
+/* this is how cordova does it
+https://npmsearch.com/query?fields=name,keywords,license,description,author,modified,homepage,version,rating&q=keywords:%22ecosystem:cordova%22&sort=rating:desc&size=500&start=0
+*/
+
+const url = 'https://api.npms.io/v2/search?q=aio-cli=plugin'
 
 class DiscoCommand extends Command {
   async _installPlugins (list) {
@@ -41,6 +45,7 @@ class DiscoCommand extends Command {
     return fetch(url)
       .then(res => res.json())
       .then(json => {
+        // ours only, this could become a flag, searching for oclif-plugin reveals some more
         let adobeOnly = json.results.filter(elem => elem.package.scope === 'adobe')
 
         if (flags.install) {
