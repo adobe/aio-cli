@@ -10,7 +10,7 @@
   "dependencies": {
     "@adobe/aio-cli-plugin-config": "^1.0.7",
     "@adobe/aio-cli-plugin-console": "^1.4.0",
-    "@adobe/aio-cli-plugin-jwt-auth": "^1.0.9",
+    "@adobe/aio-cli-plugin-jwt-auth": "^2.0.0",
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-autocomplete": "^0.1.0",
