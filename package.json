@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1",
-    "acorn": "^6.1.1",
+    "acorn": "^7.0.0",
     "codecov": "^3.2.0",
     "eslint": "^6.0.1",
     "eslint-config-oclif": "^1",
@@ -31,7 +31,7 @@
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-standard": "^4.0.0",
     "jest": "^24.1.0",
-    "jest-junit": "^6.3.0",
+    "jest-junit": "^7.0.0",
     "jest-plugin-fs": "^2.9.0",
     "stdout-stderr": "^0.1.9"
   },
