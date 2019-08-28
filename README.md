@@ -42,7 +42,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (-v|--version|version)
-@adobe/aio-cli/1.5.1-dev.0 darwin-x64 node-v12.2.0
+@adobe/aio-cli/2.0.1 darwin-x64 node-v10.16.0
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -53,14 +53,18 @@ USAGE
 <!-- commands -->
 * [`aio autocomplete [SHELL]`](#aio-autocomplete-shell)
 * [`aio config`](#aio-config)
-* [`aio config:clear [KEY]`](#aio-configclear-key)
-* [`aio config:delete [KEY]`](#aio-configdelete-key)
-* [`aio config:get [KEY]`](#aio-configget-key)
-* [`aio config:set [KEY] [VALUE]`](#aio-configset-key-value)
+* [`aio config:clear`](#aio-configclear)
+* [`aio config:delete KEYS...`](#aio-configdelete-keys)
+* [`aio config:edit`](#aio-configedit)
+* [`aio config:get KEY`](#aio-configget-key)
+* [`aio config:list`](#aio-configlist)
+* [`aio config set key 'a value'       # set key to 'a value'`](#aio-config-set-key-a-value--------set-key-to-a-value)
 * [`aio console`](#aio-console)
+* [`aio console:integration NAMESPACE`](#aio-consoleintegration-namespace)
 * [`aio console:list-integrations`](#aio-consolelist-integrations)
 * [`aio console:reset-integration [INTEGRATION_ID]`](#aio-consolereset-integration-integration_id)
 * [`aio console:select-integration [INTEGRATION_ID]`](#aio-consoleselect-integration-integration_id)
+* [`aio console:selected-integration`](#aio-consoleselected-integration)
 * [`aio help [COMMAND]`](#aio-help-command)
 * [`aio jwt-auth:access-token`](#aio-jwt-authaccess-token)
 * [`aio plugins`](#aio-plugins)
@@ -90,78 +94,147 @@ EXAMPLES
   $ aio autocomplete --refresh-cache
 ```
 
-_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v0.1.0/src/commands/autocomplete/index.ts)_
+_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v0.1.2/src/commands/autocomplete/index.ts)_
 
 ## `aio config`
 
-get, set, delete, and clear persistent configuration data
+list, get, set, delete, and edit persistent configuration data
 
 ```
 USAGE
   $ aio config
 
+OPTIONS
+  -e, --env     environment variables
+  -g, --global  global config
+  -j, --json    output in json
+  -l, --local   local config
+  -y, --yaml    output in yaml
+  --verbose     show all config values
+
+ALIASES
+  $ aio config:ls
+
 EXAMPLES
+  $ aio config:list
   $ aio config:get KEY
   $ aio config:set KEY VALUE
   $ aio config:delete KEY
-  $ aio config:del KEY
   $ aio config:clear
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.7/src/commands/config/index.js)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v2.0.1/src/commands/config/index.js)_
 
-## `aio config:clear [KEY]`
+## `aio config:clear`
 
-clears all persistent config values, or for a specific key
-
-```
-USAGE
-  $ aio config:clear [KEY]
-```
-
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.7/src/commands/config/clear.js)_
-
-## `aio config:delete [KEY]`
-
-delete a persistent config value
+clears all persistent config values
 
 ```
 USAGE
-  $ aio config:delete [KEY]
+  $ aio config:clear
+
+OPTIONS
+  -f, --force   do not prompt for confirmation
+  -g, --global  global config
+  -l, --local   local config
+```
+
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v2.0.1/src/commands/config/clear.js)_
+
+## `aio config:delete KEYS...`
+
+deletes persistent config values
+
+```
+USAGE
+  $ aio config:delete KEYS...
+
+OPTIONS
+  -g, --global  global config
+  -l, --local   local config
 
 ALIASES
   $ aio config:del
+  $ aio config:rm
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.7/src/commands/config/delete.js)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v2.0.1/src/commands/config/delete.js)_
 
-## `aio config:get [KEY]`
+## `aio config:edit`
+
+edit config file
+
+```
+USAGE
+  $ aio config:edit
+
+OPTIONS
+  -g, --global  global config
+  -l, --local   local config
+```
+
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v2.0.1/src/commands/config/edit.js)_
+
+## `aio config:get KEY`
 
 gets a persistent config value
 
 ```
 USAGE
-  $ aio config:get [KEY]
+  $ aio config:get KEY
+
+OPTIONS
+  -e, --env     environment variables
+  -g, --global  global config
+  -j, --json    output in json
+  -l, --local   local config
+  -y, --yaml    output in yaml
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.7/src/commands/config/get.js)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v2.0.1/src/commands/config/get.js)_
 
-## `aio config:set [KEY] [VALUE]`
+## `aio config:list`
 
-sets a persistent configuration value
+lists all persistent config values
 
 ```
 USAGE
-  $ aio config:set [KEY] [VALUE]
+  $ aio config:list
 
 OPTIONS
-  -f, --file                 the value is a path to a file to read the config value from
+  -e, --env     environment variables
+  -g, --global  global config
+  -j, --json    output in json
+  -l, --local   local config
+  -y, --yaml    output in yaml
+  --verbose     show all config values
 
-  -t, --mime-type=mime-type  the mime-type of the file path with --file/-f (defaults to plain text, available:
-                             application/json)
+ALIASES
+  $ aio config:ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v1.0.7/src/commands/config/set.js)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v2.0.1/src/commands/config/list.js)_
+
+## `aio config set key 'a value'       # set key to 'a value'`
+
+sets a persistent config value
+
+```
+USAGE
+  $ aio config set key 'a value'       # set key to 'a value'
+  $ aio config set key -f value.json   # set key to the json found in the file value.json
+  $ aio config set -j key < value.json # set key to the json found in the file value.json
+
+OPTIONS
+  -f, --file         value is a path to a file
+  -g, --global       global config
+  -i, --interactive  prompt for value
+  -j, --json         value is json
+  -l, --local        local config
+  -y, --yaml         value is yaml
+```
+
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v2.0.1/src/commands/config/set.js)_
 
 ## `aio console`
 
@@ -172,7 +245,12 @@ USAGE
   $ aio console
 
 OPTIONS
+  -n, --name                   sort results by name
   -p, --passphrase=passphrase  the passphrase for the private-key
+
+ALIASES
+  $ aio console:ls
+  $ aio console:list
 
 EXAMPLES
   $ aio console:list-integrations
@@ -184,9 +262,33 @@ EXAMPLES
   $ aio console:reset-integration INTEGRATION_ID
   $ aio console:reset INTEGRATION_ID
   $ aio console reset-integration INTEGRATION_ID
+  $ aio console:current-integration
+  $ aio console:current
+  $ aio console current-integration
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.4.0/src/commands/console/index.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v2.0.2/src/commands/console/index.js)_
+
+## `aio console:integration NAMESPACE`
+
+Views an integration for use with Adobe I/O Runtime serverless functions
+
+```
+USAGE
+  $ aio console:integration NAMESPACE
+
+ARGUMENTS
+  NAMESPACE  namespace of an integration
+
+OPTIONS
+  -p, --passphrase=passphrase  the passphrase for the private-key
+
+ALIASES
+  $ aio console:get
+  $ aio console:int
+```
+
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v2.0.2/src/commands/console/integration.js)_
 
 ## `aio console:list-integrations`
 
@@ -197,15 +299,15 @@ USAGE
   $ aio console:list-integrations
 
 OPTIONS
-  -p, --page=page              [default: 1] page number
-  -r, --passphrase=passphrase  the passphrase for the private-key
-  -s, --pageSize=pageSize      [default: 20] size of a page (max 50)
+  -n, --name                   sort results by name
+  -p, --passphrase=passphrase  the passphrase for the private-key
 
 ALIASES
   $ aio console:ls
+  $ aio console:list
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.4.0/src/commands/console/list-integrations.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v2.0.2/src/commands/console/list-integrations.js)_
 
 ## `aio console:reset-integration [INTEGRATION_ID]`
 
@@ -223,7 +325,7 @@ ALIASES
   $ aio console:reset
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.4.0/src/commands/console/reset-integration.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v2.0.2/src/commands/console/reset-integration.js)_
 
 ## `aio console:select-integration [INTEGRATION_ID]`
 
@@ -234,8 +336,11 @@ USAGE
   $ aio console:select-integration [INTEGRATION_ID]
 
 OPTIONS
+  -f, --force                  do not prompt if the .wskprops file exists
+  -g, --global                 save selected integration to global config
+  -l, --local                  save selected integration to local config
   -p, --passphrase=passphrase  the passphrase for the private-key
-  -w, --overwrite              overwrite the .wskprops file if it exists
+  -w, --wskprops               save selected integration to .wskprops file (default)
 
 DESCRIPTION
   Run 'console:ls' to get a list of integrations to select from.
@@ -244,9 +349,28 @@ DESCRIPTION
 
 ALIASES
   $ aio console:sel
+  $ aio console:select
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v1.4.0/src/commands/console/select-integration.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v2.0.2/src/commands/console/select-integration.js)_
+
+## `aio console:selected-integration`
+
+lists the selected integration for use with Adobe I/O Runtime serverless functions
+
+```
+USAGE
+  $ aio console:selected-integration
+
+OPTIONS
+  -p, --passphrase=passphrase  the passphrase for the private-key
+
+ALIASES
+  $ aio console:selected
+  $ aio console:current
+```
+
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v2.0.2/src/commands/console/selected-integration.js)_
 
 ## `aio help [COMMAND]`
 
@@ -263,7 +387,7 @@ OPTIONS
   --all  see all commands in CLI
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.6/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.0/src/commands/help.ts)_
 
 ## `aio jwt-auth:access-token`
 
@@ -274,38 +398,32 @@ USAGE
   $ aio jwt-auth:access-token
 
 OPTIONS
+  -b, --bare                   print access token only
+  -f, --force                  get a new access token
   -p, --passphrase=passphrase  the passphrase for the private-key
+  --no-prompt                  do not prompt for passphrase
 
 DESCRIPTION
   You must have a 'jwt-auth' key in your config, that has all your config data in .json format:
-       aio config:set jwt-auth path/to/your/config.json --file --mime-type=application/json
+       aio config set jwt-auth --json --file path/to/your/config.json
 
 EXAMPLE
 
   jwt_auth:
   {
      "client_id": "...",
-     "client_secret": "...",
-     "token_exchange_url": "...",
+     "client_secret": "..."
      "jwt_payload": {
        "iss": "...",
        "sub": "...",
        "...": true,
        "aud": "..."
      },
-     "jwt_private_key": [
-       "-----BEGIN RSA PRIVATE KEY-----",
-       "...",
-       "...",
-       "...==",
-       "-----END RSA PRIVATE KEY-----"
-     ],
-     "console_get_orgs_url":"...",
-     "console_get_namespaces_url":"..."
+     "jwt_private_key": "/path/to/cert"
   }
 ```
 
-_See code: [@adobe/aio-cli-plugin-jwt-auth](https://github.com/adobe/aio-cli-plugin-jwt-auth/blob/v1.0.9/src/commands/jwt-auth/access-token.js)_
+_See code: [@adobe/aio-cli-plugin-jwt-auth](https://github.com/adobe/aio-cli-plugin-jwt-auth/blob/v2.0.1/src/commands/jwt-auth/access-token.js)_
 
 ## `aio plugins`
 
@@ -322,7 +440,7 @@ EXAMPLE
   $ aio plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.7/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/index.ts)_
 
 ## `aio plugins:install PLUGIN...`
 
@@ -358,7 +476,7 @@ EXAMPLES
   $ aio plugins:install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.7/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/install.ts)_
 
 ## `aio plugins:link PLUGIN`
 
@@ -385,7 +503,7 @@ EXAMPLE
   $ aio plugins:link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.7/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/link.ts)_
 
 ## `aio plugins:uninstall PLUGIN...`
 
@@ -407,7 +525,7 @@ ALIASES
   $ aio plugins:remove
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.7/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/uninstall.ts)_
 
 ## `aio plugins:update`
 
@@ -422,5 +540,5 @@ OPTIONS
   -v, --verbose
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.7/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/update.ts)_
 <!-- commandsstop -->
