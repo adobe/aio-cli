@@ -42,7 +42,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (-v|--version|version)
-@adobe/aio-cli/2.1.0-dev darwin-x64 node-v10.16.1
+@adobe/aio-cli/2.1.1 darwin-x64 node-v12.3.1
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
