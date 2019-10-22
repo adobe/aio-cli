@@ -42,7 +42,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (-v|--version|version)
-@adobe/aio-cli/2.1.1 darwin-x64 node-v12.3.1
+@adobe/aio-cli/2.1.1-dev darwin-x64 node-v12.3.1
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -177,7 +177,7 @@ EXAMPLES
   $ aio config:clear
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v2.0.1/src/commands/config/index.js)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v2.0.2/src/commands/config/index.js)_
 
 ## `aio config:clear`
 
@@ -193,7 +193,7 @@ OPTIONS
   -l, --local   local config
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v2.0.1/src/commands/config/clear.js)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v2.0.2/src/commands/config/clear.js)_
 
 ## `aio config:delete KEYS...`
 
@@ -212,7 +212,7 @@ ALIASES
   $ aio config:rm
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v2.0.1/src/commands/config/delete.js)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v2.0.2/src/commands/config/delete.js)_
 
 ## `aio config:edit`
 
@@ -227,7 +227,7 @@ OPTIONS
   -l, --local   local config
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v2.0.1/src/commands/config/edit.js)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v2.0.2/src/commands/config/edit.js)_
 
 ## `aio config:get KEY`
 
@@ -245,7 +245,7 @@ OPTIONS
   -y, --yaml    output in yaml
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v2.0.1/src/commands/config/get.js)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v2.0.2/src/commands/config/get.js)_
 
 ## `aio config:list`
 
@@ -267,7 +267,7 @@ ALIASES
   $ aio config:ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v2.0.1/src/commands/config/list.js)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v2.0.2/src/commands/config/list.js)_
 
 ## `aio config set key 'a value'       # set key to 'a value'`
 
@@ -288,7 +288,7 @@ OPTIONS
   -y, --yaml         value is yaml
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v2.0.1/src/commands/config/set.js)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/v2.0.2/src/commands/config/set.js)_
 
 ## `aio console`
 
