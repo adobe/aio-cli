@@ -1,16 +1,17 @@
 {
   "name": "@adobe/aio-cli",
   "description": "Adobe I/O Extensible CLI\n\n*******   *******\n******     ******\n*****       *****\n****    *    ****\n***    ***    ***\n**    *****    **\n*         **    *\n",
-  "version": "2.0.1",
+  "version": "2.1.1-dev",
   "author": "Adobe Inc.",
   "bin": {
     "aio": "./bin/run"
   },
   "bugs": "https://github.com/adobe/aio-cli/issues",
   "dependencies": {
-    "@adobe/aio-cli-plugin-config": "^2.0.1",
-    "@adobe/aio-cli-plugin-console": "^2.0.2",
-    "@adobe/aio-cli-plugin-jwt-auth": "^2.0.1",
+    "@adobe/aio-cli-plugin-config": "^2.0.2",
+    "@adobe/aio-cli-plugin-console": "^2.0.3",
+    "@adobe/aio-cli-plugin-jwt-auth": "^2.0.3",
+    "@adobe/aio-cli-plugin-runtime": "^1.1.0",
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-autocomplete": "^0.1.2",
@@ -31,7 +32,7 @@
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-standard": "^4.0.0",
     "jest": "^24.9.0",
-    "jest-junit": "^7.0.0",
+    "jest-junit": "^9.0.0",
     "jest-plugin-fs": "^2.9.0",
     "stdout-stderr": "^0.1.9"
   },
@@ -59,7 +60,8 @@
       "@oclif/plugin-not-found",
       "@adobe/aio-cli-plugin-config",
       "@adobe/aio-cli-plugin-jwt-auth",
-      "@adobe/aio-cli-plugin-console"
+      "@adobe/aio-cli-plugin-console",
+      "@adobe/aio-cli-plugin-runtime"
     ]
   },
   "jest": {
