@@ -29,7 +29,7 @@ Adobe I/O Extensible CLI
 * [Commands](#commands)
 <!-- tocstop -->
 
-[CLI Health](./health.md)
+[CLI Health](./HEALTH.md)
 
 # Development
 ```sh-session
