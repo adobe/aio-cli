@@ -29,6 +29,8 @@ Adobe I/O Extensible CLI
 * [Commands](#commands)
 <!-- tocstop -->
 
+[CLI Health](./HEALTH.md)
+
 # Development
 ```sh-session
 $ npm install
