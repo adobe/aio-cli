@@ -1,7 +1,7 @@
 {
   "name": "@adobe/aio-cli",
   "description": "Adobe I/O Extensible CLI\n\n*******   *******\n******     ******\n*****       *****\n****    *    ****\n***    ***    ***\n**    *****    **\n*         **    *\n",
-  "version": "2.1.1-dev",
+  "version": "2.2.1",
   "author": "Adobe Inc.",
   "bin": {
     "aio": "./bin/run"
@@ -11,7 +11,8 @@
     "@adobe/aio-cli-plugin-config": "^2.0.2",
     "@adobe/aio-cli-plugin-console": "^2.0.3",
     "@adobe/aio-cli-plugin-jwt-auth": "^2.0.3",
-    "@adobe/aio-cli-plugin-runtime": "^1.1.0",
+    "@adobe/aio-cli-plugin-runtime": "^1.2.0",
+    "@adobe/aio-cli-plugin-app": "^0.3.0",
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-autocomplete": "^0.1.2",
@@ -61,7 +62,8 @@
       "@adobe/aio-cli-plugin-config",
       "@adobe/aio-cli-plugin-jwt-auth",
       "@adobe/aio-cli-plugin-console",
-      "@adobe/aio-cli-plugin-runtime"
+      "@adobe/aio-cli-plugin-runtime",
+      "@adobe/aio-cli-plugin-app"
     ]
   },
   "jest": {
