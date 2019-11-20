@@ -1,5 +1,16 @@
 # Commands
 
+```sh-session
+$ aio COMMAND
+running command...
+$ aio (-v|--version|version)
+@adobe/aio-cli/2.2.1 darwin-x64 node-v10.16.1
+$ aio --help [COMMAND]
+USAGE
+  $ aio COMMAND
+...
+```
+
 * [`aio app`](#aio-app)
 * [`aio app:add-auth [PATH]`](#aio-appadd-auth-path)
 * [`aio app:create [PATH]`](#aio-appcreate-path)
