@@ -1,9 +1,9 @@
 # relax the tidelift configuration, so that issues that fail under normal circumstances
 # will only create a warning
-
-deprecated: warn
-vulnerable: warn
-broken: warn
+tests:
+  deprecated: warn
+  vulnerable: warn
+  broken: warn
 
 # keep the list of disallowed licenses, as suggested by Adobe Legal
 # any transitive dependency with these licenses will fail the build
