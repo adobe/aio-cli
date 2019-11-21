@@ -8,17 +8,18 @@
   },
   "bugs": "https://github.com/adobe/aio-cli/issues",
   "dependencies": {
+    "@adobe/aio-cli-plugin-app": "^0.3.0",
     "@adobe/aio-cli-plugin-config": "^2.0.2",
     "@adobe/aio-cli-plugin-console": "^2.0.3",
     "@adobe/aio-cli-plugin-jwt-auth": "^2.0.3",
     "@adobe/aio-cli-plugin-runtime": "^1.2.0",
-    "@adobe/aio-cli-plugin-app": "^0.3.0",
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-autocomplete": "^0.1.2",
     "@oclif/plugin-help": "^2.1.4",
     "@oclif/plugin-not-found": "^1.2.0",
-    "@oclif/plugin-plugins": "^1.2.0"
+    "@oclif/plugin-plugins": "^1.2.0",
+    "chalk": "^2.4.2"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1",
