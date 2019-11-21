@@ -43,7 +43,8 @@
   "files": [
     "/bin",
     "/src",
-    "/oclif.manifest.json"
+    "/oclif.manifest.json",
+    "/package-lock.json"
   ],
   "homepage": "https://github.com/adobe/aio-cli",
   "keywords": [
