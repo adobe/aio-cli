@@ -3,9 +3,14 @@ sudo: false
 git:
   depth: 10
 
+os:
+  - windows
+  - linux
+
 node_js:
   - "8"
   - "10"
+  - "12"
 
 install:
   - npm version
@@ -15,3 +20,9 @@ script:
 
 after_success:
 - ./node_modules/.bin/codecov
+
+# safelist (prevent double builds in PRs)
+branches:
+  only:
+  - master
+  - /^greenkeeper/.*$/

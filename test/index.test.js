@@ -3,10 +3,10 @@ const testCommand = require('../src/index')
 
 jest.mock('@oclif/config', () => {
   return {
-    'load': () => {
+    load: () => {
       return {
-        'findCommand': (cmd) => {
-          return [ 'a', 'a:b', 'a:b:c', 'a:b:c:d' ].indexOf(cmd) > -1
+        findCommand: (cmd) => {
+          return ['a', 'a:b', 'a:b:c', 'a:b:c:d'].indexOf(cmd) > -1
         }
       }
     }
@@ -29,16 +29,16 @@ describe('run command', () => {
   })
 
   test('run function returns a promise', async () => {
-    let result = testCommand.run(['a'])
+    const result = testCommand.run(['a'])
     expect(typeof result).toEqual('object')
     expect(typeof result.then).toEqual('function')
     expect(typeof result.catch).toEqual('function')
   })
 
   test('run using process.argv', async () => {
-    let temp = process.argv
+    const temp = process.argv
     process.argv = [0, 0, 'a']
-    let result = await testCommand.run()
+    const result = await testCommand.run()
     expect(result[0]).toEqual('a')
     process.argv = temp
   })
