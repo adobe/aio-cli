@@ -23,6 +23,7 @@ aio-cli
 Adobe I/O Extensible CLI
 
 <!-- toc -->
+* [aio cli health](#aio-cli-health)
 * [Development](#development)
 * [Usage](#usage)
 * [Commands](#commands)
