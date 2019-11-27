@@ -30,72 +30,102 @@ class DiscoCommand extends Command {
       await this.config.runCommand('plugins:install', [list[x]])
     }
   }
+
   _getInstalledPlugins () {
-    let map = {}
+    const map = {}
     this.config.commands.forEach(elem => {
       map[elem.pluginName] = elem.pluginType
     })
     return Object.keys(map)
   }
+
+  sort (values, { descending = true, field = 'date' } = {}) {
+    const supportedFields = ['name', 'date', 'version']
+    if (!supportedFields.includes(field)) { // unknown field, we just return the array
+      return values
+    }
+
+    values.sort((l, r) => {
+      const d1 = l.package[field]
+      const d2 = r.package[field]
+
+      if (descending) {
+        return (d1 > d2) ? -1 : (d1 < d2) ? 1 : 0
+      } else {
+        return (d1 > d2) ? 1 : (d1 < d2) ? -1 : 0
+      }
+    })
+    return values
+  }
+
+  async install (values) {
+    let inqChoices = values.map(el => {
+      return {
+        name: `${el.package.name}@${el.package.version}`,
+        value: el.package.name }
+    })
+
+    const installedPlugins = this._getInstalledPlugins()
+
+    // remove already installed plugins
+    inqChoices = inqChoices.filter(el => {
+      return installedPlugins.indexOf(el.value) < 0
+    })
+
+    if (inqChoices.length < 1) {
+      this.log('All available plugins appear to be installed.')
+      return
+    }
+
+    return inquirer.prompt([{
+      name: 'plugins',
+      message: 'select plugins to install',
+      type: 'checkbox',
+      choices: inqChoices
+    }]).then(response => {
+      this._installPlugins(response.plugins)
+    })
+  }
+
+  async list (values) {
+    const options = { year: 'numeric',
+      month: 'long',
+      day: 'numeric' }
+
+    const columns = {
+      name: {
+        width: 10,
+        get: row => `${row.package.name}`
+      },
+      version: {
+        minWidth: 10,
+        get: row => `${row.package.version}`
+      },
+      description: {
+        get: row => `${row.package.description}`
+      },
+      published: {
+        get: row => `${new Date(row.package.date).toLocaleDateString('en', options)}`
+      }
+    }
+    // skip ones that aren't from us
+    cli.table(values, columns)
+  }
+
   async run () {
     const { flags } = this.parse(DiscoCommand)
-
-    let installedPlugins = this._getInstalledPlugins()
 
     return fetch(url)
       .then(res => res.json())
       .then(json => {
         // ours only, this could become a flag, searching for oclif-plugin reveals some more
-        let adobeOnly = json.results.filter(elem => elem.package.scope === 'adobe')
+        const adobeOnly = json.results.filter(elem => elem.package.scope === 'adobe')
+        this.sort(adobeOnly, { descending: flags['sort-order'] !== 'asc', field: flags['sort-field'] })
 
         if (flags.install) {
-          let inqChoices = adobeOnly.map(el => {
-            return {
-              name: `${el.package.name}@${el.package.version}`,
-              value: el.package.name }
-          })
-
-          // remove already installed plugins
-          inqChoices = inqChoices.filter(el => {
-            return installedPlugins.indexOf(el.value) < 0
-          })
-
-          if (inqChoices.length < 1) {
-            this.log('All available plugins appear to be installed.')
-            return
-          }
-
-          inquirer.prompt([{
-            name: 'plugins',
-            message: 'select plugins to install',
-            type: 'checkbox',
-            choices: inqChoices
-          }]).then(response => {
-            this._installPlugins(response.plugins)
-          })
+          this.install(adobeOnly)
         } else {
-          let options = { year: 'numeric',
-            month: 'long',
-            day: 'numeric' }
-
-          const columns = {
-            name: {
-              width: 10,
-              get: row => `${row.package.name}`
-            },
-            version: {
-              minWidth: 10,
-              get: row => `${row.package.version}`
-            },
-            description: {
-              get: row => `${row.package.description}`
-            },
-            published: {
-              get: row => `${new Date(row.package.date).toLocaleDateString('en', options)}`
-            }
-          }
-          // skip ones that aren't from us
-          cli.table(adobeOnly, columns)
+          this.list(adobeOnly)
         }
       })
       .catch(err => {
@@ -113,7 +143,20 @@ DiscoCommand.aliases = ['plugins:discover']
 DiscoCommand.flags = {
   install: flags.boolean({
     char: 'i',
-    default: false
+    default: false,
+    description: 'interactive install mode'
+  }),
+  'sort-field': flags.string({
+    char: 'f',
+    default: 'date',
+    options: ['date', 'name', 'version'],
+    description: 'which column to sort, use the sort-order flag to specify sort direction'
+  }),
+  'sort-order': flags.string({
+    char: 'o',
+    default: 'desc',
+    options: ['asc', 'desc'],
+    description: 'sort order for a column, use the sort-field flag to specify which column to sort'
   })
 }
 
