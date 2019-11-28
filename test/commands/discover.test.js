@@ -41,11 +41,13 @@ test('unknown sort-field', async () => {
 })
 
 test('name sort-field, ascending', async () => {
-  const now = new Date().valueOf()
+  const genesis = new Date(0)
+  const dayAfter = new Date(genesis.valueOf() + 86400000)
+
   const expectedResult = {
     results: [
-      { package: { scope: 'adobe', name: 'foo', description: 'some foo', version: '1.0.0', date: new Date(now) } },
-      { package: { scope: 'adobe', name: 'bar', description: 'some bar', version: '1.0.1', date: new Date(now + 86400000) } }
+      { package: { scope: 'adobe', name: 'foo', description: 'some foo', version: '1.0.0', date: genesis } },
+      { package: { scope: 'adobe', name: 'bar', description: 'some bar', version: '1.0.1', date: dayAfter } }
     ]
   }
   fetch.mockResponseOnce(JSON.stringify(expectedResult))
@@ -58,9 +60,9 @@ test('name sort-field, ascending', async () => {
         expect(stdout.output).toMatch(
           // TODO: add .toMatchFixture
           // eslint-disable-next-line indent
-`Name Version   Description Published         
-bar  1.0.1     some bar    November 30, 2019 
-foo  1.0.0     some foo    November 29, 2019 
+`Name Version   Description Published       
+bar  1.0.1     some bar    January 2, 1970 
+foo  1.0.0     some foo    January 1, 1970 
 `
         )
         resolve()
