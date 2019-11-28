@@ -14,80 +14,52 @@ const { Command, flags } = require('@oclif/command')
 const { cli } = require('cli-ux')
 const fetch = require('node-fetch')
 const inquirer = require('inquirer')
+const { sortValues } = require('../helpers')
 
-// todo: future use keywords ecosytem:aio-cli-plugin
-// use size + from to do paging ?
-
-/* this is how cordova does it
+/*
+This is how cordova does it:
 https://npmsearch.com/query?fields=name,keywords,license,description,author,modified,homepage,version,rating&q=keywords:%22ecosystem:cordova%22&sort=rating:desc&size=500&start=0
+
+future: use keywords ecosytem:aio-cli-plugin
 */
 
-const url = 'https://api.npms.io/v2/search?q=aio-cli-plugin'
-
 class DiscoCommand extends Command {
-  async _installPlugins (list) {
-    for (let x = 0; x < list.length; x++) {
-      await this.config.runCommand('plugins:install', [list[x]])
-    }
-  }
-
-  _getInstalledPlugins () {
-    const map = {}
-    this.config.commands.forEach(elem => {
-      map[elem.pluginName] = elem.pluginType
-    })
-    return Object.keys(map)
-  }
-
-  sort (values, { descending = true, field = 'date' } = {}) {
-    const supportedFields = ['name', 'date']
-    if (!supportedFields.includes(field)) { // unknown field, we just return the array
-      return values
-    }
-
-    values.sort((l, r) => {
-      const d1 = l.package[field]
-      const d2 = r.package[field]
-
-      if (descending) {
-        return (d1 > d2) ? -1 : (d1 < d2) ? 1 : 0
-      } else {
-        return (d1 > d2) ? 1 : (d1 < d2) ? -1 : 0
-      }
-    })
-    return values
-  }
-
-  async install (values) {
-    let inqChoices = values.map(el => {
-      return {
-        name: `${el.package.name}@${el.package.version}`,
-        value: el.package.name }
+  async _install (plugins) {
+    // get installed plugins
+    const installedPlugins = this.config.commands.map(elem => {
+      return elem.pluginName
     })
 
-    const installedPlugins = this._getInstalledPlugins()
+    const inqChoices = plugins
+      .filter(elem => { // remove any installed plugins from the list
+        return !installedPlugins.includes(elem.name)
+      })
+      .map(elem => { // map to expected inquirer format
+        return {
+          name: `${elem.name}@${elem.version}`,
+          value: elem.name
+        }
+      })
 
-    // remove already installed plugins
-    inqChoices = inqChoices.filter(el => {
-      return installedPlugins.indexOf(el.value) < 0
-    })
-
-    if (inqChoices.length < 1) {
+    if (!(inqChoices.length)) {
       this.log('All available plugins appear to be installed.')
       return
     }
 
-    return inquirer.prompt([{
+    const response = await inquirer.prompt([{
       name: 'plugins',
-      message: 'select plugins to install',
+      message: 'Select plugins to install',
       type: 'checkbox',
       choices: inqChoices
-    }]).then(response => {
-      this._installPlugins(response.plugins)
-    })
+    }])
+
+    // install the plugins in sequence
+    for (const plugin of response.plugins) {
+      await this.config.runCommand('plugins:install', [plugin])
+    }
   }
 
-  async list (values) {
+  async _list (plugins) {
     const options = { year: 'numeric',
       month: 'long',
       day: 'numeric' }
@@ -95,47 +67,53 @@ class DiscoCommand extends Command {
     const columns = {
       name: {
         width: 10,
-        get: row => `${row.package.name}`
+        get: row => `${row.name}`
       },
       version: {
         minWidth: 10,
-        get: row => `${row.package.version}`
+        get: row => `${row.version}`
       },
       description: {
-        get: row => `${row.package.description}`
+        get: row => `${row.description}`
       },
       published: {
-        get: row => `${new Date(row.package.date).toLocaleDateString('en', options)}`
+        get: row => `${new Date(row.date).toLocaleDateString('en', options)}`
       }
     }
     // skip ones that aren't from us
-    cli.table(values, columns)
+    cli.table(plugins, columns)
   }
 
   async run () {
     const { flags } = this.parse(DiscoCommand)
 
-    return fetch(url)
-      .then(res => res.json())
-      .then(json => {
-        // ours only, this could become a flag, searching for oclif-plugin reveals some more
-        const adobeOnly = json.results.filter(elem => elem.package.scope === 'adobe')
-        this.sort(adobeOnly, { descending: flags['sort-order'] !== 'asc', field: flags['sort-field'] })
+    try {
+      const url = 'https://api.npms.io/v2/search?q=aio-cli-plugin'
+      const response = await fetch(url)
+      const json = await response.json()
 
-        if (flags.install) {
-          this.install(adobeOnly)
-        } else {
-          this.list(adobeOnly)
-        }
+      // ours only, this could become a flag, searching for oclif-plugin reveals some more
+      const adobeOnly = json.results
+        .map(e => e.package)
+        .filter(elem => elem.scope === 'adobe')
+
+      sortValues(adobeOnly, {
+        descending: flags['sort-order'] !== 'asc',
+        field: flags['sort-field']
       })
-      .catch(err => {
-        this.error('Oops:' + err)
-      })
+
+      if (flags.install) {
+        await this._install(adobeOnly)
+      } else {
+        await this._list(adobeOnly)
+      }
+    } catch (error) {
+      this.error('Oops:' + error)
+    }
   }
 }
 
 DiscoCommand.description = `Discover plugins to install
-
 To install a plugin, run 'aio plugins install NAME'
 `
 
