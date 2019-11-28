@@ -22,7 +22,7 @@ const inquirer = require('inquirer')
 https://npmsearch.com/query?fields=name,keywords,license,description,author,modified,homepage,version,rating&q=keywords:%22ecosystem:cordova%22&sort=rating:desc&size=500&start=0
 */
 
-const url = 'https://api.npms.io/v2/search?q=aio-cli=plugin'
+const url = 'https://api.npms.io/v2/search?q=aio-cli-plugin'
 
 class DiscoCommand extends Command {
   async _installPlugins (list) {
@@ -40,7 +40,7 @@ class DiscoCommand extends Command {
   }
 
   sort (values, { descending = true, field = 'date' } = {}) {
-    const supportedFields = ['name', 'date', 'version']
+    const supportedFields = ['name', 'date']
     if (!supportedFields.includes(field)) { // unknown field, we just return the array
       return values
     }
@@ -149,7 +149,7 @@ DiscoCommand.flags = {
   'sort-field': flags.string({
     char: 'f',
     default: 'date',
-    options: ['date', 'name', 'version'],
+    options: ['date', 'name'],
     description: 'which column to sort, use the sort-order flag to specify sort direction'
   }),
   'sort-order': flags.string({
