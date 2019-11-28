@@ -1,24 +1,142 @@
 
-const DiscoverCommand = require('../../src/commands/discover')
+const fetch = require('node-fetch')
+const inquirer = require('inquirer')
+const TheCommand = require('../../src/commands/discover')
+const { stdout } = require('stdout-stderr')
 
-jest.mock('node-fetch', (url) => {
-  const now = new Date().valueOf()
-  return {
-    results: [
-      { package: { name: 'foo', version: '1.0.0', date: new Date(now + 100) } },
-      { package: { name: 'bar', version: '1.0.1', date: new Date(now + 200) } }
-    ]
+jest.mock('inquirer')
+
+let command
+
+beforeEach(() => {
+  fetch.resetMocks()
+  command = new TheCommand([])
+  command.config = {
+    commands: [{ pluginName: 'baz' }],
+    runCommand: jest.fn()
   }
 })
 
 test('exports a run function', async () => {
-  expect(typeof DiscoverCommand.run).toEqual('function')
+  expect(typeof TheCommand.run).toEqual('function')
 })
 
-test('discover - unknown sort field', async () => {
-  expect.assertions(2)
+test('unknown sort-field', async () => {
+  fetch.mockResponseOnce(JSON.stringify({
+    results: []
+  }))
 
-  const runResult = DiscoverCommand.run(['--sort-field', 'unknown'])
-  await expect(runResult instanceof Promise).toBeTruthy()
-  await expect(runResult).rejects.toThrow('xxx') // TODO: probe for actual error
+  command.argv = ['--sort-field', 'unknown']
+
+  return new Promise((resolve, reject) => {
+    return command.run()
+      .then(() => {
+        reject(new Error('it should not succeed'))
+      })
+      .catch(error => {
+        expect(error).toEqual(new Error('Expected --sort-field=unknown to be one of: date, name\nSee more help with --help'))
+        resolve()
+      })
+  })
+})
+
+test('name sort-field, ascending', async () => {
+  const now = new Date().valueOf()
+  const expectedResult = {
+    results: [
+      { package: { scope: 'adobe', name: 'foo', description: 'some foo', version: '1.0.0', date: new Date(now) } },
+      { package: { scope: 'adobe', name: 'bar', description: 'some bar', version: '1.0.1', date: new Date(now + 86400000) } }
+    ]
+  }
+  fetch.mockResponseOnce(JSON.stringify(expectedResult))
+
+  command.argv = ['--sort-field', 'name', '--sort-order', 'asc']
+
+  return new Promise(resolve => {
+    return command.run()
+      .then(() => {
+        expect(stdout.output).toMatch(
+          // TODO: add .toMatchFixture
+          // eslint-disable-next-line indent
+`Name Version   Description Published         
+bar  1.0.1     some bar    November 30, 2019 
+foo  1.0.0     some foo    November 29, 2019 
+`
+        )
+        resolve()
+      })
+  })
+})
+
+test('interactive install', async () => {
+  const now = new Date()
+  const tomorrow = new Date(now.valueOf() + 86400000)
+  const dayAfter = new Date(tomorrow.valueOf() + 86400000)
+
+  const expectedResult = {
+    results: [
+      { package: { scope: 'adobe', name: 'foo', description: 'some foo', version: '1.0.0', date: now } },
+      { package: { scope: 'adobe', name: 'bar', description: 'some bar', version: '1.0.1', date: tomorrow } },
+      { package: { scope: 'adobe', name: 'baz', description: 'some baz', version: '1.0.2', date: dayAfter } }
+    ]
+  }
+  fetch.mockResponseOnce(JSON.stringify(expectedResult))
+
+  command.argv = ['-i']
+  inquirer.prompt = jest.fn().mockResolvedValue({
+    plugins: ['bar', 'foo']
+  })
+
+  return new Promise(resolve => {
+    return command.run()
+      .then((result) => {
+        expect(result).toEqual(['bar', 'foo'])
+        const arg = inquirer.prompt.mock.calls[0][0] // first arg of first call
+        expect(arg[0].choices.map(elem => elem.value)).toEqual(['bar', 'foo']) // baz was an existing plugin, filtered out
+        resolve()
+      })
+  })
+})
+
+test('interactive install - no choices', async () => {
+  const now = new Date()
+
+  const expectedResult = {
+    results: [
+      { package: { scope: 'adobe', name: 'baz', description: 'some baz', version: '1.0.2', date: now } }
+    ]
+  }
+  fetch.mockResponseOnce(JSON.stringify(expectedResult))
+
+  command.argv = ['-i']
+  inquirer.prompt = jest.fn().mockResolvedValue({
+    plugins: []
+  })
+
+  return new Promise(resolve => {
+    return command.run()
+      .then((result) => {
+        expect(result).toEqual([])
+        resolve()
+      })
+  })
+})
+
+test('json result error', async () => {
+  const expectedResult = {
+  }
+  fetch.mockResponseOnce(JSON.stringify(expectedResult))
+
+  command.argv = []
+
+  return new Promise((resolve, reject) => {
+    return command.run()
+      .then(() => {
+        reject(new Error('this should not succeed'))
+      })
+      .catch((error) => {
+        expect(error.message).toMatch('Oops:')
+        resolve()
+      })
+  })
 })

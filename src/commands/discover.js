@@ -43,7 +43,7 @@ class DiscoCommand extends Command {
 
     if (!(inqChoices.length)) {
       this.log('All available plugins appear to be installed.')
-      return
+      return []
     }
 
     const response = await inquirer.prompt([{
@@ -57,6 +57,8 @@ class DiscoCommand extends Command {
     for (const plugin of response.plugins) {
       await this.config.runCommand('plugins:install', [plugin])
     }
+
+    return response.plugins
   }
 
   async _list (plugins) {
@@ -103,9 +105,9 @@ class DiscoCommand extends Command {
       })
 
       if (flags.install) {
-        await this._install(adobeOnly)
+        return this._install(adobeOnly)
       } else {
-        await this._list(adobeOnly)
+        return this._list(adobeOnly)
       }
     } catch (error) {
       this.error('Oops:' + error)
