@@ -37,7 +37,7 @@
     "eslint-plugin-standard": "^4.0.0",
     "jest": "^24.9.0",
     "jest-fetch-mock": "^2.1.2",
-    "jest-junit": "^9.0.0",
+    "jest-junit": "^10.0.0",
     "jest-plugin-fs": "^2.9.0",
     "stdout-stderr": "^0.1.9"
   },
