@@ -23,7 +23,8 @@ aio-cli
 Adobe I/O Extensible CLI
 
 <!-- toc -->
-* [Getting Started](#getting-started)
+* [aio cli health](#aio-cli-health)
+* [Getting started](#getting-started)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
@@ -210,6 +211,7 @@ USAGE
 * [`aio console:reset-integration [INTEGRATION_ID]`](#aio-consolereset-integration-integration_id)
 * [`aio console:select-integration [INTEGRATION_ID]`](#aio-consoleselect-integration-integration_id)
 * [`aio console:selected-integration`](#aio-consoleselected-integration)
+* [`aio discover`](#aio-discover)
 * [`aio help [COMMAND]`](#aio-help-command)
 * [`aio jwt-auth:access-token`](#aio-jwt-authaccess-token)
 * [`aio plugins`](#aio-plugins)
@@ -689,7 +691,7 @@ USAGE
   $ aio console:reset-integration [INTEGRATION_ID]
 
 DESCRIPTION
-  after running this command all clients will need to run `console:select-integration`
+  after running this command all clients will need to run `console:select-integration` 
   to get a new auth hash in their .wskprops file
 
 ALIASES
@@ -715,7 +717,7 @@ OPTIONS
 
 DESCRIPTION
   Run 'console:ls' to get a list of integrations to select from.
-  The .wskprops file will be written to your home folder, and you will be prompted whether you want to overwrite an
+  The .wskprops file will be written to your home folder, and you will be prompted whether you want to overwrite an 
   existing file.
 
 ALIASES
@@ -742,6 +744,30 @@ ALIASES
 ```
 
 _See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/v2.0.3/src/commands/console/selected-integration.js)_
+
+## `aio discover`
+
+Discover plugins to install
+
+```
+USAGE
+  $ aio discover
+
+OPTIONS
+  -f, --sort-field=date|name  [default: date] which column to sort, use the sort-order flag to specify sort direction
+  -i, --install               interactive install mode
+
+  -o, --sort-order=asc|desc   [default: desc] sort order for a column, use the sort-field flag to specify which column
+                              to sort
+
+DESCRIPTION
+  To install a plugin, run 'aio plugins install NAME'
+
+ALIASES
+  $ aio plugins:discover
+```
+
+_See code: [src/commands/discover.js](https://github.com/adobe/aio-cli/blob/v2.2.3/src/commands/discover.js)_
 
 ## `aio help [COMMAND]`
 
@@ -834,15 +860,15 @@ DESCRIPTION
 
   Installation of a user-installed plugin will override a core plugin.
 
-  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command
-  will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in
+  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command 
+  will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in 
   the CLI without the need to patch and update the whole CLI.
 
 ALIASES
   $ aio plugins:add
 
 EXAMPLES
-  $ aio plugins:install myplugin
+  $ aio plugins:install myplugin 
   $ aio plugins:install https://github.com/someuser/someplugin
   $ aio plugins:install someuser/someplugin
 ```
@@ -867,7 +893,7 @@ OPTIONS
 DESCRIPTION
   Installation of a linked plugin will override a user-installed or core plugin.
 
-  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello'
+  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello' 
   command will override the user-installed or core plugin implementation. This is useful for development work.
 
 EXAMPLE
