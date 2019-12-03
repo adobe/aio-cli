@@ -19,6 +19,8 @@
     "@oclif/plugin-help": "^2.1.4",
     "@oclif/plugin-not-found": "^1.2.0",
     "@oclif/plugin-plugins": "^1.2.0",
+    "inquirer": "^6.3.1",
+    "node-fetch": "^2.5.0",
     "chalk": "^2.4.2"
   },
   "devDependencies": {
@@ -29,11 +31,12 @@
     "eslint-config-oclif": "^1",
     "eslint-config-standard": "^13.0.1",
     "eslint-plugin-import": "^2.18.0",
-    "eslint-plugin-jest": "23.1.0",
+    "eslint-plugin-jest": "23.1.1",
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-standard": "^4.0.0",
     "jest": "^24.9.0",
+    "jest-fetch-mock": "^2.1.2",
     "jest-junit": "^10.0.0",
     "jest-plugin-fs": "^2.9.0",
     "stdout-stderr": "^0.1.9"
@@ -54,7 +57,7 @@
   "license": "Apache-2.0",
   "main": "lib/index.js",
   "oclif": {
-    "commands": "./lib/commands",
+    "commands": "./src/commands",
     "bin": "aio",
     "plugins": [
       "@oclif/plugin-help",
