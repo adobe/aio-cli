@@ -180,7 +180,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (-v|--version|version)
-@adobe/aio-cli/2.2.3 darwin-x64 node-v8.16.2
+@adobe/aio-cli/2.2.3 darwin-x64 node-v10.16.1
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -199,6 +199,9 @@ USAGE
 * [`aio app:test [PATH]`](#aio-apptest-path)
 * [`aio app:undeploy [PATH]`](#aio-appundeploy-path)
 * [`aio autocomplete [SHELL]`](#aio-autocomplete-shell)
+* [`aio certificate`](#aio-certificate)
+* [`aio certificate:generate`](#aio-certificategenerate)
+* [`aio certificate:verify FILE`](#aio-certificateverify-file)
 * [`aio config`](#aio-config)
 * [`aio config:clear`](#aio-configclear)
 * [`aio config:delete KEYS...`](#aio-configdelete-keys)
@@ -465,6 +468,63 @@ EXAMPLES
 ```
 
 _See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v0.1.4/src/commands/autocomplete/index.ts)_
+
+## `aio certificate`
+
+Generate or verify a certificate for use with Adobe I/O
+
+```
+USAGE
+  $ aio certificate
+```
+
+_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/v0.1.0/src/commands/certificate/index.js)_
+
+## `aio certificate:generate`
+
+Generate a new private/public key pair
+
+```
+USAGE
+  $ aio certificate:generate
+
+OPTIONS
+  -c, --country=country            Country Name
+  -l, --locality=locality          Locality, or city name
+  -n, --name=name                  Common Name: typically a host domain name, like www.mysite.com
+  -o, --organization=organization  Organization name
+  -s, --state=state                State or Province
+  -u, --unit=unit                  Organizational unit or department
+  --days=days                      [default: 365] Number of days the certificate should be valid for. (Max 365)
+  --keyout=keyout                  [default: private.key] file to send the key to
+  --out=out                        [default: certificate_pub.crt] output file
+
+DESCRIPTION
+  Generate a self-signed certificate to enable https:// on localhost or signing jwt payloads for interacting with Adobe 
+  services.
+```
+
+_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/v0.1.0/src/commands/certificate/generate.js)_
+
+## `aio certificate:verify FILE`
+
+Verify a certificate for use with Adobe I/O
+
+```
+USAGE
+  $ aio certificate:verify FILE
+
+ARGUMENTS
+  FILE  file path to certificate to verify
+
+OPTIONS
+  --days=days  +- is certificate valid in --days
+
+DESCRIPTION
+  Verifies that the certificate is valid, and/or will not expire in [--days] days from now.
+```
+
+_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/v0.1.0/src/commands/certificate/verify.js)_
 
 ## `aio config`
 
