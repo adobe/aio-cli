@@ -73,12 +73,6 @@ Firstly you need to install Adobe I/O CLI. It comes with all-batteries-included 
 npm install -g @adobe/aio-cli
 ```
 
-Optionally for debugging purpose, you will need `wskdebug`.
-
-```bash
-npm install -g @adobe/wskdebug
-```
-
 ## Bootstrapping an application
 
 In order to create your first application, use the following command:
