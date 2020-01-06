@@ -49,13 +49,14 @@ DON'T GENERATE MANUALLY!
 | @adobe/aio-cli-plugin-jwt-auth | [![Version](https://img.shields.io/npm/v/@adobe/aio-cli-plugin-jwt-auth.svg)](https://npmjs.org/package/@adobe/aio-cli-plugin-jwt-auth) | [![Downloads/week](https://img.shields.io/npm/dw/@adobe/aio-cli-plugin-jwt-auth.svg)](https://npmjs.org/package/@adobe/aio-cli-plugin-jwt-auth) | [![Build Status](https://travis-ci.com/adobe/aio-cli-plugin-jwt-auth.svg?branch=master)](https://travis-ci.com/adobe/aio-cli-plugin-jwt-auth) | [![Codecov Coverage](https://img.shields.io/codecov/c/github/adobe/aio-cli-plugin-jwt-auth/master.svg?style=flat-square)](https://codecov.io/gh/adobe/aio-cli-plugin-jwt-auth/) | [![Github Issues](https://img.shields.io/github/issues/adobe/aio-cli-plugin-jwt-auth.svg)](https://github.com/adobe/aio-cli-plugin-jwt-auth/issues) | [![Github Pull Requests](https://img.shields.io/github/issues-pr/adobe/aio-cli-plugin-jwt-auth.svg)](https://github.com/adobe/aio-cli-plugin-jwt-auth/pulls) |
 | @adobe/aio-cli-plugin-app      | [![Version](https://img.shields.io/npm/v/@adobe/aio-cli-plugin-app.svg)](https://npmjs.org/package/@adobe/aio-cli-plugin-app)           | [![Downloads/week](https://img.shields.io/npm/dw/@adobe/aio-cli-plugin-app.svg)](https://npmjs.org/package/@adobe/aio-cli-plugin-app)           | [![Build Status](https://travis-ci.com/adobe/aio-cli-plugin-app.svg?branch=master)](https://travis-ci.com/adobe/aio-cli-plugin-app)           | [![Codecov Coverage](https://img.shields.io/codecov/c/github/adobe/aio-cli-plugin-app/master.svg?style=flat-square)](https://codecov.io/gh/adobe/aio-cli-plugin-app/)           | [![Github Issues](https://img.shields.io/github/issues/adobe/aio-cli-plugin-app.svg)](https://github.com/adobe/aio-cli-plugin-app/issues)           | [![Github Pull Requests](https://img.shields.io/github/issues-pr/adobe/aio-cli-plugin-app.svg)](https://github.com/adobe/aio-cli-plugin-app/pulls)           |
 | @adobe/aio-cli-plugin-ims      | [![Version](https://img.shields.io/npm/v/@adobe/aio-cli-plugin-ims.svg)](https://npmjs.org/package/@adobe/aio-cli-plugin-ims)           | [![Downloads/week](https://img.shields.io/npm/dw/@adobe/aio-cli-plugin-ims.svg)](https://npmjs.org/package/@adobe/aio-cli-plugin-ims)           | [![Build Status](https://travis-ci.com/adobe/aio-cli-plugin-ims.svg?branch=master)](https://travis-ci.com/adobe/aio-cli-plugin-ims)           | [![Codecov Coverage](https://img.shields.io/codecov/c/github/adobe/aio-cli-plugin-ims/master.svg?style=flat-square)](https://codecov.io/gh/adobe/aio-cli-plugin-ims/)           | [![Github Issues](https://img.shields.io/github/issues/adobe/aio-cli-plugin-ims.svg)](https://github.com/adobe/aio-cli-plugin-ims/issues)           | [![Github Pull Requests](https://img.shields.io/github/issues-pr/adobe/aio-cli-plugin-ims.svg)](https://github.com/adobe/aio-cli-plugin-ims/pulls)           |
+| @adobe/aio-cli-plugin-auth     | [![Version](https://img.shields.io/npm/v/@adobe/aio-cli-plugin-auth.svg)](https://npmjs.org/package/@adobe/aio-cli-plugin-auth)         | [![Downloads/week](https://img.shields.io/npm/dw/@adobe/aio-cli-plugin-auth.svg)](https://npmjs.org/package/@adobe/aio-cli-plugin-auth)         | [![Build Status](https://travis-ci.com/adobe/aio-cli-plugin-auth.svg?branch=master)](https://travis-ci.com/adobe/aio-cli-plugin-auth)         | [![Codecov Coverage](https://img.shields.io/codecov/c/github/adobe/aio-cli-plugin-auth/master.svg?style=flat-square)](https://codecov.io/gh/adobe/aio-cli-plugin-auth/)         | [![Github Issues](https://img.shields.io/github/issues/adobe/aio-cli-plugin-auth.svg)](https://github.com/adobe/aio-cli-plugin-auth/issues)         | [![Github Pull Requests](https://img.shields.io/github/issues-pr/adobe/aio-cli-plugin-auth.svg)](https://github.com/adobe/aio-cli-plugin-auth/pulls)         |
 <!-- healthstop -->
 
 # Getting started
 
 ## Pre-requisites
 
-- [NodeJS](https://nodejs.org/en/download/) (at least v10). It should also install npm together.
+- [NodeJS](https://nodejs.org/en/download/) (at least v10). It should also install npm together. We recommend using [nvm](https://github.com/nvm-sh/nvm/blob/master/README.md) to manage NodeJS installation and versions on your machine.
 - A namespace in Adobe I/O Runtime. If you do not already have one, please [request trial access](https://github.com/AdobeDocs/adobeio-runtime/blob/master/overview/request_a_trial.md).  
 - [Visual Studio Code (VSCode)](https://code.visualstudio.com/download) as the supported IDE for editor, debuggger, etc. You can use any other IDE as a code editor, but advanced usage e.g. debugger is not yet supported.
 - [Docker Desktop](https://www.docker.com/get-started).
@@ -71,12 +72,6 @@ Firstly you need to install Adobe I/O CLI. It comes with all-batteries-included 
 
 ```bash
 npm install -g @adobe/aio-cli
-```
-
-Optionally for debugging purpose, you will need `wskdebug`.
-
-```bash
-npm install -g @adobe/wskdebug
 ```
 
 ## Bootstrapping an application

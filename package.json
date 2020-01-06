@@ -8,12 +8,13 @@
   },
   "bugs": "https://github.com/adobe/aio-cli/issues",
   "dependencies": {
+    "@adobe/aio-cli-plugin-auth": "^1.0.3",
     "@adobe/aio-cli-plugin-app": "^0.3.0",
     "@adobe/aio-cli-plugin-config": "^2.0.2",
     "@adobe/aio-cli-plugin-console": "^2.0.3",
     "@adobe/aio-cli-plugin-jwt-auth": "^2.0.3",
     "@adobe/aio-cli-plugin-runtime": "^1.2.0",
-    "@adobe/aio-cli-plugin-certificate": "^0.1.0",      
+    "@adobe/aio-cli-plugin-certificate": "^0.1.0",
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-autocomplete": "^0.1.2",
@@ -32,12 +33,12 @@
     "eslint-config-oclif": "^1",
     "eslint-config-standard": "^13.0.1",
     "eslint-plugin-import": "^2.18.0",
-    "eslint-plugin-jest": "23.1.1",
-    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-jest": "23.2.0",
+    "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-standard": "^4.0.0",
     "jest": "^24.9.0",
-    "jest-fetch-mock": "^2.1.2",
+    "jest-fetch-mock": "^3.0.0",
     "jest-junit": "^10.0.0",
     "jest-plugin-fs": "^2.9.0",
     "stdout-stderr": "^0.1.9"
@@ -70,6 +71,7 @@
       "@adobe/aio-cli-plugin-console",
       "@adobe/aio-cli-plugin-runtime",
       "@adobe/aio-cli-plugin-app",
+      "@adobe/aio-cli-plugin-auth",
       "@adobe/aio-cli-plugin-certificate"
     ]
   },
