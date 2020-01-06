@@ -55,7 +55,7 @@ DON'T GENERATE MANUALLY!
 
 ## Pre-requisites
 
-- [NodeJS](https://nodejs.org/en/download/) (at least v10). It should also install npm together.
+- [NodeJS](https://nodejs.org/en/download/) (at least v10). It should also install npm together. We recommend using [nvm](https://github.com/nvm-sh/nvm/blob/master/README.md) to manage NodeJS installation and versions on your machine.
 - A namespace in Adobe I/O Runtime. If you do not already have one, please [request trial access](https://github.com/AdobeDocs/adobeio-runtime/blob/master/overview/request_a_trial.md).  
 - [Visual Studio Code (VSCode)](https://code.visualstudio.com/download) as the supported IDE for editor, debuggger, etc. You can use any other IDE as a code editor, but advanced usage e.g. debugger is not yet supported.
 - [Docker Desktop](https://www.docker.com/get-started).
@@ -71,12 +71,6 @@ Firstly you need to install Adobe I/O CLI. It comes with all-batteries-included 
 
 ```bash
 npm install -g @adobe/aio-cli
-```
-
-Optionally for debugging purpose, you will need `wskdebug`.
-
-```bash
-npm install -g @adobe/wskdebug
 ```
 
 ## Bootstrapping an application
