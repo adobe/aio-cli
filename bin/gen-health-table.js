@@ -10,6 +10,7 @@ governing permissions and limitations under the License.
 */
 
 const fs = require('fs-extra')
+const Readme = require('@oclif/dev-cli/lib/commands/readme').default
 
 function genRow (pkName) {
   return `| @${pkName}  ` +
@@ -22,13 +23,17 @@ function genRow (pkName) {
 }
 
 function replaceTag (readme, tag, body) {
-  if (readme.includes(`<!-- ${tag} -->`)) {
-    if (readme.includes(`<!-- ${tag}stop -->`)) {
-      readme = readme.replace(new RegExp(`<!-- ${tag} -->(.|\n)*<!-- ${tag}stop -->`, 'm'), `<!-- ${tag} -->`)
-    }
-    console.log(`replacing <!-- ${tag} --> in README.md`)
-  }
-  return readme.replace(`<!-- ${tag} -->`, `<!-- ${tag} -->\n${body}\n<!-- ${tag}stop -->`)
+  const oclDev = new Readme()
+  return oclDev.replaceTag(readme, tag, body)
+
+  // this is the code that oclif/dev-cli/readme runs:
+  // if (readme.includes(`<!-- ${tag} -->`)) {
+  //   if (readme.includes(`<!-- ${tag}stop -->`)) {
+  //     readme = readme.replace(new RegExp(`<!-- ${tag} -->(.|\n)*<!-- ${tag}stop -->`, 'm'), `<!-- ${tag} -->`)
+  //   }
+  //   console.log(`replacing <!-- ${tag} --> in README.md`)
+  // }
+  // return readme.replace(`<!-- ${tag} -->`, `<!-- ${tag} -->\n${body}\n<!-- ${tag}stop -->`)
 }
 
 // load package.json and get @adobe dependencies
