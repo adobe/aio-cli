@@ -3,7 +3,7 @@
 ```
 rm -rf node_modules
 npm install
-npm outdated @adobe/aio-cli-plugin-console @adobe/aio-cli-plugin-jwt-auth @adobe/aio-cli-plugin-config
+npm outdated @adobe/aio-cli-plugin-console @adobe/aio-cli-plugin-jwt-auth @adobe/aio-cli-plugin-config @adobe/aio-cli-plugin-runtime @adobe/aio-cli-plugin-certificate @adobe/aio-cli-plugin-auth @adobe/aio-cli-plugin-app
 ``` 
 
 If there is a `major` version update in any of the plugins, only update the `major` version of the CLI.
