@@ -9,7 +9,7 @@
   "bugs": "https://github.com/adobe/aio-cli/issues",
   "dependencies": {
     "@adobe/aio-cli-plugin-auth": "^1.0.3",
-    "@adobe/aio-cli-plugin-app": "^0.3.0",
+    "@adobe/aio-cli-plugin-app": "^0.4.0",
     "@adobe/aio-cli-plugin-config": "^2.0.2",
     "@adobe/aio-cli-plugin-console": "^2.0.3",
     "@adobe/aio-cli-plugin-jwt-auth": "^2.0.3",
