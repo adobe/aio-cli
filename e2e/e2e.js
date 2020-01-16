@@ -25,7 +25,9 @@ test('sdk init test', async () => {
   execa.sync('node', ['../bin/run', 'app', 'init', '-y'], { stderr: 'inherit' })
 
 
-  const files = ['actions/generic/index.js', 'test/actions/generic.test.js', 'test/jest.setup.js', 'web-src/src/App.js', 'web-src/src/exc-runtime.js', 'web-src/404.html', 'web-src/index.html', '.aio', '.env', 'package.json', 'README.md', 'manifest.yml']
+  const files = ['actions/generic/index.js', 'test/actions/generic.test.js', 'test/jest.setup.js',
+                   'web-src/src/App.js', 'web-src/src/exc-runtime.js', 'web-src/404.html',
+                   'web-src/index.html', '.aio', '.env', 'package.json', 'README.md', 'manifest.yml']
   files.forEach(file => {
     execa.sync('ls', [file])
   })
