@@ -109,7 +109,8 @@
     "prepack": "oclif-dev manifest && oclif-dev readme",
     "version": "oclif-dev readme && git add README.md",
     "link": "ln -s \"$(pwd)\"/bin/run /usr/local/bin/aio",
-    "unlink": "rm /usr/local/bin/aio"
+    "unlink": "rm /usr/local/bin/aio",
+    "e2e": "jest --testRegex './e2e/e2e.js'"
   },
   "types": "lib/index.d.ts"
 }
