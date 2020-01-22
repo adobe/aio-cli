@@ -82,25 +82,23 @@ aio app init <app-name>
 
 You will be prompted with a few questions about how you want your app to have:
 
-1. select a starter template
-- **hello**: a generic application with hello world flow
-- **target**: including dependencies and examples of accessing the Adobe Target API
-- **campaign**: including dependencies and examples of accessing the Adobe Campaign Standard (ACS) API
-- **analytics**: including dependencies and examples of accessing the Adobe Analytics API
-
-2. select components to include:
+1. Select app features to enable:
 - **Actions: Deploy Runtime actions:** adding the boilerplate for backend serverless actions on I/O Runtime
 - **Web Assets: Deploy hosted static assets:** adding the boilerplate for frontend react app and static assets
 
 You can select either of the options, or both to have a full app for both back and frontend.
 
-3. specify package name, actions directory and public directory in the next questions.
+2. Select one or more sample actions to be generated along with the new app:
+- **Adobe Target**: including dependencies and examples of accessing the Adobe Target API
+- **Adobe Analytics**: including dependencies and examples of accessing the Adobe Analytics API
+- **Adobe Campaign Standard**: including dependencies and examples of accessing the Adobe Campaign Standard (ACS) API
+- **Generic**: a generic application with hello world flow
 
-4. decide whether npm dependencies should be installed now or not.
+3. Define the names of sample actions (by keeping the defaults or specifying other names). The new app is then generated, and npm dependencies are getting installed.
 
-5. Open the project in VSCode, either by entering the command `code <app-name>`, or opening VSCode -> Open... -> select project folder.
+4. Open the project in VSCode, by entering the command `code <app-name>`, or opening VSCode -> Open... -> select app folder.
 
-6. Open `.env` file, add your I/O Runtime credentials in the `AIO_RUNTIME_XXX` variables, uncomment out them.
+5. Open `.env` file, add your I/O Runtime credentials in the `AIO_RUNTIME_XXX` variables, and uncomment them.
 
 ## Main components of the App
 
@@ -109,7 +107,8 @@ You can select either of the options, or both to have a full app for both back a
 - `test`: including unit tests and integration tests.
 - `manifest.yml`: definition of I/O Runtime actions being deployed with the app
 - `package.json`: project definition and metadata
-- `.env`: containing environment variables that are useful for the app, e.g. I/O Runtime credentials and [Token Vending Machine (TVM)](https://github.com/adobe/aio-tvm) references.
+- `.env`: containing environment variables that are useful for the app, e.g. I/O Runtime credentials and Adobe Product API tenant specifics (API key, secrets, etc.)
+- `.aio`: containing config variables that are useful for the AIO CLI to facilitate the app, e.g. authentication strategy (JWT / OAuth)
 
 ## Local development
 
@@ -160,7 +159,9 @@ This will invoke:
 - The actions defined in `manifest.yml` being updated on Adobe I/O Runtime
 - The frontend built files and assets being uploaded to our CDN.
 
-The deployment outputs a URL of the app which is publicly accessible. It could also be "unpublished" later with `aio app undeploy`.
+The deployment outputs a URL of the app which is publicly accessible on Adobe Experience Cloud (ExC Shell). The URL format is `https://experience.adobe.com/#/@<your-org-id>/myapps/?localDevUrl=<your-app-url>`.
+
+The app could also be "unpublished" later with `aio app undeploy`.
 
 ## References
 
@@ -790,7 +791,7 @@ OPTIONS
   --out=out                        [default: certificate_pub.crt] output file
 
 DESCRIPTION
-  Generate a self-signed certificate to enable https:// on localhost or signing jwt payloads for interacting with Adobe 
+  Generate a self-signed certificate to enable https:// on localhost or signing jwt payloads for interacting with Adobe
   services.
 ```
 
@@ -1068,7 +1069,7 @@ OPTIONS
 
 DESCRIPTION
   Run 'console:ls' to get a list of integrations to select from.
-  The .wskprops file will be written to your home folder, and you will be prompted whether you want to overwrite an 
+  The .wskprops file will be written to your home folder, and you will be prompted whether you want to overwrite an
   existing file.
 
 ALIASES
@@ -1211,15 +1212,15 @@ DESCRIPTION
 
   Installation of a user-installed plugin will override a core plugin.
 
-  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command 
-  will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in 
+  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command
+  will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in
   the CLI without the need to patch and update the whole CLI.
 
 ALIASES
   $ aio plugins:add
 
 EXAMPLES
-  $ aio plugins:install myplugin 
+  $ aio plugins:install myplugin
   $ aio plugins:install https://github.com/someuser/someplugin
   $ aio plugins:install someuser/someplugin
 ```
@@ -1244,7 +1245,7 @@ OPTIONS
 DESCRIPTION
   Installation of a linked plugin will override a user-installed or core plugin.
 
-  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello' 
+  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello'
   command will override the user-installed or core plugin implementation. This is useful for development work.
 
 EXAMPLE
