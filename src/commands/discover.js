@@ -64,7 +64,8 @@ class DiscoCommand extends Command {
   async _list (plugins) {
     const options = { year: 'numeric',
       month: 'long',
-      day: 'numeric' }
+      day: 'numeric',
+      timeZone: 'UTC' }
 
     const columns = {
       name: {
