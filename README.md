@@ -159,7 +159,7 @@ This will invoke:
 - The actions defined in `manifest.yml` being updated on Adobe I/O Runtime
 - The frontend built files and assets being uploaded to our CDN.
 
-The deployment outputs a URL of the app which is publicly accessible on Adobe Experience Cloud (ExC Shell). The URL format is `https://experience.adobe.com/#/@<your-org-id>/myapps/?localDevUrl=<your-app-url>`.
+The deployment outputs a URL of the app which is publicly accessible on Adobe Experience Cloud (ExC Shell). The URL format is `https://experience.adobe.com/?devMode=true#/myapps/?localDevUrl=<your-app-url>`.
 
 The app could also be "unpublished" later with `aio app undeploy`.
 
