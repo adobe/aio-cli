@@ -12,7 +12,7 @@ governing permissions and limitations under the License.
 const execa = require('execa')
 const chalk = require('chalk').default
 
-test('sdk init test', async () => {
+test('cli init test', async () => {
 
   name = 'aio-cli-test'
   console.log(chalk.blue(`> e2e tests for ${chalk.bold(name)}`))
