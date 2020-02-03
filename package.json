@@ -111,6 +111,5 @@
     "version": "oclif-dev readme && git add README.md",
     "link": "ln -s \"$(pwd)\"/bin/run /usr/local/bin/aio",
     "unlink": "rm /usr/local/bin/aio"
-  },
-  "types": "lib/index.d.ts"
+  }
 }
