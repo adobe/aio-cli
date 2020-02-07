@@ -13,7 +13,7 @@ const fs = require('fs-extra')
 const Readme = require('@oclif/dev-cli/lib/commands/readme').default
 
 function genRow (pkName) {
-  return `| @${pkName}  ` +
+  return `| [@${pkName}](https://github.com/${pkName})  ` +
          `| [![Version](https://img.shields.io/npm/v/@${pkName}.svg)](https://npmjs.org/package/@${pkName})` +
          `| [![Downloads/week](https://img.shields.io/npm/dw/@${pkName}.svg)](https://npmjs.org/package/@${pkName})` +
          `| [![Build Status](https://travis-ci.com/${pkName}.svg?branch=master)](https://travis-ci.com/${pkName})` +

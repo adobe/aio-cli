@@ -1,20 +1,21 @@
 {
   "name": "@adobe/aio-cli",
   "description": "Adobe I/O Extensible CLI\n\n*******   *******\n******     ******\n*****       *****\n****    *    ****\n***    ***    ***\n**    *****    **\n*         **    *\n",
-  "version": "2.3.0",
+  "version": "3.0.0",
   "author": "Adobe Inc.",
   "bin": {
-    "aio": "./bin/run"
+    "aio": "./bin/run",
+    "adobe": "./bin/run"
   },
   "bugs": "https://github.com/adobe/aio-cli/issues",
   "dependencies": {
-    "@adobe/aio-cli-plugin-app": "^0.5.0",
-    "@adobe/aio-cli-plugin-auth": "^1.0.4",
+    "@adobe/aio-cli-plugin-app": "^1.0.0",
+    "@adobe/aio-cli-plugin-auth": "^1.0.6",
     "@adobe/aio-cli-plugin-certificate": "^0.1.0",
-    "@adobe/aio-cli-plugin-config": "^2.1.0",
-    "@adobe/aio-cli-plugin-console": "^2.0.3",
+    "@adobe/aio-cli-plugin-config": "^2.2.1",
+    "@adobe/aio-cli-plugin-console": "^2.0.4",
     "@adobe/aio-cli-plugin-jwt-auth": "^2.0.3",
-    "@adobe/aio-cli-plugin-runtime": "^1.3.0",
+    "@adobe/aio-cli-plugin-runtime": "^1.4.0",
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-autocomplete": "^0.1.2",
