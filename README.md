@@ -129,7 +129,7 @@ aio app run
 
 This will deploy the actions to Adobe I/O Runtime, while running the UI part on the local machine. The app is accessible on the browser at `localhost:9080` (by default, but the port is configurable).
 
-To have the application running completely locally, which means the actions run on a local deployment of (standalone) OpenWhisk, add the `--local` flag to the above run command.
+To have the application running completely locally, which means the actions run on a local deployment of (standalone) OpenWhisk, add the `--local` flag to the above run command. It will make actions accessible at `localhost:3233/api/v1/web/guest/<app-name>-<version>/<action>`.
 
 ### Debugging the application
 
