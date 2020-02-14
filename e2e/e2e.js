@@ -11,29 +11,28 @@ governing permissions and limitations under the License.
 
 const execa = require('execa')
 const chalk = require('chalk').default
+const fs = require('fs')
 
 test('cli init test', async () => {
-
-  name = 'aio-cli-test'
+  const packagejson = JSON.parse(fs.readFileSync('package.json').toString())
+  const name = `${packagejson.name}`
   console.log(chalk.blue(`> e2e tests for ${chalk.bold(name)}`))
 
-  execa.sync('rm', ['-rf', name], { stderr: 'inherit' })
+  expect(() => { execa.sync('rm', ['-rf', name], { stderr: 'inherit' }) }).not.toThrow()
   console.log(chalk.dim(`    - create test foler..`))
-  execa.sync('mkdir', [name], { stderr: 'inherit' })
+  expect(() => { execa.sync('mkdir', [name], { stderr: 'inherit' }) }).not.toThrow()
   process.chdir(name)
   console.log(chalk.bold('    - running tests..'))
-  execa.sync('node', ['../bin/run', 'app', 'init', '-y'], { stderr: 'inherit' })
-
+  expect(() => { execa.sync('node', ['../bin/run', 'app', 'init', '-y'], { stderr: 'inherit' }) }).not.toThrow()
 
   const files = ['actions/generic/index.js', 'test/actions/generic.test.js', 'test/jest.setup.js',
-                   'web-src/src/App.js', 'web-src/src/exc-runtime.js', 'web-src/404.html',
-                   'web-src/index.html', '.aio', '.env', 'package.json', 'README.md', 'manifest.yml']
+    'web-src/src/App.js', 'web-src/src/exc-runtime.js', 'web-src/404.html',
+    'web-src/index.html', '.aio', '.env', 'package.json', 'README.md', 'manifest.yml']
   files.forEach(file => {
-    execa.sync('ls', [file])
+    expect(() => { execa.sync('ls', [file]) }).not.toThrow()
   })
 
   process.chdir('..')
-  execa.sync('rm', ['-rf', name], { stderr: 'inherit' })
+  expect(() => { execa.sync('rm', ['-rf', name], { stderr: 'inherit' }) }).not.toThrow()
   console.log(chalk.green(`    - done for ${chalk.bold(name)}`))
-
-});
+})
