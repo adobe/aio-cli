@@ -10,8 +10,8 @@
   "bugs": "https://github.com/adobe/aio-cli/issues",
   "dependencies": {
     "@adobe/aio-cli-plugin-app": "^1.0.0",
-    "@adobe/aio-cli-plugin-auth": "^1.0.6",
-    "@adobe/aio-cli-plugin-certificate": "^0.1.0",
+    "@adobe/aio-cli-plugin-auth": "^1.1.0",
+    "@adobe/aio-cli-plugin-certificate": "^0.1.1",
     "@adobe/aio-cli-plugin-config": "^2.2.1",
     "@adobe/aio-cli-plugin-console": "^2.0.4",
     "@adobe/aio-cli-plugin-jwt-auth": "^2.0.3",
@@ -29,7 +29,7 @@
   "devDependencies": {
     "@oclif/dev-cli": "^1",
     "acorn": "^7.0.0",
-    "codecov": "^3.2.0",
+    "codecov": "^3.6.5",
     "eslint": "^6.0.1",
     "eslint-config-oclif": "^1",
     "eslint-config-standard": "^13.0.1",
