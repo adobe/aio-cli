@@ -41,7 +41,7 @@ test('unknown sort-field', async () => {
 })
 
 test('name sort-field, ascending', async () => {
-  const genesis = new Date(86400000)
+  const genesis = new Date(0)
   const dayAfter = new Date(genesis.valueOf() + 86400000)
 
   const expectedResult = {
