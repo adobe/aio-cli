@@ -11,7 +11,7 @@ governing permissions and limitations under the License.
 
 const execa = require('execa')
 const chalk = require('chalk').default
-const fs = require('fs')
+const fs = require.requireActual('fs')
 
 test('cli init test', async () => {
   const packagejson = JSON.parse(fs.readFileSync('package.json').toString())
