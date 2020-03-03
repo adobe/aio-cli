@@ -17,11 +17,12 @@ test('cli init test', async () => {
   const packagejson = JSON.parse(fs.readFileSync('package.json').toString())
   const name = `${packagejson.name}`
   console.log(chalk.blue(`> e2e tests for ${chalk.bold(name)}`))
+  const testFolder = 'e2e_test_run'
 
-  expect(() => { execa.sync('rm', ['-rf', name], { stderr: 'inherit' }) }).not.toThrow()
+  expect(() => { execa.sync('rm', ['-rf', testFolder], { stderr: 'inherit' }) }).not.toThrow()
   console.log(chalk.dim(`    - create test foler..`))
-  expect(() => { execa.sync('mkdir', [name], { stderr: 'inherit' }) }).not.toThrow()
-  process.chdir(name)
+  expect(() => { execa.sync('mkdir', [testFolder], { stderr: 'inherit' }) }).not.toThrow()
+  process.chdir(testFolder)
   console.log(chalk.bold('    - running tests..'))
   expect(() => { execa.sync('node', ['../bin/run', 'app', 'init', '-y'], { stderr: 'inherit' }) }).not.toThrow()
 
@@ -33,6 +34,6 @@ test('cli init test', async () => {
   })
 
   process.chdir('..')
-  expect(() => { execa.sync('rm', ['-rf', name], { stderr: 'inherit' }) }).not.toThrow()
-  console.log(chalk.green(`    - done for ${chalk.bold(name)}`))
+  expect(() => { execa.sync('rm', ['-rf', testFolder], { stderr: 'inherit' }) }).not.toThrow()
+  console.log(chalk.green(`    - done for ${chalk.bold(testFolder)}`))
 })
