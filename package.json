@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1",
-    "acorn": "^7.0.0",
+    "acorn": "^7.1.1",
     "codecov": "^3.6.5",
     "eslint": "^6.0.1",
     "eslint-config-oclif": "^1",
