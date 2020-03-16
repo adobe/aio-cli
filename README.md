@@ -174,7 +174,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (-v|--version|version)
-@adobe/aio-cli/3.0.0 darwin-x64 node-v10.16.1
+@adobe/aio-cli/3.1.0 darwin-x64 node-v10.18.1
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -607,7 +607,7 @@ EXAMPLE
      }
 ```
 
-_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/v1.0.6/src/commands/auth/index.js)_
+_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/v2.0.0/src/commands/auth/index.js)_
 
 ## `aio auth:ctx`
 
@@ -647,7 +647,7 @@ ALIASES
   $ aio context
 ```
 
-_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/v1.0.6/src/commands/auth/ctx.js)_
+_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/v2.0.0/src/commands/auth/ctx.js)_
 
 ## `aio auth:login`
 
@@ -658,6 +658,7 @@ USAGE
   $ aio auth:login
 
 OPTIONS
+  -b, --bare     print access token only
   -c, --ctx=ctx  Name of the Adobe IMS context to use. Default is the current Adobe IMS context
   -d, --decode   Decode and display access token data
 
@@ -686,9 +687,9 @@ DESCRIPTION
 
   The currently supported Adobe IMS login plugins are:
 
-  * aio-lib-core-ims-jwt for JWT token based login supporting
+  * aio-lib-ims-jwt for JWT token based login supporting
      Adobe I/O Console service integrations.
-  * aio-lib-core-ims-oauth for browser based OAuth2 login. This
+  * aio-lib-ims-oauth for browser based OAuth2 login. This
      plugin will launch a Chromium browser to guide the user through the
      login process. The plugin itself will *never* see the user's
      password but only receive the authorization token after the
@@ -698,7 +699,7 @@ ALIASES
   $ aio login
 ```
 
-_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/v1.0.6/src/commands/auth/login.js)_
+_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/v2.0.0/src/commands/auth/login.js)_
 
 ## `aio auth:logout`
 
@@ -735,7 +736,7 @@ ALIASES
   $ aio logout
 ```
 
-_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/v1.0.6/src/commands/auth/logout.js)_
+_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/v2.0.0/src/commands/auth/logout.js)_
 
 ## `aio autocomplete [SHELL]`
 
@@ -769,7 +770,7 @@ USAGE
   $ aio certificate
 ```
 
-_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/v0.1.0/src/commands/certificate/index.js)_
+_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/v0.1.1/src/commands/certificate/index.js)_
 
 ## `aio certificate:generate`
 
@@ -782,20 +783,28 @@ USAGE
 OPTIONS
   -c, --country=country            Country Name
   -l, --locality=locality          Locality, or city name
-  -n, --name=name                  Common Name: typically a host domain name, like www.mysite.com
+
+  -n, --name=name                  [default: selfsign.localhost] Common Name: typically a host domain name, like
+                                   www.mysite.com
+
   -o, --organization=organization  Organization name
+
   -s, --state=state                State or Province
+
   -u, --unit=unit                  Organizational unit or department
+
   --days=days                      [default: 365] Number of days the certificate should be valid for. (Max 365)
+
   --keyout=keyout                  [default: private.key] file to send the key to
+
   --out=out                        [default: certificate_pub.crt] output file
 
 DESCRIPTION
-  Generate a self-signed certificate to enable https:// on localhost or signing jwt payloads for interacting with Adobe
+  Generate a self-signed certificate to enable https:// on localhost or signing jwt payloads for interacting with Adobe 
   services.
 ```
 
-_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/v0.1.0/src/commands/certificate/generate.js)_
+_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/v0.1.1/src/commands/certificate/generate.js)_
 
 ## `aio certificate:verify FILE`
 
@@ -815,7 +824,7 @@ DESCRIPTION
   Verifies that the certificate is valid, and/or will not expire in [--days] days from now.
 ```
 
-_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/v0.1.0/src/commands/certificate/verify.js)_
+_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/v0.1.1/src/commands/certificate/verify.js)_
 
 ## `aio config`
 
@@ -1069,7 +1078,7 @@ OPTIONS
 
 DESCRIPTION
   Run 'console:ls' to get a list of integrations to select from.
-  The .wskprops file will be written to your home folder, and you will be prompted whether you want to overwrite an
+  The .wskprops file will be written to your home folder, and you will be prompted whether you want to overwrite an 
   existing file.
 
 ALIASES
@@ -1119,7 +1128,7 @@ ALIASES
   $ aio plugins:discover
 ```
 
-_See code: [src/commands/discover.js](https://github.com/adobe/aio-cli/blob/v3.0.0/src/commands/discover.js)_
+_See code: [src/commands/discover.js](https://github.com/adobe/aio-cli/blob/v3.1.0/src/commands/discover.js)_
 
 ## `aio help [COMMAND]`
 
@@ -1212,15 +1221,15 @@ DESCRIPTION
 
   Installation of a user-installed plugin will override a core plugin.
 
-  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command
-  will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in
+  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command 
+  will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in 
   the CLI without the need to patch and update the whole CLI.
 
 ALIASES
   $ aio plugins:add
 
 EXAMPLES
-  $ aio plugins:install myplugin
+  $ aio plugins:install myplugin 
   $ aio plugins:install https://github.com/someuser/someplugin
   $ aio plugins:install someuser/someplugin
 ```
@@ -1245,7 +1254,7 @@ OPTIONS
 DESCRIPTION
   Installation of a linked plugin will override a user-installed or core plugin.
 
-  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello'
+  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello' 
   command will override the user-installed or core plugin implementation. This is useful for development work.
 
 EXAMPLE
