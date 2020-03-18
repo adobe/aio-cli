@@ -21,52 +21,88 @@ test('exports a run function', async () => {
   expect(typeof TheCommand.run).toEqual('function')
 })
 
-test('unknown sort-field', async () => {
-  fetch.mockResponseOnce(JSON.stringify({
-    results: []
-  }))
-
-  command.argv = ['--sort-field', 'unknown']
-
-  return new Promise((resolve, reject) => {
-    return command.run()
-      .then(() => {
-        reject(new Error('it should not succeed'))
-      })
-      .catch(error => {
-        expect(error).toEqual(new Error('Expected --sort-field=unknown to be one of: date, name\nSee more help with --help'))
-        resolve()
-      })
-  })
-})
-
-test('name sort-field, ascending', async () => {
-  const genesis = new Date(0)
-  const dayAfter = new Date(genesis.valueOf() + 86400000)
+describe('sorting', () => {
+  const genesis = new Date()
+  const later = new Date(genesis.valueOf())
+  later.setDate(later.getDate() + 10)
 
   const expectedResult = {
     results: [
       { package: { scope: 'adobe', name: 'foo', description: 'some foo', version: '1.0.0', date: genesis } },
-      { package: { scope: 'adobe', name: 'bar', description: 'some bar', version: '1.0.1', date: dayAfter } }
+      { package: { scope: 'adobe', name: 'bar', description: 'some bar', version: '1.0.1', date: later } }
     ]
   }
-  fetch.mockResponseOnce(JSON.stringify(expectedResult))
+  beforeEach(() => {
+    fetch.mockResponseOnce(JSON.stringify(expectedResult))
+  })
 
-  command.argv = ['--sort-field', 'name', '--sort-order', 'asc']
+  test('unknown sort-field', async () => {
+    fetch.mockResponseOnce(JSON.stringify({
+      results: []
+    }))
+    command.argv = ['--sort-field', 'unknown']
+    return new Promise((resolve, reject) => {
+      return command.run()
+        .then(() => {
+          reject(new Error('it should not succeed'))
+        })
+        .catch(error => {
+          expect(error.message).toMatch('Expected --sort-field=')
+          resolve()
+        })
+    })
+  })
 
-  return new Promise(resolve => {
-    return command.run()
-      .then(() => {
-        expect(stdout.output).toMatch(
-          // TODO: add .toMatchFixture
-          // eslint-disable-next-line indent
-`Name Version   Description Published       
-bar  1.0.1     some bar    January 2, 1970 
-foo  1.0.0     some foo    January 1, 1970 
-`
-        )
-        resolve()
-      })
+  test('sort-field=name, ascending', async () => {
+    command.argv = ['--sort-field', 'name', '--sort-order', 'asc']
+    return new Promise(resolve => {
+      return command.run()
+        .then(() => {
+          const splitOutput = stdout.output.split('\n')
+          expect(splitOutput[1]).toMatch('bar') // bar is first
+          expect(splitOutput[2]).toMatch('foo') // foo is second
+          resolve()
+        })
+    })
+  })
+
+  test('sort-field=name, descending', async () => {
+    command.argv = ['--sort-field', 'name', '--sort-order', 'desc']
+    return new Promise(resolve => {
+      return command.run()
+        .then(() => {
+          const splitOutput = stdout.output.split('\n')
+          expect(splitOutput[1]).toMatch('foo') // foo is first
+          expect(splitOutput[2]).toMatch('bar') // bar is second
+          resolve()
+        })
+    })
+  })
+
+  test('sort-field=date, ascending', async () => {
+    command.argv = ['--sort-field', 'date', '--sort-order', 'asc']
+    return new Promise(resolve => {
+      return command.run()
+        .then(() => {
+          const splitOutput = stdout.output.split('\n')
+          expect(splitOutput[1]).toMatch('foo') // foo is first
+          expect(splitOutput[2]).toMatch('bar') // bar is second
+          resolve()
+        })
+    })
+  })
+
+  test('sort-field=date, descending', async () => {
+    command.argv = ['--sort-field', 'date', '--sort-order', 'desc']
+    return new Promise(resolve => {
+      return command.run()
+        .then(() => {
+          const splitOutput = stdout.output.split('\n')
+          expect(splitOutput[1]).toMatch('bar') // bar is first
+          expect(splitOutput[2]).toMatch('foo') // foo is second
+          resolve()
+        })
+    })
   })
 })
 
@@ -127,7 +163,7 @@ test('interactive install - no choices', async () => {
 test('json result error', async () => {
   const expectedResult = {
   }
-  fetch.mockResponseOnce(JSON.stringify(expectedResult))
+  fetch.mockResponse(JSON.stringify(expectedResult))
 
   command.argv = []
 
