@@ -20,7 +20,7 @@ test('cli init test', async () => {
   const testFolder = 'e2e_test_run'
 
   expect(() => { execa.sync('rm', ['-rf', testFolder], { stderr: 'inherit' }) }).not.toThrow()
-  console.log(chalk.dim(`    - create test foler..`))
+  console.log(chalk.dim('    - create test foler..'))
   expect(() => { execa.sync('mkdir', [testFolder], { stderr: 'inherit' }) }).not.toThrow()
   process.chdir(testFolder)
   console.log(chalk.bold('    - running tests..'))
