@@ -1,3 +1,21 @@
+/*
+ * Copyright 2020 Adobe Inc. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+
+const fetch = require('node-fetch')
+const fs = require('fs')
+const inquirer = require('inquirer')
+
+require('./types.jsdoc') // get types
+
 /**
  * Sort array values according to the sort order and/or sort-field.
  *
@@ -28,6 +46,46 @@ function sortValues (values, { descending = true, field = 'date' } = {}) {
   return values
 }
 
+/**
+ * Gets the latest version of a plugin from npm.
+ *
+ * @param {string} npmPackageName the npm package name of the plugin
+ * @returns {string} the latest version of the plugin from the npm registry
+ */
+async function getNpmLatestVersion (npmPackageName) {
+  const res = await fetch(`https://registry.npmjs.com/${npmPackageName}`)
+  const { 'dist-tags': distTags } = await res.json()
+  return distTags.latest
+}
+
+/**
+ * Gets the npm package version of an npm package installed in the cli.
+ *
+ * @param {string} cliRoot the root path of the cli
+ * @param {string} npmPackageName the npm package name
+ * @returns {string} the version of the package from the cli node_modules
+ */
+async function getNpmLocalVersion (cliRoot, npmPackageName) {
+  const pjsonPath = `${cliRoot}/node_modules/${npmPackageName}/package.json`
+  const pjson = JSON.parse(fs.readFileSync(pjsonPath))
+
+  return pjson.version
+}
+
+async function prompt (message = 'Confirm?', defaultValue = false) {
+  return inquirer.prompt({
+    name: 'confirm',
+    type: 'confirm',
+    message,
+    default: defaultValue
+  }).then(function (answers) {
+    return answers.confirm
+  })
+}
+
 module.exports = {
-  sortValues
+  prompt,
+  sortValues,
+  getNpmLatestVersion,
+  getNpmLocalVersion
 }
