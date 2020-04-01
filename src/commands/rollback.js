@@ -17,7 +17,7 @@ const { prompt } = require('../helpers')
 
 require('../types.jsdoc') // get types
 
-class ClearCommand extends Command {
+class RollbackCommand extends Command {
   /**
    * List the plugins that are installed.
    *
@@ -95,7 +95,7 @@ class ClearCommand extends Command {
    * Command entry point
    */
   async run () {
-    const { flags } = this.parse(ClearCommand)
+    const { flags } = this.parse(RollbackCommand)
     const plugins = this.config.plugins.filter(p => p.type === 'user')
 
     if (plugins.length === 0) {
@@ -113,11 +113,9 @@ class ClearCommand extends Command {
   }
 }
 
-ClearCommand.description = 'Clears all installed plugins.'
+RollbackCommand.description = 'Clears all installed plugins.'
 
-ClearCommand.aliases = ['plugins:clear']
-
-ClearCommand.flags = {
+RollbackCommand.flags = {
   interactive: flags.boolean({
     char: 'i',
     default: false,
@@ -136,4 +134,4 @@ ClearCommand.flags = {
   })
 }
 
-module.exports = ClearCommand
+module.exports = RollbackCommand

@@ -103,8 +103,17 @@ class UpdateCommand extends Command {
    */
   async __processPlugins () {
     const corePlugins = this.config.pjson.oclif.plugins
-    const installedPlugins = this.config.plugins
     const plugins = []
+
+    // Filter installed plugins:
+    // - remove any plugin that is in core, that is not from the @adobe namespace
+    // These will not be updateable for compatibility reasons
+    const installedPlugins = this.config.plugins.filter(plugin =>
+      !(
+        corePlugins.includes(plugin.name) &&
+        !(plugin.name.startsWith('@adobe/'))
+      )
+    )
 
     for (const plugin of installedPlugins) {
       const { type, name, version: currentVersion } = plugin
@@ -166,7 +175,11 @@ class UpdateCommand extends Command {
   }
 }
 
-UpdateCommand.description = 'Update all installed plugins.'
+UpdateCommand.description = `Update all installed plugins.
+This command will only:
+- update core plugins that are from the @adobe namespace
+- update all other user-installed plugins
+`
 
 UpdateCommand.flags = {
   interactive: flags.boolean({

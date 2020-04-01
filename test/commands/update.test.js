@@ -75,8 +75,9 @@ test('exports a run function', async () => {
 })
 
 test('no updates', () => {
-  const corePlugins = ['core1']
+  const corePlugins = ['@adobe/core1']
   const installedPlugins = [
+    { name: '@adobe/core1', version: '0.1', type: 'core' },
     { name: 'plugin1', version: '0.1', type: 'user' },
     { name: 'plugin2', version: '0.1', type: 'user' },
     { name: 'plugin3', version: '0.1', type: 'user' }
@@ -96,8 +97,10 @@ test('no updates', () => {
 })
 
 test('needs update (--no-confirm)', () => {
-  const corePlugins = ['core1']
+  const corePlugins = ['@adobe/core1', 'core2-non-adobe']
   const installedPlugins = [
+    { name: '@adobe/core1', version: '0.1', type: 'user' },
+    { name: 'core2-non-adobe', version: '0.1', type: 'user' },
     { name: 'plugin1', version: '0.1', type: 'user' },
     { name: 'plugin2', version: '0.1', type: 'user' },
     { name: 'plugin3', version: '0.1', type: 'user' }
@@ -111,14 +114,15 @@ test('needs update (--no-confirm)', () => {
 
   return doRunCommand(['--no-confirm'], async () => {
     const results = (await spy.mock.results[0].value).filter(p => p.needsUpdate)
-    expect(results.length).toEqual(3)
+    expect(results.length).toEqual(4)
   })
 })
 
 test('needs update (--confirm)', () => {
-  const corePlugins = ['core1']
+  const corePlugins = ['@adobe/core1', 'core2-non-adobe']
   const installedPlugins = [
-    { name: 'core1', version: '0.1', type: 'core' },
+    { name: '@adobe/core1', version: '0.1', type: 'core' },
+    { name: 'core2-non-adobe', version: '0.1', type: 'core' },
     { name: 'plugin1', version: '0.1', type: 'user' },
     { name: 'plugin2', version: '0.1', type: 'user' },
     { name: 'plugin3', version: '0.1', type: 'user' }
@@ -137,10 +141,10 @@ test('needs update (--confirm)', () => {
 })
 
 test('needs warning', () => {
-  const corePlugins = ['core1', 'core2']
+  const corePlugins = ['@adobe/core1', '@adobe/core2']
   const installedPlugins = [
-    { name: 'core1', version: '0.1', type: 'user' },
-    { name: 'core2', version: '0.1', type: 'core' },
+    { name: '@adobe/core1', version: '0.1', type: 'user' },
+    { name: '@adobe/core2', version: '0.1', type: 'user' },
     { name: 'plugin2', version: '0.1', type: 'user' },
     { name: 'plugin3', version: '0.1', type: 'user' }
   ]
@@ -153,13 +157,14 @@ test('needs warning', () => {
 
   return doRunCommand([], async () => {
     const results = (await spy.mock.results[0].value).filter(p => p.needsWarning)
-    expect(results.length).toEqual(1)
+    expect(results.length).toEqual(2)
   })
 })
 
 test('list', () => {
-  const corePlugins = ['core1']
+  const corePlugins = ['@adobe/core1']
   const installedPlugins = [
+    { name: '@adobe/core1', version: '0.1', type: 'core' },
     { name: 'plugin1', version: '0.1', type: 'user' },
     { name: 'plugin2', version: '0.1', type: 'user' },
     { name: 'plugin3', version: '0.1', type: 'user' }
@@ -181,8 +186,9 @@ test('list', () => {
 })
 
 test('interactive', () => {
-  const corePlugins = ['core1']
+  const corePlugins = ['@adobe/core1']
   const installedPlugins = [
+    { name: '@adobe/core1', version: '0.1', type: 'core' },
     { name: 'plugin1', version: '0.1', type: 'user' },
     { name: 'plugin2', version: '0.1', type: 'user' },
     { name: 'plugin3', version: '0.1', type: 'user' }

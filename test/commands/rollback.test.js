@@ -12,7 +12,6 @@
 
 const fetch = require('node-fetch')
 const inquirer = require('inquirer')
-// const helpers = require('../../src/helpers')
 const { stdout } = require('stdout-stderr')
 
 jest.mock('../../src/helpers')
@@ -24,7 +23,7 @@ ora.mockImplementation(() => ({
   stop: jest.fn()
 }))
 
-const TheCommand = require('../../src/commands/clear')
+const TheCommand = require('../../src/commands/rollback')
 
 let command
 
