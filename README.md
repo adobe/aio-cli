@@ -121,6 +121,9 @@ docker pull openwhisk/action-nodejs-v10:latest
 docker pull adobeapiplatform/adobe-action-nodejs-v10:3.0.21
 ```
 
+**Note:** Developers on Windows machines should make sure that they are using Linux containers for the images above.
+The steps to switch to Linux containers are described in the [Docker for Windows documentation](https://docs.docker.com/docker-for-windows/).
+
 To run the application locally, use the following command:
 
 ```bash
