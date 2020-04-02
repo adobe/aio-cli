@@ -13,6 +13,7 @@
 const { Command, flags } = require('@oclif/command')
 const inquirer = require('inquirer')
 const { cli } = require('cli-ux')
+const chalk = require('chalk')
 const ora = require('ora')
 const semver = require('semver')
 const { prompt, getNpmLatestVersion, getNpmLocalVersion } = require('../helpers')
@@ -23,17 +24,17 @@ class UpdateCommand extends Command {
    *
    * @param {Array<ToUpdatePlugin>} plugins the plugins to update
    */
-  async __list (plugins) {
+  async __list (plugins, { col1 = 'plugin(s) to update', col2 = 'current', col3 = 'latest' } = {}) {
     const columns = {
-      plugin: {
+      [col1]: {
         width: 10,
         get: row => `${row.name}`
       },
-      current: {
+      [col2]: {
         minWidth: 10,
         get: row => `${row.currentVersion}`
       },
-      latest: {
+      [col3]: {
         get: row => `${row.latestVersion}`
       }
     }
@@ -160,6 +161,13 @@ class UpdateCommand extends Command {
     const plugins = await this.__processPlugins(this.config.root, this.config.pjson.oclif.plugins, this.config.plugins)
     spinner.stop()
     const needsUpdate = plugins.filter(p => p.needsUpdate)
+    const needsWarning = plugins.filter(p => p.needsWarning)
+
+    if (needsWarning.length > 0) {
+      this.log(`${chalk.red('warning:')} the user-installed plugin(s) below have versions older or equal to the core plugin versions, and should be uninstalled via ${chalk.yellow(`${this.config.pjson.oclif.bin} plugins:uninstall <plugin_name>`)}`)
+      this.__list(needsWarning, { col1: 'plugin(s) to uninstall' })
+      this.log()
+    }
 
     if (needsUpdate.length === 0) {
       this.log('no plugins to update')
