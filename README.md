@@ -207,6 +207,7 @@ USAGE
 * [`aio certificate`](#aio-certificate)
 * [`aio certificate:generate`](#aio-certificategenerate)
 * [`aio certificate:verify FILE`](#aio-certificateverify-file)
+* [`aio clear`](#aio-clear)
 * [`aio config`](#aio-config)
 * [`aio config:clear`](#aio-configclear)
 * [`aio config:delete KEYS...`](#aio-configdelete-keys)
@@ -282,6 +283,7 @@ USAGE
 * [`aio runtime:trigger:get TRIGGERPATH`](#aio-runtimetriggerget-triggerpath)
 * [`aio runtime:trigger:list`](#aio-runtimetriggerlist)
 * [`aio runtime:trigger:update TRIGGERNAME`](#aio-runtimetriggerupdate-triggername)
+* [`aio update`](#aio-update)
 
 ## `aio app`
 
@@ -825,6 +827,25 @@ DESCRIPTION
 ```
 
 _See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/v0.1.1/src/commands/certificate/verify.js)_
+
+## `aio clear`
+
+Clears all installed plugins.
+
+```
+USAGE
+  $ aio clear
+
+OPTIONS
+  -c, --[no-]confirm  confirmation needed for clear (defaults to true)
+  -i, --interactive   interactive clear mode
+  -l, --list          list plugins that will be cleared
+
+ALIASES
+  $ aio plugins:clear
+```
+
+_See code: [src/commands/clear.js](https://github.com/adobe/aio-cli/blob/v3.1.0/src/commands/clear.js)_
 
 ## `aio config`
 
@@ -3015,4 +3036,20 @@ ALIASES
 ```
 
 _See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/v1.4.0/src/commands/runtime/trigger/update.js)_
+
+## `aio update`
+
+Update all installed plugins.
+
+```
+USAGE
+  $ aio update
+
+OPTIONS
+  -c, --[no-]confirm  confirmation needed for update (defaults to true)
+  -i, --interactive   interactive update mode
+  -l, --list          list plugins that will be updated
+```
+
+_See code: [src/commands/update.js](https://github.com/adobe/aio-cli/blob/v3.1.0/src/commands/update.js)_
 <!-- commandsstop -->

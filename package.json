@@ -22,9 +22,13 @@
     "@oclif/plugin-help": "^2.1.4",
     "@oclif/plugin-not-found": "^1.2.0",
     "@oclif/plugin-plugins": "^1.2.0",
+    "@oclif/plugin-warn-if-update-available": "^1.7.0",
     "chalk": "^2.4.2",
+    "cli-ux": "^5.4.5",
     "inquirer": "^7.0.1",
-    "node-fetch": "^2.5.0"
+    "node-fetch": "^2.5.0",
+    "ora": "^4.0.3",
+    "semver": "^7.1.3"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1",
@@ -67,6 +71,7 @@
       "@oclif/plugin-plugins",
       "@oclif/plugin-autocomplete",
       "@oclif/plugin-not-found",
+      "@oclif/plugin-warn-if-update-available",
       "@adobe/aio-cli-plugin-config",
       "@adobe/aio-cli-plugin-jwt-auth",
       "@adobe/aio-cli-plugin-console",
@@ -74,7 +79,11 @@
       "@adobe/aio-cli-plugin-app",
       "@adobe/aio-cli-plugin-auth",
       "@adobe/aio-cli-plugin-certificate"
-    ]
+    ],
+    "warn-if-update-available": {
+      "timeoutInDays": 7,
+      "message": "<%= config.name %> update available from <%= chalk.yellowBright(config.version) %> to <%= chalk.yellowBright(latest) %>.\nRun <%= chalk.greenBright('npm install -g ' + config.name) %> to update."
+    }
   },
   "jest": {
     "collectCoverage": true,
