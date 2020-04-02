@@ -14,6 +14,7 @@ const { Command, flags } = require('@oclif/command')
 const inquirer = require('inquirer')
 const { cli } = require('cli-ux')
 const ora = require('ora')
+const semver = require('semver')
 const { prompt, getNpmLatestVersion, getNpmLocalVersion } = require('../helpers')
 
 class UpdateCommand extends Command {
@@ -119,7 +120,7 @@ class UpdateCommand extends Command {
       const { type, name, version: currentVersion } = plugin
       const latestVersion = await getNpmLatestVersion(name)
       let coreVersion = (type === 'core') ? currentVersion : null
-      const needsUpdate = (latestVersion > currentVersion)
+      const needsUpdate = semver.gt(latestVersion, currentVersion)
       let needsWarning = false
 
       if (!needsUpdate) {
@@ -130,7 +131,7 @@ class UpdateCommand extends Command {
         const pluginOverridesCorePlugin = (type === 'user' && corePlugins.includes(name))
         if (pluginOverridesCorePlugin) {
           coreVersion = await getNpmLocalVersion(this.config.root, name)
-          needsWarning = (coreVersion >= currentVersion)
+          needsWarning = semver.gte(coreVersion, currentVersion)
         }
       }
 

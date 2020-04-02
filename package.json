@@ -24,9 +24,11 @@
     "@oclif/plugin-plugins": "^1.2.0",
     "@oclif/plugin-warn-if-update-available": "^1.7.0",
     "chalk": "^2.4.2",
+    "cli-ux": "^5.4.5",
     "inquirer": "^7.0.1",
     "node-fetch": "^2.5.0",
-    "ora": "^4.0.3"
+    "ora": "^4.0.3",
+    "semver": "^7.1.3"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1",
@@ -81,7 +83,7 @@
     "warn-if-update-available": {
       "timeoutInDays": 7,
       "message": "<%= config.name %> update available from <%= chalk.yellowBright(config.version) %> to <%= chalk.yellowBright(latest) %>.\nRun <%= chalk.greenBright('npm install -g ' + config.name) %> to update."
-    }    
+    }
   },
   "jest": {
     "collectCoverage": true,

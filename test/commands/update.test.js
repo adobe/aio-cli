@@ -77,14 +77,14 @@ test('exports a run function', async () => {
 test('no updates', () => {
   const corePlugins = ['@adobe/core1']
   const installedPlugins = [
-    { name: '@adobe/core1', version: '0.1', type: 'core' },
-    { name: 'plugin1', version: '0.1', type: 'user' },
-    { name: 'plugin2', version: '0.1', type: 'user' },
-    { name: 'plugin3', version: '0.1', type: 'user' }
+    { name: '@adobe/core1', version: '0.1.0', type: 'core' },
+    { name: 'plugin1', version: '0.1.0', type: 'user' },
+    { name: 'plugin2', version: '0.1.0', type: 'user' },
+    { name: 'plugin3', version: '0.1.0', type: 'user' }
   ]
 
-  helpers.getNpmLatestVersion.mockImplementation(() => '0.1')
-  helpers.getNpmLocalVersion.mockImplementation(() => '0.1')
+  helpers.getNpmLatestVersion.mockImplementation(() => '0.1.0')
+  helpers.getNpmLocalVersion.mockImplementation(() => '0.1.0')
   command.config = mockConfig(corePlugins, installedPlugins)
 
   const spy = jest.spyOn(command, '__processPlugins')
@@ -96,18 +96,57 @@ test('no updates', () => {
   })
 })
 
+test('updates needed? (via various semver versions)', async () => {
+  const corePlugins = ['@adobe/core1']
+  const installedPlugins = [
+    { name: '@adobe/core1', version: '0.1.0', type: 'core' }
+  ]
+
+  helpers.getNpmLocalVersion.mockImplementation(() => '0.1.0')
+  command.config = mockConfig(corePlugins, installedPlugins)
+
+  const spy = jest.spyOn(command, '__processPlugins')
+
+  const createDoRunCommand = ({ needsUpdateCount = 0, spyCalledTimes = 1 } = {}) => {
+    return doRunCommand([], async () => {
+      const results = (await spy.mock.results[spyCalledTimes - 1].value).filter(p => p.needsUpdate)
+      expect(results.length).toEqual(needsUpdateCount)
+      expect(spy).toHaveBeenCalledTimes(spyCalledTimes)
+      expect(stdout.output).toMatch('no plugins to update')
+    })
+  }
+
+  helpers.getNpmLatestVersion.mockImplementation(() => '0.1.0-pre')
+  await createDoRunCommand({ needsUpdateCount: 0, spyCalledTimes: 1 }) // no updates for same version with a `-` suffixed tag
+
+  helpers.getNpmLatestVersion.mockImplementation(() => '0.0.1')
+  await createDoRunCommand({ needsUpdateCount: 0, spyCalledTimes: 2 }) // no updates for same version
+
+  helpers.getNpmLatestVersion.mockImplementation(() => '0.2.0')
+  await createDoRunCommand({ needsUpdateCount: 1, spyCalledTimes: 3 }) // update needed for newer version
+
+  helpers.getNpmLatestVersion.mockImplementation(() => '0.2.0-beta')
+  await createDoRunCommand({ needsUpdateCount: 1, spyCalledTimes: 4 }) // update needed for newer version with `-` suffix tag
+
+  helpers.getNpmLatestVersion.mockImplementation(() => 'v0.1.0')
+  await createDoRunCommand({ needsUpdateCount: 0, spyCalledTimes: 5 }) // version prefixed with `v` is parsed out
+
+  helpers.getNpmLatestVersion.mockImplementation(() => 'v0.2.0')
+  await createDoRunCommand({ needsUpdateCount: 1, spyCalledTimes: 6 }) // version prefixed with `v` is parsed out
+})
+
 test('needs update (--no-confirm)', () => {
   const corePlugins = ['@adobe/core1', 'core2-non-adobe']
   const installedPlugins = [
-    { name: '@adobe/core1', version: '0.1', type: 'user' },
-    { name: 'core2-non-adobe', version: '0.1', type: 'user' },
-    { name: 'plugin1', version: '0.1', type: 'user' },
-    { name: 'plugin2', version: '0.1', type: 'user' },
-    { name: 'plugin3', version: '0.1', type: 'user' }
+    { name: '@adobe/core1', version: '0.1.0', type: 'user' },
+    { name: 'core2-non-adobe', version: '0.1.0', type: 'user' },
+    { name: 'plugin1', version: '0.1.0', type: 'user' },
+    { name: 'plugin2', version: '0.1.0', type: 'user' },
+    { name: 'plugin3', version: '0.1.0', type: 'user' }
   ]
 
-  helpers.getNpmLatestVersion.mockImplementation(() => '0.2')
-  helpers.getNpmLocalVersion.mockImplementation(() => '0.1')
+  helpers.getNpmLatestVersion.mockImplementation(() => '0.2.0')
+  helpers.getNpmLocalVersion.mockImplementation(() => '0.1.0')
   command.config = mockConfig(corePlugins, installedPlugins)
 
   const spy = jest.spyOn(command, '__processPlugins')
@@ -121,15 +160,15 @@ test('needs update (--no-confirm)', () => {
 test('needs update (--confirm)', () => {
   const corePlugins = ['@adobe/core1', 'core2-non-adobe']
   const installedPlugins = [
-    { name: '@adobe/core1', version: '0.1', type: 'core' },
-    { name: 'core2-non-adobe', version: '0.1', type: 'core' },
-    { name: 'plugin1', version: '0.1', type: 'user' },
-    { name: 'plugin2', version: '0.1', type: 'user' },
-    { name: 'plugin3', version: '0.1', type: 'user' }
+    { name: '@adobe/core1', version: '0.1.0', type: 'core' },
+    { name: 'core2-non-adobe', version: '0.1.0', type: 'core' },
+    { name: 'plugin1', version: '0.1.0', type: 'user' },
+    { name: 'plugin2', version: '0.1.0', type: 'user' },
+    { name: 'plugin3', version: '0.1.0', type: 'user' }
   ]
 
-  helpers.getNpmLatestVersion.mockImplementation(() => '0.2')
-  helpers.getNpmLocalVersion.mockImplementation(() => '0.1')
+  helpers.getNpmLatestVersion.mockImplementation(() => '0.2.0')
+  helpers.getNpmLocalVersion.mockImplementation(() => '0.1.0')
   command.config = mockConfig(corePlugins, installedPlugins)
 
   const spy = jest.spyOn(command, '__processPlugins')
@@ -143,14 +182,14 @@ test('needs update (--confirm)', () => {
 test('needs warning', () => {
   const corePlugins = ['@adobe/core1', '@adobe/core2']
   const installedPlugins = [
-    { name: '@adobe/core1', version: '0.1', type: 'user' },
-    { name: '@adobe/core2', version: '0.1', type: 'user' },
-    { name: 'plugin2', version: '0.1', type: 'user' },
-    { name: 'plugin3', version: '0.1', type: 'user' }
+    { name: '@adobe/core1', version: '0.1.0', type: 'user' },
+    { name: '@adobe/core2', version: '0.1.0', type: 'user' },
+    { name: 'plugin2', version: '0.1.0', type: 'user' },
+    { name: 'plugin3', version: '0.1.0', type: 'user' }
   ]
 
-  helpers.getNpmLatestVersion.mockImplementation(() => '0.1')
-  helpers.getNpmLocalVersion.mockImplementation(() => '0.1')
+  helpers.getNpmLatestVersion.mockImplementation(() => '0.1.0')
+  helpers.getNpmLocalVersion.mockImplementation(() => '0.1.0')
   command.config = mockConfig(corePlugins, installedPlugins)
 
   const spy = jest.spyOn(command, '__processPlugins')
@@ -164,14 +203,14 @@ test('needs warning', () => {
 test('list', () => {
   const corePlugins = ['@adobe/core1']
   const installedPlugins = [
-    { name: '@adobe/core1', version: '0.1', type: 'core' },
-    { name: 'plugin1', version: '0.1', type: 'user' },
-    { name: 'plugin2', version: '0.1', type: 'user' },
-    { name: 'plugin3', version: '0.1', type: 'user' }
+    { name: '@adobe/core1', version: '0.1.0', type: 'core' },
+    { name: 'plugin1', version: '0.1.0', type: 'user' },
+    { name: 'plugin2', version: '0.1.0', type: 'user' },
+    { name: 'plugin3', version: '0.1.0', type: 'user' }
   ]
 
-  helpers.getNpmLatestVersion.mockImplementation(() => '0.2')
-  helpers.getNpmLocalVersion.mockImplementation(() => '0.1')
+  helpers.getNpmLatestVersion.mockImplementation(() => '0.2.0')
+  helpers.getNpmLocalVersion.mockImplementation(() => '0.1.0')
   command.config = mockConfig(corePlugins, installedPlugins)
 
   const spyList = jest.spyOn(command, '__list')
@@ -188,14 +227,14 @@ test('list', () => {
 test('interactive', () => {
   const corePlugins = ['@adobe/core1']
   const installedPlugins = [
-    { name: '@adobe/core1', version: '0.1', type: 'core' },
-    { name: 'plugin1', version: '0.1', type: 'user' },
-    { name: 'plugin2', version: '0.1', type: 'user' },
-    { name: 'plugin3', version: '0.1', type: 'user' }
+    { name: '@adobe/core1', version: '0.1.0', type: 'core' },
+    { name: 'plugin1', version: '0.1.0', type: 'user' },
+    { name: 'plugin2', version: '0.1.0', type: 'user' },
+    { name: 'plugin3', version: '0.1.0', type: 'user' }
   ]
 
-  helpers.getNpmLatestVersion.mockImplementation(() => '0.2')
-  helpers.getNpmLocalVersion.mockImplementation(() => '0.1')
+  helpers.getNpmLatestVersion.mockImplementation(() => '0.2.0')
+  helpers.getNpmLocalVersion.mockImplementation(() => '0.1.0')
   command.config = mockConfig(corePlugins, installedPlugins)
 
   const spyInstall = jest.spyOn(command, '__install')
