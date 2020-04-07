@@ -177,7 +177,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (-v|--version|version)
-@adobe/aio-cli/3.1.0 darwin-x64 node-v10.18.1
+@adobe/aio-cli/3.2.0 darwin-x64 node-v10.18.1
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -210,7 +210,6 @@ USAGE
 * [`aio certificate`](#aio-certificate)
 * [`aio certificate:generate`](#aio-certificategenerate)
 * [`aio certificate:verify FILE`](#aio-certificateverify-file)
-* [`aio clear`](#aio-clear)
 * [`aio config`](#aio-config)
 * [`aio config:clear`](#aio-configclear)
 * [`aio config:delete KEYS...`](#aio-configdelete-keys)
@@ -232,6 +231,7 @@ USAGE
 * [`aio plugins:link PLUGIN`](#aio-pluginslink-plugin)
 * [`aio plugins:uninstall PLUGIN...`](#aio-pluginsuninstall-plugin)
 * [`aio plugins:update`](#aio-pluginsupdate)
+* [`aio rollback`](#aio-rollback)
 * [`aio runtime`](#aio-runtime)
 * [`aio runtime:action`](#aio-runtimeaction)
 * [`aio runtime:action:create ACTIONNAME [ACTIONPATH]`](#aio-runtimeactioncreate-actionname-actionpath)
@@ -831,25 +831,6 @@ DESCRIPTION
 
 _See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/v0.1.1/src/commands/certificate/verify.js)_
 
-## `aio clear`
-
-Clears all installed plugins.
-
-```
-USAGE
-  $ aio clear
-
-OPTIONS
-  -c, --[no-]confirm  confirmation needed for clear (defaults to true)
-  -i, --interactive   interactive clear mode
-  -l, --list          list plugins that will be cleared
-
-ALIASES
-  $ aio plugins:clear
-```
-
-_See code: [src/commands/clear.js](https://github.com/adobe/aio-cli/blob/v3.1.0/src/commands/clear.js)_
-
 ## `aio config`
 
 list, get, set, delete, and edit persistent configuration data
@@ -1152,7 +1133,7 @@ ALIASES
   $ aio plugins:discover
 ```
 
-_See code: [src/commands/discover.js](https://github.com/adobe/aio-cli/blob/v3.1.0/src/commands/discover.js)_
+_See code: [src/commands/discover.js](https://github.com/adobe/aio-cli/blob/v3.2.0/src/commands/discover.js)_
 
 ## `aio help [COMMAND]`
 
@@ -1323,6 +1304,22 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/update.ts)_
+
+## `aio rollback`
+
+Clears all installed plugins.
+
+```
+USAGE
+  $ aio rollback
+
+OPTIONS
+  -c, --[no-]confirm  confirmation needed for clear (defaults to true)
+  -i, --interactive   interactive clear mode
+  -l, --list          list plugins that will be cleared
+```
+
+_See code: [src/commands/rollback.js](https://github.com/adobe/aio-cli/blob/v3.2.0/src/commands/rollback.js)_
 
 ## `aio runtime`
 
@@ -3052,7 +3049,12 @@ OPTIONS
   -c, --[no-]confirm  confirmation needed for update (defaults to true)
   -i, --interactive   interactive update mode
   -l, --list          list plugins that will be updated
+
+DESCRIPTION
+  This command will only:
+  - update core plugins that are from the @adobe namespace
+  - update all other user-installed plugins
 ```
 
-_See code: [src/commands/update.js](https://github.com/adobe/aio-cli/blob/v3.1.0/src/commands/update.js)_
+_See code: [src/commands/update.js](https://github.com/adobe/aio-cli/blob/v3.2.0/src/commands/update.js)_
 <!-- commandsstop -->
