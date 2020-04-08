@@ -41,6 +41,9 @@ function replaceTag (readme, tag, body) {
 const pkjson = fs.readJSONSync('package.json')
 const adobeDeps = pkjson.oclif.plugins
   .filter(item => item.indexOf('@adobe/aio-cli-plugin') === 0)
+  .concat([ // additional repos to show in health table
+    '@adobe/generator-aio-app'
+  ])
   .map(item => item.substring(1))
 
 // add the aio-cli itself ...
