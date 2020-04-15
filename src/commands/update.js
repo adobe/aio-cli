@@ -110,12 +110,15 @@ class UpdateCommand extends Command {
     // Filter installed plugins:
     // - remove any plugin that is in core, that is not from the @adobe namespace
     // These will not be updateable for compatibility reasons
-    const installedPlugins = this.config.plugins.filter(plugin =>
-      !(
-        corePlugins.includes(plugin.name) &&
+    const installedPlugins = this.config.plugins
+      .filter(plugin =>
+        !(
+          corePlugins.includes(plugin.name) &&
         !(plugin.name.startsWith('@adobe/'))
+        )
       )
-    )
+      // remove the cli itself from the plugin list
+      .filter(plugin => plugin.name !== this.config.pjson.name)
 
     for (const plugin of installedPlugins) {
       const { type, name, version: currentVersion } = plugin
