@@ -179,7 +179,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (-v|--version|version)
-@adobe/aio-cli/3.3.0 darwin-x64 node-v10.16.1
+@adobe/aio-cli/3.3.0 darwin-x64 node-v10.18.1
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -1170,7 +1170,7 @@ ALIASES
   $ aio plugins:discover
 ```
 
-_See code: [src/commands/discover.js](https://github.com/adobe/aio-cli/blob/v3.3.0/src/commands/discover.js)_
+_See code: [src/commands/discover.js](https://github.com/adobe/aio-cli/blob/3.3.0/src/commands/discover.js)_
 
 ## `aio help [COMMAND]`
 
@@ -1391,7 +1391,7 @@ OPTIONS
   -l, --list          list plugins that will be cleared
 ```
 
-_See code: [src/commands/rollback.js](https://github.com/adobe/aio-cli/blob/v3.3.0/src/commands/rollback.js)_
+_See code: [src/commands/rollback.js](https://github.com/adobe/aio-cli/blob/3.3.0/src/commands/rollback.js)_
 
 ## `aio runtime`
 
@@ -3139,5 +3139,5 @@ DESCRIPTION
   - update all other user-installed plugins
 ```
 
-_See code: [src/commands/update.js](https://github.com/adobe/aio-cli/blob/v3.3.0/src/commands/update.js)_
+_See code: [src/commands/update.js](https://github.com/adobe/aio-cli/blob/3.3.0/src/commands/update.js)_
 <!-- commandsstop -->

@@ -85,7 +85,8 @@
     "warn-if-update-available": {
       "timeoutInDays": 7,
       "message": "<%= config.name %> update available from <%= chalk.yellowBright(config.version) %> to <%= chalk.yellowBright(latest) %>.\nRun <%= chalk.greenBright('npm install -g ' + config.name) %> to update."
-    }
+    },
+    "repositoryPrefix": "<%- repo %>/blob/<%- version %>/<%- commandPath %>"
   },
   "jest": {
     "collectCoverage": true,
