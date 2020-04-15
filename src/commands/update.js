@@ -114,7 +114,7 @@ class UpdateCommand extends Command {
       .filter(plugin =>
         !(
           corePlugins.includes(plugin.name) &&
-        !(plugin.name.startsWith('@adobe/'))
+          !(plugin.name.startsWith('@adobe/'))
         )
       )
       // remove the cli itself from the plugin list
