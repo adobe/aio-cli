@@ -123,6 +123,10 @@ class UpdateCommand extends Command {
     for (const plugin of installedPlugins) {
       const { type, name, version: currentVersion } = plugin
       const latestVersion = await getNpmLatestVersion(name)
+      if (!latestVersion) {
+        continue
+      }
+
       let coreVersion = (type === 'core') ? currentVersion : null
       const needsUpdate = semver.gt(latestVersion, currentVersion)
       let needsWarning = false
