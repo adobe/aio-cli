@@ -133,6 +133,9 @@ test('updates needed? (via various semver versions)', async () => {
 
   helpers.getNpmLatestVersion.mockImplementation(() => 'v0.2.0')
   await createDoRunCommand({ needsUpdateCount: 1, spyCalledTimes: 6 }) // version prefixed with `v` is parsed out
+
+  helpers.getNpmLatestVersion.mockImplementation(() => undefined)
+  await createDoRunCommand({ needsUpdateCount: 0, spyCalledTimes: 7 }) // no npm latest
 })
 
 test('needs update (--no-confirm)', () => {
