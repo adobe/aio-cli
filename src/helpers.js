@@ -55,7 +55,7 @@ function sortValues (values, { descending = true, field = 'date' } = {}) {
 async function getNpmLatestVersion (npmPackageName) {
   const res = await fetch(`https://registry.npmjs.com/${npmPackageName}`)
   const { 'dist-tags': distTags } = await res.json()
-  return distTags.latest
+  return distTags && distTags.latest
 }
 
 /**
