@@ -11,7 +11,7 @@
   "dependencies": {
     "@adobe/aio-cli-plugin-app": "^1.5.0",
     "@adobe/aio-cli-plugin-auth": "^2.0.0",
-    "@adobe/aio-cli-plugin-certificate": "^0.1.1",
+    "@adobe/aio-cli-plugin-certificate": "^0.2.0",
     "@adobe/aio-cli-plugin-config": "^2.2.1",
     "@adobe/aio-cli-plugin-console": "^2.0.4",
     "@adobe/aio-cli-plugin-jwt-auth": "^2.0.3",
