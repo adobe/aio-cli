@@ -179,7 +179,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (-v|--version|version)
-@adobe/aio-cli/3.4.0 darwin-x64 node-v10.16.1
+@adobe/aio-cli/3.4.1 darwin-x64 node-v10.16.1
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -206,7 +206,7 @@ USAGE
 * [`aio app:run`](#aio-apprun)
 * [`aio app:test`](#aio-apptest)
 * [`aio app:undeploy`](#aio-appundeploy)
-* [`aio app:use CONFIG_FILE_PATH`](#aio-appuse-config_file_path)
+* [`aio app:use [CONFIG_FILE_PATH]`](#aio-appuse-config_file_path)
 * [`aio auth`](#aio-auth)
 * [`aio auth:ctx`](#aio-authctx)
 * [`aio auth:login`](#aio-authlogin)
@@ -314,7 +314,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.2/src/commands/app/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/index.js)_
 
 ## `aio app:add`
 
@@ -329,7 +329,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.2/src/commands/app/add/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/add/index.js)_
 
 ## `aio app:add:action`
 
@@ -346,7 +346,7 @@ OPTIONS
   --version       Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.2/src/commands/app/add/action.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/add/action.js)_
 
 ## `aio app:add:auth`
 
@@ -361,7 +361,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.2/src/commands/app/add/auth.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/add/auth.js)_
 
 ## `aio app:add:ci`
 
@@ -376,7 +376,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.2/src/commands/app/add/ci.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/add/ci.js)_
 
 ## `aio app:add:web-assets`
 
@@ -393,7 +393,7 @@ OPTIONS
   --version       Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.2/src/commands/app/add/web-assets.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/add/web-assets.js)_
 
 ## `aio app:create [PATH]`
 
@@ -412,7 +412,7 @@ OPTIONS
   --version            Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.2/src/commands/app/create.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/create.js)_
 
 ## `aio app:delete`
 
@@ -427,7 +427,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.2/src/commands/app/delete/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/delete/index.js)_
 
 ## `aio app:delete:action [ACTION-NAME]`
 
@@ -446,7 +446,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.2/src/commands/app/delete/action.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/delete/action.js)_
 
 ## `aio app:delete:ci`
 
@@ -462,7 +462,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.2/src/commands/app/delete/ci.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/delete/ci.js)_
 
 ## `aio app:delete:web-assets`
 
@@ -478,7 +478,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.2/src/commands/app/delete/web-assets.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/delete/web-assets.js)_
 
 ## `aio app:deploy`
 
@@ -498,7 +498,7 @@ OPTIONS
   --version            Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.2/src/commands/app/deploy.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/deploy.js)_
 
 ## `aio app:get-url [ACTION]`
 
@@ -517,7 +517,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.2/src/commands/app/get-url.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/get-url.js)_
 
 ## `aio app:init [PATH]`
 
@@ -538,7 +538,7 @@ OPTIONS
   --version            Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.2/src/commands/app/init.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/init.js)_
 
 ## `aio app:logs`
 
@@ -554,7 +554,7 @@ OPTIONS
   --version          Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.2/src/commands/app/logs.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/logs.js)_
 
 ## `aio app:run`
 
@@ -571,7 +571,7 @@ OPTIONS
   --version       Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.2/src/commands/app/run.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/run.js)_
 
 ## `aio app:test`
 
@@ -588,7 +588,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.2/src/commands/app/test.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/test.js)_
 
 ## `aio app:undeploy`
 
@@ -605,15 +605,15 @@ OPTIONS
   --version       Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.2/src/commands/app/undeploy.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/undeploy.js)_
 
-## `aio app:use CONFIG_FILE_PATH`
+## `aio app:use [CONFIG_FILE_PATH]`
 
 Import an Adobe I/O Developer Console configuration file
 
 ```
 USAGE
-  $ aio app:use CONFIG_FILE_PATH
+  $ aio app:use [CONFIG_FILE_PATH]
 
 ARGUMENTS
   CONFIG_FILE_PATH  path to an Adobe I/O Developer Console configuration file
@@ -625,7 +625,7 @@ OPTIONS
   --version        Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.2/src/commands/app/use.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/use.js)_
 
 ## `aio auth`
 
@@ -1281,7 +1281,7 @@ ALIASES
   $ aio plugins:discover
 ```
 
-_See code: [src/commands/discover.js](https://github.com/adobe/aio-cli/blob/3.4.0/src/commands/discover.js)_
+_See code: [src/commands/discover.js](https://github.com/adobe/aio-cli/blob/3.4.1/src/commands/discover.js)_
 
 ## `aio help [COMMAND]`
 
@@ -1496,7 +1496,7 @@ OPTIONS
   -l, --list          list plugins that will be cleared
 ```
 
-_See code: [src/commands/rollback.js](https://github.com/adobe/aio-cli/blob/3.4.0/src/commands/rollback.js)_
+_See code: [src/commands/rollback.js](https://github.com/adobe/aio-cli/blob/3.4.1/src/commands/rollback.js)_
 
 ## `aio runtime`
 
@@ -3245,5 +3245,5 @@ DESCRIPTION
   - update all other user-installed plugins
 ```
 
-_See code: [src/commands/update.js](https://github.com/adobe/aio-cli/blob/3.4.0/src/commands/update.js)_
+_See code: [src/commands/update.js](https://github.com/adobe/aio-cli/blob/3.4.1/src/commands/update.js)_
 <!-- commandsstop -->
