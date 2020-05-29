@@ -18,7 +18,7 @@ script:
   - npm test
 
 after_success:
-- ./node_modules/.bin/codecov
+- bash <(curl -s https://codecov.io/bash)
 
 # safelist (prevent double builds in PRs)
 branches:
