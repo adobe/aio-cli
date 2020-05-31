@@ -28,7 +28,7 @@
     "cli-ux": "^5.4.5",
     "inquirer": "^7.1.0",
     "node-fetch": "^2.5.0",
-    "ora": "^4.0.3",
+    "ora": "^4.0.4",
     "semver": "^7.3.2"
   },
   "devDependencies": {
