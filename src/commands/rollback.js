@@ -16,6 +16,7 @@ const { cli } = require('cli-ux')
 const { prompt } = require('../helpers')
 
 require('../types.jsdoc') // get types
+/* global InstalledPlugin */
 
 class RollbackCommand extends Command {
   /**

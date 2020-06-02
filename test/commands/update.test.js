@@ -38,6 +38,7 @@ beforeEach(() => {
   }
 })
 
+/** @private */
 function mockConfig (corePlugins, installedPlugins) {
   return {
     root: '/cliroot',
@@ -51,6 +52,7 @@ function mockConfig (corePlugins, installedPlugins) {
   }
 }
 
+/** @private */
 function doRunCommand (argv, onSuccess, onFailure) {
   return new Promise((resolve, reject) => {
     command.argv = argv

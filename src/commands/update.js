@@ -18,6 +18,9 @@ const ora = require('ora')
 const semver = require('semver')
 const { prompt, getNpmLatestVersion, getNpmLocalVersion } = require('../helpers')
 
+require('../types.jsdoc') // get types
+/* global ToUpdatePlugin */
+
 class UpdateCommand extends Command {
   /**
    * List the plugins that have updates.
@@ -98,10 +101,7 @@ class UpdateCommand extends Command {
   /**
    * Process the plugins, determine if they need updates or warnings.
    *
-   * @param {object} cliRoot the root folder of the cli
-   * @param {Array<string>} corePlugins package names of the core plugins
-   * @param {Array<InstalledPlugin>} installedPlugins
-   * @returns {Array<ToUpdatePlugin}
+   * @returns {Array<ToUpdatePlugin>} the process plugins
    */
   async __processPlugins () {
     const corePlugins = this.config.pjson.oclif.plugins
