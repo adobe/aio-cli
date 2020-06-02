@@ -22,10 +22,11 @@ require('./types.jsdoc') // get types
  * Note that this will use the Javascript sort() function, thus the values will
  * be sorted in-place.
  *
- * @param {array} values array of objects (with fields to sort by)
- * @param {object} [options]
+ * @param {Array<object>} values array of objects (with fields to sort by)
+ * @param {object} [options] sort options to pass
  * @param {boolean} [options.descending] true by default, sort order
  * @param {string} [options.field] 'date' by default, sort field ('name', 'date' options)
+ * @returns {Array<object>} the sorted values array (input values array sorted in place)
  */
 function sortValues (values, { descending = true, field = 'date' } = {}) {
   const supportedFields = ['name', 'date']
@@ -72,6 +73,12 @@ async function getNpmLocalVersion (cliRoot, npmPackageName) {
   return pjson.version
 }
 
+/**
+ * Prompt for confirmation.
+ *
+ * @param {string} [message=Confirm?] the message to show
+ * @param {boolean} [defaultValue=false] the default value if the user presses 'Enter'
+ */
 async function prompt (message = 'Confirm?', defaultValue = false) {
   return inquirer.prompt({
     name: 'confirm',

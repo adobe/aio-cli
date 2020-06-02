@@ -63,7 +63,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (-v|--version|version)
-@adobe/aio-cli/3.4.1 darwin-x64 node-v10.16.1
+@adobe/aio-cli/3.4.1 darwin-x64 node-v10.18.1
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -109,7 +109,7 @@ USAGE
 * [`aio console`](#aio-console)
 * [`aio console:org`](#aio-consoleorg)
 * [`aio console:org:list`](#aio-consoleorglist)
-* [`aio console:org:select ORGID`](#aio-consoleorgselect-orgid)
+* [`aio console:org:select ORGCODE`](#aio-consoleorgselect-orgcode)
 * [`aio console:project`](#aio-consoleproject)
 * [`aio console:project:list`](#aio-consoleprojectlist)
 * [`aio console:project:select PROJECTID`](#aio-consoleprojectselect-projectid)
@@ -198,7 +198,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.1.0/src/commands/app/index.js)_
 
 ## `aio app:add`
 
@@ -213,7 +213,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/add/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.1.0/src/commands/app/add/index.js)_
 
 ## `aio app:add:action`
 
@@ -230,7 +230,7 @@ OPTIONS
   --version       Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/add/action.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.1.0/src/commands/app/add/action.js)_
 
 ## `aio app:add:auth`
 
@@ -245,7 +245,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/add/auth.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.1.0/src/commands/app/add/auth.js)_
 
 ## `aio app:add:ci`
 
@@ -260,7 +260,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/add/ci.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.1.0/src/commands/app/add/ci.js)_
 
 ## `aio app:add:web-assets`
 
@@ -277,7 +277,7 @@ OPTIONS
   --version       Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/add/web-assets.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.1.0/src/commands/app/add/web-assets.js)_
 
 ## `aio app:create [PATH]`
 
@@ -296,7 +296,7 @@ OPTIONS
   --version            Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/create.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.1.0/src/commands/app/create.js)_
 
 ## `aio app:delete`
 
@@ -311,7 +311,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/delete/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.1.0/src/commands/app/delete/index.js)_
 
 ## `aio app:delete:action [ACTION-NAME]`
 
@@ -330,7 +330,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/delete/action.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.1.0/src/commands/app/delete/action.js)_
 
 ## `aio app:delete:ci`
 
@@ -346,7 +346,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/delete/ci.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.1.0/src/commands/app/delete/ci.js)_
 
 ## `aio app:delete:web-assets`
 
@@ -362,7 +362,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/delete/web-assets.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.1.0/src/commands/app/delete/web-assets.js)_
 
 ## `aio app:deploy`
 
@@ -375,6 +375,7 @@ USAGE
 OPTIONS
   -a, --action=action  Deploy only a specific action, the flags can be specified multiple times
   -v, --verbose        Verbose output
+  --open               Open the default web browser after a successful deploy, only valid if your app has a front-end
   --skip-actions       Skip action build & deploy
   --skip-build         Skip build phase
   --skip-deploy        Skip deploy phase
@@ -382,7 +383,7 @@ OPTIONS
   --version            Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/deploy.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.1.0/src/commands/app/deploy.js)_
 
 ## `aio app:get-url [ACTION]`
 
@@ -401,7 +402,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/get-url.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.1.0/src/commands/app/get-url.js)_
 
 ## `aio app:init [PATH]`
 
@@ -419,10 +420,11 @@ OPTIONS
   -s, --skip-install   Skip npm installation after files are created
   -v, --verbose        Verbose output
   -y, --yes            Skip questions, and use all default values
+  --[no-]login         Login using your Adobe ID for interacting with Adobe I/O Developer Console
   --version            Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/init.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.1.0/src/commands/app/init.js)_
 
 ## `aio app:logs`
 
@@ -438,7 +440,7 @@ OPTIONS
   --version          Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/logs.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.1.0/src/commands/app/logs.js)_
 
 ## `aio app:run`
 
@@ -451,11 +453,12 @@ USAGE
 OPTIONS
   -v, --verbose   Verbose output
   --local         run/debug actions locally
+  --open          Open the default web browser after a successful run, only valid if your app has a front-end
   --skip-actions  skip actions, only run the ui server
   --version       Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/run.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.1.0/src/commands/app/run.js)_
 
 ## `aio app:test`
 
@@ -472,7 +475,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/test.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.1.0/src/commands/app/test.js)_
 
 ## `aio app:undeploy`
 
@@ -489,7 +492,7 @@ OPTIONS
   --version       Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/undeploy.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.1.0/src/commands/app/undeploy.js)_
 
 ## `aio app:use [CONFIG_FILE_PATH]`
 
@@ -509,7 +512,7 @@ OPTIONS
   --version        Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.0.4/src/commands/app/use.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/2.1.0/src/commands/app/use.js)_
 
 ## `aio auth`
 
@@ -560,7 +563,7 @@ EXAMPLE
      }
 ```
 
-_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/2.1.0/src/commands/auth/index.js)_
+_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/2.1.2/src/commands/auth/index.js)_
 
 ## `aio auth:ctx`
 
@@ -600,7 +603,7 @@ ALIASES
   $ aio context
 ```
 
-_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/2.1.0/src/commands/auth/ctx.js)_
+_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/2.1.2/src/commands/auth/ctx.js)_
 
 ## `aio auth:login`
 
@@ -652,7 +655,7 @@ ALIASES
   $ aio login
 ```
 
-_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/2.1.0/src/commands/auth/login.js)_
+_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/2.1.2/src/commands/auth/login.js)_
 
 ## `aio auth:logout`
 
@@ -689,7 +692,7 @@ ALIASES
   $ aio logout
 ```
 
-_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/2.1.0/src/commands/auth/logout.js)_
+_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/2.1.2/src/commands/auth/logout.js)_
 
 ## `aio autocomplete [SHELL]`
 
@@ -931,7 +934,7 @@ OPTIONS
   --help  Show help
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.0.0/src/commands/console/index.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.0.1/src/commands/console/index.js)_
 
 ## `aio console:org`
 
@@ -945,7 +948,7 @@ OPTIONS
   --help  Show help
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.0.0/src/commands/console/org/index.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.0.1/src/commands/console/org/index.js)_
 
 ## `aio console:org:list`
 
@@ -964,18 +967,18 @@ ALIASES
   $ aio console:org:list
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.0.0/src/commands/console/org/list.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.0.1/src/commands/console/org/list.js)_
 
-## `aio console:org:select ORGID`
+## `aio console:org:select ORGCODE`
 
 Select an Organization
 
 ```
 USAGE
-  $ aio console:org:select ORGID
+  $ aio console:org:select ORGCODE
 
 ARGUMENTS
-  ORGID  Adobe I/O Org Id
+  ORGCODE  Adobe I/O Org Code
 
 OPTIONS
   --help  Show help
@@ -985,7 +988,7 @@ ALIASES
   $ aio console:org:sel
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.0.0/src/commands/console/org/select.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.0.1/src/commands/console/org/select.js)_
 
 ## `aio console:project`
 
@@ -999,7 +1002,7 @@ OPTIONS
   --help  Show help
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.0.0/src/commands/console/project/index.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.0.1/src/commands/console/project/index.js)_
 
 ## `aio console:project:list`
 
@@ -1019,7 +1022,7 @@ ALIASES
   $ aio console:project:ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.0.0/src/commands/console/project/list.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.0.1/src/commands/console/project/list.js)_
 
 ## `aio console:project:select PROJECTID`
 
@@ -1040,7 +1043,7 @@ ALIASES
   $ aio console:project:sel
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.0.0/src/commands/console/project/select.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.0.1/src/commands/console/project/select.js)_
 
 ## `aio console:where`
 
@@ -1059,7 +1062,7 @@ ALIASES
   $ aio where
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.0.0/src/commands/console/where/index.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.0.1/src/commands/console/where/index.js)_
 
 ## `aio console:workspace`
 
@@ -1076,7 +1079,7 @@ ALIASES
   $ aio console:ws
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.0.0/src/commands/console/workspace/index.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.0.1/src/commands/console/workspace/index.js)_
 
 ## `aio console:workspace:download [DESTINATION]`
 
@@ -1099,7 +1102,7 @@ ALIASES
   $ aio console:ws:dl
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.0.0/src/commands/console/workspace/download.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.0.1/src/commands/console/workspace/download.js)_
 
 ## `aio console:workspace:list`
 
@@ -1121,7 +1124,7 @@ ALIASES
   $ aio console:ws:ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.0.0/src/commands/console/workspace/list.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.0.1/src/commands/console/workspace/list.js)_
 
 ## `aio console:workspace:select WORKSPACEID`
 
@@ -1141,7 +1144,7 @@ ALIASES
   $ aio console:ws:sel
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.0.0/src/commands/console/workspace/select.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.0.1/src/commands/console/workspace/select.js)_
 
 ## `aio discover`
 
@@ -1182,7 +1185,7 @@ OPTIONS
   --all  see all commands in CLI
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.1/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.3/src/commands/help.ts)_
 
 ## `aio info`
 
@@ -1249,7 +1252,7 @@ EXAMPLE
   $ aio plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.9/src/commands/plugins/index.ts)_
 
 ## `aio plugins:install PLUGIN...`
 
@@ -1285,7 +1288,7 @@ EXAMPLES
   $ aio plugins:install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.9/src/commands/plugins/install.ts)_
 
 ## `aio plugins:link PLUGIN`
 
@@ -1312,7 +1315,7 @@ EXAMPLE
   $ aio plugins:link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.9/src/commands/plugins/link.ts)_
 
 ## `aio plugins:uninstall PLUGIN...`
 
@@ -1334,7 +1337,7 @@ ALIASES
   $ aio plugins:remove
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.9/src/commands/plugins/uninstall.ts)_
 
 ## `aio plugins:update`
 
@@ -1349,7 +1352,7 @@ OPTIONS
   -v, --verbose
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.8/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.7.9/src/commands/plugins/update.ts)_
 
 ## `aio report`
 
