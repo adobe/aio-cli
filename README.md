@@ -52,6 +52,10 @@ run gen-health-table.js with `npm run gen-health`
 | [@adobe/generator-aio-app](https://github.com/adobe/generator-aio-app)  | [![Version](https://img.shields.io/npm/v/@adobe/generator-aio-app.svg)](https://npmjs.org/package/@adobe/generator-aio-app)| [![Downloads/week](https://img.shields.io/npm/dw/@adobe/generator-aio-app.svg)](https://npmjs.org/package/@adobe/generator-aio-app)| [![Build Status](https://travis-ci.com/adobe/generator-aio-app.svg?branch=master)](https://travis-ci.com/adobe/generator-aio-app)| [![Codecov Coverage](https://img.shields.io/codecov/c/github/adobe/generator-aio-app/master.svg?style=flat-square)](https://codecov.io/gh/adobe/generator-aio-app/)| [![Github Issues](https://img.shields.io/github/issues/adobe/generator-aio-app.svg)](https://github.com/adobe/generator-aio-app/issues)| [![Github Pull Requests](https://img.shields.io/github/issues-pr/adobe/generator-aio-app.svg)](https://github.com/adobe/generator-aio-app/pulls)|
 <!-- healthstop -->
 
+# Getting started
+
+See the [Project Firefly docs](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html)
+
 # Usage
 <!-- usage -->
 ```sh-session
