@@ -121,7 +121,6 @@ USAGE
 * [`aio discover`](#aio-discover)
 * [`aio help [COMMAND]`](#aio-help-command)
 * [`aio info`](#aio-info)
-* [`aio jwt-auth:access-token`](#aio-jwt-authaccess-token)
 * [`aio plugins`](#aio-plugins)
 * [`aio plugins:install PLUGIN...`](#aio-pluginsinstall-plugin)
 * [`aio plugins:link PLUGIN`](#aio-pluginslink-plugin)
@@ -1199,43 +1198,7 @@ OPTIONS
   -j, --json  output raw json
 ```
 
-_See code: [@adobe/aio-cli-plugin-info](https://github.com/adobe/aio-cli-plugin-info/blob/0.1.2/src/commands/info.js)_
-
-## `aio jwt-auth:access-token`
-
-get the access token for the Adobe I/O Console
-
-```
-USAGE
-  $ aio jwt-auth:access-token
-
-OPTIONS
-  -b, --bare                   print access token only
-  -f, --force                  get a new access token
-  -p, --passphrase=passphrase  the passphrase for the private-key
-  --no-prompt                  do not prompt for passphrase
-
-DESCRIPTION
-  You must have a 'jwt-auth' key in your config, that has all your config data in .json format:
-       aio config set jwt-auth --json --file path/to/your/config.json
-
-EXAMPLE
-
-  jwt_auth:
-  {
-     "client_id": "...",
-     "client_secret": "..."
-     "jwt_payload": {
-       "iss": "...",
-       "sub": "...",
-       "...": true,
-       "aud": "..."
-     },
-     "jwt_private_key": "/path/to/cert"
-  }
-```
-
-_See code: [@adobe/aio-cli-plugin-jwt-auth](https://github.com/adobe/aio-cli-plugin-jwt-auth/blob/v2.0.3/src/commands/jwt-auth/access-token.js)_
+_See code: [@adobe/aio-cli-plugin-info](https://github.com/adobe/aio-cli-plugin-info/blob/0.1.3/src/commands/info.js)_
 
 ## `aio plugins`
 
@@ -1367,7 +1330,7 @@ OPTIONS
   -f, --feature  request a feature
 ```
 
-_See code: [@adobe/aio-cli-plugin-info](https://github.com/adobe/aio-cli-plugin-info/blob/0.1.2/src/commands/report.js)_
+_See code: [@adobe/aio-cli-plugin-info](https://github.com/adobe/aio-cli-plugin-info/blob/0.1.3/src/commands/report.js)_
 
 ## `aio rollback`
 
