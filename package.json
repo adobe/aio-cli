@@ -9,6 +9,7 @@
   },
   "bugs": "https://github.com/adobe/aio-cli/issues",
   "dependencies": {
+    "@adobe/aio-cli-plugin-events": "^1.0.0",
     "@adobe/aio-cli-plugin-app": "^3.0.0",
     "@adobe/aio-cli-plugin-auth": "^2.2.0",
     "@adobe/aio-cli-plugin-certificate": "^0.2.0",
@@ -81,7 +82,8 @@
       "@adobe/aio-cli-plugin-app",
       "@adobe/aio-cli-plugin-auth",
       "@adobe/aio-cli-plugin-certificate",
-      "@adobe/aio-cli-plugin-info"
+      "@adobe/aio-cli-plugin-info",
+      "@adobe/aio-cli-plugin-events"
     ],
     "warn-if-update-available": {
       "timeoutInDays": 7,
