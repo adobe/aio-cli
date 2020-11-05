@@ -23,7 +23,7 @@
     "@oclif/plugin-autocomplete": "^0.2.0",
     "@oclif/plugin-help": "^2.2.3",
     "@oclif/plugin-not-found": "^1.2.4",
-    "@oclif/plugin-plugins": "^1.7.10",
+    "@oclif/plugin-plugins": "^1.9.1",
     "@oclif/plugin-warn-if-update-available": "^1.7.0",
     "chalk": "^4.1.0",
     "cli-ux": "^5.5.0",
