@@ -27,13 +27,14 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
-    - run: |
-      ./bin/run --help
-      ./bin/run plugins --core
-      ./bin/run config --help
-      ./bin/run console --help
-      ./bin/run jwt-auth --help
-      ./bin/run runtime --help
+    - name: run tests
+      run: |
+        ./bin/run --help
+        ./bin/run plugins --core
+        ./bin/run config --help
+        ./bin/run console --help
+        ./bin/run jwt-auth --help
+        ./bin/run runtime --help
     - name: upload coverage
       if: success()
       run: curl -s https://codecov.io/bash | bash
