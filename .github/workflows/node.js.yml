@@ -33,7 +33,6 @@ jobs:
         ./bin/run plugins --core
         ./bin/run config --help
         ./bin/run console --help
-        ./bin/run jwt-auth --help
         ./bin/run runtime --help
     - name: upload coverage
       if: success()
