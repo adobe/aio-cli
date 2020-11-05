@@ -92,12 +92,12 @@ class DiscoCommand extends Command {
     const { flags } = this.parse(DiscoCommand)
 
     try {
-      const url = 'https://api.npms.io/v2/search?q=aio-cli-plugin'
+      const url = 'https://registry.npmjs.org/-/v1/search?text=aio-cli-plugin'
       const response = await fetch(url)
       const json = await response.json()
 
       // ours only, this could become a flag, searching for oclif-plugin reveals some more
-      const adobeOnly = json.results
+      const adobeOnly = json.objects
         .map(e => e.package)
         .filter(elem => elem.scope === 'adobe')
 

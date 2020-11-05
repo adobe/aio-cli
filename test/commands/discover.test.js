@@ -38,7 +38,7 @@ describe('sorting', () => {
   later.setDate(later.getDate() + 10)
 
   const expectedResult = {
-    results: [
+    objects: [
       { package: { scope: 'adobe', name: 'foo', description: 'some foo', version: '1.0.0', date: genesis } },
       { package: { scope: 'adobe', name: 'bar', description: 'some bar', version: '1.0.1', date: later } }
     ]
@@ -49,7 +49,7 @@ describe('sorting', () => {
 
   test('unknown sort-field', async () => {
     fetch.mockResponseOnce(JSON.stringify({
-      results: []
+      objects: []
     }))
     command.argv = ['--sort-field', 'unknown']
     return new Promise((resolve, reject) => {
@@ -123,7 +123,7 @@ test('interactive install', async () => {
   const dayAfter = new Date(tomorrow.valueOf() + 86400000)
 
   const expectedResult = {
-    results: [
+    objects: [
       { package: { scope: 'adobe', name: 'foo', description: 'some foo', version: '1.0.0', date: now } },
       { package: { scope: 'adobe', name: 'bar', description: 'some bar', version: '1.0.1', date: tomorrow } },
       { package: { scope: 'adobe', name: 'baz', description: 'some baz', version: '1.0.2', date: dayAfter } }
@@ -151,7 +151,7 @@ test('interactive install - no choices', async () => {
   const now = new Date()
 
   const expectedResult = {
-    results: [
+    objects: [
       { package: { scope: 'adobe', name: 'baz', description: 'some baz', version: '1.0.2', date: now } }
     ]
   }
