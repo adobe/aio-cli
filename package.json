@@ -10,7 +10,7 @@
   "bugs": "https://github.com/adobe/aio-cli/issues",
   "dependencies": {
     "@adobe/aio-cli-plugin-events": "^1.1.0",
-    "@adobe/aio-cli-plugin-app": "^5.0.2",
+    "@adobe/aio-cli-plugin-app": "^5.1.1",
     "@adobe/aio-cli-plugin-auth": "^2.4.0",
     "@adobe/aio-cli-plugin-certificate": "^0.2.0",
     "@adobe/aio-cli-plugin-config": "^2.3.0",
@@ -46,7 +46,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "execa": "^4.0.2",
-    "jest": "^24.9.0",
+    "jest": "^26.6.3",
     "jest-fetch-mock": "^3.0.0",
     "jest-junit": "^10.0.0",
     "jest-plugin-fs": "^2.9.0",
