@@ -20,7 +20,7 @@
     "@oclif/color": "^0.1.2",
     "@oclif/command": "^1.8.0",
     "@oclif/config": "^1.17.0",
-    "@oclif/plugin-autocomplete": "^0.2.0",
+    "@oclif/plugin-autocomplete": "^0.2.1",
     "@oclif/plugin-help": "^2.2.3",
     "@oclif/plugin-not-found": "^1.2.4",
     "@oclif/plugin-plugins": "^1.9.1",
