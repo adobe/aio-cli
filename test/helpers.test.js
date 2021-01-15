@@ -11,9 +11,10 @@
  */
 
 const fetch = require('node-fetch')
-const { prompt, sortValues, getNpmLatestVersion, getNpmLocalVersion } = require('../src/helpers')
+const { prompt, sortValues, getNpmLatestVersion, getNpmLocalVersion, hideNPMWarnings } = require('../src/helpers')
 const fileSystem = require('jest-plugin-fs').default
 const inquirer = require('inquirer')
+const { stderr } = require('stdout-stderr')
 
 jest.mock('inquirer')
 
@@ -227,4 +228,38 @@ test('prompt', async () => {
     confirm: true
   })
   await expect(prompt()).resolves.toEqual(true)
+})
+
+describe('hideNPMWarnings', () => {
+  test('with string output', () => {
+    stderr.start()
+    hideNPMWarnings()
+    process.stderr.write('string')
+    stderr.stop()
+    expect(stderr.output).toBe('string')
+  })
+
+  test('with buffer output', () => {
+    stderr.start()
+    hideNPMWarnings()
+    process.stderr.write(Buffer.from('string'))
+    stderr.stop()
+    expect(stderr.output).toBe('string')
+  })
+
+  test('string output of warning should be stripped', () => {
+    stderr.start()
+    hideNPMWarnings()
+    process.stderr.write('warning')
+    stderr.stop()
+    expect(stderr.output).toBe('')
+  })
+
+  test('buffer output of warning should be stripped', () => {
+    stderr.start()
+    hideNPMWarnings()
+    process.stderr.write(Buffer.from('warning ...'))
+    stderr.stop()
+    expect(stderr.output).toBe('')
+  })
 })
