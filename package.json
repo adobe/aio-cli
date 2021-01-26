@@ -12,7 +12,7 @@
     "@adobe/aio-cli-plugin-events": "^1.1.0",
     "@adobe/aio-cli-plugin-app": "^5.1.1",
     "@adobe/aio-cli-plugin-auth": "^2.4.0",
-    "@adobe/aio-cli-plugin-certificate": "^0.2.0",
+    "@adobe/aio-cli-plugin-certificate": "^0.2.1",
     "@adobe/aio-cli-plugin-config": "^2.3.0",
     "@adobe/aio-cli-plugin-console": "^3.2.0",
     "@adobe/aio-cli-plugin-info": "^1.1.1",
@@ -23,14 +23,14 @@
     "@oclif/plugin-autocomplete": "^0.2.1",
     "@oclif/plugin-help": "^2.2.3",
     "@oclif/plugin-not-found": "^1.2.4",
-    "@oclif/plugin-plugins": "^1.9.1",
+    "@oclif/plugin-plugins": "^1.9.3",
     "@oclif/plugin-warn-if-update-available": "^1.7.0",
     "chalk": "^4.1.0",
-    "cli-ux": "^5.5.0",
+    "cli-ux": "^5.5.1",
     "inquirer": "^7.3.3",
     "node-fetch": "^2.6.1",
     "ora": "^4.1.0",
-    "semver": "^7.3.2"
+    "semver": "^7.3.4"
   },
   "devDependencies": {
     "@adobe/eslint-config-aio-lib-config": "^1.2.0",
