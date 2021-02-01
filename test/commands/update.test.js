@@ -240,6 +240,7 @@ test('interactive', () => {
 
   helpers.getNpmLatestVersion.mockImplementation(() => '0.2.0')
   helpers.getNpmLocalVersion.mockImplementation(() => '0.1.0')
+  helpers.hideNPMWarnings.mockImplementation(() => {})
   command.config = mockConfig(corePlugins, installedPlugins)
 
   const spyInstall = jest.spyOn(command, '__install')
@@ -252,5 +253,52 @@ test('interactive', () => {
   return doRunCommand(['--interactive'], async () => {
     expect(spyInstall).not.toHaveBeenCalled()
     expect(spyInteractiveInstall).toHaveBeenCalled()
+    expect(helpers.hideNPMWarnings).toHaveBeenCalled()
+  })
+})
+
+test('interactive [--verbose]', () => {
+  const corePlugins = ['@adobe/core1']
+  const installedPlugins = [
+    { name: '@adobe/core1', version: '0.1.0', type: 'core' },
+    { name: 'plugin1', version: '0.1.0', type: 'user' },
+    { name: 'plugin2', version: '0.1.0', type: 'user' },
+    { name: 'plugin3', version: '0.1.0', type: 'user' }
+  ]
+
+  helpers.getNpmLatestVersion.mockImplementation(() => '0.2.0')
+  helpers.getNpmLocalVersion.mockImplementation(() => '0.1.0')
+  helpers.hideNPMWarnings.mockImplementation(() => {})
+  command.config = mockConfig(corePlugins, installedPlugins)
+
+  inquirer.prompt = jest.fn().mockResolvedValue({
+    plugins: ['plugin1', 'plugin2']
+  })
+
+  return doRunCommand(['--interactive', '--verbose'], async () => {
+    expect(helpers.hideNPMWarnings).not.toHaveBeenCalled()
+  })
+})
+
+test('  asd [--verbose]', () => {
+  const corePlugins = ['@adobe/core1']
+  const installedPlugins = [
+    { name: '@adobe/core1', version: '0.1.0', type: 'core' },
+    { name: 'plugin1', version: '0.1.0', type: 'user' },
+    { name: 'plugin2', version: '0.1.0', type: 'user' },
+    { name: 'plugin3', version: '0.1.0', type: 'user' }
+  ]
+
+  helpers.getNpmLatestVersion.mockImplementation(() => '0.2.0')
+  helpers.getNpmLocalVersion.mockImplementation(() => '0.1.0')
+  helpers.hideNPMWarnings.mockImplementation(() => {})
+  command.config = mockConfig(corePlugins, installedPlugins)
+
+  inquirer.prompt = jest.fn().mockResolvedValue({
+    plugins: ['plugin1', 'plugin2']
+  })
+
+  return doRunCommand(['--no-confirm', '--verbose'], async () => {
+    expect(helpers.hideNPMWarnings).not.toHaveBeenCalled()
   })
 })

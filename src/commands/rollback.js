@@ -13,7 +13,7 @@
 const { Command, flags } = require('@oclif/command')
 const inquirer = require('inquirer')
 const { cli } = require('cli-ux')
-const { prompt } = require('../helpers')
+const { prompt, hideNPMWarnings } = require('../helpers')
 
 require('../types.jsdoc') // get types
 /* global InstalledPlugin */
@@ -46,7 +46,7 @@ class RollbackCommand extends Command {
    * @param {Array<InstalledPlugin>} plugins the installed plugins
    * @param {boolean} needsConfirm true to show confirmation prompt
    */
-  async __clear (plugins, needsConfirm) {
+  async __clear (plugins, needsConfirm, verbose) {
     await this.__list(plugins)
     let _doClear = true
 
@@ -57,6 +57,11 @@ class RollbackCommand extends Command {
     }
 
     if (_doClear) {
+      if (!verbose) {
+        // Intercept the stderr stream to hide npm warnings
+        hideNPMWarnings()
+      }
+
       // uninstall the plugins in sequence
       for (const plugin of plugins) {
         await this.config.runCommand('plugins:uninstall', [plugin.name])
@@ -70,7 +75,7 @@ class RollbackCommand extends Command {
    * @private
    * @param {Array<ToUpdatePlugin>} plugins the plugins to update
    */
-  async __interactiveClear (plugins) {
+  async __interactiveClear (plugins, verbose) {
     const inqChoices = plugins
       .map(plugin => { // map to expected inquirer format
         return {
@@ -85,6 +90,11 @@ class RollbackCommand extends Command {
       type: 'checkbox',
       choices: inqChoices
     }])
+
+    if (!verbose) {
+      // Intercept the stderr stream to hide npm warnings
+      hideNPMWarnings()
+    }
 
     // uninstall the plugins in sequence
     for (const plugin of response.plugins) {
@@ -107,9 +117,9 @@ class RollbackCommand extends Command {
     if (flags.list) {
       return this.__list(plugins)
     } else if (flags.interactive) {
-      return this.__interactiveClear(plugins)
+      return this.__interactiveClear(plugins, flags.verbose)
     } else {
-      return this.__clear(plugins, flags.confirm)
+      return this.__clear(plugins, flags.confirm, flags.verbose)
     }
   }
 }
@@ -132,6 +142,11 @@ RollbackCommand.flags = {
     default: true,
     description: 'confirmation needed for clear (defaults to true)',
     allowNo: true
+  }),
+  verbose: flags.boolean({
+    char: 'v',
+    default: false,
+    description: 'Verbose output'
   })
 }
 

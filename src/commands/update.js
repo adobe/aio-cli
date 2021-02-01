@@ -16,7 +16,7 @@ const { cli } = require('cli-ux')
 const chalk = require('chalk')
 const ora = require('ora')
 const semver = require('semver')
-const { prompt, getNpmLatestVersion, getNpmLocalVersion } = require('../helpers')
+const { prompt, getNpmLatestVersion, getNpmLocalVersion, hideNPMWarnings } = require('../helpers')
 
 require('../types.jsdoc') // get types
 /* global ToUpdatePlugin */
@@ -52,7 +52,7 @@ class UpdateCommand extends Command {
    * @param {Array<ToUpdatePlugin>} plugins the plugins to update
    * @param {boolean} needsConfirm true to show confirmation prompt
    */
-  async __install (plugins, needsConfirm) {
+  async __install (plugins, needsConfirm, verbose) {
     await this.__list(plugins)
     let _doUpdate = true
 
@@ -61,8 +61,12 @@ class UpdateCommand extends Command {
     if (needsConfirm) {
       _doUpdate = await prompt(`Update ${plugins.length} plugin(s)?`)
     }
-
     if (_doUpdate) {
+      if (!verbose) {
+        // Intercept the stderr stream to hide npm warnings
+        hideNPMWarnings()
+      }
+
       // install the plugins in sequence
       for (const plugin of plugins) {
         await this.config.runCommand('plugins:install', [plugin.name])
@@ -76,7 +80,7 @@ class UpdateCommand extends Command {
    * @private
    * @param {Array<ToUpdatePlugin>} plugins the plugins to update
    */
-  async __interactiveInstall (plugins) {
+  async __interactiveInstall (plugins, verbose) {
     const inqChoices = plugins
       .map(plugin => { // map to expected inquirer format
         return {
@@ -91,6 +95,11 @@ class UpdateCommand extends Command {
       type: 'checkbox',
       choices: inqChoices
     }])
+
+    if (!verbose) {
+      // Intercept the stderr stream to hide npm warnings
+      hideNPMWarnings()
+    }
 
     // install the plugins in sequence
     for (const plugin of response.plugins) {
@@ -184,9 +193,9 @@ class UpdateCommand extends Command {
     if (flags.list) {
       return this.__list(needsUpdate)
     } else if (flags.interactive) {
-      return this.__interactiveInstall(needsUpdate)
+      return this.__interactiveInstall(needsUpdate, flags.verbose)
     } else {
-      return this.__install(needsUpdate, flags.confirm)
+      return this.__install(needsUpdate, flags.confirm, flags.verbose)
     }
   }
 }
@@ -213,6 +222,11 @@ UpdateCommand.flags = {
     default: true,
     description: 'confirmation needed for update (defaults to true)',
     allowNo: true
+  }),
+  verbose: flags.boolean({
+    char: 'v',
+    default: false,
+    description: 'Verbose output'
   })
 }
 
