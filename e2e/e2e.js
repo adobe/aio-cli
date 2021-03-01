@@ -11,7 +11,7 @@ governing permissions and limitations under the License.
 
 const execa = require('execa')
 const chalk = require('chalk')
-const fs = require.requireActual('fs')
+const fs = jest.requireActual('fs')
 
 test('cli init test', async () => {
   const packagejson = JSON.parse(fs.readFileSync('package.json').toString())
@@ -26,9 +26,19 @@ test('cli init test', async () => {
   console.log(chalk.bold('    - running tests..'))
   expect(() => { execa.sync('node', ['../bin/run', 'app', 'init', '-y'], { stderr: 'inherit' }) }).not.toThrow()
 
-  const files = ['actions/generic/index.js', 'test/actions/generic.test.js', 'test/jest.setup.js',
-    'web-src/src/App.js', 'web-src/src/exc-runtime.js', 'web-src/404.html',
-    'web-src/index.html', '.aio', '.env', 'package.json', 'README.md', 'manifest.yml']
+  const files = [
+    'actions/generic/index.js',
+    'test/actions/generic.test.js',
+    'test/jest.setup.js',
+    'web-src/src/index.js',
+    'web-src/src/exc-runtime.js',
+    'web-src/index.html',
+    '.aio',
+    '.env',
+    'package.json',
+    'README.md',
+    'manifest.yml']
+
   files.forEach(file => {
     expect(() => { execa.sync('ls', [file]) }).not.toThrow()
   })

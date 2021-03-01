@@ -90,9 +90,32 @@ async function prompt (message = 'Confirm?', defaultValue = false) {
   })
 }
 
+/**
+ * Hide NPM Warnings by intercepting process.stderr.write stream
+ *
+ */
+function hideNPMWarnings () {
+  var fn = process.stderr.write
+
+  /**
+   * Function to override the process.stderr.write and hide npm warnings
+   *
+   * @private
+   */
+  function write () {
+    const msg = Buffer.isBuffer(arguments[0]) ? arguments[0].toString() : arguments[0]
+    if (!msg.startsWith('warning')) {
+      fn.apply(process.stderr, arguments)
+    }
+    return true
+  }
+  process.stderr.write = write
+}
+
 module.exports = {
   prompt,
   sortValues,
   getNpmLatestVersion,
-  getNpmLocalVersion
+  getNpmLocalVersion,
+  hideNPMWarnings
 }

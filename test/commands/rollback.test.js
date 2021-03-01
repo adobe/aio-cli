@@ -13,6 +13,7 @@
 const fetch = require('node-fetch')
 const inquirer = require('inquirer')
 const { stdout } = require('stdout-stderr')
+const helpers = require('../../src/helpers')
 
 jest.mock('../../src/helpers')
 jest.mock('inquirer')
@@ -141,6 +142,48 @@ test('clear (--interactive)', () => {
   return doRunCommand(['--interactive'], async () => {
     const results = (await spy.mock.calls[0][0]).filter(p => p.type === 'user')
     expect(results.length).toEqual(3)
+  })
+})
+
+test('clear (--verbose)', () => {
+  const corePlugins = ['core1']
+  const installedPlugins = [
+    { name: 'core1', version: '0.1', type: 'core' },
+    { name: 'plugin1', version: '0.1', type: 'user' },
+    { name: 'plugin2', version: '0.1', type: 'user' },
+    { name: 'plugin3', version: '0.1', type: 'user' }
+  ]
+
+  inquirer.prompt = jest.fn().mockResolvedValue({
+    plugins: ['plugin1', 'plugin2']
+  })
+
+  helpers.hideNPMWarnings.mockImplementation(() => {})
+  command.config = mockConfig(corePlugins, installedPlugins)
+
+  return doRunCommand(['--no-confirm', '--verbose'], async () => {
+    expect(helpers.hideNPMWarnings).not.toHaveBeenCalled()
+  })
+})
+
+test('clear (--interactive. --verbose)', () => {
+  const corePlugins = ['core1']
+  const installedPlugins = [
+    { name: 'core1', version: '0.1', type: 'core' },
+    { name: 'plugin1', version: '0.1', type: 'user' },
+    { name: 'plugin2', version: '0.1', type: 'user' },
+    { name: 'plugin3', version: '0.1', type: 'user' }
+  ]
+
+  inquirer.prompt = jest.fn().mockResolvedValue({
+    plugins: ['plugin1', 'plugin2']
+  })
+
+  helpers.hideNPMWarnings.mockImplementation(() => {})
+  command.config = mockConfig(corePlugins, installedPlugins)
+
+  return doRunCommand(['--interactive', '--verbose'], async () => {
+    expect(helpers.hideNPMWarnings).not.toHaveBeenCalled()
   })
 })
 
