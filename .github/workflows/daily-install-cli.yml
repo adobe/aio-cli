@@ -1,0 +1,25 @@
+# This workflow will do an install of the @adobe/aio-cli
+# This will surface any plugin/dependency issues when installing
+
+name: Daily - test install aio-cli
+
+on:
+  schedule:
+    # run daily at midnight
+    - cron: '0 0 * * *'
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x]
+        os: [ubuntu-latest, windows-latest]
+
+    steps:
+    - run: npm i -g @adobe/aio-cli
+    - name: Slack Notification
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_COLOR: ${{ job.status == 'success' && 'good' || job.status == 'cancelled' && '#808080' || 'danger' }}
