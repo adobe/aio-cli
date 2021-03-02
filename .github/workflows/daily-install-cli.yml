@@ -17,7 +17,11 @@ jobs:
         os: [ubuntu-latest, windows-latest]
 
     steps:
-    - run: npm i -g @adobe/aio-cli
+    - name: npm
+      env:
+        NPM_CONFIG_PREFIX: "~/.npm-global"
+      run: |
+        npm i -g @adobe/aio-cli
     - name: Slack Notification
       uses: rtCamp/action-slack-notify@v2
       env:
