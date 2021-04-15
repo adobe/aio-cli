@@ -14,7 +14,7 @@
     "@adobe/aio-cli-plugin-auth": "^2.4.0",
     "@adobe/aio-cli-plugin-certificate": "^0.2.1",
     "@adobe/aio-cli-plugin-config": "^2.3.0",
-    "@adobe/aio-cli-plugin-console": "^3.2.0",
+    "@adobe/aio-cli-plugin-console": "^3.3.0",
     "@adobe/aio-cli-plugin-info": "^1.1.1",
     "@adobe/aio-cli-plugin-runtime": "^3.1.0",
     "@oclif/color": "^0.1.2",
