@@ -27,7 +27,7 @@ class UpdateCommand extends Command {
    *
    * @param {Array<ToUpdatePlugin>} plugins the plugins to update
    */
-  async __list (plugins, { col1 = 'plugin(s) to update', col2 = 'current', col3 = 'latest' } = {}) {
+  async __list(plugins, { col1 = 'plugin(s) to update', col2 = 'current', col3 = 'latest' } = {}) {
     const columns = {
       [col1]: {
         width: 10,
@@ -52,7 +52,7 @@ class UpdateCommand extends Command {
    * @param {Array<ToUpdatePlugin>} plugins the plugins to update
    * @param {boolean} needsConfirm true to show confirmation prompt
    */
-  async __install (plugins, needsConfirm, verbose) {
+  async __install(plugins, needsConfirm, verbose) {
     await this.__list(plugins)
     let _doUpdate = true
 
@@ -80,7 +80,7 @@ class UpdateCommand extends Command {
    * @private
    * @param {Array<ToUpdatePlugin>} plugins the plugins to update
    */
-  async __interactiveInstall (plugins, verbose) {
+  async __interactiveInstall(plugins, verbose) {
     const inqChoices = plugins
       .map(plugin => { // map to expected inquirer format
         return {
@@ -112,7 +112,7 @@ class UpdateCommand extends Command {
    *
    * @returns {Array<ToUpdatePlugin>} the process plugins
    */
-  async __processPlugins () {
+  async __processPlugins() {
     const corePlugins = this.config.pjson.oclif.plugins
     const plugins = []
 
@@ -169,7 +169,7 @@ class UpdateCommand extends Command {
   /**
    * Command entry point
    */
-  async run () {
+  async run() {
     const { flags } = this.parse(UpdateCommand)
     const spinner = ora()
 
@@ -188,6 +188,10 @@ class UpdateCommand extends Command {
     if (needsUpdate.length === 0) {
       this.log('no plugins to update')
       return
+    }
+    else {
+      //short term solution for fixing old dependencies remaining in the local npm cache
+      this.log(`${chalk.red('warning:')} after plugins are updated, please run ${chalk.yellow('npm install -g @adobe/aio-cli')}`)
     }
 
     if (flags.list) {
