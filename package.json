@@ -12,7 +12,7 @@
     "@adobe/aio-cli-plugin-events": "^1.1.0",
     "@adobe/aio-cli-plugin-app": "^6.0.0",
     "@adobe/aio-cli-plugin-auth": "^2.4.1",
-    "@adobe/aio-cli-plugin-certificate": "^0.2.1",
+    "@adobe/aio-cli-plugin-certificate": "^0.3.0",
     "@adobe/aio-cli-plugin-config": "^2.3.0",
     "@adobe/aio-cli-plugin-console": "^3.2.0",
     "@adobe/aio-cli-plugin-info": "^1.1.1",
