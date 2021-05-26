@@ -36,6 +36,7 @@
     "@adobe/eslint-config-aio-lib-config": "^1.2.0",
     "@oclif/dev-cli": "^1",
     "acorn": "^7.1.1",
+    "babel-runtime": "^6.26.0",
     "eslint": "^6.0.0",
     "eslint-config-oclif": "^1",
     "eslint-config-standard": "^14.1.1",
