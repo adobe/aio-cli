@@ -68,7 +68,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (-v|--version|version)
-@adobe/aio-cli/6.0.0 darwin-x64 node-v12.16.0
+@adobe/aio-cli/7.0.0 darwin-x64 node-v14.16.0
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -94,6 +94,7 @@ USAGE
 * [`aio app:delete:web-assets`](#aio-appdeleteweb-assets)
 * [`aio app:deploy`](#aio-appdeploy)
 * [`aio app:get-url [ACTION]`](#aio-appget-url-action)
+* [`aio app:info`](#aio-appinfo)
 * [`aio app:init [PATH]`](#aio-appinit-path)
 * [`aio app:logs`](#aio-applogs)
 * [`aio app:run`](#aio-apprun)
@@ -118,15 +119,15 @@ USAGE
 * [`aio console`](#aio-console)
 * [`aio console:org`](#aio-consoleorg)
 * [`aio console:org:list`](#aio-consoleorglist)
-* [`aio console:org:select ORGCODE`](#aio-consoleorgselect-orgcode)
+* [`aio console:org:select [ORGCODE]`](#aio-consoleorgselect-orgcode)
 * [`aio console:project`](#aio-consoleproject)
 * [`aio console:project:list`](#aio-consoleprojectlist)
-* [`aio console:project:select PROJECTID`](#aio-consoleprojectselect-projectid)
+* [`aio console:project:select [PROJECTIDORNAME]`](#aio-consoleprojectselect-projectidorname)
 * [`aio console:where`](#aio-consolewhere)
 * [`aio console:workspace`](#aio-consoleworkspace)
 * [`aio console:workspace:download [DESTINATION]`](#aio-consoleworkspacedownload-destination)
 * [`aio console:workspace:list`](#aio-consoleworkspacelist)
-* [`aio console:workspace:select WORKSPACEID`](#aio-consoleworkspaceselect-workspaceid)
+* [`aio console:workspace:select [WORKSPACEIDORNAME]`](#aio-consoleworkspaceselect-workspaceidorname)
 * [`aio discover`](#aio-discover)
 * [`aio event`](#aio-event)
 * [`aio event:eventmetadata`](#aio-eventeventmetadata)
@@ -149,6 +150,7 @@ USAGE
 * [`aio help [COMMAND]`](#aio-help-command)
 * [`aio info`](#aio-info)
 * [`aio plugins`](#aio-plugins)
+* [`aio plugins:inspect PLUGIN...`](#aio-pluginsinspect-plugin)
 * [`aio plugins:install PLUGIN...`](#aio-pluginsinstall-plugin)
 * [`aio plugins:link PLUGIN`](#aio-pluginslink-plugin)
 * [`aio plugins:uninstall PLUGIN...`](#aio-pluginsuninstall-plugin)
@@ -224,7 +226,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/6.0.0/src/commands/app/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/7.0.0/src/commands/app/index.js)_
 
 ## `aio app:add`
 
@@ -239,7 +241,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/6.0.0/src/commands/app/add/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/7.0.0/src/commands/app/add/index.js)_
 
 ## `aio app:add:action`
 
@@ -256,7 +258,7 @@ OPTIONS
   --version       Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/6.0.0/src/commands/app/add/action.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/7.0.0/src/commands/app/add/action.js)_
 
 ## `aio app:add:ci`
 
@@ -271,7 +273,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/6.0.0/src/commands/app/add/ci.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/7.0.0/src/commands/app/add/ci.js)_
 
 ## `aio app:add:event`
 
@@ -288,7 +290,7 @@ OPTIONS
   --version       Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/6.0.0/src/commands/app/add/event.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/7.0.0/src/commands/app/add/event.js)_
 
 ## `aio app:add:service`
 
@@ -306,7 +308,7 @@ ALIASES
   $ aio app:add:services
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/6.0.0/src/commands/app/add/service.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/7.0.0/src/commands/app/add/service.js)_
 
 ## `aio app:add:web-assets`
 
@@ -323,7 +325,7 @@ OPTIONS
   --version       Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/6.0.0/src/commands/app/add/web-assets.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/7.0.0/src/commands/app/add/web-assets.js)_
 
 ## `aio app:build`
 
@@ -347,7 +349,7 @@ DESCRIPTION
   This will always force a rebuild unless --no-force-build is set.
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/6.0.0/src/commands/app/build.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/7.0.0/src/commands/app/build.js)_
 
 ## `aio app:create [PATH]`
 
@@ -366,7 +368,7 @@ OPTIONS
   --version            Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/6.0.0/src/commands/app/create.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/7.0.0/src/commands/app/create.js)_
 
 ## `aio app:delete`
 
@@ -381,7 +383,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/6.0.0/src/commands/app/delete/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/7.0.0/src/commands/app/delete/index.js)_
 
 ## `aio app:delete:action [ACTION-NAME]`
 
@@ -400,7 +402,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/6.0.0/src/commands/app/delete/action.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/7.0.0/src/commands/app/delete/action.js)_
 
 ## `aio app:delete:ci`
 
@@ -416,7 +418,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/6.0.0/src/commands/app/delete/ci.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/7.0.0/src/commands/app/delete/ci.js)_
 
 ## `aio app:delete:event EVENT-ACTION-NAME`
 
@@ -435,7 +437,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/6.0.0/src/commands/app/delete/event.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/7.0.0/src/commands/app/delete/event.js)_
 
 ## `aio app:delete:service`
 
@@ -453,7 +455,7 @@ ALIASES
   $ aio app:delete:services
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/6.0.0/src/commands/app/delete/service.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/7.0.0/src/commands/app/delete/service.js)_
 
 ## `aio app:delete:web-assets`
 
@@ -469,7 +471,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/6.0.0/src/commands/app/delete/web-assets.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/7.0.0/src/commands/app/delete/web-assets.js)_
 
 ## `aio app:deploy`
 
@@ -496,7 +498,7 @@ DESCRIPTION
   This will always force a rebuild unless --no-force-build is set.
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/6.0.0/src/commands/app/deploy.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/7.0.0/src/commands/app/deploy.js)_
 
 ## `aio app:get-url [ACTION]`
 
@@ -515,7 +517,28 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/6.0.0/src/commands/app/get-url.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/7.0.0/src/commands/app/get-url.js)_
+
+## `aio app:info`
+
+Display settings/configuration in use by an Adobe I/O App
+
+```
+USAGE
+  $ aio app:info
+
+OPTIONS
+  -h, --hson     Output human readable json
+  -j, --json     Output json
+  -v, --verbose  Verbose output
+  -y, --yml      Output yml
+  --[no-]mask    Hide known private info
+  --version      Show version
+
+DESCRIPTION
+```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/7.0.0/src/commands/app/info.js)_
 
 ## `aio app:init [PATH]`
 
@@ -537,7 +560,7 @@ OPTIONS
   --version            Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/6.0.0/src/commands/app/init.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/7.0.0/src/commands/app/init.js)_
 
 ## `aio app:logs`
 
@@ -558,7 +581,7 @@ OPTIONS
   --version            Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/6.0.0/src/commands/app/logs.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/7.0.0/src/commands/app/logs.js)_
 
 ## `aio app:run`
 
@@ -577,7 +600,7 @@ OPTIONS
   --version       Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/6.0.0/src/commands/app/run.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/7.0.0/src/commands/app/run.js)_
 
 ## `aio app:test`
 
@@ -594,7 +617,7 @@ OPTIONS
   --version      Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/6.0.0/src/commands/app/test.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/7.0.0/src/commands/app/test.js)_
 
 ## `aio app:undeploy`
 
@@ -612,7 +635,7 @@ OPTIONS
   --version          Show version
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/6.0.0/src/commands/app/undeploy.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/7.0.0/src/commands/app/undeploy.js)_
 
 ## `aio app:use [CONFIG_FILE_PATH]`
 
@@ -655,7 +678,7 @@ OPTIONS
                                        configuration for this Workspace
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/6.0.0/src/commands/app/use.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/7.0.0/src/commands/app/use.js)_
 
 ## `aio auth`
 
@@ -683,9 +706,9 @@ DESCRIPTION
   supported. The below example shows the configuration for OAuth2
   based (graphical SUSI) login.
 
-  The "env" property is mandatory and designates the Adobe IMS environment
+  The "env" property is optional and designates the Adobe IMS environment
   used for authentication. Possible values are "stage" and "prod".
-  If the property is missing or any other value, it defaults to "stage".
+  If the property is missing or any other value, it defaults to "prod".
 
   All commands allow their normal output to be formatted in either
   HJSON (default), JSON, or YAML.
@@ -710,7 +733,7 @@ EXAMPLE
      }
 ```
 
-_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/2.4.0/src/commands/auth/index.js)_
+_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/2.4.1/src/commands/auth/index.js)_
 
 ## `aio auth:ctx`
 
@@ -752,7 +775,7 @@ ALIASES
   $ aio context
 ```
 
-_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/2.4.0/src/commands/auth/ctx.js)_
+_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/2.4.1/src/commands/auth/ctx.js)_
 
 ## `aio auth:login`
 
@@ -804,7 +827,7 @@ ALIASES
   $ aio login
 ```
 
-_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/2.4.0/src/commands/auth/login.js)_
+_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/2.4.1/src/commands/auth/login.js)_
 
 ## `aio auth:logout`
 
@@ -841,7 +864,7 @@ ALIASES
   $ aio logout
 ```
 
-_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/2.4.0/src/commands/auth/logout.js)_
+_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/2.4.1/src/commands/auth/logout.js)_
 
 ## `aio autocomplete [SHELL]`
 
@@ -875,7 +898,7 @@ USAGE
   $ aio certificate
 ```
 
-_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/0.2.1/src/commands/certificate/index.js)_
+_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/0.3.0/src/commands/certificate/index.js)_
 
 ## `aio certificate:generate`
 
@@ -909,7 +932,7 @@ DESCRIPTION
   services.
 ```
 
-_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/0.2.1/src/commands/certificate/generate.js)_
+_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/0.3.0/src/commands/certificate/generate.js)_
 
 ## `aio certificate:verify FILE`
 
@@ -929,7 +952,7 @@ DESCRIPTION
   Verifies that the certificate is valid, and/or will not expire in [--days] days from now.
 ```
 
-_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/0.2.1/src/commands/certificate/verify.js)_
+_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/0.3.0/src/commands/certificate/verify.js)_
 
 ## `aio config`
 
@@ -1083,7 +1106,7 @@ OPTIONS
   --help  Show help
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.2.0/src/commands/console/index.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.3.0/src/commands/console/index.js)_
 
 ## `aio console:org`
 
@@ -1097,7 +1120,7 @@ OPTIONS
   --help  Show help
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.2.0/src/commands/console/org/index.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.3.0/src/commands/console/org/index.js)_
 
 ## `aio console:org:list`
 
@@ -1116,18 +1139,18 @@ ALIASES
   $ aio console:org:ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.2.0/src/commands/console/org/list.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.3.0/src/commands/console/org/list.js)_
 
-## `aio console:org:select ORGCODE`
+## `aio console:org:select [ORGCODE]`
 
 Select an Organization
 
 ```
 USAGE
-  $ aio console:org:select ORGCODE
+  $ aio console:org:select [ORGCODE]
 
 ARGUMENTS
-  ORGCODE  Adobe I/O Org Code
+  ORGCODE  Adobe Developer Console Org code
 
 OPTIONS
   --help  Show help
@@ -1136,7 +1159,7 @@ ALIASES
   $ aio console:org:sel
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.2.0/src/commands/console/org/select.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.3.0/src/commands/console/org/select.js)_
 
 ## `aio console:project`
 
@@ -1150,7 +1173,7 @@ OPTIONS
   --help  Show help
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.2.0/src/commands/console/project/index.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.3.0/src/commands/console/project/index.js)_
 
 ## `aio console:project:list`
 
@@ -1170,28 +1193,28 @@ ALIASES
   $ aio console:project:ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.2.0/src/commands/console/project/list.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.3.0/src/commands/console/project/list.js)_
 
-## `aio console:project:select PROJECTID`
+## `aio console:project:select [PROJECTIDORNAME]`
 
 Select a Project for the selected Organization
 
 ```
 USAGE
-  $ aio console:project:select PROJECTID
+  $ aio console:project:select [PROJECTIDORNAME]
 
 ARGUMENTS
-  PROJECTID  Adobe I/O Project Id
+  PROJECTIDORNAME  Adobe Developer Console Project id or Project name
 
 OPTIONS
   --help         Show help
-  --orgId=orgId  OrgID of the project to select
+  --orgId=orgId  Organization id of the Console Project to select
 
 ALIASES
   $ aio console:project:sel
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.2.0/src/commands/console/project/select.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.3.0/src/commands/console/project/select.js)_
 
 ## `aio console:where`
 
@@ -1210,7 +1233,7 @@ ALIASES
   $ aio where
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.2.0/src/commands/console/where/index.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.3.0/src/commands/console/where/index.js)_
 
 ## `aio console:workspace`
 
@@ -1227,7 +1250,7 @@ ALIASES
   $ aio console:ws
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.2.0/src/commands/console/workspace/index.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.3.0/src/commands/console/workspace/index.js)_
 
 ## `aio console:workspace:download [DESTINATION]`
 
@@ -1238,10 +1261,13 @@ USAGE
   $ aio console:workspace:download [DESTINATION]
 
 ARGUMENTS
-  DESTINATION  path where workspace configuration file will be saved
+  DESTINATION  Output file name or folder name where the Console Workspace configuration file should be saved
 
 OPTIONS
-  --help  Show help
+  --help                     Show help
+  --orgId=orgId              Organization id of the Console Workspace configuration to download
+  --projectId=projectId      Project id of the Console Workspace configuration to download
+  --workspaceId=workspaceId  Workspace id of the Console Workspace configuration to download
 
 ALIASES
   $ aio console:workspace:dl
@@ -1249,7 +1275,7 @@ ALIASES
   $ aio console:ws:dl
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.2.0/src/commands/console/workspace/download.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.3.0/src/commands/console/workspace/download.js)_
 
 ## `aio console:workspace:list`
 
@@ -1260,9 +1286,11 @@ USAGE
   $ aio console:workspace:list
 
 OPTIONS
-  -j, --json  Output json
-  -y, --yml   Output yml
-  --help      Show help
+  -j, --json             Output json
+  -y, --yml              Output yml
+  --help                 Show help
+  --orgId=orgId          Organization id of the Console Workspaces to list
+  --projectId=projectId  Project id of the Console Workspaces to list
 
 ALIASES
   $ aio console:workspace:ls
@@ -1270,18 +1298,23 @@ ALIASES
   $ aio console:ws:ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.2.0/src/commands/console/workspace/list.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.3.0/src/commands/console/workspace/list.js)_
 
-## `aio console:workspace:select WORKSPACEID`
+## `aio console:workspace:select [WORKSPACEIDORNAME]`
 
 Select a Workspace for the selected Project
 
 ```
 USAGE
-  $ aio console:workspace:select WORKSPACEID
+  $ aio console:workspace:select [WORKSPACEIDORNAME]
+
+ARGUMENTS
+  WORKSPACEIDORNAME  Adobe Developer Console Workspace id or Workspace name
 
 OPTIONS
-  --help  Show help
+  --help                 Show help
+  --orgId=orgId          Organization id of the Console Workspace to select
+  --projectId=projectId  Project id of the Console Workspace to select
 
 ALIASES
   $ aio console:workspace:sel
@@ -1289,7 +1322,7 @@ ALIASES
   $ aio console:ws:sel
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.2.0/src/commands/console/workspace/select.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/3.3.0/src/commands/console/workspace/select.js)_
 
 ## `aio discover`
 
@@ -1313,7 +1346,7 @@ ALIASES
   $ aio plugins:discover
 ```
 
-_See code: [src/commands/discover.js](https://github.com/adobe/aio-cli/blob/6.0.0/src/commands/discover.js)_
+_See code: [src/commands/discover.js](https://github.com/adobe/aio-cli/blob/7.0.0/src/commands/discover.js)_
 
 ## `aio event`
 
@@ -1705,7 +1738,28 @@ EXAMPLE
   $ aio plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.9.5/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.10.0/src/commands/plugins/index.ts)_
+
+## `aio plugins:inspect PLUGIN...`
+
+displays installation properties of a plugin
+
+```
+USAGE
+  $ aio plugins:inspect PLUGIN...
+
+ARGUMENTS
+  PLUGIN  [default: .] plugin to inspect
+
+OPTIONS
+  -h, --help     show CLI help
+  -v, --verbose
+
+EXAMPLE
+  $ aio plugins:inspect myplugin
+```
+
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.10.0/src/commands/plugins/inspect.ts)_
 
 ## `aio plugins:install PLUGIN...`
 
@@ -1741,7 +1795,7 @@ EXAMPLES
   $ aio plugins:install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.9.5/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.10.0/src/commands/plugins/install.ts)_
 
 ## `aio plugins:link PLUGIN`
 
@@ -1768,7 +1822,7 @@ EXAMPLE
   $ aio plugins:link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.9.5/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.10.0/src/commands/plugins/link.ts)_
 
 ## `aio plugins:uninstall PLUGIN...`
 
@@ -1790,7 +1844,7 @@ ALIASES
   $ aio plugins:remove
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.9.5/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.10.0/src/commands/plugins/uninstall.ts)_
 
 ## `aio plugins:update`
 
@@ -1805,7 +1859,7 @@ OPTIONS
   -v, --verbose
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.9.5/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.10.0/src/commands/plugins/update.ts)_
 
 ## `aio report`
 
@@ -1837,7 +1891,7 @@ OPTIONS
   -v, --verbose       Verbose output
 ```
 
-_See code: [src/commands/rollback.js](https://github.com/adobe/aio-cli/blob/6.0.0/src/commands/rollback.js)_
+_See code: [src/commands/rollback.js](https://github.com/adobe/aio-cli/blob/7.0.0/src/commands/rollback.js)_
 
 ## `aio runtime`
 
@@ -1863,7 +1917,7 @@ ALIASES
   $ aio rt
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/index.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/index.js)_
 
 ## `aio runtime:action`
 
@@ -1889,7 +1943,7 @@ ALIASES
   $ aio rt:action
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/action/index.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/action/index.js)_
 
 ## `aio runtime:action:create ACTIONNAME [ACTIONPATH]`
 
@@ -1953,7 +2007,7 @@ ALIASES
   $ aio rt:action:create
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/action/create.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/action/create.js)_
 
 ## `aio runtime:action:delete ACTIONNAME`
 
@@ -1982,7 +2036,7 @@ ALIASES
   $ aio rt:action:del
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/action/delete.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/action/delete.js)_
 
 ## `aio runtime:action:get ACTIONNAME`
 
@@ -2012,7 +2066,7 @@ ALIASES
   $ aio rt:action:get
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/action/get.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/action/get.js)_
 
 ## `aio runtime:action:invoke ACTIONNAME`
 
@@ -2042,7 +2096,7 @@ ALIASES
   $ aio rt:action:invoke
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/action/invoke.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/action/invoke.js)_
 
 ## `aio runtime:action:list [PACKAGENAME]`
 
@@ -2080,7 +2134,7 @@ ALIASES
   $ aio rt:actions:ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/action/list.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/action/list.js)_
 
 ## `aio runtime:action:update ACTIONNAME [ACTIONPATH]`
 
@@ -2144,7 +2198,7 @@ ALIASES
   $ aio rt:action:update
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/action/update.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/action/update.js)_
 
 ## `aio runtime:activation`
 
@@ -2170,7 +2224,7 @@ ALIASES
   $ aio rt:activation
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/activation/index.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/activation/index.js)_
 
 ## `aio runtime:activation:get [ACTIVATIONID]`
 
@@ -2198,7 +2252,7 @@ ALIASES
   $ aio rt:activation:get
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/activation/get.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/activation/get.js)_
 
 ## `aio runtime:activation:list [ACTIVATION_NAME]`
 
@@ -2254,7 +2308,7 @@ ALIASES
   $ aio rt:activations:ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/activation/list.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/activation/list.js)_
 
 ## `aio runtime:activation:logs [ACTIVATIONID]`
 
@@ -2296,7 +2350,7 @@ ALIASES
   $ aio rt:logs
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/activation/logs.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/activation/logs.js)_
 
 ## `aio runtime:activation:result [ACTIVATIONID]`
 
@@ -2323,7 +2377,7 @@ ALIASES
   $ aio rt:activation:result
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/activation/result.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/activation/result.js)_
 
 ## `aio runtime:deploy`
 
@@ -2353,7 +2407,7 @@ ALIASES
   $ aio rt:deploy
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/deploy/index.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/deploy/index.js)_
 
 ## `aio runtime:deploy:export`
 
@@ -2381,7 +2435,7 @@ ALIASES
   $ aio rt:deploy:export
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/deploy/export.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/deploy/export.js)_
 
 ## `aio runtime:deploy:report`
 
@@ -2409,7 +2463,7 @@ ALIASES
   $ aio rt:deploy:report
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/deploy/report.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/deploy/report.js)_
 
 ## `aio runtime:deploy:sync`
 
@@ -2437,7 +2491,7 @@ ALIASES
   $ aio rt:deploy:sync
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/deploy/sync.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/deploy/sync.js)_
 
 ## `aio runtime:deploy:undeploy`
 
@@ -2465,7 +2519,7 @@ ALIASES
   $ aio rt:deploy:undeploy
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/deploy/undeploy.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/deploy/undeploy.js)_
 
 ## `aio runtime:deploy:version`
 
@@ -2491,7 +2545,7 @@ ALIASES
   $ aio rt:deploy:version
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/deploy/version.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/deploy/version.js)_
 
 ## `aio runtime:namespace`
 
@@ -2519,7 +2573,7 @@ ALIASES
   $ aio rt:ns
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/namespace/index.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/namespace/index.js)_
 
 ## `aio runtime:namespace:get`
 
@@ -2552,7 +2606,7 @@ ALIASES
   $ aio rt:ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/namespace/get.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/namespace/get.js)_
 
 ## `aio runtime:namespace:list`
 
@@ -2585,7 +2639,7 @@ ALIASES
   $ aio rt:ns:ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/namespace/list.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/namespace/list.js)_
 
 ## `aio runtime:package`
 
@@ -2613,7 +2667,7 @@ ALIASES
   $ aio rt:pkg
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/package/index.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/package/index.js)_
 
 ## `aio runtime:package:bind PACKAGENAME BINDPACKAGENAME`
 
@@ -2646,7 +2700,7 @@ ALIASES
   $ aio rt:pkg:bind
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/package/bind.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/package/bind.js)_
 
 ## `aio runtime:package:create PACKAGENAME`
 
@@ -2680,7 +2734,7 @@ ALIASES
   $ aio rt:pkg:create
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/package/create.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/package/create.js)_
 
 ## `aio runtime:package:delete PACKAGENAME`
 
@@ -2699,7 +2753,7 @@ ALIASES
   $ aio rt:pkg:delete
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/package/delete.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/package/delete.js)_
 
 ## `aio runtime:package:get PACKAGENAME`
 
@@ -2727,7 +2781,7 @@ ALIASES
   $ aio rt:pkg:get
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/package/get.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/package/get.js)_
 
 ## `aio runtime:package:list [NAMESPACE]`
 
@@ -2765,7 +2819,7 @@ ALIASES
   $ aio rt:pkg:ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/package/list.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/package/list.js)_
 
 ## `aio runtime:package:update PACKAGENAME`
 
@@ -2799,7 +2853,7 @@ ALIASES
   $ aio rt:pkg:update
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/package/update.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/package/update.js)_
 
 ## `aio runtime:property`
 
@@ -2827,7 +2881,7 @@ ALIASES
   $ aio rt:property
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/property/index.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/property/index.js)_
 
 ## `aio runtime:property:get`
 
@@ -2860,7 +2914,7 @@ ALIASES
   $ aio rt:prop:get
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/property/get.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/property/get.js)_
 
 ## `aio runtime:property:set`
 
@@ -2889,7 +2943,7 @@ ALIASES
   $ aio rt:prop:set
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/property/set.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/property/set.js)_
 
 ## `aio runtime:property:unset`
 
@@ -2918,7 +2972,7 @@ ALIASES
   $ aio rt:prop:unset
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/property/unset.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/property/unset.js)_
 
 ## `aio runtime:route`
 
@@ -2945,7 +2999,7 @@ ALIASES
   $ aio rt:api
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/route/index.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/route/index.js)_
 
 ## `aio runtime:route:create [BASEPATH] [RELPATH] [APIVERB] [ACTION]`
 
@@ -2994,7 +3048,7 @@ ALIASES
   $ aio rt:api:create
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/route/create.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/route/create.js)_
 
 ## `aio runtime:route:delete BASEPATHORAPINAME [RELPATH] [APIVERB]`
 
@@ -3027,7 +3081,7 @@ ALIASES
   $ aio rt:api:delete
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/route/delete.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/route/delete.js)_
 
 ## `aio runtime:route:get BASEPATHORAPINAME`
 
@@ -3058,7 +3112,7 @@ ALIASES
   $ aio rt:api:get
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/route/get.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/route/get.js)_
 
 ## `aio runtime:route:list [BASEPATH] [RELPATH] [APIVERB]`
 
@@ -3098,7 +3152,7 @@ ALIASES
   $ aio rt:api:ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/route/list.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/route/list.js)_
 
 ## `aio runtime:rule`
 
@@ -3124,7 +3178,7 @@ ALIASES
   $ aio rt:rule
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/rule/index.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/rule/index.js)_
 
 ## `aio runtime:rule:create NAME TRIGGER ACTION`
 
@@ -3156,7 +3210,7 @@ ALIASES
   $ aio rt:rule:create
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/rule/create.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/rule/create.js)_
 
 ## `aio runtime:rule:delete NAME`
 
@@ -3186,7 +3240,7 @@ ALIASES
   $ aio rt:rule:delete
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/rule/delete.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/rule/delete.js)_
 
 ## `aio runtime:rule:disable NAME`
 
@@ -3215,7 +3269,7 @@ ALIASES
   $ aio rt:rule:disable
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/rule/disable.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/rule/disable.js)_
 
 ## `aio runtime:rule:enable NAME`
 
@@ -3244,7 +3298,7 @@ ALIASES
   $ aio rt:rule:enable
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/rule/enable.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/rule/enable.js)_
 
 ## `aio runtime:rule:get NAME`
 
@@ -3273,7 +3327,7 @@ ALIASES
   $ aio rt:rule:get
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/rule/get.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/rule/get.js)_
 
 ## `aio runtime:rule:list`
 
@@ -3307,7 +3361,7 @@ ALIASES
   $ aio rt:rule:ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/rule/list.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/rule/list.js)_
 
 ## `aio runtime:rule:status NAME`
 
@@ -3336,7 +3390,7 @@ ALIASES
   $ aio rt:rule:status
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/rule/status.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/rule/status.js)_
 
 ## `aio runtime:rule:update NAME TRIGGER ACTION`
 
@@ -3368,7 +3422,7 @@ ALIASES
   $ aio rt:rule:update
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/rule/update.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/rule/update.js)_
 
 ## `aio runtime:trigger`
 
@@ -3394,7 +3448,7 @@ ALIASES
   $ aio rt:trigger
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/trigger/index.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/trigger/index.js)_
 
 ## `aio runtime:trigger:create TRIGGERNAME`
 
@@ -3428,11 +3482,11 @@ ALIASES
   $ aio rt:trigger:create
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/trigger/create.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/trigger/create.js)_
 
 ## `aio runtime:trigger:delete TRIGGERPATH`
 
-Get a trigger for Adobe I/O Runtime
+Delete a trigger for Adobe I/O Runtime
 
 ```
 USAGE
@@ -3457,7 +3511,7 @@ ALIASES
   $ aio rt:trigger:delete
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/trigger/delete.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/trigger/delete.js)_
 
 ## `aio runtime:trigger:fire TRIGGERNAME`
 
@@ -3488,7 +3542,7 @@ ALIASES
   $ aio rt:trigger:fire
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/trigger/fire.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/trigger/fire.js)_
 
 ## `aio runtime:trigger:get TRIGGERPATH`
 
@@ -3517,7 +3571,7 @@ ALIASES
   $ aio rt:trigger:get
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/trigger/get.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/trigger/get.js)_
 
 ## `aio runtime:trigger:list`
 
@@ -3551,7 +3605,7 @@ ALIASES
   $ aio rt:trigger:ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/trigger/list.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/trigger/list.js)_
 
 ## `aio runtime:trigger:update TRIGGERNAME`
 
@@ -3584,7 +3638,7 @@ ALIASES
   $ aio rt:trigger:update
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/3.1.0/src/commands/runtime/trigger/update.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/4.0.0/src/commands/runtime/trigger/update.js)_
 
 ## `aio update`
 
@@ -3606,5 +3660,5 @@ DESCRIPTION
   - update all other user-installed plugins
 ```
 
-_See code: [src/commands/update.js](https://github.com/adobe/aio-cli/blob/6.0.0/src/commands/update.js)_
+_See code: [src/commands/update.js](https://github.com/adobe/aio-cli/blob/7.0.0/src/commands/update.js)_
 <!-- commandsstop -->
