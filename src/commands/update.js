@@ -188,6 +188,9 @@ class UpdateCommand extends Command {
     if (needsUpdate.length === 0) {
       this.log('no plugins to update')
       return
+    } else {
+      // short term solution for fixing old dependencies remaining in the local npm cache
+      this.log(`${chalk.red('warning:')} after plugins are updated, please run ${chalk.yellow('npm install -g @adobe/aio-cli')}`)
     }
 
     if (flags.list) {
