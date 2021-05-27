@@ -54,7 +54,7 @@
     "stdout-stderr": "^0.1.9"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": "^10 || ^12 || ^14"
   },
   "files": [
     "/bin",
