@@ -27,7 +27,7 @@ class UpdateCommand extends Command {
    *
    * @param {Array<ToUpdatePlugin>} plugins the plugins to update
    */
-  async __list (plugins, { col1 = 'plugin(s) to update', col2 = 'current', col3 = 'latest' } = {}) {
+  async __list (plugins, { col1 = 'user plugin updates available', col2 = 'current', col3 = 'latest' } = {}) {
     const columns = {
       [col1]: {
         width: 10,
@@ -59,7 +59,7 @@ class UpdateCommand extends Command {
     this.log() // newline
 
     if (needsConfirm) {
-      _doUpdate = await prompt(`Update ${plugins.length} plugin(s)?`)
+      _doUpdate = await prompt(`Update ${plugins.length} user plugin(s)?`)
     }
     if (_doUpdate) {
       if (!verbose) {
@@ -174,9 +174,10 @@ class UpdateCommand extends Command {
     const spinner = ora()
 
     spinner.start()
-    const plugins = await this.__processPlugins(this.config.root, this.config.pjson.oclif.plugins, this.config.plugins)
+    const plugins = await this.__processPlugins()
     spinner.stop()
-    const needsUpdate = plugins.filter(p => p.needsUpdate)
+    const needsUpdateCore = plugins.filter(p => p.needsUpdate && p.type === 'core')
+    const needsUpdateNonCore = plugins.filter(p => p.needsUpdate && p.type !== 'core')
     const needsWarning = plugins.filter(p => p.needsWarning)
 
     if (needsWarning.length > 0) {
@@ -185,28 +186,31 @@ class UpdateCommand extends Command {
       this.log()
     }
 
-    if (needsUpdate.length === 0) {
-      this.log('no plugins to update')
-      return
-    } else {
-      // short term solution for fixing old dependencies remaining in the local npm cache
-      this.log(`${chalk.red('warning:')} after plugins are updated, please run ${chalk.yellow('npm install -g @adobe/aio-cli')}`)
+    this.log(`There are ${chalk.yellow(needsUpdateCore.length)} core plugin update(s), and ${chalk.yellow(needsUpdateNonCore.length)} user plugin update(s) available.`)
+    this.log()
+
+    if (needsUpdateCore.length > 0) {
+      await this.__list(needsUpdateCore, { col1: 'Core plugin updates available' })
+      this.log()
+      this.log(`${chalk.blueBright('note:')} to update core plugins, please reinstall the cli: ${chalk.yellow('npm install -g @adobe/aio-cli')}`)
+      this.log()
     }
 
-    if (flags.list) {
-      return this.__list(needsUpdate)
-    } else if (flags.interactive) {
-      return this.__interactiveInstall(needsUpdate, flags.verbose)
-    } else {
-      return this.__install(needsUpdate, flags.confirm, flags.verbose)
+    if (needsUpdateNonCore.length > 0) {
+      if (flags.list) {
+        return this.__list(needsUpdateNonCore)
+      } else if (flags.interactive) {
+        return this.__interactiveInstall(needsUpdateNonCore, flags.verbose)
+      } else {
+        return this.__install(needsUpdateNonCore, flags.confirm, flags.verbose)
+      }
     }
   }
 }
 
 UpdateCommand.description = `Update all installed plugins.
 This command will only:
-- update core plugins that are from the @adobe namespace
-- update all other user-installed plugins
+- update user-installed plugins that are not core
 `
 
 UpdateCommand.flags = {
