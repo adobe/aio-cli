@@ -10,6 +10,7 @@ on:
 
 jobs:
   build:
+    if: github.repository == 'adobe/aio-cli'
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
