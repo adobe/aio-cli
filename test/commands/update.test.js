@@ -94,7 +94,7 @@ test('no updates', () => {
   return doRunCommand([], async () => {
     const results = (await spy.mock.results[0].value).filter(p => p.needsUpdate)
     expect(results.length).toEqual(0)
-    expect(stdout.output).toMatch('no plugins to update')
+    expect(stdout.output).toMatch('There are 0 core plugin update(s), and 0 user plugin update(s) available.')
   })
 })
 
@@ -114,7 +114,7 @@ test('updates needed? (via various semver versions)', async () => {
       const results = (await spy.mock.results[spyCalledTimes - 1].value).filter(p => p.needsUpdate)
       expect(results.length).toEqual(needsUpdateCount)
       expect(spy).toHaveBeenCalledTimes(spyCalledTimes)
-      expect(stdout.output).toMatch('no plugins to update')
+      expect(stdout.output).toMatch('There are 0 core plugin update(s), and 0 user plugin update(s) available.')
     })
   }
 
@@ -143,8 +143,8 @@ test('updates needed? (via various semver versions)', async () => {
 test('needs update (--no-confirm)', () => {
   const corePlugins = ['@adobe/core1', 'core2-non-adobe']
   const installedPlugins = [
-    { name: '@adobe/core1', version: '0.1.0', type: 'user' },
-    { name: 'core2-non-adobe', version: '0.1.0', type: 'user' },
+    { name: '@adobe/core1', version: '0.1.0', type: 'user' }, // core plugins will never be updateable
+    { name: 'core2-non-adobe', version: '0.1.0', type: 'user' }, // core plugins will never be updateable
     { name: 'plugin1', version: '0.1.0', type: 'user' },
     { name: 'plugin2', version: '0.1.0', type: 'user' },
     { name: 'plugin3', version: '0.1.0', type: 'user' }
@@ -155,10 +155,16 @@ test('needs update (--no-confirm)', () => {
   command.config = mockConfig(corePlugins, installedPlugins)
 
   const spy = jest.spyOn(command, '__processPlugins')
+  const spyInstall = jest.spyOn(command, '__install')
 
   return doRunCommand(['--no-confirm'], async () => {
     const results = (await spy.mock.results[0].value).filter(p => p.needsUpdate)
     expect(results.length).toEqual(4)
+
+    const lastInstallCall = spyInstall.mock.calls[spyInstall.mock.calls.length - 1]
+    const filteredPlugins = installedPlugins.filter(p => !corePlugins.includes(p.name))
+    expect(lastInstallCall[0].length).toEqual(filteredPlugins.length)
+    expect(lastInstallCall[0].length).toEqual(3)
   })
 })
 
@@ -176,11 +182,17 @@ test('needs update (--confirm)', () => {
   helpers.getNpmLocalVersion.mockImplementation(() => '0.1.0')
   command.config = mockConfig(corePlugins, installedPlugins)
 
-  const spy = jest.spyOn(command, '__processPlugins')
+  const spyProcessPlugins = jest.spyOn(command, '__processPlugins')
+  const spyInstall = jest.spyOn(command, '__install')
 
   return doRunCommand(['--confirm'], async () => {
-    const results = (await spy.mock.results[0].value).filter(p => p.needsUpdate)
+    const results = (await spyProcessPlugins.mock.results[0].value).filter(p => p.needsUpdate)
     expect(results.length).toEqual(4)
+
+    const lastInstallCall = spyInstall.mock.calls[spyInstall.mock.calls.length - 1]
+    const filteredPlugins = installedPlugins.filter(p => p.type === 'user')
+    expect(lastInstallCall[0].length).toEqual(filteredPlugins.length)
+    expect(lastInstallCall[0].length).toEqual(3)
   })
 })
 
@@ -226,6 +238,11 @@ test('list', () => {
     expect(spyList).toHaveBeenCalled()
     expect(spyInstall).not.toHaveBeenCalled()
     expect(spyInteractiveInstall).not.toHaveBeenCalled()
+
+    const lastListCall = spyList.mock.calls[spyList.mock.calls.length - 1]
+    const filteredPlugins = installedPlugins.filter(p => p.type === 'user')
+    expect(lastListCall[0].length).toEqual(filteredPlugins.length)
+    expect(lastListCall[0].length).toEqual(3)
   })
 })
 
@@ -254,6 +271,11 @@ test('interactive', () => {
     expect(spyInstall).not.toHaveBeenCalled()
     expect(spyInteractiveInstall).toHaveBeenCalled()
     expect(helpers.hideNPMWarnings).toHaveBeenCalled()
+
+    const lastInteractiveCall = spyInteractiveInstall.mock.calls[spyInteractiveInstall.mock.calls.length - 1]
+    const filteredPlugins = installedPlugins.filter(p => p.type === 'user')
+    expect(lastInteractiveCall[0].length).toEqual(filteredPlugins.length)
+    expect(lastInteractiveCall[0].length).toEqual(3)
   })
 })
 
@@ -280,7 +302,7 @@ test('interactive [--verbose]', () => {
   })
 })
 
-test('  asd [--verbose]', () => {
+test('no-confirm [--verbose]', () => {
   const corePlugins = ['@adobe/core1']
   const installedPlugins = [
     { name: '@adobe/core1', version: '0.1.0', type: 'core' },

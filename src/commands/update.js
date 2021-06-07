@@ -31,7 +31,7 @@ class UpdateCommand extends Command {
     const columns = {
       [col1]: {
         width: 10,
-        get: row => `${row.name}`
+        get: row => row.asterisk ? `${row.name}${chalk.yellow('*')}` : `${row.name}`
       },
       [col2]: {
         minWidth: 10,
@@ -107,6 +107,14 @@ class UpdateCommand extends Command {
     }
   }
 
+  __coreUpdateable (plugin) {
+    const corePlugins = this.config.pjson.oclif.plugins
+    return !(
+      corePlugins.includes(plugin.name) &&
+      !(plugin.name.startsWith('@adobe/'))
+    )
+  }
+
   /**
    * Process the plugins, determine if they need updates or warnings.
    *
@@ -120,12 +128,7 @@ class UpdateCommand extends Command {
     // - remove any plugin that is in core, that is not from the @adobe namespace
     // These will not be updateable for compatibility reasons
     const installedPlugins = this.config.plugins
-      .filter(plugin =>
-        !(
-          corePlugins.includes(plugin.name) &&
-          !(plugin.name.startsWith('@adobe/'))
-        )
-      )
+      .filter(p => this.__coreUpdateable(p))
       // remove the cli itself from the plugin list
       .filter(plugin => plugin.name !== this.config.pjson.name)
 
@@ -176,8 +179,13 @@ class UpdateCommand extends Command {
     spinner.start()
     const plugins = await this.__processPlugins()
     spinner.stop()
+
+    const corePlugins = this.config.pjson.oclif.plugins
     const needsUpdateCore = plugins.filter(p => p.needsUpdate && p.type === 'core')
-    const needsUpdateNonCore = plugins.filter(p => p.needsUpdate && p.type !== 'core')
+    const needsUpdateUser = plugins.filter(p => p.needsUpdate && p.type !== 'core')
+    const needsUpdateCoreButUserInstalled = needsUpdateUser.filter(p => corePlugins.includes(p.name))
+    const needsUpdateUserNonCore = needsUpdateUser.filter(p => !corePlugins.includes(p.name))
+
     const needsWarning = plugins.filter(p => p.needsWarning)
 
     if (needsWarning.length > 0) {
@@ -186,23 +194,30 @@ class UpdateCommand extends Command {
       this.log()
     }
 
-    this.log(`There are ${chalk.yellow(needsUpdateCore.length)} core plugin update(s), and ${chalk.yellow(needsUpdateNonCore.length)} user plugin update(s) available.`)
+    const corePluginTotal = needsUpdateCore.length + needsUpdateCoreButUserInstalled.length
+
+    this.log(`There are ${chalk.yellow(corePluginTotal)} core plugin update(s), and ${chalk.yellow(needsUpdateUserNonCore.length)} user plugin update(s) available.`)
     this.log()
 
-    if (needsUpdateCore.length > 0) {
-      await this.__list(needsUpdateCore, { col1: 'Core plugin updates available' })
+    if (corePluginTotal > 0) {
+      const pluginsToRollback = needsUpdateCoreButUserInstalled
+        .map(plugin => ({ ...plugin, asterisk: true }))
+      await this.__list([...needsUpdateCore, ...pluginsToRollback], { col1: 'Core plugin updates available' })
       this.log()
-      this.log(`${chalk.blueBright('note:')} to update core plugins, please reinstall the cli: ${chalk.yellow('npm install -g @adobe/aio-cli')}`)
+      if (needsUpdateCoreButUserInstalled.length > 0) {
+        this.log(`${chalk.red('warning:')} these plugins need to be rolled-back first via ${chalk.yellow('aio rollback -i')}:\n${pluginsToRollback.map(p => `  - ${p.name}`).join('\n')}`)
+      }
+      this.log(`${chalk.blueBright('note:')} to update the core plugins, please reinstall the cli: ${chalk.yellow('npm install -g @adobe/aio-cli')}`)
       this.log()
     }
 
-    if (needsUpdateNonCore.length > 0) {
+    if (needsUpdateUserNonCore.length > 0) {
       if (flags.list) {
-        return this.__list(needsUpdateNonCore)
+        return this.__list(needsUpdateUserNonCore)
       } else if (flags.interactive) {
-        return this.__interactiveInstall(needsUpdateNonCore, flags.verbose)
+        return this.__interactiveInstall(needsUpdateUserNonCore, flags.verbose)
       } else {
-        return this.__install(needsUpdateNonCore, flags.confirm, flags.verbose)
+        return this.__install(needsUpdateUserNonCore, flags.confirm, flags.verbose)
       }
     }
   }
