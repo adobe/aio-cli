@@ -12,6 +12,7 @@ on:
         default: 'latest'
 jobs:
   checkout:
+    if: github.repository == 'adobe/aio-cli'
     name: checkout
     runs-on: ubuntu-latest
     steps:
