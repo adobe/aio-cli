@@ -27,11 +27,11 @@ class UpdateCommand extends Command {
    *
    * @param {Array<ToUpdatePlugin>} plugins the plugins to update
    */
-  async __list (plugins, { col1 = 'plugin(s) to update', col2 = 'current', col3 = 'latest' } = {}) {
+  async __list (plugins, { col1 = 'user plugin updates available', col2 = 'current', col3 = 'latest' } = {}) {
     const columns = {
       [col1]: {
         width: 10,
-        get: row => `${row.name}`
+        get: row => row.asterisk ? `${row.name}${chalk.yellow('*')}` : `${row.name}`
       },
       [col2]: {
         minWidth: 10,
@@ -59,7 +59,7 @@ class UpdateCommand extends Command {
     this.log() // newline
 
     if (needsConfirm) {
-      _doUpdate = await prompt(`Update ${plugins.length} plugin(s)?`)
+      _doUpdate = await prompt(`Update ${plugins.length} user plugin(s)?`)
     }
     if (_doUpdate) {
       if (!verbose) {
@@ -107,6 +107,14 @@ class UpdateCommand extends Command {
     }
   }
 
+  __coreUpdateable (plugin) {
+    const corePlugins = this.config.pjson.oclif.plugins
+    return !(
+      corePlugins.includes(plugin.name) &&
+      !(plugin.name.startsWith('@adobe/'))
+    )
+  }
+
   /**
    * Process the plugins, determine if they need updates or warnings.
    *
@@ -120,12 +128,7 @@ class UpdateCommand extends Command {
     // - remove any plugin that is in core, that is not from the @adobe namespace
     // These will not be updateable for compatibility reasons
     const installedPlugins = this.config.plugins
-      .filter(plugin =>
-        !(
-          corePlugins.includes(plugin.name) &&
-          !(plugin.name.startsWith('@adobe/'))
-        )
-      )
+      .filter(p => this.__coreUpdateable(p))
       // remove the cli itself from the plugin list
       .filter(plugin => plugin.name !== this.config.pjson.name)
 
@@ -174,9 +177,15 @@ class UpdateCommand extends Command {
     const spinner = ora()
 
     spinner.start()
-    const plugins = await this.__processPlugins(this.config.root, this.config.pjson.oclif.plugins, this.config.plugins)
+    const plugins = await this.__processPlugins()
     spinner.stop()
-    const needsUpdate = plugins.filter(p => p.needsUpdate)
+
+    const corePlugins = this.config.pjson.oclif.plugins
+    const needsUpdateCore = plugins.filter(p => p.needsUpdate && p.type === 'core')
+    const needsUpdateUser = plugins.filter(p => p.needsUpdate && p.type !== 'core')
+    const needsUpdateCoreButUserInstalled = needsUpdateUser.filter(p => corePlugins.includes(p.name))
+    const needsUpdateUserNonCore = needsUpdateUser.filter(p => !corePlugins.includes(p.name))
+
     const needsWarning = plugins.filter(p => p.needsWarning)
 
     if (needsWarning.length > 0) {
@@ -185,28 +194,38 @@ class UpdateCommand extends Command {
       this.log()
     }
 
-    if (needsUpdate.length === 0) {
-      this.log('no plugins to update')
-      return
-    } else {
-      // short term solution for fixing old dependencies remaining in the local npm cache
-      this.log(`${chalk.red('warning:')} after plugins are updated, please run ${chalk.yellow('npm install -g @adobe/aio-cli')}`)
+    const corePluginTotal = needsUpdateCore.length + needsUpdateCoreButUserInstalled.length
+
+    this.log(`There are ${chalk.yellow(corePluginTotal)} core plugin update(s), and ${chalk.yellow(needsUpdateUserNonCore.length)} user plugin update(s) available.`)
+    this.log()
+
+    if (corePluginTotal > 0) {
+      const pluginsToRollback = needsUpdateCoreButUserInstalled
+        .map(plugin => ({ ...plugin, asterisk: true }))
+      await this.__list([...needsUpdateCore, ...pluginsToRollback], { col1: 'Core plugin updates available' })
+      this.log()
+      if (needsUpdateCoreButUserInstalled.length > 0) {
+        this.log(`${chalk.red('warning:')} these plugins need to be rolled-back first via ${chalk.yellow('aio rollback -i')}:\n${pluginsToRollback.map(p => `  - ${p.name}`).join('\n')}`)
+      }
+      this.log(`${chalk.blueBright('note:')} to update the core plugins, please reinstall the cli: ${chalk.yellow('npm install -g @adobe/aio-cli')}`)
+      this.log()
     }
 
-    if (flags.list) {
-      return this.__list(needsUpdate)
-    } else if (flags.interactive) {
-      return this.__interactiveInstall(needsUpdate, flags.verbose)
-    } else {
-      return this.__install(needsUpdate, flags.confirm, flags.verbose)
+    if (needsUpdateUserNonCore.length > 0) {
+      if (flags.list) {
+        return this.__list(needsUpdateUserNonCore)
+      } else if (flags.interactive) {
+        return this.__interactiveInstall(needsUpdateUserNonCore, flags.verbose)
+      } else {
+        return this.__install(needsUpdateUserNonCore, flags.confirm, flags.verbose)
+      }
     }
   }
 }
 
 UpdateCommand.description = `Update all installed plugins.
 This command will only:
-- update core plugins that are from the @adobe namespace
-- update all other user-installed plugins
+- update user-installed plugins that are not core
 `
 
 UpdateCommand.flags = {
