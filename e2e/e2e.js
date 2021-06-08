@@ -10,21 +10,23 @@ governing permissions and limitations under the License.
 */
 
 const execa = require('execa')
-const chalk = require('chalk')
 const fs = jest.requireActual('fs')
+const util = require('util')
+const fse = {
+  mkdir: util.promisify(fs.mkdir),
+  rm: util.promisify(fs.rm)
+}
+
+jest.setTimeout(120000)
 
 test('cli init test', async () => {
-  const packagejson = JSON.parse(fs.readFileSync('package.json').toString())
-  const name = `${packagejson.name}`
-  console.log(chalk.blue(`> e2e tests for ${chalk.bold(name)}`))
   const testFolder = 'e2e_test_run'
 
-  expect(() => { execa.sync('rm', ['-rf', testFolder], { stderr: 'inherit' }) }).not.toThrow()
-  console.log(chalk.dim('    - create test folder..'))
-  expect(() => { execa.sync('mkdir', [testFolder], { stderr: 'inherit' }) }).not.toThrow()
+  await fse.rm(testFolder, { recursive: true, force: true })
+  await fse.mkdir(testFolder)
   process.chdir(testFolder)
-  console.log(chalk.bold('    - running tests..'))
-  expect(() => { execa.sync('node', ['../bin/run', 'app', 'init', '-y'], { stderr: 'inherit' }) }).not.toThrow()
+
+  await execa('node', ['../bin/run', 'app', 'init', '-y'], { stderr: 'inherit' })
 
   const files = [
     'actions/generic/index.js',
@@ -40,10 +42,13 @@ test('cli init test', async () => {
     'manifest.yml']
 
   files.forEach(file => {
-    expect(() => { execa.sync('ls', [file]) }).not.toThrow()
+    const fileExists = fs.existsSync(file)
+    if (!fileExists) {
+      console.error(`File ${file} does not exist.`)
+    }
+    expect(fileExists).toBeTruthy()
   })
 
   process.chdir('..')
-  expect(() => { execa.sync('rm', ['-rf', testFolder], { stderr: 'inherit' }) }).not.toThrow()
-  console.log(chalk.green(`    - done for ${chalk.bold(testFolder)}`))
+  await fse.rm(testFolder, { recursive: true, force: true })
 })
