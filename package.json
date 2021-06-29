@@ -4,7 +4,7 @@
   "version": "7.1.0",
   "author": "Adobe Inc.",
   "bin": {
-    "aio": "./bin/run"
+    "aio-next": "./bin/run"
   },
   "bugs": "https://github.com/adobe/aio-cli/issues",
   "dependencies": {
