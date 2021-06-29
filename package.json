@@ -117,12 +117,10 @@
   },
   "repository": "adobe/aio-cli",
   "scripts": {
-    "postpack": "rm -f oclif.manifest.json",
     "test": "jest --ci",
     "pretest": "npm run eslint",
     "eslint": "eslint src test e2e",
     "gen-health": "node bin/gen-health-table.js",
-    "prepack": "oclif-dev manifest && oclif-dev readme",
     "version": "oclif-dev readme && git add README.md",
     "link": "ln -s \"$(pwd)\"/bin/run /usr/local/bin/aio",
     "unlink": "rm /usr/local/bin/aio",
