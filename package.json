@@ -122,6 +122,7 @@
     "pretest": "npm run eslint",
     "eslint": "eslint src test e2e",
     "gen-health": "node bin/gen-health-table.js",
+    "prepare": "echo remove-this-commit-before-merge",
     "prepack": "oclif-dev manifest && oclif-dev readme",
     "version": "oclif-dev readme && git add README.md",
     "link": "ln -s \"$(pwd)\"/bin/run /usr/local/bin/aio",
