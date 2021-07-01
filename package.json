@@ -1,16 +1,15 @@
 {
-  "name": "@adobe/aio-cli",
+  "name": "@adobe/aio-cli-next",
   "description": "Adobe I/O Extensible CLI\n\n*******   *******\n******     ******\n*****       *****\n****    *    ****\n***    ***    ***\n**    *****    **\n*         **    *\n",
   "version": "7.1.0",
   "author": "Adobe Inc.",
   "bin": {
-    "aio": "./bin/run",
-    "adobe": "./bin/run"
+    "aio-next": "./bin/run"
   },
   "bugs": "https://github.com/adobe/aio-cli/issues",
   "dependencies": {
     "@adobe/aio-cli-plugin-events": "^1.1.5",
-    "@adobe/aio-cli-plugin-app": "^7.0.2",
+    "@adobe/aio-cli-plugin-app": "next",
     "@adobe/aio-cli-plugin-auth": "^2.4.1",
     "@adobe/aio-cli-plugin-certificate": "^0.3.0",
     "@adobe/aio-cli-plugin-config": "^2.3.0",
@@ -70,7 +69,7 @@
   "main": "src/index.js",
   "oclif": {
     "commands": "./src/commands",
-    "bin": "aio",
+    "bin": "aio-next",
     "plugins": [
       "@oclif/plugin-help",
       "@oclif/plugin-plugins",
@@ -118,12 +117,10 @@
   },
   "repository": "adobe/aio-cli",
   "scripts": {
-    "postpack": "rm -f oclif.manifest.json",
     "test": "jest --ci",
     "pretest": "npm run eslint",
     "eslint": "eslint src test e2e",
     "gen-health": "node bin/gen-health-table.js",
-    "prepack": "oclif-dev manifest && oclif-dev readme",
     "version": "oclif-dev readme && git add README.md",
     "link": "ln -s \"$(pwd)\"/bin/run /usr/local/bin/aio",
     "unlink": "rm /usr/local/bin/aio",
