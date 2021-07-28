@@ -1,5 +1,5 @@
 {
-  "name": "@adobe/aio-cli-next",
+  "name": "@adobe/aio-cli",
   "description": "Adobe I/O Extensible CLI\n\n*******   *******\n******     ******\n*****       *****\n****    *    ****\n***    ***    ***\n**    *****    **\n*         **    *\n",
   "version": "7.1.0",
   "author": "Adobe Inc.",
