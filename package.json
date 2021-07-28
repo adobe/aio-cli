@@ -69,7 +69,7 @@
   "main": "src/index.js",
   "oclif": {
     "commands": "./src/commands",
-    "bin": "aio-next",
+    "bin": "aio",
     "plugins": [
       "@oclif/plugin-help",
       "@oclif/plugin-plugins",
