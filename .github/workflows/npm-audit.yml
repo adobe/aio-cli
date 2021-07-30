@@ -24,32 +24,8 @@ jobs:
       run: |
         mkdir testapp
         cd testapp
-        aio app init -y
+        aio app init -y --no-login --no-extensions
         npm audit --audit-level=high --json > auditoutput.txt
-    - id: getexistingissue
-      name: check for existing github issue
-      continue-on-error: true
-      # remove "false &&" below to enable this step
-      if: false && steps.createandaudit.outcome != 'success'
-      env:
-        STEPS_CONTEXT: ${{ toJSON(steps) }}
-      run: |
-        curl 'https://api.github.com/repos/adobe/aio-cli/issues?labels=bug,audit' > curloutput.txt
-        grep -q "High and/or Critical avulnerability found in npm audit" curloutput.txt
-    - id: issuecreate
-      name: create github issue
-      # remove "false &&" below to enable this step
-      if: false && steps.createandaudit.outcome != 'success' && steps.getexistingissue.outcome != 'success'
-      env:
-        STEPS_CONTEXT: ${{ toJSON(steps) }}
-      # this step formats auditoutput to send as body of github issue to be created,
-      # creates issue with that text, and stores the issue url in github env
-      run: |
-        cat auditoutput.txt | jq -r '.advisories[] | "\n**`\(.title)`** in module **`\(.module_name)`**\n ```\n\(.overview)\n```"' > issuetext.txt
-        jq -n --rawfile input issuetext.txt '{"title": "High and/or Critical vulnerability found in npm audit of FF App", "labels": ["audit","bug"], "body" : $input}' | curl "https://api.github.com/repos/adobe/aio-cli/issues" -H "Content-Type: application/json" -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-          -d @- | jq .url > issuecreationoutput.txt
-        cat issuecreationoutput.txt
-        echo "issueurl=`cat issuecreationoutput.txt`" >> $GITHUB_ENV
     - id: runaudit
       name: if audit had failed, run npm audit without json flag so we can see what is failing
       if: steps.createandaudit.outcome != 'success'
