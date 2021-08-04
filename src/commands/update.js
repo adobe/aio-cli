@@ -26,6 +26,10 @@ class UpdateCommand extends Command {
    * List the plugins that have updates.
    *
    * @param {Array<ToUpdatePlugin>} plugins the plugins to update
+   * @param {object} colOptions the column options
+   * @param {string} colOptions.col1 the heading text for the first column
+   * @param {string} colOptions.col2 the heading text for the second column
+   * @param {string} colOptions.col3 the heading text for the third column
    */
   async __list (plugins, { col1 = 'user plugin updates available', col2 = 'current', col3 = 'latest' } = {}) {
     const columns = {
@@ -171,6 +175,8 @@ class UpdateCommand extends Command {
 
   /**
    * Command entry point
+   *
+   * @returns {Promise} promise that lists/interactive install/installs the update
    */
   async run () {
     const { flags } = this.parse(UpdateCommand)

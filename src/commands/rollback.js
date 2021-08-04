@@ -104,6 +104,8 @@ class RollbackCommand extends Command {
 
   /**
    * Command entry point
+   *
+   * @returns {Promise} promise that lists/interactive clear/clears the installed updates
    */
   async run () {
     const { flags } = this.parse(RollbackCommand)
