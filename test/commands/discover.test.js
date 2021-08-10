@@ -70,8 +70,8 @@ describe('sorting', () => {
       return command.run()
         .then(() => {
           const splitOutput = stdout.output.split('\n')
-          expect(splitOutput[1]).toMatch('bar') // bar is first
-          expect(splitOutput[2]).toMatch('foo') // foo is second
+          expect(splitOutput[2]).toMatch('bar') // bar is first
+          expect(splitOutput[3]).toMatch('foo') // foo is second
           resolve()
         })
     })
@@ -83,8 +83,8 @@ describe('sorting', () => {
       return command.run()
         .then(() => {
           const splitOutput = stdout.output.split('\n')
-          expect(splitOutput[1]).toMatch('foo') // foo is first
-          expect(splitOutput[2]).toMatch('bar') // bar is second
+          expect(splitOutput[2]).toMatch('foo') // foo is first
+          expect(splitOutput[3]).toMatch('bar') // bar is second
           resolve()
         })
     })
@@ -96,8 +96,8 @@ describe('sorting', () => {
       return command.run()
         .then(() => {
           const splitOutput = stdout.output.split('\n')
-          expect(splitOutput[1]).toMatch('foo') // foo is first
-          expect(splitOutput[2]).toMatch('bar') // bar is second
+          expect(splitOutput[2]).toMatch('foo') // foo is first
+          expect(splitOutput[3]).toMatch('bar') // bar is second
           resolve()
         })
     })
@@ -109,8 +109,8 @@ describe('sorting', () => {
       return command.run()
         .then(() => {
           const splitOutput = stdout.output.split('\n')
-          expect(splitOutput[1]).toMatch('bar') // bar is first
-          expect(splitOutput[2]).toMatch('foo') // foo is second
+          expect(splitOutput[2]).toMatch('bar') // bar is first
+          expect(splitOutput[3]).toMatch('foo') // foo is second
           resolve()
         })
     })

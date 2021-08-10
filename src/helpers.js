@@ -78,6 +78,7 @@ async function getNpmLocalVersion (cliRoot, npmPackageName) {
  *
  * @param {string} [message=Confirm?] the message to show
  * @param {boolean} [defaultValue=false] the default value if the user presses 'Enter'
+ * @returns {boolean} true or false chosen for the confirmation
  */
 async function prompt (message = 'Confirm?', defaultValue = false) {
   return inquirer.prompt({
