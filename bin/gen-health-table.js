@@ -16,7 +16,7 @@ function genRow (pkName) {
   return `| [@${pkName}](https://github.com/${pkName})  ` +
          `| [![Version](https://img.shields.io/npm/v/@${pkName}.svg)](https://npmjs.org/package/@${pkName})` +
          `| [![Downloads/week](https://img.shields.io/npm/dw/@${pkName}.svg)](https://npmjs.org/package/@${pkName})` +
-         `| [![Build Status](https://travis-ci.com/${pkName}.svg?branch=master)](https://travis-ci.com/${pkName})` +
+         `| [![Node.js CI](https://github.com/${pkName}/actions/workflows/node.js.yml/badge.svg)](https://github.com/${pkName}/actions/workflows/node.js.yml)` +
          `| [![Codecov Coverage](https://img.shields.io/codecov/c/github/${pkName}/master.svg?style=flat-square)](https://codecov.io/gh/${pkName}/)` +
          `| [![Github Issues](https://img.shields.io/github/issues/${pkName}.svg)](https://github.com/${pkName}/issues)` +
          `| [![Github Pull Requests](https://img.shields.io/github/issues-pr/${pkName}.svg)](https://github.com/${pkName}/pulls)|`
