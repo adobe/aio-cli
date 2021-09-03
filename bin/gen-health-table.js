@@ -42,7 +42,8 @@ const pkjson = fs.readJSONSync('package.json')
 const adobeDeps = pkjson.oclif.plugins
   .filter(item => item.indexOf('@adobe/aio-cli-plugin') === 0)
   .concat([ // additional repos to show in health table
-    '@adobe/generator-aio-app'
+    '@adobe/generator-aio-app',
+    '@adobe/generator-aio-console'
   ])
   .map(item => item.substring(1))
 
