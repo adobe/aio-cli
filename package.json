@@ -4,8 +4,7 @@
   "version": "8.1.0",
   "author": "Adobe Inc.",
   "bin": {
-    "aio": "./bin/run",
-    "adobe": "./bin/run"
+    "aio": "./bin/run"
   },
   "bugs": "https://github.com/adobe/aio-cli/issues",
   "dependencies": {
