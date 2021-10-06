@@ -56,11 +56,11 @@ run gen-health-table.js with `npm run gen-health`
 
 # Getting started
 
-See the [Project Firefly docs](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html)
+See the [Adobe Developer App Builder docs](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html)
 
 # Technical requirements
 
-See the [Project Firefly `Setting up Your Environment` doc](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html#!AdobeDocs/project-firefly/master/getting_started/setup.md)
+See the [App Builder `Setting up Your Environment` doc](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html#!AdobeDocs/project-firefly/master/getting_started/setup.md)
 
 # Usage
 <!-- usage -->
