@@ -26,28 +26,37 @@ test('cli init test', async () => {
   await fse.mkdir(testFolder)
   process.chdir(testFolder)
 
-  await execa('node', ['../bin/run', 'app', 'init', '-y'], { stderr: 'inherit' })
+  await execa('node', ['../bin/run', 'app', 'init', '-y', '--no-login', '--no-extensions'], { stderr: 'inherit' })
 
   const files = [
     'actions/generic/index.js',
-    'test/actions/generic.test.js',
-    'test/jest.setup.js',
+    'actions/publish-events/index.js',
+    'actions/utils.js',
+    'test/generic.test.js',
+    'test/publish-events.test.js',
+    'test/utils.test.js',
+    'jest.setup.js',
     'web-src/src/index.js',
     'web-src/src/exc-runtime.js',
     'web-src/index.html',
-    '.aio',
+    '.babelrc',
     '.env',
     'package.json',
     'README.md',
-    'manifest.yml']
+    'app.config.yaml'
+  ]
+
+  const missingFiles = []
 
   files.forEach(file => {
     const fileExists = fs.existsSync(file)
     if (!fileExists) {
       console.error(`File ${file} does not exist.`)
+      missingFiles.push(file)
     }
-    expect(fileExists).toBeTruthy()
   })
+
+  expect(missingFiles).toEqual([])
 
   process.chdir('..')
   await fse.rm(testFolder, { recursive: true, force: true })
