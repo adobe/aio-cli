@@ -12,7 +12,7 @@
     "@adobe/aio-cli-plugin-app": "^8.2.0",
     "@adobe/aio-cli-plugin-auth": "^2.5.0",
     "@adobe/aio-cli-plugin-certificate": "^0.3.0",
-    "@adobe/aio-cli-plugin-config": "^2.3.0",
+    "@adobe/aio-cli-plugin-config": "^3.0.0",
     "@adobe/aio-cli-plugin-console": "^3.4.2",
     "@adobe/aio-cli-plugin-info": "^2.1.0",
     "@adobe/aio-cli-plugin-runtime": "^5.1.0",
