@@ -43,9 +43,14 @@ AIOCommand.run = async (argv, opts) => {
       break
     }
   }
-
   // the second parameter is the root path to the CLI containing the command
-  return run(argv, config.options)
+  try {
+    return await run(argv, config.options)
+  }
+  catch (exc) {
+    config.runHook('command_error', { message: exc.message })
+    throw(exc)
+  }
 }
 
 module.exports = AIOCommand
