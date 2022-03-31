@@ -46,10 +46,9 @@ AIOCommand.run = async (argv, opts) => {
   // the second parameter is the root path to the CLI containing the command
   try {
     return await run(argv, config.options)
-  }
-  catch (exc) {
-    config.runHook('command_error', { message: exc.message })
-    throw(exc)
+  } catch (error) {
+    await config.runHook('command_error', { message: error.message })
+    throw (error)
   }
 }
 
