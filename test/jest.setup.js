@@ -22,5 +22,5 @@ jest.setMock('node-fetch', fetch)
 jest.mock('fs', () => require('jest-plugin-fs/mock'))
 
 // trap console log
-beforeEach(() => { stdout.start(); stdout.print = true })
+beforeEach(() => { stdout.start() })
 afterEach(() => { stdout.stop() })
