@@ -47,8 +47,13 @@ AIOCommand.run = async (argv, opts) => {
   try {
     return await run(argv, config.options)
   } catch (error) {
-    await config.runHook('command_error', { message: error.message })
-    throw (error)
+    // oclif throws if the user typed --help ... ?
+    if (error.oclif && error.oclif.exit === 0) {
+      await config.runHook('postrun')
+    } else {
+      await config.runHook('command_error', { message: error.message })
+      throw (error)
+    }
   }
 }
 

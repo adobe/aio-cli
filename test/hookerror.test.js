@@ -14,15 +14,25 @@ const testCommand = require('../src/index')
 
 const mockRunHook = jest.fn()
 
+class MockOclifError extends Error {
+  constructor (message) {
+    super(message)
+    this.name = 'OclifError'
+    this.oclif = { exit: 0 }
+  }
+}
+
 jest.mock('@oclif/command', () => {
   return {
     // note: arrow function won't work because Command is extended and called with new
-    Command: function () {
-      console.log('someone created this')
-    },
+    Command: function () { },
     run: function (cmd) {
-      console.log('thriwing')
-      throw new Error('things do not look good')
+      if (cmd.indexOf('--help') > -1) {
+        // this error has extra props, so base command knows not to re-throw it
+        throw new MockOclifError('maybe things will turn out okay')
+      } else {
+        throw new Error('things do not look good')
+      }
     }
   }
 })
@@ -43,6 +53,11 @@ jest.mock('@oclif/config', () => {
 describe('when command run throws', () => {
   test('fire hook when command throws', async () => {
     await expect(testCommand.run(['a', 'c', 'd'])).rejects.toThrow('things do not look good')
-    expect(mockRunHook).toBeCalled()
+    expect(mockRunHook).toHaveBeenCalledWith('command_error', expect.objectContaining({ message: 'things do not look good' }))
+  })
+
+  test('when command throws oclif-error, swallow error and fire `postrun` event :  --help', async () => {
+    await expect(testCommand.run(['a', 'c', 'd', '--help'])).resolves.toEqual(undefined)
+    expect(mockRunHook).toHaveBeenCalledWith('postrun')
   })
 })
