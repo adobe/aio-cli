@@ -62,6 +62,25 @@ See the [Adobe Developer App Builder docs](https://www.adobe.io/apis/experiencep
 
 See the [App Builder `Setting up Your Environment` doc](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html#!AdobeDocs/project-firefly/master/getting_started/setup.md)
 
+# Proxy Support
+
+Set these environment variables, to use proxies (case sensitive):
+1. `HTTP_PROXY`
+2. `HTTPS_PROXY`
+
+The appropriate proxy will be used to proxy http/https urls respectively.
+
+If your proxy requires basic authentication, embed the username and password in the url itself. For example, if your server is `https://example.com` and username is `user` and password is `password`, the url should look like this:
+```
+https://user:password@example.com
+```
+If your username or password contains non-alphanumeric characters, they **must** be url-encoded.
+
+You can verify if you set the proxy info properly by running:
+```
+aio info
+```
+
 # Usage
 <!-- usage -->
 ```sh-session
