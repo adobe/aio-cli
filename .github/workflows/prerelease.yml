@@ -29,6 +29,8 @@ jobs:
         with:
           node-version: 16
       - run: |
+          npm pkg set bin.aio-next="./bin/run"
+          npm pkg delete bin.aio
           npm install
           npm test
       - name: Update your package.json with an npm pre-release version
