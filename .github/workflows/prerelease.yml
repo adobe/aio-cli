@@ -30,7 +30,7 @@ jobs:
         with:
           node-version: 16
       - run: |
-          npm pkg set name ${{ github.event.inputs.package-name }}
+          npm pkg set name=${{ github.event.inputs.package-name }}
           npm pkg set bin.aio-next="./bin/run"
           npm pkg delete bin.aio
           npm install
