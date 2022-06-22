@@ -13,7 +13,7 @@ on:
       dependencies-to-update:
         description: 'csv of dependencies to update with the dist-tag'
         required: false
-        default: '@adobe/aio-cli-plugin-app,@adobe/aio-cli-plugin-auth,@adobe/aio-cli-plugin-certificate,@adobe/aio-cli-plugin-config,@adobe/aio-cli-plugin-console,@adobe/aio-cli-plugin-events,@adobe/aio-cli-plugin-info,@adobe/aio-cli-plugin-runtime'
+        default: '@adobe/aio-cli-plugin-app,@adobe/aio-cli-plugin-auth,@adobe/aio-cli-plugin-certificate,@adobe/aio-cli-plugin-config,@adobe/aio-cli-plugin-console,@adobe/aio-cli-plugin-events,@adobe/aio-cli-plugin-info,@adobe/aio-cli-plugin-runtime,@adobe/aio-cli-plugin-telemetry'
       package-name: @adobe/aio-cli-next  
 
 jobs:
