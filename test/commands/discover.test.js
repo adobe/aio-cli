@@ -66,54 +66,34 @@ describe('sorting', () => {
 
   test('sort-field=name, ascending', async () => {
     command.argv = ['--sort-field', 'name', '--sort-order', 'asc']
-    return new Promise(resolve => {
-      return command.run()
-        .then(() => {
-          const splitOutput = stdout.output.split('\n')
-          expect(splitOutput[2]).toMatch('bar') // bar is first
-          expect(splitOutput[3]).toMatch('foo') // foo is second
-          resolve()
-        })
-    })
+    await command.run()
+    const splitOutput = stdout.output.split('\n')
+    expect(splitOutput[2]).toMatch('bar') // bar is first
+    expect(splitOutput[3]).toMatch('foo') // foo is second
   })
 
   test('sort-field=name, descending', async () => {
     command.argv = ['--sort-field', 'name', '--sort-order', 'desc']
-    return new Promise(resolve => {
-      return command.run()
-        .then(() => {
-          const splitOutput = stdout.output.split('\n')
-          expect(splitOutput[2]).toMatch('foo') // foo is first
-          expect(splitOutput[3]).toMatch('bar') // bar is second
-          resolve()
-        })
-    })
+    await command.run()
+    const splitOutput = stdout.output.split('\n')
+    expect(splitOutput[2]).toMatch('foo') // foo is first
+    expect(splitOutput[3]).toMatch('bar') // bar is second
   })
 
   test('sort-field=date, ascending', async () => {
     command.argv = ['--sort-field', 'date', '--sort-order', 'asc']
-    return new Promise(resolve => {
-      return command.run()
-        .then(() => {
-          const splitOutput = stdout.output.split('\n')
-          expect(splitOutput[2]).toMatch('foo') // foo is first
-          expect(splitOutput[3]).toMatch('bar') // bar is second
-          resolve()
-        })
-    })
+    await command.run()
+    const splitOutput = stdout.output.split('\n')
+    expect(splitOutput[2]).toMatch('foo') // foo is first
+    expect(splitOutput[3]).toMatch('bar') // bar is second
   })
 
   test('sort-field=date, descending', async () => {
     command.argv = ['--sort-field', 'date', '--sort-order', 'desc']
-    return new Promise(resolve => {
-      return command.run()
-        .then(() => {
-          const splitOutput = stdout.output.split('\n')
-          expect(splitOutput[2]).toMatch('bar') // bar is first
-          expect(splitOutput[3]).toMatch('foo') // foo is second
-          resolve()
-        })
-    })
+    await command.run()
+    const splitOutput = stdout.output.split('\n')
+    expect(splitOutput[2]).toMatch('bar') // bar is first
+    expect(splitOutput[3]).toMatch('foo') // foo is second
   })
 })
 
@@ -136,15 +116,10 @@ test('interactive install', async () => {
     plugins: ['bar', 'foo']
   })
 
-  return new Promise(resolve => {
-    return command.run()
-      .then((result) => {
-        expect(result).toEqual(['bar', 'foo'])
-        const arg = inquirer.prompt.mock.calls[0][0] // first arg of first call
-        expect(arg[0].choices.map(elem => elem.value)).toEqual(['bar', 'foo']) // baz was an existing plugin, filtered out
-        resolve()
-      })
-  })
+  const result = await command.run()
+  expect(result).toEqual(['bar', 'foo'])
+  const arg = inquirer.prompt.mock.calls[0][0] // first arg of first call
+  expect(arg[0].choices.map(elem => elem.value)).toEqual(['bar', 'foo']) // baz was an existing plugin, filtered out
 })
 
 test('interactive install - no choices', async () => {
@@ -161,31 +136,12 @@ test('interactive install - no choices', async () => {
   inquirer.prompt = jest.fn().mockResolvedValue({
     plugins: []
   })
-
-  return new Promise(resolve => {
-    return command.run()
-      .then((result) => {
-        expect(result).toEqual([])
-        resolve()
-      })
-  })
+  const result = await command.run()
+  expect(result).toEqual([])
 })
 
 test('json result error', async () => {
-  const expectedResult = {
-  }
-  fetch.mockResponse(JSON.stringify(expectedResult))
-
+  fetch.mockResponse()
   command.argv = []
-
-  return new Promise((resolve, reject) => {
-    return command.run()
-      .then(() => {
-        reject(new Error('this should not succeed'))
-      })
-      .catch((error) => {
-        expect(error.message).toMatch('Oops:')
-        resolve()
-      })
-  })
+  await expect(command.run()).rejects.toThrow('FetchError: invalid json response body')
 })

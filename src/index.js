@@ -10,8 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-const { Command, run } = require('@oclif/command')
-const Config = require('@oclif/config')
+const { Command, run, Config } = require('@oclif/core')
 
 class AIOCommand extends Command { }
 

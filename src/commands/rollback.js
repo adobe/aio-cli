@@ -10,9 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
-const { Command, flags } = require('@oclif/command')
+const { Command, Flags, CliUx: cli } = require('@oclif/core')
 const inquirer = require('inquirer')
-const { cli } = require('cli-ux')
 const { prompt, hideNPMWarnings } = require('../helpers')
 
 require('../types.jsdoc') // get types
@@ -36,7 +35,7 @@ class RollbackCommand extends Command {
       }
     }
 
-    cli.table(plugins, columns)
+    cli.ux.table(plugins, columns)
   }
 
   /**
@@ -108,7 +107,7 @@ class RollbackCommand extends Command {
    * @returns {Promise} promise that lists/interactive clear/clears the installed updates
    */
   async run () {
-    const { flags } = this.parse(RollbackCommand)
+    const { flags } = await this.parse(RollbackCommand)
     const plugins = this.config.plugins.filter(p => p.type === 'user')
 
     if (plugins.length === 0) {
@@ -129,23 +128,23 @@ class RollbackCommand extends Command {
 RollbackCommand.description = 'Clears all installed plugins.'
 
 RollbackCommand.flags = {
-  interactive: flags.boolean({
+  interactive: Flags.boolean({
     char: 'i',
     default: false,
     description: 'interactive clear mode'
   }),
-  list: flags.boolean({
+  list: Flags.boolean({
     char: 'l',
     default: false,
     description: 'list plugins that will be cleared'
   }),
-  confirm: flags.boolean({
+  confirm: Flags.boolean({
     char: 'c',
     default: true,
     description: 'confirmation needed for clear (defaults to true)',
     allowNo: true
   }),
-  verbose: flags.boolean({
+  verbose: Flags.boolean({
     char: 'v',
     default: false,
     description: 'Verbose output'
