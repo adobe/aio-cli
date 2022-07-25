@@ -12,18 +12,6 @@
 
 const testCommand = require('../src/index')
 
-// jest.mock('@oclif/core/config', () => {
-//   return {
-//     load: () => {
-//       return {
-//         findCommand: (cmd) => {
-//           return ['a', 'a:b', 'a:b:c', 'a:b:c:d'].indexOf(cmd) > -1
-//         }
-//       }
-//     }
-//   }
-// })
-
 jest.mock('@oclif/core', () => {
   return {
     ...jest.requireActual('@oclif/core'),
@@ -42,16 +30,6 @@ jest.mock('@oclif/core', () => {
     }
   }
 })
-
-// jest.mock('@oclif/core/command', () => {
-//   return {
-//     // note: arrow function won't work because Command is extended and called with new
-//     Command: function () {},
-//     run: function (cmd) {
-//       return cmd
-//     }
-//   }
-// })
 
 describe('run command', () => {
   test('index exports a run function', async () => {

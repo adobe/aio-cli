@@ -53,35 +53,6 @@ jest.mock('@oclif/core', () => {
     }
   }
 })
-// const { CliUx: { ux: cli } } = require('@oclif/core')
-
-// jest.mock('@oclif/core/command', () => {
-//   return {
-//     // note: arrow function won't work because Command is extended and called with new
-//     Command: function () { },
-//     run: function (cmd) {
-//       if (cmd.indexOf('--help') > -1) {
-//         // this error has extra props, so base command knows not to re-throw it
-//         throw new MockOclifError('maybe things will turn out okay')
-//       } else {
-//         throw new Error('things do not look good')
-//       }
-//     }
-//   }
-// })
-
-// jest.mock('@oclif/core/config', () => {
-//   return {
-//     load: () => {
-//       return {
-//         runHook: mockRunHook,
-//         findCommand: (cmd) => {
-//           return ['a', 'a:b', 'a:b:c', 'a:b:c:d'].indexOf(cmd) > -1
-//         }
-//       }
-//     }
-//   }
-// })
 
 describe('when command run throws', () => {
   test('fire hook when command throws', async () => {
