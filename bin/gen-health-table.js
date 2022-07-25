@@ -10,7 +10,7 @@ governing permissions and limitations under the License.
 */
 
 const fs = require('fs-extra')
-const Readme = require('@oclif/dev-cli/lib/commands/readme').default
+const Readme = require('oclif/lib/commands/readme').default
 
 function genRow (pkName) {
   return `| [@${pkName}](https://github.com/${pkName})  ` +
