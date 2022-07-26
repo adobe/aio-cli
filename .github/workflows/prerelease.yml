@@ -33,8 +33,11 @@ jobs:
           npm pkg set name=${{ github.event.inputs.package-name }}
           npm pkg set bin.aio-next="./bin/run"
           npm pkg delete bin.aio
-          npm install
-          npm test
+
+      - name: npm install and test
+      - run: |
+        npm install
+        npm test
       - name: Update your package.json with an npm pre-release version
         id: pre-release-version
         uses: adobe/update-prerelease-npm-version@v1.0.2
@@ -42,7 +45,12 @@ jobs:
           pre-release-tag: ${{ github.event.inputs.pre-release-tag }}
           dependencies-to-update: ${{ github.event.inputs.dependencies-to-update }}
           dependencies-to-update-version-tag: ${{ github.event.inputs.dist-tag }}
-      - run: echo pre-release-version - ${{ steps.pre-release-version.outputs.pre-release-version }}           
+      - run: |
+        echo pre-release-version - ${{ steps.pre-release-version.outputs.pre-release-version }}
+      - name: npm install, build and test
+      - run: |
+        npm install
+        npm test
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.ADOBE_BOT_NPM_TOKEN }}
