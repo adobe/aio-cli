@@ -24,13 +24,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        run: |
+      - run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
       - uses: actions/setup-node@v1
         with:
           node-version: 16
-        run: |
+      - run: |
           npm pkg set name=${{ github.event.inputs.package-name }}
           npm pkg set bin.aio-next="./bin/run"
           npm pkg delete bin.aio
@@ -41,12 +41,8 @@ jobs:
           pre-release-tag: ${{ github.event.inputs.pre-release-tag }}
           dependencies-to-update: ${{ github.event.inputs.dependencies-to-update }}
           dependencies-to-update-version-tag: ${{ github.event.inputs.dist-tag }}
-        run: echo pre-release-version - ${{ steps.pre-release-version.outputs.pre-release-version }}
-      - name: npm install and test
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16
-        run: |
+      - run: echo pre-release-version - ${{ steps.pre-release-version.outputs.pre-release-version }}
+      - run: |
           npm install
           npm test
       - uses: JS-DevTools/npm-publish@v1
