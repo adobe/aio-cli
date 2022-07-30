@@ -16,6 +16,7 @@ on:
         default: '@adobe/aio-cli-plugin-app,@adobe/aio-cli-plugin-auth,@adobe/aio-cli-plugin-certificate,@adobe/aio-cli-plugin-config,@adobe/aio-cli-plugin-console,@adobe/aio-cli-plugin-events,@adobe/aio-cli-plugin-info,@adobe/aio-cli-plugin-runtime,@adobe/aio-cli-plugin-telemetry'
       package-name:
         description: 'npm package name that pre-release testers will `npm install`'
+        required: false
         default: '@adobe/aio-cli-next'
 jobs:
   checkout:
@@ -26,6 +27,7 @@ jobs:
       - run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
+          git branch
       - uses: actions/setup-node@v1
         with:
           node-version: 16
@@ -33,8 +35,6 @@ jobs:
           npm pkg set name=${{ github.event.inputs.package-name }}
           npm pkg set bin.aio-next="./bin/run"
           npm pkg delete bin.aio
-          npm install
-          npm test
       - name: Update your package.json with an npm pre-release version
         id: pre-release-version
         uses: adobe/update-prerelease-npm-version@v1.0.2
@@ -42,7 +42,10 @@ jobs:
           pre-release-tag: ${{ github.event.inputs.pre-release-tag }}
           dependencies-to-update: ${{ github.event.inputs.dependencies-to-update }}
           dependencies-to-update-version-tag: ${{ github.event.inputs.dist-tag }}
-      - run: echo pre-release-version - ${{ steps.pre-release-version.outputs.pre-release-version }}           
+      - run: echo pre-release-version - ${{ steps.pre-release-version.outputs.pre-release-version }}
+      - run: |
+          npm install
+          npm test
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.ADOBE_BOT_NPM_TOKEN }}

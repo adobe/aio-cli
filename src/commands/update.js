@@ -10,9 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
-const { Command, flags } = require('@oclif/command')
+const { Command, Flags, CliUx: cli } = require('@oclif/core')
 const inquirer = require('inquirer')
-const { cli } = require('cli-ux')
 const chalk = require('chalk')
 const ora = require('ora')
 const semver = require('semver')
@@ -46,7 +45,7 @@ class UpdateCommand extends Command {
       }
     }
 
-    cli.table(plugins, columns)
+    cli.ux.table(plugins, columns)
   }
 
   /**
@@ -179,7 +178,7 @@ class UpdateCommand extends Command {
    * @returns {Promise} promise that lists/interactive install/installs the update
    */
   async run () {
-    const { flags } = this.parse(UpdateCommand)
+    const { flags } = await this.parse(UpdateCommand)
     const spinner = ora()
 
     spinner.start()
@@ -235,23 +234,23 @@ This command will only:
 `
 
 UpdateCommand.flags = {
-  interactive: flags.boolean({
+  interactive: Flags.boolean({
     char: 'i',
     default: false,
     description: 'interactive update mode'
   }),
-  list: flags.boolean({
+  list: Flags.boolean({
     char: 'l',
     default: false,
     description: 'list plugins that will be updated'
   }),
-  confirm: flags.boolean({
+  confirm: Flags.boolean({
     char: 'c',
     default: true,
     description: 'confirmation needed for update (defaults to true)',
     allowNo: true
   }),
-  verbose: flags.boolean({
+  verbose: Flags.boolean({
     char: 'v',
     default: false,
     description: 'Verbose output'

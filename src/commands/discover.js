@@ -10,8 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-const { Command, flags } = require('@oclif/command')
-const { cli } = require('cli-ux')
+const { Command, Flags, CliUx: cli } = require('@oclif/core')
 const fetch = require('node-fetch')
 const inquirer = require('inquirer')
 const { sortValues } = require('../helpers')
@@ -85,11 +84,11 @@ class DiscoCommand extends Command {
       }
     }
     // skip ones that aren't from us
-    cli.table(plugins, columns)
+    cli.ux.table(plugins, columns)
   }
 
   async run () {
-    const { flags } = this.parse(DiscoCommand)
+    const { flags } = await this.parse(DiscoCommand)
 
     try {
       const url = 'https://registry.npmjs.org/-/v1/search?text=aio-cli-plugin'
@@ -112,7 +111,7 @@ class DiscoCommand extends Command {
         return this._list(adobeOnly)
       }
     } catch (error) {
-      this.error('Oops:' + error)
+      this.error(error.toString())
     }
   }
 }
@@ -123,18 +122,18 @@ To install a plugin, run 'aio plugins install NAME'
 
 DiscoCommand.aliases = ['plugins:discover']
 DiscoCommand.flags = {
-  install: flags.boolean({
+  install: Flags.boolean({
     char: 'i',
     default: false,
     description: 'interactive install mode'
   }),
-  'sort-field': flags.string({
+  'sort-field': Flags.string({
     char: 'f',
     default: 'date',
     options: ['date', 'name'],
     description: 'which column to sort, use the sort-order flag to specify sort direction'
   }),
-  'sort-order': flags.string({
+  'sort-order': Flags.string({
     char: 'o',
     default: 'desc',
     options: ['asc', 'desc'],

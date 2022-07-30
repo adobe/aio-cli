@@ -22,5 +22,6 @@ jest.setMock('node-fetch', fetch)
 jest.mock('fs', () => require('jest-plugin-fs/mock'))
 
 // trap console log
-beforeEach(() => { stdout.start() })
+// note: if you use console.log, some of these tests will start failing because they depend on the order/position of the output
+beforeEach(() => { stdout.start(); stdout.print = false })
 afterEach(() => { stdout.stop() })

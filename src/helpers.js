@@ -31,6 +31,7 @@ require('./types.jsdoc') // get types
 function sortValues (values, { descending = true, field = 'date' } = {}) {
   const supportedFields = ['name', 'date']
   if (!supportedFields.includes(field)) { // unknown field, we just return the array
+    console.log('unknown field ... ', field)
     return values
   }
 
@@ -96,7 +97,7 @@ async function prompt (message = 'Confirm?', defaultValue = false) {
  *
  */
 function hideNPMWarnings () {
-  var fn = process.stderr.write
+  const fn = process.stderr.write
 
   /**
    * Function to override the process.stderr.write and hide npm warnings
