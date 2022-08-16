@@ -9,6 +9,10 @@ on:
       dist-tag:
         description: 'The dist-tag use'
         required: false
+        default: 'latest'
+      dependencies-dist-tag:
+        description: 'The dist-tag use for dependencies'
+        required: false
         default: 'next'
       dependencies-to-update:
         description: 'csv of dependencies to update with the dist-tag'
@@ -41,7 +45,7 @@ jobs:
         with:
           pre-release-tag: ${{ github.event.inputs.pre-release-tag }}
           dependencies-to-update: ${{ github.event.inputs.dependencies-to-update }}
-          dependencies-to-update-version-tag: ${{ github.event.inputs.dist-tag }}
+          dependencies-to-update-version-tag: ${{ github.event.inputs.dependencies-dist-tag }}
       - run: echo pre-release-version - ${{ steps.pre-release-version.outputs.pre-release-version }}
       - run: |
           npm install
