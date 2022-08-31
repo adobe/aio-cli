@@ -25,6 +25,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    # always use the latest npm because of lockfile version compatibility
+    - run: npm i -g npm@latest
     - run: npm i --package-lock --package-lock-only
     - run: npm ci
     - run: npm run build --if-present
