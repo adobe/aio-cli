@@ -27,8 +27,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     # always use the latest npm because of lockfile version compatibility
     - run: npm i -g npm@latest
-    # set specific Visual Studio version for node-gyp
-    - run: npm config set msvs_version 2017
     - run: npm i --package-lock --package-lock-only
     - run: npm ci
     - run: npm run build --if-present
