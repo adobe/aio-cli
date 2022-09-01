@@ -25,14 +25,6 @@ jobs:
       uses: actions/setup-node@v3.4.1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Update node-gyp
-      if: matrix.os == 'windows-latest'
-      run: |
-        $WhereNode = Get-Command node | Select-Object -ExpandProperty Definition
-        $NodeDirPath = Split-Path $WhereNode -Parent
-        $NodeModulesPath = $NodeDirPath + "\node_modules\npm\node_modules\npm-lifecycle"
-        cd $NodeModulesPath
-        npm install node-gyp@9.x
     # always use the latest npm because of lockfile version compatibility
     - run: npm i -g npm@latest
     - run: npm i --package-lock --package-lock-only
