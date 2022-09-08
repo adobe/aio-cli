@@ -1,4 +1,4 @@
-name: publish-prerelease
+name: publish-prerelease (next versions of dependencies)
 on:
   workflow_dispatch:
     inputs:
