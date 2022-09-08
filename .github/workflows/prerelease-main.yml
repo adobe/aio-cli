@@ -1,0 +1,52 @@
+name: publish-prerelease
+on:
+  workflow_dispatch:
+    inputs:
+      pre-release-tag:
+        description: 'The pre-release tag use in the version'
+        required: false
+        default: 'pre'
+      dist-tag:
+        description: 'The dist-tag use'
+        required: false
+        default: 'latest'
+      dependencies-dist-tag:
+        description: 'The dist-tag use for dependencies'
+        required: false
+        default: 'next'
+      package-name:
+        description: 'npm package name that pre-release testers will `npm install`'
+        required: false
+        default: '@adobe/aio-cli-next'
+jobs:
+  checkout:
+    name: checkout
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git branch
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - run: |
+          npm pkg set name=${{ github.event.inputs.package-name }}
+          npm pkg set bin.aio-next="./bin/run"
+          npm pkg delete bin.aio
+      - name: Update your package.json with an npm pre-release version
+        id: pre-release-version
+        uses: adobe/update-prerelease-npm-version@v1.0.2
+        with:
+          pre-release-tag: ${{ github.event.inputs.pre-release-tag }}
+          dependencies-to-update-version-tag: ${{ github.event.inputs.dependencies-dist-tag }}
+      - run: echo pre-release-version - ${{ steps.pre-release-version.outputs.pre-release-version }}
+      - run: |
+          npm install
+          npm test
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.ADOBE_BOT_NPM_TOKEN }}
+          tag: ${{ github.event.inputs.dist-tag }}
+          access: 'public'
