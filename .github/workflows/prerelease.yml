@@ -39,6 +39,7 @@ jobs:
           npm pkg set name=${{ github.event.inputs.package-name }}
           npm pkg set bin.aio-next="./bin/run"
           npm pkg delete bin.aio
+          npm pkg set oclif.bin="aio-next"
       - name: Update your package.json with an npm pre-release version
         id: pre-release-version
         uses: adobe/update-prerelease-npm-version@v1.0.2
