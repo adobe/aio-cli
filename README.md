@@ -90,7 +90,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (--version)
-@adobe/aio-cli/8.3.0 darwin-arm64 node-v14.19.2
+@adobe/aio-cli/9.0.0 darwin-arm64 node-v16.17.0
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -490,11 +490,10 @@ USAGE
 * [`aio templates i PATH`](#aio-templates-i-path)
 * [`aio templates info`](#aio-templates-info)
 * [`aio templates install PATH`](#aio-templates-install-path)
-* [`aio templates r NAME`](#aio-templates-r-name)
 * [`aio templates remove NAME`](#aio-templates-remove-name)
-* [`aio templates rollb`](#aio-templates-rollb)
+* [`aio templates rm NAME`](#aio-templates-rm-name)
 * [`aio templates rollback`](#aio-templates-rollback)
-* [`aio templates s NAME GITHUBREPOURL`](#aio-templates-s-name-githubrepourl)
+* [`aio templates sub NAME GITHUBREPOURL`](#aio-templates-sub-name-githubrepourl)
 * [`aio templates submit NAME GITHUBREPOURL`](#aio-templates-submit-name-githubrepourl)
 * [`aio templates un PACKAGE-NAME`](#aio-templates-un-package-name)
 * [`aio templates uninstall PACKAGE-NAME`](#aio-templates-uninstall-package-name)
@@ -517,7 +516,7 @@ DESCRIPTION
   Create, run, test, and deploy Adobe I/O Apps
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/9.0.0/src/commands/app/index.ts)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/9.2.0/src/commands/app/index.js)_
 
 ## `aio app add`
 
@@ -1258,7 +1257,7 @@ Build and deploy an Adobe I/O App
 USAGE
   $ aio app deploy [-v] [--version] [--skip-static] [--skip-web-assets] [--skip-actions] [--actions | -a
     <value>] [--web-assets] [--force-build | ] [--content-hash] [--web-optimize] [-e <value> | ] [--skip-build]
-    [--skip-deploy] [--build] [--open] [--force-publish |  | [--publish | ]] [--log-forwarding-update]
+    [--skip-deploy] [--build] [--open] [--force-deploy] [--force-publish |  | [--publish | ]] [--log-forwarding-update]
 
 FLAGS
   -a, --action=<value>...       Deploy only a specific action, the flags can be specified multiple times, this will set
@@ -1269,7 +1268,10 @@ FLAGS
   --[no-]build                  [default: true] Run the build phase before deployment
   --[no-]content-hash           [default: true] Enable content hashing in browser code
   --[no-]force-build            [default: true] Force a build even if one already exists
-  --force-publish               Force publish extension(s) to Exchange, delete previously published extension points
+  --force-deploy                [default: false] Force deploy changes, regardless of production Workspace being
+                                published in Exchange.
+  --force-publish               [default: false] Force publish extension(s) to Exchange, delete previously published
+                                extension points
   --[no-]log-forwarding-update  [default: true] Update log forwarding configuration on server
   --open                        Open the default web browser after a successful deploy, only valid if your app has a
                                 front-end
@@ -1639,9 +1641,9 @@ USAGE
 DESCRIPTION
   Adobe IMS commands to login and logout.
 
-  The main commands are auth:login to get or create an access token and
+  The main commands are `auth login` to get or create an access token and
 
-  auth:logout to invalidate an access token and thus log out from Adobe IMS.
+  `auth logout` to invalidate an access token and thus log out from Adobe IMS.
 
   Logging in and out is based on configuration of which there may be
 
@@ -1695,7 +1697,7 @@ EXAMPLES
     }
 ```
 
-_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/3.0.0/src/commands/auth/index.js)_
+_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/3.0.1/src/commands/auth/index.js)_
 
 ## `aio auth ctx`
 
@@ -1881,7 +1883,7 @@ DESCRIPTION
   Generate, fingerprint, or verify a certificate for use with Adobe I/O
 ```
 
-_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/1.0.0/src/commands/certificate/index.js)_
+_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/1.0.1/src/commands/certificate/index.js)_
 
 ## `aio certificate fingerprint FILE`
 
@@ -1980,7 +1982,7 @@ EXAMPLES
   $ aio config:clear
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/4.0.0/src/commands/config/index.ts)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/4.0.1/src/commands/config/index.js)_
 
 ## `aio config clear`
 
@@ -2188,7 +2190,7 @@ DESCRIPTION
   Console plugin for the Adobe I/O CLI
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/4.0.0/src/commands/console/index.ts)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/4.0.1/src/commands/console/index.js)_
 
 ## `aio console org`
 
@@ -2947,7 +2949,7 @@ ALIASES
   $ aio plugins discover
 ```
 
-_See code: [src/commands/discover.ts](https://github.com/adobe/aio-cli/blob/8.3.0/src/commands/discover.ts)_
+_See code: [src/commands/discover.ts](https://github.com/adobe/aio-cli/blob/9.0.0/src/commands/discover.ts)_
 
 ## `aio event`
 
@@ -2966,7 +2968,7 @@ DESCRIPTION
   Manage your Adobe I/O Events
 ```
 
-_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v2.0.1/src/commands/event/index.js)_
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v2.0.2/src/commands/event/index.js)_
 
 ## `aio event eventmetadata`
 
@@ -3588,7 +3590,7 @@ DESCRIPTION
   Display dev environment version information
 ```
 
-_See code: [@adobe/aio-cli-plugin-info](https://github.com/adobe/aio-cli-plugin-info/blob/3.0.0/src/commands/info.ts)_
+_See code: [@adobe/aio-cli-plugin-info](https://github.com/adobe/aio-cli-plugin-info/blob/3.0.1/src/commands/info.js)_
 
 ## `aio login`
 
@@ -3956,7 +3958,7 @@ DESCRIPTION
   Report an issue with the CLI or submit a feature request
 ```
 
-_See code: [@adobe/aio-cli-plugin-info](https://github.com/adobe/aio-cli-plugin-info/blob/3.0.0/src/commands/report.ts)_
+_See code: [@adobe/aio-cli-plugin-info](https://github.com/adobe/aio-cli-plugin-info/blob/3.0.1/src/commands/report.js)_
 
 ## `aio rollback`
 
@@ -3976,7 +3978,7 @@ DESCRIPTION
   Clears all installed plugins.
 ```
 
-_See code: [src/commands/rollback.ts](https://github.com/adobe/aio-cli/blob/8.3.0/src/commands/rollback.ts)_
+_See code: [src/commands/rollback.ts](https://github.com/adobe/aio-cli/blob/9.0.0/src/commands/rollback.ts)_
 
 ## `aio rt`
 
@@ -8184,7 +8186,7 @@ ALIASES
   $ aio rt
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/6.0.0/src/commands/runtime/index.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/6.0.1/src/commands/runtime/index.js)_
 
 ## `aio runtime action`
 
@@ -12384,7 +12386,7 @@ DESCRIPTION
   Allow the Adobe Developer CLI to collect anonymous usage data
 ```
 
-_See code: [@adobe/aio-cli-plugin-telemetry](https://github.com/adobe/aio-cli-plugin-telemetry/blob/v1.0.1/src/commands/telemetry/index.js)_
+_See code: [@adobe/aio-cli-plugin-telemetry](https://github.com/adobe/aio-cli-plugin-telemetry/blob/v1.0.2/src/commands/telemetry/index.js)_
 
 ## `aio templates`
 
@@ -12401,7 +12403,7 @@ DESCRIPTION
   Discover, install, or uninstall a new template into an existing Adobe Developer App Builder App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/1.0.0-beta.10/src/commands/templates/index.ts)_
+_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/1.3.1/src/commands/templates/index.js)_
 
 ## `aio templates disco`
 
@@ -12459,7 +12461,7 @@ Install an Adobe Developer App Builder template
 
 ```
 USAGE
-  $ aio templates i [PATH] [-v] [-y] [--process-install-config] [--template-options <value>]
+  $ aio templates i [PATH] [-v] [-y] [--install] [--process-install-config] [--template-options <value>]
 
 ARGUMENTS
   PATH  path to the template (npm package name, file path, url). See examples
@@ -12467,6 +12469,7 @@ ARGUMENTS
 FLAGS
   -v, --verbose                  Verbose output
   -y, --yes                      Skip questions, and use all default values
+  --[no-]install                 [default: true] Run npm installation after files are created
   --[no-]process-install-config  [default: true] Process the template install.yml configuration file, defaults to true,
                                  to skip processing install.yml use --no-process-install-config
   --template-options=<value>     Additional template options, as a base64-encoded json string
@@ -12478,29 +12481,29 @@ ALIASES
   $ aio templates i
 
 EXAMPLES
-  $ aio templates:install https://github.com/org/repo
+  $ aio templates install https://github.com/org/repo
 
-  $ aio templates:install git+https://github.com/org/repo
+  $ aio templates install git+https://github.com/org/repo
 
-  $ aio templates:install ssh://github.com/org/repo
+  $ aio templates install ssh://github.com/org/repo
 
-  $ aio templates:install git+ssh://github.com/org/repo
+  $ aio templates install git+ssh://github.com/org/repo
 
-  $ aio templates:install file:../relative/path/to/template/folder
+  $ aio templates install file:../relative/path/to/template/folder
 
-  $ aio templates:install file:/absolute/path/to/template/folder
+  $ aio templates install file:/absolute/path/to/template/folder
 
-  $ aio templates:install ../relative/path/to/template/folder
+  $ aio templates install ../relative/path/to/template/folder
 
-  $ aio templates:install /absolute/path/to/template/folder
+  $ aio templates install /absolute/path/to/template/folder
 
-  $ aio templates:install npm-package-name
+  $ aio templates install npm-package-name
 
-  $ aio templates:install npm-package-name@tagOrVersion
+  $ aio templates install npm-package-name@tagOrVersion
 
-  $ aio templates:install @scope/npm-package-name
+  $ aio templates install @scope/npm-package-name
 
-  $ aio templates:install @scope/npm-package-name@tagOrVersion
+  $ aio templates install @scope/npm-package-name@tagOrVersion
 ```
 
 ## `aio templates info`
@@ -12509,12 +12512,13 @@ List all App Builder templates that are installed
 
 ```
 USAGE
-  $ aio templates info [-v] [-y | -j]
+  $ aio templates info [-v] [-y | -j] [-s]
 
 FLAGS
-  -j, --json     output raw json
-  -v, --verbose  Verbose output
-  -y, --yml      output yml
+  -j, --json               output raw json
+  -s, --required-services  includes services required by a template in the output
+  -v, --verbose            Verbose output
+  -y, --yml                output yml
 
 DESCRIPTION
   List all App Builder templates that are installed
@@ -12526,7 +12530,7 @@ Install an Adobe Developer App Builder template
 
 ```
 USAGE
-  $ aio templates install [PATH] [-v] [-y] [--process-install-config] [--template-options <value>]
+  $ aio templates install [PATH] [-v] [-y] [--install] [--process-install-config] [--template-options <value>]
 
 ARGUMENTS
   PATH  path to the template (npm package name, file path, url). See examples
@@ -12534,6 +12538,7 @@ ARGUMENTS
 FLAGS
   -v, --verbose                  Verbose output
   -y, --yes                      Skip questions, and use all default values
+  --[no-]install                 [default: true] Run npm installation after files are created
   --[no-]process-install-config  [default: true] Process the template install.yml configuration file, defaults to true,
                                  to skip processing install.yml use --no-process-install-config
   --template-options=<value>     Additional template options, as a base64-encoded json string
@@ -12545,53 +12550,29 @@ ALIASES
   $ aio templates i
 
 EXAMPLES
-  $ aio templates:install https://github.com/org/repo
+  $ aio templates install https://github.com/org/repo
 
-  $ aio templates:install git+https://github.com/org/repo
+  $ aio templates install git+https://github.com/org/repo
 
-  $ aio templates:install ssh://github.com/org/repo
+  $ aio templates install ssh://github.com/org/repo
 
-  $ aio templates:install git+ssh://github.com/org/repo
+  $ aio templates install git+ssh://github.com/org/repo
 
-  $ aio templates:install file:../relative/path/to/template/folder
+  $ aio templates install file:../relative/path/to/template/folder
 
-  $ aio templates:install file:/absolute/path/to/template/folder
+  $ aio templates install file:/absolute/path/to/template/folder
 
-  $ aio templates:install ../relative/path/to/template/folder
+  $ aio templates install ../relative/path/to/template/folder
 
-  $ aio templates:install /absolute/path/to/template/folder
+  $ aio templates install /absolute/path/to/template/folder
 
-  $ aio templates:install npm-package-name
+  $ aio templates install npm-package-name
 
-  $ aio templates:install npm-package-name@tagOrVersion
+  $ aio templates install npm-package-name@tagOrVersion
 
-  $ aio templates:install @scope/npm-package-name
+  $ aio templates install @scope/npm-package-name
 
-  $ aio templates:install @scope/npm-package-name@tagOrVersion
-```
-
-## `aio templates r NAME`
-
-Remove an Adobe Developer App Builder template from the Template Registry
-
-```
-USAGE
-  $ aio templates r [NAME] [-v]
-
-ARGUMENTS
-  NAME  The name of the package implementing the template on npmjs.com
-
-FLAGS
-  -v, --verbose  Verbose output
-
-DESCRIPTION
-  Remove an Adobe Developer App Builder template from the Template Registry
-
-ALIASES
-  $ aio templates r
-
-EXAMPLES
-  $ aio templates:remove @adobe/app-builder-template
+  $ aio templates install @scope/npm-package-name@tagOrVersion
 ```
 
 ## `aio templates remove NAME`
@@ -12612,31 +12593,34 @@ DESCRIPTION
   Remove an Adobe Developer App Builder template from the Template Registry
 
 ALIASES
-  $ aio templates r
+  $ aio templates rm
 
 EXAMPLES
-  $ aio templates:remove @adobe/app-builder-template
+  $ aio templates remove @adobe/app-builder-template
 ```
 
-## `aio templates rollb`
+## `aio templates rm NAME`
 
-Clears all installed templates
+Remove an Adobe Developer App Builder template from the Template Registry
 
 ```
 USAGE
-  $ aio templates rollb [-v] [-i] [-l] [-c]
+  $ aio templates rm [NAME] [-v]
+
+ARGUMENTS
+  NAME  The name of the package implementing the template on npmjs.com
 
 FLAGS
-  -c, --[no-]confirm  confirmation needed for clear (defaults to true)
-  -i, --interactive   interactive clear mode
-  -l, --list          list templates that will be uninstalled
-  -v, --verbose       Verbose output
+  -v, --verbose  Verbose output
 
 DESCRIPTION
-  Clears all installed templates
+  Remove an Adobe Developer App Builder template from the Template Registry
 
 ALIASES
-  $ aio templates rollb
+  $ aio templates rm
+
+EXAMPLES
+  $ aio templates remove @adobe/app-builder-template
 ```
 
 ## `aio templates rollback`
@@ -12655,18 +12639,15 @@ FLAGS
 
 DESCRIPTION
   Clears all installed templates
-
-ALIASES
-  $ aio templates rollb
 ```
 
-## `aio templates s NAME GITHUBREPOURL`
+## `aio templates sub NAME GITHUBREPOURL`
 
-Install an Adobe Developer App Builder template
+Submit an Adobe Developer App Builder template
 
 ```
 USAGE
-  $ aio templates s [NAME] [GITHUBREPOURL] [-v]
+  $ aio templates sub [NAME] [GITHUBREPOURL] [-v]
 
 ARGUMENTS
   NAME           The name of the package implementing the template on npmjs.com
@@ -12676,18 +12657,18 @@ FLAGS
   -v, --verbose  Verbose output
 
 DESCRIPTION
-  Install an Adobe Developer App Builder template
+  Submit an Adobe Developer App Builder template
 
 ALIASES
-  $ aio templates s
+  $ aio templates sub
 
 EXAMPLES
-  $ aio templates:submit @adobe/app-builder-template https://github.com/adobe/app-builder-template
+  $ aio templates submit @adobe/app-builder-template https://github.com/adobe/app-builder-template
 ```
 
 ## `aio templates submit NAME GITHUBREPOURL`
 
-Install an Adobe Developer App Builder template
+Submit an Adobe Developer App Builder template
 
 ```
 USAGE
@@ -12701,13 +12682,13 @@ FLAGS
   -v, --verbose  Verbose output
 
 DESCRIPTION
-  Install an Adobe Developer App Builder template
+  Submit an Adobe Developer App Builder template
 
 ALIASES
-  $ aio templates s
+  $ aio templates sub
 
 EXAMPLES
-  $ aio templates:submit @adobe/app-builder-template https://github.com/adobe/app-builder-template
+  $ aio templates submit @adobe/app-builder-template https://github.com/adobe/app-builder-template
 ```
 
 ## `aio templates un PACKAGE-NAME`
@@ -12774,7 +12755,7 @@ DESCRIPTION
   - update user-installed plugins that are not core
 ```
 
-_See code: [src/commands/update.ts](https://github.com/adobe/aio-cli/blob/8.3.0/src/commands/update.ts)_
+_See code: [src/commands/update.ts](https://github.com/adobe/aio-cli/blob/9.0.0/src/commands/update.ts)_
 
 ## `aio where`
 
