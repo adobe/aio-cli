@@ -90,7 +90,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (--version)
-@adobe/aio-cli/9.0.0 darwin-arm64 node-v16.17.0
+@adobe/aio-cli/9.1.0 darwin-x64 node-v16.17.0
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -516,7 +516,7 @@ DESCRIPTION
   Create, run, test, and deploy Adobe I/O Apps
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/9.2.0/src/commands/app/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/10.0.0/src/commands/app/index.js)_
 
 ## `aio app add`
 
@@ -540,11 +540,10 @@ Add new actions
 
 ```
 USAGE
-  $ aio app add action [-v] [--version] [-s] [--install] [-y] [-e <value>]
+  $ aio app add action [-v] [--version] [--install] [-y] [-e <value>]
 
 FLAGS
   -e, --extension=<value>  Add actions to a specific extension
-  -s, --skip-install       [deprecated] Please use --no-install
   -v, --verbose            Verbose output
   -y, --yes                Skip questions, and use all default values
   --[no-]install           [default: true] Run npm installation after files are created
@@ -563,11 +562,10 @@ Add new actions
 
 ```
 USAGE
-  $ aio app add actions [-v] [--version] [-s] [--install] [-y] [-e <value>]
+  $ aio app add actions [-v] [--version] [--install] [-y] [-e <value>]
 
 FLAGS
   -e, --extension=<value>  Add actions to a specific extension
-  -s, --skip-install       [deprecated] Please use --no-install
   -v, --verbose            Verbose output
   -y, --yes                Skip questions, and use all default values
   --[no-]install           [default: true] Run npm installation after files are created
@@ -602,11 +600,10 @@ Add a new Adobe I/O Events action
 
 ```
 USAGE
-  $ aio app add event [-v] [--version] [-s] [--install] [-y] [-e <value>]
+  $ aio app add event [-v] [--version] [--install] [-y] [-e <value>]
 
 FLAGS
   -e, --extension=<value>  Add actions to a specific extension
-  -s, --skip-install       [deprecated] Please use --no-install
   -v, --verbose            Verbose output
   -y, --yes                Skip questions, and use all default values
   --[no-]install           [default: true] Run npm installation after files are created
@@ -625,11 +622,10 @@ Add a new Adobe I/O Events action
 
 ```
 USAGE
-  $ aio app add events [-v] [--version] [-s] [--install] [-y] [-e <value>]
+  $ aio app add events [-v] [--version] [--install] [-y] [-e <value>]
 
 FLAGS
   -e, --extension=<value>  Add actions to a specific extension
-  -s, --skip-install       [deprecated] Please use --no-install
   -v, --verbose            Verbose output
   -y, --yes                Skip questions, and use all default values
   --[no-]install           [default: true] Run npm installation after files are created
@@ -644,22 +640,21 @@ ALIASES
 
 ## `aio app add ext`
 
-Add new extensions or a standalone application to the project
+Add new extensions to the project
 
 ```
 USAGE
-  $ aio app add ext [-v] [--version] [-s] [--install] [-y] [-e <value>]
+  $ aio app add ext [-v] [--version] [--install] [-y] [-e <value>]
 
 FLAGS
   -e, --extension=<value>...  Specify extensions to add, skips selection prompt
-  -s, --skip-install          [deprecated] Please use --no-install
   -v, --verbose               Verbose output
   -y, --yes                   Skip questions, and use all default values
   --[no-]install              [default: true] Run npm installation after files are created
   --version                   Show version
 
 DESCRIPTION
-  Add new extensions or a standalone application to the project
+  Add new extensions to the project
 
 ALIASES
   $ aio app add ext
@@ -668,22 +663,21 @@ ALIASES
 
 ## `aio app add extension`
 
-Add new extensions or a standalone application to the project
+Add new extensions to the project
 
 ```
 USAGE
-  $ aio app add extension [-v] [--version] [-s] [--install] [-y] [-e <value>]
+  $ aio app add extension [-v] [--version] [--install] [-y] [-e <value>]
 
 FLAGS
   -e, --extension=<value>...  Specify extensions to add, skips selection prompt
-  -s, --skip-install          [deprecated] Please use --no-install
   -v, --verbose               Verbose output
   -y, --yes                   Skip questions, and use all default values
   --[no-]install              [default: true] Run npm installation after files are created
   --version                   Show version
 
 DESCRIPTION
-  Add new extensions or a standalone application to the project
+  Add new extensions to the project
 
 ALIASES
   $ aio app add ext
@@ -692,22 +686,21 @@ ALIASES
 
 ## `aio app add extensions`
 
-Add new extensions or a standalone application to the project
+Add new extensions to the project
 
 ```
 USAGE
-  $ aio app add extensions [-v] [--version] [-s] [--install] [-y] [-e <value>]
+  $ aio app add extensions [-v] [--version] [--install] [-y] [-e <value>]
 
 FLAGS
   -e, --extension=<value>...  Specify extensions to add, skips selection prompt
-  -s, --skip-install          [deprecated] Please use --no-install
   -v, --verbose               Verbose output
   -y, --yes                   Skip questions, and use all default values
   --[no-]install              [default: true] Run npm installation after files are created
   --version                   Show version
 
 DESCRIPTION
-  Add new extensions or a standalone application to the project
+  Add new extensions to the project
 
 ALIASES
   $ aio app add ext
@@ -758,11 +751,10 @@ Add web assets support
 
 ```
 USAGE
-  $ aio app add web-assets [-v] [--version] [-s] [--install] [-y] [-e <value>]
+  $ aio app add web-assets [-v] [--version] [--install] [-y] [-e <value>]
 
 FLAGS
   -e, --extension=<value>  Add web-assets to a specific extension
-  -s, --skip-install       [deprecated] Please use --no-install
   -v, --verbose            Verbose output
   -y, --yes                Skip questions, and use all default values
   --[no-]install           [default: true] Run npm installation after files are created
@@ -778,8 +770,8 @@ Build an Adobe I/O App
 
 ```
 USAGE
-  $ aio app build [-v] [--version] [--skip-static] [--skip-web-assets] [--skip-actions] [--actions | -a
-    <value>] [--web-assets] [--force-build] [--content-hash] [--web-optimize] [-e <value> | ]
+  $ aio app build [-v] [--version] [--actions | -a <value>] [--web-assets] [--force-build] [--content-hash]
+    [--web-optimize] [-e <value> | ]
 
 FLAGS
   -a, --action=<value>...     Build only a specific action, the flags can be specified multiple times, this will set
@@ -789,9 +781,6 @@ FLAGS
   --[no-]actions              [default: true] Build actions if any
   --[no-]content-hash         [default: true] Enable content hashing in browser code
   --[no-]force-build          [default: true] Force a build even if one already exists
-  --skip-actions              [deprecated] Please use --no-actions
-  --skip-static               [deprecated] Please use --no-web-assets
-  --skip-web-assets           [deprecated] Please use --no-web-assets
   --version                   Show version
   --[no-]web-assets           [default: true] Build web-assets if any
   --web-optimize              [default: false] Enable optimization (minification) of js/css/html
@@ -1131,13 +1120,13 @@ Delete existing extensions
 
 ```
 USAGE
-  $ aio app delete ext [-v] [--version] [-y] [--skip-install] [-e <value>]
+  $ aio app delete ext [-v] [--version] [-y] [--install] [-e <value>]
 
 FLAGS
   -e, --extension=<value>...  Specify extensions to delete, skips selection prompt
   -v, --verbose               Verbose output
   -y, --yes                   Skip questions, and use all default values
-  --skip-install              Skip npm installation after files are created
+  --[no-]install              [default: true] Run npm installation after files are created
   --version                   Show version
 
 DESCRIPTION
@@ -1154,13 +1143,13 @@ Delete existing extensions
 
 ```
 USAGE
-  $ aio app delete extension [-v] [--version] [-y] [--skip-install] [-e <value>]
+  $ aio app delete extension [-v] [--version] [-y] [--install] [-e <value>]
 
 FLAGS
   -e, --extension=<value>...  Specify extensions to delete, skips selection prompt
   -v, --verbose               Verbose output
   -y, --yes                   Skip questions, and use all default values
-  --skip-install              Skip npm installation after files are created
+  --[no-]install              [default: true] Run npm installation after files are created
   --version                   Show version
 
 DESCRIPTION
@@ -1177,13 +1166,13 @@ Delete existing extensions
 
 ```
 USAGE
-  $ aio app delete extensions [-v] [--version] [-y] [--skip-install] [-e <value>]
+  $ aio app delete extensions [-v] [--version] [-y] [--install] [-e <value>]
 
 FLAGS
   -e, --extension=<value>...  Specify extensions to delete, skips selection prompt
   -v, --verbose               Verbose output
   -y, --yes                   Skip questions, and use all default values
-  --skip-install              Skip npm installation after files are created
+  --[no-]install              [default: true] Run npm installation after files are created
   --version                   Show version
 
 DESCRIPTION
@@ -1255,9 +1244,9 @@ Build and deploy an Adobe I/O App
 
 ```
 USAGE
-  $ aio app deploy [-v] [--version] [--skip-static] [--skip-web-assets] [--skip-actions] [--actions | -a
-    <value>] [--web-assets] [--force-build | ] [--content-hash] [--web-optimize] [-e <value> | ] [--skip-build]
-    [--skip-deploy] [--build] [--open] [--force-deploy] [--force-publish |  | [--publish | ]] [--log-forwarding-update]
+  $ aio app deploy [-v] [--version] [--actions | -a <value>] [--web-assets] [--force-build | ] [--content-hash]
+    [--web-optimize] [-e <value> | ] [--build] [--open] [--force-deploy] [--force-publish |  | [--publish | ]]
+    [--log-forwarding-update]
 
 FLAGS
   -a, --action=<value>...       Deploy only a specific action, the flags can be specified multiple times, this will set
@@ -1276,11 +1265,6 @@ FLAGS
   --open                        Open the default web browser after a successful deploy, only valid if your app has a
                                 front-end
   --[no-]publish                [default: true] Publish extension(s) to Exchange
-  --skip-actions                [deprecated] Please use --no-actions
-  --skip-build                  [deprecated] Please use --no-build
-  --skip-deploy                 [deprecated] Please use 'aio app build'
-  --skip-static                 [deprecated] Please use --no-web-assets
-  --skip-web-assets             [deprecated] Please use --no-web-assets
   --version                     Show version
   --[no-]web-assets             [default: true] Deploy web-assets if any
   --web-optimize                [default: false] Enable optimization (minification) of web js/css/html
@@ -1338,8 +1322,8 @@ Create a new Adobe I/O App
 
 ```
 USAGE
-  $ aio app init [PATH] [-v] [--version] [-s] [--install] [-y] [--login] [-e <value> | --extensions] [-w
-    <value> | -i <value>] [--confirm-new-workspace]
+  $ aio app init [PATH] [-v] [--version] [--install] [-y] [--login] [-e <value> | -t <value>]
+    [--standalone-app | ] [-w <value> | -i <value>] [--confirm-new-workspace]
 
 ARGUMENTS
   PATH  [default: .] Path to the app directory
@@ -1347,15 +1331,15 @@ ARGUMENTS
 FLAGS
   -e, --extension=<value>...  Extension point(s) to implement
   -i, --import=<value>        Import an Adobe I/O Developer Console configuration file
-  -s, --skip-install          [deprecated] Please use --no-install
+  -t, --template=<value>...   Specify a link to a template that will be installed
   -v, --verbose               Verbose output
   -w, --workspace=<value>     [default: Stage] Specify the Adobe Developer Console Workspace to init from, defaults to
                               Stage
   -y, --yes                   Skip questions, and use all default values
   --confirm-new-workspace     Skip and confirm prompt for creating a new workspace
-  --[no-]extensions           Use --no-extensions to create a blank application that does not integrate with Exchange
   --[no-]install              [default: true] Run npm installation after files are created
   --[no-]login                Login using your Adobe ID for interacting with Adobe I/O Developer Console
+  --standalone-app            Create a stand-alone application
   --version                   Show version
 
 DESCRIPTION
@@ -1516,16 +1500,15 @@ Run an Adobe I/O App
 
 ```
 USAGE
-  $ aio app run [-v] [--version] [--serve] [--actions | [--local | --skip-actions]] [--open] [-e <value>]
+  $ aio app run [-v] [--version] [--local | ] [--serve] [--actions] [--open] [-e <value>]
 
 FLAGS
   -e, --extension=<value>  Run only a specific extension, this flag can only be specified once
   -v, --verbose            Verbose output
   --[no-]actions           [default: true] Run actions, defaults to true, to skip actions use --no-actions
-  --local                  Run/debug actions locally ( requires Docker running )
+  --local                  Run/debug actions locally (requires Docker running)
   --open                   Open the default web browser after a successful run, only valid if your app has a front-end
   --[no-]serve             [default: true] Start frontend server (experimental)
-  --skip-actions           [deprecated] Please use --no-actions
   --version                Show version
 
 DESCRIPTION
@@ -1567,17 +1550,13 @@ Undeploys an Adobe I/O App
 
 ```
 USAGE
-  $ aio app undeploy [-v] [--version] [--skip-static] [--skip-web-assets] [--skip-actions] [--actions]
-    [--web-assets] [-e <value>] [--force-unpublish | --unpublish]
+  $ aio app undeploy [-v] [--version] [--actions] [--web-assets] [-e <value>] [--force-unpublish | --unpublish]
 
 FLAGS
   -e, --extension=<value>...  Undeploy only a specific extension, the flags can be specified multiple times
   -v, --verbose               Verbose output
   --[no-]actions              [default: true] Undeploy actions if any
   --force-unpublish           Force unpublish extension(s) from Exchange, will delete all extension points
-  --skip-actions              [deprecated] Please use --no-actions
-  --skip-static               [deprecated] Please use --no-web-assets
-  --skip-web-assets           [deprecated] Please use --no-web-assets
   --[no-]unpublish            [default: true] Unpublish selected extension(s) from Exchange
   --version                   Show version
   --[no-]web-assets           [default: true] Undeploy web-assets if any
@@ -1869,7 +1848,7 @@ EXAMPLES
   $ aio autocomplete --refresh-cache
 ```
 
-_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v1.3.0/src/commands/autocomplete/index.ts)_
+_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v1.3.1/src/commands/autocomplete/index.ts)_
 
 ## `aio certificate`
 
@@ -2949,7 +2928,7 @@ ALIASES
   $ aio plugins discover
 ```
 
-_See code: [src/commands/discover.ts](https://github.com/adobe/aio-cli/blob/9.0.0/src/commands/discover.ts)_
+_See code: [src/commands/discover.ts](https://github.com/adobe/aio-cli/blob/9.1.0/src/commands/discover.ts)_
 
 ## `aio event`
 
@@ -3572,7 +3551,7 @@ DESCRIPTION
   Display help for aio.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.12/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.14/src/commands/help.ts)_
 
 ## `aio info`
 
@@ -3705,7 +3684,7 @@ EXAMPLES
   $ aio plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.1.0/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.1.1/src/commands/plugins/index.ts)_
 
 ## `aio plugins:install PLUGIN...`
 
@@ -3978,7 +3957,7 @@ DESCRIPTION
   Clears all installed plugins.
 ```
 
-_See code: [src/commands/rollback.ts](https://github.com/adobe/aio-cli/blob/9.0.0/src/commands/rollback.ts)_
+_See code: [src/commands/rollback.ts](https://github.com/adobe/aio-cli/blob/9.1.0/src/commands/rollback.ts)_
 
 ## `aio rt`
 
@@ -12386,7 +12365,7 @@ DESCRIPTION
   Allow the Adobe Developer CLI to collect anonymous usage data
 ```
 
-_See code: [@adobe/aio-cli-plugin-telemetry](https://github.com/adobe/aio-cli-plugin-telemetry/blob/v1.0.2/src/commands/telemetry/index.js)_
+_See code: [@adobe/aio-cli-plugin-telemetry](https://github.com/adobe/aio-cli-plugin-telemetry/blob/v1.1.0/src/commands/telemetry/index.js)_
 
 ## `aio templates`
 
@@ -12403,7 +12382,7 @@ DESCRIPTION
   Discover, install, or uninstall a new template into an existing Adobe Developer App Builder App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/1.3.1/src/commands/templates/index.js)_
+_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/1.4.0/src/commands/templates/index.js)_
 
 ## `aio templates disco`
 
@@ -12755,7 +12734,7 @@ DESCRIPTION
   - update user-installed plugins that are not core
 ```
 
-_See code: [src/commands/update.ts](https://github.com/adobe/aio-cli/blob/9.0.0/src/commands/update.ts)_
+_See code: [src/commands/update.ts](https://github.com/adobe/aio-cli/blob/9.1.0/src/commands/update.ts)_
 
 ## `aio where`
 
