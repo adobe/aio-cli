@@ -24,7 +24,7 @@ jobs:
       run: |
         mkdir testapp
         cd testapp
-        aio app init -y --no-login --no-extensions
+        aio app init -y --no-login --standalone-app
         npm audit --audit-level=high --json > auditoutput.txt
     - id: runaudit
       name: if audit had failed, run npm audit without json flag so we can see what is failing
