@@ -1,10 +1,20 @@
 {
   "name": "@adobe/aio-cli",
+  "displayName": "Adobe Developer Platform CLI",
   "description": "Adobe I/O Extensible CLI\n\n*******   *******\n******     ******\n*****       *****\n****    *    ****\n***    ***    ***\n**    *****    **\n*         **    *\n",
   "version": "9.1.1",
   "author": "Adobe Inc.",
   "bin": {
     "aio": "./bin/run"
+  },
+  "aioTelemetry": {
+    "postUrl": "https://dcs.adobedc.net/collection/ffb5bdcefe744485c5c968662012f91293eee10f5dac4ca009beb14d7c028424?asynchronous=true",
+    "fetchHeaders": {
+      "Content-Type": "application/json",
+      "x-adobe-flow-id": "18dce8db-f523-4ff1-8806-0719de3fd367",
+      "x-api-key": "adobe_io",
+      "sandbox-name": "developer-lifecycle-dev1"
+    }
   },
   "bugs": "https://github.com/adobe/aio-cli/issues",
   "dependencies": {
