@@ -8,6 +8,7 @@
     "aio": "./bin/run"
   },
   "aioTelemetry": {
+    "productPrivacyPolicyLink": "https://developer.adobe.com/app-builder/docs/guides/telemetry/",
     "postUrl": "https://dcs.adobedc.net/collection/ffb5bdcefe744485c5c968662012f91293eee10f5dac4ca009beb14d7c028424?asynchronous=true",
     "fetchHeaders": {
       "Content-Type": "application/json",
