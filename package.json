@@ -10,7 +10,7 @@
   "dependencies": {
     "@adobe/aio-cli-plugin-app": "^10.0.0",
     "@adobe/aio-cli-plugin-app-templates": "^1.0.0",
-    "@adobe/aio-cli-plugin-auth": "^3.0.0",
+    "@adobe/aio-cli-plugin-auth": "^3.2.0",
     "@adobe/aio-cli-plugin-certificate": "^1.0.0",
     "@adobe/aio-cli-plugin-config": "^4.0.0",
     "@adobe/aio-cli-plugin-console": "^4.0.0",
