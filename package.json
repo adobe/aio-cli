@@ -37,7 +37,7 @@
     "babel-runtime": "^6.26.0",
     "eslint": "^8.23.0",
     "eslint-config-standard": "^17",
-    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jest": "^23",
     "eslint-plugin-jsdoc": "^37",
     "eslint-plugin-n": "^15",
