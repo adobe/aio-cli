@@ -28,7 +28,7 @@ jobs:
         npm audit --audit-level=high --json > auditoutput.txt
     - id: runaudit
       name: if audit had failed, run npm audit without json flag so we can see what is failing
-      if: steps.createandaudit.outcome != 'success'
+      if: failure() && steps.createandaudit.outcome != 'success'
       run: |
         cd testapp
         npm audit
