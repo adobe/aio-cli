@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@adobe/eslint-config-aio-lib-config": "^2.0.0",
-    "acorn": "^7.1.1",
+    "acorn": "^8.8.2",
     "babel-runtime": "^6.26.0",
     "eslint": "^8.23.0",
     "eslint-config-standard": "^17",
