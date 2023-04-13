@@ -90,7 +90,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (--version)
-@adobe/aio-cli/9.1.1 darwin-arm64 node-v18.12.1
+@adobe/aio-cli/9.2.0 darwin-x64 node-v14.18.3
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -170,6 +170,7 @@ USAGE
 * [`aio config rm KEYS...`](#aio-config-rm-keys)
 * [`aio config set key 'a value'       # set key to 'a value'`](#aio-config-set-key-a-value--------set-key-to-a-value)
 * [`aio console`](#aio-console)
+* [`aio console open`](#aio-console-open)
 * [`aio console org`](#aio-console-org)
 * [`aio console org list`](#aio-console-org-list)
 * [`aio console org ls`](#aio-console-org-ls)
@@ -217,6 +218,7 @@ USAGE
 * [`aio event provider list`](#aio-event-provider-list)
 * [`aio event provider ls`](#aio-event-provider-ls)
 * [`aio event provider update PROVIDERID`](#aio-event-provider-update-providerid)
+* [`aio event reg`](#aio-event-reg)
 * [`aio event reg create BODYJSONFILE`](#aio-event-reg-create-bodyjsonfile)
 * [`aio event reg delete REGISTRATIONID`](#aio-event-reg-delete-registrationid)
 * [`aio event reg get REGISTRATIONID`](#aio-event-reg-get-registrationid)
@@ -228,10 +230,11 @@ USAGE
 * [`aio event registration get REGISTRATIONID`](#aio-event-registration-get-registrationid)
 * [`aio event registration list`](#aio-event-registration-list)
 * [`aio event registration ls`](#aio-event-registration-ls)
-* [`aio help [COMMAND]`](#aio-help-command)
+* [`aio help [COMMANDS]`](#aio-help-commands)
 * [`aio info`](#aio-info)
 * [`aio login`](#aio-login)
 * [`aio logout`](#aio-logout)
+* [`aio open`](#aio-open)
 * [`aio plugins`](#aio-plugins)
 * [`aio plugins:install PLUGIN...`](#aio-pluginsinstall-plugin)
 * [`aio plugins discover`](#aio-plugins-discover)
@@ -516,7 +519,7 @@ DESCRIPTION
   Create, run, test, and deploy Adobe I/O Apps
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/10.0.0/src/commands/app/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/10.1.0/src/commands/app/index.js)_
 
 ## `aio app add`
 
@@ -552,6 +555,7 @@ FLAGS
 DESCRIPTION
   Add new actions
 
+
 ALIASES
   $ aio app add actions
 ```
@@ -573,6 +577,7 @@ FLAGS
 
 DESCRIPTION
   Add new actions
+
 
 ALIASES
   $ aio app add actions
@@ -612,6 +617,7 @@ FLAGS
 DESCRIPTION
   Add a new Adobe I/O Events action
 
+
 ALIASES
   $ aio app add events
 ```
@@ -634,6 +640,7 @@ FLAGS
 DESCRIPTION
   Add a new Adobe I/O Events action
 
+
 ALIASES
   $ aio app add events
 ```
@@ -655,6 +662,7 @@ FLAGS
 
 DESCRIPTION
   Add new extensions to the project
+
 
 ALIASES
   $ aio app add ext
@@ -679,6 +687,7 @@ FLAGS
 DESCRIPTION
   Add new extensions to the project
 
+
 ALIASES
   $ aio app add ext
   $ aio app add extensions
@@ -702,6 +711,7 @@ FLAGS
 DESCRIPTION
   Add new extensions to the project
 
+
 ALIASES
   $ aio app add ext
   $ aio app add extensions
@@ -722,6 +732,7 @@ FLAGS
 DESCRIPTION
   Subscribe to Services in the current Workspace
 
+
 ALIASES
   $ aio app add services
 ```
@@ -740,6 +751,7 @@ FLAGS
 
 DESCRIPTION
   Subscribe to Services in the current Workspace
+
 
 ALIASES
   $ aio app add services
@@ -1024,6 +1036,7 @@ FLAGS
 DESCRIPTION
   Delete existing actions
 
+
 ALIASES
   $ aio app delete actions
 ```
@@ -1046,6 +1059,7 @@ FLAGS
 
 DESCRIPTION
   Delete existing actions
+
 
 ALIASES
   $ aio app delete actions
@@ -1087,6 +1101,7 @@ FLAGS
 DESCRIPTION
   Delete existing Adobe I/O Events actions
 
+
 ALIASES
   $ aio app delete events
 ```
@@ -1110,6 +1125,7 @@ FLAGS
 DESCRIPTION
   Delete existing Adobe I/O Events actions
 
+
 ALIASES
   $ aio app delete events
 ```
@@ -1131,6 +1147,7 @@ FLAGS
 
 DESCRIPTION
   Delete existing extensions
+
 
 ALIASES
   $ aio app delete ext
@@ -1155,6 +1172,7 @@ FLAGS
 DESCRIPTION
   Delete existing extensions
 
+
 ALIASES
   $ aio app delete ext
   $ aio app delete extensions
@@ -1178,6 +1196,7 @@ FLAGS
 DESCRIPTION
   Delete existing extensions
 
+
 ALIASES
   $ aio app delete ext
   $ aio app delete extensions
@@ -1198,6 +1217,7 @@ FLAGS
 DESCRIPTION
   Delete Services in the current Workspace
 
+
 ALIASES
   $ aio app delete services
 ```
@@ -1216,6 +1236,7 @@ FLAGS
 
 DESCRIPTION
   Delete Services in the current Workspace
+
 
 ALIASES
   $ aio app delete services
@@ -1245,7 +1266,7 @@ Build and deploy an Adobe I/O App
 ```
 USAGE
   $ aio app deploy [-v] [--version] [--actions | -a <value>] [--web-assets] [--force-build | ] [--content-hash]
-    [--web-optimize] [-e <value> | ] [--build] [--open] [--force-deploy] [--force-publish |  | [--publish | ]]
+    [--web-optimize] [-e <value> | ] [--build] [--open] [--force-deploy] [--force-publish |  | --publish]
     [--log-forwarding-update]
 
 FLAGS
@@ -1379,6 +1400,7 @@ FLAGS
 DESCRIPTION
   List implemented extensions
 
+
 ALIASES
   $ aio app list ext
   $ aio app list extensions
@@ -1400,6 +1422,7 @@ FLAGS
 
 DESCRIPTION
   List all extension points for the selected org
+
 
 ALIASES
   $ aio app list ext-points
@@ -1423,6 +1446,7 @@ FLAGS
 DESCRIPTION
   List implemented extensions
 
+
 ALIASES
   $ aio app list ext
   $ aio app list extensions
@@ -1445,6 +1469,7 @@ FLAGS
 DESCRIPTION
   List all extension points for the selected org
 
+
 ALIASES
   $ aio app list ext-points
   $ aio app list extension-points
@@ -1466,6 +1491,7 @@ FLAGS
 
 DESCRIPTION
   List implemented extensions
+
 
 ALIASES
   $ aio app list ext
@@ -1534,13 +1560,10 @@ FLAGS
 
 DESCRIPTION
   Run tests for an Adobe I/O App
-
   If no flags are specified, by default only unit-tests are run.
 
   For the --action flag, it tries a substring search on the 'package-name/action-name' pair for an action.
-
   For the --extension flag, it tries a substring search on the 'extension-name' only.
-
   If the extension has a hook called 'test' in its 'ext.config.yaml', the script specified will be run instead.
 ```
 
@@ -1621,40 +1644,29 @@ DESCRIPTION
   Adobe IMS commands to login and logout.
 
   The main commands are `auth login` to get or create an access token and
-
   `auth logout` to invalidate an access token and thus log out from Adobe IMS.
 
   Logging in and out is based on configuration of which there may be
-
   multiple. Each set of configuration properties, called an Adobe IMS context,
-
   can be individually addressed by a label.
 
   Configuration for the Adobe IMS commands is stored in the "ims"
-
   configuration property. The special property "ims.config.current" contains the
-
   label of the current configuration which can be set using the
-
   "aio auth ctx -s <label>" command.
 
   Each set of properties in a labeled Adobe IMS context configurations has
-
   configuration properties depending on the kind of access that is
-
   supported. The below example shows the configuration for OAuth2
-
   based (graphical SUSI) login.
 
   The "env" property is optional and designates the Adobe IMS environment
-
   used for authentication. Possible values are "stage" and "prod".
-
   If the property is missing or any other value, it defaults to "prod".
 
   All commands allow their normal output to be formatted in either
-
   HJSON (default), JSON, or YAML.
+
 
 EXAMPLES
   {
@@ -1676,7 +1688,7 @@ EXAMPLES
     }
 ```
 
-_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/3.0.1/src/commands/auth/index.js)_
+_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/3.2.0/src/commands/auth/index.js)_
 
 ## `aio auth ctx`
 
@@ -1702,24 +1714,19 @@ DESCRIPTION
   The following options exist for this command:
 
   * List the names of the configured Adobe IMS contexts
-
   * Print the name of the current Adobe IMS context
-
   * Set the name of the current Adobe IMS context
-
   * Print the configuration of the current or a named Adobe IMS context
 
   Currently it is not possible to update the Adobe Adobe IMS context configuration
-
   using this command. Use the "aio config" commands for this.
-
   e.g. aio config:set ims.contexts.your_context.your_context_key "your_context_value"
 
   Please note, that the following IMS context label names is reserved: `cli`
-
   and should not be used as an IMS context name.
 
   Also note that the current context can only be set locally.
+
 
 ALIASES
   $ aio ctx
@@ -1750,36 +1757,26 @@ DESCRIPTION
   Log in with a certain Adobe IMS context and returns the access token.
 
   If the Adobe IMS context already has a valid access token set (valid meaning
-
   at least 10 minutes before expiry), that token is returned.
 
   Otherwise, if the Adobe IMS context has a valid refresh token set (valid
-
   meaning at least 10 minutes before expiry) that refresh token is
-
   exchanged for an access token before returning the access token.
 
   Lastly, if the Adobe IMS context properties are supported by one of the
-
   Adobe IMS login plugins, that login plugin is called to guide through
-
   the IMS login process.
 
   The currently supported Adobe IMS login plugins are:
 
   * aio-lib-ims-jwt for JWT token based login supporting
-
   Adobe I/O Console service integrations.
-
   * aio-lib-ims-oauth for browser based OAuth2 login. This
-
   plugin will launch the default browser to guide the user through the
-
   login process. The plugin itself will *never* see the user's
-
   password but only receive the authorization token after the
-
   user has authenticated with Adobe IMS.
+
 
 ALIASES
   $ aio login
@@ -1795,7 +1792,7 @@ USAGE
 
 FLAGS
   -c, --ctx=<value>  Name of the Adobe IMS context to use. Default is the current Adobe IMS context
-  -f, --force        Invalidate the refresh token as well as all access tokens.
+  -f, --[no-]force   Invalidate the refresh token as well as all access tokens.
                      Otherwise only the access token is invalidated. For Adobe IMS
                      contexts not supporting refresh tokens, this flag has no
                      effect.
@@ -1808,14 +1805,11 @@ DESCRIPTION
   Log out the current or a named Adobe IMS context.
 
   This command can be called multiple times on the same Adobe IMS context with
-
   out causing any errors. The assumption is that after calling this command
-
   without an error, the Adobe IMS context's access and refresh tokens have been
-
   invalidated and removed from persistent storage. Repeatedly calling this
-
   command will just do nothing.
+
 
 ALIASES
   $ aio logout
@@ -1848,7 +1842,7 @@ EXAMPLES
   $ aio autocomplete --refresh-cache
 ```
 
-_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v1.3.1/src/commands/autocomplete/index.ts)_
+_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v1.4.6/src/commands/autocomplete/index.ts)_
 
 ## `aio certificate`
 
@@ -1870,7 +1864,7 @@ Compute the fingerprint of a public key certificate for use with Adobe I/O
 
 ```
 USAGE
-  $ aio certificate fingerprint [FILE]
+  $ aio certificate fingerprint FILE
 
 ARGUMENTS
   FILE  file path to certificate to fingerprint
@@ -1902,7 +1896,6 @@ FLAGS
 
 DESCRIPTION
   Generate a new private/public key pair
-
   Generate a self-signed certificate to enable https:// on localhost or signing jwt payloads for interacting with Adobe
   services.
 ```
@@ -1913,7 +1906,7 @@ Verify a certificate for use with Adobe I/O
 
 ```
 USAGE
-  $ aio certificate verify [FILE] [--days <value>]
+  $ aio certificate verify FILE [--days <value>]
 
 ARGUMENTS
   FILE  file path to certificate to verify
@@ -1923,7 +1916,6 @@ FLAGS
 
 DESCRIPTION
   Verify a certificate for use with Adobe I/O
-
   Verifies that the certificate is valid, and/or will not expire in [--days] days from now.
 ```
 
@@ -1986,7 +1978,7 @@ deletes persistent config values
 
 ```
 USAGE
-  $ aio config del [KEYS...] [-l | -g]
+  $ aio config del KEYS... [-l | -g]
 
 FLAGS
   -g, --global  global config
@@ -2006,7 +1998,7 @@ deletes persistent config values
 
 ```
 USAGE
-  $ aio config delete [KEYS...] [-l | -g]
+  $ aio config delete KEYS... [-l | -g]
 
 FLAGS
   -g, --global  global config
@@ -2042,7 +2034,7 @@ gets a persistent config value
 
 ```
 USAGE
-  $ aio config get [KEY] [-l | -g] [-j | -y] [-e]
+  $ aio config get KEY [-l | -g] [-j | -y] [-e]
 
 FLAGS
   -e, --env     environment variables
@@ -2118,7 +2110,7 @@ deletes persistent config values
 
 ```
 USAGE
-  $ aio config rm [KEYS...] [-l | -g]
+  $ aio config rm KEYS... [-l | -g]
 
 FLAGS
   -g, --global  global config
@@ -2169,7 +2161,25 @@ DESCRIPTION
   Console plugin for the Adobe I/O CLI
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/4.0.1/src/commands/console/index.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/4.1.0/src/commands/console/index.js)_
+
+## `aio console open`
+
+Open the developer console for the selected Organization, Project and Workspace
+
+```
+USAGE
+  $ aio console open [--help]
+
+FLAGS
+  --help  Show help
+
+DESCRIPTION
+  Open the developer console for the selected Organization, Project and Workspace
+
+ALIASES
+  $ aio open
+```
 
 ## `aio console org`
 
@@ -2390,7 +2400,7 @@ Delete a public key certificate from the selected Workspace
 
 ```
 USAGE
-  $ aio console publickey delete [IDORFINGERPRINT] [--help] [--orgId <value>] [--projectId <value>] [--workspaceId
+  $ aio console publickey delete IDORFINGERPRINT [--help] [--orgId <value>] [--projectId <value>] [--workspaceId
   <value>]
 
 ARGUMENTS
@@ -2432,8 +2442,7 @@ Upload a public key certificate to the selected Workspace
 
 ```
 USAGE
-  $ aio console publickey upload [FILE] [--help] [--orgId <value>] [--projectId <value>] [--workspaceId <value>] [-j |
-  -y]
+  $ aio console publickey upload FILE [--help] [--orgId <value>] [--projectId <value>] [--workspaceId <value>] [-j | -y]
 
 ARGUMENTS
   FILE  Path to public key certificate file in PEM format
@@ -2831,24 +2840,19 @@ DESCRIPTION
   The following options exist for this command:
 
   * List the names of the configured Adobe IMS contexts
-
   * Print the name of the current Adobe IMS context
-
   * Set the name of the current Adobe IMS context
-
   * Print the configuration of the current or a named Adobe IMS context
 
   Currently it is not possible to update the Adobe Adobe IMS context configuration
-
   using this command. Use the "aio config" commands for this.
-
   e.g. aio config:set ims.contexts.your_context.your_context_key "your_context_value"
 
   Please note, that the following IMS context label names is reserved: `cli`
-
   and should not be used as an IMS context name.
 
   Also note that the current context can only be set locally.
+
 
 ALIASES
   $ aio ctx
@@ -2879,24 +2883,19 @@ DESCRIPTION
   The following options exist for this command:
 
   * List the names of the configured Adobe IMS contexts
-
   * Print the name of the current Adobe IMS context
-
   * Set the name of the current Adobe IMS context
-
   * Print the configuration of the current or a named Adobe IMS context
 
   Currently it is not possible to update the Adobe Adobe IMS context configuration
-
   using this command. Use the "aio config" commands for this.
-
   e.g. aio config:set ims.contexts.your_context.your_context_key "your_context_value"
 
   Please note, that the following IMS context label names is reserved: `cli`
-
   and should not be used as an IMS context name.
 
   Also note that the current context can only be set locally.
+
 
 ALIASES
   $ aio ctx
@@ -2921,14 +2920,14 @@ FLAGS
 
 DESCRIPTION
   Discover plugins to install
-
   To install a plugin, run 'aio plugins install NAME'
+
 
 ALIASES
   $ aio plugins discover
 ```
 
-_See code: [src/commands/discover.ts](https://github.com/adobe/aio-cli/blob/9.1.1/src/commands/discover.ts)_
+_See code: [src/commands/discover.ts](https://github.com/adobe/aio-cli/blob/9.2.0/src/commands/discover.ts)_
 
 ## `aio event`
 
@@ -2947,7 +2946,7 @@ DESCRIPTION
   Manage your Adobe I/O Events
 ```
 
-_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v2.0.2/src/commands/event/index.js)_
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v3.0.1/src/commands/event/index.ts)_
 
 ## `aio event eventmetadata`
 
@@ -2972,7 +2971,7 @@ Create an Event Metadata for a Provider
 
 ```
 USAGE
-  $ aio event eventmetadata create [PROVIDERID] [--help] [-v] [--version] [-j | -y]
+  $ aio event eventmetadata create PROVIDERID [--help] [-v] [--version] [-j | -y]
 
 ARGUMENTS
   PROVIDERID  The requested eventmetadata event code
@@ -2994,7 +2993,7 @@ Delete Event Metadata for a Provider
 
 ```
 USAGE
-  $ aio event eventmetadata delete [PROVIDERID] [EVENTCODE] [--help] [-v] [--version]
+  $ aio event eventmetadata delete PROVIDERID [EVENTCODE] [--help] [-v] [--version]
 
 ARGUMENTS
   PROVIDERID  The requested provider ID
@@ -3015,7 +3014,7 @@ Get details of an Event Code of a Provider
 
 ```
 USAGE
-  $ aio event eventmetadata get [PROVIDERID] [EVENTCODE] [--help] [-v] [--version] [-j | -y]
+  $ aio event eventmetadata get PROVIDERID EVENTCODE [--help] [-v] [--version] [-j | -y]
 
 ARGUMENTS
   PROVIDERID  The requested provider ID
@@ -3038,7 +3037,7 @@ List all Event Metadata for a Provider
 
 ```
 USAGE
-  $ aio event eventmetadata list [PROVIDERID] [--help] [-v] [--version] [-j | -y]
+  $ aio event eventmetadata list PROVIDERID [--help] [-v] [--version] [-j | -y]
 
 ARGUMENTS
   PROVIDERID  The requested provider ID
@@ -3063,7 +3062,7 @@ List all Event Metadata for a Provider
 
 ```
 USAGE
-  $ aio event eventmetadata ls [PROVIDERID] [--help] [-v] [--version] [-j | -y]
+  $ aio event eventmetadata ls PROVIDERID [--help] [-v] [--version] [-j | -y]
 
 ARGUMENTS
   PROVIDERID  The requested provider ID
@@ -3088,7 +3087,7 @@ Update an Event Metadata for a Provider
 
 ```
 USAGE
-  $ aio event eventmetadata update [PROVIDERID] [EVENTCODE] [--help] [-v] [--version] [-j | -y]
+  $ aio event eventmetadata update PROVIDERID EVENTCODE [--help] [-v] [--version] [-j | -y]
 
 ARGUMENTS
   PROVIDERID  The requested provider ID
@@ -3147,7 +3146,7 @@ Delete Provider by id
 
 ```
 USAGE
-  $ aio event provider delete [PROVIDERID] [--help] [-v] [--version]
+  $ aio event provider delete PROVIDERID [--help] [-v] [--version]
 
 ARGUMENTS
   PROVIDERID  The requested provider ID
@@ -3167,7 +3166,7 @@ Get details of Provider by id
 
 ```
 USAGE
-  $ aio event provider get [PROVIDERID] [--help] [-v] [--version] [--fetchEventMetadata] [-j | -y]
+  $ aio event provider get PROVIDERID [--help] [-v] [--version] [--fetchEventMetadata] [-j | -y]
 
 ARGUMENTS
   PROVIDERID  The requested provider ID
@@ -3234,7 +3233,7 @@ Update an existing Provider
 
 ```
 USAGE
-  $ aio event provider update [PROVIDERID] [--help] [-v] [--version] [-j | -y]
+  $ aio event provider update PROVIDERID [--help] [-v] [--version] [-j | -y]
 
 ARGUMENTS
   PROVIDERID  The requested provider ID
@@ -3250,13 +3249,33 @@ DESCRIPTION
   Update an existing Provider
 ```
 
+## `aio event reg`
+
+Manage your Adobe I/O Events Registrations
+
+```
+USAGE
+  $ aio event reg [--help] [-v] [--version]
+
+FLAGS
+  -v, --verbose  Verbose output
+  --help         Show help
+  --version      Show version
+
+DESCRIPTION
+  Manage your Adobe I/O Events Registrations
+
+ALIASES
+  $ aio event reg
+```
+
 ## `aio event reg create BODYJSONFILE`
 
 Create a new Event Registration in your Workspace
 
 ```
 USAGE
-  $ aio event reg create [BODYJSONFILE] [--help] [-v] [--version] [-j | -y]
+  $ aio event reg create BODYJSONFILE [--help] [-v] [--version] [-j | -y]
 
 ARGUMENTS
   BODYJSONFILE
@@ -3265,7 +3284,7 @@ ARGUMENTS
       {
       "name": "<event registration name>",
       "description": "<event registration description>",
-      "delivery_type": "WEBHOOK|WEBHOOK_BATCH|JOURNAL",
+      "delivery_type": "webhook|webhook_batch|journal",
       "webhook_url": "<webhook URL responding to challenge>",
       "events_of_interest": [{
       "provider_id": "<event provider id>",
@@ -3293,7 +3312,7 @@ Delete Registration
 
 ```
 USAGE
-  $ aio event reg delete [REGISTRATIONID] [--help] [-v] [--version]
+  $ aio event reg delete REGISTRATIONID [--help] [-v] [--version]
 
 ARGUMENTS
   REGISTRATIONID  The requested registration ID
@@ -3316,7 +3335,7 @@ Get an Event Registration in your Workspace
 
 ```
 USAGE
-  $ aio event reg get [REGISTRATIONID] [--help] [-v] [--version] [-j | -y]
+  $ aio event reg get REGISTRATIONID [--help] [-v] [--version] [-j | -y]
 
 ARGUMENTS
   REGISTRATIONID  The requested registration ID
@@ -3398,6 +3417,9 @@ FLAGS
 
 DESCRIPTION
   Manage your Adobe I/O Events Registrations
+
+ALIASES
+  $ aio event reg
 ```
 
 ## `aio event registration create BODYJSONFILE`
@@ -3406,7 +3428,7 @@ Create a new Event Registration in your Workspace
 
 ```
 USAGE
-  $ aio event registration create [BODYJSONFILE] [--help] [-v] [--version] [-j | -y]
+  $ aio event registration create BODYJSONFILE [--help] [-v] [--version] [-j | -y]
 
 ARGUMENTS
   BODYJSONFILE
@@ -3415,7 +3437,7 @@ ARGUMENTS
       {
       "name": "<event registration name>",
       "description": "<event registration description>",
-      "delivery_type": "WEBHOOK|WEBHOOK_BATCH|JOURNAL",
+      "delivery_type": "webhook|webhook_batch|journal",
       "webhook_url": "<webhook URL responding to challenge>",
       "events_of_interest": [{
       "provider_id": "<event provider id>",
@@ -3443,7 +3465,7 @@ Delete Registration
 
 ```
 USAGE
-  $ aio event registration delete [REGISTRATIONID] [--help] [-v] [--version]
+  $ aio event registration delete REGISTRATIONID [--help] [-v] [--version]
 
 ARGUMENTS
   REGISTRATIONID  The requested registration ID
@@ -3466,7 +3488,7 @@ Get an Event Registration in your Workspace
 
 ```
 USAGE
-  $ aio event registration get [REGISTRATIONID] [--help] [-v] [--version] [-j | -y]
+  $ aio event registration get REGISTRATIONID [--help] [-v] [--version] [-j | -y]
 
 ARGUMENTS
   REGISTRATIONID  The requested registration ID
@@ -3533,16 +3555,16 @@ ALIASES
   $ aio event reg ls
 ```
 
-## `aio help [COMMAND]`
+## `aio help [COMMANDS]`
 
 Display help for aio.
 
 ```
 USAGE
-  $ aio help [COMMAND] [-n]
+  $ aio help [COMMANDS] [-n]
 
 ARGUMENTS
-  COMMAND  Command to show help for.
+  COMMANDS  Command to show help for.
 
 FLAGS
   -n, --nested-commands  Include all nested commands in the output.
@@ -3551,7 +3573,7 @@ DESCRIPTION
   Display help for aio.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.14/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.2.8/src/commands/help.ts)_
 
 ## `aio info`
 
@@ -3595,36 +3617,26 @@ DESCRIPTION
   Log in with a certain Adobe IMS context and returns the access token.
 
   If the Adobe IMS context already has a valid access token set (valid meaning
-
   at least 10 minutes before expiry), that token is returned.
 
   Otherwise, if the Adobe IMS context has a valid refresh token set (valid
-
   meaning at least 10 minutes before expiry) that refresh token is
-
   exchanged for an access token before returning the access token.
 
   Lastly, if the Adobe IMS context properties are supported by one of the
-
   Adobe IMS login plugins, that login plugin is called to guide through
-
   the IMS login process.
 
   The currently supported Adobe IMS login plugins are:
 
   * aio-lib-ims-jwt for JWT token based login supporting
-
   Adobe I/O Console service integrations.
-
   * aio-lib-ims-oauth for browser based OAuth2 login. This
-
   plugin will launch the default browser to guide the user through the
-
   login process. The plugin itself will *never* see the user's
-
   password but only receive the authorization token after the
-
   user has authenticated with Adobe IMS.
+
 
 ALIASES
   $ aio login
@@ -3640,7 +3652,7 @@ USAGE
 
 FLAGS
   -c, --ctx=<value>  Name of the Adobe IMS context to use. Default is the current Adobe IMS context
-  -f, --force        Invalidate the refresh token as well as all access tokens.
+  -f, --[no-]force   Invalidate the refresh token as well as all access tokens.
                      Otherwise only the access token is invalidated. For Adobe IMS
                      contexts not supporting refresh tokens, this flag has no
                      effect.
@@ -3653,17 +3665,32 @@ DESCRIPTION
   Log out the current or a named Adobe IMS context.
 
   This command can be called multiple times on the same Adobe IMS context with
-
   out causing any errors. The assumption is that after calling this command
-
   without an error, the Adobe IMS context's access and refresh tokens have been
-
   invalidated and removed from persistent storage. Repeatedly calling this
-
   command will just do nothing.
+
 
 ALIASES
   $ aio logout
+```
+
+## `aio open`
+
+Open the developer console for the selected Organization, Project and Workspace
+
+```
+USAGE
+  $ aio open [--help]
+
+FLAGS
+  --help  Show help
+
+DESCRIPTION
+  Open the developer console for the selected Organization, Project and Workspace
+
+ALIASES
+  $ aio open
 ```
 
 ## `aio plugins`
@@ -3684,7 +3711,7 @@ EXAMPLES
   $ aio plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.1.1/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.4.3/src/commands/plugins/index.ts)_
 
 ## `aio plugins:install PLUGIN...`
 
@@ -3704,7 +3731,6 @@ FLAGS
 
 DESCRIPTION
   Installs a plugin into the CLI.
-
   Can be installed from npm or a git url.
 
   Installation of a user-installed plugin will override a core plugin.
@@ -3712,6 +3738,7 @@ DESCRIPTION
   e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command
   will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in
   the CLI without the need to patch and update the whole CLI.
+
 
 ALIASES
   $ aio plugins add
@@ -3742,8 +3769,8 @@ FLAGS
 
 DESCRIPTION
   Discover plugins to install
-
   To install a plugin, run 'aio plugins install NAME'
+
 
 ALIASES
   $ aio plugins discover
@@ -3763,6 +3790,9 @@ ARGUMENTS
 FLAGS
   -h, --help     Show CLI help.
   -v, --verbose
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 DESCRIPTION
   Displays installation properties of a plugin.
@@ -3789,7 +3819,6 @@ FLAGS
 
 DESCRIPTION
   Installs a plugin into the CLI.
-
   Can be installed from npm or a git url.
 
   Installation of a user-installed plugin will override a core plugin.
@@ -3797,6 +3826,7 @@ DESCRIPTION
   e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command
   will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in
   the CLI without the need to patch and update the whole CLI.
+
 
 ALIASES
   $ aio plugins add
@@ -3826,11 +3856,11 @@ FLAGS
 
 DESCRIPTION
   Links a plugin into the CLI for development.
-
   Installation of a linked plugin will override a user-installed or core plugin.
 
   e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello'
   command will override the user-installed or core plugin implementation. This is useful for development work.
+
 
 EXAMPLES
   $ aio plugins:link myplugin
@@ -3957,7 +3987,7 @@ DESCRIPTION
   Clears all installed plugins.
 ```
 
-_See code: [src/commands/rollback.ts](https://github.com/adobe/aio-cli/blob/9.1.1/src/commands/rollback.ts)_
+_See code: [src/commands/rollback.ts](https://github.com/adobe/aio-cli/blob/9.2.0/src/commands/rollback.ts)_
 
 ## `aio rt`
 
@@ -4021,7 +4051,7 @@ Creates an Action
 
 ```
 USAGE
-  $ aio rt action create [ACTIONNAME] [ACTIONPATH] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost
+  $ aio rt action create ACTIONNAME [ACTIONPATH] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost
     <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [--copy <value>] [-e <value>]
     [--web-secure <value> --web true|yes|false|no|raw] [-P <value>] [-E <value>] [-t <value>] [-m <value>] [-l <value>]
     [--kind <value>] [-a <value>] [-A <value>] [--sequence <value>] [--docker <value>] [--main <value>] [--binary]
@@ -4034,10 +4064,11 @@ FLAGS
   -a, --annotation=<value>...    annotation values in KEY VALUE format
   -e, --env=<value>...           environment values in KEY VALUE format
   -i, --insecure                 bypass certificate check
-  -l, --logsize=<value>          the maximum log size LIMIT in MB for the action (default 10)
-  -m, --memory=<value>           the maximum memory LIMIT in MB for the action (default 256)
+  -l, --logsize=<value>          the maximum log size LIMIT in MB for the action (default 10, min: 0, max: 10)
+  -m, --memory=<value>           the maximum memory LIMIT in MB for the action (default 256, min: 128, max: 4096)
   -p, --param=<value>...         parameter values in KEY VALUE format
-  -t, --timeout=<value>          the timeout LIMIT in milliseconds after which the action is terminated (default 60000)
+  -t, --timeout=<value>          the timeout LIMIT in milliseconds after which the action is terminated (default 60000,
+                                 min: 100, max: 3600000)
   -u, --auth=<value>             whisk auth
   -v, --verbose                  Verbose output
   --apihost=<value>              whisk API host
@@ -4072,7 +4103,7 @@ Deletes an Action
 
 ```
 USAGE
-  $ aio rt action del [ACTIONNAME] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+  $ aio rt action del ACTIONNAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [--json]
 
 FLAGS
@@ -4103,7 +4134,7 @@ Deletes an Action
 
 ```
 USAGE
-  $ aio rt action delete [ACTIONNAME] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+  $ aio rt action delete ACTIONNAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [--json]
 
 FLAGS
@@ -4134,7 +4165,7 @@ Retrieves an Action
 
 ```
 USAGE
-  $ aio rt action get [ACTIONNAME] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+  $ aio rt action get ACTIONNAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-r] [-c] [--save] [--save-as <value>]
 
 FLAGS
@@ -4166,7 +4197,7 @@ Invokes an Action
 
 ```
 USAGE
-  $ aio rt action invoke [ACTIONNAME] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+  $ aio rt action invoke ACTIONNAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [-b] [-r]
 
 FLAGS
@@ -4204,7 +4235,7 @@ USAGE
 FLAGS
   -c, --count           show only the total number of actions
   -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of actions
+  -l, --limit=<value>   only return LIMIT number of actions (min: 0, max: 50)
   -n, --name            sort results by name
   -s, --skip=<value>    exclude the first SKIP number of actions from the result
   -u, --auth=<value>    whisk auth
@@ -4244,7 +4275,7 @@ USAGE
 FLAGS
   -c, --count           show only the total number of actions
   -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of actions
+  -l, --limit=<value>   only return LIMIT number of actions (min: 0, max: 50)
   -n, --name            sort results by name
   -s, --skip=<value>    exclude the first SKIP number of actions from the result
   -u, --auth=<value>    whisk auth
@@ -4278,7 +4309,7 @@ Updates an Action
 
 ```
 USAGE
-  $ aio rt action update [ACTIONNAME] [ACTIONPATH] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost
+  $ aio rt action update ACTIONNAME [ACTIONPATH] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost
     <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [--copy <value>] [-e <value>]
     [--web-secure <value> --web true|yes|false|no|raw] [-P <value>] [-E <value>] [-t <value>] [-m <value>] [-l <value>]
     [--kind <value>] [-a <value>] [-A <value>] [--sequence <value>] [--docker <value>] [--main <value>] [--binary]
@@ -4291,10 +4322,11 @@ FLAGS
   -a, --annotation=<value>...    annotation values in KEY VALUE format
   -e, --env=<value>...           environment values in KEY VALUE format
   -i, --insecure                 bypass certificate check
-  -l, --logsize=<value>          the maximum log size LIMIT in MB for the action (default 10)
-  -m, --memory=<value>           the maximum memory LIMIT in MB for the action (default 256)
+  -l, --logsize=<value>          the maximum log size LIMIT in MB for the action (default 10, min: 0, max: 10)
+  -m, --memory=<value>           the maximum memory LIMIT in MB for the action (default 256, min: 128, max: 4096)
   -p, --param=<value>...         parameter values in KEY VALUE format
-  -t, --timeout=<value>          the timeout LIMIT in milliseconds after which the action is terminated (default 60000)
+  -t, --timeout=<value>          the timeout LIMIT in milliseconds after which the action is terminated (default 60000,
+                                 min: 100, max: 3600000)
   -u, --auth=<value>             whisk auth
   -v, --verbose                  Verbose output
   --apihost=<value>              whisk API host
@@ -4335,7 +4367,7 @@ USAGE
 FLAGS
   -c, --count           show only the total number of actions
   -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of actions
+  -l, --limit=<value>   only return LIMIT number of actions (min: 0, max: 50)
   -n, --name            sort results by name
   -s, --skip=<value>    exclude the first SKIP number of actions from the result
   -u, --auth=<value>    whisk auth
@@ -4375,7 +4407,7 @@ USAGE
 FLAGS
   -c, --count           show only the total number of actions
   -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of actions
+  -l, --limit=<value>   only return LIMIT number of actions (min: 0, max: 50)
   -n, --name            sort results by name
   -s, --skip=<value>    exclude the first SKIP number of actions from the result
   -u, --auth=<value>    whisk auth
@@ -4475,7 +4507,7 @@ FLAGS
   -c, --count           show only the total number of activations
   -f, --full            include full activation description
   -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of activations
+  -l, --limit=<value>   only return LIMIT number of activations (min: 0, max: 50)
   -s, --skip=<value>    exclude the first SKIP number of activations from the result
   -u, --auth=<value>    whisk auth
   -v, --verbose         Verbose output
@@ -4534,7 +4566,7 @@ FLAGS
   --debug=<value>        Debug level output
   --help                 Show help
   --key=<value>          client key
-  --limit=<value>        return logs only from last LIMIT number of activations
+  --limit=<value>        return logs only from last LIMIT number of activations (min: 0, max: 50)
   --version              Show version
 
 DESCRIPTION
@@ -4579,7 +4611,7 @@ FLAGS
   --debug=<value>        Debug level output
   --help                 Show help
   --key=<value>          client key
-  --limit=<value>        return logs only from last LIMIT number of activations
+  --limit=<value>        return logs only from last LIMIT number of activations (min: 0, max: 50)
   --version              Show version
 
 DESCRIPTION
@@ -4609,7 +4641,7 @@ FLAGS
   -c, --count           show only the total number of activations
   -f, --full            include full activation description
   -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of activations
+  -l, --limit=<value>   only return LIMIT number of activations (min: 0, max: 50)
   -s, --skip=<value>    exclude the first SKIP number of activations from the result
   -u, --auth=<value>    whisk auth
   -v, --verbose         Verbose output
@@ -4682,7 +4714,7 @@ FLAGS
   -c, --count           show only the total number of activations
   -f, --full            include full activation description
   -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of activations
+  -l, --limit=<value>   only return LIMIT number of activations (min: 0, max: 50)
   -s, --skip=<value>    exclude the first SKIP number of activations from the result
   -u, --auth=<value>    whisk auth
   -v, --verbose         Verbose output
@@ -4726,7 +4758,7 @@ FLAGS
   -c, --count           show only the total number of activations
   -f, --full            include full activation description
   -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of activations
+  -l, --limit=<value>   only return LIMIT number of activations (min: 0, max: 50)
   -s, --skip=<value>    exclude the first SKIP number of activations from the result
   -u, --auth=<value>    whisk auth
   -v, --verbose         Verbose output
@@ -4831,7 +4863,7 @@ delete an API
 
 ```
 USAGE
-  $ aio rt api delete [BASEPATHORAPINAME] [RELPATH] [APIVERB] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i]
+  $ aio rt api delete BASEPATHORAPINAME [RELPATH] [APIVERB] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i]
     [--debug <value>] [-v] [--version] [--help]
 
 ARGUMENTS
@@ -4866,7 +4898,7 @@ get API details
 
 ```
 USAGE
-  $ aio rt api get [BASEPATHORAPINAME] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>]
+  $ aio rt api get BASEPATHORAPINAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>]
     [-v] [--version] [--help]
 
 ARGUMENTS
@@ -5257,7 +5289,7 @@ FLAGS
   --debug=<value>        Debug level output
   --help                 Show help
   --key=<value>          client key
-  --limit=<value>        return logs only from last LIMIT number of activations
+  --limit=<value>        return logs only from last LIMIT number of activations (min: 0, max: 50)
   --version              Show version
 
 DESCRIPTION
@@ -5302,7 +5334,7 @@ FLAGS
   --debug=<value>        Debug level output
   --help                 Show help
   --key=<value>          client key
-  --limit=<value>        return logs only from last LIMIT number of activations
+  --limit=<value>        return logs only from last LIMIT number of activations (min: 0, max: 50)
   --version              Show version
 
 DESCRIPTION
@@ -6569,7 +6601,7 @@ Bind parameters to a package
 
 ```
 USAGE
-  $ aio rt package bind [PACKAGENAME] [BINDPACKAGENAME] [--cert <value>] [--key <value>] [--apiversion <value>]
+  $ aio rt package bind PACKAGENAME BINDPACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>]
     [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [-a
     <value>] [-A <value>] [--json]
 
@@ -6605,7 +6637,7 @@ Creates a Package
 
 ```
 USAGE
-  $ aio rt package create [PACKAGENAME] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+  $ aio rt package create PACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [--shared true|yes|false|no] [-a
     <value>] [-A <value>] [--json]
 
@@ -6643,7 +6675,7 @@ Deletes a Package
 
 ```
 USAGE
-  $ aio rt package delete [PACKAGENAME] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+  $ aio rt package delete PACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [--json] [-r]
 
 FLAGS
@@ -6675,7 +6707,7 @@ Retrieves a Package
 
 ```
 USAGE
-  $ aio rt package get [PACKAGENAME] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+  $ aio rt package get PACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
     <value>] [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
@@ -6711,7 +6743,7 @@ USAGE
 FLAGS
   -c, --count           show only the total number of packages
   -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of packages
+  -l, --limit=<value>   only return LIMIT number of packages (min: 0, max: 50)
   -n, --name            sort results by name
   -s, --skip=<value>    exclude the first SKIP number of packages from the result
   -u, --auth=<value>    whisk auth
@@ -6751,7 +6783,7 @@ USAGE
 FLAGS
   -c, --count           show only the total number of packages
   -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of packages
+  -l, --limit=<value>   only return LIMIT number of packages (min: 0, max: 50)
   -n, --name            sort results by name
   -s, --skip=<value>    exclude the first SKIP number of packages from the result
   -u, --auth=<value>    whisk auth
@@ -6785,7 +6817,7 @@ Updates a Package
 
 ```
 USAGE
-  $ aio rt package update [PACKAGENAME] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+  $ aio rt package update PACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [--shared true|yes|false|no] [-a
     <value>] [-A <value>] [--json]
 
@@ -6853,7 +6885,7 @@ Bind parameters to a package
 
 ```
 USAGE
-  $ aio rt pkg bind [PACKAGENAME] [BINDPACKAGENAME] [--cert <value>] [--key <value>] [--apiversion <value>]
+  $ aio rt pkg bind PACKAGENAME BINDPACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>]
     [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [-a
     <value>] [-A <value>] [--json]
 
@@ -6889,7 +6921,7 @@ Creates a Package
 
 ```
 USAGE
-  $ aio rt pkg create [PACKAGENAME] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+  $ aio rt pkg create PACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [--shared true|yes|false|no] [-a
     <value>] [-A <value>] [--json]
 
@@ -6927,7 +6959,7 @@ Deletes a Package
 
 ```
 USAGE
-  $ aio rt pkg delete [PACKAGENAME] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+  $ aio rt pkg delete PACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [--json] [-r]
 
 FLAGS
@@ -6959,7 +6991,7 @@ Retrieves a Package
 
 ```
 USAGE
-  $ aio rt pkg get [PACKAGENAME] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+  $ aio rt pkg get PACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
     <value>] [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
@@ -6995,7 +7027,7 @@ USAGE
 FLAGS
   -c, --count           show only the total number of packages
   -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of packages
+  -l, --limit=<value>   only return LIMIT number of packages (min: 0, max: 50)
   -n, --name            sort results by name
   -s, --skip=<value>    exclude the first SKIP number of packages from the result
   -u, --auth=<value>    whisk auth
@@ -7035,7 +7067,7 @@ USAGE
 FLAGS
   -c, --count           show only the total number of packages
   -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of packages
+  -l, --limit=<value>   only return LIMIT number of packages (min: 0, max: 50)
   -n, --name            sort results by name
   -s, --skip=<value>    exclude the first SKIP number of packages from the result
   -u, --auth=<value>    whisk auth
@@ -7069,7 +7101,7 @@ Updates a Package
 
 ```
 USAGE
-  $ aio rt pkg update [PACKAGENAME] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+  $ aio rt pkg update PACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [--shared true|yes|false|no] [-a
     <value>] [-A <value>] [--json]
 
@@ -7401,7 +7433,7 @@ delete an API
 
 ```
 USAGE
-  $ aio rt route delete [BASEPATHORAPINAME] [RELPATH] [APIVERB] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i]
+  $ aio rt route delete BASEPATHORAPINAME [RELPATH] [APIVERB] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i]
     [--debug <value>] [-v] [--version] [--help]
 
 ARGUMENTS
@@ -7436,7 +7468,7 @@ get API details
 
 ```
 USAGE
-  $ aio rt route get [BASEPATHORAPINAME] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>]
+  $ aio rt route get BASEPATHORAPINAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>]
     [-v] [--version] [--help]
 
 ARGUMENTS
@@ -7581,8 +7613,8 @@ Create a Rule
 
 ```
 USAGE
-  $ aio rt rule create [NAME] [TRIGGER] [ACTION] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug
-    <value>] [-v] [--version] [--help] [--json]
+  $ aio rt rule create NAME TRIGGER ACTION [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>]
+    [-v] [--version] [--help] [--json]
 
 ARGUMENTS
   NAME     Name of the rule
@@ -7615,8 +7647,8 @@ Delete a Rule
 
 ```
 USAGE
-  $ aio rt rule delete [NAME] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
-    [--version] [--help] [--json]
+  $ aio rt rule delete NAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version]
+    [--help] [--json]
 
 ARGUMENTS
   NAME  Name of the rule
@@ -7647,8 +7679,8 @@ Disable a Rule
 
 ```
 USAGE
-  $ aio rt rule disable [NAME] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
-    [--version] [--help]
+  $ aio rt rule disable NAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version]
+    [--help]
 
 ARGUMENTS
   NAME  Name of the rule
@@ -7678,8 +7710,8 @@ Enable a Rule
 
 ```
 USAGE
-  $ aio rt rule enable [NAME] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
-    [--version] [--help]
+  $ aio rt rule enable NAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version]
+    [--help]
 
 ARGUMENTS
   NAME  Name of the rule
@@ -7709,8 +7741,8 @@ Retrieves a Rule
 
 ```
 USAGE
-  $ aio rt rule get [NAME] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
-    [--version] [--help]
+  $ aio rt rule get NAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version]
+    [--help]
 
 ARGUMENTS
   NAME  Name of the rule
@@ -7746,7 +7778,7 @@ USAGE
 FLAGS
   -c, --count          show only the total number of rules
   -i, --insecure       bypass certificate check
-  -l, --limit=<value>  Limit number of rules returned
+  -l, --limit=<value>  Limit number of rules returned (min: 0, max: 50)
   -n, --name           sort results by name
   -s, --skip=<value>   Skip number of rules returned
   -u, --auth           whisk auth
@@ -7782,7 +7814,7 @@ USAGE
 FLAGS
   -c, --count          show only the total number of rules
   -i, --insecure       bypass certificate check
-  -l, --limit=<value>  Limit number of rules returned
+  -l, --limit=<value>  Limit number of rules returned (min: 0, max: 50)
   -n, --name           sort results by name
   -s, --skip=<value>   Skip number of rules returned
   -u, --auth           whisk auth
@@ -7812,8 +7844,8 @@ Gets the status of a rule
 
 ```
 USAGE
-  $ aio rt rule status [NAME] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
-    [--version] [--help]
+  $ aio rt rule status NAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version]
+    [--help]
 
 ARGUMENTS
   NAME  Name of the rule
@@ -7843,8 +7875,8 @@ Update a Rule
 
 ```
 USAGE
-  $ aio rt rule update [NAME] [TRIGGER] [ACTION] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug
-    <value>] [-v] [--version] [--help] [--json]
+  $ aio rt rule update NAME TRIGGER ACTION [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>]
+    [-v] [--version] [--help] [--json]
 
 ARGUMENTS
   NAME     Name of the rule
@@ -7905,7 +7937,7 @@ Create a trigger for Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio rt trigger create [TRIGGERNAME] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
+  $ aio rt trigger create TRIGGERNAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
     [--version] [--help] [-p <value>] [-P <value>] [-a <value>] [-A <value>] [-f <value>]
 
 ARGUMENTS
@@ -7941,7 +7973,7 @@ Delete a trigger for Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio rt trigger delete [TRIGGERPATH] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
+  $ aio rt trigger delete TRIGGERPATH [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
     [--version] [--help]
 
 ARGUMENTS
@@ -7972,7 +8004,7 @@ Fire a trigger for Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio rt trigger fire [TRIGGERNAME] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
+  $ aio rt trigger fire TRIGGERNAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
     [--version] [--help] [-p <value>] [-P <value>]
 
 ARGUMENTS
@@ -8005,7 +8037,7 @@ Get a trigger for Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio rt trigger get [TRIGGERPATH] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
+  $ aio rt trigger get TRIGGERPATH [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
     [--version] [--help]
 
 ARGUMENTS
@@ -8042,7 +8074,7 @@ USAGE
 FLAGS
   -c, --count          show only the total number of triggers
   -i, --insecure       bypass certificate check
-  -l, --limit=<value>  [default: 30] only return LIMIT number of triggers
+  -l, --limit=<value>  [default: 30] only return LIMIT number of triggers (min: 0, max: 50)
   -n, --name           sort results by name
   -s, --skip=<value>   exclude the first SKIP number of triggers from the result
   -u, --auth           whisk auth
@@ -8078,7 +8110,7 @@ USAGE
 FLAGS
   -c, --count          show only the total number of triggers
   -i, --insecure       bypass certificate check
-  -l, --limit=<value>  [default: 30] only return LIMIT number of triggers
+  -l, --limit=<value>  [default: 30] only return LIMIT number of triggers (min: 0, max: 50)
   -n, --name           sort results by name
   -s, --skip=<value>   exclude the first SKIP number of triggers from the result
   -u, --auth           whisk auth
@@ -8108,7 +8140,7 @@ Update or create a trigger for Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio rt trigger update [TRIGGERNAME] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
+  $ aio rt trigger update TRIGGERNAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
     [--version] [--help] [-p <value>] [-P <value>] [-a <value>] [-A <value>]
 
 ARGUMENTS
@@ -8165,7 +8197,7 @@ ALIASES
   $ aio rt
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/6.0.1/src/commands/runtime/index.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/6.0.2/src/commands/runtime/index.js)_
 
 ## `aio runtime action`
 
@@ -8201,7 +8233,7 @@ Creates an Action
 
 ```
 USAGE
-  $ aio runtime action create [ACTIONNAME] [ACTIONPATH] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost
+  $ aio runtime action create ACTIONNAME [ACTIONPATH] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost
     <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [--copy <value>] [-e <value>]
     [--web-secure <value> --web true|yes|false|no|raw] [-P <value>] [-E <value>] [-t <value>] [-m <value>] [-l <value>]
     [--kind <value>] [-a <value>] [-A <value>] [--sequence <value>] [--docker <value>] [--main <value>] [--binary]
@@ -8214,10 +8246,11 @@ FLAGS
   -a, --annotation=<value>...    annotation values in KEY VALUE format
   -e, --env=<value>...           environment values in KEY VALUE format
   -i, --insecure                 bypass certificate check
-  -l, --logsize=<value>          the maximum log size LIMIT in MB for the action (default 10)
-  -m, --memory=<value>           the maximum memory LIMIT in MB for the action (default 256)
+  -l, --logsize=<value>          the maximum log size LIMIT in MB for the action (default 10, min: 0, max: 10)
+  -m, --memory=<value>           the maximum memory LIMIT in MB for the action (default 256, min: 128, max: 4096)
   -p, --param=<value>...         parameter values in KEY VALUE format
-  -t, --timeout=<value>          the timeout LIMIT in milliseconds after which the action is terminated (default 60000)
+  -t, --timeout=<value>          the timeout LIMIT in milliseconds after which the action is terminated (default 60000,
+                                 min: 100, max: 3600000)
   -u, --auth=<value>             whisk auth
   -v, --verbose                  Verbose output
   --apihost=<value>              whisk API host
@@ -8252,7 +8285,7 @@ Deletes an Action
 
 ```
 USAGE
-  $ aio runtime action del [ACTIONNAME] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+  $ aio runtime action del ACTIONNAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [--json]
 
 FLAGS
@@ -8283,7 +8316,7 @@ Deletes an Action
 
 ```
 USAGE
-  $ aio runtime action delete [ACTIONNAME] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+  $ aio runtime action delete ACTIONNAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [--json]
 
 FLAGS
@@ -8314,7 +8347,7 @@ Retrieves an Action
 
 ```
 USAGE
-  $ aio runtime action get [ACTIONNAME] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+  $ aio runtime action get ACTIONNAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-r] [-c] [--save] [--save-as <value>]
 
 FLAGS
@@ -8346,7 +8379,7 @@ Invokes an Action
 
 ```
 USAGE
-  $ aio runtime action invoke [ACTIONNAME] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+  $ aio runtime action invoke ACTIONNAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [-b] [-r]
 
 FLAGS
@@ -8384,7 +8417,7 @@ USAGE
 FLAGS
   -c, --count           show only the total number of actions
   -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of actions
+  -l, --limit=<value>   only return LIMIT number of actions (min: 0, max: 50)
   -n, --name            sort results by name
   -s, --skip=<value>    exclude the first SKIP number of actions from the result
   -u, --auth=<value>    whisk auth
@@ -8424,7 +8457,7 @@ USAGE
 FLAGS
   -c, --count           show only the total number of actions
   -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of actions
+  -l, --limit=<value>   only return LIMIT number of actions (min: 0, max: 50)
   -n, --name            sort results by name
   -s, --skip=<value>    exclude the first SKIP number of actions from the result
   -u, --auth=<value>    whisk auth
@@ -8458,7 +8491,7 @@ Updates an Action
 
 ```
 USAGE
-  $ aio runtime action update [ACTIONNAME] [ACTIONPATH] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost
+  $ aio runtime action update ACTIONNAME [ACTIONPATH] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost
     <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [--copy <value>] [-e <value>]
     [--web-secure <value> --web true|yes|false|no|raw] [-P <value>] [-E <value>] [-t <value>] [-m <value>] [-l <value>]
     [--kind <value>] [-a <value>] [-A <value>] [--sequence <value>] [--docker <value>] [--main <value>] [--binary]
@@ -8471,10 +8504,11 @@ FLAGS
   -a, --annotation=<value>...    annotation values in KEY VALUE format
   -e, --env=<value>...           environment values in KEY VALUE format
   -i, --insecure                 bypass certificate check
-  -l, --logsize=<value>          the maximum log size LIMIT in MB for the action (default 10)
-  -m, --memory=<value>           the maximum memory LIMIT in MB for the action (default 256)
+  -l, --logsize=<value>          the maximum log size LIMIT in MB for the action (default 10, min: 0, max: 10)
+  -m, --memory=<value>           the maximum memory LIMIT in MB for the action (default 256, min: 128, max: 4096)
   -p, --param=<value>...         parameter values in KEY VALUE format
-  -t, --timeout=<value>          the timeout LIMIT in milliseconds after which the action is terminated (default 60000)
+  -t, --timeout=<value>          the timeout LIMIT in milliseconds after which the action is terminated (default 60000,
+                                 min: 100, max: 3600000)
   -u, --auth=<value>             whisk auth
   -v, --verbose                  Verbose output
   --apihost=<value>              whisk API host
@@ -8515,7 +8549,7 @@ USAGE
 FLAGS
   -c, --count           show only the total number of actions
   -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of actions
+  -l, --limit=<value>   only return LIMIT number of actions (min: 0, max: 50)
   -n, --name            sort results by name
   -s, --skip=<value>    exclude the first SKIP number of actions from the result
   -u, --auth=<value>    whisk auth
@@ -8555,7 +8589,7 @@ USAGE
 FLAGS
   -c, --count           show only the total number of actions
   -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of actions
+  -l, --limit=<value>   only return LIMIT number of actions (min: 0, max: 50)
   -n, --name            sort results by name
   -s, --skip=<value>    exclude the first SKIP number of actions from the result
   -u, --auth=<value>    whisk auth
@@ -8655,7 +8689,7 @@ FLAGS
   -c, --count           show only the total number of activations
   -f, --full            include full activation description
   -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of activations
+  -l, --limit=<value>   only return LIMIT number of activations (min: 0, max: 50)
   -s, --skip=<value>    exclude the first SKIP number of activations from the result
   -u, --auth=<value>    whisk auth
   -v, --verbose         Verbose output
@@ -8714,7 +8748,7 @@ FLAGS
   --debug=<value>        Debug level output
   --help                 Show help
   --key=<value>          client key
-  --limit=<value>        return logs only from last LIMIT number of activations
+  --limit=<value>        return logs only from last LIMIT number of activations (min: 0, max: 50)
   --version              Show version
 
 DESCRIPTION
@@ -8759,7 +8793,7 @@ FLAGS
   --debug=<value>        Debug level output
   --help                 Show help
   --key=<value>          client key
-  --limit=<value>        return logs only from last LIMIT number of activations
+  --limit=<value>        return logs only from last LIMIT number of activations (min: 0, max: 50)
   --version              Show version
 
 DESCRIPTION
@@ -8789,7 +8823,7 @@ FLAGS
   -c, --count           show only the total number of activations
   -f, --full            include full activation description
   -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of activations
+  -l, --limit=<value>   only return LIMIT number of activations (min: 0, max: 50)
   -s, --skip=<value>    exclude the first SKIP number of activations from the result
   -u, --auth=<value>    whisk auth
   -v, --verbose         Verbose output
@@ -8862,7 +8896,7 @@ FLAGS
   -c, --count           show only the total number of activations
   -f, --full            include full activation description
   -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of activations
+  -l, --limit=<value>   only return LIMIT number of activations (min: 0, max: 50)
   -s, --skip=<value>    exclude the first SKIP number of activations from the result
   -u, --auth=<value>    whisk auth
   -v, --verbose         Verbose output
@@ -8906,7 +8940,7 @@ FLAGS
   -c, --count           show only the total number of activations
   -f, --full            include full activation description
   -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of activations
+  -l, --limit=<value>   only return LIMIT number of activations (min: 0, max: 50)
   -s, --skip=<value>    exclude the first SKIP number of activations from the result
   -u, --auth=<value>    whisk auth
   -v, --verbose         Verbose output
@@ -9011,7 +9045,7 @@ delete an API
 
 ```
 USAGE
-  $ aio runtime api delete [BASEPATHORAPINAME] [RELPATH] [APIVERB] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i]
+  $ aio runtime api delete BASEPATHORAPINAME [RELPATH] [APIVERB] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i]
     [--debug <value>] [-v] [--version] [--help]
 
 ARGUMENTS
@@ -9046,7 +9080,7 @@ get API details
 
 ```
 USAGE
-  $ aio runtime api get [BASEPATHORAPINAME] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>]
+  $ aio runtime api get BASEPATHORAPINAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>]
     [-v] [--version] [--help]
 
 ARGUMENTS
@@ -9402,7 +9436,7 @@ FLAGS
   --debug=<value>        Debug level output
   --help                 Show help
   --key=<value>          client key
-  --limit=<value>        return logs only from last LIMIT number of activations
+  --limit=<value>        return logs only from last LIMIT number of activations (min: 0, max: 50)
   --version              Show version
 
 DESCRIPTION
@@ -9447,7 +9481,7 @@ FLAGS
   --debug=<value>        Debug level output
   --help                 Show help
   --key=<value>          client key
-  --limit=<value>        return logs only from last LIMIT number of activations
+  --limit=<value>        return logs only from last LIMIT number of activations (min: 0, max: 50)
   --version              Show version
 
 DESCRIPTION
@@ -10749,7 +10783,7 @@ Bind parameters to a package
 
 ```
 USAGE
-  $ aio runtime package bind [PACKAGENAME] [BINDPACKAGENAME] [--cert <value>] [--key <value>] [--apiversion <value>]
+  $ aio runtime package bind PACKAGENAME BINDPACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>]
     [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [-a
     <value>] [-A <value>] [--json]
 
@@ -10785,7 +10819,7 @@ Creates a Package
 
 ```
 USAGE
-  $ aio runtime package create [PACKAGENAME] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+  $ aio runtime package create PACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [--shared true|yes|false|no] [-a
     <value>] [-A <value>] [--json]
 
@@ -10823,7 +10857,7 @@ Deletes a Package
 
 ```
 USAGE
-  $ aio runtime package delete [PACKAGENAME] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+  $ aio runtime package delete PACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [--json] [-r]
 
 FLAGS
@@ -10855,7 +10889,7 @@ Retrieves a Package
 
 ```
 USAGE
-  $ aio runtime package get [PACKAGENAME] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+  $ aio runtime package get PACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
     <value>] [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
@@ -10891,7 +10925,7 @@ USAGE
 FLAGS
   -c, --count           show only the total number of packages
   -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of packages
+  -l, --limit=<value>   only return LIMIT number of packages (min: 0, max: 50)
   -n, --name            sort results by name
   -s, --skip=<value>    exclude the first SKIP number of packages from the result
   -u, --auth=<value>    whisk auth
@@ -10931,7 +10965,7 @@ USAGE
 FLAGS
   -c, --count           show only the total number of packages
   -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of packages
+  -l, --limit=<value>   only return LIMIT number of packages (min: 0, max: 50)
   -n, --name            sort results by name
   -s, --skip=<value>    exclude the first SKIP number of packages from the result
   -u, --auth=<value>    whisk auth
@@ -10965,7 +10999,7 @@ Updates a Package
 
 ```
 USAGE
-  $ aio runtime package update [PACKAGENAME] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+  $ aio runtime package update PACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [--shared true|yes|false|no] [-a
     <value>] [-A <value>] [--json]
 
@@ -11033,7 +11067,7 @@ Bind parameters to a package
 
 ```
 USAGE
-  $ aio runtime pkg bind [PACKAGENAME] [BINDPACKAGENAME] [--cert <value>] [--key <value>] [--apiversion <value>]
+  $ aio runtime pkg bind PACKAGENAME BINDPACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>]
     [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [-a
     <value>] [-A <value>] [--json]
 
@@ -11069,7 +11103,7 @@ Creates a Package
 
 ```
 USAGE
-  $ aio runtime pkg create [PACKAGENAME] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+  $ aio runtime pkg create PACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [--shared true|yes|false|no] [-a
     <value>] [-A <value>] [--json]
 
@@ -11107,7 +11141,7 @@ Deletes a Package
 
 ```
 USAGE
-  $ aio runtime pkg delete [PACKAGENAME] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+  $ aio runtime pkg delete PACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [--json] [-r]
 
 FLAGS
@@ -11139,7 +11173,7 @@ Retrieves a Package
 
 ```
 USAGE
-  $ aio runtime pkg get [PACKAGENAME] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+  $ aio runtime pkg get PACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
     <value>] [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
@@ -11175,7 +11209,7 @@ USAGE
 FLAGS
   -c, --count           show only the total number of packages
   -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of packages
+  -l, --limit=<value>   only return LIMIT number of packages (min: 0, max: 50)
   -n, --name            sort results by name
   -s, --skip=<value>    exclude the first SKIP number of packages from the result
   -u, --auth=<value>    whisk auth
@@ -11215,7 +11249,7 @@ USAGE
 FLAGS
   -c, --count           show only the total number of packages
   -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of packages
+  -l, --limit=<value>   only return LIMIT number of packages (min: 0, max: 50)
   -n, --name            sort results by name
   -s, --skip=<value>    exclude the first SKIP number of packages from the result
   -u, --auth=<value>    whisk auth
@@ -11249,7 +11283,7 @@ Updates a Package
 
 ```
 USAGE
-  $ aio runtime pkg update [PACKAGENAME] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+  $ aio runtime pkg update PACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [--shared true|yes|false|no] [-a
     <value>] [-A <value>] [--json]
 
@@ -11610,7 +11644,7 @@ delete an API
 
 ```
 USAGE
-  $ aio runtime route delete [BASEPATHORAPINAME] [RELPATH] [APIVERB] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i]
+  $ aio runtime route delete BASEPATHORAPINAME [RELPATH] [APIVERB] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i]
     [--debug <value>] [-v] [--version] [--help]
 
 ARGUMENTS
@@ -11645,7 +11679,7 @@ get API details
 
 ```
 USAGE
-  $ aio runtime route get [BASEPATHORAPINAME] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>]
+  $ aio runtime route get BASEPATHORAPINAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>]
     [-v] [--version] [--help]
 
 ARGUMENTS
@@ -11790,8 +11824,8 @@ Create a Rule
 
 ```
 USAGE
-  $ aio runtime rule create [NAME] [TRIGGER] [ACTION] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug
-    <value>] [-v] [--version] [--help] [--json]
+  $ aio runtime rule create NAME TRIGGER ACTION [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>]
+    [-v] [--version] [--help] [--json]
 
 ARGUMENTS
   NAME     Name of the rule
@@ -11824,8 +11858,8 @@ Delete a Rule
 
 ```
 USAGE
-  $ aio runtime rule delete [NAME] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
-    [--version] [--help] [--json]
+  $ aio runtime rule delete NAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version]
+    [--help] [--json]
 
 ARGUMENTS
   NAME  Name of the rule
@@ -11856,8 +11890,8 @@ Disable a Rule
 
 ```
 USAGE
-  $ aio runtime rule disable [NAME] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
-    [--version] [--help]
+  $ aio runtime rule disable NAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version]
+    [--help]
 
 ARGUMENTS
   NAME  Name of the rule
@@ -11887,8 +11921,8 @@ Enable a Rule
 
 ```
 USAGE
-  $ aio runtime rule enable [NAME] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
-    [--version] [--help]
+  $ aio runtime rule enable NAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version]
+    [--help]
 
 ARGUMENTS
   NAME  Name of the rule
@@ -11918,8 +11952,8 @@ Retrieves a Rule
 
 ```
 USAGE
-  $ aio runtime rule get [NAME] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
-    [--version] [--help]
+  $ aio runtime rule get NAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version]
+    [--help]
 
 ARGUMENTS
   NAME  Name of the rule
@@ -11955,7 +11989,7 @@ USAGE
 FLAGS
   -c, --count          show only the total number of rules
   -i, --insecure       bypass certificate check
-  -l, --limit=<value>  Limit number of rules returned
+  -l, --limit=<value>  Limit number of rules returned (min: 0, max: 50)
   -n, --name           sort results by name
   -s, --skip=<value>   Skip number of rules returned
   -u, --auth           whisk auth
@@ -11991,7 +12025,7 @@ USAGE
 FLAGS
   -c, --count          show only the total number of rules
   -i, --insecure       bypass certificate check
-  -l, --limit=<value>  Limit number of rules returned
+  -l, --limit=<value>  Limit number of rules returned (min: 0, max: 50)
   -n, --name           sort results by name
   -s, --skip=<value>   Skip number of rules returned
   -u, --auth           whisk auth
@@ -12021,8 +12055,8 @@ Gets the status of a rule
 
 ```
 USAGE
-  $ aio runtime rule status [NAME] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
-    [--version] [--help]
+  $ aio runtime rule status NAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version]
+    [--help]
 
 ARGUMENTS
   NAME  Name of the rule
@@ -12052,8 +12086,8 @@ Update a Rule
 
 ```
 USAGE
-  $ aio runtime rule update [NAME] [TRIGGER] [ACTION] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug
-    <value>] [-v] [--version] [--help] [--json]
+  $ aio runtime rule update NAME TRIGGER ACTION [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>]
+    [-v] [--version] [--help] [--json]
 
 ARGUMENTS
   NAME     Name of the rule
@@ -12114,7 +12148,7 @@ Create a trigger for Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio runtime trigger create [TRIGGERNAME] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
+  $ aio runtime trigger create TRIGGERNAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
     [--version] [--help] [-p <value>] [-P <value>] [-a <value>] [-A <value>] [-f <value>]
 
 ARGUMENTS
@@ -12150,7 +12184,7 @@ Delete a trigger for Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio runtime trigger delete [TRIGGERPATH] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
+  $ aio runtime trigger delete TRIGGERPATH [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
     [--version] [--help]
 
 ARGUMENTS
@@ -12181,7 +12215,7 @@ Fire a trigger for Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio runtime trigger fire [TRIGGERNAME] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
+  $ aio runtime trigger fire TRIGGERNAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
     [--version] [--help] [-p <value>] [-P <value>]
 
 ARGUMENTS
@@ -12214,7 +12248,7 @@ Get a trigger for Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio runtime trigger get [TRIGGERPATH] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
+  $ aio runtime trigger get TRIGGERPATH [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
     [--version] [--help]
 
 ARGUMENTS
@@ -12251,7 +12285,7 @@ USAGE
 FLAGS
   -c, --count          show only the total number of triggers
   -i, --insecure       bypass certificate check
-  -l, --limit=<value>  [default: 30] only return LIMIT number of triggers
+  -l, --limit=<value>  [default: 30] only return LIMIT number of triggers (min: 0, max: 50)
   -n, --name           sort results by name
   -s, --skip=<value>   exclude the first SKIP number of triggers from the result
   -u, --auth           whisk auth
@@ -12287,7 +12321,7 @@ USAGE
 FLAGS
   -c, --count          show only the total number of triggers
   -i, --insecure       bypass certificate check
-  -l, --limit=<value>  [default: 30] only return LIMIT number of triggers
+  -l, --limit=<value>  [default: 30] only return LIMIT number of triggers (min: 0, max: 50)
   -n, --name           sort results by name
   -s, --skip=<value>   exclude the first SKIP number of triggers from the result
   -u, --auth           whisk auth
@@ -12317,7 +12351,7 @@ Update or create a trigger for Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio runtime trigger update [TRIGGERNAME] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
+  $ aio runtime trigger update TRIGGERNAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
     [--version] [--help] [-p <value>] [-P <value>] [-a <value>] [-A <value>]
 
 ARGUMENTS
@@ -12348,7 +12382,7 @@ ALIASES
 
 ## `aio telemetry yes`
 
-Help us improve the Adobe Developer CLI
+Allow the cli to collect anonymous usage data
 
 ```
 USAGE
@@ -12360,12 +12394,10 @@ ARGUMENTS
   STATE  (on|off|yes|no) set telemetry state
 
 DESCRIPTION
-  Help us improve the Adobe Developer CLI
-
-  Allow the Adobe Developer CLI to collect anonymous usage data
+  Allow the cli to collect anonymous usage data
 ```
 
-_See code: [@adobe/aio-cli-plugin-telemetry](https://github.com/adobe/aio-cli-plugin-telemetry/blob/v1.1.0/src/commands/telemetry/index.js)_
+_See code: [@adobe/aio-cli-plugin-telemetry](https://github.com/adobe/aio-cli-plugin-telemetry/blob/v1.2.0/src/commands/telemetry/index.js)_
 
 ## `aio templates`
 
@@ -12382,7 +12414,7 @@ DESCRIPTION
   Discover, install, or uninstall a new template into an existing Adobe Developer App Builder App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/1.4.0/src/commands/templates/index.js)_
+_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/1.5.2/src/commands/templates/index.js)_
 
 ## `aio templates disco`
 
@@ -12440,7 +12472,7 @@ Install an Adobe Developer App Builder template
 
 ```
 USAGE
-  $ aio templates i [PATH] [-v] [-y] [--install] [--process-install-config] [--template-options <value>]
+  $ aio templates i PATH [-v] [-y] [--install] [--process-install-config] [--template-options <value>]
 
 ARGUMENTS
   PATH  path to the template (npm package name, file path, url). See examples
@@ -12509,7 +12541,7 @@ Install an Adobe Developer App Builder template
 
 ```
 USAGE
-  $ aio templates install [PATH] [-v] [-y] [--install] [--process-install-config] [--template-options <value>]
+  $ aio templates install PATH [-v] [-y] [--install] [--process-install-config] [--template-options <value>]
 
 ARGUMENTS
   PATH  path to the template (npm package name, file path, url). See examples
@@ -12560,7 +12592,7 @@ Remove an Adobe Developer App Builder template from the Template Registry
 
 ```
 USAGE
-  $ aio templates remove [NAME] [-v]
+  $ aio templates remove NAME [-v]
 
 ARGUMENTS
   NAME  The name of the package implementing the template on npmjs.com
@@ -12584,7 +12616,7 @@ Remove an Adobe Developer App Builder template from the Template Registry
 
 ```
 USAGE
-  $ aio templates rm [NAME] [-v]
+  $ aio templates rm NAME [-v]
 
 ARGUMENTS
   NAME  The name of the package implementing the template on npmjs.com
@@ -12626,7 +12658,7 @@ Submit an Adobe Developer App Builder template
 
 ```
 USAGE
-  $ aio templates sub [NAME] [GITHUBREPOURL] [-v]
+  $ aio templates sub NAME GITHUBREPOURL [-v]
 
 ARGUMENTS
   NAME           The name of the package implementing the template on npmjs.com
@@ -12651,7 +12683,7 @@ Submit an Adobe Developer App Builder template
 
 ```
 USAGE
-  $ aio templates submit [NAME] [GITHUBREPOURL] [-v]
+  $ aio templates submit NAME GITHUBREPOURL [-v]
 
 ARGUMENTS
   NAME           The name of the package implementing the template on npmjs.com
@@ -12676,7 +12708,7 @@ Uninstall an Adobe Developer App Builder template
 
 ```
 USAGE
-  $ aio templates un [PACKAGE-NAME] [-v]
+  $ aio templates un PACKAGE-NAME [-v]
 
 ARGUMENTS
   PACKAGE-NAME  package name of the template
@@ -12697,7 +12729,7 @@ Uninstall an Adobe Developer App Builder template
 
 ```
 USAGE
-  $ aio templates uninstall [PACKAGE-NAME] [-v]
+  $ aio templates uninstall PACKAGE-NAME [-v]
 
 ARGUMENTS
   PACKAGE-NAME  package name of the template
@@ -12728,13 +12760,11 @@ FLAGS
 
 DESCRIPTION
   Update all installed plugins.
-
   This command will only:
-
   - update user-installed plugins that are not core
 ```
 
-_See code: [src/commands/update.ts](https://github.com/adobe/aio-cli/blob/9.1.1/src/commands/update.ts)_
+_See code: [src/commands/update.ts](https://github.com/adobe/aio-cli/blob/9.2.0/src/commands/update.ts)_
 
 ## `aio where`
 

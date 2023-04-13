@@ -1,10 +1,10 @@
 {
   "name": "@adobe/aio-cli",
   "description": "Adobe I/O Extensible CLI\n\n*******   *******\n******     ******\n*****       *****\n****    *    ****\n***    ***    ***\n**    *****    **\n*         **    *\n",
-  "version": "9.1.1",
+  "version": "9.2.0",
   "author": "Adobe Inc.",
   "bin": {
-    "aio": "./bin/run"
+    "aio": "bin/run"
   },
   "bugs": "https://github.com/adobe/aio-cli/issues",
   "dependencies": {
