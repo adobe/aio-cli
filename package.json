@@ -46,7 +46,7 @@
     "execa": "^5.1.1",
     "jest": "^29.0.1",
     "jest-fetch-mock": "^3.0.0",
-    "jest-junit": "^15.0.0",
+    "jest-junit": "^16.0.0",
     "jest-plugin-fs": "^2.9.0",
     "oclif": "^3.1.1",
     "stdout-stderr": "^0.1.9",
