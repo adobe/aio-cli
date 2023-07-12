@@ -35,7 +35,7 @@
     "@adobe/eslint-config-aio-lib-config": "^2.0.0",
     "acorn": "^8.8.2",
     "babel-runtime": "^6.26.0",
-    "eslint": "^8.23.0",
+    "eslint": "^8.44.0",
     "eslint-config-standard": "^17",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jest": "^23",
