@@ -18,9 +18,6 @@ jest.useFakeTimers()
 const fetch = require('jest-fetch-mock')
 jest.setMock('node-fetch', fetch)
 
-// dont touch the real fs
-jest.mock('fs', () => require('jest-plugin-fs/mock'))
-
 // trap console log
 // note: if you use console.log, some of these tests will start failing because they depend on the order/position of the output
 beforeEach(() => { stdout.start(); stdout.print = false })
