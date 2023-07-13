@@ -53,7 +53,8 @@
     "typescript": "^5.0.4"
   },
   "engines": {
-    "node": "^14.18 || ^16.13 || >=18"
+    "node": "^14.18 || ^16.13 || >=18",
+    "npm": ">=8.3.0"
   },
   "files": [
     "/bin",
@@ -130,5 +131,10 @@
     "link": "ln -s \"$(pwd)\"/bin/run /usr/local/bin/aio",
     "unlink": "rm /usr/local/bin/aio",
     "e2e": "jest --collectCoverage=false --testRegex './e2e/e2e.js'"
+  },
+  "overrides": {
+    "@oclif/plugins-plugin": {
+      "@oclif/core": "2.9.0"
+    }
   }
 }

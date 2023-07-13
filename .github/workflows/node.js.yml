@@ -30,6 +30,7 @@ jobs:
     - run: npm i --package-lock --package-lock-only --legacy-peer-deps
     - run: npm ci --legacy-peer-deps
     - run: npm run build --if-present
+    - run: npm install -g npm # get latest npm, for 'overrides' feature
     - run: npm test
     - name: run tests
       run: |
