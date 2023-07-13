@@ -133,8 +133,8 @@
     "e2e": "jest --collectCoverage=false --testRegex './e2e/e2e.js'"
   },
   "overrides": {
-    "@oclif/plugin-plugins": {
-      "@oclif/core": "2.9.0"
+    "@oclif/plugins-plugin": {
+      "@oclif/core": "2.8.12"
     }
   }
 }
