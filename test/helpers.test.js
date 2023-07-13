@@ -12,15 +12,16 @@
 
 const fetch = require('node-fetch')
 const { prompt, sortValues, getNpmLatestVersion, getNpmLocalVersion, hideNPMWarnings } = require('../src/helpers')
-const fileSystem = require('jest-plugin-fs').default
 const inquirer = require('inquirer')
 const { stderr } = require('stdout-stderr')
+const fs = require('fs')
 
+jest.mock('fs')
 jest.mock('inquirer')
 
 beforeEach(() => {
   fetch.resetMocks()
-  fileSystem.restore()
+  fs.readFileSync.mockRestore()
 })
 
 describe('sort tests', () => {
@@ -216,8 +217,11 @@ test('getNpmLocalVersion', async () => {
   const packageJson = {
     version: packageVersion
   }
-  fileSystem.mock({
-    [`${cliRoot}/node_modules/${npmPackage}/package.json`]: JSON.stringify(packageJson)
+
+  fs.readFileSync.mockImplementation((filePath) => {
+    if (filePath === `${cliRoot}/node_modules/${npmPackage}/package.json`) {
+      return JSON.stringify(packageJson)
+    }
   })
 
   return expect(getNpmLocalVersion(cliRoot, npmPackage)).resolves.toEqual(packageVersion)
