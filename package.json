@@ -18,7 +18,7 @@
     "@adobe/aio-cli-plugin-info": "^3.0.1",
     "@adobe/aio-cli-plugin-runtime": "^6.1.0",
     "@adobe/aio-cli-plugin-telemetry": "^1.2.0",
-    "@oclif/core": "^1.16.0",
+    "@oclif/core": "2.8.12",
     "@oclif/plugin-autocomplete": "^2.3.1",
     "@oclif/plugin-help": "^5.1.12",
     "@oclif/plugin-not-found": "^2.3.26",
@@ -130,5 +130,10 @@
     "link": "ln -s \"$(pwd)\"/bin/run /usr/local/bin/aio",
     "unlink": "rm /usr/local/bin/aio",
     "e2e": "jest --collectCoverage=false --testRegex './e2e/e2e.js'"
+  },
+  "overrides": {
+    "@oclif/plugins-plugin@^2.4.7": {
+      "@oclif/core": "2.8.12"
+    }
   }
 }

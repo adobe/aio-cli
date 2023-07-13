@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-const { Command, Flags, CliUx: cli } = require('@oclif/core')
+const { Command, Flags, ux } = require('@oclif/core')
 const fetch = require('node-fetch')
 const inquirer = require('inquirer')
 const { sortValues } = require('../helpers')
@@ -84,7 +84,7 @@ class DiscoCommand extends Command {
       }
     }
     // skip ones that aren't from us
-    cli.ux.table(plugins, columns)
+    ux.table(plugins, columns)
   }
 
   async run () {

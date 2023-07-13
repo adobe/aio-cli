@@ -32,11 +32,9 @@ jest.mock('@oclif/core', () => {
         }
       }
     },
-    CliUx: {
-      ux: {
-        cli: {
-          open: jest.fn()
-        }
+    ux: {
+      cli: {
+        open: jest.fn()
       }
     },
     Command: jest.fn(),

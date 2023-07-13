@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-const { Command, Flags, CliUx: cli } = require('@oclif/core')
+const { Command, Flags, ux } = require('@oclif/core')
 const inquirer = require('inquirer')
 const chalk = require('chalk')
 const ora = require('ora')
@@ -45,7 +45,7 @@ class UpdateCommand extends Command {
       }
     }
 
-    cli.ux.table(plugins, columns)
+    ux.table(plugins, columns)
   }
 
   /**
