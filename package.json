@@ -14,7 +14,7 @@
     "@adobe/aio-cli-plugin-certificate": "^1.0.0",
     "@adobe/aio-cli-plugin-config": "^4.0.0",
     "@adobe/aio-cli-plugin-console": "^4.0.0",
-    "@adobe/aio-cli-plugin-events": "^3.0.1",
+    "@adobe/aio-cli-plugin-events": "^3.3.0",
     "@adobe/aio-cli-plugin-info": "^3.0.0",
     "@adobe/aio-cli-plugin-runtime": "^6.0.0",
     "@adobe/aio-cli-plugin-telemetry": "^1.0.1",
