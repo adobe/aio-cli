@@ -97,7 +97,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (--version)
-@adobe/aio-cli/9.3.0 win32-x64 node-v16.19.1
+@adobe/aio-cli/9.4.0 win32-x64 node-v16.19.1
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -146,8 +146,6 @@ USAGE
 * [`aio app delete action [ACTION-NAME]`](#aio-app-delete-action-action-name)
 * [`aio app delete actions [ACTION-NAME]`](#aio-app-delete-actions-action-name)
 * [`aio app delete ci`](#aio-app-delete-ci)
-* [`aio app delete event [EVENT-ACTION-NAME]`](#aio-app-delete-event-event-action-name)
-* [`aio app delete events [EVENT-ACTION-NAME]`](#aio-app-delete-events-event-action-name)
 * [`aio app delete ext`](#aio-app-delete-ext)
 * [`aio app delete extension`](#aio-app-delete-extension)
 * [`aio app delete extensions`](#aio-app-delete-extensions)
@@ -362,6 +360,7 @@ USAGE
 * [`aio rt property get`](#aio-rt-property-get)
 * [`aio rt property set`](#aio-rt-property-set)
 * [`aio rt property unset`](#aio-rt-property-unset)
+* [`aio rt route`](#aio-rt-route)
 * [`aio rt route create [BASEPATH] [RELPATH] [APIVERB] [ACTION]`](#aio-rt-route-create-basepath-relpath-apiverb-action)
 * [`aio rt route delete BASEPATHORAPINAME [RELPATH] [APIVERB]`](#aio-rt-route-delete-basepathorapiname-relpath-apiverb)
 * [`aio rt route get BASEPATHORAPINAME`](#aio-rt-route-get-basepathorapiname)
@@ -538,7 +537,7 @@ DESCRIPTION
   Create, run, test, and deploy Adobe I/O Apps
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/10.2.0/src/commands/app/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/11.0.0/src/commands/app/index.ts)_
 
 ## `aio app add`
 
@@ -627,7 +626,7 @@ USAGE
   $ aio app add event [-v] [--version] [--install] [-y] [-e <value>]
 
 FLAGS
-  -e, --extension=<value>  Add actions to a specific extension
+  -e, --extension=<value>  Add events to a specific extension
   -v, --verbose            Verbose output
   -y, --yes                Skip questions, and use all default values
   --[no-]install           [default: true] Run npm installation after files are created
@@ -650,7 +649,7 @@ USAGE
   $ aio app add events [-v] [--version] [--install] [-y] [-e <value>]
 
 FLAGS
-  -e, --extension=<value>  Add actions to a specific extension
+  -e, --extension=<value>  Add events to a specific extension
   -v, --verbose            Verbose output
   -y, --yes                Skip questions, and use all default values
   --[no-]install           [default: true] Run npm installation after files are created
@@ -742,10 +741,12 @@ Subscribe to Services in the current Workspace
 
 ```
 USAGE
-  $ aio app add service [-v] [--version]
+  $ aio app add service [-v] [--version] [--use-jwt]
 
 FLAGS
   -v, --verbose  Verbose output
+  --use-jwt      if the config has both jwt and OAuth Server to Server Credentials (while migrating), prefer the JWT
+                 credentials
   --version      Show version
 
 DESCRIPTION
@@ -762,10 +763,12 @@ Subscribe to Services in the current Workspace
 
 ```
 USAGE
-  $ aio app add services [-v] [--version]
+  $ aio app add services [-v] [--version] [--use-jwt]
 
 FLAGS
   -v, --verbose  Verbose output
+  --use-jwt      if the config has both jwt and OAuth Server to Server Credentials (while migrating), prefer the JWT
+                 credentials
   --version      Show version
 
 DESCRIPTION
@@ -1101,54 +1104,6 @@ DESCRIPTION
   Delete existing CI files
 ```
 
-## `aio app delete event [EVENT-ACTION-NAME]`
-
-Delete existing Adobe I/O Events actions
-
-```
-USAGE
-  $ aio app delete event [EVENT-ACTION-NAME] [-v] [--version] [-y]
-
-ARGUMENTS
-  EVENT-ACTION-NAME  Action `pkg/name` to delete, you can specify multiple actions via a comma separated list
-
-FLAGS
-  -v, --verbose  Verbose output
-  -y, --yes      Skip questions, and use all default values
-  --version      Show version
-
-DESCRIPTION
-  Delete existing Adobe I/O Events actions
-
-
-ALIASES
-  $ aio app delete events
-```
-
-## `aio app delete events [EVENT-ACTION-NAME]`
-
-Delete existing Adobe I/O Events actions
-
-```
-USAGE
-  $ aio app delete events [EVENT-ACTION-NAME] [-v] [--version] [-y]
-
-ARGUMENTS
-  EVENT-ACTION-NAME  Action `pkg/name` to delete, you can specify multiple actions via a comma separated list
-
-FLAGS
-  -v, --verbose  Verbose output
-  -y, --yes      Skip questions, and use all default values
-  --version      Show version
-
-DESCRIPTION
-  Delete existing Adobe I/O Events actions
-
-
-ALIASES
-  $ aio app delete events
-```
-
 ## `aio app delete ext`
 
 Delete existing extensions
@@ -1227,10 +1182,12 @@ Delete Services in the current Workspace
 
 ```
 USAGE
-  $ aio app delete service [-v] [--version]
+  $ aio app delete service [-v] [--version] [--use-jwt]
 
 FLAGS
   -v, --verbose  Verbose output
+  --use-jwt      if the config has both jwt and OAuth Server to Server Credentials (while migrating), prefer the JWT
+                 credentials
   --version      Show version
 
 DESCRIPTION
@@ -1247,10 +1204,12 @@ Delete Services in the current Workspace
 
 ```
 USAGE
-  $ aio app delete services [-v] [--version]
+  $ aio app delete services [-v] [--version] [--use-jwt]
 
 FLAGS
   -v, --verbose  Verbose output
+  --use-jwt      if the config has both jwt and OAuth Server to Server Credentials (while migrating), prefer the JWT
+                 credentials
   --version      Show version
 
 DESCRIPTION
@@ -1286,7 +1245,7 @@ Build and deploy an Adobe I/O App
 USAGE
   $ aio app deploy [-v] [--version] [--actions | -a <value>] [--web-assets] [--force-build | ] [--content-hash]
     [--web-optimize] [-e <value> | ] [--build] [--open] [--force-deploy] [--force-publish |  | --publish]
-    [--log-forwarding-update]
+    [--force-events |  | ] [--log-forwarding-update]
 
 FLAGS
   -a, --action=<value>...       Deploy only a specific action, the flags can be specified multiple times, this will set
@@ -1299,6 +1258,8 @@ FLAGS
   --[no-]force-build            [default: true] Force a build even if one already exists
   --force-deploy                [default: false] Force deploy changes, regardless of production Workspace being
                                 published in Exchange.
+  --[no-]force-events           [default: false] Force event registrations and delete any registrations not part of the
+                                config file
   --force-publish               [default: false] Force publish extension(s) to Exchange, delete previously published
                                 extension points
   --[no-]log-forwarding-update  [default: true] Update log forwarding configuration on server
@@ -1363,7 +1324,7 @@ Create a new Adobe I/O App
 ```
 USAGE
   $ aio app init [PATH] [-v] [--version] [--install] [-y] [--login] [-e <value> | -t <value>]
-    [--standalone-app | ] [-w <value> | -i <value>] [--confirm-new-workspace]
+    [--standalone-app | ] [-w <value> | -i <value>] [--confirm-new-workspace] [--use-jwt]
 
 ARGUMENTS
   PATH  [default: .] Path to the app directory
@@ -1380,6 +1341,8 @@ FLAGS
   --[no-]install              [default: true] Run npm installation after files are created
   --[no-]login                Login using your Adobe ID for interacting with Adobe I/O Developer Console
   --standalone-app            Create a stand-alone application
+  --use-jwt                   if the config has both jwt and OAuth Server to Server Credentials (while migrating),
+                              prefer the JWT credentials
   --version                   Show version
 
 DESCRIPTION
@@ -1592,12 +1555,14 @@ Undeploys an Adobe I/O App
 
 ```
 USAGE
-  $ aio app undeploy [-v] [--version] [--actions] [--web-assets] [-e <value>] [--force-unpublish | --unpublish]
+  $ aio app undeploy [-v] [--version] [--actions] [--events] [--web-assets] [-e <value>] [--force-unpublish |
+    --unpublish]
 
 FLAGS
   -e, --extension=<value>...  Undeploy only a specific extension, the flags can be specified multiple times
   -v, --verbose               Verbose output
   --[no-]actions              [default: true] Undeploy actions if any
+  --[no-]events               [default: true] Undeploy (unregister) events if any
   --force-unpublish           Force unpublish extension(s) from Exchange, will delete all extension points
   --[no-]unpublish            [default: true] Unpublish selected extension(s) from Exchange
   --version                   Show version
@@ -1614,7 +1579,7 @@ Import an Adobe Developer Console configuration file.
 ```
 USAGE
   $ aio app use [CONFIG_FILE_PATH] [-v] [--version] [--overwrite | --merge] [--confirm-new-workspace] [-w
-    <value> | [-g | -w <value>] | ] [--no-service-sync | --confirm-service-sync] [--no-input]
+    <value> | [-g | -w <value>] | ] [--no-service-sync | --confirm-service-sync] [--no-input] [--use-jwt]
 
 ARGUMENTS
   CONFIG_FILE_PATH  path to an Adobe I/O Developer Console configuration file
@@ -1637,6 +1602,8 @@ FLAGS
                                 Workspace
   --overwrite                   Overwrite any .aio and .env files during import of the Adobe Developer Console
                                 configuration file
+  --use-jwt                     if the config has both jwt and OAuth Server to Server Credentials (while migrating),
+                                prefer the JWT credentials
   --version                     Show version
 
 DESCRIPTION
@@ -1648,7 +1615,7 @@ DESCRIPTION
   To set these global config values, see the help text for 'aio console --help'.
 
   To download the configuration file for your project, select the 'Download' button in the toolbar of your project's
-  page in https://console.adobe.io
+  page in https://developer.adobe.com/console/
 ```
 
 ## `aio auth`
@@ -1707,7 +1674,7 @@ EXAMPLES
     }
 ```
 
-_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/3.2.0/src/commands/auth/index.js)_
+_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/3.2.1/src/commands/auth/index.js)_
 
 ## `aio auth ctx`
 
@@ -1843,7 +1810,7 @@ USAGE
   $ aio autocomplete [SHELL] [-r]
 
 ARGUMENTS
-  SHELL  shell type
+  SHELL  (zsh|bash|powershell) Shell type
 
 FLAGS
   -r, --refresh-cache  Refresh cache (ignores displaying instructions)
@@ -1858,10 +1825,12 @@ EXAMPLES
 
   $ aio autocomplete zsh
 
+  $ aio autocomplete powershell
+
   $ aio autocomplete --refresh-cache
 ```
 
-_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v1.4.6/src/commands/autocomplete/index.ts)_
+_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v2.3.5/src/commands/autocomplete/index.ts)_
 
 ## `aio certificate`
 
@@ -2946,7 +2915,7 @@ ALIASES
   $ aio plugins discover
 ```
 
-_See code: [src/commands/discover.ts](https://github.com/adobe/aio-cli/blob/9.3.0/src/commands/discover.ts)_
+_See code: [src/commands/discover.ts](https://github.com/adobe/aio-cli/blob/9.4.0/src/commands/discover.ts)_
 
 ## `aio event`
 
@@ -2965,7 +2934,7 @@ DESCRIPTION
   Manage your Adobe I/O Events
 ```
 
-_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v3.0.1/src/commands/event/index.ts)_
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v3.3.1/src/commands/event/index.ts)_
 
 ## `aio event eventmetadata`
 
@@ -3208,14 +3177,19 @@ Get list of all Providers for the Organization
 
 ```
 USAGE
-  $ aio event provider list [--help] [-v] [--version] [-j | -y]
+  $ aio event provider list [--help] [-v] [--version] [--fetchEventMetadata] [--providerMetadataId <value> | -p <value>]
+    [--instanceId <value>] [-j | -y]
 
 FLAGS
-  -j, --json     Output json
-  -v, --verbose  Verbose output
-  -y, --yml      Output yml
-  --help         Show help
-  --version      Show version
+  -j, --json                            Output json
+  -p, --providerMetadataIds=<value>...  Filter providers for org by list of provider metadata ids
+  -v, --verbose                         Verbose output
+  -y, --yml                             Output yml
+  --fetchEventMetadata                  Fetch event metadata with provider
+  --help                                Show help
+  --instanceId=<value>                  Filter providers for org by provider metadata id (and instance id if applicable)
+  --providerMetadataId=<value>          Filter providers for org by provider metadata id (and instance id if applicable)
+  --version                             Show version
 
 DESCRIPTION
   Get list of all Providers for the Organization
@@ -3230,14 +3204,19 @@ Get list of all Providers for the Organization
 
 ```
 USAGE
-  $ aio event provider ls [--help] [-v] [--version] [-j | -y]
+  $ aio event provider ls [--help] [-v] [--version] [--fetchEventMetadata] [--providerMetadataId <value> | -p <value>]
+    [--instanceId <value>] [-j | -y]
 
 FLAGS
-  -j, --json     Output json
-  -v, --verbose  Verbose output
-  -y, --yml      Output yml
-  --help         Show help
-  --version      Show version
+  -j, --json                            Output json
+  -p, --providerMetadataIds=<value>...  Filter providers for org by list of provider metadata ids
+  -v, --verbose                         Verbose output
+  -y, --yml                             Output yml
+  --fetchEventMetadata                  Fetch event metadata with provider
+  --help                                Show help
+  --instanceId=<value>                  Filter providers for org by provider metadata id (and instance id if applicable)
+  --providerMetadataId=<value>          Filter providers for org by provider metadata id (and instance id if applicable)
+  --version                             Show version
 
 DESCRIPTION
   Get list of all Providers for the Organization
@@ -3592,7 +3571,7 @@ DESCRIPTION
   Display help for aio.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.2.8/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.2.13/src/commands/help.ts)_
 
 ## `aio info`
 
@@ -3730,7 +3709,7 @@ EXAMPLES
   $ aio plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.4.3/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.4.7/src/commands/plugins/index.ts)_
 
 ## `aio plugins:install PLUGIN...`
 
@@ -4006,7 +3985,7 @@ DESCRIPTION
   Clears all installed plugins.
 ```
 
-_See code: [src/commands/rollback.ts](https://github.com/adobe/aio-cli/blob/9.3.0/src/commands/rollback.ts)_
+_See code: [src/commands/rollback.ts](https://github.com/adobe/aio-cli/blob/9.4.0/src/commands/rollback.ts)_
 
 ## `aio rt`
 
@@ -4809,7 +4788,7 @@ ALIASES
 
 ## `aio rt api`
 
-Manage your routes
+Manage your api routes
 
 ```
 USAGE
@@ -4829,11 +4808,12 @@ FLAGS
   --version        Show version
 
 DESCRIPTION
-  Manage your routes
+  Manage your api routes
 
 ALIASES
-  $ aio runtime api
   $ aio rt api
+  $ aio runtime route
+  $ aio rt route
 ```
 
 ## `aio rt api create [BASEPATH] [RELPATH] [APIVERB] [ACTION]`
@@ -4842,8 +4822,9 @@ create a new api route
 
 ```
 USAGE
-  $ aio rt api create [BASEPATH] [RELPATH] [APIVERB] [ACTION] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i]
-    [--debug <value>] [-v] [--version] [--help] [-n <value> | -c <value>] [-r html|http|json|text|svg|json | ]
+  $ aio rt api create [BASEPATH] [RELPATH] [APIVERB] [ACTION] [--cert <value>] [--key <value>] [--apiversion
+    <value>] [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-n <value> | -c <value>]
+    [-r html|http|json|text|svg|json | ]
 
 ARGUMENTS
   BASEPATH  The base path of the api
@@ -4857,21 +4838,21 @@ FLAGS
   -n, --apiname=<value>         Friendly name of the API; ignored when CFG_FILE is specified (default BASE_PATH)
   -r, --response-type=<option>  [default: json] Set the web action response TYPE.
                                 <options: html|http|json|text|svg|json>
-  -u, --auth                    whisk auth
+  -u, --auth=<value>            whisk auth
   -v, --verbose                 Verbose output
-  --apihost                     whisk API host
-  --apiversion                  whisk API version
-  --cert                        client cert
+  --apihost=<value>             whisk API host
+  --apiversion=<value>          whisk API version
+  --cert=<value>                client cert
   --debug=<value>               Debug level output
   --help                        Show help
-  --key                         client key
+  --key=<value>                 client key
   --version                     Show version
 
 DESCRIPTION
   create a new api route
 
 ALIASES
-  $ aio runtime api create
+  $ aio runtime route create
   $ aio rt route create
   $ aio rt api create
 ```
@@ -4882,8 +4863,8 @@ delete an API
 
 ```
 USAGE
-  $ aio rt api delete BASEPATHORAPINAME [RELPATH] [APIVERB] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i]
-    [--debug <value>] [-v] [--version] [--help]
+  $ aio rt api delete BASEPATHORAPINAME [RELPATH] [APIVERB] [--cert <value>] [--key <value>] [--apiversion <value>]
+    [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help]
 
 ARGUMENTS
   BASEPATHORAPINAME  The base path or api name
@@ -4891,22 +4872,22 @@ ARGUMENTS
   APIVERB            (get|post|put|patch|delete|head|options) The http verb
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure        bypass certificate check
+  -u, --auth=<value>    whisk auth
+  -v, --verbose         Verbose output
+  --apihost=<value>     whisk API host
+  --apiversion=<value>  whisk API version
+  --cert=<value>        client cert
+  --debug=<value>       Debug level output
+  --help                Show help
+  --key=<value>         client key
+  --version             Show version
 
 DESCRIPTION
   delete an API
 
 ALIASES
-  $ aio runtime api delete
+  $ aio runtime route delete
   $ aio rt route delete
   $ aio rt api delete
 ```
@@ -4917,29 +4898,29 @@ get API details
 
 ```
 USAGE
-  $ aio rt api get BASEPATHORAPINAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>]
-    [-v] [--version] [--help]
+  $ aio rt api get BASEPATHORAPINAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>]
+    [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help]
 
 ARGUMENTS
   BASEPATHORAPINAME  The base path or api name
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure        bypass certificate check
+  -u, --auth=<value>    whisk auth
+  -v, --verbose         Verbose output
+  --apihost=<value>     whisk API host
+  --apiversion=<value>  whisk API version
+  --cert=<value>        client cert
+  --debug=<value>       Debug level output
+  --help                Show help
+  --key=<value>         client key
+  --version             Show version
 
 DESCRIPTION
   get API details
 
 ALIASES
-  $ aio runtime api get
+  $ aio runtime route get
   $ aio rt route get
   $ aio rt api get
 ```
@@ -4950,8 +4931,8 @@ list route/apis for Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio rt api list [BASEPATH] [RELPATH] [APIVERB] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug
-    <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [--json]
+  $ aio rt api list [BASEPATH] [RELPATH] [APIVERB] [--cert <value>] [--key <value>] [--apiversion <value>]
+    [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [--json]
 
 ARGUMENTS
   BASEPATH  The base path of the api
@@ -4959,31 +4940,31 @@ ARGUMENTS
   APIVERB   (get|post|put|patch|delete|head|options) The http verb
 
 FLAGS
-  -i, --insecure       bypass certificate check
-  -l, --limit=<value>  only return LIMIT number of triggers
-  -s, --skip=<value>   exclude the first SKIP number of triggers from the result
-  -u, --auth           whisk auth
-  -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --help               Show help
-  --json               output raw json
-  --key                client key
-  --version            Show version
+  -i, --insecure        bypass certificate check
+  -l, --limit=<value>   only return LIMIT number of triggers
+  -s, --skip=<value>    exclude the first SKIP number of triggers from the result
+  -u, --auth=<value>    whisk auth
+  -v, --verbose         Verbose output
+  --apihost=<value>     whisk API host
+  --apiversion=<value>  whisk API version
+  --cert=<value>        client cert
+  --debug=<value>       Debug level output
+  --help                Show help
+  --json                output raw json
+  --key=<value>         client key
+  --version             Show version
 
 DESCRIPTION
   list route/apis for Adobe I/O Runtime
 
 ALIASES
-  $ aio runtime route ls
-  $ aio runtime api list
   $ aio runtime api ls
-  $ aio rt route list
-  $ aio rt route ls
+  $ aio runtime route list
+  $ aio runtime route ls
   $ aio rt api list
   $ aio rt api ls
+  $ aio rt route list
+  $ aio rt route ls
 ```
 
 ## `aio rt api ls [BASEPATH] [RELPATH] [APIVERB]`
@@ -4992,8 +4973,8 @@ list route/apis for Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio rt api ls [BASEPATH] [RELPATH] [APIVERB] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug
-    <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [--json]
+  $ aio rt api ls [BASEPATH] [RELPATH] [APIVERB] [--cert <value>] [--key <value>] [--apiversion <value>]
+    [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [--json]
 
 ARGUMENTS
   BASEPATH  The base path of the api
@@ -5001,31 +4982,31 @@ ARGUMENTS
   APIVERB   (get|post|put|patch|delete|head|options) The http verb
 
 FLAGS
-  -i, --insecure       bypass certificate check
-  -l, --limit=<value>  only return LIMIT number of triggers
-  -s, --skip=<value>   exclude the first SKIP number of triggers from the result
-  -u, --auth           whisk auth
-  -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --help               Show help
-  --json               output raw json
-  --key                client key
-  --version            Show version
+  -i, --insecure        bypass certificate check
+  -l, --limit=<value>   only return LIMIT number of triggers
+  -s, --skip=<value>    exclude the first SKIP number of triggers from the result
+  -u, --auth=<value>    whisk auth
+  -v, --verbose         Verbose output
+  --apihost=<value>     whisk API host
+  --apiversion=<value>  whisk API version
+  --cert=<value>        client cert
+  --debug=<value>       Debug level output
+  --help                Show help
+  --json                output raw json
+  --key=<value>         client key
+  --version             Show version
 
 DESCRIPTION
   list route/apis for Adobe I/O Runtime
 
 ALIASES
-  $ aio runtime route ls
-  $ aio runtime api list
   $ aio runtime api ls
-  $ aio rt route list
-  $ aio rt route ls
+  $ aio runtime route list
+  $ aio runtime route ls
   $ aio rt api list
   $ aio rt api ls
+  $ aio rt route list
+  $ aio rt route ls
 ```
 
 ## `aio rt deploy`
@@ -7406,14 +7387,45 @@ ALIASES
   $ aio rt prop unset
 ```
 
+## `aio rt route`
+
+Manage your api routes
+
+```
+USAGE
+  $ aio rt route [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version]
+    [--help]
+
+FLAGS
+  -i, --insecure   bypass certificate check
+  -u, --auth       whisk auth
+  -v, --verbose    Verbose output
+  --apihost        whisk API host
+  --apiversion     whisk API version
+  --cert           client cert
+  --debug=<value>  Debug level output
+  --help           Show help
+  --key            client key
+  --version        Show version
+
+DESCRIPTION
+  Manage your api routes
+
+ALIASES
+  $ aio rt api
+  $ aio runtime route
+  $ aio rt route
+```
+
 ## `aio rt route create [BASEPATH] [RELPATH] [APIVERB] [ACTION]`
 
 create a new api route
 
 ```
 USAGE
-  $ aio rt route create [BASEPATH] [RELPATH] [APIVERB] [ACTION] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i]
-    [--debug <value>] [-v] [--version] [--help] [-n <value> | -c <value>] [-r html|http|json|text|svg|json | ]
+  $ aio rt route create [BASEPATH] [RELPATH] [APIVERB] [ACTION] [--cert <value>] [--key <value>] [--apiversion
+    <value>] [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-n <value> | -c <value>]
+    [-r html|http|json|text|svg|json | ]
 
 ARGUMENTS
   BASEPATH  The base path of the api
@@ -7427,21 +7439,21 @@ FLAGS
   -n, --apiname=<value>         Friendly name of the API; ignored when CFG_FILE is specified (default BASE_PATH)
   -r, --response-type=<option>  [default: json] Set the web action response TYPE.
                                 <options: html|http|json|text|svg|json>
-  -u, --auth                    whisk auth
+  -u, --auth=<value>            whisk auth
   -v, --verbose                 Verbose output
-  --apihost                     whisk API host
-  --apiversion                  whisk API version
-  --cert                        client cert
+  --apihost=<value>             whisk API host
+  --apiversion=<value>          whisk API version
+  --cert=<value>                client cert
   --debug=<value>               Debug level output
   --help                        Show help
-  --key                         client key
+  --key=<value>                 client key
   --version                     Show version
 
 DESCRIPTION
   create a new api route
 
 ALIASES
-  $ aio runtime api create
+  $ aio runtime route create
   $ aio rt route create
   $ aio rt api create
 ```
@@ -7452,8 +7464,8 @@ delete an API
 
 ```
 USAGE
-  $ aio rt route delete BASEPATHORAPINAME [RELPATH] [APIVERB] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i]
-    [--debug <value>] [-v] [--version] [--help]
+  $ aio rt route delete BASEPATHORAPINAME [RELPATH] [APIVERB] [--cert <value>] [--key <value>] [--apiversion <value>]
+    [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help]
 
 ARGUMENTS
   BASEPATHORAPINAME  The base path or api name
@@ -7461,22 +7473,22 @@ ARGUMENTS
   APIVERB            (get|post|put|patch|delete|head|options) The http verb
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure        bypass certificate check
+  -u, --auth=<value>    whisk auth
+  -v, --verbose         Verbose output
+  --apihost=<value>     whisk API host
+  --apiversion=<value>  whisk API version
+  --cert=<value>        client cert
+  --debug=<value>       Debug level output
+  --help                Show help
+  --key=<value>         client key
+  --version             Show version
 
 DESCRIPTION
   delete an API
 
 ALIASES
-  $ aio runtime api delete
+  $ aio runtime route delete
   $ aio rt route delete
   $ aio rt api delete
 ```
@@ -7487,29 +7499,29 @@ get API details
 
 ```
 USAGE
-  $ aio rt route get BASEPATHORAPINAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>]
-    [-v] [--version] [--help]
+  $ aio rt route get BASEPATHORAPINAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>]
+    [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help]
 
 ARGUMENTS
   BASEPATHORAPINAME  The base path or api name
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure        bypass certificate check
+  -u, --auth=<value>    whisk auth
+  -v, --verbose         Verbose output
+  --apihost=<value>     whisk API host
+  --apiversion=<value>  whisk API version
+  --cert=<value>        client cert
+  --debug=<value>       Debug level output
+  --help                Show help
+  --key=<value>         client key
+  --version             Show version
 
 DESCRIPTION
   get API details
 
 ALIASES
-  $ aio runtime api get
+  $ aio runtime route get
   $ aio rt route get
   $ aio rt api get
 ```
@@ -7520,8 +7532,8 @@ list route/apis for Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio rt route list [BASEPATH] [RELPATH] [APIVERB] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug
-    <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [--json]
+  $ aio rt route list [BASEPATH] [RELPATH] [APIVERB] [--cert <value>] [--key <value>] [--apiversion <value>]
+    [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [--json]
 
 ARGUMENTS
   BASEPATH  The base path of the api
@@ -7529,31 +7541,31 @@ ARGUMENTS
   APIVERB   (get|post|put|patch|delete|head|options) The http verb
 
 FLAGS
-  -i, --insecure       bypass certificate check
-  -l, --limit=<value>  only return LIMIT number of triggers
-  -s, --skip=<value>   exclude the first SKIP number of triggers from the result
-  -u, --auth           whisk auth
-  -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --help               Show help
-  --json               output raw json
-  --key                client key
-  --version            Show version
+  -i, --insecure        bypass certificate check
+  -l, --limit=<value>   only return LIMIT number of triggers
+  -s, --skip=<value>    exclude the first SKIP number of triggers from the result
+  -u, --auth=<value>    whisk auth
+  -v, --verbose         Verbose output
+  --apihost=<value>     whisk API host
+  --apiversion=<value>  whisk API version
+  --cert=<value>        client cert
+  --debug=<value>       Debug level output
+  --help                Show help
+  --json                output raw json
+  --key=<value>         client key
+  --version             Show version
 
 DESCRIPTION
   list route/apis for Adobe I/O Runtime
 
 ALIASES
-  $ aio runtime route ls
-  $ aio runtime api list
   $ aio runtime api ls
-  $ aio rt route list
-  $ aio rt route ls
+  $ aio runtime route list
+  $ aio runtime route ls
   $ aio rt api list
   $ aio rt api ls
+  $ aio rt route list
+  $ aio rt route ls
 ```
 
 ## `aio rt route ls [BASEPATH] [RELPATH] [APIVERB]`
@@ -7562,8 +7574,8 @@ list route/apis for Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio rt route ls [BASEPATH] [RELPATH] [APIVERB] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug
-    <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [--json]
+  $ aio rt route ls [BASEPATH] [RELPATH] [APIVERB] [--cert <value>] [--key <value>] [--apiversion <value>]
+    [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [--json]
 
 ARGUMENTS
   BASEPATH  The base path of the api
@@ -7571,31 +7583,31 @@ ARGUMENTS
   APIVERB   (get|post|put|patch|delete|head|options) The http verb
 
 FLAGS
-  -i, --insecure       bypass certificate check
-  -l, --limit=<value>  only return LIMIT number of triggers
-  -s, --skip=<value>   exclude the first SKIP number of triggers from the result
-  -u, --auth           whisk auth
-  -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --help               Show help
-  --json               output raw json
-  --key                client key
-  --version            Show version
+  -i, --insecure        bypass certificate check
+  -l, --limit=<value>   only return LIMIT number of triggers
+  -s, --skip=<value>    exclude the first SKIP number of triggers from the result
+  -u, --auth=<value>    whisk auth
+  -v, --verbose         Verbose output
+  --apihost=<value>     whisk API host
+  --apiversion=<value>  whisk API version
+  --cert=<value>        client cert
+  --debug=<value>       Debug level output
+  --help                Show help
+  --json                output raw json
+  --key=<value>         client key
+  --version             Show version
 
 DESCRIPTION
   list route/apis for Adobe I/O Runtime
 
 ALIASES
-  $ aio runtime route ls
-  $ aio runtime api list
   $ aio runtime api ls
-  $ aio rt route list
-  $ aio rt route ls
+  $ aio runtime route list
+  $ aio runtime route ls
   $ aio rt api list
   $ aio rt api ls
+  $ aio rt route list
+  $ aio rt route ls
 ```
 
 ## `aio rt rule`
@@ -8216,7 +8228,7 @@ ALIASES
   $ aio rt
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/6.0.2/src/commands/runtime/index.js)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/6.1.0/src/commands/runtime/index.js)_
 
 ## `aio runtime action`
 
@@ -8991,7 +9003,7 @@ ALIASES
 
 ## `aio runtime api`
 
-Manage your routes
+Manage your api routes
 
 ```
 USAGE
@@ -9011,11 +9023,12 @@ FLAGS
   --version        Show version
 
 DESCRIPTION
-  Manage your routes
+  Manage your api routes
 
 ALIASES
-  $ aio runtime api
   $ aio rt api
+  $ aio runtime route
+  $ aio rt route
 ```
 
 ## `aio runtime api create [BASEPATH] [RELPATH] [APIVERB] [ACTION]`
@@ -9024,8 +9037,9 @@ create a new api route
 
 ```
 USAGE
-  $ aio runtime api create [BASEPATH] [RELPATH] [APIVERB] [ACTION] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i]
-    [--debug <value>] [-v] [--version] [--help] [-n <value> | -c <value>] [-r html|http|json|text|svg|json | ]
+  $ aio runtime api create [BASEPATH] [RELPATH] [APIVERB] [ACTION] [--cert <value>] [--key <value>] [--apiversion
+    <value>] [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-n <value> | -c <value>]
+    [-r html|http|json|text|svg|json | ]
 
 ARGUMENTS
   BASEPATH  The base path of the api
@@ -9039,21 +9053,21 @@ FLAGS
   -n, --apiname=<value>         Friendly name of the API; ignored when CFG_FILE is specified (default BASE_PATH)
   -r, --response-type=<option>  [default: json] Set the web action response TYPE.
                                 <options: html|http|json|text|svg|json>
-  -u, --auth                    whisk auth
+  -u, --auth=<value>            whisk auth
   -v, --verbose                 Verbose output
-  --apihost                     whisk API host
-  --apiversion                  whisk API version
-  --cert                        client cert
+  --apihost=<value>             whisk API host
+  --apiversion=<value>          whisk API version
+  --cert=<value>                client cert
   --debug=<value>               Debug level output
   --help                        Show help
-  --key                         client key
+  --key=<value>                 client key
   --version                     Show version
 
 DESCRIPTION
   create a new api route
 
 ALIASES
-  $ aio runtime api create
+  $ aio runtime route create
   $ aio rt route create
   $ aio rt api create
 ```
@@ -9064,8 +9078,8 @@ delete an API
 
 ```
 USAGE
-  $ aio runtime api delete BASEPATHORAPINAME [RELPATH] [APIVERB] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i]
-    [--debug <value>] [-v] [--version] [--help]
+  $ aio runtime api delete BASEPATHORAPINAME [RELPATH] [APIVERB] [--cert <value>] [--key <value>] [--apiversion <value>]
+    [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help]
 
 ARGUMENTS
   BASEPATHORAPINAME  The base path or api name
@@ -9073,22 +9087,22 @@ ARGUMENTS
   APIVERB            (get|post|put|patch|delete|head|options) The http verb
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure        bypass certificate check
+  -u, --auth=<value>    whisk auth
+  -v, --verbose         Verbose output
+  --apihost=<value>     whisk API host
+  --apiversion=<value>  whisk API version
+  --cert=<value>        client cert
+  --debug=<value>       Debug level output
+  --help                Show help
+  --key=<value>         client key
+  --version             Show version
 
 DESCRIPTION
   delete an API
 
 ALIASES
-  $ aio runtime api delete
+  $ aio runtime route delete
   $ aio rt route delete
   $ aio rt api delete
 ```
@@ -9099,29 +9113,29 @@ get API details
 
 ```
 USAGE
-  $ aio runtime api get BASEPATHORAPINAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>]
-    [-v] [--version] [--help]
+  $ aio runtime api get BASEPATHORAPINAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>]
+    [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help]
 
 ARGUMENTS
   BASEPATHORAPINAME  The base path or api name
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure        bypass certificate check
+  -u, --auth=<value>    whisk auth
+  -v, --verbose         Verbose output
+  --apihost=<value>     whisk API host
+  --apiversion=<value>  whisk API version
+  --cert=<value>        client cert
+  --debug=<value>       Debug level output
+  --help                Show help
+  --key=<value>         client key
+  --version             Show version
 
 DESCRIPTION
   get API details
 
 ALIASES
-  $ aio runtime api get
+  $ aio runtime route get
   $ aio rt route get
   $ aio rt api get
 ```
@@ -9132,8 +9146,8 @@ list route/apis for Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio runtime api list [BASEPATH] [RELPATH] [APIVERB] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug
-    <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [--json]
+  $ aio runtime api list [BASEPATH] [RELPATH] [APIVERB] [--cert <value>] [--key <value>] [--apiversion <value>]
+    [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [--json]
 
 ARGUMENTS
   BASEPATH  The base path of the api
@@ -9141,31 +9155,31 @@ ARGUMENTS
   APIVERB   (get|post|put|patch|delete|head|options) The http verb
 
 FLAGS
-  -i, --insecure       bypass certificate check
-  -l, --limit=<value>  only return LIMIT number of triggers
-  -s, --skip=<value>   exclude the first SKIP number of triggers from the result
-  -u, --auth           whisk auth
-  -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --help               Show help
-  --json               output raw json
-  --key                client key
-  --version            Show version
+  -i, --insecure        bypass certificate check
+  -l, --limit=<value>   only return LIMIT number of triggers
+  -s, --skip=<value>    exclude the first SKIP number of triggers from the result
+  -u, --auth=<value>    whisk auth
+  -v, --verbose         Verbose output
+  --apihost=<value>     whisk API host
+  --apiversion=<value>  whisk API version
+  --cert=<value>        client cert
+  --debug=<value>       Debug level output
+  --help                Show help
+  --json                output raw json
+  --key=<value>         client key
+  --version             Show version
 
 DESCRIPTION
   list route/apis for Adobe I/O Runtime
 
 ALIASES
-  $ aio runtime route ls
-  $ aio runtime api list
   $ aio runtime api ls
-  $ aio rt route list
-  $ aio rt route ls
+  $ aio runtime route list
+  $ aio runtime route ls
   $ aio rt api list
   $ aio rt api ls
+  $ aio rt route list
+  $ aio rt route ls
 ```
 
 ## `aio runtime api ls [BASEPATH] [RELPATH] [APIVERB]`
@@ -9174,8 +9188,8 @@ list route/apis for Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio runtime api ls [BASEPATH] [RELPATH] [APIVERB] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug
-    <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [--json]
+  $ aio runtime api ls [BASEPATH] [RELPATH] [APIVERB] [--cert <value>] [--key <value>] [--apiversion <value>]
+    [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [--json]
 
 ARGUMENTS
   BASEPATH  The base path of the api
@@ -9183,31 +9197,31 @@ ARGUMENTS
   APIVERB   (get|post|put|patch|delete|head|options) The http verb
 
 FLAGS
-  -i, --insecure       bypass certificate check
-  -l, --limit=<value>  only return LIMIT number of triggers
-  -s, --skip=<value>   exclude the first SKIP number of triggers from the result
-  -u, --auth           whisk auth
-  -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --help               Show help
-  --json               output raw json
-  --key                client key
-  --version            Show version
+  -i, --insecure        bypass certificate check
+  -l, --limit=<value>   only return LIMIT number of triggers
+  -s, --skip=<value>    exclude the first SKIP number of triggers from the result
+  -u, --auth=<value>    whisk auth
+  -v, --verbose         Verbose output
+  --apihost=<value>     whisk API host
+  --apiversion=<value>  whisk API version
+  --cert=<value>        client cert
+  --debug=<value>       Debug level output
+  --help                Show help
+  --json                output raw json
+  --key=<value>         client key
+  --version             Show version
 
 DESCRIPTION
   list route/apis for Adobe I/O Runtime
 
 ALIASES
-  $ aio runtime route ls
-  $ aio runtime api list
   $ aio runtime api ls
-  $ aio rt route list
-  $ aio rt route ls
+  $ aio runtime route list
+  $ aio runtime route ls
   $ aio rt api list
   $ aio rt api ls
+  $ aio rt route list
+  $ aio rt route ls
 ```
 
 ## `aio runtime deploy`
@@ -11590,7 +11604,7 @@ ALIASES
 
 ## `aio runtime route`
 
-Manage your routes
+Manage your api routes
 
 ```
 USAGE
@@ -11610,11 +11624,12 @@ FLAGS
   --version        Show version
 
 DESCRIPTION
-  Manage your routes
+  Manage your api routes
 
 ALIASES
-  $ aio runtime api
   $ aio rt api
+  $ aio runtime route
+  $ aio rt route
 ```
 
 ## `aio runtime route create [BASEPATH] [RELPATH] [APIVERB] [ACTION]`
@@ -11623,8 +11638,9 @@ create a new api route
 
 ```
 USAGE
-  $ aio runtime route create [BASEPATH] [RELPATH] [APIVERB] [ACTION] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i]
-    [--debug <value>] [-v] [--version] [--help] [-n <value> | -c <value>] [-r html|http|json|text|svg|json | ]
+  $ aio runtime route create [BASEPATH] [RELPATH] [APIVERB] [ACTION] [--cert <value>] [--key <value>] [--apiversion
+    <value>] [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-n <value> | -c <value>]
+    [-r html|http|json|text|svg|json | ]
 
 ARGUMENTS
   BASEPATH  The base path of the api
@@ -11638,21 +11654,21 @@ FLAGS
   -n, --apiname=<value>         Friendly name of the API; ignored when CFG_FILE is specified (default BASE_PATH)
   -r, --response-type=<option>  [default: json] Set the web action response TYPE.
                                 <options: html|http|json|text|svg|json>
-  -u, --auth                    whisk auth
+  -u, --auth=<value>            whisk auth
   -v, --verbose                 Verbose output
-  --apihost                     whisk API host
-  --apiversion                  whisk API version
-  --cert                        client cert
+  --apihost=<value>             whisk API host
+  --apiversion=<value>          whisk API version
+  --cert=<value>                client cert
   --debug=<value>               Debug level output
   --help                        Show help
-  --key                         client key
+  --key=<value>                 client key
   --version                     Show version
 
 DESCRIPTION
   create a new api route
 
 ALIASES
-  $ aio runtime api create
+  $ aio runtime route create
   $ aio rt route create
   $ aio rt api create
 ```
@@ -11663,8 +11679,8 @@ delete an API
 
 ```
 USAGE
-  $ aio runtime route delete BASEPATHORAPINAME [RELPATH] [APIVERB] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i]
-    [--debug <value>] [-v] [--version] [--help]
+  $ aio runtime route delete BASEPATHORAPINAME [RELPATH] [APIVERB] [--cert <value>] [--key <value>] [--apiversion <value>]
+    [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help]
 
 ARGUMENTS
   BASEPATHORAPINAME  The base path or api name
@@ -11672,22 +11688,22 @@ ARGUMENTS
   APIVERB            (get|post|put|patch|delete|head|options) The http verb
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure        bypass certificate check
+  -u, --auth=<value>    whisk auth
+  -v, --verbose         Verbose output
+  --apihost=<value>     whisk API host
+  --apiversion=<value>  whisk API version
+  --cert=<value>        client cert
+  --debug=<value>       Debug level output
+  --help                Show help
+  --key=<value>         client key
+  --version             Show version
 
 DESCRIPTION
   delete an API
 
 ALIASES
-  $ aio runtime api delete
+  $ aio runtime route delete
   $ aio rt route delete
   $ aio rt api delete
 ```
@@ -11698,29 +11714,29 @@ get API details
 
 ```
 USAGE
-  $ aio runtime route get BASEPATHORAPINAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>]
-    [-v] [--version] [--help]
+  $ aio runtime route get BASEPATHORAPINAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>]
+    [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help]
 
 ARGUMENTS
   BASEPATHORAPINAME  The base path or api name
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure        bypass certificate check
+  -u, --auth=<value>    whisk auth
+  -v, --verbose         Verbose output
+  --apihost=<value>     whisk API host
+  --apiversion=<value>  whisk API version
+  --cert=<value>        client cert
+  --debug=<value>       Debug level output
+  --help                Show help
+  --key=<value>         client key
+  --version             Show version
 
 DESCRIPTION
   get API details
 
 ALIASES
-  $ aio runtime api get
+  $ aio runtime route get
   $ aio rt route get
   $ aio rt api get
 ```
@@ -11731,8 +11747,8 @@ list route/apis for Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio runtime route list [BASEPATH] [RELPATH] [APIVERB] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug
-    <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [--json]
+  $ aio runtime route list [BASEPATH] [RELPATH] [APIVERB] [--cert <value>] [--key <value>] [--apiversion <value>]
+    [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [--json]
 
 ARGUMENTS
   BASEPATH  The base path of the api
@@ -11740,31 +11756,31 @@ ARGUMENTS
   APIVERB   (get|post|put|patch|delete|head|options) The http verb
 
 FLAGS
-  -i, --insecure       bypass certificate check
-  -l, --limit=<value>  only return LIMIT number of triggers
-  -s, --skip=<value>   exclude the first SKIP number of triggers from the result
-  -u, --auth           whisk auth
-  -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --help               Show help
-  --json               output raw json
-  --key                client key
-  --version            Show version
+  -i, --insecure        bypass certificate check
+  -l, --limit=<value>   only return LIMIT number of triggers
+  -s, --skip=<value>    exclude the first SKIP number of triggers from the result
+  -u, --auth=<value>    whisk auth
+  -v, --verbose         Verbose output
+  --apihost=<value>     whisk API host
+  --apiversion=<value>  whisk API version
+  --cert=<value>        client cert
+  --debug=<value>       Debug level output
+  --help                Show help
+  --json                output raw json
+  --key=<value>         client key
+  --version             Show version
 
 DESCRIPTION
   list route/apis for Adobe I/O Runtime
 
 ALIASES
-  $ aio runtime route ls
-  $ aio runtime api list
   $ aio runtime api ls
-  $ aio rt route list
-  $ aio rt route ls
+  $ aio runtime route list
+  $ aio runtime route ls
   $ aio rt api list
   $ aio rt api ls
+  $ aio rt route list
+  $ aio rt route ls
 ```
 
 ## `aio runtime route ls [BASEPATH] [RELPATH] [APIVERB]`
@@ -11773,8 +11789,8 @@ list route/apis for Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio runtime route ls [BASEPATH] [RELPATH] [APIVERB] [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug
-    <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [--json]
+  $ aio runtime route ls [BASEPATH] [RELPATH] [APIVERB] [--cert <value>] [--key <value>] [--apiversion <value>]
+    [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [--json]
 
 ARGUMENTS
   BASEPATH  The base path of the api
@@ -11782,31 +11798,31 @@ ARGUMENTS
   APIVERB   (get|post|put|patch|delete|head|options) The http verb
 
 FLAGS
-  -i, --insecure       bypass certificate check
-  -l, --limit=<value>  only return LIMIT number of triggers
-  -s, --skip=<value>   exclude the first SKIP number of triggers from the result
-  -u, --auth           whisk auth
-  -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --help               Show help
-  --json               output raw json
-  --key                client key
-  --version            Show version
+  -i, --insecure        bypass certificate check
+  -l, --limit=<value>   only return LIMIT number of triggers
+  -s, --skip=<value>    exclude the first SKIP number of triggers from the result
+  -u, --auth=<value>    whisk auth
+  -v, --verbose         Verbose output
+  --apihost=<value>     whisk API host
+  --apiversion=<value>  whisk API version
+  --cert=<value>        client cert
+  --debug=<value>       Debug level output
+  --help                Show help
+  --json                output raw json
+  --key=<value>         client key
+  --version             Show version
 
 DESCRIPTION
   list route/apis for Adobe I/O Runtime
 
 ALIASES
-  $ aio runtime route ls
-  $ aio runtime api list
   $ aio runtime api ls
-  $ aio rt route list
-  $ aio rt route ls
+  $ aio runtime route list
+  $ aio runtime route ls
   $ aio rt api list
   $ aio rt api ls
+  $ aio rt route list
+  $ aio rt route ls
 ```
 
 ## `aio runtime rule`
@@ -12783,7 +12799,7 @@ DESCRIPTION
   - update user-installed plugins that are not core
 ```
 
-_See code: [src/commands/update.ts](https://github.com/adobe/aio-cli/blob/9.3.0/src/commands/update.ts)_
+_See code: [src/commands/update.ts](https://github.com/adobe/aio-cli/blob/9.4.0/src/commands/update.ts)_
 
 ## `aio where`
 
