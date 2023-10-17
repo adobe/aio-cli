@@ -68,6 +68,8 @@
   "license": "Apache-2.0",
   "main": "src/index.js",
   "oclif": {
+    "additionalHelpFlags": ["-h"],
+    "additionalVersionFlags": ["-v"],
     "topicSeparator": " ",
     "commands": "./src/commands",
     "bin": "aio",
