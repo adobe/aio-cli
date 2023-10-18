@@ -1,7 +1,7 @@
 {
   "name": "@adobe/aio-cli",
   "description": "Adobe I/O Extensible CLI\n\n*******   *******\n******     ******\n*****       *****\n****    *    ****\n***    ***    ***\n**    *****    **\n*         **    *\n",
-  "version": "9.4.0",
+  "version": "9.4.1",
   "author": "Adobe Inc.",
   "bin": {
     "aio": "bin/run"
@@ -68,8 +68,12 @@
   "license": "Apache-2.0",
   "main": "src/index.js",
   "oclif": {
-    "additionalHelpFlags": ["-h"],
-    "additionalVersionFlags": ["-v"],
+    "additionalHelpFlags": [
+      "-h"
+    ],
+    "additionalVersionFlags": [
+      "-v"
+    ],
     "topicSeparator": " ",
     "commands": "./src/commands",
     "bin": "aio",

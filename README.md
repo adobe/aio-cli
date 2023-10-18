@@ -96,8 +96,8 @@ aio info
 $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
-$ aio (--version)
-@adobe/aio-cli/9.4.0 win32-x64 node-v16.19.1
+$ aio (--version|-v)
+@adobe/aio-cli/9.4.1 win32-x64 node-v16.19.1
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -2915,7 +2915,7 @@ ALIASES
   $ aio plugins discover
 ```
 
-_See code: [src/commands/discover.ts](https://github.com/adobe/aio-cli/blob/9.4.0/src/commands/discover.ts)_
+_See code: [src/commands/discover.ts](https://github.com/adobe/aio-cli/blob/9.4.1/src/commands/discover.ts)_
 
 ## `aio event`
 
@@ -3985,7 +3985,7 @@ DESCRIPTION
   Clears all installed plugins.
 ```
 
-_See code: [src/commands/rollback.ts](https://github.com/adobe/aio-cli/blob/9.4.0/src/commands/rollback.ts)_
+_See code: [src/commands/rollback.ts](https://github.com/adobe/aio-cli/blob/9.4.1/src/commands/rollback.ts)_
 
 ## `aio rt`
 
@@ -12799,7 +12799,7 @@ DESCRIPTION
   - update user-installed plugins that are not core
 ```
 
-_See code: [src/commands/update.ts](https://github.com/adobe/aio-cli/blob/9.4.0/src/commands/update.ts)_
+_See code: [src/commands/update.ts](https://github.com/adobe/aio-cli/blob/9.4.1/src/commands/update.ts)_
 
 ## `aio where`
 
