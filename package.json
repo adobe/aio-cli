@@ -18,7 +18,7 @@
     "@adobe/aio-cli-plugin-info": "^3.0.1",
     "@adobe/aio-cli-plugin-runtime": "^6.1.0",
     "@adobe/aio-cli-plugin-telemetry": "^1.2.0",
-    "@oclif/core": "2.11.7",
+    "@oclif/core": "3.10.1",
     "@oclif/plugin-autocomplete": "^2.3.5",
     "@oclif/plugin-help": "^5.2.13",
     "@oclif/plugin-not-found": "^2.3.26",
