@@ -30,15 +30,6 @@ Adobe I/O Extensible CLI
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
-* [aio cli health](#aio-cli-health)
-* [Getting started](#getting-started)
-* [Technical requirements](#technical-requirements)
-* [Proxy Support](#proxy-support)
-* [Usage](#usage)
-* [Commands](#commands)
-<!-- tocstop -->
-
-
 
 # aio cli health
 Health badges for the aio-cli and its plugins and modules
