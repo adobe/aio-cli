@@ -8,16 +8,16 @@
   },
   "bugs": "https://github.com/adobe/aio-cli/issues",
   "dependencies": {
-    "@adobe/aio-cli-plugin-app": "^11.0.0",
-    "@adobe/aio-cli-plugin-app-templates": "^1.5.2",
-    "@adobe/aio-cli-plugin-auth": "^3.2.1",
-    "@adobe/aio-cli-plugin-certificate": "^1.0.1",
-    "@adobe/aio-cli-plugin-config": "^4.0.1",
-    "@adobe/aio-cli-plugin-console": "^4.1.0",
-    "@adobe/aio-cli-plugin-events": "^3.3.1",
-    "@adobe/aio-cli-plugin-info": "^3.0.1",
-    "@adobe/aio-cli-plugin-runtime": "^6.1.0",
-    "@adobe/aio-cli-plugin-telemetry": "^1.2.0",
+    "@adobe/aio-cli-plugin-app": "^12",
+    "@adobe/aio-cli-plugin-app-templates": "^2",
+    "@adobe/aio-cli-plugin-auth": "^4",
+    "@adobe/aio-cli-plugin-certificate": "^2",
+    "@adobe/aio-cli-plugin-config": "^5",
+    "@adobe/aio-cli-plugin-console": "^5",
+    "@adobe/aio-cli-plugin-events": "^4",
+    "@adobe/aio-cli-plugin-info": "^4",
+    "@adobe/aio-cli-plugin-runtime": "^7",
+    "@adobe/aio-cli-plugin-telemetry": "^2",
     "@oclif/core": "2.11.7",
     "@oclif/plugin-autocomplete": "^2.3.5",
     "@oclif/plugin-help": "^5.2.13",
@@ -32,17 +32,17 @@
     "semver": "^7.5.2"
   },
   "devDependencies": {
-    "@adobe/eslint-config-aio-lib-config": "^2.0.0",
+    "@adobe/eslint-config-aio-lib-config": "^2.0.2",
     "acorn": "^8.8.2",
     "babel-runtime": "^6.26.0",
-    "eslint": "^8.45.0",
-    "eslint-config-standard": "^17",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jest": "^23",
-    "eslint-plugin-jsdoc": "^37",
-    "eslint-plugin-n": "^15",
+    "eslint": "^8.56.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jest": "^27.6.2",
+    "eslint-plugin-jsdoc": "^42.0.0",
+    "eslint-plugin-n": "^15.7.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.0.1",
+    "eslint-plugin-promise": "^6.1.1",
     "execa": "^5.1.1",
     "jest": "^29.0.1",
     "jest-fetch-mock": "^3.0.0",
@@ -50,7 +50,7 @@
     "jest-plugin-fs": "^2.9.0",
     "oclif": "^3.9.1",
     "stdout-stderr": "^0.1.9",
-    "typescript": "^5.0.4"
+    "typescript": "^5.3.3"
   },
   "engines": {
     "node": ">=18"
@@ -109,7 +109,8 @@
       "global": {
         "branches": 100,
         "lines": 100,
-        "statements": 100
+        "statements": 100,
+        "functions": 100
       }
     },
     "testPathIgnorePatterns": [
@@ -136,10 +137,5 @@
     "link": "ln -s \"$(pwd)\"/bin/run /usr/local/bin/aio",
     "unlink": "rm /usr/local/bin/aio",
     "e2e": "jest --collectCoverage=false --testRegex './e2e/e2e.js'"
-  },
-  "overrides": {
-    "@oclif/plugins-plugin@^2.4.7": {
-      "@oclif/core": "2.8.12"
-    }
   }
 }
