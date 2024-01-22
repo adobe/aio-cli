@@ -22,7 +22,7 @@
     "@oclif/plugin-autocomplete": "^2.3.5",
     "@oclif/plugin-help": "^5.2.13",
     "@oclif/plugin-not-found": "^2.3.26",
-    "@oclif/plugin-plugins": "^2.1.0",
+    "@oclif/plugin-plugins": "^4.1.19",
     "@oclif/plugin-warn-if-update-available": "^2.0.46",
     "@types/jest": "^29.5.2",
     "chalk": "^4.1.2",
