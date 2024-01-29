@@ -52,16 +52,7 @@ describe('sorting', () => {
       objects: []
     }))
     command.argv = ['--sort-field', 'unknown']
-    return new Promise((resolve, reject) => {
-      return command.run()
-        .then(() => {
-          reject(new Error('it should not succeed'))
-        })
-        .catch(error => {
-          expect(error.message).toMatch('Expected --sort-field=')
-          resolve()
-        })
-    })
+    await expect(command.run()).rejects.toThrow('Expected --sort-field=')
   })
 
   test('sort-field=name, ascending', async () => {
