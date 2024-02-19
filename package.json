@@ -48,7 +48,7 @@
     "jest-fetch-mock": "^3.0.0",
     "jest-junit": "^16.0.0",
     "jest-plugin-fs": "^2.9.0",
-    "oclif": "^3.9.1",
+    "oclif": "^4.4.16",
     "stdout-stderr": "^0.1.9",
     "typescript": "^5.3.3"
   },
