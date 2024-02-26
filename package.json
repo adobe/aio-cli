@@ -32,7 +32,7 @@
     "semver": "^7.5.2"
   },
   "devDependencies": {
-    "@adobe/eslint-config-aio-lib-config": "^2.0.2",
+    "@adobe/eslint-config-aio-lib-config": "^3.0.2",
     "acorn": "^8.8.2",
     "babel-runtime": "^6.26.0",
     "eslint": "^8.56.0",
