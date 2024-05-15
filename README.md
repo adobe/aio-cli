@@ -1,5 +1,5 @@
 <!--
-Copyright 2018 Adobe. All rights reserved.
+Copyright 2024 Adobe. All rights reserved.
 This file is licensed to you under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License. You may obtain a copy
 of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -10,6 +10,11 @@ OF ANY KIND, either express or implied. See the License for the specific languag
 governing permissions and limitations under the License.
 -->
 
+aio-cli
+=======
+
+Adobe I/O Extensible CLI
+
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/@adobe/aio-cli.svg)](https://npmjs.org/package/@adobe/aio-cli)
 [![Downloads/week](https://img.shields.io/npm/dw/@adobe/aio-cli.svg)](https://npmjs.org/package/@adobe/aio-cli)
@@ -17,13 +22,8 @@ governing permissions and limitations under the License.
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) 
 [![Codecov Coverage](https://img.shields.io/codecov/c/github/adobe/aio-cli/master.svg?style=flat-square)](https://codecov.io/gh/adobe/aio-cli/)
 
-aio-cli
-=======
-
-Adobe I/O Extensible CLI
-
 <!-- toc -->
-* [aio cli health](#aio-cli-health)
+* [health](#health)
 * [Getting started](#getting-started)
 * [Technical requirements](#technical-requirements)
 * [Proxy Support](#proxy-support)
@@ -31,12 +31,14 @@ Adobe I/O Extensible CLI
 * [Commands](#commands)
 <!-- tocstop -->
 
-# aio cli health
+# health
+
 Health badges for the aio-cli and its plugins and modules
 <!--
 DON'T GENERATE MANUALLY!
 run gen-health-table.js with `npm run gen-health`
 -->
+
 <!-- health -->
 | Module | Version | Downloads | Build Status | Coverage  | Issues | Pull Requests |
 |---|---|---|---|---|---|---|
@@ -45,6 +47,7 @@ run gen-health-table.js with `npm run gen-health`
 | [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console)  | [![Version](https://img.shields.io/npm/v/@adobe/aio-cli-plugin-console.svg)](https://npmjs.org/package/@adobe/aio-cli-plugin-console)| [![Downloads/week](https://img.shields.io/npm/dw/@adobe/aio-cli-plugin-console.svg)](https://npmjs.org/package/@adobe/aio-cli-plugin-console)| [![Node.js CI](https://github.com/adobe/aio-cli-plugin-console/actions/workflows/node.js.yml/badge.svg)](https://github.com/adobe/aio-cli-plugin-console/actions/workflows/node.js.yml)| [![Codecov Coverage](https://img.shields.io/codecov/c/github/adobe/aio-cli-plugin-console/master.svg?style=flat-square)](https://codecov.io/gh/adobe/aio-cli-plugin-console/)| [![Github Issues](https://img.shields.io/github/issues/adobe/aio-cli-plugin-console.svg)](https://github.com/adobe/aio-cli-plugin-console/issues)| [![Github Pull Requests](https://img.shields.io/github/issues-pr/adobe/aio-cli-plugin-console.svg)](https://github.com/adobe/aio-cli-plugin-console/pulls)|
 | [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime)  | [![Version](https://img.shields.io/npm/v/@adobe/aio-cli-plugin-runtime.svg)](https://npmjs.org/package/@adobe/aio-cli-plugin-runtime)| [![Downloads/week](https://img.shields.io/npm/dw/@adobe/aio-cli-plugin-runtime.svg)](https://npmjs.org/package/@adobe/aio-cli-plugin-runtime)| [![Node.js CI](https://github.com/adobe/aio-cli-plugin-runtime/actions/workflows/node.js.yml/badge.svg)](https://github.com/adobe/aio-cli-plugin-runtime/actions/workflows/node.js.yml)| [![Codecov Coverage](https://img.shields.io/codecov/c/github/adobe/aio-cli-plugin-runtime/master.svg?style=flat-square)](https://codecov.io/gh/adobe/aio-cli-plugin-runtime/)| [![Github Issues](https://img.shields.io/github/issues/adobe/aio-cli-plugin-runtime.svg)](https://github.com/adobe/aio-cli-plugin-runtime/issues)| [![Github Pull Requests](https://img.shields.io/github/issues-pr/adobe/aio-cli-plugin-runtime.svg)](https://github.com/adobe/aio-cli-plugin-runtime/pulls)|
 | [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app)  | [![Version](https://img.shields.io/npm/v/@adobe/aio-cli-plugin-app.svg)](https://npmjs.org/package/@adobe/aio-cli-plugin-app)| [![Downloads/week](https://img.shields.io/npm/dw/@adobe/aio-cli-plugin-app.svg)](https://npmjs.org/package/@adobe/aio-cli-plugin-app)| [![Node.js CI](https://github.com/adobe/aio-cli-plugin-app/actions/workflows/node.js.yml/badge.svg)](https://github.com/adobe/aio-cli-plugin-app/actions/workflows/node.js.yml)| [![Codecov Coverage](https://img.shields.io/codecov/c/github/adobe/aio-cli-plugin-app/master.svg?style=flat-square)](https://codecov.io/gh/adobe/aio-cli-plugin-app/)| [![Github Issues](https://img.shields.io/github/issues/adobe/aio-cli-plugin-app.svg)](https://github.com/adobe/aio-cli-plugin-app/issues)| [![Github Pull Requests](https://img.shields.io/github/issues-pr/adobe/aio-cli-plugin-app.svg)](https://github.com/adobe/aio-cli-plugin-app/pulls)|
+| [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates)  | [![Version](https://img.shields.io/npm/v/@adobe/aio-cli-plugin-app-templates.svg)](https://npmjs.org/package/@adobe/aio-cli-plugin-app-templates)| [![Downloads/week](https://img.shields.io/npm/dw/@adobe/aio-cli-plugin-app-templates.svg)](https://npmjs.org/package/@adobe/aio-cli-plugin-app-templates)| [![Node.js CI](https://github.com/adobe/aio-cli-plugin-app-templates/actions/workflows/node.js.yml/badge.svg)](https://github.com/adobe/aio-cli-plugin-app-templates/actions/workflows/node.js.yml)| [![Codecov Coverage](https://img.shields.io/codecov/c/github/adobe/aio-cli-plugin-app-templates/master.svg?style=flat-square)](https://codecov.io/gh/adobe/aio-cli-plugin-app-templates/)| [![Github Issues](https://img.shields.io/github/issues/adobe/aio-cli-plugin-app-templates.svg)](https://github.com/adobe/aio-cli-plugin-app-templates/issues)| [![Github Pull Requests](https://img.shields.io/github/issues-pr/adobe/aio-cli-plugin-app-templates.svg)](https://github.com/adobe/aio-cli-plugin-app-templates/pulls)|
 | [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth)  | [![Version](https://img.shields.io/npm/v/@adobe/aio-cli-plugin-auth.svg)](https://npmjs.org/package/@adobe/aio-cli-plugin-auth)| [![Downloads/week](https://img.shields.io/npm/dw/@adobe/aio-cli-plugin-auth.svg)](https://npmjs.org/package/@adobe/aio-cli-plugin-auth)| [![Node.js CI](https://github.com/adobe/aio-cli-plugin-auth/actions/workflows/node.js.yml/badge.svg)](https://github.com/adobe/aio-cli-plugin-auth/actions/workflows/node.js.yml)| [![Codecov Coverage](https://img.shields.io/codecov/c/github/adobe/aio-cli-plugin-auth/master.svg?style=flat-square)](https://codecov.io/gh/adobe/aio-cli-plugin-auth/)| [![Github Issues](https://img.shields.io/github/issues/adobe/aio-cli-plugin-auth.svg)](https://github.com/adobe/aio-cli-plugin-auth/issues)| [![Github Pull Requests](https://img.shields.io/github/issues-pr/adobe/aio-cli-plugin-auth.svg)](https://github.com/adobe/aio-cli-plugin-auth/pulls)|
 | [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate)  | [![Version](https://img.shields.io/npm/v/@adobe/aio-cli-plugin-certificate.svg)](https://npmjs.org/package/@adobe/aio-cli-plugin-certificate)| [![Downloads/week](https://img.shields.io/npm/dw/@adobe/aio-cli-plugin-certificate.svg)](https://npmjs.org/package/@adobe/aio-cli-plugin-certificate)| [![Node.js CI](https://github.com/adobe/aio-cli-plugin-certificate/actions/workflows/node.js.yml/badge.svg)](https://github.com/adobe/aio-cli-plugin-certificate/actions/workflows/node.js.yml)| [![Codecov Coverage](https://img.shields.io/codecov/c/github/adobe/aio-cli-plugin-certificate/master.svg?style=flat-square)](https://codecov.io/gh/adobe/aio-cli-plugin-certificate/)| [![Github Issues](https://img.shields.io/github/issues/adobe/aio-cli-plugin-certificate.svg)](https://github.com/adobe/aio-cli-plugin-certificate/issues)| [![Github Pull Requests](https://img.shields.io/github/issues-pr/adobe/aio-cli-plugin-certificate.svg)](https://github.com/adobe/aio-cli-plugin-certificate/pulls)|
 | [@adobe/aio-cli-plugin-info](https://github.com/adobe/aio-cli-plugin-info)  | [![Version](https://img.shields.io/npm/v/@adobe/aio-cli-plugin-info.svg)](https://npmjs.org/package/@adobe/aio-cli-plugin-info)| [![Downloads/week](https://img.shields.io/npm/dw/@adobe/aio-cli-plugin-info.svg)](https://npmjs.org/package/@adobe/aio-cli-plugin-info)| [![Node.js CI](https://github.com/adobe/aio-cli-plugin-info/actions/workflows/node.js.yml/badge.svg)](https://github.com/adobe/aio-cli-plugin-info/actions/workflows/node.js.yml)| [![Codecov Coverage](https://img.shields.io/codecov/c/github/adobe/aio-cli-plugin-info/master.svg?style=flat-square)](https://codecov.io/gh/adobe/aio-cli-plugin-info/)| [![Github Issues](https://img.shields.io/github/issues/adobe/aio-cli-plugin-info.svg)](https://github.com/adobe/aio-cli-plugin-info/issues)| [![Github Pull Requests](https://img.shields.io/github/issues-pr/adobe/aio-cli-plugin-info.svg)](https://github.com/adobe/aio-cli-plugin-info/pulls)|
@@ -56,457 +59,474 @@ run gen-health-table.js with `npm run gen-health`
 
 # Getting started
 
-See the [Adobe Developer App Builder docs](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html)
+See the [Adobe Developer App Builder docs](https://developer.adobe.com/app-builder/docs/overview/)
 
 # Technical requirements
 
-See the [App Builder `Setting up Your Environment` doc](https://www.adobe.io/apis/experienceplatform/project-firefly/docs.html#!AdobeDocs/project-firefly/master/getting_started/setup.md)
+See the [App Builder `Setting up Your Environment` doc](https://developer.adobe.com/app-builder/docs/getting_started/)
 
 # Proxy Support
 
 Set these environment variables, to use proxies (case sensitive):
+
 1. `HTTP_PROXY`
 2. `HTTPS_PROXY`
 
 The appropriate proxy will be used to proxy http/https urls respectively.
 
 If your proxy requires basic authentication, embed the username and password in the url itself. For example, if your server is `https://example.com` and username is `user` and password is `password`, the url should look like this:
-```
+
+```sh
 https://user:password@example.com
 ```
+
 If your username or password contains non-alphanumeric characters, they **must** be url-encoded.
 
 You can verify if you set the proxy info properly by running:
-```
+
+```sh
 aio info
 ```
 
 # Usage
+
 <!-- usage -->
 ```sh-session
 $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (--version|-v)
-@adobe/aio-cli/10.0.0 darwin-arm64 node-v18.17.1
+@adobe/aio-cli/10.0.0 win32-x64 node-v18.19.1
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
 ...
 ```
 <!-- usagestop -->
+
 # Commands
+
 <!-- commands -->
-* [`aio app`](#aio-app)
-* [`aio app add`](#aio-app-add)
-* [`aio app add action`](#aio-app-add-action)
-* [`aio app add actions`](#aio-app-add-actions)
-* [`aio app add ci`](#aio-app-add-ci)
-* [`aio app add event`](#aio-app-add-event)
-* [`aio app add events`](#aio-app-add-events)
-* [`aio app add ext`](#aio-app-add-ext)
-* [`aio app add extension`](#aio-app-add-extension)
-* [`aio app add extensions`](#aio-app-add-extensions)
-* [`aio app add service`](#aio-app-add-service)
-* [`aio app add services`](#aio-app-add-services)
-* [`aio app add web-assets`](#aio-app-add-web-assets)
-* [`aio app build`](#aio-app-build)
-* [`aio app config`](#aio-app-config)
-* [`aio app config get`](#aio-app-config-get)
-* [`aio app config get lf`](#aio-app-config-get-lf)
-* [`aio app config get lf errors`](#aio-app-config-get-lf-errors)
-* [`aio app config get log-forwarding`](#aio-app-config-get-log-forwarding)
-* [`aio app config get log-forwarding errors`](#aio-app-config-get-log-forwarding-errors)
-* [`aio app config set`](#aio-app-config-set)
-* [`aio app config set lf`](#aio-app-config-set-lf)
-* [`aio app config set log-forwarding`](#aio-app-config-set-log-forwarding)
-* [`aio app create [PATH]`](#aio-app-create-path)
-* [`aio app delete`](#aio-app-delete)
-* [`aio app delete action [ACTION-NAME]`](#aio-app-delete-action-action-name)
-* [`aio app delete actions [ACTION-NAME]`](#aio-app-delete-actions-action-name)
-* [`aio app delete ci`](#aio-app-delete-ci)
-* [`aio app delete ext`](#aio-app-delete-ext)
-* [`aio app delete extension`](#aio-app-delete-extension)
-* [`aio app delete extensions`](#aio-app-delete-extensions)
-* [`aio app delete service`](#aio-app-delete-service)
-* [`aio app delete services`](#aio-app-delete-services)
-* [`aio app delete web-assets`](#aio-app-delete-web-assets)
-* [`aio app deploy`](#aio-app-deploy)
-* [`aio app get-url [ACTION]`](#aio-app-get-url-action)
-* [`aio app info`](#aio-app-info)
-* [`aio app init [PATH]`](#aio-app-init-path)
-* [`aio app list`](#aio-app-list)
-* [`aio app list ext`](#aio-app-list-ext)
-* [`aio app list ext-points`](#aio-app-list-ext-points)
-* [`aio app list extension`](#aio-app-list-extension)
-* [`aio app list extension-points`](#aio-app-list-extension-points)
-* [`aio app list extensions`](#aio-app-list-extensions)
-* [`aio app logs`](#aio-app-logs)
-* [`aio app run`](#aio-app-run)
-* [`aio app test`](#aio-app-test)
-* [`aio app undeploy`](#aio-app-undeploy)
-* [`aio app use [CONFIG_FILE_PATH]`](#aio-app-use-config_file_path)
-* [`aio auth`](#aio-auth)
-* [`aio auth ctx`](#aio-auth-ctx)
-* [`aio auth login`](#aio-auth-login)
-* [`aio auth logout`](#aio-auth-logout)
-* [`aio autocomplete [SHELL]`](#aio-autocomplete-shell)
-* [`aio certificate`](#aio-certificate)
-* [`aio certificate fingerprint FILE`](#aio-certificate-fingerprint-file)
-* [`aio certificate generate`](#aio-certificate-generate)
-* [`aio certificate verify FILE`](#aio-certificate-verify-file)
-* [`aio config`](#aio-config)
-* [`aio config clear`](#aio-config-clear)
-* [`aio config del KEYS...`](#aio-config-del-keys)
-* [`aio config delete KEYS...`](#aio-config-delete-keys)
-* [`aio config edit`](#aio-config-edit)
-* [`aio config get KEY`](#aio-config-get-key)
-* [`aio config list`](#aio-config-list)
-* [`aio config ls`](#aio-config-ls)
-* [`aio config rm KEYS...`](#aio-config-rm-keys)
-* [`aio config set key 'a value'       # set key to 'a value'`](#aio-config-set-key-a-value--------set-key-to-a-value)
-* [`aio console`](#aio-console)
-* [`aio console open`](#aio-console-open)
-* [`aio console org`](#aio-console-org)
-* [`aio console org list`](#aio-console-org-list)
-* [`aio console org ls`](#aio-console-org-ls)
-* [`aio console org sel [ORGCODE]`](#aio-console-org-sel-orgcode)
-* [`aio console org select [ORGCODE]`](#aio-console-org-select-orgcode)
-* [`aio console project`](#aio-console-project)
-* [`aio console project list`](#aio-console-project-list)
-* [`aio console project ls`](#aio-console-project-ls)
-* [`aio console project sel [PROJECTIDORNAME]`](#aio-console-project-sel-projectidorname)
-* [`aio console project select [PROJECTIDORNAME]`](#aio-console-project-select-projectidorname)
-* [`aio console publickey`](#aio-console-publickey)
-* [`aio console publickey delete IDORFINGERPRINT`](#aio-console-publickey-delete-idorfingerprint)
-* [`aio console publickey list`](#aio-console-publickey-list)
-* [`aio console publickey upload FILE`](#aio-console-publickey-upload-file)
-* [`aio console where`](#aio-console-where)
-* [`aio console workspace`](#aio-console-workspace)
-* [`aio console workspace dl [DESTINATION]`](#aio-console-workspace-dl-destination)
-* [`aio console workspace download [DESTINATION]`](#aio-console-workspace-download-destination)
-* [`aio console workspace list`](#aio-console-workspace-list)
-* [`aio console workspace ls`](#aio-console-workspace-ls)
-* [`aio console workspace sel [WORKSPACEIDORNAME]`](#aio-console-workspace-sel-workspaceidorname)
-* [`aio console workspace select [WORKSPACEIDORNAME]`](#aio-console-workspace-select-workspaceidorname)
-* [`aio console ws`](#aio-console-ws)
-* [`aio console ws dl [DESTINATION]`](#aio-console-ws-dl-destination)
-* [`aio console ws download [DESTINATION]`](#aio-console-ws-download-destination)
-* [`aio console ws list`](#aio-console-ws-list)
-* [`aio console ws ls`](#aio-console-ws-ls)
-* [`aio console ws sel [WORKSPACEIDORNAME]`](#aio-console-ws-sel-workspaceidorname)
-* [`aio console ws select [WORKSPACEIDORNAME]`](#aio-console-ws-select-workspaceidorname)
-* [`aio context`](#aio-context)
-* [`aio ctx`](#aio-ctx)
-* [`aio discover`](#aio-discover)
-* [`aio event`](#aio-event)
-* [`aio event eventmetadata`](#aio-event-eventmetadata)
-* [`aio event eventmetadata create PROVIDERID`](#aio-event-eventmetadata-create-providerid)
-* [`aio event eventmetadata delete PROVIDERID [EVENTCODE]`](#aio-event-eventmetadata-delete-providerid-eventcode)
-* [`aio event eventmetadata get PROVIDERID EVENTCODE`](#aio-event-eventmetadata-get-providerid-eventcode)
-* [`aio event eventmetadata list PROVIDERID`](#aio-event-eventmetadata-list-providerid)
-* [`aio event eventmetadata ls PROVIDERID`](#aio-event-eventmetadata-ls-providerid)
-* [`aio event eventmetadata update PROVIDERID EVENTCODE`](#aio-event-eventmetadata-update-providerid-eventcode)
-* [`aio event provider`](#aio-event-provider)
-* [`aio event provider create`](#aio-event-provider-create)
-* [`aio event provider delete PROVIDERID`](#aio-event-provider-delete-providerid)
-* [`aio event provider get PROVIDERID`](#aio-event-provider-get-providerid)
-* [`aio event provider list`](#aio-event-provider-list)
-* [`aio event provider ls`](#aio-event-provider-ls)
-* [`aio event provider update PROVIDERID`](#aio-event-provider-update-providerid)
-* [`aio event reg`](#aio-event-reg)
-* [`aio event reg create BODYJSONFILE`](#aio-event-reg-create-bodyjsonfile)
-* [`aio event reg delete REGISTRATIONID`](#aio-event-reg-delete-registrationid)
-* [`aio event reg get REGISTRATIONID`](#aio-event-reg-get-registrationid)
-* [`aio event reg list`](#aio-event-reg-list)
-* [`aio event reg ls`](#aio-event-reg-ls)
-* [`aio event registration`](#aio-event-registration)
-* [`aio event registration create BODYJSONFILE`](#aio-event-registration-create-bodyjsonfile)
-* [`aio event registration delete REGISTRATIONID`](#aio-event-registration-delete-registrationid)
-* [`aio event registration get REGISTRATIONID`](#aio-event-registration-get-registrationid)
-* [`aio event registration list`](#aio-event-registration-list)
-* [`aio event registration ls`](#aio-event-registration-ls)
-* [`aio help [COMMANDS]`](#aio-help-commands)
-* [`aio info`](#aio-info)
-* [`aio login`](#aio-login)
-* [`aio logout`](#aio-logout)
-* [`aio open`](#aio-open)
-* [`aio plugins`](#aio-plugins)
-* [`aio plugins:install PLUGIN...`](#aio-pluginsinstall-plugin)
-* [`aio plugins discover`](#aio-plugins-discover)
-* [`aio plugins:inspect PLUGIN...`](#aio-pluginsinspect-plugin)
-* [`aio plugins:install PLUGIN...`](#aio-pluginsinstall-plugin-1)
-* [`aio plugins:link PLUGIN`](#aio-pluginslink-plugin)
-* [`aio plugins:uninstall PLUGIN...`](#aio-pluginsuninstall-plugin)
-* [`aio plugins:uninstall PLUGIN...`](#aio-pluginsuninstall-plugin-1)
-* [`aio plugins:uninstall PLUGIN...`](#aio-pluginsuninstall-plugin-2)
-* [`aio plugins update`](#aio-plugins-update)
-* [`aio report`](#aio-report)
-* [`aio rollback`](#aio-rollback)
-* [`aio rt`](#aio-rt)
-* [`aio rt action`](#aio-rt-action)
-* [`aio rt action create ACTIONNAME [ACTIONPATH]`](#aio-rt-action-create-actionname-actionpath)
-* [`aio rt action del ACTIONNAME`](#aio-rt-action-del-actionname)
-* [`aio rt action delete ACTIONNAME`](#aio-rt-action-delete-actionname)
-* [`aio rt action get ACTIONNAME`](#aio-rt-action-get-actionname)
-* [`aio rt action invoke ACTIONNAME`](#aio-rt-action-invoke-actionname)
-* [`aio rt action list [PACKAGENAME]`](#aio-rt-action-list-packagename)
-* [`aio rt action ls [PACKAGENAME]`](#aio-rt-action-ls-packagename)
-* [`aio rt action update ACTIONNAME [ACTIONPATH]`](#aio-rt-action-update-actionname-actionpath)
-* [`aio rt actions list [PACKAGENAME]`](#aio-rt-actions-list-packagename)
-* [`aio rt actions ls [PACKAGENAME]`](#aio-rt-actions-ls-packagename)
-* [`aio rt activation`](#aio-rt-activation)
-* [`aio rt activation get [ACTIVATIONID]`](#aio-rt-activation-get-activationid)
-* [`aio rt activation list [ACTION_NAME]`](#aio-rt-activation-list-action_name)
-* [`aio rt activation log [ACTIVATIONID]`](#aio-rt-activation-log-activationid)
-* [`aio rt activation logs [ACTIVATIONID]`](#aio-rt-activation-logs-activationid)
-* [`aio rt activation ls [ACTION_NAME]`](#aio-rt-activation-ls-action_name)
-* [`aio rt activation result [ACTIVATIONID]`](#aio-rt-activation-result-activationid)
-* [`aio rt activations list [ACTION_NAME]`](#aio-rt-activations-list-action_name)
-* [`aio rt activations ls [ACTION_NAME]`](#aio-rt-activations-ls-action_name)
-* [`aio rt api`](#aio-rt-api)
-* [`aio rt api create [BASEPATH] [RELPATH] [APIVERB] [ACTION]`](#aio-rt-api-create-basepath-relpath-apiverb-action)
-* [`aio rt api delete BASEPATHORAPINAME [RELPATH] [APIVERB]`](#aio-rt-api-delete-basepathorapiname-relpath-apiverb)
-* [`aio rt api get BASEPATHORAPINAME`](#aio-rt-api-get-basepathorapiname)
-* [`aio rt api list [BASEPATH] [RELPATH] [APIVERB]`](#aio-rt-api-list-basepath-relpath-apiverb)
-* [`aio rt api ls [BASEPATH] [RELPATH] [APIVERB]`](#aio-rt-api-ls-basepath-relpath-apiverb)
-* [`aio rt deploy`](#aio-rt-deploy)
-* [`aio rt deploy export`](#aio-rt-deploy-export)
-* [`aio rt deploy report`](#aio-rt-deploy-report)
-* [`aio rt deploy sync`](#aio-rt-deploy-sync)
-* [`aio rt deploy undeploy`](#aio-rt-deploy-undeploy)
-* [`aio rt deploy version`](#aio-rt-deploy-version)
-* [`aio rt get`](#aio-rt-get)
-* [`aio rt list`](#aio-rt-list)
-* [`aio rt log [ACTIVATIONID]`](#aio-rt-log-activationid)
-* [`aio rt logs [ACTIVATIONID]`](#aio-rt-logs-activationid)
-* [`aio rt ls`](#aio-rt-ls)
-* [`aio rt namespace`](#aio-rt-namespace)
-* [`aio rt namespace lf`](#aio-rt-namespace-lf)
-* [`aio rt namespace lf errors`](#aio-rt-namespace-lf-errors)
-* [`aio rt namespace lf get`](#aio-rt-namespace-lf-get)
-* [`aio rt namespace lf set`](#aio-rt-namespace-lf-set)
-* [`aio rt namespace lf set adobe-io-runtime`](#aio-rt-namespace-lf-set-adobe-io-runtime)
-* [`aio rt namespace lf set azure-log-analytics`](#aio-rt-namespace-lf-set-azure-log-analytics)
-* [`aio rt namespace lf set new-relic`](#aio-rt-namespace-lf-set-new-relic)
-* [`aio rt namespace lf set splunk-hec`](#aio-rt-namespace-lf-set-splunk-hec)
-* [`aio rt namespace list`](#aio-rt-namespace-list)
-* [`aio rt namespace log-forwarding`](#aio-rt-namespace-log-forwarding)
-* [`aio rt namespace log-forwarding errors`](#aio-rt-namespace-log-forwarding-errors)
-* [`aio rt namespace log-forwarding get`](#aio-rt-namespace-log-forwarding-get)
-* [`aio rt namespace log-forwarding set`](#aio-rt-namespace-log-forwarding-set)
-* [`aio rt namespace log-forwarding set adobe-io-runtime`](#aio-rt-namespace-log-forwarding-set-adobe-io-runtime)
-* [`aio rt namespace log-forwarding set azure-log-analytics`](#aio-rt-namespace-log-forwarding-set-azure-log-analytics)
-* [`aio rt namespace log-forwarding set new-relic`](#aio-rt-namespace-log-forwarding-set-new-relic)
-* [`aio rt namespace log-forwarding set splunk-hec`](#aio-rt-namespace-log-forwarding-set-splunk-hec)
-* [`aio rt namespace ls`](#aio-rt-namespace-ls)
-* [`aio rt ns`](#aio-rt-ns)
-* [`aio rt ns lf`](#aio-rt-ns-lf)
-* [`aio rt ns lf errors`](#aio-rt-ns-lf-errors)
-* [`aio rt ns lf get`](#aio-rt-ns-lf-get)
-* [`aio rt ns lf set`](#aio-rt-ns-lf-set)
-* [`aio rt ns lf set adobe-io-runtime`](#aio-rt-ns-lf-set-adobe-io-runtime)
-* [`aio rt ns lf set azure-log-analytics`](#aio-rt-ns-lf-set-azure-log-analytics)
-* [`aio rt ns lf set new-relic`](#aio-rt-ns-lf-set-new-relic)
-* [`aio rt ns lf set splunk-hec`](#aio-rt-ns-lf-set-splunk-hec)
-* [`aio rt ns list`](#aio-rt-ns-list)
-* [`aio rt ns log-forwarding`](#aio-rt-ns-log-forwarding)
-* [`aio rt ns log-forwarding errors`](#aio-rt-ns-log-forwarding-errors)
-* [`aio rt ns log-forwarding get`](#aio-rt-ns-log-forwarding-get)
-* [`aio rt ns log-forwarding set`](#aio-rt-ns-log-forwarding-set)
-* [`aio rt ns log-forwarding set adobe-io-runtime`](#aio-rt-ns-log-forwarding-set-adobe-io-runtime)
-* [`aio rt ns log-forwarding set azure-log-analytics`](#aio-rt-ns-log-forwarding-set-azure-log-analytics)
-* [`aio rt ns log-forwarding set new-relic`](#aio-rt-ns-log-forwarding-set-new-relic)
-* [`aio rt ns log-forwarding set splunk-hec`](#aio-rt-ns-log-forwarding-set-splunk-hec)
-* [`aio rt ns ls`](#aio-rt-ns-ls)
-* [`aio rt package`](#aio-rt-package)
-* [`aio rt package bind PACKAGENAME BINDPACKAGENAME`](#aio-rt-package-bind-packagename-bindpackagename)
-* [`aio rt package create PACKAGENAME`](#aio-rt-package-create-packagename)
-* [`aio rt package delete PACKAGENAME`](#aio-rt-package-delete-packagename)
-* [`aio rt package get PACKAGENAME`](#aio-rt-package-get-packagename)
-* [`aio rt package list [NAMESPACE]`](#aio-rt-package-list-namespace)
-* [`aio rt package ls [NAMESPACE]`](#aio-rt-package-ls-namespace)
-* [`aio rt package update PACKAGENAME`](#aio-rt-package-update-packagename)
-* [`aio rt pkg`](#aio-rt-pkg)
-* [`aio rt pkg bind PACKAGENAME BINDPACKAGENAME`](#aio-rt-pkg-bind-packagename-bindpackagename)
-* [`aio rt pkg create PACKAGENAME`](#aio-rt-pkg-create-packagename)
-* [`aio rt pkg delete PACKAGENAME`](#aio-rt-pkg-delete-packagename)
-* [`aio rt pkg get PACKAGENAME`](#aio-rt-pkg-get-packagename)
-* [`aio rt pkg list [NAMESPACE]`](#aio-rt-pkg-list-namespace)
-* [`aio rt pkg ls [NAMESPACE]`](#aio-rt-pkg-ls-namespace)
-* [`aio rt pkg update PACKAGENAME`](#aio-rt-pkg-update-packagename)
-* [`aio rt prop`](#aio-rt-prop)
-* [`aio rt prop get`](#aio-rt-prop-get)
-* [`aio rt prop set`](#aio-rt-prop-set)
-* [`aio rt prop unset`](#aio-rt-prop-unset)
-* [`aio rt property`](#aio-rt-property)
-* [`aio rt property get`](#aio-rt-property-get)
-* [`aio rt property set`](#aio-rt-property-set)
-* [`aio rt property unset`](#aio-rt-property-unset)
-* [`aio rt route`](#aio-rt-route)
-* [`aio rt route create [BASEPATH] [RELPATH] [APIVERB] [ACTION]`](#aio-rt-route-create-basepath-relpath-apiverb-action)
-* [`aio rt route delete BASEPATHORAPINAME [RELPATH] [APIVERB]`](#aio-rt-route-delete-basepathorapiname-relpath-apiverb)
-* [`aio rt route get BASEPATHORAPINAME`](#aio-rt-route-get-basepathorapiname)
-* [`aio rt route list [BASEPATH] [RELPATH] [APIVERB]`](#aio-rt-route-list-basepath-relpath-apiverb)
-* [`aio rt route ls [BASEPATH] [RELPATH] [APIVERB]`](#aio-rt-route-ls-basepath-relpath-apiverb)
-* [`aio rt rule`](#aio-rt-rule)
-* [`aio rt rule create NAME TRIGGER ACTION`](#aio-rt-rule-create-name-trigger-action)
-* [`aio rt rule delete NAME`](#aio-rt-rule-delete-name)
-* [`aio rt rule disable NAME`](#aio-rt-rule-disable-name)
-* [`aio rt rule enable NAME`](#aio-rt-rule-enable-name)
-* [`aio rt rule get NAME`](#aio-rt-rule-get-name)
-* [`aio rt rule list`](#aio-rt-rule-list)
-* [`aio rt rule ls`](#aio-rt-rule-ls)
-* [`aio rt rule status NAME`](#aio-rt-rule-status-name)
-* [`aio rt rule update NAME TRIGGER ACTION`](#aio-rt-rule-update-name-trigger-action)
-* [`aio rt trigger`](#aio-rt-trigger)
-* [`aio rt trigger create TRIGGERNAME`](#aio-rt-trigger-create-triggername)
-* [`aio rt trigger delete TRIGGERPATH`](#aio-rt-trigger-delete-triggerpath)
-* [`aio rt trigger fire TRIGGERNAME`](#aio-rt-trigger-fire-triggername)
-* [`aio rt trigger get TRIGGERPATH`](#aio-rt-trigger-get-triggerpath)
-* [`aio rt trigger list`](#aio-rt-trigger-list)
-* [`aio rt trigger ls`](#aio-rt-trigger-ls)
-* [`aio rt trigger update TRIGGERNAME`](#aio-rt-trigger-update-triggername)
-* [`aio runtime`](#aio-runtime)
-* [`aio runtime action`](#aio-runtime-action)
-* [`aio runtime action create ACTIONNAME [ACTIONPATH]`](#aio-runtime-action-create-actionname-actionpath)
-* [`aio runtime action del ACTIONNAME`](#aio-runtime-action-del-actionname)
-* [`aio runtime action delete ACTIONNAME`](#aio-runtime-action-delete-actionname)
-* [`aio runtime action get ACTIONNAME`](#aio-runtime-action-get-actionname)
-* [`aio runtime action invoke ACTIONNAME`](#aio-runtime-action-invoke-actionname)
-* [`aio runtime action list [PACKAGENAME]`](#aio-runtime-action-list-packagename)
-* [`aio runtime action ls [PACKAGENAME]`](#aio-runtime-action-ls-packagename)
-* [`aio runtime action update ACTIONNAME [ACTIONPATH]`](#aio-runtime-action-update-actionname-actionpath)
-* [`aio runtime actions list [PACKAGENAME]`](#aio-runtime-actions-list-packagename)
-* [`aio runtime actions ls [PACKAGENAME]`](#aio-runtime-actions-ls-packagename)
-* [`aio runtime activation`](#aio-runtime-activation)
-* [`aio runtime activation get [ACTIVATIONID]`](#aio-runtime-activation-get-activationid)
-* [`aio runtime activation list [ACTION_NAME]`](#aio-runtime-activation-list-action_name)
-* [`aio runtime activation log [ACTIVATIONID]`](#aio-runtime-activation-log-activationid)
-* [`aio runtime activation logs [ACTIVATIONID]`](#aio-runtime-activation-logs-activationid)
-* [`aio runtime activation ls [ACTION_NAME]`](#aio-runtime-activation-ls-action_name)
-* [`aio runtime activation result [ACTIVATIONID]`](#aio-runtime-activation-result-activationid)
-* [`aio runtime activations list [ACTION_NAME]`](#aio-runtime-activations-list-action_name)
-* [`aio runtime activations ls [ACTION_NAME]`](#aio-runtime-activations-ls-action_name)
-* [`aio runtime api`](#aio-runtime-api)
-* [`aio runtime api create [BASEPATH] [RELPATH] [APIVERB] [ACTION]`](#aio-runtime-api-create-basepath-relpath-apiverb-action)
-* [`aio runtime api delete BASEPATHORAPINAME [RELPATH] [APIVERB]`](#aio-runtime-api-delete-basepathorapiname-relpath-apiverb)
-* [`aio runtime api get BASEPATHORAPINAME`](#aio-runtime-api-get-basepathorapiname)
-* [`aio runtime api list [BASEPATH] [RELPATH] [APIVERB]`](#aio-runtime-api-list-basepath-relpath-apiverb)
-* [`aio runtime api ls [BASEPATH] [RELPATH] [APIVERB]`](#aio-runtime-api-ls-basepath-relpath-apiverb)
-* [`aio runtime deploy`](#aio-runtime-deploy)
-* [`aio runtime deploy export`](#aio-runtime-deploy-export)
-* [`aio runtime deploy report`](#aio-runtime-deploy-report)
-* [`aio runtime deploy sync`](#aio-runtime-deploy-sync)
-* [`aio runtime deploy undeploy`](#aio-runtime-deploy-undeploy)
-* [`aio runtime deploy version`](#aio-runtime-deploy-version)
-* [`aio runtime list`](#aio-runtime-list)
-* [`aio runtime log [ACTIVATIONID]`](#aio-runtime-log-activationid)
-* [`aio runtime logs [ACTIVATIONID]`](#aio-runtime-logs-activationid)
-* [`aio runtime ls`](#aio-runtime-ls)
-* [`aio runtime namespace`](#aio-runtime-namespace)
-* [`aio runtime namespace get`](#aio-runtime-namespace-get)
-* [`aio runtime namespace lf`](#aio-runtime-namespace-lf)
-* [`aio runtime namespace lf errors`](#aio-runtime-namespace-lf-errors)
-* [`aio runtime namespace lf get`](#aio-runtime-namespace-lf-get)
-* [`aio runtime namespace lf set`](#aio-runtime-namespace-lf-set)
-* [`aio runtime namespace lf set adobe-io-runtime`](#aio-runtime-namespace-lf-set-adobe-io-runtime)
-* [`aio runtime namespace lf set azure-log-analytics`](#aio-runtime-namespace-lf-set-azure-log-analytics)
-* [`aio runtime namespace lf set new-relic`](#aio-runtime-namespace-lf-set-new-relic)
-* [`aio runtime namespace lf set splunk-hec`](#aio-runtime-namespace-lf-set-splunk-hec)
-* [`aio runtime namespace list`](#aio-runtime-namespace-list)
-* [`aio runtime namespace log-forwarding`](#aio-runtime-namespace-log-forwarding)
-* [`aio runtime namespace log-forwarding errors`](#aio-runtime-namespace-log-forwarding-errors)
-* [`aio runtime namespace log-forwarding get`](#aio-runtime-namespace-log-forwarding-get)
-* [`aio runtime namespace log-forwarding set`](#aio-runtime-namespace-log-forwarding-set)
-* [`aio runtime namespace log-forwarding set adobe-io-runtime`](#aio-runtime-namespace-log-forwarding-set-adobe-io-runtime)
-* [`aio runtime namespace log-forwarding set azure-log-analytics`](#aio-runtime-namespace-log-forwarding-set-azure-log-analytics)
-* [`aio runtime namespace log-forwarding set new-relic`](#aio-runtime-namespace-log-forwarding-set-new-relic)
-* [`aio runtime namespace log-forwarding set splunk-hec`](#aio-runtime-namespace-log-forwarding-set-splunk-hec)
-* [`aio runtime namespace ls`](#aio-runtime-namespace-ls)
-* [`aio runtime ns`](#aio-runtime-ns)
-* [`aio runtime ns lf`](#aio-runtime-ns-lf)
-* [`aio runtime ns lf errors`](#aio-runtime-ns-lf-errors)
-* [`aio runtime ns lf get`](#aio-runtime-ns-lf-get)
-* [`aio runtime ns lf set`](#aio-runtime-ns-lf-set)
-* [`aio runtime ns lf set adobe-io-runtime`](#aio-runtime-ns-lf-set-adobe-io-runtime)
-* [`aio runtime ns lf set azure-log-analytics`](#aio-runtime-ns-lf-set-azure-log-analytics)
-* [`aio runtime ns lf set new-relic`](#aio-runtime-ns-lf-set-new-relic)
-* [`aio runtime ns lf set splunk-hec`](#aio-runtime-ns-lf-set-splunk-hec)
-* [`aio runtime ns list`](#aio-runtime-ns-list)
-* [`aio runtime ns log-forwarding`](#aio-runtime-ns-log-forwarding)
-* [`aio runtime ns log-forwarding errors`](#aio-runtime-ns-log-forwarding-errors)
-* [`aio runtime ns log-forwarding get`](#aio-runtime-ns-log-forwarding-get)
-* [`aio runtime ns log-forwarding set`](#aio-runtime-ns-log-forwarding-set)
-* [`aio runtime ns log-forwarding set adobe-io-runtime`](#aio-runtime-ns-log-forwarding-set-adobe-io-runtime)
-* [`aio runtime ns log-forwarding set azure-log-analytics`](#aio-runtime-ns-log-forwarding-set-azure-log-analytics)
-* [`aio runtime ns log-forwarding set new-relic`](#aio-runtime-ns-log-forwarding-set-new-relic)
-* [`aio runtime ns log-forwarding set splunk-hec`](#aio-runtime-ns-log-forwarding-set-splunk-hec)
-* [`aio runtime ns ls`](#aio-runtime-ns-ls)
-* [`aio runtime package`](#aio-runtime-package)
-* [`aio runtime package bind PACKAGENAME BINDPACKAGENAME`](#aio-runtime-package-bind-packagename-bindpackagename)
-* [`aio runtime package create PACKAGENAME`](#aio-runtime-package-create-packagename)
-* [`aio runtime package delete PACKAGENAME`](#aio-runtime-package-delete-packagename)
-* [`aio runtime package get PACKAGENAME`](#aio-runtime-package-get-packagename)
-* [`aio runtime package list [NAMESPACE]`](#aio-runtime-package-list-namespace)
-* [`aio runtime package ls [NAMESPACE]`](#aio-runtime-package-ls-namespace)
-* [`aio runtime package update PACKAGENAME`](#aio-runtime-package-update-packagename)
-* [`aio runtime pkg`](#aio-runtime-pkg)
-* [`aio runtime pkg bind PACKAGENAME BINDPACKAGENAME`](#aio-runtime-pkg-bind-packagename-bindpackagename)
-* [`aio runtime pkg create PACKAGENAME`](#aio-runtime-pkg-create-packagename)
-* [`aio runtime pkg delete PACKAGENAME`](#aio-runtime-pkg-delete-packagename)
-* [`aio runtime pkg get PACKAGENAME`](#aio-runtime-pkg-get-packagename)
-* [`aio runtime pkg list [NAMESPACE]`](#aio-runtime-pkg-list-namespace)
-* [`aio runtime pkg ls [NAMESPACE]`](#aio-runtime-pkg-ls-namespace)
-* [`aio runtime pkg update PACKAGENAME`](#aio-runtime-pkg-update-packagename)
-* [`aio runtime prop`](#aio-runtime-prop)
-* [`aio runtime prop get`](#aio-runtime-prop-get)
-* [`aio runtime prop set`](#aio-runtime-prop-set)
-* [`aio runtime prop unset`](#aio-runtime-prop-unset)
-* [`aio runtime property`](#aio-runtime-property)
-* [`aio runtime property get`](#aio-runtime-property-get)
-* [`aio runtime property set`](#aio-runtime-property-set)
-* [`aio runtime property unset`](#aio-runtime-property-unset)
-* [`aio runtime route`](#aio-runtime-route)
-* [`aio runtime route create [BASEPATH] [RELPATH] [APIVERB] [ACTION]`](#aio-runtime-route-create-basepath-relpath-apiverb-action)
-* [`aio runtime route delete BASEPATHORAPINAME [RELPATH] [APIVERB]`](#aio-runtime-route-delete-basepathorapiname-relpath-apiverb)
-* [`aio runtime route get BASEPATHORAPINAME`](#aio-runtime-route-get-basepathorapiname)
-* [`aio runtime route list [BASEPATH] [RELPATH] [APIVERB]`](#aio-runtime-route-list-basepath-relpath-apiverb)
-* [`aio runtime route ls [BASEPATH] [RELPATH] [APIVERB]`](#aio-runtime-route-ls-basepath-relpath-apiverb)
-* [`aio runtime rule`](#aio-runtime-rule)
-* [`aio runtime rule create NAME TRIGGER ACTION`](#aio-runtime-rule-create-name-trigger-action)
-* [`aio runtime rule delete NAME`](#aio-runtime-rule-delete-name)
-* [`aio runtime rule disable NAME`](#aio-runtime-rule-disable-name)
-* [`aio runtime rule enable NAME`](#aio-runtime-rule-enable-name)
-* [`aio runtime rule get NAME`](#aio-runtime-rule-get-name)
-* [`aio runtime rule list`](#aio-runtime-rule-list)
-* [`aio runtime rule ls`](#aio-runtime-rule-ls)
-* [`aio runtime rule status NAME`](#aio-runtime-rule-status-name)
-* [`aio runtime rule update NAME TRIGGER ACTION`](#aio-runtime-rule-update-name-trigger-action)
-* [`aio runtime trigger`](#aio-runtime-trigger)
-* [`aio runtime trigger create TRIGGERNAME`](#aio-runtime-trigger-create-triggername)
-* [`aio runtime trigger delete TRIGGERPATH`](#aio-runtime-trigger-delete-triggerpath)
-* [`aio runtime trigger fire TRIGGERNAME`](#aio-runtime-trigger-fire-triggername)
-* [`aio runtime trigger get TRIGGERPATH`](#aio-runtime-trigger-get-triggerpath)
-* [`aio runtime trigger list`](#aio-runtime-trigger-list)
-* [`aio runtime trigger ls`](#aio-runtime-trigger-ls)
-* [`aio runtime trigger update TRIGGERNAME`](#aio-runtime-trigger-update-triggername)
-* [`aio telemetry yes`](#aio-telemetry-yes)
-* [`aio templates`](#aio-templates)
-* [`aio templates disco`](#aio-templates-disco)
-* [`aio templates discover`](#aio-templates-discover)
-* [`aio templates i PATH`](#aio-templates-i-path)
-* [`aio templates info`](#aio-templates-info)
-* [`aio templates install PATH`](#aio-templates-install-path)
-* [`aio templates remove NAME`](#aio-templates-remove-name)
-* [`aio templates rm NAME`](#aio-templates-rm-name)
-* [`aio templates rollback`](#aio-templates-rollback)
-* [`aio templates sub NAME GITHUBREPOURL`](#aio-templates-sub-name-githubrepourl)
-* [`aio templates submit NAME GITHUBREPOURL`](#aio-templates-submit-name-githubrepourl)
-* [`aio templates un PACKAGE-NAME`](#aio-templates-un-package-name)
-* [`aio templates uninstall PACKAGE-NAME`](#aio-templates-uninstall-package-name)
-* [`aio update`](#aio-update)
-* [`aio where`](#aio-where)
+- [aio-cli](#aio-cli)
+- [health](#health)
+- [Getting started](#getting-started)
+- [Technical requirements](#technical-requirements)
+- [Proxy Support](#proxy-support)
+- [Usage](#usage)
+- [Commands](#commands)
+  - [`aio app`](#aio-app)
+  - [`aio app add`](#aio-app-add)
+  - [`aio app add action`](#aio-app-add-action)
+  - [`aio app add actions`](#aio-app-add-actions)
+  - [`aio app add ci`](#aio-app-add-ci)
+  - [`aio app add event`](#aio-app-add-event)
+  - [`aio app add events`](#aio-app-add-events)
+  - [`aio app add ext`](#aio-app-add-ext)
+  - [`aio app add extension`](#aio-app-add-extension)
+  - [`aio app add extensions`](#aio-app-add-extensions)
+  - [`aio app add service`](#aio-app-add-service)
+  - [`aio app add services`](#aio-app-add-services)
+  - [`aio app add web-assets`](#aio-app-add-web-assets)
+  - [`aio app build`](#aio-app-build)
+  - [`aio app config`](#aio-app-config)
+  - [`aio app config get`](#aio-app-config-get)
+  - [`aio app config get lf`](#aio-app-config-get-lf)
+  - [`aio app config get lf errors`](#aio-app-config-get-lf-errors)
+  - [`aio app config get log-forwarding`](#aio-app-config-get-log-forwarding)
+  - [`aio app config get log-forwarding errors`](#aio-app-config-get-log-forwarding-errors)
+  - [`aio app config set`](#aio-app-config-set)
+  - [`aio app config set lf`](#aio-app-config-set-lf)
+  - [`aio app config set log-forwarding`](#aio-app-config-set-log-forwarding)
+  - [`aio app create [PATH]`](#aio-app-create-path)
+  - [`aio app delete`](#aio-app-delete)
+  - [`aio app delete action [ACTION-NAME]`](#aio-app-delete-action-action-name)
+  - [`aio app delete actions [ACTION-NAME]`](#aio-app-delete-actions-action-name)
+  - [`aio app delete ci`](#aio-app-delete-ci)
+  - [`aio app delete ext`](#aio-app-delete-ext)
+  - [`aio app delete extension`](#aio-app-delete-extension)
+  - [`aio app delete extensions`](#aio-app-delete-extensions)
+  - [`aio app delete service`](#aio-app-delete-service)
+  - [`aio app delete services`](#aio-app-delete-services)
+  - [`aio app delete web-assets`](#aio-app-delete-web-assets)
+  - [`aio app deploy`](#aio-app-deploy)
+  - [`aio app get-url [ACTION]`](#aio-app-get-url-action)
+  - [`aio app info`](#aio-app-info)
+  - [`aio app init [PATH]`](#aio-app-init-path)
+  - [`aio app install PATH`](#aio-app-install-path)
+  - [`aio app list`](#aio-app-list)
+  - [`aio app list ext`](#aio-app-list-ext)
+  - [`aio app list ext-points`](#aio-app-list-ext-points)
+  - [`aio app list extension`](#aio-app-list-extension)
+  - [`aio app list extension-points`](#aio-app-list-extension-points)
+  - [`aio app list extensions`](#aio-app-list-extensions)
+  - [`aio app logs`](#aio-app-logs)
+  - [`aio app pack [PATH]`](#aio-app-pack-path)
+  - [`aio app run`](#aio-app-run)
+  - [`aio app test`](#aio-app-test)
+  - [`aio app undeploy`](#aio-app-undeploy)
+  - [`aio app use [CONFIG_FILE_PATH]`](#aio-app-use-config_file_path)
+  - [`aio auth`](#aio-auth)
+  - [`aio auth ctx`](#aio-auth-ctx)
+  - [`aio auth login`](#aio-auth-login)
+  - [`aio auth logout`](#aio-auth-logout)
+  - [`aio autocomplete [SHELL]`](#aio-autocomplete-shell)
+  - [`aio certificate`](#aio-certificate)
+  - [`aio certificate fingerprint FILE`](#aio-certificate-fingerprint-file)
+  - [`aio certificate generate`](#aio-certificate-generate)
+  - [`aio certificate verify FILE`](#aio-certificate-verify-file)
+  - [`aio config`](#aio-config)
+  - [`aio config clear`](#aio-config-clear)
+  - [`aio config del KEYS...`](#aio-config-del-keys)
+  - [`aio config delete KEYS...`](#aio-config-delete-keys)
+  - [`aio config edit`](#aio-config-edit)
+  - [`aio config get KEY`](#aio-config-get-key)
+  - [`aio config list`](#aio-config-list)
+  - [`aio config ls`](#aio-config-ls)
+  - [`aio config rm KEYS...`](#aio-config-rm-keys)
+  - [`aio config set key 'a value'       # set key to 'a value'`](#aio-config-set-key-a-value--------set-key-to-a-value)
+  - [`aio console`](#aio-console)
+  - [`aio console open`](#aio-console-open)
+  - [`aio console org`](#aio-console-org)
+  - [`aio console org list`](#aio-console-org-list)
+  - [`aio console org ls`](#aio-console-org-ls)
+  - [`aio console org sel [ORGCODE]`](#aio-console-org-sel-orgcode)
+  - [`aio console org select [ORGCODE]`](#aio-console-org-select-orgcode)
+  - [`aio console project`](#aio-console-project)
+  - [`aio console project list`](#aio-console-project-list)
+  - [`aio console project ls`](#aio-console-project-ls)
+  - [`aio console project sel [PROJECTIDORNAME]`](#aio-console-project-sel-projectidorname)
+  - [`aio console project select [PROJECTIDORNAME]`](#aio-console-project-select-projectidorname)
+  - [`aio console publickey`](#aio-console-publickey)
+  - [`aio console publickey delete IDORFINGERPRINT`](#aio-console-publickey-delete-idorfingerprint)
+  - [`aio console publickey list`](#aio-console-publickey-list)
+  - [`aio console publickey upload FILE`](#aio-console-publickey-upload-file)
+  - [`aio console where`](#aio-console-where)
+  - [`aio console workspace`](#aio-console-workspace)
+  - [`aio console workspace dl [DESTINATION]`](#aio-console-workspace-dl-destination)
+  - [`aio console workspace download [DESTINATION]`](#aio-console-workspace-download-destination)
+  - [`aio console workspace list`](#aio-console-workspace-list)
+  - [`aio console workspace ls`](#aio-console-workspace-ls)
+  - [`aio console workspace sel [WORKSPACEIDORNAME]`](#aio-console-workspace-sel-workspaceidorname)
+  - [`aio console workspace select [WORKSPACEIDORNAME]`](#aio-console-workspace-select-workspaceidorname)
+  - [`aio console ws`](#aio-console-ws)
+  - [`aio console ws dl [DESTINATION]`](#aio-console-ws-dl-destination)
+  - [`aio console ws download [DESTINATION]`](#aio-console-ws-download-destination)
+  - [`aio console ws list`](#aio-console-ws-list)
+  - [`aio console ws ls`](#aio-console-ws-ls)
+  - [`aio console ws sel [WORKSPACEIDORNAME]`](#aio-console-ws-sel-workspaceidorname)
+  - [`aio console ws select [WORKSPACEIDORNAME]`](#aio-console-ws-select-workspaceidorname)
+  - [`aio context`](#aio-context)
+  - [`aio ctx`](#aio-ctx)
+  - [`aio discover`](#aio-discover)
+  - [`aio event`](#aio-event)
+  - [`aio event eventmetadata`](#aio-event-eventmetadata)
+  - [`aio event eventmetadata create PROVIDERID`](#aio-event-eventmetadata-create-providerid)
+  - [`aio event eventmetadata delete PROVIDERID [EVENTCODE]`](#aio-event-eventmetadata-delete-providerid-eventcode)
+  - [`aio event eventmetadata get PROVIDERID EVENTCODE`](#aio-event-eventmetadata-get-providerid-eventcode)
+  - [`aio event eventmetadata list PROVIDERID`](#aio-event-eventmetadata-list-providerid)
+  - [`aio event eventmetadata ls PROVIDERID`](#aio-event-eventmetadata-ls-providerid)
+  - [`aio event eventmetadata update PROVIDERID EVENTCODE`](#aio-event-eventmetadata-update-providerid-eventcode)
+  - [`aio event provider`](#aio-event-provider)
+  - [`aio event provider create`](#aio-event-provider-create)
+  - [`aio event provider delete PROVIDERID`](#aio-event-provider-delete-providerid)
+  - [`aio event provider get PROVIDERID`](#aio-event-provider-get-providerid)
+  - [`aio event provider list`](#aio-event-provider-list)
+  - [`aio event provider ls`](#aio-event-provider-ls)
+  - [`aio event provider update PROVIDERID`](#aio-event-provider-update-providerid)
+  - [`aio event reg`](#aio-event-reg)
+  - [`aio event reg create BODYJSONFILE`](#aio-event-reg-create-bodyjsonfile)
+  - [`aio event reg delete REGISTRATIONID`](#aio-event-reg-delete-registrationid)
+  - [`aio event reg get REGISTRATIONID`](#aio-event-reg-get-registrationid)
+  - [`aio event reg list`](#aio-event-reg-list)
+  - [`aio event reg ls`](#aio-event-reg-ls)
+  - [`aio event registration`](#aio-event-registration)
+  - [`aio event registration create BODYJSONFILE`](#aio-event-registration-create-bodyjsonfile)
+  - [`aio event registration delete REGISTRATIONID`](#aio-event-registration-delete-registrationid)
+  - [`aio event registration get REGISTRATIONID`](#aio-event-registration-get-registrationid)
+  - [`aio event registration list`](#aio-event-registration-list)
+  - [`aio event registration ls`](#aio-event-registration-ls)
+  - [`aio help [COMMAND]`](#aio-help-command)
+  - [`aio info`](#aio-info)
+  - [`aio login`](#aio-login)
+  - [`aio logout`](#aio-logout)
+  - [`aio open`](#aio-open)
+  - [`aio plugins`](#aio-plugins)
+  - [`aio plugins add PLUGIN`](#aio-plugins-add-plugin)
+  - [`aio plugins discover`](#aio-plugins-discover)
+  - [`aio plugins:inspect PLUGIN...`](#aio-pluginsinspect-plugin)
+  - [`aio plugins install PLUGIN`](#aio-plugins-install-plugin)
+  - [`aio plugins link PATH`](#aio-plugins-link-path)
+  - [`aio plugins remove [PLUGIN]`](#aio-plugins-remove-plugin)
+  - [`aio plugins reset`](#aio-plugins-reset)
+  - [`aio plugins uninstall [PLUGIN]`](#aio-plugins-uninstall-plugin)
+  - [`aio plugins unlink [PLUGIN]`](#aio-plugins-unlink-plugin)
+  - [`aio plugins update`](#aio-plugins-update)
+  - [`aio report`](#aio-report)
+  - [`aio rollback`](#aio-rollback)
+  - [`aio rt`](#aio-rt)
+  - [`aio rt action`](#aio-rt-action)
+  - [`aio rt action create ACTIONNAME [ACTIONPATH]`](#aio-rt-action-create-actionname-actionpath)
+  - [`aio rt action del ACTIONNAME`](#aio-rt-action-del-actionname)
+  - [`aio rt action delete ACTIONNAME`](#aio-rt-action-delete-actionname)
+  - [`aio rt action get ACTIONNAME`](#aio-rt-action-get-actionname)
+  - [`aio rt action invoke ACTIONNAME`](#aio-rt-action-invoke-actionname)
+  - [`aio rt action list [PACKAGENAME]`](#aio-rt-action-list-packagename)
+  - [`aio rt action ls [PACKAGENAME]`](#aio-rt-action-ls-packagename)
+  - [`aio rt action update ACTIONNAME [ACTIONPATH]`](#aio-rt-action-update-actionname-actionpath)
+  - [`aio rt actions list [PACKAGENAME]`](#aio-rt-actions-list-packagename)
+  - [`aio rt actions ls [PACKAGENAME]`](#aio-rt-actions-ls-packagename)
+  - [`aio rt activation`](#aio-rt-activation)
+  - [`aio rt activation get [ACTIVATIONID]`](#aio-rt-activation-get-activationid)
+  - [`aio rt activation list [ACTION_NAME]`](#aio-rt-activation-list-action_name)
+  - [`aio rt activation log [ACTIVATIONID]`](#aio-rt-activation-log-activationid)
+  - [`aio rt activation logs [ACTIVATIONID]`](#aio-rt-activation-logs-activationid)
+  - [`aio rt activation ls [ACTION_NAME]`](#aio-rt-activation-ls-action_name)
+  - [`aio rt activation result [ACTIVATIONID]`](#aio-rt-activation-result-activationid)
+  - [`aio rt activations list [ACTION_NAME]`](#aio-rt-activations-list-action_name)
+  - [`aio rt activations ls [ACTION_NAME]`](#aio-rt-activations-ls-action_name)
+  - [`aio rt api`](#aio-rt-api)
+  - [`aio rt api create [BASEPATH] [RELPATH] [APIVERB] [ACTION]`](#aio-rt-api-create-basepath-relpath-apiverb-action)
+  - [`aio rt api delete BASEPATHORAPINAME [RELPATH] [APIVERB]`](#aio-rt-api-delete-basepathorapiname-relpath-apiverb)
+  - [`aio rt api get BASEPATHORAPINAME`](#aio-rt-api-get-basepathorapiname)
+  - [`aio rt api list [BASEPATH] [RELPATH] [APIVERB]`](#aio-rt-api-list-basepath-relpath-apiverb)
+  - [`aio rt api ls [BASEPATH] [RELPATH] [APIVERB]`](#aio-rt-api-ls-basepath-relpath-apiverb)
+  - [`aio rt deploy`](#aio-rt-deploy)
+  - [`aio rt deploy export`](#aio-rt-deploy-export)
+  - [`aio rt deploy report`](#aio-rt-deploy-report)
+  - [`aio rt deploy sync`](#aio-rt-deploy-sync)
+  - [`aio rt deploy undeploy`](#aio-rt-deploy-undeploy)
+  - [`aio rt deploy version`](#aio-rt-deploy-version)
+  - [`aio rt get`](#aio-rt-get)
+  - [`aio rt list`](#aio-rt-list)
+  - [`aio rt log [ACTIVATIONID]`](#aio-rt-log-activationid)
+  - [`aio rt logs [ACTIVATIONID]`](#aio-rt-logs-activationid)
+  - [`aio rt ls`](#aio-rt-ls)
+  - [`aio rt namespace`](#aio-rt-namespace)
+  - [`aio rt namespace lf`](#aio-rt-namespace-lf)
+  - [`aio rt namespace lf errors`](#aio-rt-namespace-lf-errors)
+  - [`aio rt namespace lf get`](#aio-rt-namespace-lf-get)
+  - [`aio rt namespace lf set`](#aio-rt-namespace-lf-set)
+  - [`aio rt namespace lf set adobe-io-runtime`](#aio-rt-namespace-lf-set-adobe-io-runtime)
+  - [`aio rt namespace lf set azure-log-analytics`](#aio-rt-namespace-lf-set-azure-log-analytics)
+  - [`aio rt namespace lf set new-relic`](#aio-rt-namespace-lf-set-new-relic)
+  - [`aio rt namespace lf set splunk-hec`](#aio-rt-namespace-lf-set-splunk-hec)
+  - [`aio rt namespace list`](#aio-rt-namespace-list)
+  - [`aio rt namespace log-forwarding`](#aio-rt-namespace-log-forwarding)
+  - [`aio rt namespace log-forwarding errors`](#aio-rt-namespace-log-forwarding-errors)
+  - [`aio rt namespace log-forwarding get`](#aio-rt-namespace-log-forwarding-get)
+  - [`aio rt namespace log-forwarding set`](#aio-rt-namespace-log-forwarding-set)
+  - [`aio rt namespace log-forwarding set adobe-io-runtime`](#aio-rt-namespace-log-forwarding-set-adobe-io-runtime)
+  - [`aio rt namespace log-forwarding set azure-log-analytics`](#aio-rt-namespace-log-forwarding-set-azure-log-analytics)
+  - [`aio rt namespace log-forwarding set new-relic`](#aio-rt-namespace-log-forwarding-set-new-relic)
+  - [`aio rt namespace log-forwarding set splunk-hec`](#aio-rt-namespace-log-forwarding-set-splunk-hec)
+  - [`aio rt namespace ls`](#aio-rt-namespace-ls)
+  - [`aio rt ns`](#aio-rt-ns)
+  - [`aio rt ns lf`](#aio-rt-ns-lf)
+  - [`aio rt ns lf errors`](#aio-rt-ns-lf-errors)
+  - [`aio rt ns lf get`](#aio-rt-ns-lf-get)
+  - [`aio rt ns lf set`](#aio-rt-ns-lf-set)
+  - [`aio rt ns lf set adobe-io-runtime`](#aio-rt-ns-lf-set-adobe-io-runtime)
+  - [`aio rt ns lf set azure-log-analytics`](#aio-rt-ns-lf-set-azure-log-analytics)
+  - [`aio rt ns lf set new-relic`](#aio-rt-ns-lf-set-new-relic)
+  - [`aio rt ns lf set splunk-hec`](#aio-rt-ns-lf-set-splunk-hec)
+  - [`aio rt ns list`](#aio-rt-ns-list)
+  - [`aio rt ns log-forwarding`](#aio-rt-ns-log-forwarding)
+  - [`aio rt ns log-forwarding errors`](#aio-rt-ns-log-forwarding-errors)
+  - [`aio rt ns log-forwarding get`](#aio-rt-ns-log-forwarding-get)
+  - [`aio rt ns log-forwarding set`](#aio-rt-ns-log-forwarding-set)
+  - [`aio rt ns log-forwarding set adobe-io-runtime`](#aio-rt-ns-log-forwarding-set-adobe-io-runtime)
+  - [`aio rt ns log-forwarding set azure-log-analytics`](#aio-rt-ns-log-forwarding-set-azure-log-analytics)
+  - [`aio rt ns log-forwarding set new-relic`](#aio-rt-ns-log-forwarding-set-new-relic)
+  - [`aio rt ns log-forwarding set splunk-hec`](#aio-rt-ns-log-forwarding-set-splunk-hec)
+  - [`aio rt ns ls`](#aio-rt-ns-ls)
+  - [`aio rt package`](#aio-rt-package)
+  - [`aio rt package bind PACKAGENAME BINDPACKAGENAME`](#aio-rt-package-bind-packagename-bindpackagename)
+  - [`aio rt package create PACKAGENAME`](#aio-rt-package-create-packagename)
+  - [`aio rt package delete PACKAGENAME`](#aio-rt-package-delete-packagename)
+  - [`aio rt package get PACKAGENAME`](#aio-rt-package-get-packagename)
+  - [`aio rt package list [NAMESPACE]`](#aio-rt-package-list-namespace)
+  - [`aio rt package ls [NAMESPACE]`](#aio-rt-package-ls-namespace)
+  - [`aio rt package update PACKAGENAME`](#aio-rt-package-update-packagename)
+  - [`aio rt pkg`](#aio-rt-pkg)
+  - [`aio rt pkg bind PACKAGENAME BINDPACKAGENAME`](#aio-rt-pkg-bind-packagename-bindpackagename)
+  - [`aio rt pkg create PACKAGENAME`](#aio-rt-pkg-create-packagename)
+  - [`aio rt pkg delete PACKAGENAME`](#aio-rt-pkg-delete-packagename)
+  - [`aio rt pkg get PACKAGENAME`](#aio-rt-pkg-get-packagename)
+  - [`aio rt pkg list [NAMESPACE]`](#aio-rt-pkg-list-namespace)
+  - [`aio rt pkg ls [NAMESPACE]`](#aio-rt-pkg-ls-namespace)
+  - [`aio rt pkg update PACKAGENAME`](#aio-rt-pkg-update-packagename)
+  - [`aio rt prop`](#aio-rt-prop)
+  - [`aio rt prop get`](#aio-rt-prop-get)
+  - [`aio rt prop set`](#aio-rt-prop-set)
+  - [`aio rt prop unset`](#aio-rt-prop-unset)
+  - [`aio rt property`](#aio-rt-property)
+  - [`aio rt property get`](#aio-rt-property-get)
+  - [`aio rt property set`](#aio-rt-property-set)
+  - [`aio rt property unset`](#aio-rt-property-unset)
+  - [`aio rt route`](#aio-rt-route)
+  - [`aio rt route create [BASEPATH] [RELPATH] [APIVERB] [ACTION]`](#aio-rt-route-create-basepath-relpath-apiverb-action)
+  - [`aio rt route delete BASEPATHORAPINAME [RELPATH] [APIVERB]`](#aio-rt-route-delete-basepathorapiname-relpath-apiverb)
+  - [`aio rt route get BASEPATHORAPINAME`](#aio-rt-route-get-basepathorapiname)
+  - [`aio rt route list [BASEPATH] [RELPATH] [APIVERB]`](#aio-rt-route-list-basepath-relpath-apiverb)
+  - [`aio rt route ls [BASEPATH] [RELPATH] [APIVERB]`](#aio-rt-route-ls-basepath-relpath-apiverb)
+  - [`aio rt rule`](#aio-rt-rule)
+  - [`aio rt rule create NAME TRIGGER ACTION`](#aio-rt-rule-create-name-trigger-action)
+  - [`aio rt rule delete NAME`](#aio-rt-rule-delete-name)
+  - [`aio rt rule disable NAME`](#aio-rt-rule-disable-name)
+  - [`aio rt rule enable NAME`](#aio-rt-rule-enable-name)
+  - [`aio rt rule get NAME`](#aio-rt-rule-get-name)
+  - [`aio rt rule list`](#aio-rt-rule-list)
+  - [`aio rt rule ls`](#aio-rt-rule-ls)
+  - [`aio rt rule status NAME`](#aio-rt-rule-status-name)
+  - [`aio rt rule update NAME TRIGGER ACTION`](#aio-rt-rule-update-name-trigger-action)
+  - [`aio rt trigger`](#aio-rt-trigger)
+  - [`aio rt trigger create TRIGGERNAME`](#aio-rt-trigger-create-triggername)
+  - [`aio rt trigger delete TRIGGERPATH`](#aio-rt-trigger-delete-triggerpath)
+  - [`aio rt trigger fire TRIGGERNAME`](#aio-rt-trigger-fire-triggername)
+  - [`aio rt trigger get TRIGGERPATH`](#aio-rt-trigger-get-triggerpath)
+  - [`aio rt trigger list`](#aio-rt-trigger-list)
+  - [`aio rt trigger ls`](#aio-rt-trigger-ls)
+  - [`aio rt trigger update TRIGGERNAME`](#aio-rt-trigger-update-triggername)
+  - [`aio runtime`](#aio-runtime)
+  - [`aio runtime action`](#aio-runtime-action)
+  - [`aio runtime action create ACTIONNAME [ACTIONPATH]`](#aio-runtime-action-create-actionname-actionpath)
+  - [`aio runtime action del ACTIONNAME`](#aio-runtime-action-del-actionname)
+  - [`aio runtime action delete ACTIONNAME`](#aio-runtime-action-delete-actionname)
+  - [`aio runtime action get ACTIONNAME`](#aio-runtime-action-get-actionname)
+  - [`aio runtime action invoke ACTIONNAME`](#aio-runtime-action-invoke-actionname)
+  - [`aio runtime action list [PACKAGENAME]`](#aio-runtime-action-list-packagename)
+  - [`aio runtime action ls [PACKAGENAME]`](#aio-runtime-action-ls-packagename)
+  - [`aio runtime action update ACTIONNAME [ACTIONPATH]`](#aio-runtime-action-update-actionname-actionpath)
+  - [`aio runtime actions list [PACKAGENAME]`](#aio-runtime-actions-list-packagename)
+  - [`aio runtime actions ls [PACKAGENAME]`](#aio-runtime-actions-ls-packagename)
+  - [`aio runtime activation`](#aio-runtime-activation)
+  - [`aio runtime activation get [ACTIVATIONID]`](#aio-runtime-activation-get-activationid)
+  - [`aio runtime activation list [ACTION_NAME]`](#aio-runtime-activation-list-action_name)
+  - [`aio runtime activation log [ACTIVATIONID]`](#aio-runtime-activation-log-activationid)
+  - [`aio runtime activation logs [ACTIVATIONID]`](#aio-runtime-activation-logs-activationid)
+  - [`aio runtime activation ls [ACTION_NAME]`](#aio-runtime-activation-ls-action_name)
+  - [`aio runtime activation result [ACTIVATIONID]`](#aio-runtime-activation-result-activationid)
+  - [`aio runtime activations list [ACTION_NAME]`](#aio-runtime-activations-list-action_name)
+  - [`aio runtime activations ls [ACTION_NAME]`](#aio-runtime-activations-ls-action_name)
+  - [`aio runtime api`](#aio-runtime-api)
+  - [`aio runtime api create [BASEPATH] [RELPATH] [APIVERB] [ACTION]`](#aio-runtime-api-create-basepath-relpath-apiverb-action)
+  - [`aio runtime api delete BASEPATHORAPINAME [RELPATH] [APIVERB]`](#aio-runtime-api-delete-basepathorapiname-relpath-apiverb)
+  - [`aio runtime api get BASEPATHORAPINAME`](#aio-runtime-api-get-basepathorapiname)
+  - [`aio runtime api list [BASEPATH] [RELPATH] [APIVERB]`](#aio-runtime-api-list-basepath-relpath-apiverb)
+  - [`aio runtime api ls [BASEPATH] [RELPATH] [APIVERB]`](#aio-runtime-api-ls-basepath-relpath-apiverb)
+  - [`aio runtime deploy`](#aio-runtime-deploy)
+  - [`aio runtime deploy export`](#aio-runtime-deploy-export)
+  - [`aio runtime deploy report`](#aio-runtime-deploy-report)
+  - [`aio runtime deploy sync`](#aio-runtime-deploy-sync)
+  - [`aio runtime deploy undeploy`](#aio-runtime-deploy-undeploy)
+  - [`aio runtime deploy version`](#aio-runtime-deploy-version)
+  - [`aio runtime list`](#aio-runtime-list)
+  - [`aio runtime log [ACTIVATIONID]`](#aio-runtime-log-activationid)
+  - [`aio runtime logs [ACTIVATIONID]`](#aio-runtime-logs-activationid)
+  - [`aio runtime ls`](#aio-runtime-ls)
+  - [`aio runtime namespace`](#aio-runtime-namespace)
+  - [`aio runtime namespace get`](#aio-runtime-namespace-get)
+  - [`aio runtime namespace lf`](#aio-runtime-namespace-lf)
+  - [`aio runtime namespace lf errors`](#aio-runtime-namespace-lf-errors)
+  - [`aio runtime namespace lf get`](#aio-runtime-namespace-lf-get)
+  - [`aio runtime namespace lf set`](#aio-runtime-namespace-lf-set)
+  - [`aio runtime namespace lf set adobe-io-runtime`](#aio-runtime-namespace-lf-set-adobe-io-runtime)
+  - [`aio runtime namespace lf set azure-log-analytics`](#aio-runtime-namespace-lf-set-azure-log-analytics)
+  - [`aio runtime namespace lf set new-relic`](#aio-runtime-namespace-lf-set-new-relic)
+  - [`aio runtime namespace lf set splunk-hec`](#aio-runtime-namespace-lf-set-splunk-hec)
+  - [`aio runtime namespace list`](#aio-runtime-namespace-list)
+  - [`aio runtime namespace log-forwarding`](#aio-runtime-namespace-log-forwarding)
+  - [`aio runtime namespace log-forwarding errors`](#aio-runtime-namespace-log-forwarding-errors)
+  - [`aio runtime namespace log-forwarding get`](#aio-runtime-namespace-log-forwarding-get)
+  - [`aio runtime namespace log-forwarding set`](#aio-runtime-namespace-log-forwarding-set)
+  - [`aio runtime namespace log-forwarding set adobe-io-runtime`](#aio-runtime-namespace-log-forwarding-set-adobe-io-runtime)
+  - [`aio runtime namespace log-forwarding set azure-log-analytics`](#aio-runtime-namespace-log-forwarding-set-azure-log-analytics)
+  - [`aio runtime namespace log-forwarding set new-relic`](#aio-runtime-namespace-log-forwarding-set-new-relic)
+  - [`aio runtime namespace log-forwarding set splunk-hec`](#aio-runtime-namespace-log-forwarding-set-splunk-hec)
+  - [`aio runtime namespace ls`](#aio-runtime-namespace-ls)
+  - [`aio runtime ns`](#aio-runtime-ns)
+  - [`aio runtime ns lf`](#aio-runtime-ns-lf)
+  - [`aio runtime ns lf errors`](#aio-runtime-ns-lf-errors)
+  - [`aio runtime ns lf get`](#aio-runtime-ns-lf-get)
+  - [`aio runtime ns lf set`](#aio-runtime-ns-lf-set)
+  - [`aio runtime ns lf set adobe-io-runtime`](#aio-runtime-ns-lf-set-adobe-io-runtime)
+  - [`aio runtime ns lf set azure-log-analytics`](#aio-runtime-ns-lf-set-azure-log-analytics)
+  - [`aio runtime ns lf set new-relic`](#aio-runtime-ns-lf-set-new-relic)
+  - [`aio runtime ns lf set splunk-hec`](#aio-runtime-ns-lf-set-splunk-hec)
+  - [`aio runtime ns list`](#aio-runtime-ns-list)
+  - [`aio runtime ns log-forwarding`](#aio-runtime-ns-log-forwarding)
+  - [`aio runtime ns log-forwarding errors`](#aio-runtime-ns-log-forwarding-errors)
+  - [`aio runtime ns log-forwarding get`](#aio-runtime-ns-log-forwarding-get)
+  - [`aio runtime ns log-forwarding set`](#aio-runtime-ns-log-forwarding-set)
+  - [`aio runtime ns log-forwarding set adobe-io-runtime`](#aio-runtime-ns-log-forwarding-set-adobe-io-runtime)
+  - [`aio runtime ns log-forwarding set azure-log-analytics`](#aio-runtime-ns-log-forwarding-set-azure-log-analytics)
+  - [`aio runtime ns log-forwarding set new-relic`](#aio-runtime-ns-log-forwarding-set-new-relic)
+  - [`aio runtime ns log-forwarding set splunk-hec`](#aio-runtime-ns-log-forwarding-set-splunk-hec)
+  - [`aio runtime ns ls`](#aio-runtime-ns-ls)
+  - [`aio runtime package`](#aio-runtime-package)
+  - [`aio runtime package bind PACKAGENAME BINDPACKAGENAME`](#aio-runtime-package-bind-packagename-bindpackagename)
+  - [`aio runtime package create PACKAGENAME`](#aio-runtime-package-create-packagename)
+  - [`aio runtime package delete PACKAGENAME`](#aio-runtime-package-delete-packagename)
+  - [`aio runtime package get PACKAGENAME`](#aio-runtime-package-get-packagename)
+  - [`aio runtime package list [NAMESPACE]`](#aio-runtime-package-list-namespace)
+  - [`aio runtime package ls [NAMESPACE]`](#aio-runtime-package-ls-namespace)
+  - [`aio runtime package update PACKAGENAME`](#aio-runtime-package-update-packagename)
+  - [`aio runtime pkg`](#aio-runtime-pkg)
+  - [`aio runtime pkg bind PACKAGENAME BINDPACKAGENAME`](#aio-runtime-pkg-bind-packagename-bindpackagename)
+  - [`aio runtime pkg create PACKAGENAME`](#aio-runtime-pkg-create-packagename)
+  - [`aio runtime pkg delete PACKAGENAME`](#aio-runtime-pkg-delete-packagename)
+  - [`aio runtime pkg get PACKAGENAME`](#aio-runtime-pkg-get-packagename)
+  - [`aio runtime pkg list [NAMESPACE]`](#aio-runtime-pkg-list-namespace)
+  - [`aio runtime pkg ls [NAMESPACE]`](#aio-runtime-pkg-ls-namespace)
+  - [`aio runtime pkg update PACKAGENAME`](#aio-runtime-pkg-update-packagename)
+  - [`aio runtime prop`](#aio-runtime-prop)
+  - [`aio runtime prop get`](#aio-runtime-prop-get)
+  - [`aio runtime prop set`](#aio-runtime-prop-set)
+  - [`aio runtime prop unset`](#aio-runtime-prop-unset)
+  - [`aio runtime property`](#aio-runtime-property)
+  - [`aio runtime property get`](#aio-runtime-property-get)
+  - [`aio runtime property set`](#aio-runtime-property-set)
+  - [`aio runtime property unset`](#aio-runtime-property-unset)
+  - [`aio runtime route`](#aio-runtime-route)
+  - [`aio runtime route create [BASEPATH] [RELPATH] [APIVERB] [ACTION]`](#aio-runtime-route-create-basepath-relpath-apiverb-action)
+  - [`aio runtime route delete BASEPATHORAPINAME [RELPATH] [APIVERB]`](#aio-runtime-route-delete-basepathorapiname-relpath-apiverb)
+  - [`aio runtime route get BASEPATHORAPINAME`](#aio-runtime-route-get-basepathorapiname)
+  - [`aio runtime route list [BASEPATH] [RELPATH] [APIVERB]`](#aio-runtime-route-list-basepath-relpath-apiverb)
+  - [`aio runtime route ls [BASEPATH] [RELPATH] [APIVERB]`](#aio-runtime-route-ls-basepath-relpath-apiverb)
+  - [`aio runtime rule`](#aio-runtime-rule)
+  - [`aio runtime rule create NAME TRIGGER ACTION`](#aio-runtime-rule-create-name-trigger-action)
+  - [`aio runtime rule delete NAME`](#aio-runtime-rule-delete-name)
+  - [`aio runtime rule disable NAME`](#aio-runtime-rule-disable-name)
+  - [`aio runtime rule enable NAME`](#aio-runtime-rule-enable-name)
+  - [`aio runtime rule get NAME`](#aio-runtime-rule-get-name)
+  - [`aio runtime rule list`](#aio-runtime-rule-list)
+  - [`aio runtime rule ls`](#aio-runtime-rule-ls)
+  - [`aio runtime rule status NAME`](#aio-runtime-rule-status-name)
+  - [`aio runtime rule update NAME TRIGGER ACTION`](#aio-runtime-rule-update-name-trigger-action)
+  - [`aio runtime trigger`](#aio-runtime-trigger)
+  - [`aio runtime trigger create TRIGGERNAME`](#aio-runtime-trigger-create-triggername)
+  - [`aio runtime trigger delete TRIGGERPATH`](#aio-runtime-trigger-delete-triggerpath)
+  - [`aio runtime trigger fire TRIGGERNAME`](#aio-runtime-trigger-fire-triggername)
+  - [`aio runtime trigger get TRIGGERPATH`](#aio-runtime-trigger-get-triggerpath)
+  - [`aio runtime trigger list`](#aio-runtime-trigger-list)
+  - [`aio runtime trigger ls`](#aio-runtime-trigger-ls)
+  - [`aio runtime trigger update TRIGGERNAME`](#aio-runtime-trigger-update-triggername)
+  - [`aio telemetry yes`](#aio-telemetry-yes)
+  - [`aio templates`](#aio-templates)
+  - [`aio templates disco`](#aio-templates-disco)
+  - [`aio templates discover`](#aio-templates-discover)
+  - [`aio templates i PATH`](#aio-templates-i-path)
+  - [`aio templates info`](#aio-templates-info)
+  - [`aio templates install PATH`](#aio-templates-install-path)
+  - [`aio templates remove NAME`](#aio-templates-remove-name)
+  - [`aio templates rm NAME`](#aio-templates-rm-name)
+  - [`aio templates rollback`](#aio-templates-rollback)
+  - [`aio templates sub NAME GITHUBREPOURL`](#aio-templates-sub-name-githubrepourl)
+  - [`aio templates submit NAME GITHUBREPOURL`](#aio-templates-submit-name-githubrepourl)
+  - [`aio templates un PACKAGE-NAME`](#aio-templates-un-package-name)
+  - [`aio templates uninstall PACKAGE-NAME`](#aio-templates-uninstall-package-name)
+  - [`aio update`](#aio-update)
+  - [`aio where`](#aio-where)
 
 ## `aio app`
 
@@ -518,13 +538,13 @@ USAGE
 
 FLAGS
   -v, --verbose  Verbose output
-  --version      Show version
+      --version  Show version
 
 DESCRIPTION
   Create, run, test, and deploy Adobe I/O Apps
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.0.0/src/commands/app/index.ts)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/index.js)_
 
 ## `aio app add`
 
@@ -536,11 +556,13 @@ USAGE
 
 FLAGS
   -v, --verbose  Verbose output
-  --version      Show version
+      --version  Show version
 
 DESCRIPTION
   Add a new component to an existing Adobe I/O App
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/add/index.js)_
 
 ## `aio app add action`
 
@@ -554,8 +576,8 @@ FLAGS
   -e, --extension=<value>  Add actions to a specific extension
   -v, --verbose            Verbose output
   -y, --yes                Skip questions, and use all default values
-  --[no-]install           [default: true] Run npm installation after files are created
-  --version                Show version
+      --[no-]install       [default: true] Run npm installation after files are created
+      --version            Show version
 
 DESCRIPTION
   Add new actions
@@ -564,6 +586,8 @@ DESCRIPTION
 ALIASES
   $ aio app add actions
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/add/action.js)_
 
 ## `aio app add actions`
 
@@ -577,8 +601,8 @@ FLAGS
   -e, --extension=<value>  Add actions to a specific extension
   -v, --verbose            Verbose output
   -y, --yes                Skip questions, and use all default values
-  --[no-]install           [default: true] Run npm installation after files are created
-  --version                Show version
+      --[no-]install       [default: true] Run npm installation after files are created
+      --version            Show version
 
 DESCRIPTION
   Add new actions
@@ -598,11 +622,13 @@ USAGE
 
 FLAGS
   -v, --verbose  Verbose output
-  --version      Show version
+      --version  Show version
 
 DESCRIPTION
   Add CI files
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/add/ci.js)_
 
 ## `aio app add event`
 
@@ -616,8 +642,8 @@ FLAGS
   -e, --extension=<value>  Add events to a specific extension
   -v, --verbose            Verbose output
   -y, --yes                Skip questions, and use all default values
-  --[no-]install           [default: true] Run npm installation after files are created
-  --version                Show version
+      --[no-]install       [default: true] Run npm installation after files are created
+      --version            Show version
 
 DESCRIPTION
   Add a new Adobe I/O Events action
@@ -626,6 +652,8 @@ DESCRIPTION
 ALIASES
   $ aio app add events
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/add/event.js)_
 
 ## `aio app add events`
 
@@ -639,8 +667,8 @@ FLAGS
   -e, --extension=<value>  Add events to a specific extension
   -v, --verbose            Verbose output
   -y, --yes                Skip questions, and use all default values
-  --[no-]install           [default: true] Run npm installation after files are created
-  --version                Show version
+      --[no-]install       [default: true] Run npm installation after files are created
+      --version            Show version
 
 DESCRIPTION
   Add a new Adobe I/O Events action
@@ -662,8 +690,8 @@ FLAGS
   -e, --extension=<value>...  Specify extensions to add, skips selection prompt
   -v, --verbose               Verbose output
   -y, --yes                   Skip questions, and use all default values
-  --[no-]install              [default: true] Run npm installation after files are created
-  --version                   Show version
+      --[no-]install          [default: true] Run npm installation after files are created
+      --version               Show version
 
 DESCRIPTION
   Add new extensions to the project
@@ -686,8 +714,8 @@ FLAGS
   -e, --extension=<value>...  Specify extensions to add, skips selection prompt
   -v, --verbose               Verbose output
   -y, --yes                   Skip questions, and use all default values
-  --[no-]install              [default: true] Run npm installation after files are created
-  --version                   Show version
+      --[no-]install          [default: true] Run npm installation after files are created
+      --version               Show version
 
 DESCRIPTION
   Add new extensions to the project
@@ -697,6 +725,8 @@ ALIASES
   $ aio app add ext
   $ aio app add extensions
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/add/extension.js)_
 
 ## `aio app add extensions`
 
@@ -710,8 +740,8 @@ FLAGS
   -e, --extension=<value>...  Specify extensions to add, skips selection prompt
   -v, --verbose               Verbose output
   -y, --yes                   Skip questions, and use all default values
-  --[no-]install              [default: true] Run npm installation after files are created
-  --version                   Show version
+      --[no-]install          [default: true] Run npm installation after files are created
+      --version               Show version
 
 DESCRIPTION
   Add new extensions to the project
@@ -732,9 +762,9 @@ USAGE
 
 FLAGS
   -v, --verbose  Verbose output
-  --use-jwt      if the config has both jwt and OAuth Server to Server Credentials (while migrating), prefer the JWT
+      --use-jwt  if the config has both jwt and OAuth Server to Server Credentials (while migrating), prefer the JWT
                  credentials
-  --version      Show version
+      --version  Show version
 
 DESCRIPTION
   Subscribe to Services in the current Workspace
@@ -743,6 +773,8 @@ DESCRIPTION
 ALIASES
   $ aio app add services
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/add/service.js)_
 
 ## `aio app add services`
 
@@ -754,9 +786,9 @@ USAGE
 
 FLAGS
   -v, --verbose  Verbose output
-  --use-jwt      if the config has both jwt and OAuth Server to Server Credentials (while migrating), prefer the JWT
+      --use-jwt  if the config has both jwt and OAuth Server to Server Credentials (while migrating), prefer the JWT
                  credentials
-  --version      Show version
+      --version  Show version
 
 DESCRIPTION
   Subscribe to Services in the current Workspace
@@ -778,12 +810,14 @@ FLAGS
   -e, --extension=<value>  Add web-assets to a specific extension
   -v, --verbose            Verbose output
   -y, --yes                Skip questions, and use all default values
-  --[no-]install           [default: true] Run npm installation after files are created
-  --version                Show version
+      --[no-]install       [default: true] Run npm installation after files are created
+      --version            Show version
 
 DESCRIPTION
   Add web assets support
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/add/web-assets.js)_
 
 ## `aio app build`
 
@@ -799,18 +833,20 @@ FLAGS
                               --no-publish
   -e, --extension=<value>...  Build only a specific extension point, the flags can be specified multiple times
   -v, --verbose               Verbose output
-  --[no-]actions              [default: true] Build actions if any
-  --[no-]content-hash         [default: true] Enable content hashing in browser code
-  --[no-]force-build          [default: true] Force a build even if one already exists
-  --version                   Show version
-  --[no-]web-assets           [default: true] Build web-assets if any
-  --web-optimize              [default: false] Enable optimization (minification) of js/css/html
+      --[no-]actions          [default: true] Build actions if any
+      --[no-]content-hash     [default: true] Enable content hashing in browser code
+      --[no-]force-build      [default: true] Force a build even if one already exists
+      --version               Show version
+      --[no-]web-assets       [default: true] Build web-assets if any
+      --web-optimize          [default: false] Enable optimization (minification) of js/css/html
 
 DESCRIPTION
   Build an Adobe I/O App
 
   This will always force a rebuild unless --no-force-build is set.
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/build.js)_
 
 ## `aio app config`
 
@@ -822,7 +858,7 @@ USAGE
 
 FLAGS
   -v, --verbose  Verbose output
-  --version      Show version
+      --version  Show version
 
 DESCRIPTION
   Manage app config
@@ -831,6 +867,8 @@ ALIASES
   $ aio app config
   $ aio app config
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/config/index.js)_
 
 ## `aio app config get`
 
@@ -842,7 +880,7 @@ USAGE
 
 FLAGS
   -v, --verbose  Verbose output
-  --version      Show version
+      --version  Show version
 
 DESCRIPTION
   Get app config
@@ -850,6 +888,8 @@ DESCRIPTION
 ALIASES
   $ aio app config get
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/config/get/index.js)_
 
 ## `aio app config get lf`
 
@@ -861,7 +901,7 @@ USAGE
 
 FLAGS
   -v, --verbose  Verbose output
-  --version      Show version
+      --version  Show version
 
 DESCRIPTION
   Get log forwarding destination configuration
@@ -881,7 +921,7 @@ USAGE
 
 FLAGS
   -v, --verbose  Verbose output
-  --version      Show version
+      --version  Show version
 
 DESCRIPTION
   Get log forwarding errors
@@ -901,7 +941,7 @@ USAGE
 
 FLAGS
   -v, --verbose  Verbose output
-  --version      Show version
+      --version  Show version
 
 DESCRIPTION
   Get log forwarding destination configuration
@@ -910,6 +950,8 @@ ALIASES
   $ aio app config get log-forwarding
   $ aio app config get lf
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/config/get/log-forwarding.js)_
 
 ## `aio app config get log-forwarding errors`
 
@@ -921,7 +963,7 @@ USAGE
 
 FLAGS
   -v, --verbose  Verbose output
-  --version      Show version
+      --version  Show version
 
 DESCRIPTION
   Get log forwarding errors
@@ -930,6 +972,8 @@ ALIASES
   $ aio app config get log-forwarding errors
   $ aio app config get lf errors
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/config/get/log-forwarding/errors.js)_
 
 ## `aio app config set`
 
@@ -941,7 +985,7 @@ USAGE
 
 FLAGS
   -v, --verbose  Verbose output
-  --version      Show version
+      --version  Show version
 
 DESCRIPTION
   Set app config
@@ -949,6 +993,8 @@ DESCRIPTION
 ALIASES
   $ aio app config set
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/config/set/index.js)_
 
 ## `aio app config set lf`
 
@@ -960,7 +1006,7 @@ USAGE
 
 FLAGS
   -v, --verbose  Verbose output
-  --version      Show version
+      --version  Show version
 
 DESCRIPTION
   Set log forwarding destination configuration
@@ -980,7 +1026,7 @@ USAGE
 
 FLAGS
   -v, --verbose  Verbose output
-  --version      Show version
+      --version  Show version
 
 DESCRIPTION
   Set log forwarding destination configuration
@@ -989,6 +1035,8 @@ ALIASES
   $ aio app config set log-forwarding
   $ aio app config set lf
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/config/set/log-forwarding.js)_
 
 ## `aio app create [PATH]`
 
@@ -1004,11 +1052,13 @@ ARGUMENTS
 FLAGS
   -i, --import=<value>  Import an Adobe I/O Developer Console configuration file
   -v, --verbose         Verbose output
-  --version             Show version
+      --version         Show version
 
 DESCRIPTION
   Create a new Adobe I/O App with default parameters
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/create.js)_
 
 ## `aio app delete`
 
@@ -1020,11 +1070,13 @@ USAGE
 
 FLAGS
   -v, --verbose  Verbose output
-  --version      Show version
+      --version  Show version
 
 DESCRIPTION
   Delete a component from an existing Adobe I/O App
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/delete/index.js)_
 
 ## `aio app delete action [ACTION-NAME]`
 
@@ -1040,7 +1092,7 @@ ARGUMENTS
 FLAGS
   -v, --verbose  Verbose output
   -y, --yes      Skip questions, and use all default values
-  --version      Show version
+      --version  Show version
 
 DESCRIPTION
   Delete existing actions
@@ -1049,6 +1101,8 @@ DESCRIPTION
 ALIASES
   $ aio app delete actions
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/delete/action.js)_
 
 ## `aio app delete actions [ACTION-NAME]`
 
@@ -1064,7 +1118,7 @@ ARGUMENTS
 FLAGS
   -v, --verbose  Verbose output
   -y, --yes      Skip questions, and use all default values
-  --version      Show version
+      --version  Show version
 
 DESCRIPTION
   Delete existing actions
@@ -1085,11 +1139,13 @@ USAGE
 FLAGS
   -v, --verbose  Verbose output
   -y, --yes      Skip questions, and use all default values
-  --version      Show version
+      --version  Show version
 
 DESCRIPTION
   Delete existing CI files
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/delete/ci.js)_
 
 ## `aio app delete ext`
 
@@ -1103,8 +1159,8 @@ FLAGS
   -e, --extension=<value>...  Specify extensions to delete, skips selection prompt
   -v, --verbose               Verbose output
   -y, --yes                   Skip questions, and use all default values
-  --[no-]install              [default: true] Run npm installation after files are created
-  --version                   Show version
+      --[no-]install          [default: true] Run npm installation after files are created
+      --version               Show version
 
 DESCRIPTION
   Delete existing extensions
@@ -1127,8 +1183,8 @@ FLAGS
   -e, --extension=<value>...  Specify extensions to delete, skips selection prompt
   -v, --verbose               Verbose output
   -y, --yes                   Skip questions, and use all default values
-  --[no-]install              [default: true] Run npm installation after files are created
-  --version                   Show version
+      --[no-]install          [default: true] Run npm installation after files are created
+      --version               Show version
 
 DESCRIPTION
   Delete existing extensions
@@ -1138,6 +1194,8 @@ ALIASES
   $ aio app delete ext
   $ aio app delete extensions
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/delete/extension.js)_
 
 ## `aio app delete extensions`
 
@@ -1151,8 +1209,8 @@ FLAGS
   -e, --extension=<value>...  Specify extensions to delete, skips selection prompt
   -v, --verbose               Verbose output
   -y, --yes                   Skip questions, and use all default values
-  --[no-]install              [default: true] Run npm installation after files are created
-  --version                   Show version
+      --[no-]install          [default: true] Run npm installation after files are created
+      --version               Show version
 
 DESCRIPTION
   Delete existing extensions
@@ -1173,9 +1231,9 @@ USAGE
 
 FLAGS
   -v, --verbose  Verbose output
-  --use-jwt      if the config has both jwt and OAuth Server to Server Credentials (while migrating), prefer the JWT
+      --use-jwt  if the config has both jwt and OAuth Server to Server Credentials (while migrating), prefer the JWT
                  credentials
-  --version      Show version
+      --version  Show version
 
 DESCRIPTION
   Delete Services in the current Workspace
@@ -1184,6 +1242,8 @@ DESCRIPTION
 ALIASES
   $ aio app delete services
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/delete/service.js)_
 
 ## `aio app delete services`
 
@@ -1195,9 +1255,9 @@ USAGE
 
 FLAGS
   -v, --verbose  Verbose output
-  --use-jwt      if the config has both jwt and OAuth Server to Server Credentials (while migrating), prefer the JWT
+      --use-jwt  if the config has both jwt and OAuth Server to Server Credentials (while migrating), prefer the JWT
                  credentials
-  --version      Show version
+      --version  Show version
 
 DESCRIPTION
   Delete Services in the current Workspace
@@ -1218,11 +1278,13 @@ USAGE
 FLAGS
   -v, --verbose  Verbose output
   -y, --yes      Skip questions, and use all default values
-  --version      Show version
+      --version  Show version
 
 DESCRIPTION
   Delete existing web assets
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/delete/web-assets.js)_
 
 ## `aio app deploy`
 
@@ -1231,37 +1293,39 @@ Build and deploy an Adobe I/O App
 ```
 USAGE
   $ aio app deploy [-v] [--version] [--actions | -a <value>] [--web-assets] [--force-build | ] [--content-hash]
-    [--web-optimize] [-e <value> | ] [--build] [--open] [--force-deploy] [--force-publish |  | --publish]
-    [--force-events |  | ] [--log-forwarding-update]
+    [--web-optimize] [-e <value> | ] [--build] [--open] [--force-deploy | --publish | --force-publish] [--force-events |
+    | ] [--log-forwarding-update]
 
 FLAGS
-  -a, --action=<value>...       Deploy only a specific action, the flags can be specified multiple times, this will set
-                                --no-publish
-  -e, --extension=<value>...    Deploy only a specific extension, the flags can be specified multiple times
-  -v, --verbose                 Verbose output
-  --[no-]actions                [default: true] Deploy actions if any
-  --[no-]build                  [default: true] Run the build phase before deployment
-  --[no-]content-hash           [default: true] Enable content hashing in browser code
-  --[no-]force-build            [default: true] Force a build even if one already exists
-  --force-deploy                [default: false] Force deploy changes, regardless of production Workspace being
-                                published in Exchange.
-  --[no-]force-events           [default: false] Force event registrations and delete any registrations not part of the
-                                config file
-  --force-publish               [default: false] Force publish extension(s) to Exchange, delete previously published
-                                extension points
-  --[no-]log-forwarding-update  [default: true] Update log forwarding configuration on server
-  --open                        Open the default web browser after a successful deploy, only valid if your app has a
-                                front-end
-  --[no-]publish                [default: true] Publish extension(s) to Exchange
-  --version                     Show version
-  --[no-]web-assets             [default: true] Deploy web-assets if any
-  --web-optimize                [default: false] Enable optimization (minification) of web js/css/html
+  -a, --action=<value>...           Deploy only a specific action, the flags can be specified multiple times, this will
+                                    set --no-publish
+  -e, --extension=<value>...        Deploy only a specific extension, the flags can be specified multiple times
+  -v, --verbose                     Verbose output
+      --[no-]actions                [default: true] Deploy actions if any
+      --[no-]build                  [default: true] Run the build phase before deployment
+      --[no-]content-hash           [default: true] Enable content hashing in browser code
+      --[no-]force-build            [default: true] Force a build even if one already exists
+      --force-deploy                [default: false] Force deploy changes, regardless of production Workspace being
+                                    published in Exchange.
+      --[no-]force-events           [default: false] Force event registrations and delete any registrations not part of
+                                    the config file
+      --force-publish               [default: false] Force publish extension(s) to Exchange, delete previously published
+                                    extension points
+      --[no-]log-forwarding-update  [default: true] Update log forwarding configuration on server
+      --open                        Open the default web browser after a successful deploy, only valid if your app has a
+                                    front-end
+      --[no-]publish                [default: true] Publish extension(s) to Exchange
+      --version                     Show version
+      --[no-]web-assets             [default: true] Deploy web-assets if any
+      --web-optimize                [default: false] Enable optimization (minification) of web js/css/html
 
 DESCRIPTION
   Build and deploy an Adobe I/O App
 
   This will always force a rebuild unless --no-force-build is set.
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/deploy.js)_
 
 ## `aio app get-url [ACTION]`
 
@@ -1276,13 +1340,15 @@ FLAGS
   -j, --json     Output json
   -v, --verbose  Verbose output
   -y, --yml      Output yml
-  --cdn          Display CDN based action URLs
-  --local        Display locally based action URLs
-  --version      Show version
+      --cdn      Display CDN based action URLs
+      --local    Display locally based action URLs
+      --version  Show version
 
 DESCRIPTION
   Get action URLs
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/get-url.js)_
 
 ## `aio app info`
 
@@ -1293,16 +1359,18 @@ USAGE
   $ aio app info [-v] [--version] [-j | -h | -y] [--mask]
 
 FLAGS
-  -h, --hson     Output human readable json
-  -j, --json     Output json
-  -v, --verbose  Verbose output
-  -y, --yml      Output yml
-  --[no-]mask    Hide known private info
-  --version      Show version
+  -h, --hson       Output human readable json
+  -j, --json       Output json
+  -v, --verbose    Verbose output
+  -y, --yml        Output yml
+      --[no-]mask  Hide known private info
+      --version    Show version
 
 DESCRIPTION
   Display settings/configuration in use by an Adobe I/O App
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/info.js)_
 
 ## `aio app init [PATH]`
 
@@ -1312,31 +1380,59 @@ Create a new Adobe I/O App
 USAGE
   $ aio app init [PATH] [-v] [--version] [--install] [-y] [--login] [-e <value> | -t <value> | --repo <value>]
     [--standalone-app |  | ] [-w <value> | -i <value>] [--confirm-new-workspace] [--use-jwt] [--github-pat <value> ]
+    [--linter none|basic|adobe-recommended]
 
 ARGUMENTS
   PATH  [default: .] Path to the app directory
 
 FLAGS
-  -e, --extension=<value>...    Extension point(s) to implement
-  -i, --import=<value>          Import an Adobe I/O Developer Console configuration file
-  -t, --template=<value>...     Specify a link to a template that will be installed
-  -v, --verbose                 Verbose output
-  -w, --workspace=<value>       [default: Stage] Specify the Adobe Developer Console Workspace to init from, defaults to
-                                Stage
-  -y, --yes                     Skip questions, and use all default values
-  --[no-]confirm-new-workspace  Prompt to confirm before creating a new workspace
-  --github-pat=<value>          github personal access token to use for downloading private quickstart repos
-  --[no-]install                [default: true] Run npm installation after files are created
-  --[no-]login                  Login using your Adobe ID for interacting with Adobe I/O Developer Console
-  --repo=<value>                Init from gh quick-start repo. Expected to be of the form <owner>/<repo>/<path>
-  --standalone-app              Create a stand-alone application
-  --use-jwt                     if the config has both jwt and OAuth Server to Server Credentials (while migrating),
-                                prefer the JWT credentials
-  --version                     Show version
+  -e, --extension=<value>...        Extension point(s) to implement
+  -i, --import=<value>              Import an Adobe I/O Developer Console configuration file
+  -t, --template=<value>...         Specify a link to a template that will be installed
+  -v, --verbose                     Verbose output
+  -w, --workspace=<value>           [default: Stage] Specify the Adobe Developer Console Workspace to init from,
+                                    defaults to Stage
+  -y, --yes                         Skip questions, and use all default values
+      --[no-]confirm-new-workspace  Prompt to confirm before creating a new workspace
+      --github-pat=<value>          github personal access token to use for downloading private quickstart repos
+      --[no-]install                [default: true] Run npm installation after files are created
+      --linter=<option>             [default: basic] Specify the linter to use for the project
+                                    <options: none|basic|adobe-recommended>
+      --[no-]login                  Login using your Adobe ID for interacting with Adobe I/O Developer Console
+      --repo=<value>                Init from gh quick-start repo. Expected to be of the form <owner>/<repo>/<path>
+      --standalone-app              Create a stand-alone application
+      --use-jwt                     if the config has both jwt and OAuth Server to Server Credentials (while migrating),
+                                    prefer the JWT credentials
+      --version                     Show version
 
 DESCRIPTION
   Create a new Adobe I/O App
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/init.js)_
+
+## `aio app install PATH`
+
+This command will support installing apps packaged by 'aio app pack'.
+
+```
+USAGE
+  $ aio app install PATH [-v] [--version] [-o <value>] [--tests]
+
+ARGUMENTS
+  PATH  Path to the app package to install
+
+FLAGS
+  -o, --output=<value>  [default: .] The packaged app output folder path
+  -v, --verbose         Verbose output
+      --[no-]tests      Run packaged app unit tests (e.g. aio app:test)
+      --version         Show version
+
+DESCRIPTION
+  This command will support installing apps packaged by 'aio app pack'.
+```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/install.js)_
 
 ## `aio app list`
 
@@ -1348,11 +1444,13 @@ USAGE
 
 FLAGS
   -v, --verbose  Verbose output
-  --version      Show version
+      --version  Show version
 
 DESCRIPTION
   List components for Adobe I/O App
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/list/index.js)_
 
 ## `aio app list ext`
 
@@ -1366,7 +1464,7 @@ FLAGS
   -j, --json     Output json
   -v, --verbose  Verbose output
   -y, --yml      Output yml
-  --version      Show version
+      --version  Show version
 
 DESCRIPTION
   List implemented extensions
@@ -1389,7 +1487,7 @@ FLAGS
   -j, --json     Output json
   -v, --verbose  Verbose output
   -y, --yml      Output yml
-  --version      Show version
+      --version  Show version
 
 DESCRIPTION
   List all extension points for the selected org
@@ -1412,7 +1510,7 @@ FLAGS
   -j, --json     Output json
   -v, --verbose  Verbose output
   -y, --yml      Output yml
-  --version      Show version
+      --version  Show version
 
 DESCRIPTION
   List implemented extensions
@@ -1422,6 +1520,8 @@ ALIASES
   $ aio app list ext
   $ aio app list extensions
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/list/extension.js)_
 
 ## `aio app list extension-points`
 
@@ -1435,7 +1535,7 @@ FLAGS
   -j, --json     Output json
   -v, --verbose  Verbose output
   -y, --yml      Output yml
-  --version      Show version
+      --version  Show version
 
 DESCRIPTION
   List all extension points for the selected org
@@ -1445,6 +1545,8 @@ ALIASES
   $ aio app list ext-points
   $ aio app list extension-points
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/list/extension-points.js)_
 
 ## `aio app list extensions`
 
@@ -1458,7 +1560,7 @@ FLAGS
   -j, --json     Output json
   -v, --verbose  Verbose output
   -y, --yml      Output yml
-  --version      Show version
+      --version  Show version
 
 DESCRIPTION
   List implemented extensions
@@ -1485,11 +1587,35 @@ FLAGS
   -t, --tail               Fetch logs continuously
   -v, --verbose            Verbose output
   -w, --watch              Fetch logs continuously
-  --version                Show version
+      --version            Show version
 
 DESCRIPTION
   Fetch logs for an Adobe I/O App
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/logs.js)_
+
+## `aio app pack [PATH]`
+
+This command will support packaging apps for redistribution.
+
+```
+USAGE
+  $ aio app pack [PATH] [-v] [--version] [-o <value>]
+
+ARGUMENTS
+  PATH  [default: .] Path to the app directory to package
+
+FLAGS
+  -o, --output=<value>  [default: dist/app.zip] The packaged app output file path
+  -v, --verbose         Verbose output
+      --version         Show version
+
+DESCRIPTION
+  This command will support packaging apps for redistribution.
+```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/pack.js)_
 
 ## `aio app run`
 
@@ -1502,15 +1628,18 @@ USAGE
 FLAGS
   -e, --extension=<value>  Run only a specific extension, this flag can only be specified once
   -v, --verbose            Verbose output
-  --[no-]actions           [default: true] Run actions, defaults to true, to skip actions use --no-actions
-  --local                  Run/debug actions locally (requires Docker running)
-  --open                   Open the default web browser after a successful run, only valid if your app has a front-end
-  --[no-]serve             [default: true] Start frontend server (experimental)
-  --version                Show version
+      --[no-]actions       [default: true] Run actions, defaults to true, to skip actions use --no-actions
+      --local              [deprecated] Run/debug actions locally (requires Docker running, not available on Apple
+                           Silicon Macs)
+      --open               Open the default web browser after a successful run, only valid if your app has a front-end
+      --[no-]serve         [default: true] Start frontend server (experimental)
+      --version            Show version
 
 DESCRIPTION
   Run an Adobe I/O App
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/run.js)_
 
 ## `aio app test`
 
@@ -1524,10 +1653,10 @@ FLAGS
   -a, --action=<value>...     the action(s) to test
   -e, --extension=<value>...  the extension(s) to test
   -v, --verbose               Verbose output
-  --all                       run both unit and e2e tests
-  --e2e                       run e2e tests
-  --unit                      run unit tests
-  --version                   Show version
+      --all                   run both unit and e2e tests
+      --e2e                   run e2e tests
+      --unit                  run unit tests
+      --version               Show version
 
 DESCRIPTION
   Run tests for an Adobe I/O App
@@ -1537,6 +1666,8 @@ DESCRIPTION
   For the --extension flag, it tries a substring search on the 'extension-name' only.
   If the extension has a hook called 'test' in its 'ext.config.yaml', the script specified will be run instead.
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/test.js)_
 
 ## `aio app undeploy`
 
@@ -1550,16 +1681,18 @@ USAGE
 FLAGS
   -e, --extension=<value>...  Undeploy only a specific extension, the flags can be specified multiple times
   -v, --verbose               Verbose output
-  --[no-]actions              [default: true] Undeploy actions if any
-  --[no-]events               [default: true] Undeploy (unregister) events if any
-  --force-unpublish           Force unpublish extension(s) from Exchange, will delete all extension points
-  --[no-]unpublish            [default: true] Unpublish selected extension(s) from Exchange
-  --version                   Show version
-  --[no-]web-assets           [default: true] Undeploy web-assets if any
+      --[no-]actions          [default: true] Undeploy actions if any
+      --[no-]events           [default: true] Undeploy (unregister) events if any
+      --force-unpublish       Force unpublish extension(s) from Exchange, will delete all extension points
+      --[no-]unpublish        [default: true] Unpublish selected extension(s) from Exchange
+      --version               Show version
+      --[no-]web-assets       [default: true] Undeploy web-assets if any
 
 DESCRIPTION
   Undeploys an Adobe I/O App
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/undeploy.js)_
 
 ## `aio app use [CONFIG_FILE_PATH]`
 
@@ -1567,32 +1700,32 @@ Import an Adobe Developer Console configuration file.
 
 ```
 USAGE
-  $ aio app use [CONFIG_FILE_PATH] [-v] [--version] [--overwrite | --merge] [-g | -w <value>]
+  $ aio app use [CONFIG_FILE_PATH] [-v] [--version] [--overwrite | -m] [-g | -w <value>]
     [--confirm-new-workspace] [--no-service-sync | --confirm-service-sync] [--no-input] [--use-jwt]
 
 ARGUMENTS
   CONFIG_FILE_PATH  path to an Adobe I/O Developer Console configuration file
 
 FLAGS
-  -g, --global                  Use the global Adobe Developer Console Org / Project / Workspace configuration, which
-                                can be set via `aio console` commands
-  -v, --verbose                 Verbose output
-  -w, --workspace=<value>       Specify the Adobe Developer Console Workspace name or Workspace id to import the
-                                configuration from
-  --[no-]confirm-new-workspace  Prompt to confirm before creating a new workspace
-  --confirm-service-sync        Skip the Service sync prompt and overwrite Service subscriptions in the new Workspace
-                                with current subscriptions
-  --merge                       Merge any .aio and .env files during import of the Adobe Developer Console configuration
-                                file
-  --no-input                    Skip user prompts by setting --no-service-sync and --merge. Requires one of
-                                config_file_path or --global or --workspace
-  --no-service-sync             Skip the Service sync prompt and do not attach current Service subscriptions to the new
-                                Workspace
-  --overwrite                   Overwrite any .aio and .env files during import of the Adobe Developer Console
-                                configuration file
-  --use-jwt                     if the config has both jwt and OAuth Server to Server Credentials (while migrating),
-                                prefer the JWT credentials
-  --version                     Show version
+  -g, --global                      Use the global Adobe Developer Console Org / Project / Workspace configuration,
+                                    which can be set via `aio console` commands
+  -m, --merge                       Merge any .aio and .env files during import of the Adobe Developer Console
+                                    configuration file
+  -v, --verbose                     Verbose output
+  -w, --workspace=<value>           Specify the Adobe Developer Console Workspace name or Workspace id to import the
+                                    configuration from
+      --[no-]confirm-new-workspace  Prompt to confirm before creating a new workspace
+      --confirm-service-sync        Skip the Service sync prompt and overwrite Service subscriptions in the new
+                                    Workspace with current subscriptions
+      --no-input                    Skip user prompts by setting --no-service-sync and --merge. Requires one of
+                                    config_file_path or --global or --workspace
+      --no-service-sync             Skip the Service sync prompt and do not attach current Service subscriptions to the
+                                    new Workspace
+      --overwrite                   Overwrite any .aio and .env files during import of the Adobe Developer Console
+                                    configuration file
+      --use-jwt                     if the config has both jwt and OAuth Server to Server Credentials (while migrating),
+                                    prefer the JWT credentials
+      --version                     Show version
 
 DESCRIPTION
   Import an Adobe Developer Console configuration file.
@@ -1605,6 +1738,8 @@ DESCRIPTION
   To download the configuration file for your project, select the 'Download' button in the toolbar of your project's
   page in https://developer.adobe.com/console/
 ```
+
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/use.js)_
 
 ## `aio auth`
 
@@ -1673,14 +1808,14 @@ USAGE
   $ aio auth ctx [--debug <value>] [-v] [-l | -g] [-c <value>] [--list | --value | -s <value> | ]
 
 FLAGS
-  -c, --ctx=<value>  Name of the Adobe IMS context to use. Default is the current Adobe IMS context
-  -g, --global       global config
-  -l, --local        local config
-  -s, --set=<value>  Sets the name of the current local Adobe IMS context
-  -v, --verbose      Verbose output
-  --debug=<value>    Debug level output
-  --list             Names of the Adobe IMS contexts as an array
-  --value            Prints named or current Adobe IMS context data
+  -c, --ctx=<value>    Name of the Adobe IMS context to use. Default is the current Adobe IMS context
+  -g, --global         global config
+  -l, --local          local config
+  -s, --set=<value>    Sets the name of the current local Adobe IMS context
+  -v, --verbose        Verbose output
+      --debug=<value>  Debug level output
+      --list           Names of the Adobe IMS contexts as an array
+      --value          Prints named or current Adobe IMS context data
 
 DESCRIPTION
   Manage Adobe IMS contexts.
@@ -1707,6 +1842,8 @@ ALIASES
   $ aio context
 ```
 
+_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/4.0.0/src/commands/auth/ctx.ts)_
+
 ## `aio auth login`
 
 Log in with a certain Adobe IMS context and returns the access token.
@@ -1716,16 +1853,16 @@ USAGE
   $ aio auth login [--debug <value>] [-v] [-l | -g] [-c <value>] [-f] [-d] [-b] [-o]
 
 FLAGS
-  -b, --bare         print access token only
-  -c, --ctx=<value>  Name of the Adobe IMS context to use. Default is the current Adobe IMS context
-  -d, --decode       Decode and display access token data
-  -f, --force        Force logging in. This causes a forced logout on the context first and makes sure to not use any
-                     cached data when calling the plugin.
-  -g, --global       global config
-  -l, --local        local config
-  -o, --[no-]open    Open the default browser to complete the login
-  -v, --verbose      Verbose output
-  --debug=<value>    Debug level output
+  -b, --bare           print access token only
+  -c, --ctx=<value>    Name of the Adobe IMS context to use. Default is the current Adobe IMS context
+  -d, --decode         Decode and display access token data
+  -f, --force          Force logging in. This causes a forced logout on the context first and makes sure to not use any
+                       cached data when calling the plugin.
+  -g, --global         global config
+  -l, --local          local config
+  -o, --[no-]open      Open the default browser to complete the login
+  -v, --verbose        Verbose output
+      --debug=<value>  Debug level output
 
 DESCRIPTION
   Log in with a certain Adobe IMS context and returns the access token.
@@ -1756,6 +1893,8 @@ ALIASES
   $ aio login
 ```
 
+_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/4.0.0/src/commands/auth/login.ts)_
+
 ## `aio auth logout`
 
 Log out the current or a named Adobe IMS context.
@@ -1765,15 +1904,15 @@ USAGE
   $ aio auth logout [--debug <value>] [-v] [-l | -g] [-c <value>] [-f]
 
 FLAGS
-  -c, --ctx=<value>  Name of the Adobe IMS context to use. Default is the current Adobe IMS context
-  -f, --[no-]force   Invalidate the refresh token as well as all access tokens.
-                     Otherwise only the access token is invalidated. For Adobe IMS
-                     contexts not supporting refresh tokens, this flag has no
-                     effect.
-  -g, --global       global config
-  -l, --local        local config
-  -v, --verbose      Verbose output
-  --debug=<value>    Debug level output
+  -c, --ctx=<value>    Name of the Adobe IMS context to use. Default is the current Adobe IMS context
+  -f, --[no-]force     Invalidate the refresh token as well as all access tokens.
+                       Otherwise only the access token is invalidated. For Adobe IMS
+                       contexts not supporting refresh tokens, this flag has no
+                       effect.
+  -g, --global         global config
+  -l, --local          local config
+  -v, --verbose        Verbose output
+      --debug=<value>  Debug level output
 
 DESCRIPTION
   Log out the current or a named Adobe IMS context.
@@ -1789,9 +1928,11 @@ ALIASES
   $ aio logout
 ```
 
+_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/4.0.0/src/commands/auth/logout.ts)_
+
 ## `aio autocomplete [SHELL]`
 
-display autocomplete installation instructions
+Display autocomplete installation instructions.
 
 ```
 USAGE
@@ -1804,7 +1945,7 @@ FLAGS
   -r, --refresh-cache  Refresh cache (ignores displaying instructions)
 
 DESCRIPTION
-  display autocomplete installation instructions
+  Display autocomplete installation instructions.
 
 EXAMPLES
   $ aio autocomplete
@@ -1818,7 +1959,7 @@ EXAMPLES
   $ aio autocomplete --refresh-cache
 ```
 
-_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v2.3.5/src/commands/autocomplete/index.ts)_
+_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v3.0.5/src/commands/autocomplete/index.ts)_
 
 ## `aio certificate`
 
@@ -1849,6 +1990,8 @@ DESCRIPTION
   Compute the fingerprint of a public key certificate for use with Adobe I/O
 ```
 
+_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/2.0.0/src/commands/certificate/fingerprint.ts)_
+
 ## `aio certificate generate`
 
 Generate a new private/public key pair
@@ -1866,15 +2009,17 @@ FLAGS
   -o, --organization=<value>  Organization name
   -s, --state=<value>         State or Province
   -u, --unit=<value>          Organizational unit or department
-  --days=<value>              [default: 365] Number of days the certificate should be valid for. (Max 365)
-  --keyout=<value>            [default: private.key] file to send the key to
-  --out=<value>               [default: certificate_pub.crt] output file
+      --days=<value>          [default: 365] Number of days the certificate should be valid for. (Max 365)
+      --keyout=<value>        [default: private.key] file to send the key to
+      --out=<value>           [default: certificate_pub.crt] output file
 
 DESCRIPTION
   Generate a new private/public key pair
   Generate a self-signed certificate to enable https:// on localhost or signing jwt payloads for interacting with Adobe
   services.
 ```
+
+_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/2.0.0/src/commands/certificate/generate.ts)_
 
 ## `aio certificate verify FILE`
 
@@ -1895,6 +2040,8 @@ DESCRIPTION
   Verifies that the certificate is valid, and/or will not expire in [--days] days from now.
 ```
 
+_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/2.0.0/src/commands/certificate/verify.ts)_
+
 ## `aio config`
 
 list, get, set, delete, and edit persistent configuration data
@@ -1904,12 +2051,12 @@ USAGE
   $ aio config [-l | -g] [-e] [--verbose |  | [-j | -y]]
 
 FLAGS
-  -e, --env     environment variables
-  -g, --global  global config
-  -j, --json    output in json
-  -l, --local   local config
-  -y, --yaml    output in yaml
-  --verbose     show all config values
+  -e, --env      environment variables
+  -g, --global   global config
+  -j, --json     output in json
+  -l, --local    local config
+  -y, --yaml     output in yaml
+      --verbose  show all config values
 
 DESCRIPTION
   list, get, set, delete, and edit persistent configuration data
@@ -1948,13 +2095,15 @@ DESCRIPTION
   clears all persistent config values
 ```
 
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/5.0.0/src/commands/config/clear.ts)_
+
 ## `aio config del KEYS...`
 
 deletes persistent config values
 
 ```
 USAGE
-  $ aio config del KEYS... [-l | -g]
+  $ aio config del KEYS...... [-l | -g]
 
 FLAGS
   -g, --global  global config
@@ -1974,7 +2123,7 @@ deletes persistent config values
 
 ```
 USAGE
-  $ aio config delete KEYS... [-l | -g]
+  $ aio config delete KEYS...... [-l | -g]
 
 FLAGS
   -g, --global  global config
@@ -1987,6 +2136,8 @@ ALIASES
   $ aio config del
   $ aio config rm
 ```
+
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/5.0.0/src/commands/config/delete.ts)_
 
 ## `aio config edit`
 
@@ -2003,6 +2154,8 @@ FLAGS
 DESCRIPTION
   edit config file
 ```
+
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/5.0.0/src/commands/config/edit.ts)_
 
 ## `aio config get KEY`
 
@@ -2023,6 +2176,8 @@ DESCRIPTION
   gets a persistent config value
 ```
 
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/5.0.0/src/commands/config/get.ts)_
+
 ## `aio config list`
 
 lists all persistent config values
@@ -2032,12 +2187,12 @@ USAGE
   $ aio config list [-l | -g] [-e] [--verbose |  | [-j | -y]]
 
 FLAGS
-  -e, --env     environment variables
-  -g, --global  global config
-  -j, --json    output in json
-  -l, --local   local config
-  -y, --yaml    output in yaml
-  --verbose     show all config values
+  -e, --env      environment variables
+  -g, --global   global config
+  -j, --json     output in json
+  -l, --local    local config
+  -y, --yaml     output in yaml
+      --verbose  show all config values
 
 DESCRIPTION
   lists all persistent config values
@@ -2045,6 +2200,8 @@ DESCRIPTION
 ALIASES
   $ aio config ls
 ```
+
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/5.0.0/src/commands/config/list.ts)_
 
 ## `aio config ls`
 
@@ -2055,12 +2212,12 @@ USAGE
   $ aio config ls [-l | -g] [-e] [--verbose |  | [-j | -y]]
 
 FLAGS
-  -e, --env     environment variables
-  -g, --global  global config
-  -j, --json    output in json
-  -l, --local   local config
-  -y, --yaml    output in yaml
-  --verbose     show all config values
+  -e, --env      environment variables
+  -g, --global   global config
+  -j, --json     output in json
+  -l, --local    local config
+  -y, --yaml     output in yaml
+      --verbose  show all config values
 
 DESCRIPTION
   list, get, set, delete, and edit persistent configuration data
@@ -2086,7 +2243,7 @@ deletes persistent config values
 
 ```
 USAGE
-  $ aio config rm KEYS... [-l | -g]
+  $ aio config rm KEYS...... [-l | -g]
 
 FLAGS
   -g, --global  global config
@@ -2121,6 +2278,8 @@ FLAGS
 DESCRIPTION
   sets a persistent config value
 ```
+
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/5.0.0/src/commands/config/set.ts)_
 
 ## `aio console`
 
@@ -2157,6 +2316,8 @@ ALIASES
   $ aio open
 ```
 
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/open.ts)_
+
 ## `aio console org`
 
 Manage your Adobe I/O Console Organizations
@@ -2172,6 +2333,8 @@ DESCRIPTION
   Manage your Adobe I/O Console Organizations
 ```
 
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/org/index.ts)_
+
 ## `aio console org list`
 
 List your Organizations
@@ -2183,7 +2346,7 @@ USAGE
 FLAGS
   -j, --json  Output json
   -y, --yml   Output yml
-  --help      Show help
+      --help  Show help
 
 DESCRIPTION
   List your Organizations
@@ -2191,6 +2354,8 @@ DESCRIPTION
 ALIASES
   $ aio console org ls
 ```
+
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/org/list.ts)_
 
 ## `aio console org ls`
 
@@ -2203,7 +2368,7 @@ USAGE
 FLAGS
   -j, --json  Output json
   -y, --yml   Output yml
-  --help      Show help
+      --help  Show help
 
 DESCRIPTION
   List your Organizations
@@ -2254,6 +2419,8 @@ ALIASES
   $ aio console org sel
 ```
 
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/org/select.ts)_
+
 ## `aio console project`
 
 Manage your Adobe I/O Console Projects
@@ -2269,6 +2436,8 @@ DESCRIPTION
   Manage your Adobe I/O Console Projects
 ```
 
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/project/index.ts)_
+
 ## `aio console project list`
 
 List your Projects for the selected Organization
@@ -2278,10 +2447,10 @@ USAGE
   $ aio console project list [--help] [--orgId <value>] [-j | -y]
 
 FLAGS
-  -j, --json       Output json
-  -y, --yml        Output yml
-  --help           Show help
-  --orgId=<value>  OrgID for listing projects
+  -j, --json           Output json
+  -y, --yml            Output yml
+      --help           Show help
+      --orgId=<value>  OrgID for listing projects
 
 DESCRIPTION
   List your Projects for the selected Organization
@@ -2289,6 +2458,8 @@ DESCRIPTION
 ALIASES
   $ aio console project ls
 ```
+
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/project/list.ts)_
 
 ## `aio console project ls`
 
@@ -2299,10 +2470,10 @@ USAGE
   $ aio console project ls [--help] [--orgId <value>] [-j | -y]
 
 FLAGS
-  -j, --json       Output json
-  -y, --yml        Output yml
-  --help           Show help
-  --orgId=<value>  OrgID for listing projects
+  -j, --json           Output json
+  -y, --yml            Output yml
+      --help           Show help
+      --orgId=<value>  OrgID for listing projects
 
 DESCRIPTION
   List your Projects for the selected Organization
@@ -2355,6 +2526,8 @@ ALIASES
   $ aio console project sel
 ```
 
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/project/select.ts)_
+
 ## `aio console publickey`
 
 Manage Public Key Bindings for your Adobe I/O Console Workspaces
@@ -2369,6 +2542,8 @@ FLAGS
 DESCRIPTION
   Manage Public Key Bindings for your Adobe I/O Console Workspaces
 ```
+
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/publickey/index.ts)_
 
 ## `aio console publickey delete IDORFINGERPRINT`
 
@@ -2392,6 +2567,8 @@ DESCRIPTION
   Delete a public key certificate from the selected Workspace
 ```
 
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/publickey/delete.ts)_
+
 ## `aio console publickey list`
 
 List the public key certificates bound to the selected Workspace
@@ -2401,16 +2578,18 @@ USAGE
   $ aio console publickey list [--help] [--orgId <value>] [--projectId <value>] [--workspaceId <value>] [-j | -y]
 
 FLAGS
-  -j, --json             Output json
-  -y, --yml              Output yml
-  --help                 Show help
-  --orgId=<value>        Organization id of the Console Workspace to list the public key certificates for
-  --projectId=<value>    Project id of the Console Workspace to list the public key certificate for
-  --workspaceId=<value>  Workspace id of the Console Workspace to list the public key certificate for
+  -j, --json                 Output json
+  -y, --yml                  Output yml
+      --help                 Show help
+      --orgId=<value>        Organization id of the Console Workspace to list the public key certificates for
+      --projectId=<value>    Project id of the Console Workspace to list the public key certificate for
+      --workspaceId=<value>  Workspace id of the Console Workspace to list the public key certificate for
 
 DESCRIPTION
   List the public key certificates bound to the selected Workspace
 ```
+
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/publickey/list.ts)_
 
 ## `aio console publickey upload FILE`
 
@@ -2424,16 +2603,18 @@ ARGUMENTS
   FILE  Path to public key certificate file in PEM format
 
 FLAGS
-  -j, --json             Output json
-  -y, --yml              Output yml
-  --help                 Show help
-  --orgId=<value>        Organization id of the Console Workspace to upload the public key certificate to
-  --projectId=<value>    Project id of the Console Workspace to upload the public key certificate to
-  --workspaceId=<value>  Workspace id of the Console Workspace to upload the public key certificate to
+  -j, --json                 Output json
+  -y, --yml                  Output yml
+      --help                 Show help
+      --orgId=<value>        Organization id of the Console Workspace to upload the public key certificate to
+      --projectId=<value>    Project id of the Console Workspace to upload the public key certificate to
+      --workspaceId=<value>  Workspace id of the Console Workspace to upload the public key certificate to
 
 DESCRIPTION
   Upload a public key certificate to the selected Workspace
 ```
+
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/publickey/upload.ts)_
 
 ## `aio console where`
 
@@ -2446,7 +2627,7 @@ USAGE
 FLAGS
   -j, --json  Output json
   -y, --yml   Output yml
-  --help      Show help
+      --help  Show help
 
 DESCRIPTION
   Show the currently selected Organization, Project and Workspace
@@ -2454,6 +2635,8 @@ DESCRIPTION
 ALIASES
   $ aio where
 ```
+
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/where/index.ts)_
 
 ## `aio console workspace`
 
@@ -2472,6 +2655,8 @@ DESCRIPTION
 ALIASES
   $ aio console ws
 ```
+
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/workspace/index.ts)_
 
 ## `aio console workspace dl [DESTINATION]`
 
@@ -2526,6 +2711,8 @@ ALIASES
   $ aio console ws dl
 ```
 
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/workspace/download.ts)_
+
 ## `aio console workspace list`
 
 List your Workspaces for your selected Project
@@ -2535,11 +2722,11 @@ USAGE
   $ aio console workspace list [--help] [-j | -y] [--orgId <value>] [--projectId <value>]
 
 FLAGS
-  -j, --json           Output json
-  -y, --yml            Output yml
-  --help               Show help
-  --orgId=<value>      Organization id of the Console Workspaces to list
-  --projectId=<value>  Project id of the Console Workspaces to list
+  -j, --json               Output json
+  -y, --yml                Output yml
+      --help               Show help
+      --orgId=<value>      Organization id of the Console Workspaces to list
+      --projectId=<value>  Project id of the Console Workspaces to list
 
 DESCRIPTION
   List your Workspaces for your selected Project
@@ -2550,6 +2737,8 @@ ALIASES
   $ aio console ws ls
 ```
 
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/workspace/list.ts)_
+
 ## `aio console workspace ls`
 
 List your Workspaces for your selected Project
@@ -2559,11 +2748,11 @@ USAGE
   $ aio console workspace ls [--help] [-j | -y] [--orgId <value>] [--projectId <value>]
 
 FLAGS
-  -j, --json           Output json
-  -y, --yml            Output yml
-  --help               Show help
-  --orgId=<value>      Organization id of the Console Workspaces to list
-  --projectId=<value>  Project id of the Console Workspaces to list
+  -j, --json               Output json
+  -y, --yml                Output yml
+      --help               Show help
+      --orgId=<value>      Organization id of the Console Workspaces to list
+      --projectId=<value>  Project id of the Console Workspaces to list
 
 DESCRIPTION
   List your Workspaces for your selected Project
@@ -2623,6 +2812,8 @@ ALIASES
   $ aio console ws select
   $ aio console ws sel
 ```
+
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/workspace/select.ts)_
 
 ## `aio console ws`
 
@@ -2703,11 +2894,11 @@ USAGE
   $ aio console ws list [--help] [-j | -y] [--orgId <value>] [--projectId <value>]
 
 FLAGS
-  -j, --json           Output json
-  -y, --yml            Output yml
-  --help               Show help
-  --orgId=<value>      Organization id of the Console Workspaces to list
-  --projectId=<value>  Project id of the Console Workspaces to list
+  -j, --json               Output json
+  -y, --yml                Output yml
+      --help               Show help
+      --orgId=<value>      Organization id of the Console Workspaces to list
+      --projectId=<value>  Project id of the Console Workspaces to list
 
 DESCRIPTION
   List your Workspaces for your selected Project
@@ -2727,11 +2918,11 @@ USAGE
   $ aio console ws ls [--help] [-j | -y] [--orgId <value>] [--projectId <value>]
 
 FLAGS
-  -j, --json           Output json
-  -y, --yml            Output yml
-  --help               Show help
-  --orgId=<value>      Organization id of the Console Workspaces to list
-  --projectId=<value>  Project id of the Console Workspaces to list
+  -j, --json               Output json
+  -y, --yml                Output yml
+      --help               Show help
+      --orgId=<value>      Organization id of the Console Workspaces to list
+      --projectId=<value>  Project id of the Console Workspaces to list
 
 DESCRIPTION
   List your Workspaces for your selected Project
@@ -2801,14 +2992,14 @@ USAGE
   $ aio context [--debug <value>] [-v] [-l | -g] [-c <value>] [--list | --value | -s <value> | ]
 
 FLAGS
-  -c, --ctx=<value>  Name of the Adobe IMS context to use. Default is the current Adobe IMS context
-  -g, --global       global config
-  -l, --local        local config
-  -s, --set=<value>  Sets the name of the current local Adobe IMS context
-  -v, --verbose      Verbose output
-  --debug=<value>    Debug level output
-  --list             Names of the Adobe IMS contexts as an array
-  --value            Prints named or current Adobe IMS context data
+  -c, --ctx=<value>    Name of the Adobe IMS context to use. Default is the current Adobe IMS context
+  -g, --global         global config
+  -l, --local          local config
+  -s, --set=<value>    Sets the name of the current local Adobe IMS context
+  -v, --verbose        Verbose output
+      --debug=<value>  Debug level output
+      --list           Names of the Adobe IMS contexts as an array
+      --value          Prints named or current Adobe IMS context data
 
 DESCRIPTION
   Manage Adobe IMS contexts.
@@ -2844,14 +3035,14 @@ USAGE
   $ aio ctx [--debug <value>] [-v] [-l | -g] [-c <value>] [--list | --value | -s <value> | ]
 
 FLAGS
-  -c, --ctx=<value>  Name of the Adobe IMS context to use. Default is the current Adobe IMS context
-  -g, --global       global config
-  -l, --local        local config
-  -s, --set=<value>  Sets the name of the current local Adobe IMS context
-  -v, --verbose      Verbose output
-  --debug=<value>    Debug level output
-  --list             Names of the Adobe IMS contexts as an array
-  --value            Prints named or current Adobe IMS context data
+  -c, --ctx=<value>    Name of the Adobe IMS context to use. Default is the current Adobe IMS context
+  -g, --global         global config
+  -l, --local          local config
+  -s, --set=<value>    Sets the name of the current local Adobe IMS context
+  -v, --verbose        Verbose output
+      --debug=<value>  Debug level output
+      --list           Names of the Adobe IMS contexts as an array
+      --value          Prints named or current Adobe IMS context data
 
 DESCRIPTION
   Manage Adobe IMS contexts.
@@ -2915,8 +3106,8 @@ USAGE
 
 FLAGS
   -v, --verbose  Verbose output
-  --help         Show help
-  --version      Show version
+      --help     Show help
+      --version  Show version
 
 DESCRIPTION
   Manage your Adobe I/O Events
@@ -2934,12 +3125,14 @@ USAGE
 
 FLAGS
   -v, --verbose  Verbose output
-  --help         Show help
-  --version      Show version
+      --help     Show help
+      --version  Show version
 
 DESCRIPTION
   Manage your Adobe I/O Events Providers' Event Metadata
 ```
+
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/eventmetadata/index.ts)_
 
 ## `aio event eventmetadata create PROVIDERID`
 
@@ -2956,12 +3149,14 @@ FLAGS
   -j, --json     Output json
   -v, --verbose  Verbose output
   -y, --yml      Output yml
-  --help         Show help
-  --version      Show version
+      --help     Show help
+      --version  Show version
 
 DESCRIPTION
   Create an Event Metadata for a Provider
 ```
+
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/eventmetadata/create.ts)_
 
 ## `aio event eventmetadata delete PROVIDERID [EVENTCODE]`
 
@@ -2977,12 +3172,14 @@ ARGUMENTS
 
 FLAGS
   -v, --verbose  Verbose output
-  --help         Show help
-  --version      Show version
+      --help     Show help
+      --version  Show version
 
 DESCRIPTION
   Delete Event Metadata for a Provider
 ```
+
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/eventmetadata/delete.ts)_
 
 ## `aio event eventmetadata get PROVIDERID EVENTCODE`
 
@@ -3000,12 +3197,14 @@ FLAGS
   -j, --json     Output json
   -v, --verbose  Verbose output
   -y, --yml      Output yml
-  --help         Show help
-  --version      Show version
+      --help     Show help
+      --version  Show version
 
 DESCRIPTION
   Get details of an Event Code of a Provider
 ```
+
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/eventmetadata/get.ts)_
 
 ## `aio event eventmetadata list PROVIDERID`
 
@@ -3022,8 +3221,8 @@ FLAGS
   -j, --json     Output json
   -v, --verbose  Verbose output
   -y, --yml      Output yml
-  --help         Show help
-  --version      Show version
+      --help     Show help
+      --version  Show version
 
 DESCRIPTION
   List all Event Metadata for a Provider
@@ -3031,6 +3230,8 @@ DESCRIPTION
 ALIASES
   $ aio event eventmetadata ls
 ```
+
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/eventmetadata/list.ts)_
 
 ## `aio event eventmetadata ls PROVIDERID`
 
@@ -3047,8 +3248,8 @@ FLAGS
   -j, --json     Output json
   -v, --verbose  Verbose output
   -y, --yml      Output yml
-  --help         Show help
-  --version      Show version
+      --help     Show help
+      --version  Show version
 
 DESCRIPTION
   List all Event Metadata for a Provider
@@ -3073,12 +3274,14 @@ FLAGS
   -j, --json     Output json
   -v, --verbose  Verbose output
   -y, --yml      Output yml
-  --help         Show help
-  --version      Show version
+      --help     Show help
+      --version  Show version
 
 DESCRIPTION
   Update an Event Metadata for a Provider
 ```
+
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/eventmetadata/update.ts)_
 
 ## `aio event provider`
 
@@ -3090,12 +3293,14 @@ USAGE
 
 FLAGS
   -v, --verbose  Verbose output
-  --help         Show help
-  --version      Show version
+      --help     Show help
+      --version  Show version
 
 DESCRIPTION
   Manage your Adobe I/O Events Providers
 ```
+
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/provider/index.ts)_
 
 ## `aio event provider create`
 
@@ -3109,12 +3314,14 @@ FLAGS
   -j, --json     Output json
   -v, --verbose  Verbose output
   -y, --yml      Output yml
-  --help         Show help
-  --version      Show version
+      --help     Show help
+      --version  Show version
 
 DESCRIPTION
   Create a new Provider
 ```
+
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/provider/create.ts)_
 
 ## `aio event provider delete PROVIDERID`
 
@@ -3129,12 +3336,14 @@ ARGUMENTS
 
 FLAGS
   -v, --verbose  Verbose output
-  --help         Show help
-  --version      Show version
+      --help     Show help
+      --version  Show version
 
 DESCRIPTION
   Delete Provider by id
 ```
+
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/provider/delete.ts)_
 
 ## `aio event provider get PROVIDERID`
 
@@ -3148,16 +3357,18 @@ ARGUMENTS
   PROVIDERID  The requested provider ID
 
 FLAGS
-  -j, --json            Output json
-  -v, --verbose         Verbose output
-  -y, --yml             Output yml
-  --fetchEventMetadata  Fetch event metadata with provider
-  --help                Show help
-  --version             Show version
+  -j, --json                Output json
+  -v, --verbose             Verbose output
+  -y, --yml                 Output yml
+      --fetchEventMetadata  Fetch event metadata with provider
+      --help                Show help
+      --version             Show version
 
 DESCRIPTION
   Get details of Provider by id
 ```
+
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/provider/get.ts)_
 
 ## `aio event provider list`
 
@@ -3173,11 +3384,11 @@ FLAGS
   -p, --providerMetadataIds=<value>...  Filter providers for org by list of provider metadata ids
   -v, --verbose                         Verbose output
   -y, --yml                             Output yml
-  --fetchEventMetadata                  Fetch event metadata with provider
-  --help                                Show help
-  --instanceId=<value>                  Filter providers for org by provider metadata id (and instance id if applicable)
-  --providerMetadataId=<value>          Filter providers for org by provider metadata id (and instance id if applicable)
-  --version                             Show version
+      --fetchEventMetadata              Fetch event metadata with provider
+      --help                            Show help
+      --instanceId=<value>              Filter providers for org by provider metadata id (and instance id if applicable)
+      --providerMetadataId=<value>      Filter providers for org by provider metadata id (and instance id if applicable)
+      --version                         Show version
 
 DESCRIPTION
   Get list of all Providers for the Organization
@@ -3185,6 +3396,8 @@ DESCRIPTION
 ALIASES
   $ aio event provider ls
 ```
+
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/provider/list.ts)_
 
 ## `aio event provider ls`
 
@@ -3200,11 +3413,11 @@ FLAGS
   -p, --providerMetadataIds=<value>...  Filter providers for org by list of provider metadata ids
   -v, --verbose                         Verbose output
   -y, --yml                             Output yml
-  --fetchEventMetadata                  Fetch event metadata with provider
-  --help                                Show help
-  --instanceId=<value>                  Filter providers for org by provider metadata id (and instance id if applicable)
-  --providerMetadataId=<value>          Filter providers for org by provider metadata id (and instance id if applicable)
-  --version                             Show version
+      --fetchEventMetadata              Fetch event metadata with provider
+      --help                            Show help
+      --instanceId=<value>              Filter providers for org by provider metadata id (and instance id if applicable)
+      --providerMetadataId=<value>      Filter providers for org by provider metadata id (and instance id if applicable)
+      --version                         Show version
 
 DESCRIPTION
   Get list of all Providers for the Organization
@@ -3228,12 +3441,14 @@ FLAGS
   -j, --json     Output json
   -v, --verbose  Verbose output
   -y, --yml      Output yml
-  --help         Show help
-  --version      Show version
+      --help     Show help
+      --version  Show version
 
 DESCRIPTION
   Update an existing Provider
 ```
+
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/provider/update.ts)_
 
 ## `aio event reg`
 
@@ -3245,8 +3460,8 @@ USAGE
 
 FLAGS
   -v, --verbose  Verbose output
-  --help         Show help
-  --version      Show version
+      --help     Show help
+      --version  Show version
 
 DESCRIPTION
   Manage your Adobe I/O Events Registrations
@@ -3282,8 +3497,8 @@ FLAGS
   -j, --json     Output json
   -v, --verbose  Verbose output
   -y, --yml      Output yml
-  --help         Show help
-  --version      Show version
+      --help     Show help
+      --version  Show version
 
 DESCRIPTION
   Create a new Event Registration in your Workspace
@@ -3305,8 +3520,8 @@ ARGUMENTS
 
 FLAGS
   -v, --verbose  Verbose output
-  --help         Show help
-  --version      Show version
+      --help     Show help
+      --version  Show version
 
 DESCRIPTION
   Delete Registration
@@ -3330,8 +3545,8 @@ FLAGS
   -j, --json     Output json
   -v, --verbose  Verbose output
   -y, --yml      Output yml
-  --help         Show help
-  --version      Show version
+      --help     Show help
+      --version  Show version
 
 DESCRIPTION
   Get an Event Registration in your Workspace
@@ -3352,8 +3567,8 @@ FLAGS
   -j, --json     Output json
   -v, --verbose  Verbose output
   -y, --yml      Output yml
-  --help         Show help
-  --version      Show version
+      --help     Show help
+      --version  Show version
 
 DESCRIPTION
   List your Event Registrations in your Workspace
@@ -3376,8 +3591,8 @@ FLAGS
   -j, --json     Output json
   -v, --verbose  Verbose output
   -y, --yml      Output yml
-  --help         Show help
-  --version      Show version
+      --help     Show help
+      --version  Show version
 
 DESCRIPTION
   List your Event Registrations in your Workspace
@@ -3398,8 +3613,8 @@ USAGE
 
 FLAGS
   -v, --verbose  Verbose output
-  --help         Show help
-  --version      Show version
+      --help     Show help
+      --version  Show version
 
 DESCRIPTION
   Manage your Adobe I/O Events Registrations
@@ -3407,6 +3622,8 @@ DESCRIPTION
 ALIASES
   $ aio event reg
 ```
+
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/registration/index.ts)_
 
 ## `aio event registration create BODYJSONFILE`
 
@@ -3435,8 +3652,8 @@ FLAGS
   -j, --json     Output json
   -v, --verbose  Verbose output
   -y, --yml      Output yml
-  --help         Show help
-  --version      Show version
+      --help     Show help
+      --version  Show version
 
 DESCRIPTION
   Create a new Event Registration in your Workspace
@@ -3444,6 +3661,8 @@ DESCRIPTION
 ALIASES
   $ aio event reg create
 ```
+
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/registration/create.ts)_
 
 ## `aio event registration delete REGISTRATIONID`
 
@@ -3458,8 +3677,8 @@ ARGUMENTS
 
 FLAGS
   -v, --verbose  Verbose output
-  --help         Show help
-  --version      Show version
+      --help     Show help
+      --version  Show version
 
 DESCRIPTION
   Delete Registration
@@ -3467,6 +3686,8 @@ DESCRIPTION
 ALIASES
   $ aio event reg delete
 ```
+
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/registration/delete.ts)_
 
 ## `aio event registration get REGISTRATIONID`
 
@@ -3483,8 +3704,8 @@ FLAGS
   -j, --json     Output json
   -v, --verbose  Verbose output
   -y, --yml      Output yml
-  --help         Show help
-  --version      Show version
+      --help     Show help
+      --version  Show version
 
 DESCRIPTION
   Get an Event Registration in your Workspace
@@ -3492,6 +3713,8 @@ DESCRIPTION
 ALIASES
   $ aio event reg get
 ```
+
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/registration/get.ts)_
 
 ## `aio event registration list`
 
@@ -3505,8 +3728,8 @@ FLAGS
   -j, --json     Output json
   -v, --verbose  Verbose output
   -y, --yml      Output yml
-  --help         Show help
-  --version      Show version
+      --help     Show help
+      --version  Show version
 
 DESCRIPTION
   List your Event Registrations in your Workspace
@@ -3516,6 +3739,8 @@ ALIASES
   $ aio event reg list
   $ aio event reg ls
 ```
+
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/registration/list.ts)_
 
 ## `aio event registration ls`
 
@@ -3529,8 +3754,8 @@ FLAGS
   -j, --json     Output json
   -v, --verbose  Verbose output
   -y, --yml      Output yml
-  --help         Show help
-  --version      Show version
+      --help     Show help
+      --version  Show version
 
 DESCRIPTION
   List your Event Registrations in your Workspace
@@ -3541,16 +3766,16 @@ ALIASES
   $ aio event reg ls
 ```
 
-## `aio help [COMMANDS]`
+## `aio help [COMMAND]`
 
 Display help for aio.
 
 ```
 USAGE
-  $ aio help [COMMANDS] [-n]
+  $ aio help [COMMAND...] [-n]
 
 ARGUMENTS
-  COMMANDS  Command to show help for.
+  COMMAND...  Command to show help for.
 
 FLAGS
   -n, --nested-commands  Include all nested commands in the output.
@@ -3559,7 +3784,7 @@ DESCRIPTION
   Display help for aio.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.2.13/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.0.22/src/commands/help.ts)_
 
 ## `aio info`
 
@@ -3588,16 +3813,16 @@ USAGE
   $ aio login [--debug <value>] [-v] [-l | -g] [-c <value>] [-f] [-d] [-b] [-o]
 
 FLAGS
-  -b, --bare         print access token only
-  -c, --ctx=<value>  Name of the Adobe IMS context to use. Default is the current Adobe IMS context
-  -d, --decode       Decode and display access token data
-  -f, --force        Force logging in. This causes a forced logout on the context first and makes sure to not use any
-                     cached data when calling the plugin.
-  -g, --global       global config
-  -l, --local        local config
-  -o, --[no-]open    Open the default browser to complete the login
-  -v, --verbose      Verbose output
-  --debug=<value>    Debug level output
+  -b, --bare           print access token only
+  -c, --ctx=<value>    Name of the Adobe IMS context to use. Default is the current Adobe IMS context
+  -d, --decode         Decode and display access token data
+  -f, --force          Force logging in. This causes a forced logout on the context first and makes sure to not use any
+                       cached data when calling the plugin.
+  -g, --global         global config
+  -l, --local          local config
+  -o, --[no-]open      Open the default browser to complete the login
+  -v, --verbose        Verbose output
+      --debug=<value>  Debug level output
 
 DESCRIPTION
   Log in with a certain Adobe IMS context and returns the access token.
@@ -3637,15 +3862,15 @@ USAGE
   $ aio logout [--debug <value>] [-v] [-l | -g] [-c <value>] [-f]
 
 FLAGS
-  -c, --ctx=<value>  Name of the Adobe IMS context to use. Default is the current Adobe IMS context
-  -f, --[no-]force   Invalidate the refresh token as well as all access tokens.
-                     Otherwise only the access token is invalidated. For Adobe IMS
-                     contexts not supporting refresh tokens, this flag has no
-                     effect.
-  -g, --global       global config
-  -l, --local        local config
-  -v, --verbose      Verbose output
-  --debug=<value>    Debug level output
+  -c, --ctx=<value>    Name of the Adobe IMS context to use. Default is the current Adobe IMS context
+  -f, --[no-]force     Invalidate the refresh token as well as all access tokens.
+                       Otherwise only the access token is invalidated. For Adobe IMS
+                       contexts not supporting refresh tokens, this flag has no
+                       effect.
+  -g, --global         global config
+  -l, --local          local config
+  -v, --verbose        Verbose output
+      --debug=<value>  Debug level output
 
 DESCRIPTION
   Log out the current or a named Adobe IMS context.
@@ -3685,10 +3910,13 @@ List installed plugins.
 
 ```
 USAGE
-  $ aio plugins [--core]
+  $ aio plugins [--json] [--core]
 
 FLAGS
   --core  Show core plugins.
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 DESCRIPTION
   List installed plugins.
@@ -3697,44 +3925,53 @@ EXAMPLES
   $ aio plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.4.7/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.21/src/commands/plugins/index.ts)_
 
-## `aio plugins:install PLUGIN...`
+## `aio plugins add PLUGIN`
 
-Installs a plugin into the CLI.
+Installs a plugin into aio.
 
 ```
 USAGE
-  $ aio plugins:install PLUGIN...
+  $ aio plugins add PLUGIN... [--json] [-f] [-h] [-s | -v]
 
 ARGUMENTS
-  PLUGIN  Plugin to install.
+  PLUGIN...  Plugin to install.
 
 FLAGS
-  -f, --force    Run yarn install with force flag.
+  -f, --force    Force npm to fetch remote resources even if a local copy exists on disk.
   -h, --help     Show CLI help.
-  -v, --verbose
+  -s, --silent   Silences npm output.
+  -v, --verbose  Show verbose npm output.
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 DESCRIPTION
-  Installs a plugin into the CLI.
-  Can be installed from npm or a git url.
+  Installs a plugin into aio.
+
+  Uses bundled npm executable to install plugins into C:\Users\shazr\AppData\Local\@adobe\aio-cli
 
   Installation of a user-installed plugin will override a core plugin.
 
-  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command
-  will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in
-  the CLI without the need to patch and update the whole CLI.
-
+  Use the AIO_NPM_LOG_LEVEL environment variable to set the npm loglevel.
+  Use the AIO_NPM_REGISTRY environment variable to set the npm registry.
 
 ALIASES
   $ aio plugins add
 
 EXAMPLES
-  $ aio plugins:install myplugin 
+  Install a plugin from npm registry.
 
-  $ aio plugins:install https://github.com/someuser/someplugin
+    $ aio plugins add myplugin
 
-  $ aio plugins:install someuser/someplugin
+  Install a plugin from a github url.
+
+    $ aio plugins add https://github.com/someuser/someplugin
+
+  Install a plugin from a github slug.
+
+    $ aio plugins add someuser/someplugin
 ```
 
 ## `aio plugins discover`
@@ -3768,10 +4005,10 @@ Displays installation properties of a plugin.
 
 ```
 USAGE
-  $ aio plugins:inspect PLUGIN...
+  $ aio plugins inspect PLUGIN...
 
 ARGUMENTS
-  PLUGIN  [default: .] Plugin to inspect.
+  PLUGIN...  [default: .] Plugin to inspect.
 
 FLAGS
   -h, --help     Show CLI help.
@@ -3784,61 +4021,75 @@ DESCRIPTION
   Displays installation properties of a plugin.
 
 EXAMPLES
-  $ aio plugins:inspect myplugin
+  $ aio plugins inspect myplugin
 ```
 
-## `aio plugins:install PLUGIN...`
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.21/src/commands/plugins/inspect.ts)_
 
-Installs a plugin into the CLI.
+## `aio plugins install PLUGIN`
+
+Installs a plugin into aio.
 
 ```
 USAGE
-  $ aio plugins:install PLUGIN...
+  $ aio plugins install PLUGIN... [--json] [-f] [-h] [-s | -v]
 
 ARGUMENTS
-  PLUGIN  Plugin to install.
+  PLUGIN...  Plugin to install.
 
 FLAGS
-  -f, --force    Run yarn install with force flag.
+  -f, --force    Force npm to fetch remote resources even if a local copy exists on disk.
   -h, --help     Show CLI help.
-  -v, --verbose
+  -s, --silent   Silences npm output.
+  -v, --verbose  Show verbose npm output.
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 DESCRIPTION
-  Installs a plugin into the CLI.
-  Can be installed from npm or a git url.
+  Installs a plugin into aio.
+
+  Uses bundled npm executable to install plugins into C:\Users\shazr\AppData\Local\@adobe\aio-cli
 
   Installation of a user-installed plugin will override a core plugin.
 
-  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command
-  will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in
-  the CLI without the need to patch and update the whole CLI.
-
+  Use the AIO_NPM_LOG_LEVEL environment variable to set the npm loglevel.
+  Use the AIO_NPM_REGISTRY environment variable to set the npm registry.
 
 ALIASES
   $ aio plugins add
 
 EXAMPLES
-  $ aio plugins:install myplugin 
+  Install a plugin from npm registry.
 
-  $ aio plugins:install https://github.com/someuser/someplugin
+    $ aio plugins install myplugin
 
-  $ aio plugins:install someuser/someplugin
+  Install a plugin from a github url.
+
+    $ aio plugins install https://github.com/someuser/someplugin
+
+  Install a plugin from a github slug.
+
+    $ aio plugins install someuser/someplugin
 ```
 
-## `aio plugins:link PLUGIN`
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.21/src/commands/plugins/install.ts)_
+
+## `aio plugins link PATH`
 
 Links a plugin into the CLI for development.
 
 ```
 USAGE
-  $ aio plugins:link PLUGIN
+  $ aio plugins link PATH [-h] [--install] [-v]
 
 ARGUMENTS
   PATH  [default: .] path to plugin
 
 FLAGS
-  -h, --help     Show CLI help.
+  -h, --help          Show CLI help.
   -v, --verbose
+      --[no-]install  Install dependencies after linking the plugin.
 
 DESCRIPTION
   Links a plugin into the CLI for development.
@@ -3849,19 +4100,21 @@ DESCRIPTION
 
 
 EXAMPLES
-  $ aio plugins:link myplugin
+  $ aio plugins link myplugin
 ```
 
-## `aio plugins:uninstall PLUGIN...`
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.21/src/commands/plugins/link.ts)_
+
+## `aio plugins remove [PLUGIN]`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ aio plugins:uninstall PLUGIN...
+  $ aio plugins remove [PLUGIN...] [-h] [-v]
 
 ARGUMENTS
-  PLUGIN  plugin to uninstall
+  PLUGIN...  plugin to uninstall
 
 FLAGS
   -h, --help     Show CLI help.
@@ -3873,18 +4126,36 @@ DESCRIPTION
 ALIASES
   $ aio plugins unlink
   $ aio plugins remove
+
+EXAMPLES
+  $ aio plugins remove myplugin
 ```
 
-## `aio plugins:uninstall PLUGIN...`
+## `aio plugins reset`
+
+Remove all user-installed and linked plugins.
+
+```
+USAGE
+  $ aio plugins reset [--hard] [--reinstall]
+
+FLAGS
+  --hard       Delete node_modules and package manager related files in addition to uninstalling plugins.
+  --reinstall  Reinstall all plugins after uninstalling.
+```
+
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.21/src/commands/plugins/reset.ts)_
+
+## `aio plugins uninstall [PLUGIN]`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ aio plugins:uninstall PLUGIN...
+  $ aio plugins uninstall [PLUGIN...] [-h] [-v]
 
 ARGUMENTS
-  PLUGIN  plugin to uninstall
+  PLUGIN...  plugin to uninstall
 
 FLAGS
   -h, --help     Show CLI help.
@@ -3896,18 +4167,23 @@ DESCRIPTION
 ALIASES
   $ aio plugins unlink
   $ aio plugins remove
+
+EXAMPLES
+  $ aio plugins uninstall myplugin
 ```
 
-## `aio plugins:uninstall PLUGIN...`
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.21/src/commands/plugins/uninstall.ts)_
+
+## `aio plugins unlink [PLUGIN]`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ aio plugins:uninstall PLUGIN...
+  $ aio plugins unlink [PLUGIN...] [-h] [-v]
 
 ARGUMENTS
-  PLUGIN  plugin to uninstall
+  PLUGIN...  plugin to uninstall
 
 FLAGS
   -h, --help     Show CLI help.
@@ -3919,6 +4195,9 @@ DESCRIPTION
 ALIASES
   $ aio plugins unlink
   $ aio plugins remove
+
+EXAMPLES
+  $ aio plugins unlink myplugin
 ```
 
 ## `aio plugins update`
@@ -3936,6 +4215,8 @@ FLAGS
 DESCRIPTION
   Update installed plugins.
 ```
+
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.21/src/commands/plugins/update.ts)_
 
 ## `aio report`
 
@@ -3981,20 +4262,20 @@ Execute runtime commands
 
 ```
 USAGE
-  $ aio rt [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version]
+  $ aio rt [--ce] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version]
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Execute runtime commands
@@ -4013,16 +4294,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage your actions
@@ -4059,24 +4340,24 @@ FLAGS
                                  min: 100, max: 3600000)
   -u, --auth=<value>             whisk auth
   -v, --verbose                  Verbose output
-  --apihost=<value>              whisk API host
-  --apiversion=<value>           whisk API version
-  --binary                       treat code artifact as binary
-  --cert=<value>                 client cert
-  --copy=<value>                 copy an existing action
-  --debug=<value>                Debug level output
-  --docker=<value>               [Restricted Access] use provided Docker image (a path on DockerHub) to run the action
-  --help                         Show help
-  --json                         output raw json
-  --key=<value>                  client key
-  --kind=<value>                 the KIND of the action runtime (example: swift:default, nodejs:default)
-  --main=<value>                 the name of the action entry point (function or fully-qualified method name when
+      --apihost=<value>          whisk API host
+      --apiversion=<value>       whisk API version
+      --binary                   treat code artifact as binary
+      --cert=<value>             client cert
+      --copy=<value>             copy an existing action
+      --debug=<value>            Debug level output
+      --docker=<value>           [Restricted Access] use provided Docker image (a path on DockerHub) to run the action
+      --help                     Show help
+      --json                     output raw json
+      --key=<value>              client key
+      --kind=<value>             the KIND of the action runtime (example: swift:default, nodejs:default)
+      --main=<value>             the name of the action entry point (function or fully-qualified method name when
                                  applicable)
-  --sequence=<value>             treat ACTION as comma separated sequence of actions to invoke
-  --version                      Show version
-  --web=<option>                 treat ACTION as a web action or as a raw HTTP web action
+      --sequence=<value>         treat ACTION as comma separated sequence of actions to invoke
+      --version                  Show version
+      --web=<option>             treat ACTION as a web action or as a raw HTTP web action
                                  <options: true|yes|false|no|raw>
-  --web-secure=<value>           secure the web action (valid values are true, false, or any string)
+      --web-secure=<value>       secure the web action (valid values are true, false, or any string)
 
 DESCRIPTION
   Creates an Action
@@ -4095,17 +4376,17 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [--json]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Deletes an Action
@@ -4126,17 +4407,17 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [--json]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Deletes an Action
@@ -4157,20 +4438,20 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-r] [-c] [--save] [--save-as <value>]
 
 FLAGS
-  -c, --code            show action code (only works if code is not a zip file)
-  -i, --insecure        bypass certificate check
-  -r, --url             get action url
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --key=<value>         client key
-  --save                save action code to file corresponding with action name
-  --save-as=<value>     file to save action code to
-  --version             Show version
+  -c, --code                show action code (only works if code is not a zip file)
+  -i, --insecure            bypass certificate check
+  -r, --url                 get action url
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --save                save action code to file corresponding with action name
+      --save-as=<value>     file to save action code to
+      --version             Show version
 
 DESCRIPTION
   Retrieves an Action
@@ -4196,13 +4477,13 @@ FLAGS
   -r, --result              blocking invoke; show only activation result (unless there is a failure)
   -u, --auth=<value>        whisk auth
   -v, --verbose             Verbose output
-  --apihost=<value>         whisk API host
-  --apiversion=<value>      whisk API version
-  --cert=<value>            client cert
-  --debug=<value>           Debug level output
-  --help                    Show help
-  --key=<value>             client key
-  --version                 Show version
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Invokes an Action
@@ -4221,22 +4502,22 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
 
 FLAGS
-  -c, --count           show only the total number of actions
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of actions (min: 0, max: 50)
-  -n, --name            sort results by name
-  -s, --skip=<value>    exclude the first SKIP number of actions from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --name-sort           sort results by name
-  --version             Show version
+  -c, --count               show only the total number of actions
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of actions (min: 0, max: 50)
+  -n, --name                sort results by name
+  -s, --skip=<value>        exclude the first SKIP number of actions from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Lists all the Actions
@@ -4261,22 +4542,22 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
 
 FLAGS
-  -c, --count           show only the total number of actions
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of actions (min: 0, max: 50)
-  -n, --name            sort results by name
-  -s, --skip=<value>    exclude the first SKIP number of actions from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --name-sort           sort results by name
-  --version             Show version
+  -c, --count               show only the total number of actions
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of actions (min: 0, max: 50)
+  -n, --name                sort results by name
+  -s, --skip=<value>        exclude the first SKIP number of actions from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Lists all the Actions
@@ -4319,24 +4600,24 @@ FLAGS
                                  min: 100, max: 3600000)
   -u, --auth=<value>             whisk auth
   -v, --verbose                  Verbose output
-  --apihost=<value>              whisk API host
-  --apiversion=<value>           whisk API version
-  --binary                       treat code artifact as binary
-  --cert=<value>                 client cert
-  --copy=<value>                 copy an existing action
-  --debug=<value>                Debug level output
-  --docker=<value>               [Restricted Access] use provided Docker image (a path on DockerHub) to run the action
-  --help                         Show help
-  --json                         output raw json
-  --key=<value>                  client key
-  --kind=<value>                 the KIND of the action runtime (example: swift:default, nodejs:default)
-  --main=<value>                 the name of the action entry point (function or fully-qualified method name when
+      --apihost=<value>          whisk API host
+      --apiversion=<value>       whisk API version
+      --binary                   treat code artifact as binary
+      --cert=<value>             client cert
+      --copy=<value>             copy an existing action
+      --debug=<value>            Debug level output
+      --docker=<value>           [Restricted Access] use provided Docker image (a path on DockerHub) to run the action
+      --help                     Show help
+      --json                     output raw json
+      --key=<value>              client key
+      --kind=<value>             the KIND of the action runtime (example: swift:default, nodejs:default)
+      --main=<value>             the name of the action entry point (function or fully-qualified method name when
                                  applicable)
-  --sequence=<value>             treat ACTION as comma separated sequence of actions to invoke
-  --version                      Show version
-  --web=<option>                 treat ACTION as a web action or as a raw HTTP web action
+      --sequence=<value>         treat ACTION as comma separated sequence of actions to invoke
+      --version                  Show version
+      --web=<option>             treat ACTION as a web action or as a raw HTTP web action
                                  <options: true|yes|false|no|raw>
-  --web-secure=<value>           secure the web action (valid values are true, false, or any string)
+      --web-secure=<value>       secure the web action (valid values are true, false, or any string)
 
 DESCRIPTION
   Updates an Action
@@ -4355,22 +4636,22 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
 
 FLAGS
-  -c, --count           show only the total number of actions
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of actions (min: 0, max: 50)
-  -n, --name            sort results by name
-  -s, --skip=<value>    exclude the first SKIP number of actions from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --name-sort           sort results by name
-  --version             Show version
+  -c, --count               show only the total number of actions
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of actions (min: 0, max: 50)
+  -n, --name                sort results by name
+  -s, --skip=<value>        exclude the first SKIP number of actions from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Lists all the Actions
@@ -4395,22 +4676,22 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
 
 FLAGS
-  -c, --count           show only the total number of actions
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of actions (min: 0, max: 50)
-  -n, --name            sort results by name
-  -s, --skip=<value>    exclude the first SKIP number of actions from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --name-sort           sort results by name
-  --version             Show version
+  -c, --count               show only the total number of actions
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of actions (min: 0, max: 50)
+  -n, --name                sort results by name
+  -s, --skip=<value>        exclude the first SKIP number of actions from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Lists all the Actions
@@ -4435,16 +4716,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage your activations
@@ -4463,18 +4744,18 @@ USAGE
     [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l] [-g]
 
 FLAGS
-  -g, --logs            emit only the logs, stripped of time stamps and stream identifier
-  -i, --insecure        bypass certificate check
-  -l, --last            retrieves the most recent activation
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --key=<value>         client key
-  --version             Show version
+  -g, --logs                emit only the logs, stripped of time stamps and stream identifier
+  -i, --insecure            bypass certificate check
+  -l, --last                retrieves the most recent activation
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Retrieves an Activation
@@ -4494,25 +4775,25 @@ USAGE
     <value>] [-c] [--json] [-f]
 
 FLAGS
-  -c, --count           show only the total number of activations
-  -f, --full            include full activation description
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of activations (min: 0, max: 50)
-  -s, --skip=<value>    exclude the first SKIP number of activations from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --since=<value>       return activations with timestamps later than SINCE; measured in milliseconds since Th, 01, Jan
-                        1970
-  --upto=<value>        return activations with timestamps earlier than UPTO; measured in milliseconds since Th, 01, Jan
-                        1970
-  --version             Show version
+  -c, --count               show only the total number of activations
+  -f, --full                include full activation description
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of activations (min: 0, max: 50)
+  -s, --skip=<value>        exclude the first SKIP number of activations from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --since=<value>       return activations with timestamps later than SINCE; measured in milliseconds since Th, 01,
+                            Jan 1970
+      --upto=<value>        return activations with timestamps earlier than UPTO; measured in milliseconds since Th, 01,
+                            Jan 1970
+      --version             Show version
 
 DESCRIPTION
   Lists all the Activations
@@ -4538,26 +4819,26 @@ USAGE
     <value> | -l] [-t | -w | -o]
 
 FLAGS
-  -a, --action=<value>   Fetch logs for a specific action
-  -d, --deployed         Fetch logs for all actions deployed under a specific package
-  -i, --insecure         bypass certificate check
-  -l, --last             retrieves the most recent activation logs
-  -m, --manifest         Fetch logs for all actions in the manifest
-  -o, --poll             Fetch logs continuously
-  -p, --package=<value>  Fetch logs for a specific package in the manifest
-  -r, --strip            strip timestamp information and output first line only
-  -t, --tail             Fetch logs continuously
-  -u, --auth=<value>     whisk auth
-  -v, --verbose          Verbose output
-  -w, --watch            Fetch logs continuously
-  --apihost=<value>      whisk API host
-  --apiversion=<value>   whisk API version
-  --cert=<value>         client cert
-  --debug=<value>        Debug level output
-  --help                 Show help
-  --key=<value>          client key
-  --limit=<value>        return logs only from last LIMIT number of activations (min: 0, max: 50)
-  --version              Show version
+  -a, --action=<value>      Fetch logs for a specific action
+  -d, --deployed            Fetch logs for all actions deployed under a specific package
+  -i, --insecure            bypass certificate check
+  -l, --last                retrieves the most recent activation logs
+  -m, --manifest            Fetch logs for all actions in the manifest
+  -o, --poll                Fetch logs continuously
+  -p, --package=<value>     Fetch logs for a specific package in the manifest
+  -r, --strip               strip timestamp information and output first line only
+  -t, --tail                Fetch logs continuously
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+  -w, --watch               Fetch logs continuously
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --limit=<value>       return logs only from last LIMIT number of activations (min: 0, max: 50)
+      --version             Show version
 
 DESCRIPTION
   Retrieves the Logs for an Activation
@@ -4583,26 +4864,26 @@ USAGE
     <value> | -l] [-t | -w | -o]
 
 FLAGS
-  -a, --action=<value>   Fetch logs for a specific action
-  -d, --deployed         Fetch logs for all actions deployed under a specific package
-  -i, --insecure         bypass certificate check
-  -l, --last             retrieves the most recent activation logs
-  -m, --manifest         Fetch logs for all actions in the manifest
-  -o, --poll             Fetch logs continuously
-  -p, --package=<value>  Fetch logs for a specific package in the manifest
-  -r, --strip            strip timestamp information and output first line only
-  -t, --tail             Fetch logs continuously
-  -u, --auth=<value>     whisk auth
-  -v, --verbose          Verbose output
-  -w, --watch            Fetch logs continuously
-  --apihost=<value>      whisk API host
-  --apiversion=<value>   whisk API version
-  --cert=<value>         client cert
-  --debug=<value>        Debug level output
-  --help                 Show help
-  --key=<value>          client key
-  --limit=<value>        return logs only from last LIMIT number of activations (min: 0, max: 50)
-  --version              Show version
+  -a, --action=<value>      Fetch logs for a specific action
+  -d, --deployed            Fetch logs for all actions deployed under a specific package
+  -i, --insecure            bypass certificate check
+  -l, --last                retrieves the most recent activation logs
+  -m, --manifest            Fetch logs for all actions in the manifest
+  -o, --poll                Fetch logs continuously
+  -p, --package=<value>     Fetch logs for a specific package in the manifest
+  -r, --strip               strip timestamp information and output first line only
+  -t, --tail                Fetch logs continuously
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+  -w, --watch               Fetch logs continuously
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --limit=<value>       return logs only from last LIMIT number of activations (min: 0, max: 50)
+      --version             Show version
 
 DESCRIPTION
   Retrieves the Logs for an Activation
@@ -4628,25 +4909,25 @@ USAGE
     <value>] [-c] [--json] [-f]
 
 FLAGS
-  -c, --count           show only the total number of activations
-  -f, --full            include full activation description
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of activations (min: 0, max: 50)
-  -s, --skip=<value>    exclude the first SKIP number of activations from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --since=<value>       return activations with timestamps later than SINCE; measured in milliseconds since Th, 01, Jan
-                        1970
-  --upto=<value>        return activations with timestamps earlier than UPTO; measured in milliseconds since Th, 01, Jan
-                        1970
-  --version             Show version
+  -c, --count               show only the total number of activations
+  -f, --full                include full activation description
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of activations (min: 0, max: 50)
+  -s, --skip=<value>        exclude the first SKIP number of activations from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --since=<value>       return activations with timestamps later than SINCE; measured in milliseconds since Th, 01,
+                            Jan 1970
+      --upto=<value>        return activations with timestamps earlier than UPTO; measured in milliseconds since Th, 01,
+                            Jan 1970
+      --version             Show version
 
 DESCRIPTION
   Lists all the Activations
@@ -4671,17 +4952,17 @@ USAGE
     [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -l, --last            retrieves the most recent activation result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -l, --last                retrieves the most recent activation result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Retrieves the Results for an Activation
@@ -4701,25 +4982,25 @@ USAGE
     <value>] [-c] [--json] [-f]
 
 FLAGS
-  -c, --count           show only the total number of activations
-  -f, --full            include full activation description
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of activations (min: 0, max: 50)
-  -s, --skip=<value>    exclude the first SKIP number of activations from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --since=<value>       return activations with timestamps later than SINCE; measured in milliseconds since Th, 01, Jan
-                        1970
-  --upto=<value>        return activations with timestamps earlier than UPTO; measured in milliseconds since Th, 01, Jan
-                        1970
-  --version             Show version
+  -c, --count               show only the total number of activations
+  -f, --full                include full activation description
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of activations (min: 0, max: 50)
+  -s, --skip=<value>        exclude the first SKIP number of activations from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --since=<value>       return activations with timestamps later than SINCE; measured in milliseconds since Th, 01,
+                            Jan 1970
+      --upto=<value>        return activations with timestamps earlier than UPTO; measured in milliseconds since Th, 01,
+                            Jan 1970
+      --version             Show version
 
 DESCRIPTION
   Lists all the Activations
@@ -4745,25 +5026,25 @@ USAGE
     <value>] [-c] [--json] [-f]
 
 FLAGS
-  -c, --count           show only the total number of activations
-  -f, --full            include full activation description
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of activations (min: 0, max: 50)
-  -s, --skip=<value>    exclude the first SKIP number of activations from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --since=<value>       return activations with timestamps later than SINCE; measured in milliseconds since Th, 01, Jan
-                        1970
-  --upto=<value>        return activations with timestamps earlier than UPTO; measured in milliseconds since Th, 01, Jan
-                        1970
-  --version             Show version
+  -c, --count               show only the total number of activations
+  -f, --full                include full activation description
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of activations (min: 0, max: 50)
+  -s, --skip=<value>        exclude the first SKIP number of activations from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --since=<value>       return activations with timestamps later than SINCE; measured in milliseconds since Th, 01,
+                            Jan 1970
+      --upto=<value>        return activations with timestamps earlier than UPTO; measured in milliseconds since Th, 01,
+                            Jan 1970
+      --version             Show version
 
 DESCRIPTION
   Lists all the Activations
@@ -4788,16 +5069,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage your api routes
@@ -4832,13 +5113,13 @@ FLAGS
                                 <options: html|http|json|text|svg|json>
   -u, --auth=<value>            whisk auth
   -v, --verbose                 Verbose output
-  --apihost=<value>             whisk API host
-  --apiversion=<value>          whisk API version
-  --cert=<value>                client cert
-  --debug=<value>               Debug level output
-  --help                        Show help
-  --key=<value>                 client key
-  --version                     Show version
+      --apihost=<value>         whisk API host
+      --apiversion=<value>      whisk API version
+      --cert=<value>            client cert
+      --debug=<value>           Debug level output
+      --help                    Show help
+      --key=<value>             client key
+      --version                 Show version
 
 DESCRIPTION
   create a new api route
@@ -4864,16 +5145,16 @@ ARGUMENTS
   APIVERB            (get|post|put|patch|delete|head|options) The http verb
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   delete an API
@@ -4897,16 +5178,16 @@ ARGUMENTS
   BASEPATHORAPINAME  The base path or api name
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   get API details
@@ -4932,19 +5213,19 @@ ARGUMENTS
   APIVERB   (get|post|put|patch|delete|head|options) The http verb
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of triggers
-  -s, --skip=<value>    exclude the first SKIP number of triggers from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of triggers
+  -s, --skip=<value>        exclude the first SKIP number of triggers from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   list route/apis for Adobe I/O Runtime
@@ -4974,19 +5255,19 @@ ARGUMENTS
   APIVERB   (get|post|put|patch|delete|head|options) The http verb
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of triggers
-  -s, --skip=<value>    exclude the first SKIP number of triggers from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of triggers
+  -s, --skip=<value>        exclude the first SKIP number of triggers from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   list route/apis for Adobe I/O Runtime
@@ -5017,14 +5298,14 @@ FLAGS
   -m, --manifest=<value>    the manifest file location
   -u, --auth=<value>        whisk auth
   -v, --verbose             Verbose output
-  --apihost=<value>         whisk API host
-  --apiversion=<value>      whisk API version
-  --cert=<value>            client cert
-  --debug=<value>           Debug level output
-  --help                    Show help
-  --key=<value>             client key
-  --param=<value>...        parameter values in KEY VALUE format
-  --version                 Show version
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --param=<value>...    parameter values in KEY VALUE format
+      --version             Show version
 
 DESCRIPTION
   The Runtime Deployment Tool
@@ -5043,18 +5324,18 @@ USAGE
     [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure          bypass certificate check
-  -m, --manifest=<value>  (required) the manifest file location
-  -u, --auth=<value>      whisk auth
-  -v, --verbose           Verbose output
-  --apihost=<value>       whisk API host
-  --apiversion=<value>    whisk API version
-  --cert=<value>          client cert
-  --debug=<value>         Debug level output
-  --help                  Show help
-  --key=<value>           client key
-  --projectname=<value>   (required) the name of the project to be undeployed
-  --version               Show version
+  -i, --insecure             bypass certificate check
+  -m, --manifest=<value>     (required) the manifest file location
+  -u, --auth=<value>         whisk auth
+  -v, --verbose              Verbose output
+      --apihost=<value>      whisk API host
+      --apiversion=<value>   whisk API version
+      --cert=<value>         client cert
+      --debug=<value>        Debug level output
+      --help                 Show help
+      --key=<value>          client key
+      --projectname=<value>  (required) the name of the project to be undeployed
+      --version              Show version
 
 DESCRIPTION
   Exports managed project assets from Runtime to manifest and function files
@@ -5078,13 +5359,13 @@ FLAGS
   -m, --manifest=<value>    the manifest file location
   -u, --auth=<value>        whisk auth
   -v, --verbose             Verbose output
-  --apihost=<value>         whisk API host
-  --apiversion=<value>      whisk API version
-  --cert=<value>            client cert
-  --debug=<value>           Debug level output
-  --help                    Show help
-  --key=<value>             client key
-  --version                 Show version
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Provides a summary report of Runtime assets being deployed/undeployed based on manifest/deployment YAML
@@ -5108,13 +5389,13 @@ FLAGS
   -m, --manifest=<value>    the manifest file location
   -u, --auth=<value>        whisk auth
   -v, --verbose             Verbose output
-  --apihost=<value>         whisk API host
-  --apiversion=<value>      whisk API version
-  --cert=<value>            client cert
-  --debug=<value>           Debug level output
-  --help                    Show help
-  --key=<value>             client key
-  --version                 Show version
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   A tool to sync deployment and undeployment of Runtime packages using a manifest and optional deployment files using
@@ -5134,18 +5415,18 @@ USAGE
     [--debug <value>] [-v] [--version] [--help] [-m <value>] [--projectname <value>]
 
 FLAGS
-  -i, --insecure          bypass certificate check
-  -m, --manifest=<value>  the manifest file location
-  -u, --auth=<value>      whisk auth
-  -v, --verbose           Verbose output
-  --apihost=<value>       whisk API host
-  --apiversion=<value>    whisk API version
-  --cert=<value>          client cert
-  --debug=<value>         Debug level output
-  --help                  Show help
-  --key=<value>           client key
-  --projectname=<value>   the name of the project to be undeployed
-  --version               Show version
+  -i, --insecure             bypass certificate check
+  -m, --manifest=<value>     the manifest file location
+  -u, --auth=<value>         whisk auth
+  -v, --verbose              Verbose output
+      --apihost=<value>      whisk API host
+      --apiversion=<value>   whisk API version
+      --cert=<value>         client cert
+      --debug=<value>        Debug level output
+      --help                 Show help
+      --key=<value>          client key
+      --projectname=<value>  the name of the project to be undeployed
+      --version              Show version
 
 DESCRIPTION
   Undeploy removes Runtime assets which were deployed from the manifest and deployment YAML
@@ -5164,16 +5445,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Prints the version number of aio runtime deploy
@@ -5192,19 +5473,19 @@ USAGE
     [--debug <value>] [-v] [--version] [--help] [--json] [--name-sort] [-n]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -n, --name            sort results by name
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --name-sort           sort results by name
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -n, --name                sort results by name
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Get triggers, actions, and rules in the registry for namespace
@@ -5227,19 +5508,19 @@ USAGE
     [--debug <value>] [-v] [--version] [--help] [--json] [--name-sort] [-n]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -n, --name            sort results by name
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --name-sort           sort results by name
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -n, --name                sort results by name
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Get triggers, actions, and rules in the registry for namespace
@@ -5263,26 +5544,26 @@ USAGE
     <value> | -l] [-t | -w | -o]
 
 FLAGS
-  -a, --action=<value>   Fetch logs for a specific action
-  -d, --deployed         Fetch logs for all actions deployed under a specific package
-  -i, --insecure         bypass certificate check
-  -l, --last             retrieves the most recent activation logs
-  -m, --manifest         Fetch logs for all actions in the manifest
-  -o, --poll             Fetch logs continuously
-  -p, --package=<value>  Fetch logs for a specific package in the manifest
-  -r, --strip            strip timestamp information and output first line only
-  -t, --tail             Fetch logs continuously
-  -u, --auth=<value>     whisk auth
-  -v, --verbose          Verbose output
-  -w, --watch            Fetch logs continuously
-  --apihost=<value>      whisk API host
-  --apiversion=<value>   whisk API version
-  --cert=<value>         client cert
-  --debug=<value>        Debug level output
-  --help                 Show help
-  --key=<value>          client key
-  --limit=<value>        return logs only from last LIMIT number of activations (min: 0, max: 50)
-  --version              Show version
+  -a, --action=<value>      Fetch logs for a specific action
+  -d, --deployed            Fetch logs for all actions deployed under a specific package
+  -i, --insecure            bypass certificate check
+  -l, --last                retrieves the most recent activation logs
+  -m, --manifest            Fetch logs for all actions in the manifest
+  -o, --poll                Fetch logs continuously
+  -p, --package=<value>     Fetch logs for a specific package in the manifest
+  -r, --strip               strip timestamp information and output first line only
+  -t, --tail                Fetch logs continuously
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+  -w, --watch               Fetch logs continuously
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --limit=<value>       return logs only from last LIMIT number of activations (min: 0, max: 50)
+      --version             Show version
 
 DESCRIPTION
   Retrieves the Logs for an Activation
@@ -5308,26 +5589,26 @@ USAGE
     <value> | -l] [-t | -w | -o]
 
 FLAGS
-  -a, --action=<value>   Fetch logs for a specific action
-  -d, --deployed         Fetch logs for all actions deployed under a specific package
-  -i, --insecure         bypass certificate check
-  -l, --last             retrieves the most recent activation logs
-  -m, --manifest         Fetch logs for all actions in the manifest
-  -o, --poll             Fetch logs continuously
-  -p, --package=<value>  Fetch logs for a specific package in the manifest
-  -r, --strip            strip timestamp information and output first line only
-  -t, --tail             Fetch logs continuously
-  -u, --auth=<value>     whisk auth
-  -v, --verbose          Verbose output
-  -w, --watch            Fetch logs continuously
-  --apihost=<value>      whisk API host
-  --apiversion=<value>   whisk API version
-  --cert=<value>         client cert
-  --debug=<value>        Debug level output
-  --help                 Show help
-  --key=<value>          client key
-  --limit=<value>        return logs only from last LIMIT number of activations (min: 0, max: 50)
-  --version              Show version
+  -a, --action=<value>      Fetch logs for a specific action
+  -d, --deployed            Fetch logs for all actions deployed under a specific package
+  -i, --insecure            bypass certificate check
+  -l, --last                retrieves the most recent activation logs
+  -m, --manifest            Fetch logs for all actions in the manifest
+  -o, --poll                Fetch logs continuously
+  -p, --package=<value>     Fetch logs for a specific package in the manifest
+  -r, --strip               strip timestamp information and output first line only
+  -t, --tail                Fetch logs continuously
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+  -w, --watch               Fetch logs continuously
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --limit=<value>       return logs only from last LIMIT number of activations (min: 0, max: 50)
+      --version             Show version
 
 DESCRIPTION
   Retrieves the Logs for an Activation
@@ -5352,19 +5633,19 @@ USAGE
     [--debug <value>] [-v] [--version] [--help] [--json] [--name-sort] [-n]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -n, --name            sort results by name
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --name-sort           sort results by name
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -n, --name                sort results by name
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Get triggers, actions, and rules in the registry for namespace
@@ -5387,16 +5668,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage your namespaces
@@ -5417,16 +5698,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage log forwarding settings
@@ -5451,16 +5732,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Get log forwarding errors
@@ -5485,16 +5766,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Get log forwarding destination configuration
@@ -5519,16 +5800,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Configure log forwarding destination (interactive)
@@ -5553,16 +5834,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Set log forwarding destination to Adobe I/O Runtime (Logs will be accessible via aio CLI)
@@ -5587,19 +5868,19 @@ USAGE
     [--apihost] [-u] [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure         bypass certificate check
-  -u, --auth             whisk auth
-  -v, --verbose          Verbose output
-  --apihost              whisk API host
-  --apiversion           whisk API version
-  --cert                 client cert
-  --customer-id=<value>  (required) Customer ID
-  --debug=<value>        Debug level output
-  --help                 Show help
-  --key                  client key
-  --log-type=<value>     (required) Log type
-  --shared-key=<value>   (required) Shared key
-  --version              Show version
+  -i, --insecure             bypass certificate check
+  -u, --auth                 whisk auth
+  -v, --verbose              Verbose output
+      --apihost              whisk API host
+      --apiversion           whisk API version
+      --cert                 client cert
+      --customer-id=<value>  (required) Customer ID
+      --debug=<value>        Debug level output
+      --help                 Show help
+      --key                  client key
+      --log-type=<value>     (required) Log type
+      --shared-key=<value>   (required) Shared key
+      --version              Show version
 
 DESCRIPTION
   Set log forwarding destination to Azure Log Analytics
@@ -5624,18 +5905,18 @@ USAGE
     [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure         bypass certificate check
-  -u, --auth             whisk auth
-  -v, --verbose          Verbose output
-  --apihost              whisk API host
-  --apiversion           whisk API version
-  --base-uri=<value>     (required) Base URI
-  --cert                 client cert
-  --debug=<value>        Debug level output
-  --help                 Show help
-  --key                  client key
-  --license-key=<value>  (required) License Key
-  --version              Show version
+  -i, --insecure             bypass certificate check
+  -u, --auth                 whisk auth
+  -v, --verbose              Verbose output
+      --apihost              whisk API host
+      --apiversion           whisk API version
+      --base-uri=<value>     (required) Base URI
+      --cert                 client cert
+      --debug=<value>        Debug level output
+      --help                 Show help
+      --key                  client key
+      --license-key=<value>  (required) License Key
+      --version              Show version
 
 DESCRIPTION
   Set log forwarding destination to New Relic
@@ -5660,20 +5941,20 @@ USAGE
     [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure       bypass certificate check
-  -u, --auth           whisk auth
-  -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --hec-token=<value>  (required) HEC token
-  --help               Show help
-  --host=<value>       (required) Host
-  --index=<value>      (required) Index
-  --key                client key
-  --port=<value>       (required) Port
-  --version            Show version
+  -i, --insecure           bypass certificate check
+  -u, --auth               whisk auth
+  -v, --verbose            Verbose output
+      --apihost            whisk API host
+      --apiversion         whisk API version
+      --cert               client cert
+      --debug=<value>      Debug level output
+      --hec-token=<value>  (required) HEC token
+      --help               Show help
+      --host=<value>       (required) Host
+      --index=<value>      (required) Index
+      --key                client key
+      --port=<value>       (required) Port
+      --version            Show version
 
 DESCRIPTION
   Set log forwarding destination to Splunk HEC
@@ -5698,17 +5979,17 @@ USAGE
     [--debug <value>] [-v] [--version] [--help] [--json]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Lists all of your namespaces for Adobe I/O Runtime
@@ -5733,16 +6014,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage log forwarding settings
@@ -5767,16 +6048,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Get log forwarding errors
@@ -5801,16 +6082,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Get log forwarding destination configuration
@@ -5835,16 +6116,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Configure log forwarding destination (interactive)
@@ -5869,16 +6150,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Set log forwarding destination to Adobe I/O Runtime (Logs will be accessible via aio CLI)
@@ -5903,19 +6184,19 @@ USAGE
     [--apihost] [-u] [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure         bypass certificate check
-  -u, --auth             whisk auth
-  -v, --verbose          Verbose output
-  --apihost              whisk API host
-  --apiversion           whisk API version
-  --cert                 client cert
-  --customer-id=<value>  (required) Customer ID
-  --debug=<value>        Debug level output
-  --help                 Show help
-  --key                  client key
-  --log-type=<value>     (required) Log type
-  --shared-key=<value>   (required) Shared key
-  --version              Show version
+  -i, --insecure             bypass certificate check
+  -u, --auth                 whisk auth
+  -v, --verbose              Verbose output
+      --apihost              whisk API host
+      --apiversion           whisk API version
+      --cert                 client cert
+      --customer-id=<value>  (required) Customer ID
+      --debug=<value>        Debug level output
+      --help                 Show help
+      --key                  client key
+      --log-type=<value>     (required) Log type
+      --shared-key=<value>   (required) Shared key
+      --version              Show version
 
 DESCRIPTION
   Set log forwarding destination to Azure Log Analytics
@@ -5940,18 +6221,18 @@ USAGE
     [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure         bypass certificate check
-  -u, --auth             whisk auth
-  -v, --verbose          Verbose output
-  --apihost              whisk API host
-  --apiversion           whisk API version
-  --base-uri=<value>     (required) Base URI
-  --cert                 client cert
-  --debug=<value>        Debug level output
-  --help                 Show help
-  --key                  client key
-  --license-key=<value>  (required) License Key
-  --version              Show version
+  -i, --insecure             bypass certificate check
+  -u, --auth                 whisk auth
+  -v, --verbose              Verbose output
+      --apihost              whisk API host
+      --apiversion           whisk API version
+      --base-uri=<value>     (required) Base URI
+      --cert                 client cert
+      --debug=<value>        Debug level output
+      --help                 Show help
+      --key                  client key
+      --license-key=<value>  (required) License Key
+      --version              Show version
 
 DESCRIPTION
   Set log forwarding destination to New Relic
@@ -5976,20 +6257,20 @@ USAGE
     [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure       bypass certificate check
-  -u, --auth           whisk auth
-  -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --hec-token=<value>  (required) HEC token
-  --help               Show help
-  --host=<value>       (required) Host
-  --index=<value>      (required) Index
-  --key                client key
-  --port=<value>       (required) Port
-  --version            Show version
+  -i, --insecure           bypass certificate check
+  -u, --auth               whisk auth
+  -v, --verbose            Verbose output
+      --apihost            whisk API host
+      --apiversion         whisk API version
+      --cert               client cert
+      --debug=<value>      Debug level output
+      --hec-token=<value>  (required) HEC token
+      --help               Show help
+      --host=<value>       (required) Host
+      --index=<value>      (required) Index
+      --key                client key
+      --port=<value>       (required) Port
+      --version            Show version
 
 DESCRIPTION
   Set log forwarding destination to Splunk HEC
@@ -6014,17 +6295,17 @@ USAGE
     [--debug <value>] [-v] [--version] [--help] [--json]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Lists all of your namespaces for Adobe I/O Runtime
@@ -6049,16 +6330,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage your namespaces
@@ -6079,16 +6360,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage log forwarding settings
@@ -6113,16 +6394,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Get log forwarding errors
@@ -6147,16 +6428,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Get log forwarding destination configuration
@@ -6181,16 +6462,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Configure log forwarding destination (interactive)
@@ -6215,16 +6496,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Set log forwarding destination to Adobe I/O Runtime (Logs will be accessible via aio CLI)
@@ -6249,19 +6530,19 @@ USAGE
     [--apihost] [-u] [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure         bypass certificate check
-  -u, --auth             whisk auth
-  -v, --verbose          Verbose output
-  --apihost              whisk API host
-  --apiversion           whisk API version
-  --cert                 client cert
-  --customer-id=<value>  (required) Customer ID
-  --debug=<value>        Debug level output
-  --help                 Show help
-  --key                  client key
-  --log-type=<value>     (required) Log type
-  --shared-key=<value>   (required) Shared key
-  --version              Show version
+  -i, --insecure             bypass certificate check
+  -u, --auth                 whisk auth
+  -v, --verbose              Verbose output
+      --apihost              whisk API host
+      --apiversion           whisk API version
+      --cert                 client cert
+      --customer-id=<value>  (required) Customer ID
+      --debug=<value>        Debug level output
+      --help                 Show help
+      --key                  client key
+      --log-type=<value>     (required) Log type
+      --shared-key=<value>   (required) Shared key
+      --version              Show version
 
 DESCRIPTION
   Set log forwarding destination to Azure Log Analytics
@@ -6286,18 +6567,18 @@ USAGE
     [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure         bypass certificate check
-  -u, --auth             whisk auth
-  -v, --verbose          Verbose output
-  --apihost              whisk API host
-  --apiversion           whisk API version
-  --base-uri=<value>     (required) Base URI
-  --cert                 client cert
-  --debug=<value>        Debug level output
-  --help                 Show help
-  --key                  client key
-  --license-key=<value>  (required) License Key
-  --version              Show version
+  -i, --insecure             bypass certificate check
+  -u, --auth                 whisk auth
+  -v, --verbose              Verbose output
+      --apihost              whisk API host
+      --apiversion           whisk API version
+      --base-uri=<value>     (required) Base URI
+      --cert                 client cert
+      --debug=<value>        Debug level output
+      --help                 Show help
+      --key                  client key
+      --license-key=<value>  (required) License Key
+      --version              Show version
 
 DESCRIPTION
   Set log forwarding destination to New Relic
@@ -6322,20 +6603,20 @@ USAGE
     [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure       bypass certificate check
-  -u, --auth           whisk auth
-  -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --hec-token=<value>  (required) HEC token
-  --help               Show help
-  --host=<value>       (required) Host
-  --index=<value>      (required) Index
-  --key                client key
-  --port=<value>       (required) Port
-  --version            Show version
+  -i, --insecure           bypass certificate check
+  -u, --auth               whisk auth
+  -v, --verbose            Verbose output
+      --apihost            whisk API host
+      --apiversion         whisk API version
+      --cert               client cert
+      --debug=<value>      Debug level output
+      --hec-token=<value>  (required) HEC token
+      --help               Show help
+      --host=<value>       (required) Host
+      --index=<value>      (required) Index
+      --key                client key
+      --port=<value>       (required) Port
+      --version            Show version
 
 DESCRIPTION
   Set log forwarding destination to Splunk HEC
@@ -6360,17 +6641,17 @@ USAGE
     [--debug <value>] [-v] [--version] [--help] [--json]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Lists all of your namespaces for Adobe I/O Runtime
@@ -6395,16 +6676,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage log forwarding settings
@@ -6429,16 +6710,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Get log forwarding errors
@@ -6463,16 +6744,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Get log forwarding destination configuration
@@ -6497,16 +6778,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Configure log forwarding destination (interactive)
@@ -6531,16 +6812,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Set log forwarding destination to Adobe I/O Runtime (Logs will be accessible via aio CLI)
@@ -6565,19 +6846,19 @@ USAGE
     [--apihost] [-u] [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure         bypass certificate check
-  -u, --auth             whisk auth
-  -v, --verbose          Verbose output
-  --apihost              whisk API host
-  --apiversion           whisk API version
-  --cert                 client cert
-  --customer-id=<value>  (required) Customer ID
-  --debug=<value>        Debug level output
-  --help                 Show help
-  --key                  client key
-  --log-type=<value>     (required) Log type
-  --shared-key=<value>   (required) Shared key
-  --version              Show version
+  -i, --insecure             bypass certificate check
+  -u, --auth                 whisk auth
+  -v, --verbose              Verbose output
+      --apihost              whisk API host
+      --apiversion           whisk API version
+      --cert                 client cert
+      --customer-id=<value>  (required) Customer ID
+      --debug=<value>        Debug level output
+      --help                 Show help
+      --key                  client key
+      --log-type=<value>     (required) Log type
+      --shared-key=<value>   (required) Shared key
+      --version              Show version
 
 DESCRIPTION
   Set log forwarding destination to Azure Log Analytics
@@ -6602,18 +6883,18 @@ USAGE
     [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure         bypass certificate check
-  -u, --auth             whisk auth
-  -v, --verbose          Verbose output
-  --apihost              whisk API host
-  --apiversion           whisk API version
-  --base-uri=<value>     (required) Base URI
-  --cert                 client cert
-  --debug=<value>        Debug level output
-  --help                 Show help
-  --key                  client key
-  --license-key=<value>  (required) License Key
-  --version              Show version
+  -i, --insecure             bypass certificate check
+  -u, --auth                 whisk auth
+  -v, --verbose              Verbose output
+      --apihost              whisk API host
+      --apiversion           whisk API version
+      --base-uri=<value>     (required) Base URI
+      --cert                 client cert
+      --debug=<value>        Debug level output
+      --help                 Show help
+      --key                  client key
+      --license-key=<value>  (required) License Key
+      --version              Show version
 
 DESCRIPTION
   Set log forwarding destination to New Relic
@@ -6638,20 +6919,20 @@ USAGE
     [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure       bypass certificate check
-  -u, --auth           whisk auth
-  -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --hec-token=<value>  (required) HEC token
-  --help               Show help
-  --host=<value>       (required) Host
-  --index=<value>      (required) Index
-  --key                client key
-  --port=<value>       (required) Port
-  --version            Show version
+  -i, --insecure           bypass certificate check
+  -u, --auth               whisk auth
+  -v, --verbose            Verbose output
+      --apihost            whisk API host
+      --apiversion         whisk API version
+      --cert               client cert
+      --debug=<value>      Debug level output
+      --hec-token=<value>  (required) HEC token
+      --help               Show help
+      --host=<value>       (required) Host
+      --index=<value>      (required) Index
+      --key                client key
+      --port=<value>       (required) Port
+      --version            Show version
 
 DESCRIPTION
   Set log forwarding destination to Splunk HEC
@@ -6676,17 +6957,17 @@ USAGE
     [--debug <value>] [-v] [--version] [--help] [--json]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Lists all of your namespaces for Adobe I/O Runtime
@@ -6711,16 +6992,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage your packages
@@ -6749,14 +7030,14 @@ FLAGS
   -p, --param=<value>...         parameters in key value pairs to be passed to the package
   -u, --auth=<value>             whisk auth
   -v, --verbose                  Verbose output
-  --apihost=<value>              whisk API host
-  --apiversion=<value>           whisk API version
-  --cert=<value>                 client cert
-  --debug=<value>                Debug level output
-  --help                         Show help
-  --json                         output raw json
-  --key=<value>                  client key
-  --version                      Show version
+      --apihost=<value>          whisk API host
+      --apiversion=<value>       whisk API version
+      --cert=<value>             client cert
+      --debug=<value>            Debug level output
+      --help                     Show help
+      --json                     output raw json
+      --key=<value>              client key
+      --version                  Show version
 
 DESCRIPTION
   Bind parameters to a package
@@ -6785,16 +7066,16 @@ FLAGS
   -p, --param=<value>...         parameters in key value pairs to be passed to the package
   -u, --auth=<value>             whisk auth
   -v, --verbose                  Verbose output
-  --apihost=<value>              whisk API host
-  --apiversion=<value>           whisk API version
-  --cert=<value>                 client cert
-  --debug=<value>                Debug level output
-  --help                         Show help
-  --json                         output raw json
-  --key=<value>                  client key
-  --shared=<option>              parameter to be passed to indicate whether package is shared or private
+      --apihost=<value>          whisk API host
+      --apiversion=<value>       whisk API version
+      --cert=<value>             client cert
+      --debug=<value>            Debug level output
+      --help                     Show help
+      --json                     output raw json
+      --key=<value>              client key
+      --shared=<option>          parameter to be passed to indicate whether package is shared or private
                                  <options: true|yes|false|no>
-  --version                      Show version
+      --version                  Show version
 
 DESCRIPTION
   Creates a Package
@@ -6815,18 +7096,18 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [--json] [-r]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -r, --recursive       Deletes all associated actions (and rules & triggers associated with the actions)
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -r, --recursive           Deletes all associated actions (and rules & triggers associated with the actions)
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Deletes a Package
@@ -6847,16 +7128,16 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Retrieves a Package
@@ -6877,22 +7158,22 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
 
 FLAGS
-  -c, --count           show only the total number of packages
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of packages (min: 0, max: 50)
-  -n, --name            sort results by name
-  -s, --skip=<value>    exclude the first SKIP number of packages from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --name-sort           sort results by name
-  --version             Show version
+  -c, --count               show only the total number of packages
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of packages (min: 0, max: 50)
+  -n, --name                sort results by name
+  -s, --skip=<value>        exclude the first SKIP number of packages from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Lists all the Packages
@@ -6917,22 +7198,22 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
 
 FLAGS
-  -c, --count           show only the total number of packages
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of packages (min: 0, max: 50)
-  -n, --name            sort results by name
-  -s, --skip=<value>    exclude the first SKIP number of packages from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --name-sort           sort results by name
-  --version             Show version
+  -c, --count               show only the total number of packages
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of packages (min: 0, max: 50)
+  -n, --name                sort results by name
+  -s, --skip=<value>        exclude the first SKIP number of packages from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Lists all the Packages
@@ -6965,16 +7246,16 @@ FLAGS
   -p, --param=<value>...         parameters in key value pairs to be passed to the package
   -u, --auth=<value>             whisk auth
   -v, --verbose                  Verbose output
-  --apihost=<value>              whisk API host
-  --apiversion=<value>           whisk API version
-  --cert=<value>                 client cert
-  --debug=<value>                Debug level output
-  --help                         Show help
-  --json                         output raw json
-  --key=<value>                  client key
-  --shared=<option>              parameter to be passed to indicate whether package is shared or private
+      --apihost=<value>          whisk API host
+      --apiversion=<value>       whisk API version
+      --cert=<value>             client cert
+      --debug=<value>            Debug level output
+      --help                     Show help
+      --json                     output raw json
+      --key=<value>              client key
+      --shared=<option>          parameter to be passed to indicate whether package is shared or private
                                  <options: true|yes|false|no>
-  --version                      Show version
+      --version                  Show version
 
 DESCRIPTION
   Updates a Package
@@ -6995,16 +7276,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage your packages
@@ -7033,14 +7314,14 @@ FLAGS
   -p, --param=<value>...         parameters in key value pairs to be passed to the package
   -u, --auth=<value>             whisk auth
   -v, --verbose                  Verbose output
-  --apihost=<value>              whisk API host
-  --apiversion=<value>           whisk API version
-  --cert=<value>                 client cert
-  --debug=<value>                Debug level output
-  --help                         Show help
-  --json                         output raw json
-  --key=<value>                  client key
-  --version                      Show version
+      --apihost=<value>          whisk API host
+      --apiversion=<value>       whisk API version
+      --cert=<value>             client cert
+      --debug=<value>            Debug level output
+      --help                     Show help
+      --json                     output raw json
+      --key=<value>              client key
+      --version                  Show version
 
 DESCRIPTION
   Bind parameters to a package
@@ -7069,16 +7350,16 @@ FLAGS
   -p, --param=<value>...         parameters in key value pairs to be passed to the package
   -u, --auth=<value>             whisk auth
   -v, --verbose                  Verbose output
-  --apihost=<value>              whisk API host
-  --apiversion=<value>           whisk API version
-  --cert=<value>                 client cert
-  --debug=<value>                Debug level output
-  --help                         Show help
-  --json                         output raw json
-  --key=<value>                  client key
-  --shared=<option>              parameter to be passed to indicate whether package is shared or private
+      --apihost=<value>          whisk API host
+      --apiversion=<value>       whisk API version
+      --cert=<value>             client cert
+      --debug=<value>            Debug level output
+      --help                     Show help
+      --json                     output raw json
+      --key=<value>              client key
+      --shared=<option>          parameter to be passed to indicate whether package is shared or private
                                  <options: true|yes|false|no>
-  --version                      Show version
+      --version                  Show version
 
 DESCRIPTION
   Creates a Package
@@ -7099,18 +7380,18 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [--json] [-r]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -r, --recursive       Deletes all associated actions (and rules & triggers associated with the actions)
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -r, --recursive           Deletes all associated actions (and rules & triggers associated with the actions)
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Deletes a Package
@@ -7131,16 +7412,16 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Retrieves a Package
@@ -7161,22 +7442,22 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
 
 FLAGS
-  -c, --count           show only the total number of packages
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of packages (min: 0, max: 50)
-  -n, --name            sort results by name
-  -s, --skip=<value>    exclude the first SKIP number of packages from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --name-sort           sort results by name
-  --version             Show version
+  -c, --count               show only the total number of packages
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of packages (min: 0, max: 50)
+  -n, --name                sort results by name
+  -s, --skip=<value>        exclude the first SKIP number of packages from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Lists all the Packages
@@ -7201,22 +7482,22 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
 
 FLAGS
-  -c, --count           show only the total number of packages
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of packages (min: 0, max: 50)
-  -n, --name            sort results by name
-  -s, --skip=<value>    exclude the first SKIP number of packages from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --name-sort           sort results by name
-  --version             Show version
+  -c, --count               show only the total number of packages
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of packages (min: 0, max: 50)
+  -n, --name                sort results by name
+  -s, --skip=<value>        exclude the first SKIP number of packages from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Lists all the Packages
@@ -7249,16 +7530,16 @@ FLAGS
   -p, --param=<value>...         parameters in key value pairs to be passed to the package
   -u, --auth=<value>             whisk auth
   -v, --verbose                  Verbose output
-  --apihost=<value>              whisk API host
-  --apiversion=<value>           whisk API version
-  --cert=<value>                 client cert
-  --debug=<value>                Debug level output
-  --help                         Show help
-  --json                         output raw json
-  --key=<value>                  client key
-  --shared=<option>              parameter to be passed to indicate whether package is shared or private
+      --apihost=<value>          whisk API host
+      --apiversion=<value>       whisk API version
+      --cert=<value>             client cert
+      --debug=<value>            Debug level output
+      --help                     Show help
+      --json                     output raw json
+      --key=<value>              client key
+      --shared=<option>          parameter to be passed to indicate whether package is shared or private
                                  <options: true|yes|false|no>
-  --version                      Show version
+      --version                  Show version
 
 DESCRIPTION
   Updates a Package
@@ -7279,16 +7560,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Execute property commands
@@ -7309,21 +7590,21 @@ USAGE
     [--help] [--namespace] [--all] [--apibuild] [--apibuildno] [--cliversion]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --all            all properties
-  --apibuild       whisk API build version
-  --apibuildno     whisk API build number
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --cliversion     whisk CLI version
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --namespace      whisk namespace
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --all            all properties
+      --apibuild       whisk API build version
+      --apibuildno     whisk API build number
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --cliversion     whisk CLI version
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --namespace      whisk namespace
+      --version        Show version
 
 DESCRIPTION
   get property
@@ -7344,17 +7625,17 @@ USAGE
     [--help] [--namespace <value>]
 
 FLAGS
-  -i, --insecure       bypass certificate check
-  -u, --auth           whisk auth
-  -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --help               Show help
-  --key                client key
-  --namespace=<value>  whisk namespace
-  --version            Show version
+  -i, --insecure           bypass certificate check
+  -u, --auth               whisk auth
+  -v, --verbose            Verbose output
+      --apihost            whisk API host
+      --apiversion         whisk API version
+      --cert               client cert
+      --debug=<value>      Debug level output
+      --help               Show help
+      --key                client key
+      --namespace=<value>  whisk namespace
+      --version            Show version
 
 DESCRIPTION
   set property
@@ -7375,17 +7656,17 @@ USAGE
     [--help] [--namespace]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --namespace      whisk namespace
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --namespace      whisk namespace
+      --version        Show version
 
 DESCRIPTION
   unset property
@@ -7406,16 +7687,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Execute property commands
@@ -7436,21 +7717,21 @@ USAGE
     [--help] [--namespace] [--all] [--apibuild] [--apibuildno] [--cliversion]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --all            all properties
-  --apibuild       whisk API build version
-  --apibuildno     whisk API build number
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --cliversion     whisk CLI version
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --namespace      whisk namespace
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --all            all properties
+      --apibuild       whisk API build version
+      --apibuildno     whisk API build number
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --cliversion     whisk CLI version
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --namespace      whisk namespace
+      --version        Show version
 
 DESCRIPTION
   get property
@@ -7471,17 +7752,17 @@ USAGE
     [--help] [--namespace <value>]
 
 FLAGS
-  -i, --insecure       bypass certificate check
-  -u, --auth           whisk auth
-  -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --help               Show help
-  --key                client key
-  --namespace=<value>  whisk namespace
-  --version            Show version
+  -i, --insecure           bypass certificate check
+  -u, --auth               whisk auth
+  -v, --verbose            Verbose output
+      --apihost            whisk API host
+      --apiversion         whisk API version
+      --cert               client cert
+      --debug=<value>      Debug level output
+      --help               Show help
+      --key                client key
+      --namespace=<value>  whisk namespace
+      --version            Show version
 
 DESCRIPTION
   set property
@@ -7502,17 +7783,17 @@ USAGE
     [--help] [--namespace]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --namespace      whisk namespace
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --namespace      whisk namespace
+      --version        Show version
 
 DESCRIPTION
   unset property
@@ -7533,16 +7814,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage your api routes
@@ -7577,13 +7858,13 @@ FLAGS
                                 <options: html|http|json|text|svg|json>
   -u, --auth=<value>            whisk auth
   -v, --verbose                 Verbose output
-  --apihost=<value>             whisk API host
-  --apiversion=<value>          whisk API version
-  --cert=<value>                client cert
-  --debug=<value>               Debug level output
-  --help                        Show help
-  --key=<value>                 client key
-  --version                     Show version
+      --apihost=<value>         whisk API host
+      --apiversion=<value>      whisk API version
+      --cert=<value>            client cert
+      --debug=<value>           Debug level output
+      --help                    Show help
+      --key=<value>             client key
+      --version                 Show version
 
 DESCRIPTION
   create a new api route
@@ -7609,16 +7890,16 @@ ARGUMENTS
   APIVERB            (get|post|put|patch|delete|head|options) The http verb
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   delete an API
@@ -7642,16 +7923,16 @@ ARGUMENTS
   BASEPATHORAPINAME  The base path or api name
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   get API details
@@ -7677,19 +7958,19 @@ ARGUMENTS
   APIVERB   (get|post|put|patch|delete|head|options) The http verb
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of triggers
-  -s, --skip=<value>    exclude the first SKIP number of triggers from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of triggers
+  -s, --skip=<value>        exclude the first SKIP number of triggers from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   list route/apis for Adobe I/O Runtime
@@ -7719,19 +8000,19 @@ ARGUMENTS
   APIVERB   (get|post|put|patch|delete|head|options) The http verb
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of triggers
-  -s, --skip=<value>    exclude the first SKIP number of triggers from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of triggers
+  -s, --skip=<value>        exclude the first SKIP number of triggers from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   list route/apis for Adobe I/O Runtime
@@ -7756,16 +8037,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage your rules
@@ -7789,17 +8070,17 @@ ARGUMENTS
   ACTION   Name of the action
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --json           output raw json
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --json           output raw json
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Create a Rule
@@ -7821,17 +8102,17 @@ ARGUMENTS
   NAME  Name of the rule
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --json           output raw json
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --json           output raw json
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Delete a Rule
@@ -7853,16 +8134,16 @@ ARGUMENTS
   NAME  Name of the rule
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Disable a Rule
@@ -7884,16 +8165,16 @@ ARGUMENTS
   NAME  Name of the rule
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Enable a Rule
@@ -7915,16 +8196,16 @@ ARGUMENTS
   NAME  Name of the rule
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Retrieves a Rule
@@ -7950,15 +8231,15 @@ FLAGS
   -s, --skip=<value>   Skip number of rules returned
   -u, --auth           whisk auth
   -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --help               Show help
-  --json               output raw json
-  --key                client key
-  --name-sort          sort results by name
-  --version            Show version
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --json           output raw json
+      --key            client key
+      --name-sort      sort results by name
+      --version        Show version
 
 DESCRIPTION
   Retrieves a list of Rules
@@ -7986,15 +8267,15 @@ FLAGS
   -s, --skip=<value>   Skip number of rules returned
   -u, --auth           whisk auth
   -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --help               Show help
-  --json               output raw json
-  --key                client key
-  --name-sort          sort results by name
-  --version            Show version
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --json           output raw json
+      --key            client key
+      --name-sort      sort results by name
+      --version        Show version
 
 DESCRIPTION
   Retrieves a list of Rules
@@ -8018,16 +8299,16 @@ ARGUMENTS
   NAME  Name of the rule
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Gets the status of a rule
@@ -8051,17 +8332,17 @@ ARGUMENTS
   ACTION   Name of the action
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --json           output raw json
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --json           output raw json
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Update a Rule
@@ -8080,16 +8361,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage your triggers
@@ -8119,13 +8400,13 @@ FLAGS
   -p, --param=<value>...         parameter values in KEY VALUE format
   -u, --auth                     whisk auth
   -v, --verbose                  Verbose output
-  --apihost                      whisk API host
-  --apiversion                   whisk API version
-  --cert                         client cert
-  --debug=<value>                Debug level output
-  --help                         Show help
-  --key                          client key
-  --version                      Show version
+      --apihost                  whisk API host
+      --apiversion               whisk API version
+      --cert                     client cert
+      --debug=<value>            Debug level output
+      --help                     Show help
+      --key                      client key
+      --version                  Show version
 
 DESCRIPTION
   Create a trigger for Adobe I/O Runtime
@@ -8147,16 +8428,16 @@ ARGUMENTS
   TRIGGERPATH  The name of the trigger, in the format /NAMESPACE/NAME
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Delete a trigger for Adobe I/O Runtime
@@ -8183,13 +8464,13 @@ FLAGS
   -p, --param=<value>...    parameter values in KEY VALUE format
   -u, --auth                whisk auth
   -v, --verbose             Verbose output
-  --apihost                 whisk API host
-  --apiversion              whisk API version
-  --cert                    client cert
-  --debug=<value>           Debug level output
-  --help                    Show help
-  --key                     client key
-  --version                 Show version
+      --apihost             whisk API host
+      --apiversion          whisk API version
+      --cert                client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key                 client key
+      --version             Show version
 
 DESCRIPTION
   Fire a trigger for Adobe I/O Runtime
@@ -8211,16 +8492,16 @@ ARGUMENTS
   TRIGGERPATH  The name/path of the trigger, in the format /NAMESPACE/NAME
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Get a trigger for Adobe I/O Runtime
@@ -8246,15 +8527,15 @@ FLAGS
   -s, --skip=<value>   exclude the first SKIP number of triggers from the result
   -u, --auth           whisk auth
   -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --help               Show help
-  --json               output raw json
-  --key                client key
-  --name-sort          sort results by name
-  --version            Show version
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --json           output raw json
+      --key            client key
+      --name-sort      sort results by name
+      --version        Show version
 
 DESCRIPTION
   Lists all of your triggers for Adobe I/O Runtime
@@ -8282,15 +8563,15 @@ FLAGS
   -s, --skip=<value>   exclude the first SKIP number of triggers from the result
   -u, --auth           whisk auth
   -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --help               Show help
-  --json               output raw json
-  --key                client key
-  --name-sort          sort results by name
-  --version            Show version
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --json           output raw json
+      --key            client key
+      --name-sort      sort results by name
+      --version        Show version
 
 DESCRIPTION
   Lists all of your triggers for Adobe I/O Runtime
@@ -8321,13 +8602,13 @@ FLAGS
   -p, --param=<value>...         parameter values in KEY VALUE format
   -u, --auth                     whisk auth
   -v, --verbose                  Verbose output
-  --apihost                      whisk API host
-  --apiversion                   whisk API version
-  --cert                         client cert
-  --debug=<value>                Debug level output
-  --help                         Show help
-  --key                          client key
-  --version                      Show version
+      --apihost                  whisk API host
+      --apiversion               whisk API version
+      --cert                     client cert
+      --debug=<value>            Debug level output
+      --help                     Show help
+      --key                      client key
+      --version                  Show version
 
 DESCRIPTION
   Update or create a trigger for Adobe I/O Runtime
@@ -8346,16 +8627,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Execute runtime commands
@@ -8376,16 +8657,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage your actions
@@ -8393,6 +8674,8 @@ DESCRIPTION
 ALIASES
   $ aio rt action
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/action/index.ts)_
 
 ## `aio runtime action create ACTIONNAME [ACTIONPATH]`
 
@@ -8422,24 +8705,24 @@ FLAGS
                                  min: 100, max: 3600000)
   -u, --auth=<value>             whisk auth
   -v, --verbose                  Verbose output
-  --apihost=<value>              whisk API host
-  --apiversion=<value>           whisk API version
-  --binary                       treat code artifact as binary
-  --cert=<value>                 client cert
-  --copy=<value>                 copy an existing action
-  --debug=<value>                Debug level output
-  --docker=<value>               [Restricted Access] use provided Docker image (a path on DockerHub) to run the action
-  --help                         Show help
-  --json                         output raw json
-  --key=<value>                  client key
-  --kind=<value>                 the KIND of the action runtime (example: swift:default, nodejs:default)
-  --main=<value>                 the name of the action entry point (function or fully-qualified method name when
+      --apihost=<value>          whisk API host
+      --apiversion=<value>       whisk API version
+      --binary                   treat code artifact as binary
+      --cert=<value>             client cert
+      --copy=<value>             copy an existing action
+      --debug=<value>            Debug level output
+      --docker=<value>           [Restricted Access] use provided Docker image (a path on DockerHub) to run the action
+      --help                     Show help
+      --json                     output raw json
+      --key=<value>              client key
+      --kind=<value>             the KIND of the action runtime (example: swift:default, nodejs:default)
+      --main=<value>             the name of the action entry point (function or fully-qualified method name when
                                  applicable)
-  --sequence=<value>             treat ACTION as comma separated sequence of actions to invoke
-  --version                      Show version
-  --web=<option>                 treat ACTION as a web action or as a raw HTTP web action
+      --sequence=<value>         treat ACTION as comma separated sequence of actions to invoke
+      --version                  Show version
+      --web=<option>             treat ACTION as a web action or as a raw HTTP web action
                                  <options: true|yes|false|no|raw>
-  --web-secure=<value>           secure the web action (valid values are true, false, or any string)
+      --web-secure=<value>       secure the web action (valid values are true, false, or any string)
 
 DESCRIPTION
   Creates an Action
@@ -8447,6 +8730,8 @@ DESCRIPTION
 ALIASES
   $ aio rt action create
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/action/create.ts)_
 
 ## `aio runtime action del ACTIONNAME`
 
@@ -8458,17 +8743,17 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [--json]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Deletes an Action
@@ -8489,17 +8774,17 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [--json]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Deletes an Action
@@ -8509,6 +8794,8 @@ ALIASES
   $ aio rt action delete
   $ aio rt action del
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/action/delete.ts)_
 
 ## `aio runtime action get ACTIONNAME`
 
@@ -8520,20 +8807,20 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-r] [-c] [--save] [--save-as <value>]
 
 FLAGS
-  -c, --code            show action code (only works if code is not a zip file)
-  -i, --insecure        bypass certificate check
-  -r, --url             get action url
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --key=<value>         client key
-  --save                save action code to file corresponding with action name
-  --save-as=<value>     file to save action code to
-  --version             Show version
+  -c, --code                show action code (only works if code is not a zip file)
+  -i, --insecure            bypass certificate check
+  -r, --url                 get action url
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --save                save action code to file corresponding with action name
+      --save-as=<value>     file to save action code to
+      --version             Show version
 
 DESCRIPTION
   Retrieves an Action
@@ -8541,6 +8828,8 @@ DESCRIPTION
 ALIASES
   $ aio rt action get
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/action/get.ts)_
 
 ## `aio runtime action invoke ACTIONNAME`
 
@@ -8559,13 +8848,13 @@ FLAGS
   -r, --result              blocking invoke; show only activation result (unless there is a failure)
   -u, --auth=<value>        whisk auth
   -v, --verbose             Verbose output
-  --apihost=<value>         whisk API host
-  --apiversion=<value>      whisk API version
-  --cert=<value>            client cert
-  --debug=<value>           Debug level output
-  --help                    Show help
-  --key=<value>             client key
-  --version                 Show version
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Invokes an Action
@@ -8573,6 +8862,8 @@ DESCRIPTION
 ALIASES
   $ aio rt action invoke
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/action/invoke.ts)_
 
 ## `aio runtime action list [PACKAGENAME]`
 
@@ -8584,22 +8875,22 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
 
 FLAGS
-  -c, --count           show only the total number of actions
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of actions (min: 0, max: 50)
-  -n, --name            sort results by name
-  -s, --skip=<value>    exclude the first SKIP number of actions from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --name-sort           sort results by name
-  --version             Show version
+  -c, --count               show only the total number of actions
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of actions (min: 0, max: 50)
+  -n, --name                sort results by name
+  -s, --skip=<value>        exclude the first SKIP number of actions from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Lists all the Actions
@@ -8614,6 +8905,8 @@ ALIASES
   $ aio rt actions ls
 ```
 
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/action/list.ts)_
+
 ## `aio runtime action ls [PACKAGENAME]`
 
 Lists all the Actions
@@ -8624,22 +8917,22 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
 
 FLAGS
-  -c, --count           show only the total number of actions
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of actions (min: 0, max: 50)
-  -n, --name            sort results by name
-  -s, --skip=<value>    exclude the first SKIP number of actions from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --name-sort           sort results by name
-  --version             Show version
+  -c, --count               show only the total number of actions
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of actions (min: 0, max: 50)
+  -n, --name                sort results by name
+  -s, --skip=<value>        exclude the first SKIP number of actions from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Lists all the Actions
@@ -8682,24 +8975,24 @@ FLAGS
                                  min: 100, max: 3600000)
   -u, --auth=<value>             whisk auth
   -v, --verbose                  Verbose output
-  --apihost=<value>              whisk API host
-  --apiversion=<value>           whisk API version
-  --binary                       treat code artifact as binary
-  --cert=<value>                 client cert
-  --copy=<value>                 copy an existing action
-  --debug=<value>                Debug level output
-  --docker=<value>               [Restricted Access] use provided Docker image (a path on DockerHub) to run the action
-  --help                         Show help
-  --json                         output raw json
-  --key=<value>                  client key
-  --kind=<value>                 the KIND of the action runtime (example: swift:default, nodejs:default)
-  --main=<value>                 the name of the action entry point (function or fully-qualified method name when
+      --apihost=<value>          whisk API host
+      --apiversion=<value>       whisk API version
+      --binary                   treat code artifact as binary
+      --cert=<value>             client cert
+      --copy=<value>             copy an existing action
+      --debug=<value>            Debug level output
+      --docker=<value>           [Restricted Access] use provided Docker image (a path on DockerHub) to run the action
+      --help                     Show help
+      --json                     output raw json
+      --key=<value>              client key
+      --kind=<value>             the KIND of the action runtime (example: swift:default, nodejs:default)
+      --main=<value>             the name of the action entry point (function or fully-qualified method name when
                                  applicable)
-  --sequence=<value>             treat ACTION as comma separated sequence of actions to invoke
-  --version                      Show version
-  --web=<option>                 treat ACTION as a web action or as a raw HTTP web action
+      --sequence=<value>         treat ACTION as comma separated sequence of actions to invoke
+      --version                  Show version
+      --web=<option>             treat ACTION as a web action or as a raw HTTP web action
                                  <options: true|yes|false|no|raw>
-  --web-secure=<value>           secure the web action (valid values are true, false, or any string)
+      --web-secure=<value>       secure the web action (valid values are true, false, or any string)
 
 DESCRIPTION
   Updates an Action
@@ -8707,6 +9000,8 @@ DESCRIPTION
 ALIASES
   $ aio rt action update
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/action/update.ts)_
 
 ## `aio runtime actions list [PACKAGENAME]`
 
@@ -8718,22 +9013,22 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
 
 FLAGS
-  -c, --count           show only the total number of actions
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of actions (min: 0, max: 50)
-  -n, --name            sort results by name
-  -s, --skip=<value>    exclude the first SKIP number of actions from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --name-sort           sort results by name
-  --version             Show version
+  -c, --count               show only the total number of actions
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of actions (min: 0, max: 50)
+  -n, --name                sort results by name
+  -s, --skip=<value>        exclude the first SKIP number of actions from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Lists all the Actions
@@ -8758,22 +9053,22 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
 
 FLAGS
-  -c, --count           show only the total number of actions
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of actions (min: 0, max: 50)
-  -n, --name            sort results by name
-  -s, --skip=<value>    exclude the first SKIP number of actions from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --name-sort           sort results by name
-  --version             Show version
+  -c, --count               show only the total number of actions
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of actions (min: 0, max: 50)
+  -n, --name                sort results by name
+  -s, --skip=<value>        exclude the first SKIP number of actions from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Lists all the Actions
@@ -8798,16 +9093,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage your activations
@@ -8815,6 +9110,8 @@ DESCRIPTION
 ALIASES
   $ aio rt activation
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/activation/index.ts)_
 
 ## `aio runtime activation get [ACTIVATIONID]`
 
@@ -8826,18 +9123,18 @@ USAGE
     [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l] [-g]
 
 FLAGS
-  -g, --logs            emit only the logs, stripped of time stamps and stream identifier
-  -i, --insecure        bypass certificate check
-  -l, --last            retrieves the most recent activation
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --key=<value>         client key
-  --version             Show version
+  -g, --logs                emit only the logs, stripped of time stamps and stream identifier
+  -i, --insecure            bypass certificate check
+  -l, --last                retrieves the most recent activation
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Retrieves an Activation
@@ -8845,6 +9142,8 @@ DESCRIPTION
 ALIASES
   $ aio rt activation get
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/activation/get.ts)_
 
 ## `aio runtime activation list [ACTION_NAME]`
 
@@ -8857,25 +9156,25 @@ USAGE
     <value>] [-c] [--json] [-f]
 
 FLAGS
-  -c, --count           show only the total number of activations
-  -f, --full            include full activation description
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of activations (min: 0, max: 50)
-  -s, --skip=<value>    exclude the first SKIP number of activations from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --since=<value>       return activations with timestamps later than SINCE; measured in milliseconds since Th, 01, Jan
-                        1970
-  --upto=<value>        return activations with timestamps earlier than UPTO; measured in milliseconds since Th, 01, Jan
-                        1970
-  --version             Show version
+  -c, --count               show only the total number of activations
+  -f, --full                include full activation description
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of activations (min: 0, max: 50)
+  -s, --skip=<value>        exclude the first SKIP number of activations from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --since=<value>       return activations with timestamps later than SINCE; measured in milliseconds since Th, 01,
+                            Jan 1970
+      --upto=<value>        return activations with timestamps earlier than UPTO; measured in milliseconds since Th, 01,
+                            Jan 1970
+      --version             Show version
 
 DESCRIPTION
   Lists all the Activations
@@ -8890,6 +9189,8 @@ ALIASES
   $ aio rt activations ls
 ```
 
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/activation/list.ts)_
+
 ## `aio runtime activation log [ACTIVATIONID]`
 
 Retrieves the Logs for an Activation
@@ -8901,26 +9202,26 @@ USAGE
     <value> | -l] [-t | -w | -o]
 
 FLAGS
-  -a, --action=<value>   Fetch logs for a specific action
-  -d, --deployed         Fetch logs for all actions deployed under a specific package
-  -i, --insecure         bypass certificate check
-  -l, --last             retrieves the most recent activation logs
-  -m, --manifest         Fetch logs for all actions in the manifest
-  -o, --poll             Fetch logs continuously
-  -p, --package=<value>  Fetch logs for a specific package in the manifest
-  -r, --strip            strip timestamp information and output first line only
-  -t, --tail             Fetch logs continuously
-  -u, --auth=<value>     whisk auth
-  -v, --verbose          Verbose output
-  -w, --watch            Fetch logs continuously
-  --apihost=<value>      whisk API host
-  --apiversion=<value>   whisk API version
-  --cert=<value>         client cert
-  --debug=<value>        Debug level output
-  --help                 Show help
-  --key=<value>          client key
-  --limit=<value>        return logs only from last LIMIT number of activations (min: 0, max: 50)
-  --version              Show version
+  -a, --action=<value>      Fetch logs for a specific action
+  -d, --deployed            Fetch logs for all actions deployed under a specific package
+  -i, --insecure            bypass certificate check
+  -l, --last                retrieves the most recent activation logs
+  -m, --manifest            Fetch logs for all actions in the manifest
+  -o, --poll                Fetch logs continuously
+  -p, --package=<value>     Fetch logs for a specific package in the manifest
+  -r, --strip               strip timestamp information and output first line only
+  -t, --tail                Fetch logs continuously
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+  -w, --watch               Fetch logs continuously
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --limit=<value>       return logs only from last LIMIT number of activations (min: 0, max: 50)
+      --version             Show version
 
 DESCRIPTION
   Retrieves the Logs for an Activation
@@ -8946,26 +9247,26 @@ USAGE
     <value> | -l] [-t | -w | -o]
 
 FLAGS
-  -a, --action=<value>   Fetch logs for a specific action
-  -d, --deployed         Fetch logs for all actions deployed under a specific package
-  -i, --insecure         bypass certificate check
-  -l, --last             retrieves the most recent activation logs
-  -m, --manifest         Fetch logs for all actions in the manifest
-  -o, --poll             Fetch logs continuously
-  -p, --package=<value>  Fetch logs for a specific package in the manifest
-  -r, --strip            strip timestamp information and output first line only
-  -t, --tail             Fetch logs continuously
-  -u, --auth=<value>     whisk auth
-  -v, --verbose          Verbose output
-  -w, --watch            Fetch logs continuously
-  --apihost=<value>      whisk API host
-  --apiversion=<value>   whisk API version
-  --cert=<value>         client cert
-  --debug=<value>        Debug level output
-  --help                 Show help
-  --key=<value>          client key
-  --limit=<value>        return logs only from last LIMIT number of activations (min: 0, max: 50)
-  --version              Show version
+  -a, --action=<value>      Fetch logs for a specific action
+  -d, --deployed            Fetch logs for all actions deployed under a specific package
+  -i, --insecure            bypass certificate check
+  -l, --last                retrieves the most recent activation logs
+  -m, --manifest            Fetch logs for all actions in the manifest
+  -o, --poll                Fetch logs continuously
+  -p, --package=<value>     Fetch logs for a specific package in the manifest
+  -r, --strip               strip timestamp information and output first line only
+  -t, --tail                Fetch logs continuously
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+  -w, --watch               Fetch logs continuously
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --limit=<value>       return logs only from last LIMIT number of activations (min: 0, max: 50)
+      --version             Show version
 
 DESCRIPTION
   Retrieves the Logs for an Activation
@@ -8980,6 +9281,8 @@ ALIASES
   $ aio rt logs
 ```
 
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/activation/logs.ts)_
+
 ## `aio runtime activation ls [ACTION_NAME]`
 
 Lists all the Activations
@@ -8991,25 +9294,25 @@ USAGE
     <value>] [-c] [--json] [-f]
 
 FLAGS
-  -c, --count           show only the total number of activations
-  -f, --full            include full activation description
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of activations (min: 0, max: 50)
-  -s, --skip=<value>    exclude the first SKIP number of activations from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --since=<value>       return activations with timestamps later than SINCE; measured in milliseconds since Th, 01, Jan
-                        1970
-  --upto=<value>        return activations with timestamps earlier than UPTO; measured in milliseconds since Th, 01, Jan
-                        1970
-  --version             Show version
+  -c, --count               show only the total number of activations
+  -f, --full                include full activation description
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of activations (min: 0, max: 50)
+  -s, --skip=<value>        exclude the first SKIP number of activations from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --since=<value>       return activations with timestamps later than SINCE; measured in milliseconds since Th, 01,
+                            Jan 1970
+      --upto=<value>        return activations with timestamps earlier than UPTO; measured in milliseconds since Th, 01,
+                            Jan 1970
+      --version             Show version
 
 DESCRIPTION
   Lists all the Activations
@@ -9034,17 +9337,17 @@ USAGE
     [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -l, --last            retrieves the most recent activation result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -l, --last                retrieves the most recent activation result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Retrieves the Results for an Activation
@@ -9052,6 +9355,8 @@ DESCRIPTION
 ALIASES
   $ aio rt activation result
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/activation/result.ts)_
 
 ## `aio runtime activations list [ACTION_NAME]`
 
@@ -9064,25 +9369,25 @@ USAGE
     <value>] [-c] [--json] [-f]
 
 FLAGS
-  -c, --count           show only the total number of activations
-  -f, --full            include full activation description
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of activations (min: 0, max: 50)
-  -s, --skip=<value>    exclude the first SKIP number of activations from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --since=<value>       return activations with timestamps later than SINCE; measured in milliseconds since Th, 01, Jan
-                        1970
-  --upto=<value>        return activations with timestamps earlier than UPTO; measured in milliseconds since Th, 01, Jan
-                        1970
-  --version             Show version
+  -c, --count               show only the total number of activations
+  -f, --full                include full activation description
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of activations (min: 0, max: 50)
+  -s, --skip=<value>        exclude the first SKIP number of activations from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --since=<value>       return activations with timestamps later than SINCE; measured in milliseconds since Th, 01,
+                            Jan 1970
+      --upto=<value>        return activations with timestamps earlier than UPTO; measured in milliseconds since Th, 01,
+                            Jan 1970
+      --version             Show version
 
 DESCRIPTION
   Lists all the Activations
@@ -9108,25 +9413,25 @@ USAGE
     <value>] [-c] [--json] [-f]
 
 FLAGS
-  -c, --count           show only the total number of activations
-  -f, --full            include full activation description
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of activations (min: 0, max: 50)
-  -s, --skip=<value>    exclude the first SKIP number of activations from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --since=<value>       return activations with timestamps later than SINCE; measured in milliseconds since Th, 01, Jan
-                        1970
-  --upto=<value>        return activations with timestamps earlier than UPTO; measured in milliseconds since Th, 01, Jan
-                        1970
-  --version             Show version
+  -c, --count               show only the total number of activations
+  -f, --full                include full activation description
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of activations (min: 0, max: 50)
+  -s, --skip=<value>        exclude the first SKIP number of activations from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --since=<value>       return activations with timestamps later than SINCE; measured in milliseconds since Th, 01,
+                            Jan 1970
+      --upto=<value>        return activations with timestamps earlier than UPTO; measured in milliseconds since Th, 01,
+                            Jan 1970
+      --version             Show version
 
 DESCRIPTION
   Lists all the Activations
@@ -9151,16 +9456,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage your api routes
@@ -9170,6 +9475,8 @@ ALIASES
   $ aio runtime route
   $ aio rt route
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/api/index.ts)_
 
 ## `aio runtime api create [BASEPATH] [RELPATH] [APIVERB] [ACTION]`
 
@@ -9195,13 +9502,13 @@ FLAGS
                                 <options: html|http|json|text|svg|json>
   -u, --auth=<value>            whisk auth
   -v, --verbose                 Verbose output
-  --apihost=<value>             whisk API host
-  --apiversion=<value>          whisk API version
-  --cert=<value>                client cert
-  --debug=<value>               Debug level output
-  --help                        Show help
-  --key=<value>                 client key
-  --version                     Show version
+      --apihost=<value>         whisk API host
+      --apiversion=<value>      whisk API version
+      --cert=<value>            client cert
+      --debug=<value>           Debug level output
+      --help                    Show help
+      --key=<value>             client key
+      --version                 Show version
 
 DESCRIPTION
   create a new api route
@@ -9211,6 +9518,8 @@ ALIASES
   $ aio rt route create
   $ aio rt api create
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/api/create.ts)_
 
 ## `aio runtime api delete BASEPATHORAPINAME [RELPATH] [APIVERB]`
 
@@ -9227,16 +9536,16 @@ ARGUMENTS
   APIVERB            (get|post|put|patch|delete|head|options) The http verb
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   delete an API
@@ -9246,6 +9555,8 @@ ALIASES
   $ aio rt route delete
   $ aio rt api delete
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/api/delete.ts)_
 
 ## `aio runtime api get BASEPATHORAPINAME`
 
@@ -9260,16 +9571,16 @@ ARGUMENTS
   BASEPATHORAPINAME  The base path or api name
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   get API details
@@ -9279,6 +9590,8 @@ ALIASES
   $ aio rt route get
   $ aio rt api get
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/api/get.ts)_
 
 ## `aio runtime api list [BASEPATH] [RELPATH] [APIVERB]`
 
@@ -9295,19 +9608,19 @@ ARGUMENTS
   APIVERB   (get|post|put|patch|delete|head|options) The http verb
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of triggers
-  -s, --skip=<value>    exclude the first SKIP number of triggers from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of triggers
+  -s, --skip=<value>        exclude the first SKIP number of triggers from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   list route/apis for Adobe I/O Runtime
@@ -9321,6 +9634,8 @@ ALIASES
   $ aio rt route list
   $ aio rt route ls
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/api/list.ts)_
 
 ## `aio runtime api ls [BASEPATH] [RELPATH] [APIVERB]`
 
@@ -9337,19 +9652,19 @@ ARGUMENTS
   APIVERB   (get|post|put|patch|delete|head|options) The http verb
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of triggers
-  -s, --skip=<value>    exclude the first SKIP number of triggers from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of triggers
+  -s, --skip=<value>        exclude the first SKIP number of triggers from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   list route/apis for Adobe I/O Runtime
@@ -9380,14 +9695,14 @@ FLAGS
   -m, --manifest=<value>    the manifest file location
   -u, --auth=<value>        whisk auth
   -v, --verbose             Verbose output
-  --apihost=<value>         whisk API host
-  --apiversion=<value>      whisk API version
-  --cert=<value>            client cert
-  --debug=<value>           Debug level output
-  --help                    Show help
-  --key=<value>             client key
-  --param=<value>...        parameter values in KEY VALUE format
-  --version                 Show version
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --param=<value>...    parameter values in KEY VALUE format
+      --version             Show version
 
 DESCRIPTION
   The Runtime Deployment Tool
@@ -9395,6 +9710,8 @@ DESCRIPTION
 ALIASES
   $ aio rt deploy
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/deploy/index.ts)_
 
 ## `aio runtime deploy export`
 
@@ -9406,18 +9723,18 @@ USAGE
     [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure          bypass certificate check
-  -m, --manifest=<value>  (required) the manifest file location
-  -u, --auth=<value>      whisk auth
-  -v, --verbose           Verbose output
-  --apihost=<value>       whisk API host
-  --apiversion=<value>    whisk API version
-  --cert=<value>          client cert
-  --debug=<value>         Debug level output
-  --help                  Show help
-  --key=<value>           client key
-  --projectname=<value>   (required) the name of the project to be undeployed
-  --version               Show version
+  -i, --insecure             bypass certificate check
+  -m, --manifest=<value>     (required) the manifest file location
+  -u, --auth=<value>         whisk auth
+  -v, --verbose              Verbose output
+      --apihost=<value>      whisk API host
+      --apiversion=<value>   whisk API version
+      --cert=<value>         client cert
+      --debug=<value>        Debug level output
+      --help                 Show help
+      --key=<value>          client key
+      --projectname=<value>  (required) the name of the project to be undeployed
+      --version              Show version
 
 DESCRIPTION
   Exports managed project assets from Runtime to manifest and function files
@@ -9425,6 +9742,8 @@ DESCRIPTION
 ALIASES
   $ aio rt deploy export
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/deploy/export.ts)_
 
 ## `aio runtime deploy report`
 
@@ -9441,13 +9760,13 @@ FLAGS
   -m, --manifest=<value>    the manifest file location
   -u, --auth=<value>        whisk auth
   -v, --verbose             Verbose output
-  --apihost=<value>         whisk API host
-  --apiversion=<value>      whisk API version
-  --cert=<value>            client cert
-  --debug=<value>           Debug level output
-  --help                    Show help
-  --key=<value>             client key
-  --version                 Show version
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Provides a summary report of Runtime assets being deployed/undeployed based on manifest/deployment YAML
@@ -9455,6 +9774,8 @@ DESCRIPTION
 ALIASES
   $ aio rt deploy report
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/deploy/report.ts)_
 
 ## `aio runtime deploy sync`
 
@@ -9471,13 +9792,13 @@ FLAGS
   -m, --manifest=<value>    the manifest file location
   -u, --auth=<value>        whisk auth
   -v, --verbose             Verbose output
-  --apihost=<value>         whisk API host
-  --apiversion=<value>      whisk API version
-  --cert=<value>            client cert
-  --debug=<value>           Debug level output
-  --help                    Show help
-  --key=<value>             client key
-  --version                 Show version
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   A tool to sync deployment and undeployment of Runtime packages using a manifest and optional deployment files using
@@ -9486,6 +9807,8 @@ DESCRIPTION
 ALIASES
   $ aio rt deploy sync
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/deploy/sync.ts)_
 
 ## `aio runtime deploy undeploy`
 
@@ -9497,18 +9820,18 @@ USAGE
     [--debug <value>] [-v] [--version] [--help] [-m <value>] [--projectname <value>]
 
 FLAGS
-  -i, --insecure          bypass certificate check
-  -m, --manifest=<value>  the manifest file location
-  -u, --auth=<value>      whisk auth
-  -v, --verbose           Verbose output
-  --apihost=<value>       whisk API host
-  --apiversion=<value>    whisk API version
-  --cert=<value>          client cert
-  --debug=<value>         Debug level output
-  --help                  Show help
-  --key=<value>           client key
-  --projectname=<value>   the name of the project to be undeployed
-  --version               Show version
+  -i, --insecure             bypass certificate check
+  -m, --manifest=<value>     the manifest file location
+  -u, --auth=<value>         whisk auth
+  -v, --verbose              Verbose output
+      --apihost=<value>      whisk API host
+      --apiversion=<value>   whisk API version
+      --cert=<value>         client cert
+      --debug=<value>        Debug level output
+      --help                 Show help
+      --key=<value>          client key
+      --projectname=<value>  the name of the project to be undeployed
+      --version              Show version
 
 DESCRIPTION
   Undeploy removes Runtime assets which were deployed from the manifest and deployment YAML
@@ -9516,6 +9839,8 @@ DESCRIPTION
 ALIASES
   $ aio rt deploy undeploy
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/deploy/undeploy.ts)_
 
 ## `aio runtime deploy version`
 
@@ -9527,16 +9852,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Prints the version number of aio runtime deploy
@@ -9544,6 +9869,8 @@ DESCRIPTION
 ALIASES
   $ aio rt deploy version
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/deploy/version.ts)_
 
 ## `aio runtime list`
 
@@ -9555,19 +9882,19 @@ USAGE
     [--debug <value>] [-v] [--version] [--help] [--json] [--name-sort] [-n]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -n, --name            sort results by name
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --name-sort           sort results by name
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -n, --name                sort results by name
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Get triggers, actions, and rules in the registry for namespace
@@ -9591,26 +9918,26 @@ USAGE
     <value> | -l] [-t | -w | -o]
 
 FLAGS
-  -a, --action=<value>   Fetch logs for a specific action
-  -d, --deployed         Fetch logs for all actions deployed under a specific package
-  -i, --insecure         bypass certificate check
-  -l, --last             retrieves the most recent activation logs
-  -m, --manifest         Fetch logs for all actions in the manifest
-  -o, --poll             Fetch logs continuously
-  -p, --package=<value>  Fetch logs for a specific package in the manifest
-  -r, --strip            strip timestamp information and output first line only
-  -t, --tail             Fetch logs continuously
-  -u, --auth=<value>     whisk auth
-  -v, --verbose          Verbose output
-  -w, --watch            Fetch logs continuously
-  --apihost=<value>      whisk API host
-  --apiversion=<value>   whisk API version
-  --cert=<value>         client cert
-  --debug=<value>        Debug level output
-  --help                 Show help
-  --key=<value>          client key
-  --limit=<value>        return logs only from last LIMIT number of activations (min: 0, max: 50)
-  --version              Show version
+  -a, --action=<value>      Fetch logs for a specific action
+  -d, --deployed            Fetch logs for all actions deployed under a specific package
+  -i, --insecure            bypass certificate check
+  -l, --last                retrieves the most recent activation logs
+  -m, --manifest            Fetch logs for all actions in the manifest
+  -o, --poll                Fetch logs continuously
+  -p, --package=<value>     Fetch logs for a specific package in the manifest
+  -r, --strip               strip timestamp information and output first line only
+  -t, --tail                Fetch logs continuously
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+  -w, --watch               Fetch logs continuously
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --limit=<value>       return logs only from last LIMIT number of activations (min: 0, max: 50)
+      --version             Show version
 
 DESCRIPTION
   Retrieves the Logs for an Activation
@@ -9636,26 +9963,26 @@ USAGE
     <value> | -l] [-t | -w | -o]
 
 FLAGS
-  -a, --action=<value>   Fetch logs for a specific action
-  -d, --deployed         Fetch logs for all actions deployed under a specific package
-  -i, --insecure         bypass certificate check
-  -l, --last             retrieves the most recent activation logs
-  -m, --manifest         Fetch logs for all actions in the manifest
-  -o, --poll             Fetch logs continuously
-  -p, --package=<value>  Fetch logs for a specific package in the manifest
-  -r, --strip            strip timestamp information and output first line only
-  -t, --tail             Fetch logs continuously
-  -u, --auth=<value>     whisk auth
-  -v, --verbose          Verbose output
-  -w, --watch            Fetch logs continuously
-  --apihost=<value>      whisk API host
-  --apiversion=<value>   whisk API version
-  --cert=<value>         client cert
-  --debug=<value>        Debug level output
-  --help                 Show help
-  --key=<value>          client key
-  --limit=<value>        return logs only from last LIMIT number of activations (min: 0, max: 50)
-  --version              Show version
+  -a, --action=<value>      Fetch logs for a specific action
+  -d, --deployed            Fetch logs for all actions deployed under a specific package
+  -i, --insecure            bypass certificate check
+  -l, --last                retrieves the most recent activation logs
+  -m, --manifest            Fetch logs for all actions in the manifest
+  -o, --poll                Fetch logs continuously
+  -p, --package=<value>     Fetch logs for a specific package in the manifest
+  -r, --strip               strip timestamp information and output first line only
+  -t, --tail                Fetch logs continuously
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+  -w, --watch               Fetch logs continuously
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --limit=<value>       return logs only from last LIMIT number of activations (min: 0, max: 50)
+      --version             Show version
 
 DESCRIPTION
   Retrieves the Logs for an Activation
@@ -9680,19 +10007,19 @@ USAGE
     [--debug <value>] [-v] [--version] [--help] [--json] [--name-sort] [-n]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -n, --name            sort results by name
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --name-sort           sort results by name
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -n, --name                sort results by name
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Get triggers, actions, and rules in the registry for namespace
@@ -9715,16 +10042,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage your namespaces
@@ -9734,6 +10061,8 @@ ALIASES
   $ aio rt namespace
   $ aio rt ns
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/namespace/index.ts)_
 
 ## `aio runtime namespace get`
 
@@ -9745,19 +10074,19 @@ USAGE
     [--debug <value>] [-v] [--version] [--help] [--json] [--name-sort] [-n]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -n, --name            sort results by name
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --name-sort           sort results by name
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -n, --name                sort results by name
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Get triggers, actions, and rules in the registry for namespace
@@ -9770,6 +10099,8 @@ ALIASES
   $ aio rt ls
 ```
 
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/namespace/get.ts)_
+
 ## `aio runtime namespace lf`
 
 Manage log forwarding settings
@@ -9780,16 +10111,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage log forwarding settings
@@ -9814,16 +10145,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Get log forwarding errors
@@ -9848,16 +10179,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Get log forwarding destination configuration
@@ -9882,16 +10213,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Configure log forwarding destination (interactive)
@@ -9916,16 +10247,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Set log forwarding destination to Adobe I/O Runtime (Logs will be accessible via aio CLI)
@@ -9950,19 +10281,19 @@ USAGE
     [--apihost] [-u] [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure         bypass certificate check
-  -u, --auth             whisk auth
-  -v, --verbose          Verbose output
-  --apihost              whisk API host
-  --apiversion           whisk API version
-  --cert                 client cert
-  --customer-id=<value>  (required) Customer ID
-  --debug=<value>        Debug level output
-  --help                 Show help
-  --key                  client key
-  --log-type=<value>     (required) Log type
-  --shared-key=<value>   (required) Shared key
-  --version              Show version
+  -i, --insecure             bypass certificate check
+  -u, --auth                 whisk auth
+  -v, --verbose              Verbose output
+      --apihost              whisk API host
+      --apiversion           whisk API version
+      --cert                 client cert
+      --customer-id=<value>  (required) Customer ID
+      --debug=<value>        Debug level output
+      --help                 Show help
+      --key                  client key
+      --log-type=<value>     (required) Log type
+      --shared-key=<value>   (required) Shared key
+      --version              Show version
 
 DESCRIPTION
   Set log forwarding destination to Azure Log Analytics
@@ -9987,18 +10318,18 @@ USAGE
     [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure         bypass certificate check
-  -u, --auth             whisk auth
-  -v, --verbose          Verbose output
-  --apihost              whisk API host
-  --apiversion           whisk API version
-  --base-uri=<value>     (required) Base URI
-  --cert                 client cert
-  --debug=<value>        Debug level output
-  --help                 Show help
-  --key                  client key
-  --license-key=<value>  (required) License Key
-  --version              Show version
+  -i, --insecure             bypass certificate check
+  -u, --auth                 whisk auth
+  -v, --verbose              Verbose output
+      --apihost              whisk API host
+      --apiversion           whisk API version
+      --base-uri=<value>     (required) Base URI
+      --cert                 client cert
+      --debug=<value>        Debug level output
+      --help                 Show help
+      --key                  client key
+      --license-key=<value>  (required) License Key
+      --version              Show version
 
 DESCRIPTION
   Set log forwarding destination to New Relic
@@ -10023,20 +10354,20 @@ USAGE
     [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure       bypass certificate check
-  -u, --auth           whisk auth
-  -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --hec-token=<value>  (required) HEC token
-  --help               Show help
-  --host=<value>       (required) Host
-  --index=<value>      (required) Index
-  --key                client key
-  --port=<value>       (required) Port
-  --version            Show version
+  -i, --insecure           bypass certificate check
+  -u, --auth               whisk auth
+  -v, --verbose            Verbose output
+      --apihost            whisk API host
+      --apiversion         whisk API version
+      --cert               client cert
+      --debug=<value>      Debug level output
+      --hec-token=<value>  (required) HEC token
+      --help               Show help
+      --host=<value>       (required) Host
+      --index=<value>      (required) Index
+      --key                client key
+      --port=<value>       (required) Port
+      --version            Show version
 
 DESCRIPTION
   Set log forwarding destination to Splunk HEC
@@ -10061,17 +10392,17 @@ USAGE
     [--debug <value>] [-v] [--version] [--help] [--json]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Lists all of your namespaces for Adobe I/O Runtime
@@ -10086,6 +10417,8 @@ ALIASES
   $ aio rt ns ls
 ```
 
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/namespace/list.ts)_
+
 ## `aio runtime namespace log-forwarding`
 
 Manage log forwarding settings
@@ -10096,16 +10429,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage log forwarding settings
@@ -10120,6 +10453,8 @@ ALIASES
   $ aio rt ns lf
 ```
 
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/namespace/log-forwarding/index.ts)_
+
 ## `aio runtime namespace log-forwarding errors`
 
 Get log forwarding errors
@@ -10130,16 +10465,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Get log forwarding errors
@@ -10154,6 +10489,8 @@ ALIASES
   $ aio rt ns lf errors
 ```
 
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/namespace/log-forwarding/errors.ts)_
+
 ## `aio runtime namespace log-forwarding get`
 
 Get log forwarding destination configuration
@@ -10164,16 +10501,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Get log forwarding destination configuration
@@ -10188,6 +10525,8 @@ ALIASES
   $ aio rt ns lf get
 ```
 
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/namespace/log-forwarding/get.ts)_
+
 ## `aio runtime namespace log-forwarding set`
 
 Configure log forwarding destination (interactive)
@@ -10198,16 +10537,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Configure log forwarding destination (interactive)
@@ -10222,6 +10561,8 @@ ALIASES
   $ aio rt ns lf set
 ```
 
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/namespace/log-forwarding/set.ts)_
+
 ## `aio runtime namespace log-forwarding set adobe-io-runtime`
 
 Set log forwarding destination to Adobe I/O Runtime (Logs will be accessible via aio CLI)
@@ -10232,16 +10573,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Set log forwarding destination to Adobe I/O Runtime (Logs will be accessible via aio CLI)
@@ -10256,6 +10597,8 @@ ALIASES
   $ aio rt ns lf set adobe-io-runtime
 ```
 
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/namespace/log-forwarding/set/adobe-io-runtime.ts)_
+
 ## `aio runtime namespace log-forwarding set azure-log-analytics`
 
 Set log forwarding destination to Azure Log Analytics
@@ -10266,19 +10609,19 @@ USAGE
     [--apihost] [-u] [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure         bypass certificate check
-  -u, --auth             whisk auth
-  -v, --verbose          Verbose output
-  --apihost              whisk API host
-  --apiversion           whisk API version
-  --cert                 client cert
-  --customer-id=<value>  (required) Customer ID
-  --debug=<value>        Debug level output
-  --help                 Show help
-  --key                  client key
-  --log-type=<value>     (required) Log type
-  --shared-key=<value>   (required) Shared key
-  --version              Show version
+  -i, --insecure             bypass certificate check
+  -u, --auth                 whisk auth
+  -v, --verbose              Verbose output
+      --apihost              whisk API host
+      --apiversion           whisk API version
+      --cert                 client cert
+      --customer-id=<value>  (required) Customer ID
+      --debug=<value>        Debug level output
+      --help                 Show help
+      --key                  client key
+      --log-type=<value>     (required) Log type
+      --shared-key=<value>   (required) Shared key
+      --version              Show version
 
 DESCRIPTION
   Set log forwarding destination to Azure Log Analytics
@@ -10293,6 +10636,8 @@ ALIASES
   $ aio rt ns lf set azure-log-analytics
 ```
 
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/namespace/log-forwarding/set/azure-log-analytics.ts)_
+
 ## `aio runtime namespace log-forwarding set new-relic`
 
 Set log forwarding destination to New Relic
@@ -10303,18 +10648,18 @@ USAGE
     [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure         bypass certificate check
-  -u, --auth             whisk auth
-  -v, --verbose          Verbose output
-  --apihost              whisk API host
-  --apiversion           whisk API version
-  --base-uri=<value>     (required) Base URI
-  --cert                 client cert
-  --debug=<value>        Debug level output
-  --help                 Show help
-  --key                  client key
-  --license-key=<value>  (required) License Key
-  --version              Show version
+  -i, --insecure             bypass certificate check
+  -u, --auth                 whisk auth
+  -v, --verbose              Verbose output
+      --apihost              whisk API host
+      --apiversion           whisk API version
+      --base-uri=<value>     (required) Base URI
+      --cert                 client cert
+      --debug=<value>        Debug level output
+      --help                 Show help
+      --key                  client key
+      --license-key=<value>  (required) License Key
+      --version              Show version
 
 DESCRIPTION
   Set log forwarding destination to New Relic
@@ -10329,6 +10674,8 @@ ALIASES
   $ aio rt ns lf set new-relic
 ```
 
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/namespace/log-forwarding/set/new-relic.ts)_
+
 ## `aio runtime namespace log-forwarding set splunk-hec`
 
 Set log forwarding destination to Splunk HEC
@@ -10339,20 +10686,20 @@ USAGE
     [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure       bypass certificate check
-  -u, --auth           whisk auth
-  -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --hec-token=<value>  (required) HEC token
-  --help               Show help
-  --host=<value>       (required) Host
-  --index=<value>      (required) Index
-  --key                client key
-  --port=<value>       (required) Port
-  --version            Show version
+  -i, --insecure           bypass certificate check
+  -u, --auth               whisk auth
+  -v, --verbose            Verbose output
+      --apihost            whisk API host
+      --apiversion         whisk API version
+      --cert               client cert
+      --debug=<value>      Debug level output
+      --hec-token=<value>  (required) HEC token
+      --help               Show help
+      --host=<value>       (required) Host
+      --index=<value>      (required) Index
+      --key                client key
+      --port=<value>       (required) Port
+      --version            Show version
 
 DESCRIPTION
   Set log forwarding destination to Splunk HEC
@@ -10367,6 +10714,8 @@ ALIASES
   $ aio rt ns lf set splunk-hec
 ```
 
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/namespace/log-forwarding/set/splunk-hec.ts)_
+
 ## `aio runtime namespace ls`
 
 Lists all of your namespaces for Adobe I/O Runtime
@@ -10377,17 +10726,17 @@ USAGE
     [--debug <value>] [-v] [--version] [--help] [--json]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Lists all of your namespaces for Adobe I/O Runtime
@@ -10412,16 +10761,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage your namespaces
@@ -10442,16 +10791,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage log forwarding settings
@@ -10476,16 +10825,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Get log forwarding errors
@@ -10510,16 +10859,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Get log forwarding destination configuration
@@ -10544,16 +10893,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Configure log forwarding destination (interactive)
@@ -10578,16 +10927,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Set log forwarding destination to Adobe I/O Runtime (Logs will be accessible via aio CLI)
@@ -10612,19 +10961,19 @@ USAGE
     [--apihost] [-u] [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure         bypass certificate check
-  -u, --auth             whisk auth
-  -v, --verbose          Verbose output
-  --apihost              whisk API host
-  --apiversion           whisk API version
-  --cert                 client cert
-  --customer-id=<value>  (required) Customer ID
-  --debug=<value>        Debug level output
-  --help                 Show help
-  --key                  client key
-  --log-type=<value>     (required) Log type
-  --shared-key=<value>   (required) Shared key
-  --version              Show version
+  -i, --insecure             bypass certificate check
+  -u, --auth                 whisk auth
+  -v, --verbose              Verbose output
+      --apihost              whisk API host
+      --apiversion           whisk API version
+      --cert                 client cert
+      --customer-id=<value>  (required) Customer ID
+      --debug=<value>        Debug level output
+      --help                 Show help
+      --key                  client key
+      --log-type=<value>     (required) Log type
+      --shared-key=<value>   (required) Shared key
+      --version              Show version
 
 DESCRIPTION
   Set log forwarding destination to Azure Log Analytics
@@ -10649,18 +10998,18 @@ USAGE
     [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure         bypass certificate check
-  -u, --auth             whisk auth
-  -v, --verbose          Verbose output
-  --apihost              whisk API host
-  --apiversion           whisk API version
-  --base-uri=<value>     (required) Base URI
-  --cert                 client cert
-  --debug=<value>        Debug level output
-  --help                 Show help
-  --key                  client key
-  --license-key=<value>  (required) License Key
-  --version              Show version
+  -i, --insecure             bypass certificate check
+  -u, --auth                 whisk auth
+  -v, --verbose              Verbose output
+      --apihost              whisk API host
+      --apiversion           whisk API version
+      --base-uri=<value>     (required) Base URI
+      --cert                 client cert
+      --debug=<value>        Debug level output
+      --help                 Show help
+      --key                  client key
+      --license-key=<value>  (required) License Key
+      --version              Show version
 
 DESCRIPTION
   Set log forwarding destination to New Relic
@@ -10685,20 +11034,20 @@ USAGE
     [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure       bypass certificate check
-  -u, --auth           whisk auth
-  -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --hec-token=<value>  (required) HEC token
-  --help               Show help
-  --host=<value>       (required) Host
-  --index=<value>      (required) Index
-  --key                client key
-  --port=<value>       (required) Port
-  --version            Show version
+  -i, --insecure           bypass certificate check
+  -u, --auth               whisk auth
+  -v, --verbose            Verbose output
+      --apihost            whisk API host
+      --apiversion         whisk API version
+      --cert               client cert
+      --debug=<value>      Debug level output
+      --hec-token=<value>  (required) HEC token
+      --help               Show help
+      --host=<value>       (required) Host
+      --index=<value>      (required) Index
+      --key                client key
+      --port=<value>       (required) Port
+      --version            Show version
 
 DESCRIPTION
   Set log forwarding destination to Splunk HEC
@@ -10723,17 +11072,17 @@ USAGE
     [--debug <value>] [-v] [--version] [--help] [--json]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Lists all of your namespaces for Adobe I/O Runtime
@@ -10758,16 +11107,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage log forwarding settings
@@ -10792,16 +11141,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Get log forwarding errors
@@ -10826,16 +11175,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Get log forwarding destination configuration
@@ -10860,16 +11209,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Configure log forwarding destination (interactive)
@@ -10894,16 +11243,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Set log forwarding destination to Adobe I/O Runtime (Logs will be accessible via aio CLI)
@@ -10928,19 +11277,19 @@ USAGE
     [--apihost] [-u] [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure         bypass certificate check
-  -u, --auth             whisk auth
-  -v, --verbose          Verbose output
-  --apihost              whisk API host
-  --apiversion           whisk API version
-  --cert                 client cert
-  --customer-id=<value>  (required) Customer ID
-  --debug=<value>        Debug level output
-  --help                 Show help
-  --key                  client key
-  --log-type=<value>     (required) Log type
-  --shared-key=<value>   (required) Shared key
-  --version              Show version
+  -i, --insecure             bypass certificate check
+  -u, --auth                 whisk auth
+  -v, --verbose              Verbose output
+      --apihost              whisk API host
+      --apiversion           whisk API version
+      --cert                 client cert
+      --customer-id=<value>  (required) Customer ID
+      --debug=<value>        Debug level output
+      --help                 Show help
+      --key                  client key
+      --log-type=<value>     (required) Log type
+      --shared-key=<value>   (required) Shared key
+      --version              Show version
 
 DESCRIPTION
   Set log forwarding destination to Azure Log Analytics
@@ -10965,18 +11314,18 @@ USAGE
     [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure         bypass certificate check
-  -u, --auth             whisk auth
-  -v, --verbose          Verbose output
-  --apihost              whisk API host
-  --apiversion           whisk API version
-  --base-uri=<value>     (required) Base URI
-  --cert                 client cert
-  --debug=<value>        Debug level output
-  --help                 Show help
-  --key                  client key
-  --license-key=<value>  (required) License Key
-  --version              Show version
+  -i, --insecure             bypass certificate check
+  -u, --auth                 whisk auth
+  -v, --verbose              Verbose output
+      --apihost              whisk API host
+      --apiversion           whisk API version
+      --base-uri=<value>     (required) Base URI
+      --cert                 client cert
+      --debug=<value>        Debug level output
+      --help                 Show help
+      --key                  client key
+      --license-key=<value>  (required) License Key
+      --version              Show version
 
 DESCRIPTION
   Set log forwarding destination to New Relic
@@ -11001,20 +11350,20 @@ USAGE
     [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure       bypass certificate check
-  -u, --auth           whisk auth
-  -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --hec-token=<value>  (required) HEC token
-  --help               Show help
-  --host=<value>       (required) Host
-  --index=<value>      (required) Index
-  --key                client key
-  --port=<value>       (required) Port
-  --version            Show version
+  -i, --insecure           bypass certificate check
+  -u, --auth               whisk auth
+  -v, --verbose            Verbose output
+      --apihost            whisk API host
+      --apiversion         whisk API version
+      --cert               client cert
+      --debug=<value>      Debug level output
+      --hec-token=<value>  (required) HEC token
+      --help               Show help
+      --host=<value>       (required) Host
+      --index=<value>      (required) Index
+      --key                client key
+      --port=<value>       (required) Port
+      --version            Show version
 
 DESCRIPTION
   Set log forwarding destination to Splunk HEC
@@ -11039,17 +11388,17 @@ USAGE
     [--debug <value>] [-v] [--version] [--help] [--json]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Lists all of your namespaces for Adobe I/O Runtime
@@ -11074,16 +11423,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage your packages
@@ -11093,6 +11442,8 @@ ALIASES
   $ aio rt package
   $ aio rt pkg
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/package/index.ts)_
 
 ## `aio runtime package bind PACKAGENAME BINDPACKAGENAME`
 
@@ -11112,14 +11463,14 @@ FLAGS
   -p, --param=<value>...         parameters in key value pairs to be passed to the package
   -u, --auth=<value>             whisk auth
   -v, --verbose                  Verbose output
-  --apihost=<value>              whisk API host
-  --apiversion=<value>           whisk API version
-  --cert=<value>                 client cert
-  --debug=<value>                Debug level output
-  --help                         Show help
-  --json                         output raw json
-  --key=<value>                  client key
-  --version                      Show version
+      --apihost=<value>          whisk API host
+      --apiversion=<value>       whisk API version
+      --cert=<value>             client cert
+      --debug=<value>            Debug level output
+      --help                     Show help
+      --json                     output raw json
+      --key=<value>              client key
+      --version                  Show version
 
 DESCRIPTION
   Bind parameters to a package
@@ -11129,6 +11480,8 @@ ALIASES
   $ aio rt package bind
   $ aio rt pkg bind
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/package/bind.ts)_
 
 ## `aio runtime package create PACKAGENAME`
 
@@ -11148,16 +11501,16 @@ FLAGS
   -p, --param=<value>...         parameters in key value pairs to be passed to the package
   -u, --auth=<value>             whisk auth
   -v, --verbose                  Verbose output
-  --apihost=<value>              whisk API host
-  --apiversion=<value>           whisk API version
-  --cert=<value>                 client cert
-  --debug=<value>                Debug level output
-  --help                         Show help
-  --json                         output raw json
-  --key=<value>                  client key
-  --shared=<option>              parameter to be passed to indicate whether package is shared or private
+      --apihost=<value>          whisk API host
+      --apiversion=<value>       whisk API version
+      --cert=<value>             client cert
+      --debug=<value>            Debug level output
+      --help                     Show help
+      --json                     output raw json
+      --key=<value>              client key
+      --shared=<option>          parameter to be passed to indicate whether package is shared or private
                                  <options: true|yes|false|no>
-  --version                      Show version
+      --version                  Show version
 
 DESCRIPTION
   Creates a Package
@@ -11167,6 +11520,8 @@ ALIASES
   $ aio rt package create
   $ aio rt pkg create
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/package/create.ts)_
 
 ## `aio runtime package delete PACKAGENAME`
 
@@ -11178,18 +11533,18 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [--json] [-r]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -r, --recursive       Deletes all associated actions (and rules & triggers associated with the actions)
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -r, --recursive           Deletes all associated actions (and rules & triggers associated with the actions)
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Deletes a Package
@@ -11199,6 +11554,8 @@ ALIASES
   $ aio rt package delete
   $ aio rt pkg delete
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/package/delete.ts)_
 
 ## `aio runtime package get PACKAGENAME`
 
@@ -11210,16 +11567,16 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Retrieves a Package
@@ -11229,6 +11586,8 @@ ALIASES
   $ aio rt package get
   $ aio rt pkg get
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/package/get.ts)_
 
 ## `aio runtime package list [NAMESPACE]`
 
@@ -11240,22 +11599,22 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
 
 FLAGS
-  -c, --count           show only the total number of packages
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of packages (min: 0, max: 50)
-  -n, --name            sort results by name
-  -s, --skip=<value>    exclude the first SKIP number of packages from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --name-sort           sort results by name
-  --version             Show version
+  -c, --count               show only the total number of packages
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of packages (min: 0, max: 50)
+  -n, --name                sort results by name
+  -s, --skip=<value>        exclude the first SKIP number of packages from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Lists all the Packages
@@ -11270,6 +11629,8 @@ ALIASES
   $ aio rt pkg ls
 ```
 
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/package/list.ts)_
+
 ## `aio runtime package ls [NAMESPACE]`
 
 Lists all the Packages
@@ -11280,22 +11641,22 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
 
 FLAGS
-  -c, --count           show only the total number of packages
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of packages (min: 0, max: 50)
-  -n, --name            sort results by name
-  -s, --skip=<value>    exclude the first SKIP number of packages from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --name-sort           sort results by name
-  --version             Show version
+  -c, --count               show only the total number of packages
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of packages (min: 0, max: 50)
+  -n, --name                sort results by name
+  -s, --skip=<value>        exclude the first SKIP number of packages from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Lists all the Packages
@@ -11328,16 +11689,16 @@ FLAGS
   -p, --param=<value>...         parameters in key value pairs to be passed to the package
   -u, --auth=<value>             whisk auth
   -v, --verbose                  Verbose output
-  --apihost=<value>              whisk API host
-  --apiversion=<value>           whisk API version
-  --cert=<value>                 client cert
-  --debug=<value>                Debug level output
-  --help                         Show help
-  --json                         output raw json
-  --key=<value>                  client key
-  --shared=<option>              parameter to be passed to indicate whether package is shared or private
+      --apihost=<value>          whisk API host
+      --apiversion=<value>       whisk API version
+      --cert=<value>             client cert
+      --debug=<value>            Debug level output
+      --help                     Show help
+      --json                     output raw json
+      --key=<value>              client key
+      --shared=<option>          parameter to be passed to indicate whether package is shared or private
                                  <options: true|yes|false|no>
-  --version                      Show version
+      --version                  Show version
 
 DESCRIPTION
   Updates a Package
@@ -11347,6 +11708,8 @@ ALIASES
   $ aio rt package update
   $ aio rt pkg update
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/package/update.ts)_
 
 ## `aio runtime pkg`
 
@@ -11358,16 +11721,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage your packages
@@ -11396,14 +11759,14 @@ FLAGS
   -p, --param=<value>...         parameters in key value pairs to be passed to the package
   -u, --auth=<value>             whisk auth
   -v, --verbose                  Verbose output
-  --apihost=<value>              whisk API host
-  --apiversion=<value>           whisk API version
-  --cert=<value>                 client cert
-  --debug=<value>                Debug level output
-  --help                         Show help
-  --json                         output raw json
-  --key=<value>                  client key
-  --version                      Show version
+      --apihost=<value>          whisk API host
+      --apiversion=<value>       whisk API version
+      --cert=<value>             client cert
+      --debug=<value>            Debug level output
+      --help                     Show help
+      --json                     output raw json
+      --key=<value>              client key
+      --version                  Show version
 
 DESCRIPTION
   Bind parameters to a package
@@ -11432,16 +11795,16 @@ FLAGS
   -p, --param=<value>...         parameters in key value pairs to be passed to the package
   -u, --auth=<value>             whisk auth
   -v, --verbose                  Verbose output
-  --apihost=<value>              whisk API host
-  --apiversion=<value>           whisk API version
-  --cert=<value>                 client cert
-  --debug=<value>                Debug level output
-  --help                         Show help
-  --json                         output raw json
-  --key=<value>                  client key
-  --shared=<option>              parameter to be passed to indicate whether package is shared or private
+      --apihost=<value>          whisk API host
+      --apiversion=<value>       whisk API version
+      --cert=<value>             client cert
+      --debug=<value>            Debug level output
+      --help                     Show help
+      --json                     output raw json
+      --key=<value>              client key
+      --shared=<option>          parameter to be passed to indicate whether package is shared or private
                                  <options: true|yes|false|no>
-  --version                      Show version
+      --version                  Show version
 
 DESCRIPTION
   Creates a Package
@@ -11462,18 +11825,18 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [--json] [-r]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -r, --recursive       Deletes all associated actions (and rules & triggers associated with the actions)
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -r, --recursive           Deletes all associated actions (and rules & triggers associated with the actions)
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Deletes a Package
@@ -11494,16 +11857,16 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help]
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Retrieves a Package
@@ -11524,22 +11887,22 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
 
 FLAGS
-  -c, --count           show only the total number of packages
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of packages (min: 0, max: 50)
-  -n, --name            sort results by name
-  -s, --skip=<value>    exclude the first SKIP number of packages from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --name-sort           sort results by name
-  --version             Show version
+  -c, --count               show only the total number of packages
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of packages (min: 0, max: 50)
+  -n, --name                sort results by name
+  -s, --skip=<value>        exclude the first SKIP number of packages from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Lists all the Packages
@@ -11564,22 +11927,22 @@ USAGE
     <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
 
 FLAGS
-  -c, --count           show only the total number of packages
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of packages (min: 0, max: 50)
-  -n, --name            sort results by name
-  -s, --skip=<value>    exclude the first SKIP number of packages from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --name-sort           sort results by name
-  --version             Show version
+  -c, --count               show only the total number of packages
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of packages (min: 0, max: 50)
+  -n, --name                sort results by name
+  -s, --skip=<value>        exclude the first SKIP number of packages from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Lists all the Packages
@@ -11612,16 +11975,16 @@ FLAGS
   -p, --param=<value>...         parameters in key value pairs to be passed to the package
   -u, --auth=<value>             whisk auth
   -v, --verbose                  Verbose output
-  --apihost=<value>              whisk API host
-  --apiversion=<value>           whisk API version
-  --cert=<value>                 client cert
-  --debug=<value>                Debug level output
-  --help                         Show help
-  --json                         output raw json
-  --key=<value>                  client key
-  --shared=<option>              parameter to be passed to indicate whether package is shared or private
+      --apihost=<value>          whisk API host
+      --apiversion=<value>       whisk API version
+      --cert=<value>             client cert
+      --debug=<value>            Debug level output
+      --help                     Show help
+      --json                     output raw json
+      --key=<value>              client key
+      --shared=<option>          parameter to be passed to indicate whether package is shared or private
                                  <options: true|yes|false|no>
-  --version                      Show version
+      --version                  Show version
 
 DESCRIPTION
   Updates a Package
@@ -11642,16 +12005,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Execute property commands
@@ -11672,21 +12035,21 @@ USAGE
     [--help] [--namespace] [--all] [--apibuild] [--apibuildno] [--cliversion]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --all            all properties
-  --apibuild       whisk API build version
-  --apibuildno     whisk API build number
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --cliversion     whisk CLI version
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --namespace      whisk namespace
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --all            all properties
+      --apibuild       whisk API build version
+      --apibuildno     whisk API build number
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --cliversion     whisk CLI version
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --namespace      whisk namespace
+      --version        Show version
 
 DESCRIPTION
   get property
@@ -11707,17 +12070,17 @@ USAGE
     [--help] [--namespace <value>]
 
 FLAGS
-  -i, --insecure       bypass certificate check
-  -u, --auth           whisk auth
-  -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --help               Show help
-  --key                client key
-  --namespace=<value>  whisk namespace
-  --version            Show version
+  -i, --insecure           bypass certificate check
+  -u, --auth               whisk auth
+  -v, --verbose            Verbose output
+      --apihost            whisk API host
+      --apiversion         whisk API version
+      --cert               client cert
+      --debug=<value>      Debug level output
+      --help               Show help
+      --key                client key
+      --namespace=<value>  whisk namespace
+      --version            Show version
 
 DESCRIPTION
   set property
@@ -11738,17 +12101,17 @@ USAGE
     [--help] [--namespace]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --namespace      whisk namespace
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --namespace      whisk namespace
+      --version        Show version
 
 DESCRIPTION
   unset property
@@ -11769,16 +12132,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Execute property commands
@@ -11788,6 +12151,8 @@ ALIASES
   $ aio rt prop
   $ aio rt property
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/property/index.ts)_
 
 ## `aio runtime property get`
 
@@ -11799,21 +12164,21 @@ USAGE
     [--help] [--namespace] [--all] [--apibuild] [--apibuildno] [--cliversion]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --all            all properties
-  --apibuild       whisk API build version
-  --apibuildno     whisk API build number
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --cliversion     whisk CLI version
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --namespace      whisk namespace
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --all            all properties
+      --apibuild       whisk API build version
+      --apibuildno     whisk API build number
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --cliversion     whisk CLI version
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --namespace      whisk namespace
+      --version        Show version
 
 DESCRIPTION
   get property
@@ -11823,6 +12188,8 @@ ALIASES
   $ aio rt property get
   $ aio rt prop get
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/property/get.ts)_
 
 ## `aio runtime property set`
 
@@ -11834,17 +12201,17 @@ USAGE
     [--help] [--namespace <value>]
 
 FLAGS
-  -i, --insecure       bypass certificate check
-  -u, --auth           whisk auth
-  -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --help               Show help
-  --key                client key
-  --namespace=<value>  whisk namespace
-  --version            Show version
+  -i, --insecure           bypass certificate check
+  -u, --auth               whisk auth
+  -v, --verbose            Verbose output
+      --apihost            whisk API host
+      --apiversion         whisk API version
+      --cert               client cert
+      --debug=<value>      Debug level output
+      --help               Show help
+      --key                client key
+      --namespace=<value>  whisk namespace
+      --version            Show version
 
 DESCRIPTION
   set property
@@ -11854,6 +12221,8 @@ ALIASES
   $ aio rt property set
   $ aio rt prop set
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/property/set.ts)_
 
 ## `aio runtime property unset`
 
@@ -11865,17 +12234,17 @@ USAGE
     [--help] [--namespace]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --namespace      whisk namespace
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --namespace      whisk namespace
+      --version        Show version
 
 DESCRIPTION
   unset property
@@ -11885,6 +12254,8 @@ ALIASES
   $ aio rt property unset
   $ aio rt prop unset
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/property/unset.ts)_
 
 ## `aio runtime route`
 
@@ -11896,16 +12267,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage your api routes
@@ -11940,13 +12311,13 @@ FLAGS
                                 <options: html|http|json|text|svg|json>
   -u, --auth=<value>            whisk auth
   -v, --verbose                 Verbose output
-  --apihost=<value>             whisk API host
-  --apiversion=<value>          whisk API version
-  --cert=<value>                client cert
-  --debug=<value>               Debug level output
-  --help                        Show help
-  --key=<value>                 client key
-  --version                     Show version
+      --apihost=<value>         whisk API host
+      --apiversion=<value>      whisk API version
+      --cert=<value>            client cert
+      --debug=<value>           Debug level output
+      --help                    Show help
+      --key=<value>             client key
+      --version                 Show version
 
 DESCRIPTION
   create a new api route
@@ -11972,16 +12343,16 @@ ARGUMENTS
   APIVERB            (get|post|put|patch|delete|head|options) The http verb
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   delete an API
@@ -12005,16 +12376,16 @@ ARGUMENTS
   BASEPATHORAPINAME  The base path or api name
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   get API details
@@ -12040,19 +12411,19 @@ ARGUMENTS
   APIVERB   (get|post|put|patch|delete|head|options) The http verb
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of triggers
-  -s, --skip=<value>    exclude the first SKIP number of triggers from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of triggers
+  -s, --skip=<value>        exclude the first SKIP number of triggers from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   list route/apis for Adobe I/O Runtime
@@ -12082,19 +12453,19 @@ ARGUMENTS
   APIVERB   (get|post|put|patch|delete|head|options) The http verb
 
 FLAGS
-  -i, --insecure        bypass certificate check
-  -l, --limit=<value>   only return LIMIT number of triggers
-  -s, --skip=<value>    exclude the first SKIP number of triggers from the result
-  -u, --auth=<value>    whisk auth
-  -v, --verbose         Verbose output
-  --apihost=<value>     whisk API host
-  --apiversion=<value>  whisk API version
-  --cert=<value>        client cert
-  --debug=<value>       Debug level output
-  --help                Show help
-  --json                output raw json
-  --key=<value>         client key
-  --version             Show version
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       only return LIMIT number of triggers
+  -s, --skip=<value>        exclude the first SKIP number of triggers from the result
+  -u, --auth=<value>        whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     whisk API host
+      --apiversion=<value>  whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   list route/apis for Adobe I/O Runtime
@@ -12119,16 +12490,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage your rules
@@ -12136,6 +12507,8 @@ DESCRIPTION
 ALIASES
   $ aio rt rule
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/rule/index.ts)_
 
 ## `aio runtime rule create NAME TRIGGER ACTION`
 
@@ -12152,17 +12525,17 @@ ARGUMENTS
   ACTION   Name of the action
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --json           output raw json
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --json           output raw json
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Create a Rule
@@ -12170,6 +12543,8 @@ DESCRIPTION
 ALIASES
   $ aio rt rule create
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/rule/create.ts)_
 
 ## `aio runtime rule delete NAME`
 
@@ -12184,17 +12559,17 @@ ARGUMENTS
   NAME  Name of the rule
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --json           output raw json
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --json           output raw json
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Delete a Rule
@@ -12202,6 +12577,8 @@ DESCRIPTION
 ALIASES
   $ aio rt rule delete
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/rule/delete.ts)_
 
 ## `aio runtime rule disable NAME`
 
@@ -12216,16 +12593,16 @@ ARGUMENTS
   NAME  Name of the rule
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Disable a Rule
@@ -12233,6 +12610,8 @@ DESCRIPTION
 ALIASES
   $ aio rt rule disable
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/rule/disable.ts)_
 
 ## `aio runtime rule enable NAME`
 
@@ -12247,16 +12626,16 @@ ARGUMENTS
   NAME  Name of the rule
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Enable a Rule
@@ -12264,6 +12643,8 @@ DESCRIPTION
 ALIASES
   $ aio rt rule enable
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/rule/enable.ts)_
 
 ## `aio runtime rule get NAME`
 
@@ -12278,16 +12659,16 @@ ARGUMENTS
   NAME  Name of the rule
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Retrieves a Rule
@@ -12295,6 +12676,8 @@ DESCRIPTION
 ALIASES
   $ aio rt rule get
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/rule/get.ts)_
 
 ## `aio runtime rule list`
 
@@ -12313,15 +12696,15 @@ FLAGS
   -s, --skip=<value>   Skip number of rules returned
   -u, --auth           whisk auth
   -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --help               Show help
-  --json               output raw json
-  --key                client key
-  --name-sort          sort results by name
-  --version            Show version
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --json           output raw json
+      --key            client key
+      --name-sort      sort results by name
+      --version        Show version
 
 DESCRIPTION
   Retrieves a list of Rules
@@ -12331,6 +12714,8 @@ ALIASES
   $ aio rt rule list
   $ aio rt rule ls
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/rule/list.ts)_
 
 ## `aio runtime rule ls`
 
@@ -12349,15 +12734,15 @@ FLAGS
   -s, --skip=<value>   Skip number of rules returned
   -u, --auth           whisk auth
   -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --help               Show help
-  --json               output raw json
-  --key                client key
-  --name-sort          sort results by name
-  --version            Show version
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --json           output raw json
+      --key            client key
+      --name-sort      sort results by name
+      --version        Show version
 
 DESCRIPTION
   Retrieves a list of Rules
@@ -12381,16 +12766,16 @@ ARGUMENTS
   NAME  Name of the rule
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Gets the status of a rule
@@ -12398,6 +12783,8 @@ DESCRIPTION
 ALIASES
   $ aio rt rule status
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/rule/status.ts)_
 
 ## `aio runtime rule update NAME TRIGGER ACTION`
 
@@ -12414,17 +12801,17 @@ ARGUMENTS
   ACTION   Name of the action
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --json           output raw json
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --json           output raw json
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Update a Rule
@@ -12432,6 +12819,8 @@ DESCRIPTION
 ALIASES
   $ aio rt rule update
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/rule/update.ts)_
 
 ## `aio runtime trigger`
 
@@ -12443,16 +12832,16 @@ USAGE
     [--help]
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Manage your triggers
@@ -12460,6 +12849,8 @@ DESCRIPTION
 ALIASES
   $ aio rt trigger
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/trigger/index.ts)_
 
 ## `aio runtime trigger create TRIGGERNAME`
 
@@ -12482,13 +12873,13 @@ FLAGS
   -p, --param=<value>...         parameter values in KEY VALUE format
   -u, --auth                     whisk auth
   -v, --verbose                  Verbose output
-  --apihost                      whisk API host
-  --apiversion                   whisk API version
-  --cert                         client cert
-  --debug=<value>                Debug level output
-  --help                         Show help
-  --key                          client key
-  --version                      Show version
+      --apihost                  whisk API host
+      --apiversion               whisk API version
+      --cert                     client cert
+      --debug=<value>            Debug level output
+      --help                     Show help
+      --key                      client key
+      --version                  Show version
 
 DESCRIPTION
   Create a trigger for Adobe I/O Runtime
@@ -12496,6 +12887,8 @@ DESCRIPTION
 ALIASES
   $ aio rt trigger create
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/trigger/create.ts)_
 
 ## `aio runtime trigger delete TRIGGERPATH`
 
@@ -12510,16 +12903,16 @@ ARGUMENTS
   TRIGGERPATH  The name of the trigger, in the format /NAMESPACE/NAME
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Delete a trigger for Adobe I/O Runtime
@@ -12527,6 +12920,8 @@ DESCRIPTION
 ALIASES
   $ aio rt trigger delete
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/trigger/delete.ts)_
 
 ## `aio runtime trigger fire TRIGGERNAME`
 
@@ -12546,13 +12941,13 @@ FLAGS
   -p, --param=<value>...    parameter values in KEY VALUE format
   -u, --auth                whisk auth
   -v, --verbose             Verbose output
-  --apihost                 whisk API host
-  --apiversion              whisk API version
-  --cert                    client cert
-  --debug=<value>           Debug level output
-  --help                    Show help
-  --key                     client key
-  --version                 Show version
+      --apihost             whisk API host
+      --apiversion          whisk API version
+      --cert                client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key                 client key
+      --version             Show version
 
 DESCRIPTION
   Fire a trigger for Adobe I/O Runtime
@@ -12560,6 +12955,8 @@ DESCRIPTION
 ALIASES
   $ aio rt trigger fire
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/trigger/fire.ts)_
 
 ## `aio runtime trigger get TRIGGERPATH`
 
@@ -12574,16 +12971,16 @@ ARGUMENTS
   TRIGGERPATH  The name/path of the trigger, in the format /NAMESPACE/NAME
 
 FLAGS
-  -i, --insecure   bypass certificate check
-  -u, --auth       whisk auth
-  -v, --verbose    Verbose output
-  --apihost        whisk API host
-  --apiversion     whisk API version
-  --cert           client cert
-  --debug=<value>  Debug level output
-  --help           Show help
-  --key            client key
-  --version        Show version
+  -i, --insecure       bypass certificate check
+  -u, --auth           whisk auth
+  -v, --verbose        Verbose output
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --key            client key
+      --version        Show version
 
 DESCRIPTION
   Get a trigger for Adobe I/O Runtime
@@ -12591,6 +12988,8 @@ DESCRIPTION
 ALIASES
   $ aio rt trigger get
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/trigger/get.ts)_
 
 ## `aio runtime trigger list`
 
@@ -12609,15 +13008,15 @@ FLAGS
   -s, --skip=<value>   exclude the first SKIP number of triggers from the result
   -u, --auth           whisk auth
   -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --help               Show help
-  --json               output raw json
-  --key                client key
-  --name-sort          sort results by name
-  --version            Show version
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --json           output raw json
+      --key            client key
+      --name-sort      sort results by name
+      --version        Show version
 
 DESCRIPTION
   Lists all of your triggers for Adobe I/O Runtime
@@ -12627,6 +13026,8 @@ ALIASES
   $ aio rt trigger list
   $ aio rt trigger ls
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/trigger/list.ts)_
 
 ## `aio runtime trigger ls`
 
@@ -12645,15 +13046,15 @@ FLAGS
   -s, --skip=<value>   exclude the first SKIP number of triggers from the result
   -u, --auth           whisk auth
   -v, --verbose        Verbose output
-  --apihost            whisk API host
-  --apiversion         whisk API version
-  --cert               client cert
-  --debug=<value>      Debug level output
-  --help               Show help
-  --json               output raw json
-  --key                client key
-  --name-sort          sort results by name
-  --version            Show version
+      --apihost        whisk API host
+      --apiversion     whisk API version
+      --cert           client cert
+      --debug=<value>  Debug level output
+      --help           Show help
+      --json           output raw json
+      --key            client key
+      --name-sort      sort results by name
+      --version        Show version
 
 DESCRIPTION
   Lists all of your triggers for Adobe I/O Runtime
@@ -12684,13 +13085,13 @@ FLAGS
   -p, --param=<value>...         parameter values in KEY VALUE format
   -u, --auth                     whisk auth
   -v, --verbose                  Verbose output
-  --apihost                      whisk API host
-  --apiversion                   whisk API version
-  --cert                         client cert
-  --debug=<value>                Debug level output
-  --help                         Show help
-  --key                          client key
-  --version                      Show version
+      --apihost                  whisk API host
+      --apiversion               whisk API version
+      --cert                     client cert
+      --debug=<value>            Debug level output
+      --help                     Show help
+      --key                      client key
+      --version                  Show version
 
 DESCRIPTION
   Update or create a trigger for Adobe I/O Runtime
@@ -12698,6 +13099,8 @@ DESCRIPTION
 ALIASES
   $ aio rt trigger update
 ```
+
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/trigger/update.ts)_
 
 ## `aio telemetry yes`
 
@@ -12716,7 +13119,7 @@ DESCRIPTION
   Allow the cli to collect anonymous usage data
 ```
 
-_See code: [@adobe/aio-cli-plugin-telemetry](https://github.com/adobe/aio-cli-plugin-telemetry/blob/v2.0.0/src/commands/telemetry/index.ts)_
+_See code: [@adobe/aio-cli-plugin-telemetry](https://github.com/adobe/aio-cli-plugin-telemetry/blob/v2.0.1/src/commands/telemetry/index.ts)_
 
 ## `aio templates`
 
@@ -12733,7 +13136,7 @@ DESCRIPTION
   Discover, install, or uninstall a new template into an existing Adobe Developer App Builder App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.0.0/src/commands/templates/index.ts)_
+_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.0.3/src/commands/templates/index.ts)_
 
 ## `aio templates disco`
 
@@ -12785,6 +13188,8 @@ ALIASES
   $ aio templates disco
 ```
 
+_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.0.3/src/commands/templates/discover.ts)_
+
 ## `aio templates i PATH`
 
 Install an Adobe Developer App Builder template
@@ -12797,12 +13202,12 @@ ARGUMENTS
   PATH  path to the template (npm package name, file path, url). See examples
 
 FLAGS
-  -v, --verbose                  Verbose output
-  -y, --yes                      Skip questions, and use all default values
-  --[no-]install                 [default: true] Run npm installation after files are created
-  --[no-]process-install-config  [default: true] Process the template install.yml configuration file, defaults to true,
-                                 to skip processing install.yml use --no-process-install-config
-  --template-options=<value>     Additional template options, as a base64-encoded json string
+  -v, --verbose                      Verbose output
+  -y, --yes                          Skip questions, and use all default values
+      --[no-]install                 [default: true] Run npm installation after files are created
+      --[no-]process-install-config  [default: true] Process the template install.yml configuration file, defaults to
+                                     true, to skip processing install.yml use --no-process-install-config
+      --template-options=<value>     Additional template options, as a base64-encoded json string
 
 DESCRIPTION
   Install an Adobe Developer App Builder template
@@ -12854,6 +13259,8 @@ DESCRIPTION
   List all App Builder templates that are installed
 ```
 
+_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.0.3/src/commands/templates/info.ts)_
+
 ## `aio templates install PATH`
 
 Install an Adobe Developer App Builder template
@@ -12866,12 +13273,12 @@ ARGUMENTS
   PATH  path to the template (npm package name, file path, url). See examples
 
 FLAGS
-  -v, --verbose                  Verbose output
-  -y, --yes                      Skip questions, and use all default values
-  --[no-]install                 [default: true] Run npm installation after files are created
-  --[no-]process-install-config  [default: true] Process the template install.yml configuration file, defaults to true,
-                                 to skip processing install.yml use --no-process-install-config
-  --template-options=<value>     Additional template options, as a base64-encoded json string
+  -v, --verbose                      Verbose output
+  -y, --yes                          Skip questions, and use all default values
+      --[no-]install                 [default: true] Run npm installation after files are created
+      --[no-]process-install-config  [default: true] Process the template install.yml configuration file, defaults to
+                                     true, to skip processing install.yml use --no-process-install-config
+      --template-options=<value>     Additional template options, as a base64-encoded json string
 
 DESCRIPTION
   Install an Adobe Developer App Builder template
@@ -12905,6 +13312,8 @@ EXAMPLES
   $ aio templates install @scope/npm-package-name@tagOrVersion
 ```
 
+_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.0.3/src/commands/templates/install.ts)_
+
 ## `aio templates remove NAME`
 
 Remove an Adobe Developer App Builder template from the Template Registry
@@ -12928,6 +13337,8 @@ ALIASES
 EXAMPLES
   $ aio templates remove @adobe/app-builder-template
 ```
+
+_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.0.3/src/commands/templates/remove.ts)_
 
 ## `aio templates rm NAME`
 
@@ -12970,6 +13381,8 @@ FLAGS
 DESCRIPTION
   Clears all installed templates
 ```
+
+_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.0.3/src/commands/templates/rollback.ts)_
 
 ## `aio templates sub NAME GITHUBREPOURL`
 
@@ -13021,6 +13434,8 @@ EXAMPLES
   $ aio templates submit @adobe/app-builder-template https://github.com/adobe/app-builder-template
 ```
 
+_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.0.3/src/commands/templates/submit.ts)_
+
 ## `aio templates un PACKAGE-NAME`
 
 Uninstall an Adobe Developer App Builder template
@@ -13063,6 +13478,8 @@ ALIASES
   $ aio templates un
 ```
 
+_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.0.3/src/commands/templates/uninstall.ts)_
+
 ## `aio update`
 
 Update all installed plugins.
@@ -13096,7 +13513,7 @@ USAGE
 FLAGS
   -j, --json  Output json
   -y, --yml   Output yml
-  --help      Show help
+      --help  Show help
 
 DESCRIPTION
   Show the currently selected Organization, Project and Workspace
