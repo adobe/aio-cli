@@ -96,7 +96,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (--version|-v)
-@adobe/aio-cli/10.0.0 win32-x64 node-v18.19.1
+@adobe/aio-cli/10.1.0 darwin-arm64 node-v18.20.1
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -107,426 +107,420 @@ USAGE
 # Commands
 
 <!-- commands -->
-- [aio-cli](#aio-cli)
-- [health](#health)
-- [Getting started](#getting-started)
-- [Technical requirements](#technical-requirements)
-- [Proxy Support](#proxy-support)
-- [Usage](#usage)
-- [Commands](#commands)
-  - [`aio app`](#aio-app)
-  - [`aio app add`](#aio-app-add)
-  - [`aio app add action`](#aio-app-add-action)
-  - [`aio app add actions`](#aio-app-add-actions)
-  - [`aio app add ci`](#aio-app-add-ci)
-  - [`aio app add event`](#aio-app-add-event)
-  - [`aio app add events`](#aio-app-add-events)
-  - [`aio app add ext`](#aio-app-add-ext)
-  - [`aio app add extension`](#aio-app-add-extension)
-  - [`aio app add extensions`](#aio-app-add-extensions)
-  - [`aio app add service`](#aio-app-add-service)
-  - [`aio app add services`](#aio-app-add-services)
-  - [`aio app add web-assets`](#aio-app-add-web-assets)
-  - [`aio app build`](#aio-app-build)
-  - [`aio app config`](#aio-app-config)
-  - [`aio app config get`](#aio-app-config-get)
-  - [`aio app config get lf`](#aio-app-config-get-lf)
-  - [`aio app config get lf errors`](#aio-app-config-get-lf-errors)
-  - [`aio app config get log-forwarding`](#aio-app-config-get-log-forwarding)
-  - [`aio app config get log-forwarding errors`](#aio-app-config-get-log-forwarding-errors)
-  - [`aio app config set`](#aio-app-config-set)
-  - [`aio app config set lf`](#aio-app-config-set-lf)
-  - [`aio app config set log-forwarding`](#aio-app-config-set-log-forwarding)
-  - [`aio app create [PATH]`](#aio-app-create-path)
-  - [`aio app delete`](#aio-app-delete)
-  - [`aio app delete action [ACTION-NAME]`](#aio-app-delete-action-action-name)
-  - [`aio app delete actions [ACTION-NAME]`](#aio-app-delete-actions-action-name)
-  - [`aio app delete ci`](#aio-app-delete-ci)
-  - [`aio app delete ext`](#aio-app-delete-ext)
-  - [`aio app delete extension`](#aio-app-delete-extension)
-  - [`aio app delete extensions`](#aio-app-delete-extensions)
-  - [`aio app delete service`](#aio-app-delete-service)
-  - [`aio app delete services`](#aio-app-delete-services)
-  - [`aio app delete web-assets`](#aio-app-delete-web-assets)
-  - [`aio app deploy`](#aio-app-deploy)
-  - [`aio app get-url [ACTION]`](#aio-app-get-url-action)
-  - [`aio app info`](#aio-app-info)
-  - [`aio app init [PATH]`](#aio-app-init-path)
-  - [`aio app install PATH`](#aio-app-install-path)
-  - [`aio app list`](#aio-app-list)
-  - [`aio app list ext`](#aio-app-list-ext)
-  - [`aio app list ext-points`](#aio-app-list-ext-points)
-  - [`aio app list extension`](#aio-app-list-extension)
-  - [`aio app list extension-points`](#aio-app-list-extension-points)
-  - [`aio app list extensions`](#aio-app-list-extensions)
-  - [`aio app logs`](#aio-app-logs)
-  - [`aio app pack [PATH]`](#aio-app-pack-path)
-  - [`aio app run`](#aio-app-run)
-  - [`aio app test`](#aio-app-test)
-  - [`aio app undeploy`](#aio-app-undeploy)
-  - [`aio app use [CONFIG_FILE_PATH]`](#aio-app-use-config_file_path)
-  - [`aio auth`](#aio-auth)
-  - [`aio auth ctx`](#aio-auth-ctx)
-  - [`aio auth login`](#aio-auth-login)
-  - [`aio auth logout`](#aio-auth-logout)
-  - [`aio autocomplete [SHELL]`](#aio-autocomplete-shell)
-  - [`aio certificate`](#aio-certificate)
-  - [`aio certificate fingerprint FILE`](#aio-certificate-fingerprint-file)
-  - [`aio certificate generate`](#aio-certificate-generate)
-  - [`aio certificate verify FILE`](#aio-certificate-verify-file)
-  - [`aio config`](#aio-config)
-  - [`aio config clear`](#aio-config-clear)
-  - [`aio config del KEYS...`](#aio-config-del-keys)
-  - [`aio config delete KEYS...`](#aio-config-delete-keys)
-  - [`aio config edit`](#aio-config-edit)
-  - [`aio config get KEY`](#aio-config-get-key)
-  - [`aio config list`](#aio-config-list)
-  - [`aio config ls`](#aio-config-ls)
-  - [`aio config rm KEYS...`](#aio-config-rm-keys)
-  - [`aio config set key 'a value'       # set key to 'a value'`](#aio-config-set-key-a-value--------set-key-to-a-value)
-  - [`aio console`](#aio-console)
-  - [`aio console open`](#aio-console-open)
-  - [`aio console org`](#aio-console-org)
-  - [`aio console org list`](#aio-console-org-list)
-  - [`aio console org ls`](#aio-console-org-ls)
-  - [`aio console org sel [ORGCODE]`](#aio-console-org-sel-orgcode)
-  - [`aio console org select [ORGCODE]`](#aio-console-org-select-orgcode)
-  - [`aio console project`](#aio-console-project)
-  - [`aio console project list`](#aio-console-project-list)
-  - [`aio console project ls`](#aio-console-project-ls)
-  - [`aio console project sel [PROJECTIDORNAME]`](#aio-console-project-sel-projectidorname)
-  - [`aio console project select [PROJECTIDORNAME]`](#aio-console-project-select-projectidorname)
-  - [`aio console publickey`](#aio-console-publickey)
-  - [`aio console publickey delete IDORFINGERPRINT`](#aio-console-publickey-delete-idorfingerprint)
-  - [`aio console publickey list`](#aio-console-publickey-list)
-  - [`aio console publickey upload FILE`](#aio-console-publickey-upload-file)
-  - [`aio console where`](#aio-console-where)
-  - [`aio console workspace`](#aio-console-workspace)
-  - [`aio console workspace dl [DESTINATION]`](#aio-console-workspace-dl-destination)
-  - [`aio console workspace download [DESTINATION]`](#aio-console-workspace-download-destination)
-  - [`aio console workspace list`](#aio-console-workspace-list)
-  - [`aio console workspace ls`](#aio-console-workspace-ls)
-  - [`aio console workspace sel [WORKSPACEIDORNAME]`](#aio-console-workspace-sel-workspaceidorname)
-  - [`aio console workspace select [WORKSPACEIDORNAME]`](#aio-console-workspace-select-workspaceidorname)
-  - [`aio console ws`](#aio-console-ws)
-  - [`aio console ws dl [DESTINATION]`](#aio-console-ws-dl-destination)
-  - [`aio console ws download [DESTINATION]`](#aio-console-ws-download-destination)
-  - [`aio console ws list`](#aio-console-ws-list)
-  - [`aio console ws ls`](#aio-console-ws-ls)
-  - [`aio console ws sel [WORKSPACEIDORNAME]`](#aio-console-ws-sel-workspaceidorname)
-  - [`aio console ws select [WORKSPACEIDORNAME]`](#aio-console-ws-select-workspaceidorname)
-  - [`aio context`](#aio-context)
-  - [`aio ctx`](#aio-ctx)
-  - [`aio discover`](#aio-discover)
-  - [`aio event`](#aio-event)
-  - [`aio event eventmetadata`](#aio-event-eventmetadata)
-  - [`aio event eventmetadata create PROVIDERID`](#aio-event-eventmetadata-create-providerid)
-  - [`aio event eventmetadata delete PROVIDERID [EVENTCODE]`](#aio-event-eventmetadata-delete-providerid-eventcode)
-  - [`aio event eventmetadata get PROVIDERID EVENTCODE`](#aio-event-eventmetadata-get-providerid-eventcode)
-  - [`aio event eventmetadata list PROVIDERID`](#aio-event-eventmetadata-list-providerid)
-  - [`aio event eventmetadata ls PROVIDERID`](#aio-event-eventmetadata-ls-providerid)
-  - [`aio event eventmetadata update PROVIDERID EVENTCODE`](#aio-event-eventmetadata-update-providerid-eventcode)
-  - [`aio event provider`](#aio-event-provider)
-  - [`aio event provider create`](#aio-event-provider-create)
-  - [`aio event provider delete PROVIDERID`](#aio-event-provider-delete-providerid)
-  - [`aio event provider get PROVIDERID`](#aio-event-provider-get-providerid)
-  - [`aio event provider list`](#aio-event-provider-list)
-  - [`aio event provider ls`](#aio-event-provider-ls)
-  - [`aio event provider update PROVIDERID`](#aio-event-provider-update-providerid)
-  - [`aio event reg`](#aio-event-reg)
-  - [`aio event reg create BODYJSONFILE`](#aio-event-reg-create-bodyjsonfile)
-  - [`aio event reg delete REGISTRATIONID`](#aio-event-reg-delete-registrationid)
-  - [`aio event reg get REGISTRATIONID`](#aio-event-reg-get-registrationid)
-  - [`aio event reg list`](#aio-event-reg-list)
-  - [`aio event reg ls`](#aio-event-reg-ls)
-  - [`aio event registration`](#aio-event-registration)
-  - [`aio event registration create BODYJSONFILE`](#aio-event-registration-create-bodyjsonfile)
-  - [`aio event registration delete REGISTRATIONID`](#aio-event-registration-delete-registrationid)
-  - [`aio event registration get REGISTRATIONID`](#aio-event-registration-get-registrationid)
-  - [`aio event registration list`](#aio-event-registration-list)
-  - [`aio event registration ls`](#aio-event-registration-ls)
-  - [`aio help [COMMAND]`](#aio-help-command)
-  - [`aio info`](#aio-info)
-  - [`aio login`](#aio-login)
-  - [`aio logout`](#aio-logout)
-  - [`aio open`](#aio-open)
-  - [`aio plugins`](#aio-plugins)
-  - [`aio plugins add PLUGIN`](#aio-plugins-add-plugin)
-  - [`aio plugins discover`](#aio-plugins-discover)
-  - [`aio plugins:inspect PLUGIN...`](#aio-pluginsinspect-plugin)
-  - [`aio plugins install PLUGIN`](#aio-plugins-install-plugin)
-  - [`aio plugins link PATH`](#aio-plugins-link-path)
-  - [`aio plugins remove [PLUGIN]`](#aio-plugins-remove-plugin)
-  - [`aio plugins reset`](#aio-plugins-reset)
-  - [`aio plugins uninstall [PLUGIN]`](#aio-plugins-uninstall-plugin)
-  - [`aio plugins unlink [PLUGIN]`](#aio-plugins-unlink-plugin)
-  - [`aio plugins update`](#aio-plugins-update)
-  - [`aio report`](#aio-report)
-  - [`aio rollback`](#aio-rollback)
-  - [`aio rt`](#aio-rt)
-  - [`aio rt action`](#aio-rt-action)
-  - [`aio rt action create ACTIONNAME [ACTIONPATH]`](#aio-rt-action-create-actionname-actionpath)
-  - [`aio rt action del ACTIONNAME`](#aio-rt-action-del-actionname)
-  - [`aio rt action delete ACTIONNAME`](#aio-rt-action-delete-actionname)
-  - [`aio rt action get ACTIONNAME`](#aio-rt-action-get-actionname)
-  - [`aio rt action invoke ACTIONNAME`](#aio-rt-action-invoke-actionname)
-  - [`aio rt action list [PACKAGENAME]`](#aio-rt-action-list-packagename)
-  - [`aio rt action ls [PACKAGENAME]`](#aio-rt-action-ls-packagename)
-  - [`aio rt action update ACTIONNAME [ACTIONPATH]`](#aio-rt-action-update-actionname-actionpath)
-  - [`aio rt actions list [PACKAGENAME]`](#aio-rt-actions-list-packagename)
-  - [`aio rt actions ls [PACKAGENAME]`](#aio-rt-actions-ls-packagename)
-  - [`aio rt activation`](#aio-rt-activation)
-  - [`aio rt activation get [ACTIVATIONID]`](#aio-rt-activation-get-activationid)
-  - [`aio rt activation list [ACTION_NAME]`](#aio-rt-activation-list-action_name)
-  - [`aio rt activation log [ACTIVATIONID]`](#aio-rt-activation-log-activationid)
-  - [`aio rt activation logs [ACTIVATIONID]`](#aio-rt-activation-logs-activationid)
-  - [`aio rt activation ls [ACTION_NAME]`](#aio-rt-activation-ls-action_name)
-  - [`aio rt activation result [ACTIVATIONID]`](#aio-rt-activation-result-activationid)
-  - [`aio rt activations list [ACTION_NAME]`](#aio-rt-activations-list-action_name)
-  - [`aio rt activations ls [ACTION_NAME]`](#aio-rt-activations-ls-action_name)
-  - [`aio rt api`](#aio-rt-api)
-  - [`aio rt api create [BASEPATH] [RELPATH] [APIVERB] [ACTION]`](#aio-rt-api-create-basepath-relpath-apiverb-action)
-  - [`aio rt api delete BASEPATHORAPINAME [RELPATH] [APIVERB]`](#aio-rt-api-delete-basepathorapiname-relpath-apiverb)
-  - [`aio rt api get BASEPATHORAPINAME`](#aio-rt-api-get-basepathorapiname)
-  - [`aio rt api list [BASEPATH] [RELPATH] [APIVERB]`](#aio-rt-api-list-basepath-relpath-apiverb)
-  - [`aio rt api ls [BASEPATH] [RELPATH] [APIVERB]`](#aio-rt-api-ls-basepath-relpath-apiverb)
-  - [`aio rt deploy`](#aio-rt-deploy)
-  - [`aio rt deploy export`](#aio-rt-deploy-export)
-  - [`aio rt deploy report`](#aio-rt-deploy-report)
-  - [`aio rt deploy sync`](#aio-rt-deploy-sync)
-  - [`aio rt deploy undeploy`](#aio-rt-deploy-undeploy)
-  - [`aio rt deploy version`](#aio-rt-deploy-version)
-  - [`aio rt get`](#aio-rt-get)
-  - [`aio rt list`](#aio-rt-list)
-  - [`aio rt log [ACTIVATIONID]`](#aio-rt-log-activationid)
-  - [`aio rt logs [ACTIVATIONID]`](#aio-rt-logs-activationid)
-  - [`aio rt ls`](#aio-rt-ls)
-  - [`aio rt namespace`](#aio-rt-namespace)
-  - [`aio rt namespace lf`](#aio-rt-namespace-lf)
-  - [`aio rt namespace lf errors`](#aio-rt-namespace-lf-errors)
-  - [`aio rt namespace lf get`](#aio-rt-namespace-lf-get)
-  - [`aio rt namespace lf set`](#aio-rt-namespace-lf-set)
-  - [`aio rt namespace lf set adobe-io-runtime`](#aio-rt-namespace-lf-set-adobe-io-runtime)
-  - [`aio rt namespace lf set azure-log-analytics`](#aio-rt-namespace-lf-set-azure-log-analytics)
-  - [`aio rt namespace lf set new-relic`](#aio-rt-namespace-lf-set-new-relic)
-  - [`aio rt namespace lf set splunk-hec`](#aio-rt-namespace-lf-set-splunk-hec)
-  - [`aio rt namespace list`](#aio-rt-namespace-list)
-  - [`aio rt namespace log-forwarding`](#aio-rt-namespace-log-forwarding)
-  - [`aio rt namespace log-forwarding errors`](#aio-rt-namespace-log-forwarding-errors)
-  - [`aio rt namespace log-forwarding get`](#aio-rt-namespace-log-forwarding-get)
-  - [`aio rt namespace log-forwarding set`](#aio-rt-namespace-log-forwarding-set)
-  - [`aio rt namespace log-forwarding set adobe-io-runtime`](#aio-rt-namespace-log-forwarding-set-adobe-io-runtime)
-  - [`aio rt namespace log-forwarding set azure-log-analytics`](#aio-rt-namespace-log-forwarding-set-azure-log-analytics)
-  - [`aio rt namespace log-forwarding set new-relic`](#aio-rt-namespace-log-forwarding-set-new-relic)
-  - [`aio rt namespace log-forwarding set splunk-hec`](#aio-rt-namespace-log-forwarding-set-splunk-hec)
-  - [`aio rt namespace ls`](#aio-rt-namespace-ls)
-  - [`aio rt ns`](#aio-rt-ns)
-  - [`aio rt ns lf`](#aio-rt-ns-lf)
-  - [`aio rt ns lf errors`](#aio-rt-ns-lf-errors)
-  - [`aio rt ns lf get`](#aio-rt-ns-lf-get)
-  - [`aio rt ns lf set`](#aio-rt-ns-lf-set)
-  - [`aio rt ns lf set adobe-io-runtime`](#aio-rt-ns-lf-set-adobe-io-runtime)
-  - [`aio rt ns lf set azure-log-analytics`](#aio-rt-ns-lf-set-azure-log-analytics)
-  - [`aio rt ns lf set new-relic`](#aio-rt-ns-lf-set-new-relic)
-  - [`aio rt ns lf set splunk-hec`](#aio-rt-ns-lf-set-splunk-hec)
-  - [`aio rt ns list`](#aio-rt-ns-list)
-  - [`aio rt ns log-forwarding`](#aio-rt-ns-log-forwarding)
-  - [`aio rt ns log-forwarding errors`](#aio-rt-ns-log-forwarding-errors)
-  - [`aio rt ns log-forwarding get`](#aio-rt-ns-log-forwarding-get)
-  - [`aio rt ns log-forwarding set`](#aio-rt-ns-log-forwarding-set)
-  - [`aio rt ns log-forwarding set adobe-io-runtime`](#aio-rt-ns-log-forwarding-set-adobe-io-runtime)
-  - [`aio rt ns log-forwarding set azure-log-analytics`](#aio-rt-ns-log-forwarding-set-azure-log-analytics)
-  - [`aio rt ns log-forwarding set new-relic`](#aio-rt-ns-log-forwarding-set-new-relic)
-  - [`aio rt ns log-forwarding set splunk-hec`](#aio-rt-ns-log-forwarding-set-splunk-hec)
-  - [`aio rt ns ls`](#aio-rt-ns-ls)
-  - [`aio rt package`](#aio-rt-package)
-  - [`aio rt package bind PACKAGENAME BINDPACKAGENAME`](#aio-rt-package-bind-packagename-bindpackagename)
-  - [`aio rt package create PACKAGENAME`](#aio-rt-package-create-packagename)
-  - [`aio rt package delete PACKAGENAME`](#aio-rt-package-delete-packagename)
-  - [`aio rt package get PACKAGENAME`](#aio-rt-package-get-packagename)
-  - [`aio rt package list [NAMESPACE]`](#aio-rt-package-list-namespace)
-  - [`aio rt package ls [NAMESPACE]`](#aio-rt-package-ls-namespace)
-  - [`aio rt package update PACKAGENAME`](#aio-rt-package-update-packagename)
-  - [`aio rt pkg`](#aio-rt-pkg)
-  - [`aio rt pkg bind PACKAGENAME BINDPACKAGENAME`](#aio-rt-pkg-bind-packagename-bindpackagename)
-  - [`aio rt pkg create PACKAGENAME`](#aio-rt-pkg-create-packagename)
-  - [`aio rt pkg delete PACKAGENAME`](#aio-rt-pkg-delete-packagename)
-  - [`aio rt pkg get PACKAGENAME`](#aio-rt-pkg-get-packagename)
-  - [`aio rt pkg list [NAMESPACE]`](#aio-rt-pkg-list-namespace)
-  - [`aio rt pkg ls [NAMESPACE]`](#aio-rt-pkg-ls-namespace)
-  - [`aio rt pkg update PACKAGENAME`](#aio-rt-pkg-update-packagename)
-  - [`aio rt prop`](#aio-rt-prop)
-  - [`aio rt prop get`](#aio-rt-prop-get)
-  - [`aio rt prop set`](#aio-rt-prop-set)
-  - [`aio rt prop unset`](#aio-rt-prop-unset)
-  - [`aio rt property`](#aio-rt-property)
-  - [`aio rt property get`](#aio-rt-property-get)
-  - [`aio rt property set`](#aio-rt-property-set)
-  - [`aio rt property unset`](#aio-rt-property-unset)
-  - [`aio rt route`](#aio-rt-route)
-  - [`aio rt route create [BASEPATH] [RELPATH] [APIVERB] [ACTION]`](#aio-rt-route-create-basepath-relpath-apiverb-action)
-  - [`aio rt route delete BASEPATHORAPINAME [RELPATH] [APIVERB]`](#aio-rt-route-delete-basepathorapiname-relpath-apiverb)
-  - [`aio rt route get BASEPATHORAPINAME`](#aio-rt-route-get-basepathorapiname)
-  - [`aio rt route list [BASEPATH] [RELPATH] [APIVERB]`](#aio-rt-route-list-basepath-relpath-apiverb)
-  - [`aio rt route ls [BASEPATH] [RELPATH] [APIVERB]`](#aio-rt-route-ls-basepath-relpath-apiverb)
-  - [`aio rt rule`](#aio-rt-rule)
-  - [`aio rt rule create NAME TRIGGER ACTION`](#aio-rt-rule-create-name-trigger-action)
-  - [`aio rt rule delete NAME`](#aio-rt-rule-delete-name)
-  - [`aio rt rule disable NAME`](#aio-rt-rule-disable-name)
-  - [`aio rt rule enable NAME`](#aio-rt-rule-enable-name)
-  - [`aio rt rule get NAME`](#aio-rt-rule-get-name)
-  - [`aio rt rule list`](#aio-rt-rule-list)
-  - [`aio rt rule ls`](#aio-rt-rule-ls)
-  - [`aio rt rule status NAME`](#aio-rt-rule-status-name)
-  - [`aio rt rule update NAME TRIGGER ACTION`](#aio-rt-rule-update-name-trigger-action)
-  - [`aio rt trigger`](#aio-rt-trigger)
-  - [`aio rt trigger create TRIGGERNAME`](#aio-rt-trigger-create-triggername)
-  - [`aio rt trigger delete TRIGGERPATH`](#aio-rt-trigger-delete-triggerpath)
-  - [`aio rt trigger fire TRIGGERNAME`](#aio-rt-trigger-fire-triggername)
-  - [`aio rt trigger get TRIGGERPATH`](#aio-rt-trigger-get-triggerpath)
-  - [`aio rt trigger list`](#aio-rt-trigger-list)
-  - [`aio rt trigger ls`](#aio-rt-trigger-ls)
-  - [`aio rt trigger update TRIGGERNAME`](#aio-rt-trigger-update-triggername)
-  - [`aio runtime`](#aio-runtime)
-  - [`aio runtime action`](#aio-runtime-action)
-  - [`aio runtime action create ACTIONNAME [ACTIONPATH]`](#aio-runtime-action-create-actionname-actionpath)
-  - [`aio runtime action del ACTIONNAME`](#aio-runtime-action-del-actionname)
-  - [`aio runtime action delete ACTIONNAME`](#aio-runtime-action-delete-actionname)
-  - [`aio runtime action get ACTIONNAME`](#aio-runtime-action-get-actionname)
-  - [`aio runtime action invoke ACTIONNAME`](#aio-runtime-action-invoke-actionname)
-  - [`aio runtime action list [PACKAGENAME]`](#aio-runtime-action-list-packagename)
-  - [`aio runtime action ls [PACKAGENAME]`](#aio-runtime-action-ls-packagename)
-  - [`aio runtime action update ACTIONNAME [ACTIONPATH]`](#aio-runtime-action-update-actionname-actionpath)
-  - [`aio runtime actions list [PACKAGENAME]`](#aio-runtime-actions-list-packagename)
-  - [`aio runtime actions ls [PACKAGENAME]`](#aio-runtime-actions-ls-packagename)
-  - [`aio runtime activation`](#aio-runtime-activation)
-  - [`aio runtime activation get [ACTIVATIONID]`](#aio-runtime-activation-get-activationid)
-  - [`aio runtime activation list [ACTION_NAME]`](#aio-runtime-activation-list-action_name)
-  - [`aio runtime activation log [ACTIVATIONID]`](#aio-runtime-activation-log-activationid)
-  - [`aio runtime activation logs [ACTIVATIONID]`](#aio-runtime-activation-logs-activationid)
-  - [`aio runtime activation ls [ACTION_NAME]`](#aio-runtime-activation-ls-action_name)
-  - [`aio runtime activation result [ACTIVATIONID]`](#aio-runtime-activation-result-activationid)
-  - [`aio runtime activations list [ACTION_NAME]`](#aio-runtime-activations-list-action_name)
-  - [`aio runtime activations ls [ACTION_NAME]`](#aio-runtime-activations-ls-action_name)
-  - [`aio runtime api`](#aio-runtime-api)
-  - [`aio runtime api create [BASEPATH] [RELPATH] [APIVERB] [ACTION]`](#aio-runtime-api-create-basepath-relpath-apiverb-action)
-  - [`aio runtime api delete BASEPATHORAPINAME [RELPATH] [APIVERB]`](#aio-runtime-api-delete-basepathorapiname-relpath-apiverb)
-  - [`aio runtime api get BASEPATHORAPINAME`](#aio-runtime-api-get-basepathorapiname)
-  - [`aio runtime api list [BASEPATH] [RELPATH] [APIVERB]`](#aio-runtime-api-list-basepath-relpath-apiverb)
-  - [`aio runtime api ls [BASEPATH] [RELPATH] [APIVERB]`](#aio-runtime-api-ls-basepath-relpath-apiverb)
-  - [`aio runtime deploy`](#aio-runtime-deploy)
-  - [`aio runtime deploy export`](#aio-runtime-deploy-export)
-  - [`aio runtime deploy report`](#aio-runtime-deploy-report)
-  - [`aio runtime deploy sync`](#aio-runtime-deploy-sync)
-  - [`aio runtime deploy undeploy`](#aio-runtime-deploy-undeploy)
-  - [`aio runtime deploy version`](#aio-runtime-deploy-version)
-  - [`aio runtime list`](#aio-runtime-list)
-  - [`aio runtime log [ACTIVATIONID]`](#aio-runtime-log-activationid)
-  - [`aio runtime logs [ACTIVATIONID]`](#aio-runtime-logs-activationid)
-  - [`aio runtime ls`](#aio-runtime-ls)
-  - [`aio runtime namespace`](#aio-runtime-namespace)
-  - [`aio runtime namespace get`](#aio-runtime-namespace-get)
-  - [`aio runtime namespace lf`](#aio-runtime-namespace-lf)
-  - [`aio runtime namespace lf errors`](#aio-runtime-namespace-lf-errors)
-  - [`aio runtime namespace lf get`](#aio-runtime-namespace-lf-get)
-  - [`aio runtime namespace lf set`](#aio-runtime-namespace-lf-set)
-  - [`aio runtime namespace lf set adobe-io-runtime`](#aio-runtime-namespace-lf-set-adobe-io-runtime)
-  - [`aio runtime namespace lf set azure-log-analytics`](#aio-runtime-namespace-lf-set-azure-log-analytics)
-  - [`aio runtime namespace lf set new-relic`](#aio-runtime-namespace-lf-set-new-relic)
-  - [`aio runtime namespace lf set splunk-hec`](#aio-runtime-namespace-lf-set-splunk-hec)
-  - [`aio runtime namespace list`](#aio-runtime-namespace-list)
-  - [`aio runtime namespace log-forwarding`](#aio-runtime-namespace-log-forwarding)
-  - [`aio runtime namespace log-forwarding errors`](#aio-runtime-namespace-log-forwarding-errors)
-  - [`aio runtime namespace log-forwarding get`](#aio-runtime-namespace-log-forwarding-get)
-  - [`aio runtime namespace log-forwarding set`](#aio-runtime-namespace-log-forwarding-set)
-  - [`aio runtime namespace log-forwarding set adobe-io-runtime`](#aio-runtime-namespace-log-forwarding-set-adobe-io-runtime)
-  - [`aio runtime namespace log-forwarding set azure-log-analytics`](#aio-runtime-namespace-log-forwarding-set-azure-log-analytics)
-  - [`aio runtime namespace log-forwarding set new-relic`](#aio-runtime-namespace-log-forwarding-set-new-relic)
-  - [`aio runtime namespace log-forwarding set splunk-hec`](#aio-runtime-namespace-log-forwarding-set-splunk-hec)
-  - [`aio runtime namespace ls`](#aio-runtime-namespace-ls)
-  - [`aio runtime ns`](#aio-runtime-ns)
-  - [`aio runtime ns lf`](#aio-runtime-ns-lf)
-  - [`aio runtime ns lf errors`](#aio-runtime-ns-lf-errors)
-  - [`aio runtime ns lf get`](#aio-runtime-ns-lf-get)
-  - [`aio runtime ns lf set`](#aio-runtime-ns-lf-set)
-  - [`aio runtime ns lf set adobe-io-runtime`](#aio-runtime-ns-lf-set-adobe-io-runtime)
-  - [`aio runtime ns lf set azure-log-analytics`](#aio-runtime-ns-lf-set-azure-log-analytics)
-  - [`aio runtime ns lf set new-relic`](#aio-runtime-ns-lf-set-new-relic)
-  - [`aio runtime ns lf set splunk-hec`](#aio-runtime-ns-lf-set-splunk-hec)
-  - [`aio runtime ns list`](#aio-runtime-ns-list)
-  - [`aio runtime ns log-forwarding`](#aio-runtime-ns-log-forwarding)
-  - [`aio runtime ns log-forwarding errors`](#aio-runtime-ns-log-forwarding-errors)
-  - [`aio runtime ns log-forwarding get`](#aio-runtime-ns-log-forwarding-get)
-  - [`aio runtime ns log-forwarding set`](#aio-runtime-ns-log-forwarding-set)
-  - [`aio runtime ns log-forwarding set adobe-io-runtime`](#aio-runtime-ns-log-forwarding-set-adobe-io-runtime)
-  - [`aio runtime ns log-forwarding set azure-log-analytics`](#aio-runtime-ns-log-forwarding-set-azure-log-analytics)
-  - [`aio runtime ns log-forwarding set new-relic`](#aio-runtime-ns-log-forwarding-set-new-relic)
-  - [`aio runtime ns log-forwarding set splunk-hec`](#aio-runtime-ns-log-forwarding-set-splunk-hec)
-  - [`aio runtime ns ls`](#aio-runtime-ns-ls)
-  - [`aio runtime package`](#aio-runtime-package)
-  - [`aio runtime package bind PACKAGENAME BINDPACKAGENAME`](#aio-runtime-package-bind-packagename-bindpackagename)
-  - [`aio runtime package create PACKAGENAME`](#aio-runtime-package-create-packagename)
-  - [`aio runtime package delete PACKAGENAME`](#aio-runtime-package-delete-packagename)
-  - [`aio runtime package get PACKAGENAME`](#aio-runtime-package-get-packagename)
-  - [`aio runtime package list [NAMESPACE]`](#aio-runtime-package-list-namespace)
-  - [`aio runtime package ls [NAMESPACE]`](#aio-runtime-package-ls-namespace)
-  - [`aio runtime package update PACKAGENAME`](#aio-runtime-package-update-packagename)
-  - [`aio runtime pkg`](#aio-runtime-pkg)
-  - [`aio runtime pkg bind PACKAGENAME BINDPACKAGENAME`](#aio-runtime-pkg-bind-packagename-bindpackagename)
-  - [`aio runtime pkg create PACKAGENAME`](#aio-runtime-pkg-create-packagename)
-  - [`aio runtime pkg delete PACKAGENAME`](#aio-runtime-pkg-delete-packagename)
-  - [`aio runtime pkg get PACKAGENAME`](#aio-runtime-pkg-get-packagename)
-  - [`aio runtime pkg list [NAMESPACE]`](#aio-runtime-pkg-list-namespace)
-  - [`aio runtime pkg ls [NAMESPACE]`](#aio-runtime-pkg-ls-namespace)
-  - [`aio runtime pkg update PACKAGENAME`](#aio-runtime-pkg-update-packagename)
-  - [`aio runtime prop`](#aio-runtime-prop)
-  - [`aio runtime prop get`](#aio-runtime-prop-get)
-  - [`aio runtime prop set`](#aio-runtime-prop-set)
-  - [`aio runtime prop unset`](#aio-runtime-prop-unset)
-  - [`aio runtime property`](#aio-runtime-property)
-  - [`aio runtime property get`](#aio-runtime-property-get)
-  - [`aio runtime property set`](#aio-runtime-property-set)
-  - [`aio runtime property unset`](#aio-runtime-property-unset)
-  - [`aio runtime route`](#aio-runtime-route)
-  - [`aio runtime route create [BASEPATH] [RELPATH] [APIVERB] [ACTION]`](#aio-runtime-route-create-basepath-relpath-apiverb-action)
-  - [`aio runtime route delete BASEPATHORAPINAME [RELPATH] [APIVERB]`](#aio-runtime-route-delete-basepathorapiname-relpath-apiverb)
-  - [`aio runtime route get BASEPATHORAPINAME`](#aio-runtime-route-get-basepathorapiname)
-  - [`aio runtime route list [BASEPATH] [RELPATH] [APIVERB]`](#aio-runtime-route-list-basepath-relpath-apiverb)
-  - [`aio runtime route ls [BASEPATH] [RELPATH] [APIVERB]`](#aio-runtime-route-ls-basepath-relpath-apiverb)
-  - [`aio runtime rule`](#aio-runtime-rule)
-  - [`aio runtime rule create NAME TRIGGER ACTION`](#aio-runtime-rule-create-name-trigger-action)
-  - [`aio runtime rule delete NAME`](#aio-runtime-rule-delete-name)
-  - [`aio runtime rule disable NAME`](#aio-runtime-rule-disable-name)
-  - [`aio runtime rule enable NAME`](#aio-runtime-rule-enable-name)
-  - [`aio runtime rule get NAME`](#aio-runtime-rule-get-name)
-  - [`aio runtime rule list`](#aio-runtime-rule-list)
-  - [`aio runtime rule ls`](#aio-runtime-rule-ls)
-  - [`aio runtime rule status NAME`](#aio-runtime-rule-status-name)
-  - [`aio runtime rule update NAME TRIGGER ACTION`](#aio-runtime-rule-update-name-trigger-action)
-  - [`aio runtime trigger`](#aio-runtime-trigger)
-  - [`aio runtime trigger create TRIGGERNAME`](#aio-runtime-trigger-create-triggername)
-  - [`aio runtime trigger delete TRIGGERPATH`](#aio-runtime-trigger-delete-triggerpath)
-  - [`aio runtime trigger fire TRIGGERNAME`](#aio-runtime-trigger-fire-triggername)
-  - [`aio runtime trigger get TRIGGERPATH`](#aio-runtime-trigger-get-triggerpath)
-  - [`aio runtime trigger list`](#aio-runtime-trigger-list)
-  - [`aio runtime trigger ls`](#aio-runtime-trigger-ls)
-  - [`aio runtime trigger update TRIGGERNAME`](#aio-runtime-trigger-update-triggername)
-  - [`aio telemetry yes`](#aio-telemetry-yes)
-  - [`aio templates`](#aio-templates)
-  - [`aio templates disco`](#aio-templates-disco)
-  - [`aio templates discover`](#aio-templates-discover)
-  - [`aio templates i PATH`](#aio-templates-i-path)
-  - [`aio templates info`](#aio-templates-info)
-  - [`aio templates install PATH`](#aio-templates-install-path)
-  - [`aio templates remove NAME`](#aio-templates-remove-name)
-  - [`aio templates rm NAME`](#aio-templates-rm-name)
-  - [`aio templates rollback`](#aio-templates-rollback)
-  - [`aio templates sub NAME GITHUBREPOURL`](#aio-templates-sub-name-githubrepourl)
-  - [`aio templates submit NAME GITHUBREPOURL`](#aio-templates-submit-name-githubrepourl)
-  - [`aio templates un PACKAGE-NAME`](#aio-templates-un-package-name)
-  - [`aio templates uninstall PACKAGE-NAME`](#aio-templates-uninstall-package-name)
-  - [`aio update`](#aio-update)
-  - [`aio where`](#aio-where)
+* [`aio app`](#aio-app)
+* [`aio app add`](#aio-app-add)
+* [`aio app add action`](#aio-app-add-action)
+* [`aio app add actions`](#aio-app-add-actions)
+* [`aio app add ci`](#aio-app-add-ci)
+* [`aio app add event`](#aio-app-add-event)
+* [`aio app add events`](#aio-app-add-events)
+* [`aio app add ext`](#aio-app-add-ext)
+* [`aio app add extension`](#aio-app-add-extension)
+* [`aio app add extensions`](#aio-app-add-extensions)
+* [`aio app add service`](#aio-app-add-service)
+* [`aio app add services`](#aio-app-add-services)
+* [`aio app add web-assets`](#aio-app-add-web-assets)
+* [`aio app build`](#aio-app-build)
+* [`aio app config`](#aio-app-config)
+* [`aio app config get`](#aio-app-config-get)
+* [`aio app config get lf`](#aio-app-config-get-lf)
+* [`aio app config get lf errors`](#aio-app-config-get-lf-errors)
+* [`aio app config get log-forwarding`](#aio-app-config-get-log-forwarding)
+* [`aio app config get log-forwarding errors`](#aio-app-config-get-log-forwarding-errors)
+* [`aio app config set`](#aio-app-config-set)
+* [`aio app config set lf`](#aio-app-config-set-lf)
+* [`aio app config set log-forwarding`](#aio-app-config-set-log-forwarding)
+* [`aio app create [PATH]`](#aio-app-create-path)
+* [`aio app delete`](#aio-app-delete)
+* [`aio app delete action [ACTION-NAME]`](#aio-app-delete-action-action-name)
+* [`aio app delete actions [ACTION-NAME]`](#aio-app-delete-actions-action-name)
+* [`aio app delete ci`](#aio-app-delete-ci)
+* [`aio app delete ext`](#aio-app-delete-ext)
+* [`aio app delete extension`](#aio-app-delete-extension)
+* [`aio app delete extensions`](#aio-app-delete-extensions)
+* [`aio app delete service`](#aio-app-delete-service)
+* [`aio app delete services`](#aio-app-delete-services)
+* [`aio app delete web-assets`](#aio-app-delete-web-assets)
+* [`aio app deploy`](#aio-app-deploy)
+* [`aio app dev`](#aio-app-dev)
+* [`aio app get-url [ACTION]`](#aio-app-get-url-action)
+* [`aio app info`](#aio-app-info)
+* [`aio app init [PATH]`](#aio-app-init-path)
+* [`aio app install PATH`](#aio-app-install-path)
+* [`aio app list`](#aio-app-list)
+* [`aio app list ext`](#aio-app-list-ext)
+* [`aio app list ext-points`](#aio-app-list-ext-points)
+* [`aio app list extension`](#aio-app-list-extension)
+* [`aio app list extension-points`](#aio-app-list-extension-points)
+* [`aio app list extensions`](#aio-app-list-extensions)
+* [`aio app logs`](#aio-app-logs)
+* [`aio app pack [PATH]`](#aio-app-pack-path)
+* [`aio app run`](#aio-app-run)
+* [`aio app test`](#aio-app-test)
+* [`aio app undeploy`](#aio-app-undeploy)
+* [`aio app use [CONFIG_FILE_PATH]`](#aio-app-use-config_file_path)
+* [`aio auth`](#aio-auth)
+* [`aio auth ctx`](#aio-auth-ctx)
+* [`aio auth login`](#aio-auth-login)
+* [`aio auth logout`](#aio-auth-logout)
+* [`aio autocomplete [SHELL]`](#aio-autocomplete-shell)
+* [`aio certificate`](#aio-certificate)
+* [`aio certificate fingerprint FILE`](#aio-certificate-fingerprint-file)
+* [`aio certificate generate`](#aio-certificate-generate)
+* [`aio certificate verify FILE`](#aio-certificate-verify-file)
+* [`aio config`](#aio-config)
+* [`aio config clear`](#aio-config-clear)
+* [`aio config del KEYS...`](#aio-config-del-keys)
+* [`aio config delete KEYS...`](#aio-config-delete-keys)
+* [`aio config edit`](#aio-config-edit)
+* [`aio config get KEY`](#aio-config-get-key)
+* [`aio config list`](#aio-config-list)
+* [`aio config ls`](#aio-config-ls)
+* [`aio config rm KEYS...`](#aio-config-rm-keys)
+* [`aio config set key 'a value'       # set key to 'a value'`](#aio-config-set-key-a-value--------set-key-to-a-value)
+* [`aio console`](#aio-console)
+* [`aio console open`](#aio-console-open)
+* [`aio console org`](#aio-console-org)
+* [`aio console org list`](#aio-console-org-list)
+* [`aio console org ls`](#aio-console-org-ls)
+* [`aio console org sel [ORGCODE]`](#aio-console-org-sel-orgcode)
+* [`aio console org select [ORGCODE]`](#aio-console-org-select-orgcode)
+* [`aio console project`](#aio-console-project)
+* [`aio console project list`](#aio-console-project-list)
+* [`aio console project ls`](#aio-console-project-ls)
+* [`aio console project sel [PROJECTIDORNAME]`](#aio-console-project-sel-projectidorname)
+* [`aio console project select [PROJECTIDORNAME]`](#aio-console-project-select-projectidorname)
+* [`aio console publickey`](#aio-console-publickey)
+* [`aio console publickey delete IDORFINGERPRINT`](#aio-console-publickey-delete-idorfingerprint)
+* [`aio console publickey list`](#aio-console-publickey-list)
+* [`aio console publickey upload FILE`](#aio-console-publickey-upload-file)
+* [`aio console where`](#aio-console-where)
+* [`aio console workspace`](#aio-console-workspace)
+* [`aio console workspace dl [DESTINATION]`](#aio-console-workspace-dl-destination)
+* [`aio console workspace download [DESTINATION]`](#aio-console-workspace-download-destination)
+* [`aio console workspace list`](#aio-console-workspace-list)
+* [`aio console workspace ls`](#aio-console-workspace-ls)
+* [`aio console workspace sel [WORKSPACEIDORNAME]`](#aio-console-workspace-sel-workspaceidorname)
+* [`aio console workspace select [WORKSPACEIDORNAME]`](#aio-console-workspace-select-workspaceidorname)
+* [`aio console ws`](#aio-console-ws)
+* [`aio console ws dl [DESTINATION]`](#aio-console-ws-dl-destination)
+* [`aio console ws download [DESTINATION]`](#aio-console-ws-download-destination)
+* [`aio console ws list`](#aio-console-ws-list)
+* [`aio console ws ls`](#aio-console-ws-ls)
+* [`aio console ws sel [WORKSPACEIDORNAME]`](#aio-console-ws-sel-workspaceidorname)
+* [`aio console ws select [WORKSPACEIDORNAME]`](#aio-console-ws-select-workspaceidorname)
+* [`aio context`](#aio-context)
+* [`aio ctx`](#aio-ctx)
+* [`aio discover`](#aio-discover)
+* [`aio event`](#aio-event)
+* [`aio event eventmetadata`](#aio-event-eventmetadata)
+* [`aio event eventmetadata create PROVIDERID`](#aio-event-eventmetadata-create-providerid)
+* [`aio event eventmetadata delete PROVIDERID [EVENTCODE]`](#aio-event-eventmetadata-delete-providerid-eventcode)
+* [`aio event eventmetadata get PROVIDERID EVENTCODE`](#aio-event-eventmetadata-get-providerid-eventcode)
+* [`aio event eventmetadata list PROVIDERID`](#aio-event-eventmetadata-list-providerid)
+* [`aio event eventmetadata ls PROVIDERID`](#aio-event-eventmetadata-ls-providerid)
+* [`aio event eventmetadata update PROVIDERID EVENTCODE`](#aio-event-eventmetadata-update-providerid-eventcode)
+* [`aio event provider`](#aio-event-provider)
+* [`aio event provider create`](#aio-event-provider-create)
+* [`aio event provider delete PROVIDERID`](#aio-event-provider-delete-providerid)
+* [`aio event provider get PROVIDERID`](#aio-event-provider-get-providerid)
+* [`aio event provider list`](#aio-event-provider-list)
+* [`aio event provider ls`](#aio-event-provider-ls)
+* [`aio event provider update PROVIDERID`](#aio-event-provider-update-providerid)
+* [`aio event reg`](#aio-event-reg)
+* [`aio event reg create BODYJSONFILE`](#aio-event-reg-create-bodyjsonfile)
+* [`aio event reg delete REGISTRATIONID`](#aio-event-reg-delete-registrationid)
+* [`aio event reg get REGISTRATIONID`](#aio-event-reg-get-registrationid)
+* [`aio event reg list`](#aio-event-reg-list)
+* [`aio event reg ls`](#aio-event-reg-ls)
+* [`aio event registration`](#aio-event-registration)
+* [`aio event registration create BODYJSONFILE`](#aio-event-registration-create-bodyjsonfile)
+* [`aio event registration delete REGISTRATIONID`](#aio-event-registration-delete-registrationid)
+* [`aio event registration get REGISTRATIONID`](#aio-event-registration-get-registrationid)
+* [`aio event registration list`](#aio-event-registration-list)
+* [`aio event registration ls`](#aio-event-registration-ls)
+* [`aio help [COMMAND]`](#aio-help-command)
+* [`aio info`](#aio-info)
+* [`aio login`](#aio-login)
+* [`aio logout`](#aio-logout)
+* [`aio open`](#aio-open)
+* [`aio plugins`](#aio-plugins)
+* [`aio plugins add PLUGIN`](#aio-plugins-add-plugin)
+* [`aio plugins discover`](#aio-plugins-discover)
+* [`aio plugins:inspect PLUGIN...`](#aio-pluginsinspect-plugin)
+* [`aio plugins install PLUGIN`](#aio-plugins-install-plugin)
+* [`aio plugins link PATH`](#aio-plugins-link-path)
+* [`aio plugins remove [PLUGIN]`](#aio-plugins-remove-plugin)
+* [`aio plugins reset`](#aio-plugins-reset)
+* [`aio plugins uninstall [PLUGIN]`](#aio-plugins-uninstall-plugin)
+* [`aio plugins unlink [PLUGIN]`](#aio-plugins-unlink-plugin)
+* [`aio plugins update`](#aio-plugins-update)
+* [`aio report`](#aio-report)
+* [`aio rollback`](#aio-rollback)
+* [`aio rt`](#aio-rt)
+* [`aio rt action`](#aio-rt-action)
+* [`aio rt action create ACTIONNAME [ACTIONPATH]`](#aio-rt-action-create-actionname-actionpath)
+* [`aio rt action del ACTIONNAME`](#aio-rt-action-del-actionname)
+* [`aio rt action delete ACTIONNAME`](#aio-rt-action-delete-actionname)
+* [`aio rt action get ACTIONNAME`](#aio-rt-action-get-actionname)
+* [`aio rt action invoke ACTIONNAME`](#aio-rt-action-invoke-actionname)
+* [`aio rt action list [PACKAGENAME]`](#aio-rt-action-list-packagename)
+* [`aio rt action ls [PACKAGENAME]`](#aio-rt-action-ls-packagename)
+* [`aio rt action update ACTIONNAME [ACTIONPATH]`](#aio-rt-action-update-actionname-actionpath)
+* [`aio rt actions list [PACKAGENAME]`](#aio-rt-actions-list-packagename)
+* [`aio rt actions ls [PACKAGENAME]`](#aio-rt-actions-ls-packagename)
+* [`aio rt activation`](#aio-rt-activation)
+* [`aio rt activation get [ACTIVATIONID]`](#aio-rt-activation-get-activationid)
+* [`aio rt activation list [ACTION_NAME]`](#aio-rt-activation-list-action_name)
+* [`aio rt activation log [ACTIVATIONID]`](#aio-rt-activation-log-activationid)
+* [`aio rt activation logs [ACTIVATIONID]`](#aio-rt-activation-logs-activationid)
+* [`aio rt activation ls [ACTION_NAME]`](#aio-rt-activation-ls-action_name)
+* [`aio rt activation result [ACTIVATIONID]`](#aio-rt-activation-result-activationid)
+* [`aio rt activations list [ACTION_NAME]`](#aio-rt-activations-list-action_name)
+* [`aio rt activations ls [ACTION_NAME]`](#aio-rt-activations-ls-action_name)
+* [`aio rt api`](#aio-rt-api)
+* [`aio rt api create [BASEPATH] [RELPATH] [APIVERB] [ACTION]`](#aio-rt-api-create-basepath-relpath-apiverb-action)
+* [`aio rt api delete BASEPATHORAPINAME [RELPATH] [APIVERB]`](#aio-rt-api-delete-basepathorapiname-relpath-apiverb)
+* [`aio rt api get BASEPATHORAPINAME`](#aio-rt-api-get-basepathorapiname)
+* [`aio rt api list [BASEPATH] [RELPATH] [APIVERB]`](#aio-rt-api-list-basepath-relpath-apiverb)
+* [`aio rt api ls [BASEPATH] [RELPATH] [APIVERB]`](#aio-rt-api-ls-basepath-relpath-apiverb)
+* [`aio rt deploy`](#aio-rt-deploy)
+* [`aio rt deploy export`](#aio-rt-deploy-export)
+* [`aio rt deploy report`](#aio-rt-deploy-report)
+* [`aio rt deploy sync`](#aio-rt-deploy-sync)
+* [`aio rt deploy undeploy`](#aio-rt-deploy-undeploy)
+* [`aio rt deploy version`](#aio-rt-deploy-version)
+* [`aio rt get`](#aio-rt-get)
+* [`aio rt list`](#aio-rt-list)
+* [`aio rt log [ACTIVATIONID]`](#aio-rt-log-activationid)
+* [`aio rt logs [ACTIVATIONID]`](#aio-rt-logs-activationid)
+* [`aio rt ls`](#aio-rt-ls)
+* [`aio rt namespace`](#aio-rt-namespace)
+* [`aio rt namespace lf`](#aio-rt-namespace-lf)
+* [`aio rt namespace lf errors`](#aio-rt-namespace-lf-errors)
+* [`aio rt namespace lf get`](#aio-rt-namespace-lf-get)
+* [`aio rt namespace lf set`](#aio-rt-namespace-lf-set)
+* [`aio rt namespace lf set adobe-io-runtime`](#aio-rt-namespace-lf-set-adobe-io-runtime)
+* [`aio rt namespace lf set azure-log-analytics`](#aio-rt-namespace-lf-set-azure-log-analytics)
+* [`aio rt namespace lf set new-relic`](#aio-rt-namespace-lf-set-new-relic)
+* [`aio rt namespace lf set splunk-hec`](#aio-rt-namespace-lf-set-splunk-hec)
+* [`aio rt namespace list`](#aio-rt-namespace-list)
+* [`aio rt namespace log-forwarding`](#aio-rt-namespace-log-forwarding)
+* [`aio rt namespace log-forwarding errors`](#aio-rt-namespace-log-forwarding-errors)
+* [`aio rt namespace log-forwarding get`](#aio-rt-namespace-log-forwarding-get)
+* [`aio rt namespace log-forwarding set`](#aio-rt-namespace-log-forwarding-set)
+* [`aio rt namespace log-forwarding set adobe-io-runtime`](#aio-rt-namespace-log-forwarding-set-adobe-io-runtime)
+* [`aio rt namespace log-forwarding set azure-log-analytics`](#aio-rt-namespace-log-forwarding-set-azure-log-analytics)
+* [`aio rt namespace log-forwarding set new-relic`](#aio-rt-namespace-log-forwarding-set-new-relic)
+* [`aio rt namespace log-forwarding set splunk-hec`](#aio-rt-namespace-log-forwarding-set-splunk-hec)
+* [`aio rt namespace ls`](#aio-rt-namespace-ls)
+* [`aio rt ns`](#aio-rt-ns)
+* [`aio rt ns lf`](#aio-rt-ns-lf)
+* [`aio rt ns lf errors`](#aio-rt-ns-lf-errors)
+* [`aio rt ns lf get`](#aio-rt-ns-lf-get)
+* [`aio rt ns lf set`](#aio-rt-ns-lf-set)
+* [`aio rt ns lf set adobe-io-runtime`](#aio-rt-ns-lf-set-adobe-io-runtime)
+* [`aio rt ns lf set azure-log-analytics`](#aio-rt-ns-lf-set-azure-log-analytics)
+* [`aio rt ns lf set new-relic`](#aio-rt-ns-lf-set-new-relic)
+* [`aio rt ns lf set splunk-hec`](#aio-rt-ns-lf-set-splunk-hec)
+* [`aio rt ns list`](#aio-rt-ns-list)
+* [`aio rt ns log-forwarding`](#aio-rt-ns-log-forwarding)
+* [`aio rt ns log-forwarding errors`](#aio-rt-ns-log-forwarding-errors)
+* [`aio rt ns log-forwarding get`](#aio-rt-ns-log-forwarding-get)
+* [`aio rt ns log-forwarding set`](#aio-rt-ns-log-forwarding-set)
+* [`aio rt ns log-forwarding set adobe-io-runtime`](#aio-rt-ns-log-forwarding-set-adobe-io-runtime)
+* [`aio rt ns log-forwarding set azure-log-analytics`](#aio-rt-ns-log-forwarding-set-azure-log-analytics)
+* [`aio rt ns log-forwarding set new-relic`](#aio-rt-ns-log-forwarding-set-new-relic)
+* [`aio rt ns log-forwarding set splunk-hec`](#aio-rt-ns-log-forwarding-set-splunk-hec)
+* [`aio rt ns ls`](#aio-rt-ns-ls)
+* [`aio rt package`](#aio-rt-package)
+* [`aio rt package bind PACKAGENAME BINDPACKAGENAME`](#aio-rt-package-bind-packagename-bindpackagename)
+* [`aio rt package create PACKAGENAME`](#aio-rt-package-create-packagename)
+* [`aio rt package delete PACKAGENAME`](#aio-rt-package-delete-packagename)
+* [`aio rt package get PACKAGENAME`](#aio-rt-package-get-packagename)
+* [`aio rt package list [NAMESPACE]`](#aio-rt-package-list-namespace)
+* [`aio rt package ls [NAMESPACE]`](#aio-rt-package-ls-namespace)
+* [`aio rt package update PACKAGENAME`](#aio-rt-package-update-packagename)
+* [`aio rt pkg`](#aio-rt-pkg)
+* [`aio rt pkg bind PACKAGENAME BINDPACKAGENAME`](#aio-rt-pkg-bind-packagename-bindpackagename)
+* [`aio rt pkg create PACKAGENAME`](#aio-rt-pkg-create-packagename)
+* [`aio rt pkg delete PACKAGENAME`](#aio-rt-pkg-delete-packagename)
+* [`aio rt pkg get PACKAGENAME`](#aio-rt-pkg-get-packagename)
+* [`aio rt pkg list [NAMESPACE]`](#aio-rt-pkg-list-namespace)
+* [`aio rt pkg ls [NAMESPACE]`](#aio-rt-pkg-ls-namespace)
+* [`aio rt pkg update PACKAGENAME`](#aio-rt-pkg-update-packagename)
+* [`aio rt prop`](#aio-rt-prop)
+* [`aio rt prop get`](#aio-rt-prop-get)
+* [`aio rt prop set`](#aio-rt-prop-set)
+* [`aio rt prop unset`](#aio-rt-prop-unset)
+* [`aio rt property`](#aio-rt-property)
+* [`aio rt property get`](#aio-rt-property-get)
+* [`aio rt property set`](#aio-rt-property-set)
+* [`aio rt property unset`](#aio-rt-property-unset)
+* [`aio rt route`](#aio-rt-route)
+* [`aio rt route create [BASEPATH] [RELPATH] [APIVERB] [ACTION]`](#aio-rt-route-create-basepath-relpath-apiverb-action)
+* [`aio rt route delete BASEPATHORAPINAME [RELPATH] [APIVERB]`](#aio-rt-route-delete-basepathorapiname-relpath-apiverb)
+* [`aio rt route get BASEPATHORAPINAME`](#aio-rt-route-get-basepathorapiname)
+* [`aio rt route list [BASEPATH] [RELPATH] [APIVERB]`](#aio-rt-route-list-basepath-relpath-apiverb)
+* [`aio rt route ls [BASEPATH] [RELPATH] [APIVERB]`](#aio-rt-route-ls-basepath-relpath-apiverb)
+* [`aio rt rule`](#aio-rt-rule)
+* [`aio rt rule create NAME TRIGGER ACTION`](#aio-rt-rule-create-name-trigger-action)
+* [`aio rt rule delete NAME`](#aio-rt-rule-delete-name)
+* [`aio rt rule disable NAME`](#aio-rt-rule-disable-name)
+* [`aio rt rule enable NAME`](#aio-rt-rule-enable-name)
+* [`aio rt rule get NAME`](#aio-rt-rule-get-name)
+* [`aio rt rule list`](#aio-rt-rule-list)
+* [`aio rt rule ls`](#aio-rt-rule-ls)
+* [`aio rt rule status NAME`](#aio-rt-rule-status-name)
+* [`aio rt rule update NAME TRIGGER ACTION`](#aio-rt-rule-update-name-trigger-action)
+* [`aio rt trigger`](#aio-rt-trigger)
+* [`aio rt trigger create TRIGGERNAME`](#aio-rt-trigger-create-triggername)
+* [`aio rt trigger delete TRIGGERPATH`](#aio-rt-trigger-delete-triggerpath)
+* [`aio rt trigger fire TRIGGERNAME`](#aio-rt-trigger-fire-triggername)
+* [`aio rt trigger get TRIGGERPATH`](#aio-rt-trigger-get-triggerpath)
+* [`aio rt trigger list`](#aio-rt-trigger-list)
+* [`aio rt trigger ls`](#aio-rt-trigger-ls)
+* [`aio rt trigger update TRIGGERNAME`](#aio-rt-trigger-update-triggername)
+* [`aio runtime`](#aio-runtime)
+* [`aio runtime action`](#aio-runtime-action)
+* [`aio runtime action create ACTIONNAME [ACTIONPATH]`](#aio-runtime-action-create-actionname-actionpath)
+* [`aio runtime action del ACTIONNAME`](#aio-runtime-action-del-actionname)
+* [`aio runtime action delete ACTIONNAME`](#aio-runtime-action-delete-actionname)
+* [`aio runtime action get ACTIONNAME`](#aio-runtime-action-get-actionname)
+* [`aio runtime action invoke ACTIONNAME`](#aio-runtime-action-invoke-actionname)
+* [`aio runtime action list [PACKAGENAME]`](#aio-runtime-action-list-packagename)
+* [`aio runtime action ls [PACKAGENAME]`](#aio-runtime-action-ls-packagename)
+* [`aio runtime action update ACTIONNAME [ACTIONPATH]`](#aio-runtime-action-update-actionname-actionpath)
+* [`aio runtime actions list [PACKAGENAME]`](#aio-runtime-actions-list-packagename)
+* [`aio runtime actions ls [PACKAGENAME]`](#aio-runtime-actions-ls-packagename)
+* [`aio runtime activation`](#aio-runtime-activation)
+* [`aio runtime activation get [ACTIVATIONID]`](#aio-runtime-activation-get-activationid)
+* [`aio runtime activation list [ACTION_NAME]`](#aio-runtime-activation-list-action_name)
+* [`aio runtime activation log [ACTIVATIONID]`](#aio-runtime-activation-log-activationid)
+* [`aio runtime activation logs [ACTIVATIONID]`](#aio-runtime-activation-logs-activationid)
+* [`aio runtime activation ls [ACTION_NAME]`](#aio-runtime-activation-ls-action_name)
+* [`aio runtime activation result [ACTIVATIONID]`](#aio-runtime-activation-result-activationid)
+* [`aio runtime activations list [ACTION_NAME]`](#aio-runtime-activations-list-action_name)
+* [`aio runtime activations ls [ACTION_NAME]`](#aio-runtime-activations-ls-action_name)
+* [`aio runtime api`](#aio-runtime-api)
+* [`aio runtime api create [BASEPATH] [RELPATH] [APIVERB] [ACTION]`](#aio-runtime-api-create-basepath-relpath-apiverb-action)
+* [`aio runtime api delete BASEPATHORAPINAME [RELPATH] [APIVERB]`](#aio-runtime-api-delete-basepathorapiname-relpath-apiverb)
+* [`aio runtime api get BASEPATHORAPINAME`](#aio-runtime-api-get-basepathorapiname)
+* [`aio runtime api list [BASEPATH] [RELPATH] [APIVERB]`](#aio-runtime-api-list-basepath-relpath-apiverb)
+* [`aio runtime api ls [BASEPATH] [RELPATH] [APIVERB]`](#aio-runtime-api-ls-basepath-relpath-apiverb)
+* [`aio runtime deploy`](#aio-runtime-deploy)
+* [`aio runtime deploy export`](#aio-runtime-deploy-export)
+* [`aio runtime deploy report`](#aio-runtime-deploy-report)
+* [`aio runtime deploy sync`](#aio-runtime-deploy-sync)
+* [`aio runtime deploy undeploy`](#aio-runtime-deploy-undeploy)
+* [`aio runtime deploy version`](#aio-runtime-deploy-version)
+* [`aio runtime list`](#aio-runtime-list)
+* [`aio runtime log [ACTIVATIONID]`](#aio-runtime-log-activationid)
+* [`aio runtime logs [ACTIVATIONID]`](#aio-runtime-logs-activationid)
+* [`aio runtime ls`](#aio-runtime-ls)
+* [`aio runtime namespace`](#aio-runtime-namespace)
+* [`aio runtime namespace get`](#aio-runtime-namespace-get)
+* [`aio runtime namespace lf`](#aio-runtime-namespace-lf)
+* [`aio runtime namespace lf errors`](#aio-runtime-namespace-lf-errors)
+* [`aio runtime namespace lf get`](#aio-runtime-namespace-lf-get)
+* [`aio runtime namespace lf set`](#aio-runtime-namespace-lf-set)
+* [`aio runtime namespace lf set adobe-io-runtime`](#aio-runtime-namespace-lf-set-adobe-io-runtime)
+* [`aio runtime namespace lf set azure-log-analytics`](#aio-runtime-namespace-lf-set-azure-log-analytics)
+* [`aio runtime namespace lf set new-relic`](#aio-runtime-namespace-lf-set-new-relic)
+* [`aio runtime namespace lf set splunk-hec`](#aio-runtime-namespace-lf-set-splunk-hec)
+* [`aio runtime namespace list`](#aio-runtime-namespace-list)
+* [`aio runtime namespace log-forwarding`](#aio-runtime-namespace-log-forwarding)
+* [`aio runtime namespace log-forwarding errors`](#aio-runtime-namespace-log-forwarding-errors)
+* [`aio runtime namespace log-forwarding get`](#aio-runtime-namespace-log-forwarding-get)
+* [`aio runtime namespace log-forwarding set`](#aio-runtime-namespace-log-forwarding-set)
+* [`aio runtime namespace log-forwarding set adobe-io-runtime`](#aio-runtime-namespace-log-forwarding-set-adobe-io-runtime)
+* [`aio runtime namespace log-forwarding set azure-log-analytics`](#aio-runtime-namespace-log-forwarding-set-azure-log-analytics)
+* [`aio runtime namespace log-forwarding set new-relic`](#aio-runtime-namespace-log-forwarding-set-new-relic)
+* [`aio runtime namespace log-forwarding set splunk-hec`](#aio-runtime-namespace-log-forwarding-set-splunk-hec)
+* [`aio runtime namespace ls`](#aio-runtime-namespace-ls)
+* [`aio runtime ns`](#aio-runtime-ns)
+* [`aio runtime ns lf`](#aio-runtime-ns-lf)
+* [`aio runtime ns lf errors`](#aio-runtime-ns-lf-errors)
+* [`aio runtime ns lf get`](#aio-runtime-ns-lf-get)
+* [`aio runtime ns lf set`](#aio-runtime-ns-lf-set)
+* [`aio runtime ns lf set adobe-io-runtime`](#aio-runtime-ns-lf-set-adobe-io-runtime)
+* [`aio runtime ns lf set azure-log-analytics`](#aio-runtime-ns-lf-set-azure-log-analytics)
+* [`aio runtime ns lf set new-relic`](#aio-runtime-ns-lf-set-new-relic)
+* [`aio runtime ns lf set splunk-hec`](#aio-runtime-ns-lf-set-splunk-hec)
+* [`aio runtime ns list`](#aio-runtime-ns-list)
+* [`aio runtime ns log-forwarding`](#aio-runtime-ns-log-forwarding)
+* [`aio runtime ns log-forwarding errors`](#aio-runtime-ns-log-forwarding-errors)
+* [`aio runtime ns log-forwarding get`](#aio-runtime-ns-log-forwarding-get)
+* [`aio runtime ns log-forwarding set`](#aio-runtime-ns-log-forwarding-set)
+* [`aio runtime ns log-forwarding set adobe-io-runtime`](#aio-runtime-ns-log-forwarding-set-adobe-io-runtime)
+* [`aio runtime ns log-forwarding set azure-log-analytics`](#aio-runtime-ns-log-forwarding-set-azure-log-analytics)
+* [`aio runtime ns log-forwarding set new-relic`](#aio-runtime-ns-log-forwarding-set-new-relic)
+* [`aio runtime ns log-forwarding set splunk-hec`](#aio-runtime-ns-log-forwarding-set-splunk-hec)
+* [`aio runtime ns ls`](#aio-runtime-ns-ls)
+* [`aio runtime package`](#aio-runtime-package)
+* [`aio runtime package bind PACKAGENAME BINDPACKAGENAME`](#aio-runtime-package-bind-packagename-bindpackagename)
+* [`aio runtime package create PACKAGENAME`](#aio-runtime-package-create-packagename)
+* [`aio runtime package delete PACKAGENAME`](#aio-runtime-package-delete-packagename)
+* [`aio runtime package get PACKAGENAME`](#aio-runtime-package-get-packagename)
+* [`aio runtime package list [NAMESPACE]`](#aio-runtime-package-list-namespace)
+* [`aio runtime package ls [NAMESPACE]`](#aio-runtime-package-ls-namespace)
+* [`aio runtime package update PACKAGENAME`](#aio-runtime-package-update-packagename)
+* [`aio runtime pkg`](#aio-runtime-pkg)
+* [`aio runtime pkg bind PACKAGENAME BINDPACKAGENAME`](#aio-runtime-pkg-bind-packagename-bindpackagename)
+* [`aio runtime pkg create PACKAGENAME`](#aio-runtime-pkg-create-packagename)
+* [`aio runtime pkg delete PACKAGENAME`](#aio-runtime-pkg-delete-packagename)
+* [`aio runtime pkg get PACKAGENAME`](#aio-runtime-pkg-get-packagename)
+* [`aio runtime pkg list [NAMESPACE]`](#aio-runtime-pkg-list-namespace)
+* [`aio runtime pkg ls [NAMESPACE]`](#aio-runtime-pkg-ls-namespace)
+* [`aio runtime pkg update PACKAGENAME`](#aio-runtime-pkg-update-packagename)
+* [`aio runtime prop`](#aio-runtime-prop)
+* [`aio runtime prop get`](#aio-runtime-prop-get)
+* [`aio runtime prop set`](#aio-runtime-prop-set)
+* [`aio runtime prop unset`](#aio-runtime-prop-unset)
+* [`aio runtime property`](#aio-runtime-property)
+* [`aio runtime property get`](#aio-runtime-property-get)
+* [`aio runtime property set`](#aio-runtime-property-set)
+* [`aio runtime property unset`](#aio-runtime-property-unset)
+* [`aio runtime route`](#aio-runtime-route)
+* [`aio runtime route create [BASEPATH] [RELPATH] [APIVERB] [ACTION]`](#aio-runtime-route-create-basepath-relpath-apiverb-action)
+* [`aio runtime route delete BASEPATHORAPINAME [RELPATH] [APIVERB]`](#aio-runtime-route-delete-basepathorapiname-relpath-apiverb)
+* [`aio runtime route get BASEPATHORAPINAME`](#aio-runtime-route-get-basepathorapiname)
+* [`aio runtime route list [BASEPATH] [RELPATH] [APIVERB]`](#aio-runtime-route-list-basepath-relpath-apiverb)
+* [`aio runtime route ls [BASEPATH] [RELPATH] [APIVERB]`](#aio-runtime-route-ls-basepath-relpath-apiverb)
+* [`aio runtime rule`](#aio-runtime-rule)
+* [`aio runtime rule create NAME TRIGGER ACTION`](#aio-runtime-rule-create-name-trigger-action)
+* [`aio runtime rule delete NAME`](#aio-runtime-rule-delete-name)
+* [`aio runtime rule disable NAME`](#aio-runtime-rule-disable-name)
+* [`aio runtime rule enable NAME`](#aio-runtime-rule-enable-name)
+* [`aio runtime rule get NAME`](#aio-runtime-rule-get-name)
+* [`aio runtime rule list`](#aio-runtime-rule-list)
+* [`aio runtime rule ls`](#aio-runtime-rule-ls)
+* [`aio runtime rule status NAME`](#aio-runtime-rule-status-name)
+* [`aio runtime rule update NAME TRIGGER ACTION`](#aio-runtime-rule-update-name-trigger-action)
+* [`aio runtime trigger`](#aio-runtime-trigger)
+* [`aio runtime trigger create TRIGGERNAME`](#aio-runtime-trigger-create-triggername)
+* [`aio runtime trigger delete TRIGGERPATH`](#aio-runtime-trigger-delete-triggerpath)
+* [`aio runtime trigger fire TRIGGERNAME`](#aio-runtime-trigger-fire-triggername)
+* [`aio runtime trigger get TRIGGERPATH`](#aio-runtime-trigger-get-triggerpath)
+* [`aio runtime trigger list`](#aio-runtime-trigger-list)
+* [`aio runtime trigger ls`](#aio-runtime-trigger-ls)
+* [`aio runtime trigger update TRIGGERNAME`](#aio-runtime-trigger-update-triggername)
+* [`aio telemetry yes`](#aio-telemetry-yes)
+* [`aio templates`](#aio-templates)
+* [`aio templates disco`](#aio-templates-disco)
+* [`aio templates discover`](#aio-templates-discover)
+* [`aio templates i PATH`](#aio-templates-i-path)
+* [`aio templates info`](#aio-templates-info)
+* [`aio templates install PATH`](#aio-templates-install-path)
+* [`aio templates remove NAME`](#aio-templates-remove-name)
+* [`aio templates rm NAME`](#aio-templates-rm-name)
+* [`aio templates rollback`](#aio-templates-rollback)
+* [`aio templates sub NAME GITHUBREPOURL`](#aio-templates-sub-name-githubrepourl)
+* [`aio templates submit NAME GITHUBREPOURL`](#aio-templates-submit-name-githubrepourl)
+* [`aio templates un PACKAGE-NAME`](#aio-templates-un-package-name)
+* [`aio templates uninstall PACKAGE-NAME`](#aio-templates-uninstall-package-name)
+* [`aio update`](#aio-update)
+* [`aio where`](#aio-where)
 
 ## `aio app`
 
@@ -544,7 +538,7 @@ DESCRIPTION
   Create, run, test, and deploy Adobe I/O Apps
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/index.js)_
 
 ## `aio app add`
 
@@ -562,7 +556,7 @@ DESCRIPTION
   Add a new component to an existing Adobe I/O App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/add/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/add/index.js)_
 
 ## `aio app add action`
 
@@ -587,7 +581,7 @@ ALIASES
   $ aio app add actions
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/add/action.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/add/action.js)_
 
 ## `aio app add actions`
 
@@ -628,7 +622,7 @@ DESCRIPTION
   Add CI files
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/add/ci.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/add/ci.js)_
 
 ## `aio app add event`
 
@@ -653,7 +647,7 @@ ALIASES
   $ aio app add events
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/add/event.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/add/event.js)_
 
 ## `aio app add events`
 
@@ -684,7 +678,7 @@ Add new extensions to the project
 
 ```
 USAGE
-  $ aio app add ext [-v] [--version] [--install] [-y] [-e <value>]
+  $ aio app add ext [-v] [--version] [--install] [-y] [-e <value>...]
 
 FLAGS
   -e, --extension=<value>...  Specify extensions to add, skips selection prompt
@@ -708,7 +702,7 @@ Add new extensions to the project
 
 ```
 USAGE
-  $ aio app add extension [-v] [--version] [--install] [-y] [-e <value>]
+  $ aio app add extension [-v] [--version] [--install] [-y] [-e <value>...]
 
 FLAGS
   -e, --extension=<value>...  Specify extensions to add, skips selection prompt
@@ -726,7 +720,7 @@ ALIASES
   $ aio app add extensions
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/add/extension.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/add/extension.js)_
 
 ## `aio app add extensions`
 
@@ -734,7 +728,7 @@ Add new extensions to the project
 
 ```
 USAGE
-  $ aio app add extensions [-v] [--version] [--install] [-y] [-e <value>]
+  $ aio app add extensions [-v] [--version] [--install] [-y] [-e <value>...]
 
 FLAGS
   -e, --extension=<value>...  Specify extensions to add, skips selection prompt
@@ -774,7 +768,7 @@ ALIASES
   $ aio app add services
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/add/service.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/add/service.js)_
 
 ## `aio app add services`
 
@@ -817,7 +811,7 @@ DESCRIPTION
   Add web assets support
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/add/web-assets.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/add/web-assets.js)_
 
 ## `aio app build`
 
@@ -825,8 +819,8 @@ Build an Adobe I/O App
 
 ```
 USAGE
-  $ aio app build [-v] [--version] [--actions | -a <value>] [--web-assets] [--force-build] [--content-hash]
-    [--web-optimize] [-e <value> | ]
+  $ aio app build [-v] [--version] [--actions | -a <value>...] [--web-assets] [--force-build] [--content-hash]
+    [--web-optimize] [-e <value>... | ]
 
 FLAGS
   -a, --action=<value>...     Build only a specific action, the flags can be specified multiple times, this will set
@@ -846,7 +840,7 @@ DESCRIPTION
   This will always force a rebuild unless --no-force-build is set.
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/build.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/build.js)_
 
 ## `aio app config`
 
@@ -868,7 +862,7 @@ ALIASES
   $ aio app config
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/config/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/config/index.js)_
 
 ## `aio app config get`
 
@@ -889,7 +883,7 @@ ALIASES
   $ aio app config get
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/config/get/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/config/get/index.js)_
 
 ## `aio app config get lf`
 
@@ -951,7 +945,7 @@ ALIASES
   $ aio app config get lf
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/config/get/log-forwarding.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/config/get/log-forwarding.js)_
 
 ## `aio app config get log-forwarding errors`
 
@@ -973,7 +967,7 @@ ALIASES
   $ aio app config get lf errors
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/config/get/log-forwarding/errors.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/config/get/log-forwarding/errors.js)_
 
 ## `aio app config set`
 
@@ -994,7 +988,7 @@ ALIASES
   $ aio app config set
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/config/set/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/config/set/index.js)_
 
 ## `aio app config set lf`
 
@@ -1036,7 +1030,7 @@ ALIASES
   $ aio app config set lf
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/config/set/log-forwarding.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/config/set/log-forwarding.js)_
 
 ## `aio app create [PATH]`
 
@@ -1058,7 +1052,7 @@ DESCRIPTION
   Create a new Adobe I/O App with default parameters
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/create.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/create.js)_
 
 ## `aio app delete`
 
@@ -1076,7 +1070,7 @@ DESCRIPTION
   Delete a component from an existing Adobe I/O App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/delete/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/delete/index.js)_
 
 ## `aio app delete action [ACTION-NAME]`
 
@@ -1102,7 +1096,7 @@ ALIASES
   $ aio app delete actions
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/delete/action.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/delete/action.js)_
 
 ## `aio app delete actions [ACTION-NAME]`
 
@@ -1145,7 +1139,7 @@ DESCRIPTION
   Delete existing CI files
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/delete/ci.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/delete/ci.js)_
 
 ## `aio app delete ext`
 
@@ -1153,7 +1147,7 @@ Delete existing extensions
 
 ```
 USAGE
-  $ aio app delete ext [-v] [--version] [-y] [--install] [-e <value>]
+  $ aio app delete ext [-v] [--version] [-y] [--install] [-e <value>...]
 
 FLAGS
   -e, --extension=<value>...  Specify extensions to delete, skips selection prompt
@@ -1177,7 +1171,7 @@ Delete existing extensions
 
 ```
 USAGE
-  $ aio app delete extension [-v] [--version] [-y] [--install] [-e <value>]
+  $ aio app delete extension [-v] [--version] [-y] [--install] [-e <value>...]
 
 FLAGS
   -e, --extension=<value>...  Specify extensions to delete, skips selection prompt
@@ -1195,7 +1189,7 @@ ALIASES
   $ aio app delete extensions
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/delete/extension.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/delete/extension.js)_
 
 ## `aio app delete extensions`
 
@@ -1203,7 +1197,7 @@ Delete existing extensions
 
 ```
 USAGE
-  $ aio app delete extensions [-v] [--version] [-y] [--install] [-e <value>]
+  $ aio app delete extensions [-v] [--version] [-y] [--install] [-e <value>...]
 
 FLAGS
   -e, --extension=<value>...  Specify extensions to delete, skips selection prompt
@@ -1243,7 +1237,7 @@ ALIASES
   $ aio app delete services
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/delete/service.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/delete/service.js)_
 
 ## `aio app delete services`
 
@@ -1284,7 +1278,7 @@ DESCRIPTION
   Delete existing web assets
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/delete/web-assets.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/delete/web-assets.js)_
 
 ## `aio app deploy`
 
@@ -1292,9 +1286,9 @@ Build and deploy an Adobe I/O App
 
 ```
 USAGE
-  $ aio app deploy [-v] [--version] [--actions | -a <value>] [--web-assets] [--force-build | ] [--content-hash]
-    [--web-optimize] [-e <value> | ] [--build] [--open] [--force-deploy | --publish | --force-publish] [--force-events |
-    | ] [--log-forwarding-update]
+  $ aio app deploy [-v] [--version] [--actions | -a <value>...] [--web-assets] [--force-build | ]
+    [--content-hash] [--web-optimize] [-e <value>... | ] [--build] [--open] [--force-deploy | --publish |
+    --force-publish] [--force-events |  | ] [--log-forwarding-update]
 
 FLAGS
   -a, --action=<value>...           Deploy only a specific action, the flags can be specified multiple times, this will
@@ -1325,7 +1319,27 @@ DESCRIPTION
   This will always force a rebuild unless --no-force-build is set.
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/deploy.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/deploy.js)_
+
+## `aio app dev`
+
+Run your App Builder app locally
+
+```
+USAGE
+  $ aio app dev [-v] [--version] [-o] [-e <value>]
+
+FLAGS
+  -e, --extension=<value>  Run only a specific extension, this flag can only be specified once
+  -o, --open               Open the default web browser after a successful run, only valid if your app has a front-end
+  -v, --verbose            Verbose output
+      --version            Show version
+
+DESCRIPTION
+  Run your App Builder app locally
+```
+
+_See code: [@adobe/aio-cli-plugin-app-dev](https://github.com/adobe/aio-cli-plugin-app-dev/blob/1.0.0/src/commands/app/dev/index.js)_
 
 ## `aio app get-url [ACTION]`
 
@@ -1348,7 +1362,7 @@ DESCRIPTION
   Get action URLs
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/get-url.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/get-url.js)_
 
 ## `aio app info`
 
@@ -1370,7 +1384,7 @@ DESCRIPTION
   Display settings/configuration in use by an Adobe I/O App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/info.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/info.js)_
 
 ## `aio app init [PATH]`
 
@@ -1378,9 +1392,9 @@ Create a new Adobe I/O App
 
 ```
 USAGE
-  $ aio app init [PATH] [-v] [--version] [--install] [-y] [--login] [-e <value> | -t <value> | --repo <value>]
-    [--standalone-app |  | ] [-w <value> | -i <value>] [--confirm-new-workspace] [--use-jwt] [--github-pat <value> ]
-    [--linter none|basic|adobe-recommended]
+  $ aio app init [PATH] [-v] [--version] [--install] [-y] [--login] [-e <value>... | -t <value>... | --repo
+    <value>] [--standalone-app |  | ] [-w <value> | -i <value>] [--confirm-new-workspace] [--use-jwt] [--github-pat
+    <value> ] [--linter none|basic|adobe-recommended]
 
 ARGUMENTS
   PATH  [default: .] Path to the app directory
@@ -1409,7 +1423,7 @@ DESCRIPTION
   Create a new Adobe I/O App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/init.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/init.js)_
 
 ## `aio app install PATH`
 
@@ -1432,7 +1446,7 @@ DESCRIPTION
   This command will support installing apps packaged by 'aio app pack'.
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/install.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/install.js)_
 
 ## `aio app list`
 
@@ -1450,7 +1464,7 @@ DESCRIPTION
   List components for Adobe I/O App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/list/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/list/index.js)_
 
 ## `aio app list ext`
 
@@ -1521,7 +1535,7 @@ ALIASES
   $ aio app list extensions
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/list/extension.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/list/extension.js)_
 
 ## `aio app list extension-points`
 
@@ -1546,7 +1560,7 @@ ALIASES
   $ aio app list extension-points
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/list/extension-points.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/list/extension-points.js)_
 
 ## `aio app list extensions`
 
@@ -1577,7 +1591,7 @@ Fetch logs for an Adobe I/O App
 
 ```
 USAGE
-  $ aio app logs [-v] [--version] [-l <value>] [-a <value>] [-r] [-t | -w | -o]
+  $ aio app logs [-v] [--version] [-l <value>] [-a <value>...] [-r] [-t | -w | -o]
 
 FLAGS
   -a, --action=<value>...  Fetch logs for a specific action
@@ -1593,7 +1607,7 @@ DESCRIPTION
   Fetch logs for an Adobe I/O App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/logs.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/logs.js)_
 
 ## `aio app pack [PATH]`
 
@@ -1615,7 +1629,7 @@ DESCRIPTION
   This command will support packaging apps for redistribution.
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/pack.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/pack.js)_
 
 ## `aio app run`
 
@@ -1639,7 +1653,7 @@ DESCRIPTION
   Run an Adobe I/O App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/run.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/run.js)_
 
 ## `aio app test`
 
@@ -1647,7 +1661,7 @@ Run tests for an Adobe I/O App
 
 ```
 USAGE
-  $ aio app test [-v] [--version] [-e <value> | -a <value>] [--all] [--e2e] [--unit]
+  $ aio app test [-v] [--version] [-e <value>... | -a <value>...] [--all] [--e2e] [--unit]
 
 FLAGS
   -a, --action=<value>...     the action(s) to test
@@ -1667,7 +1681,7 @@ DESCRIPTION
   If the extension has a hook called 'test' in its 'ext.config.yaml', the script specified will be run instead.
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/test.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/test.js)_
 
 ## `aio app undeploy`
 
@@ -1675,7 +1689,7 @@ Undeploys an Adobe I/O App
 
 ```
 USAGE
-  $ aio app undeploy [-v] [--version] [--actions] [--events] [--web-assets] [-e <value>] [--force-unpublish |
+  $ aio app undeploy [-v] [--version] [--actions] [--events] [--web-assets] [-e <value>...] [--force-unpublish |
     --unpublish]
 
 FLAGS
@@ -1692,7 +1706,7 @@ DESCRIPTION
   Undeploys an Adobe I/O App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/undeploy.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/undeploy.js)_
 
 ## `aio app use [CONFIG_FILE_PATH]`
 
@@ -1739,7 +1753,7 @@ DESCRIPTION
   page in https://developer.adobe.com/console/
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.2/src/commands/app/use.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/use.js)_
 
 ## `aio auth`
 
@@ -1797,7 +1811,7 @@ EXAMPLES
     }
 ```
 
-_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/4.0.0/src/commands/auth/index.ts)_
+_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/4.0.1/src/commands/auth/index.js)_
 
 ## `aio auth ctx`
 
@@ -1842,7 +1856,7 @@ ALIASES
   $ aio context
 ```
 
-_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/4.0.0/src/commands/auth/ctx.ts)_
+_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/4.0.1/src/commands/auth/ctx.js)_
 
 ## `aio auth login`
 
@@ -1893,7 +1907,7 @@ ALIASES
   $ aio login
 ```
 
-_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/4.0.0/src/commands/auth/login.ts)_
+_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/4.0.1/src/commands/auth/login.js)_
 
 ## `aio auth logout`
 
@@ -1928,7 +1942,7 @@ ALIASES
   $ aio logout
 ```
 
-_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/4.0.0/src/commands/auth/logout.ts)_
+_See code: [@adobe/aio-cli-plugin-auth](https://github.com/adobe/aio-cli-plugin-auth/blob/4.0.1/src/commands/auth/logout.js)_
 
 ## `aio autocomplete [SHELL]`
 
@@ -1959,7 +1973,7 @@ EXAMPLES
   $ aio autocomplete --refresh-cache
 ```
 
-_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v3.0.5/src/commands/autocomplete/index.ts)_
+_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v3.1.4/src/commands/autocomplete/index.ts)_
 
 ## `aio certificate`
 
@@ -1973,7 +1987,7 @@ DESCRIPTION
   Generate, fingerprint, or verify a certificate for use with Adobe I/O
 ```
 
-_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/2.0.0/src/commands/certificate/index.ts)_
+_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/2.0.1/src/commands/certificate/index.js)_
 
 ## `aio certificate fingerprint FILE`
 
@@ -1990,7 +2004,7 @@ DESCRIPTION
   Compute the fingerprint of a public key certificate for use with Adobe I/O
 ```
 
-_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/2.0.0/src/commands/certificate/fingerprint.ts)_
+_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/2.0.1/src/commands/certificate/fingerprint.js)_
 
 ## `aio certificate generate`
 
@@ -2019,7 +2033,7 @@ DESCRIPTION
   services.
 ```
 
-_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/2.0.0/src/commands/certificate/generate.ts)_
+_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/2.0.1/src/commands/certificate/generate.js)_
 
 ## `aio certificate verify FILE`
 
@@ -2040,7 +2054,7 @@ DESCRIPTION
   Verifies that the certificate is valid, and/or will not expire in [--days] days from now.
 ```
 
-_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/2.0.0/src/commands/certificate/verify.ts)_
+_See code: [@adobe/aio-cli-plugin-certificate](https://github.com/adobe/aio-cli-plugin-certificate/blob/2.0.1/src/commands/certificate/verify.js)_
 
 ## `aio config`
 
@@ -2076,7 +2090,7 @@ EXAMPLES
   $ aio config:clear
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/5.0.0/src/commands/config/index.ts)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/5.0.1/src/commands/config/index.js)_
 
 ## `aio config clear`
 
@@ -2095,7 +2109,7 @@ DESCRIPTION
   clears all persistent config values
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/5.0.0/src/commands/config/clear.ts)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/5.0.1/src/commands/config/clear.js)_
 
 ## `aio config del KEYS...`
 
@@ -2137,7 +2151,7 @@ ALIASES
   $ aio config rm
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/5.0.0/src/commands/config/delete.ts)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/5.0.1/src/commands/config/delete.js)_
 
 ## `aio config edit`
 
@@ -2155,7 +2169,7 @@ DESCRIPTION
   edit config file
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/5.0.0/src/commands/config/edit.ts)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/5.0.1/src/commands/config/edit.js)_
 
 ## `aio config get KEY`
 
@@ -2176,7 +2190,7 @@ DESCRIPTION
   gets a persistent config value
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/5.0.0/src/commands/config/get.ts)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/5.0.1/src/commands/config/get.js)_
 
 ## `aio config list`
 
@@ -2201,7 +2215,7 @@ ALIASES
   $ aio config ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/5.0.0/src/commands/config/list.ts)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/5.0.1/src/commands/config/list.js)_
 
 ## `aio config ls`
 
@@ -2279,7 +2293,7 @@ DESCRIPTION
   sets a persistent config value
 ```
 
-_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/5.0.0/src/commands/config/set.ts)_
+_See code: [@adobe/aio-cli-plugin-config](https://github.com/adobe/aio-cli-plugin-config/blob/5.0.1/src/commands/config/set.js)_
 
 ## `aio console`
 
@@ -2296,7 +2310,7 @@ DESCRIPTION
   Console plugin for the Adobe I/O CLI
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/index.ts)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.1/src/commands/console/index.js)_
 
 ## `aio console open`
 
@@ -2316,7 +2330,7 @@ ALIASES
   $ aio open
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/open.ts)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.1/src/commands/console/open.js)_
 
 ## `aio console org`
 
@@ -2333,7 +2347,7 @@ DESCRIPTION
   Manage your Adobe I/O Console Organizations
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/org/index.ts)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.1/src/commands/console/org/index.js)_
 
 ## `aio console org list`
 
@@ -2355,7 +2369,7 @@ ALIASES
   $ aio console org ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/org/list.ts)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.1/src/commands/console/org/list.js)_
 
 ## `aio console org ls`
 
@@ -2419,7 +2433,7 @@ ALIASES
   $ aio console org sel
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/org/select.ts)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.1/src/commands/console/org/select.js)_
 
 ## `aio console project`
 
@@ -2436,7 +2450,7 @@ DESCRIPTION
   Manage your Adobe I/O Console Projects
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/project/index.ts)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.1/src/commands/console/project/index.js)_
 
 ## `aio console project list`
 
@@ -2459,7 +2473,7 @@ ALIASES
   $ aio console project ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/project/list.ts)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.1/src/commands/console/project/list.js)_
 
 ## `aio console project ls`
 
@@ -2526,7 +2540,7 @@ ALIASES
   $ aio console project sel
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/project/select.ts)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.1/src/commands/console/project/select.js)_
 
 ## `aio console publickey`
 
@@ -2543,7 +2557,7 @@ DESCRIPTION
   Manage Public Key Bindings for your Adobe I/O Console Workspaces
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/publickey/index.ts)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.1/src/commands/console/publickey/index.js)_
 
 ## `aio console publickey delete IDORFINGERPRINT`
 
@@ -2567,7 +2581,7 @@ DESCRIPTION
   Delete a public key certificate from the selected Workspace
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/publickey/delete.ts)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.1/src/commands/console/publickey/delete.js)_
 
 ## `aio console publickey list`
 
@@ -2589,7 +2603,7 @@ DESCRIPTION
   List the public key certificates bound to the selected Workspace
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/publickey/list.ts)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.1/src/commands/console/publickey/list.js)_
 
 ## `aio console publickey upload FILE`
 
@@ -2614,7 +2628,7 @@ DESCRIPTION
   Upload a public key certificate to the selected Workspace
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/publickey/upload.ts)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.1/src/commands/console/publickey/upload.js)_
 
 ## `aio console where`
 
@@ -2636,7 +2650,7 @@ ALIASES
   $ aio where
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/where/index.ts)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.1/src/commands/console/where/index.js)_
 
 ## `aio console workspace`
 
@@ -2656,7 +2670,7 @@ ALIASES
   $ aio console ws
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/workspace/index.ts)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.1/src/commands/console/workspace/index.js)_
 
 ## `aio console workspace dl [DESTINATION]`
 
@@ -2711,7 +2725,7 @@ ALIASES
   $ aio console ws dl
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/workspace/download.ts)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.1/src/commands/console/workspace/download.js)_
 
 ## `aio console workspace list`
 
@@ -2737,7 +2751,7 @@ ALIASES
   $ aio console ws ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/workspace/list.ts)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.1/src/commands/console/workspace/list.js)_
 
 ## `aio console workspace ls`
 
@@ -2813,7 +2827,7 @@ ALIASES
   $ aio console ws sel
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.0/src/commands/console/workspace/select.ts)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.0.1/src/commands/console/workspace/select.js)_
 
 ## `aio console ws`
 
@@ -3094,7 +3108,7 @@ ALIASES
   $ aio plugins discover
 ```
 
-_See code: [src/commands/discover.ts](https://github.com/adobe/aio-cli/blob/10.0.0/src/commands/discover.ts)_
+_See code: [src/commands/discover.ts](https://github.com/adobe/aio-cli/blob/10.1.0/src/commands/discover.ts)_
 
 ## `aio event`
 
@@ -3113,7 +3127,7 @@ DESCRIPTION
   Manage your Adobe I/O Events
 ```
 
-_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/index.ts)_
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.1/src/commands/event/index.js)_
 
 ## `aio event eventmetadata`
 
@@ -3132,7 +3146,7 @@ DESCRIPTION
   Manage your Adobe I/O Events Providers' Event Metadata
 ```
 
-_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/eventmetadata/index.ts)_
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.1/src/commands/event/eventmetadata/index.js)_
 
 ## `aio event eventmetadata create PROVIDERID`
 
@@ -3156,7 +3170,7 @@ DESCRIPTION
   Create an Event Metadata for a Provider
 ```
 
-_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/eventmetadata/create.ts)_
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.1/src/commands/event/eventmetadata/create.js)_
 
 ## `aio event eventmetadata delete PROVIDERID [EVENTCODE]`
 
@@ -3179,7 +3193,7 @@ DESCRIPTION
   Delete Event Metadata for a Provider
 ```
 
-_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/eventmetadata/delete.ts)_
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.1/src/commands/event/eventmetadata/delete.js)_
 
 ## `aio event eventmetadata get PROVIDERID EVENTCODE`
 
@@ -3204,7 +3218,7 @@ DESCRIPTION
   Get details of an Event Code of a Provider
 ```
 
-_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/eventmetadata/get.ts)_
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.1/src/commands/event/eventmetadata/get.js)_
 
 ## `aio event eventmetadata list PROVIDERID`
 
@@ -3231,7 +3245,7 @@ ALIASES
   $ aio event eventmetadata ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/eventmetadata/list.ts)_
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.1/src/commands/event/eventmetadata/list.js)_
 
 ## `aio event eventmetadata ls PROVIDERID`
 
@@ -3281,7 +3295,7 @@ DESCRIPTION
   Update an Event Metadata for a Provider
 ```
 
-_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/eventmetadata/update.ts)_
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.1/src/commands/event/eventmetadata/update.js)_
 
 ## `aio event provider`
 
@@ -3300,7 +3314,7 @@ DESCRIPTION
   Manage your Adobe I/O Events Providers
 ```
 
-_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/provider/index.ts)_
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.1/src/commands/event/provider/index.js)_
 
 ## `aio event provider create`
 
@@ -3321,7 +3335,7 @@ DESCRIPTION
   Create a new Provider
 ```
 
-_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/provider/create.ts)_
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.1/src/commands/event/provider/create.js)_
 
 ## `aio event provider delete PROVIDERID`
 
@@ -3343,7 +3357,7 @@ DESCRIPTION
   Delete Provider by id
 ```
 
-_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/provider/delete.ts)_
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.1/src/commands/event/provider/delete.js)_
 
 ## `aio event provider get PROVIDERID`
 
@@ -3368,7 +3382,7 @@ DESCRIPTION
   Get details of Provider by id
 ```
 
-_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/provider/get.ts)_
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.1/src/commands/event/provider/get.js)_
 
 ## `aio event provider list`
 
@@ -3376,8 +3390,8 @@ Get list of all Providers for the Organization
 
 ```
 USAGE
-  $ aio event provider list [--help] [-v] [--version] [--fetchEventMetadata] [--providerMetadataId <value> | -p <value>]
-    [--instanceId <value>] [-j | -y]
+  $ aio event provider list [--help] [-v] [--version] [--fetchEventMetadata] [--providerMetadataId <value> | -p
+    <value>...] [--instanceId <value>] [-j | -y]
 
 FLAGS
   -j, --json                            Output json
@@ -3397,7 +3411,7 @@ ALIASES
   $ aio event provider ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/provider/list.ts)_
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.1/src/commands/event/provider/list.js)_
 
 ## `aio event provider ls`
 
@@ -3405,8 +3419,8 @@ Get list of all Providers for the Organization
 
 ```
 USAGE
-  $ aio event provider ls [--help] [-v] [--version] [--fetchEventMetadata] [--providerMetadataId <value> | -p <value>]
-    [--instanceId <value>] [-j | -y]
+  $ aio event provider ls [--help] [-v] [--version] [--fetchEventMetadata] [--providerMetadataId <value> | -p
+    <value>...] [--instanceId <value>] [-j | -y]
 
 FLAGS
   -j, --json                            Output json
@@ -3448,7 +3462,7 @@ DESCRIPTION
   Update an existing Provider
 ```
 
-_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/provider/update.ts)_
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.1/src/commands/event/provider/update.js)_
 
 ## `aio event reg`
 
@@ -3623,7 +3637,7 @@ ALIASES
   $ aio event reg
 ```
 
-_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/registration/index.ts)_
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.1/src/commands/event/registration/index.js)_
 
 ## `aio event registration create BODYJSONFILE`
 
@@ -3662,7 +3676,7 @@ ALIASES
   $ aio event reg create
 ```
 
-_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/registration/create.ts)_
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.1/src/commands/event/registration/create.js)_
 
 ## `aio event registration delete REGISTRATIONID`
 
@@ -3687,7 +3701,7 @@ ALIASES
   $ aio event reg delete
 ```
 
-_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/registration/delete.ts)_
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.1/src/commands/event/registration/delete.js)_
 
 ## `aio event registration get REGISTRATIONID`
 
@@ -3714,7 +3728,7 @@ ALIASES
   $ aio event reg get
 ```
 
-_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/registration/get.ts)_
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.1/src/commands/event/registration/get.js)_
 
 ## `aio event registration list`
 
@@ -3740,7 +3754,7 @@ ALIASES
   $ aio event reg ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.0/src/commands/event/registration/list.ts)_
+_See code: [@adobe/aio-cli-plugin-events](https://github.com/adobe/aio-cli-plugin-events/blob/v4.0.1/src/commands/event/registration/list.js)_
 
 ## `aio event registration ls`
 
@@ -3784,7 +3798,7 @@ DESCRIPTION
   Display help for aio.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.0.22/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.2.3/src/commands/help.ts)_
 
 ## `aio info`
 
@@ -3802,7 +3816,7 @@ DESCRIPTION
   Display dev environment version information
 ```
 
-_See code: [@adobe/aio-cli-plugin-info](https://github.com/adobe/aio-cli-plugin-info/blob/4.0.0/src/commands/info.ts)_
+_See code: [@adobe/aio-cli-plugin-info](https://github.com/adobe/aio-cli-plugin-info/blob/4.0.1/src/commands/info.js)_
 
 ## `aio login`
 
@@ -3925,7 +3939,7 @@ EXAMPLES
   $ aio plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.21/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.2/src/commands/plugins/index.ts)_
 
 ## `aio plugins add PLUGIN`
 
@@ -3950,7 +3964,7 @@ GLOBAL FLAGS
 DESCRIPTION
   Installs a plugin into aio.
 
-  Uses bundled npm executable to install plugins into C:\Users\shazr\AppData\Local\@adobe\aio-cli
+  Uses npm to install plugins.
 
   Installation of a user-installed plugin will override a core plugin.
 
@@ -4024,7 +4038,7 @@ EXAMPLES
   $ aio plugins inspect myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.21/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.2/src/commands/plugins/inspect.ts)_
 
 ## `aio plugins install PLUGIN`
 
@@ -4049,7 +4063,7 @@ GLOBAL FLAGS
 DESCRIPTION
   Installs a plugin into aio.
 
-  Uses bundled npm executable to install plugins into C:\Users\shazr\AppData\Local\@adobe\aio-cli
+  Uses npm to install plugins.
 
   Installation of a user-installed plugin will override a core plugin.
 
@@ -4073,7 +4087,7 @@ EXAMPLES
     $ aio plugins install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.21/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.2/src/commands/plugins/install.ts)_
 
 ## `aio plugins link PATH`
 
@@ -4103,7 +4117,7 @@ EXAMPLES
   $ aio plugins link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.21/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.2/src/commands/plugins/link.ts)_
 
 ## `aio plugins remove [PLUGIN]`
 
@@ -4144,7 +4158,7 @@ FLAGS
   --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.21/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.2/src/commands/plugins/reset.ts)_
 
 ## `aio plugins uninstall [PLUGIN]`
 
@@ -4172,7 +4186,7 @@ EXAMPLES
   $ aio plugins uninstall myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.21/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.2/src/commands/plugins/uninstall.ts)_
 
 ## `aio plugins unlink [PLUGIN]`
 
@@ -4216,7 +4230,7 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.21/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.2/src/commands/plugins/update.ts)_
 
 ## `aio report`
 
@@ -4234,7 +4248,7 @@ DESCRIPTION
   Report an issue with the CLI or submit a feature request
 ```
 
-_See code: [@adobe/aio-cli-plugin-info](https://github.com/adobe/aio-cli-plugin-info/blob/4.0.0/src/commands/report.ts)_
+_See code: [@adobe/aio-cli-plugin-info](https://github.com/adobe/aio-cli-plugin-info/blob/4.0.1/src/commands/report.js)_
 
 ## `aio rollback`
 
@@ -4254,7 +4268,7 @@ DESCRIPTION
   Clears all installed plugins.
 ```
 
-_See code: [src/commands/rollback.ts](https://github.com/adobe/aio-cli/blob/10.0.0/src/commands/rollback.ts)_
+_See code: [src/commands/rollback.ts](https://github.com/adobe/aio-cli/blob/10.1.0/src/commands/rollback.ts)_
 
 ## `aio rt`
 
@@ -4262,7 +4276,7 @@ Execute runtime commands
 
 ```
 USAGE
-  $ aio rt [--ce] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version]
+  $ aio rt [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version]
     [--help]
 
 FLAGS
@@ -4319,10 +4333,10 @@ Creates an Action
 ```
 USAGE
   $ aio rt action create ACTIONNAME [ACTIONPATH] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost
-    <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [--copy <value>] [-e <value>]
-    [--web-secure <value> --web true|yes|false|no|raw] [-P <value>] [-E <value>] [-t <value>] [-m <value>] [-l <value>]
-    [-c <value>] [--kind <value>] [-a <value>] [-A <value>] [--sequence <value>] [--docker <value>] [--main <value>]
-    [--binary] [--json]
+    <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>...] [--copy <value>] [-e
+    <value>...] [--web-secure <value> --web true|yes|false|no|raw] [-P <value>] [-E <value>] [-t <value>] [-m <value>]
+    [-l <value>] [-c <value>] [--kind <value>] [-a <value>...] [-A <value>] [--sequence <value>] [--docker <value>]
+    [--main <value>] [--binary] [--json]
 
 FLAGS
   -A, --annotation-file=<value>  FILE containing annotation values in JSON format
@@ -4467,7 +4481,7 @@ Invokes an Action
 ```
 USAGE
   $ aio rt action invoke ACTIONNAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
-    <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [-b] [-r]
+    <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>...] [-P <value>] [-b] [-r]
 
 FLAGS
   -P, --param-file=<value>  FILE containing parameter values in JSON format
@@ -4579,10 +4593,10 @@ Updates an Action
 ```
 USAGE
   $ aio rt action update ACTIONNAME [ACTIONPATH] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost
-    <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [--copy <value>] [-e <value>]
-    [--web-secure <value> --web true|yes|false|no|raw] [-P <value>] [-E <value>] [-t <value>] [-m <value>] [-l <value>]
-    [-c <value>] [--kind <value>] [-a <value>] [-A <value>] [--sequence <value>] [--docker <value>] [--main <value>]
-    [--binary] [--json]
+    <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>...] [--copy <value>] [-e
+    <value>...] [--web-secure <value> --web true|yes|false|no|raw] [-P <value>] [-E <value>] [-t <value>] [-m <value>]
+    [-l <value>] [-c <value>] [--kind <value>] [-a <value>...] [-A <value>] [--sequence <value>] [--docker <value>]
+    [--main <value>] [--binary] [--json]
 
 FLAGS
   -A, --annotation-file=<value>  FILE containing annotation values in JSON format
@@ -5289,7 +5303,7 @@ The Runtime Deployment Tool
 ```
 USAGE
   $ aio rt deploy [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u <value>] [-i]
-    [--debug <value>] [-v] [--version] [--help] [-m <value>] [-d <value>] [--param <value>] [-P <value>]
+    [--debug <value>] [-v] [--version] [--help] [-m <value>] [-d <value>] [--param <value>...] [-P <value>]
 
 FLAGS
   -P, --param-file=<value>  FILE containing parameter values in JSON format
@@ -7019,8 +7033,8 @@ Bind parameters to a package
 ```
 USAGE
   $ aio rt package bind PACKAGENAME BINDPACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>]
-    [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [-a
-    <value>] [-A <value>] [--json]
+    [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>...] [-P <value>] [-a
+    <value>...] [-A <value>] [--json]
 
 FLAGS
   -A, --annotation-file=<value>  FILE containing annotation values in JSON format
@@ -7055,8 +7069,8 @@ Creates a Package
 ```
 USAGE
   $ aio rt package create PACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
-    <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [--shared true|yes|false|no] [-a
-    <value>] [-A <value>] [--json]
+    <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>...] [-P <value>] [--shared true|yes|false|no]
+    [-a <value>...] [-A <value>] [--json]
 
 FLAGS
   -A, --annotation-file=<value>  FILE containing annotation values in JSON format
@@ -7235,8 +7249,8 @@ Updates a Package
 ```
 USAGE
   $ aio rt package update PACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
-    <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [--shared true|yes|false|no] [-a
-    <value>] [-A <value>] [--json]
+    <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>...] [-P <value>] [--shared true|yes|false|no]
+    [-a <value>...] [-A <value>] [--json]
 
 FLAGS
   -A, --annotation-file=<value>  FILE containing annotation values in JSON format
@@ -7303,8 +7317,8 @@ Bind parameters to a package
 ```
 USAGE
   $ aio rt pkg bind PACKAGENAME BINDPACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>]
-    [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [-a
-    <value>] [-A <value>] [--json]
+    [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>...] [-P <value>] [-a
+    <value>...] [-A <value>] [--json]
 
 FLAGS
   -A, --annotation-file=<value>  FILE containing annotation values in JSON format
@@ -7339,8 +7353,8 @@ Creates a Package
 ```
 USAGE
   $ aio rt pkg create PACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
-    <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [--shared true|yes|false|no] [-a
-    <value>] [-A <value>] [--json]
+    <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>...] [-P <value>] [--shared true|yes|false|no]
+    [-a <value>...] [-A <value>] [--json]
 
 FLAGS
   -A, --annotation-file=<value>  FILE containing annotation values in JSON format
@@ -7519,8 +7533,8 @@ Updates a Package
 ```
 USAGE
   $ aio rt pkg update PACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
-    <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [--shared true|yes|false|no] [-a
-    <value>] [-A <value>] [--json]
+    <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>...] [-P <value>] [--shared true|yes|false|no]
+    [-a <value>...] [-A <value>] [--json]
 
 FLAGS
   -A, --annotation-file=<value>  FILE containing annotation values in JSON format
@@ -8386,7 +8400,7 @@ Create a trigger for Adobe I/O Runtime
 ```
 USAGE
   $ aio rt trigger create TRIGGERNAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
-    [--version] [--help] [-p <value>] [-P <value>] [-a <value>] [-A <value>] [-f <value>]
+    [--version] [--help] [-p <value>...] [-P <value>] [-a <value>...] [-A <value>] [-f <value>]
 
 ARGUMENTS
   TRIGGERNAME  The name of the trigger
@@ -8453,7 +8467,7 @@ Fire a trigger for Adobe I/O Runtime
 ```
 USAGE
   $ aio rt trigger fire TRIGGERNAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
-    [--version] [--help] [-p <value>] [-P <value>]
+    [--version] [--help] [-p <value>...] [-P <value>]
 
 ARGUMENTS
   TRIGGERNAME  The name of the trigger
@@ -8589,7 +8603,7 @@ Update or create a trigger for Adobe I/O Runtime
 ```
 USAGE
   $ aio rt trigger update TRIGGERNAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
-    [--version] [--help] [-p <value>] [-P <value>] [-a <value>] [-A <value>]
+    [--version] [--help] [-p <value>...] [-P <value>] [-a <value>...] [-A <value>]
 
 ARGUMENTS
   TRIGGERNAME  The name of the trigger
@@ -8645,7 +8659,7 @@ ALIASES
   $ aio rt
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/index.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/index.js)_
 
 ## `aio runtime action`
 
@@ -8675,7 +8689,7 @@ ALIASES
   $ aio rt action
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/action/index.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/action/index.js)_
 
 ## `aio runtime action create ACTIONNAME [ACTIONPATH]`
 
@@ -8684,10 +8698,10 @@ Creates an Action
 ```
 USAGE
   $ aio runtime action create ACTIONNAME [ACTIONPATH] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost
-    <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [--copy <value>] [-e <value>]
-    [--web-secure <value> --web true|yes|false|no|raw] [-P <value>] [-E <value>] [-t <value>] [-m <value>] [-l <value>]
-    [-c <value>] [--kind <value>] [-a <value>] [-A <value>] [--sequence <value>] [--docker <value>] [--main <value>]
-    [--binary] [--json]
+    <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>...] [--copy <value>] [-e
+    <value>...] [--web-secure <value> --web true|yes|false|no|raw] [-P <value>] [-E <value>] [-t <value>] [-m <value>]
+    [-l <value>] [-c <value>] [--kind <value>] [-a <value>...] [-A <value>] [--sequence <value>] [--docker <value>]
+    [--main <value>] [--binary] [--json]
 
 FLAGS
   -A, --annotation-file=<value>  FILE containing annotation values in JSON format
@@ -8731,7 +8745,7 @@ ALIASES
   $ aio rt action create
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/action/create.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/action/create.js)_
 
 ## `aio runtime action del ACTIONNAME`
 
@@ -8795,7 +8809,7 @@ ALIASES
   $ aio rt action del
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/action/delete.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/action/delete.js)_
 
 ## `aio runtime action get ACTIONNAME`
 
@@ -8829,7 +8843,7 @@ ALIASES
   $ aio rt action get
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/action/get.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/action/get.js)_
 
 ## `aio runtime action invoke ACTIONNAME`
 
@@ -8838,7 +8852,7 @@ Invokes an Action
 ```
 USAGE
   $ aio runtime action invoke ACTIONNAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
-    <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [-b] [-r]
+    <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>...] [-P <value>] [-b] [-r]
 
 FLAGS
   -P, --param-file=<value>  FILE containing parameter values in JSON format
@@ -8863,7 +8877,7 @@ ALIASES
   $ aio rt action invoke
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/action/invoke.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/action/invoke.js)_
 
 ## `aio runtime action list [PACKAGENAME]`
 
@@ -8905,7 +8919,7 @@ ALIASES
   $ aio rt actions ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/action/list.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/action/list.js)_
 
 ## `aio runtime action ls [PACKAGENAME]`
 
@@ -8954,10 +8968,10 @@ Updates an Action
 ```
 USAGE
   $ aio runtime action update ACTIONNAME [ACTIONPATH] [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost
-    <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [--copy <value>] [-e <value>]
-    [--web-secure <value> --web true|yes|false|no|raw] [-P <value>] [-E <value>] [-t <value>] [-m <value>] [-l <value>]
-    [-c <value>] [--kind <value>] [-a <value>] [-A <value>] [--sequence <value>] [--docker <value>] [--main <value>]
-    [--binary] [--json]
+    <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>...] [--copy <value>] [-e
+    <value>...] [--web-secure <value> --web true|yes|false|no|raw] [-P <value>] [-E <value>] [-t <value>] [-m <value>]
+    [-l <value>] [-c <value>] [--kind <value>] [-a <value>...] [-A <value>] [--sequence <value>] [--docker <value>]
+    [--main <value>] [--binary] [--json]
 
 FLAGS
   -A, --annotation-file=<value>  FILE containing annotation values in JSON format
@@ -9001,7 +9015,7 @@ ALIASES
   $ aio rt action update
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/action/update.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/action/update.js)_
 
 ## `aio runtime actions list [PACKAGENAME]`
 
@@ -9111,7 +9125,7 @@ ALIASES
   $ aio rt activation
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/activation/index.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/activation/index.js)_
 
 ## `aio runtime activation get [ACTIVATIONID]`
 
@@ -9143,7 +9157,7 @@ ALIASES
   $ aio rt activation get
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/activation/get.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/activation/get.js)_
 
 ## `aio runtime activation list [ACTION_NAME]`
 
@@ -9189,7 +9203,7 @@ ALIASES
   $ aio rt activations ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/activation/list.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/activation/list.js)_
 
 ## `aio runtime activation log [ACTIVATIONID]`
 
@@ -9281,7 +9295,7 @@ ALIASES
   $ aio rt logs
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/activation/logs.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/activation/logs.js)_
 
 ## `aio runtime activation ls [ACTION_NAME]`
 
@@ -9356,7 +9370,7 @@ ALIASES
   $ aio rt activation result
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/activation/result.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/activation/result.js)_
 
 ## `aio runtime activations list [ACTION_NAME]`
 
@@ -9476,7 +9490,7 @@ ALIASES
   $ aio rt route
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/api/index.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/api/index.js)_
 
 ## `aio runtime api create [BASEPATH] [RELPATH] [APIVERB] [ACTION]`
 
@@ -9519,7 +9533,7 @@ ALIASES
   $ aio rt api create
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/api/create.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/api/create.js)_
 
 ## `aio runtime api delete BASEPATHORAPINAME [RELPATH] [APIVERB]`
 
@@ -9556,7 +9570,7 @@ ALIASES
   $ aio rt api delete
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/api/delete.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/api/delete.js)_
 
 ## `aio runtime api get BASEPATHORAPINAME`
 
@@ -9591,7 +9605,7 @@ ALIASES
   $ aio rt api get
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/api/get.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/api/get.js)_
 
 ## `aio runtime api list [BASEPATH] [RELPATH] [APIVERB]`
 
@@ -9635,7 +9649,7 @@ ALIASES
   $ aio rt route ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/api/list.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/api/list.js)_
 
 ## `aio runtime api ls [BASEPATH] [RELPATH] [APIVERB]`
 
@@ -9686,7 +9700,7 @@ The Runtime Deployment Tool
 ```
 USAGE
   $ aio runtime deploy [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u <value>] [-i]
-    [--debug <value>] [-v] [--version] [--help] [-m <value>] [-d <value>] [--param <value>] [-P <value>]
+    [--debug <value>] [-v] [--version] [--help] [-m <value>] [-d <value>] [--param <value>...] [-P <value>]
 
 FLAGS
   -P, --param-file=<value>  FILE containing parameter values in JSON format
@@ -9711,7 +9725,7 @@ ALIASES
   $ aio rt deploy
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/deploy/index.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/deploy/index.js)_
 
 ## `aio runtime deploy export`
 
@@ -9743,7 +9757,7 @@ ALIASES
   $ aio rt deploy export
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/deploy/export.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/deploy/export.js)_
 
 ## `aio runtime deploy report`
 
@@ -9775,7 +9789,7 @@ ALIASES
   $ aio rt deploy report
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/deploy/report.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/deploy/report.js)_
 
 ## `aio runtime deploy sync`
 
@@ -9808,7 +9822,7 @@ ALIASES
   $ aio rt deploy sync
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/deploy/sync.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/deploy/sync.js)_
 
 ## `aio runtime deploy undeploy`
 
@@ -9840,7 +9854,7 @@ ALIASES
   $ aio rt deploy undeploy
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/deploy/undeploy.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/deploy/undeploy.js)_
 
 ## `aio runtime deploy version`
 
@@ -9870,7 +9884,7 @@ ALIASES
   $ aio rt deploy version
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/deploy/version.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/deploy/version.js)_
 
 ## `aio runtime list`
 
@@ -10062,7 +10076,7 @@ ALIASES
   $ aio rt ns
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/namespace/index.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/namespace/index.js)_
 
 ## `aio runtime namespace get`
 
@@ -10099,7 +10113,7 @@ ALIASES
   $ aio rt ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/namespace/get.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/namespace/get.js)_
 
 ## `aio runtime namespace lf`
 
@@ -10417,7 +10431,7 @@ ALIASES
   $ aio rt ns ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/namespace/list.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/namespace/list.js)_
 
 ## `aio runtime namespace log-forwarding`
 
@@ -10453,7 +10467,7 @@ ALIASES
   $ aio rt ns lf
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/namespace/log-forwarding/index.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/namespace/log-forwarding/index.js)_
 
 ## `aio runtime namespace log-forwarding errors`
 
@@ -10489,7 +10503,7 @@ ALIASES
   $ aio rt ns lf errors
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/namespace/log-forwarding/errors.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/namespace/log-forwarding/errors.js)_
 
 ## `aio runtime namespace log-forwarding get`
 
@@ -10525,7 +10539,7 @@ ALIASES
   $ aio rt ns lf get
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/namespace/log-forwarding/get.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/namespace/log-forwarding/get.js)_
 
 ## `aio runtime namespace log-forwarding set`
 
@@ -10561,7 +10575,7 @@ ALIASES
   $ aio rt ns lf set
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/namespace/log-forwarding/set.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/namespace/log-forwarding/set.js)_
 
 ## `aio runtime namespace log-forwarding set adobe-io-runtime`
 
@@ -10597,7 +10611,7 @@ ALIASES
   $ aio rt ns lf set adobe-io-runtime
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/namespace/log-forwarding/set/adobe-io-runtime.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/namespace/log-forwarding/set/adobe-io-runtime.js)_
 
 ## `aio runtime namespace log-forwarding set azure-log-analytics`
 
@@ -10636,7 +10650,7 @@ ALIASES
   $ aio rt ns lf set azure-log-analytics
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/namespace/log-forwarding/set/azure-log-analytics.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/namespace/log-forwarding/set/azure-log-analytics.js)_
 
 ## `aio runtime namespace log-forwarding set new-relic`
 
@@ -10674,7 +10688,7 @@ ALIASES
   $ aio rt ns lf set new-relic
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/namespace/log-forwarding/set/new-relic.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/namespace/log-forwarding/set/new-relic.js)_
 
 ## `aio runtime namespace log-forwarding set splunk-hec`
 
@@ -10714,7 +10728,7 @@ ALIASES
   $ aio rt ns lf set splunk-hec
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/namespace/log-forwarding/set/splunk-hec.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/namespace/log-forwarding/set/splunk-hec.js)_
 
 ## `aio runtime namespace ls`
 
@@ -11443,7 +11457,7 @@ ALIASES
   $ aio rt pkg
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/package/index.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/package/index.js)_
 
 ## `aio runtime package bind PACKAGENAME BINDPACKAGENAME`
 
@@ -11452,8 +11466,8 @@ Bind parameters to a package
 ```
 USAGE
   $ aio runtime package bind PACKAGENAME BINDPACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>]
-    [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [-a
-    <value>] [-A <value>] [--json]
+    [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>...] [-P <value>] [-a
+    <value>...] [-A <value>] [--json]
 
 FLAGS
   -A, --annotation-file=<value>  FILE containing annotation values in JSON format
@@ -11481,7 +11495,7 @@ ALIASES
   $ aio rt pkg bind
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/package/bind.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/package/bind.js)_
 
 ## `aio runtime package create PACKAGENAME`
 
@@ -11490,8 +11504,8 @@ Creates a Package
 ```
 USAGE
   $ aio runtime package create PACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
-    <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [--shared true|yes|false|no] [-a
-    <value>] [-A <value>] [--json]
+    <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>...] [-P <value>] [--shared true|yes|false|no]
+    [-a <value>...] [-A <value>] [--json]
 
 FLAGS
   -A, --annotation-file=<value>  FILE containing annotation values in JSON format
@@ -11521,7 +11535,7 @@ ALIASES
   $ aio rt pkg create
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/package/create.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/package/create.js)_
 
 ## `aio runtime package delete PACKAGENAME`
 
@@ -11555,7 +11569,7 @@ ALIASES
   $ aio rt pkg delete
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/package/delete.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/package/delete.js)_
 
 ## `aio runtime package get PACKAGENAME`
 
@@ -11587,7 +11601,7 @@ ALIASES
   $ aio rt pkg get
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/package/get.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/package/get.js)_
 
 ## `aio runtime package list [NAMESPACE]`
 
@@ -11629,7 +11643,7 @@ ALIASES
   $ aio rt pkg ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/package/list.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/package/list.js)_
 
 ## `aio runtime package ls [NAMESPACE]`
 
@@ -11678,8 +11692,8 @@ Updates a Package
 ```
 USAGE
   $ aio runtime package update PACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
-    <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [--shared true|yes|false|no] [-a
-    <value>] [-A <value>] [--json]
+    <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>...] [-P <value>] [--shared true|yes|false|no]
+    [-a <value>...] [-A <value>] [--json]
 
 FLAGS
   -A, --annotation-file=<value>  FILE containing annotation values in JSON format
@@ -11709,7 +11723,7 @@ ALIASES
   $ aio rt pkg update
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/package/update.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/package/update.js)_
 
 ## `aio runtime pkg`
 
@@ -11748,8 +11762,8 @@ Bind parameters to a package
 ```
 USAGE
   $ aio runtime pkg bind PACKAGENAME BINDPACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>]
-    [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [-a
-    <value>] [-A <value>] [--json]
+    [--apihost <value>] [-u <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>...] [-P <value>] [-a
+    <value>...] [-A <value>] [--json]
 
 FLAGS
   -A, --annotation-file=<value>  FILE containing annotation values in JSON format
@@ -11784,8 +11798,8 @@ Creates a Package
 ```
 USAGE
   $ aio runtime pkg create PACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
-    <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [--shared true|yes|false|no] [-a
-    <value>] [-A <value>] [--json]
+    <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>...] [-P <value>] [--shared true|yes|false|no]
+    [-a <value>...] [-A <value>] [--json]
 
 FLAGS
   -A, --annotation-file=<value>  FILE containing annotation values in JSON format
@@ -11964,8 +11978,8 @@ Updates a Package
 ```
 USAGE
   $ aio runtime pkg update PACKAGENAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
-    <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>] [-P <value>] [--shared true|yes|false|no] [-a
-    <value>] [-A <value>] [--json]
+    <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>...] [-P <value>] [--shared true|yes|false|no]
+    [-a <value>...] [-A <value>] [--json]
 
 FLAGS
   -A, --annotation-file=<value>  FILE containing annotation values in JSON format
@@ -12152,7 +12166,7 @@ ALIASES
   $ aio rt property
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/property/index.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/property/index.js)_
 
 ## `aio runtime property get`
 
@@ -12189,7 +12203,7 @@ ALIASES
   $ aio rt prop get
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/property/get.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/property/get.js)_
 
 ## `aio runtime property set`
 
@@ -12222,7 +12236,7 @@ ALIASES
   $ aio rt prop set
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/property/set.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/property/set.js)_
 
 ## `aio runtime property unset`
 
@@ -12255,7 +12269,7 @@ ALIASES
   $ aio rt prop unset
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/property/unset.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/property/unset.js)_
 
 ## `aio runtime route`
 
@@ -12508,7 +12522,7 @@ ALIASES
   $ aio rt rule
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/rule/index.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/rule/index.js)_
 
 ## `aio runtime rule create NAME TRIGGER ACTION`
 
@@ -12544,7 +12558,7 @@ ALIASES
   $ aio rt rule create
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/rule/create.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/rule/create.js)_
 
 ## `aio runtime rule delete NAME`
 
@@ -12578,7 +12592,7 @@ ALIASES
   $ aio rt rule delete
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/rule/delete.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/rule/delete.js)_
 
 ## `aio runtime rule disable NAME`
 
@@ -12611,7 +12625,7 @@ ALIASES
   $ aio rt rule disable
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/rule/disable.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/rule/disable.js)_
 
 ## `aio runtime rule enable NAME`
 
@@ -12644,7 +12658,7 @@ ALIASES
   $ aio rt rule enable
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/rule/enable.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/rule/enable.js)_
 
 ## `aio runtime rule get NAME`
 
@@ -12677,7 +12691,7 @@ ALIASES
   $ aio rt rule get
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/rule/get.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/rule/get.js)_
 
 ## `aio runtime rule list`
 
@@ -12715,7 +12729,7 @@ ALIASES
   $ aio rt rule ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/rule/list.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/rule/list.js)_
 
 ## `aio runtime rule ls`
 
@@ -12784,7 +12798,7 @@ ALIASES
   $ aio rt rule status
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/rule/status.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/rule/status.js)_
 
 ## `aio runtime rule update NAME TRIGGER ACTION`
 
@@ -12820,7 +12834,7 @@ ALIASES
   $ aio rt rule update
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/rule/update.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/rule/update.js)_
 
 ## `aio runtime trigger`
 
@@ -12850,7 +12864,7 @@ ALIASES
   $ aio rt trigger
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/trigger/index.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/trigger/index.js)_
 
 ## `aio runtime trigger create TRIGGERNAME`
 
@@ -12859,7 +12873,7 @@ Create a trigger for Adobe I/O Runtime
 ```
 USAGE
   $ aio runtime trigger create TRIGGERNAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
-    [--version] [--help] [-p <value>] [-P <value>] [-a <value>] [-A <value>] [-f <value>]
+    [--version] [--help] [-p <value>...] [-P <value>] [-a <value>...] [-A <value>] [-f <value>]
 
 ARGUMENTS
   TRIGGERNAME  The name of the trigger
@@ -12888,7 +12902,7 @@ ALIASES
   $ aio rt trigger create
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/trigger/create.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/trigger/create.js)_
 
 ## `aio runtime trigger delete TRIGGERPATH`
 
@@ -12921,7 +12935,7 @@ ALIASES
   $ aio rt trigger delete
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/trigger/delete.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/trigger/delete.js)_
 
 ## `aio runtime trigger fire TRIGGERNAME`
 
@@ -12930,7 +12944,7 @@ Fire a trigger for Adobe I/O Runtime
 ```
 USAGE
   $ aio runtime trigger fire TRIGGERNAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
-    [--version] [--help] [-p <value>] [-P <value>]
+    [--version] [--help] [-p <value>...] [-P <value>]
 
 ARGUMENTS
   TRIGGERNAME  The name of the trigger
@@ -12956,7 +12970,7 @@ ALIASES
   $ aio rt trigger fire
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/trigger/fire.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/trigger/fire.js)_
 
 ## `aio runtime trigger get TRIGGERPATH`
 
@@ -12989,7 +13003,7 @@ ALIASES
   $ aio rt trigger get
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/trigger/get.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/trigger/get.js)_
 
 ## `aio runtime trigger list`
 
@@ -13027,7 +13041,7 @@ ALIASES
   $ aio rt trigger ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/trigger/list.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/trigger/list.js)_
 
 ## `aio runtime trigger ls`
 
@@ -13072,7 +13086,7 @@ Update or create a trigger for Adobe I/O Runtime
 ```
 USAGE
   $ aio runtime trigger update TRIGGERNAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
-    [--version] [--help] [-p <value>] [-P <value>] [-a <value>] [-A <value>]
+    [--version] [--help] [-p <value>...] [-P <value>] [-a <value>...] [-A <value>]
 
 ARGUMENTS
   TRIGGERNAME  The name of the trigger
@@ -13100,7 +13114,7 @@ ALIASES
   $ aio rt trigger update
 ```
 
-_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.0/src/commands/runtime/trigger/update.ts)_
+_See code: [@adobe/aio-cli-plugin-runtime](https://github.com/adobe/aio-cli-plugin-runtime/blob/7.0.1/src/commands/runtime/trigger/update.js)_
 
 ## `aio telemetry yes`
 
@@ -13119,7 +13133,7 @@ DESCRIPTION
   Allow the cli to collect anonymous usage data
 ```
 
-_See code: [@adobe/aio-cli-plugin-telemetry](https://github.com/adobe/aio-cli-plugin-telemetry/blob/v2.0.1/src/commands/telemetry/index.ts)_
+_See code: [@adobe/aio-cli-plugin-telemetry](https://github.com/adobe/aio-cli-plugin-telemetry/blob/v2.0.2/src/commands/telemetry/index.js)_
 
 ## `aio templates`
 
@@ -13500,7 +13514,7 @@ DESCRIPTION
   - update user-installed plugins that are not core
 ```
 
-_See code: [src/commands/update.ts](https://github.com/adobe/aio-cli/blob/10.0.0/src/commands/update.ts)_
+_See code: [src/commands/update.ts](https://github.com/adobe/aio-cli/blob/10.1.0/src/commands/update.ts)_
 
 ## `aio where`
 
