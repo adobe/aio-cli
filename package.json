@@ -135,8 +135,6 @@
     "gen-health": "node bin/gen-health-table.js",
     "prepack": "oclif manifest && oclif readme",
     "version": "oclif readme && git add README.md",
-    "link": "ln -s \"$(pwd)\"/bin/run /usr/local/bin/aio",
-    "unlink": "rm /usr/local/bin/aio",
     "e2e": "jest --collectCoverage=false --testRegex './e2e/e2e.js'"
   }
 }
