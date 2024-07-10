@@ -9,6 +9,8 @@ const commandTitle = `Ask Jarvis:`;
 const shutDownMessage = `Shutting down Jarvis. BYE!`;
 const loaderMessage = `Jarvis is thinking...`;
 const apiErrorMessage = `Jarvis is having trouble connecting to the server. Please try again later.`;
+const processCompleteMessage = `\n Command execution completed! \n`;
+const keyboardInterruptMessage = `\n Keyboard Interrupt shutting down now! \n`;
 
 // will later use with oclif
 class JarvisCommand extends Command {
@@ -86,23 +88,22 @@ class JarvisCommand extends Command {
                 {
                     type: 'list',
                     name: 'selectedCommand',
-                    message: chalk.green('Select an option:'),
+                    message: chalk.green('\nSelect an option:'),
                     choices: commands,
                 },
             ]);
 
-            // this.log(chalk.green(`You selected: ${chalk.blue(selectedCommand)}`));
-
             const editedCommand = await this.inlineEdit(selectedCommand);
 
-            // this.log(chalk.green(`Edited command is : ${chalk.blue(editedCommand)}`))
             if (editedCommand) {
                 await this.executeCommand(editedCommand);
+                continue;
             }
         }
     }
 
     async inlineEdit(initialValue) {
+
         const ansiEscapes = (await import('ansi-escapes')).default;
         const chalk = (await import('chalk')).default;
 
@@ -112,7 +113,7 @@ class JarvisCommand extends Command {
 
             const render = () => {
                 process.stdout.write(ansiEscapes.eraseLines(1));
-                process.stdout.write(chalk.green(currentValue));
+                process.stdout.write(chalk.whiteBright.bold(currentValue));
                 process.stdout.write(ansiEscapes.cursorMove(-currentValue.length + cursorPos, 0));
             };
 
@@ -126,7 +127,9 @@ class JarvisCommand extends Command {
                 if (key === '\u0003') { // Ctrl+C
                     process.stdin.setRawMode(false);
                     process.stdin.pause();
-                    resolve(currentValue);
+                    // resolve(currentValue);
+                    this.log(chalk.red.bold(keyboardInterruptMessage));
+                    process.exit();
                 } else if (key === '\r') { // Enter
                     process.stdin.setRawMode(false);
                     process.stdin.pause();
@@ -145,7 +148,7 @@ class JarvisCommand extends Command {
                     currentValue = currentValue.slice(0, cursorPos) + key + currentValue.slice(cursorPos);
                     cursorPos++;
                 }
-                render();
+                // render();
             });
         });
     }
@@ -159,14 +162,16 @@ class JarvisCommand extends Command {
             // Stop spinner and log output
             spinner.stop();
             if (stdout) {
-                this.log(chalk.green(`Output:\n${stdout}`));
+                this.log(chalk.green(`\n Output:\n${stdout}\n`));
             }
             if (stderr) {
-                this.log(chalk.red(`Error:\n${stderr}`));
+                this.log(chalk.red(`\n Error:\n${stderr}\n`));
             }
         } catch (error) {
             spinner.stop();
             this.log(chalk.red(`Error executing command: ${error.message}`));
+        } finally {
+            this.log(chalk.yellow.bold(processCompleteMessage));
         }
     }
 }
