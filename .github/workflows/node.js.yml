@@ -40,6 +40,8 @@ jobs:
         ./bin/run runtime --help
     - name: upload coverage
       if: success()
-      uses: codecov/codecov-action@v3.1.1
+      uses: codecov/codecov-action@v4
       with:
         name: ${{ runner.os }} node.js ${{ matrix.node-version }}
+        token: ${{ secrets.CODECOV_TOKEN }}
+        fail_ci_if_error: false
