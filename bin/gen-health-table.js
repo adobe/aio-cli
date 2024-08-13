@@ -1,3 +1,5 @@
+/* eslint-disable node/no-extraneous-require */
+/* eslint-disable node/no-unpublished-require */
 /*
 Copyright 2020 Adobe. All rights reserved.
 This file is licensed to you under the Apache License, Version 2.0 (the "License");
@@ -10,8 +12,11 @@ governing permissions and limitations under the License.
 */
 
 const fs = require('fs-extra')
-const Readme = require('oclif/lib/commands/readme').default
+const path = require('node:path')
+const ReadmeGenerator = require('oclif/lib/readme-generator').default
+const READMEpath = path.resolve(path.join(__dirname, '..', 'README.md'))
 
+/** @private */
 function genRow (pkName) {
   return `| [@${pkName}](https://github.com/${pkName})  ` +
          `| [![Version](https://img.shields.io/npm/v/@${pkName}.svg)](https://npmjs.org/package/@${pkName})` +
@@ -22,8 +27,9 @@ function genRow (pkName) {
          `| [![Github Pull Requests](https://img.shields.io/github/issues-pr/${pkName}.svg)](https://github.com/${pkName}/pulls)|`
 }
 
+/** @private */
 function replaceTag (readme, tag, body) {
-  const oclDev = new Readme()
+  const oclDev = new ReadmeGenerator({}, { readmePath: READMEpath })
   return oclDev.replaceTag(readme, tag, body)
 
   // this is the code that oclif/dev-cli/readme runs:
@@ -58,5 +64,5 @@ const tableData = ['| Module | Version | Downloads | Build Status | Coverage  | 
 adobeDeps.forEach(item => { tableData.push(genRow(item)) })
 
 // replace the text in README
-const readme = fs.readFileSync('README.md', 'utf8')
-fs.writeFileSync('README.md', replaceTag(readme, 'health', tableData.join('\n')))
+const readme = fs.readFileSync(READMEpath, 'utf8')
+fs.writeFileSync(READMEpath, replaceTag(readme, 'health', tableData.join('\n')))
