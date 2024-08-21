@@ -96,7 +96,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (--version|-v)
-@adobe/aio-cli/10.1.0 darwin-arm64 node-v18.20.1
+@adobe/aio-cli/10.2.0 darwin-arm64 node-v20.14.0
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -156,6 +156,11 @@ USAGE
 * [`aio app logs`](#aio-app-logs)
 * [`aio app pack [PATH]`](#aio-app-pack-path)
 * [`aio app run`](#aio-app-run)
+* [`aio app state delete [KEYS]`](#aio-app-state-delete-keys)
+* [`aio app state get KEY`](#aio-app-state-get-key)
+* [`aio app state list`](#aio-app-state-list)
+* [`aio app state put KEY VALUE`](#aio-app-state-put-key-value)
+* [`aio app state stats`](#aio-app-state-stats)
 * [`aio app test`](#aio-app-test)
 * [`aio app undeploy`](#aio-app-undeploy)
 * [`aio app use [CONFIG_FILE_PATH]`](#aio-app-use-config_file_path)
@@ -1655,6 +1660,173 @@ DESCRIPTION
 
 _See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/12.2.3/src/commands/app/run.js)_
 
+## `aio app state delete [KEYS]`
+
+Delete key-values
+
+```
+USAGE
+  $ aio app state delete [KEYS...] [--json] [--region amer|emea] [--match <value>] [--force]
+
+ARGUMENTS
+  KEYS...  keys to delete. Above 5 keys, you will be prompted for confirmation
+
+FLAGS
+  --force            [use with caution!] force delete, no safety prompt
+  --match=<value>    [use with caution!] deletes ALL key-values matching the provided glob-like pattern
+  --region=<option>  State region. Defaults to 'AIO_STATE_REGION' env or 'amer' if neither is set.
+                     <options: amer|emea>
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Delete key-values
+
+ALIASES
+  $ aio app state delete
+
+EXAMPLES
+  $ aio app state delete key
+
+  $ aio app state delete key1 key2 key3
+
+  $ aio app state delete --match 'gl*b'
+
+  $ aio app state delete --match 'gl*b' --json
+
+  $ aio app state delete --match 'be-carreful*' --force
+```
+
+## `aio app state get KEY`
+
+Get a key-value
+
+```
+USAGE
+  $ aio app state get KEY [--json] [--region amer|emea]
+
+ARGUMENTS
+  KEY  State key
+
+FLAGS
+  --region=<option>  State region. Defaults to 'AIO_STATE_REGION' env or 'amer' if neither is set.
+                     <options: amer|emea>
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Get a key-value
+
+ALIASES
+  $ aio app state get
+
+EXAMPLES
+  $ aio app state get key
+
+  $ aio app state get key --json
+
+  $ aio app state get key | wc -c
+```
+
+## `aio app state list`
+
+List key-values
+
+```
+USAGE
+  $ aio app state list [--json] [--region amer|emea] [-m <value>]
+
+FLAGS
+  -m, --match=<value>    [default: *] Glob-like pattern to filter keys
+      --region=<option>  State region. Defaults to 'AIO_STATE_REGION' env or 'amer' if neither is set.
+                         <options: amer|emea>
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  List key-values
+
+ALIASES
+  $ aio app state list
+
+EXAMPLES
+  $ aio app state list
+
+  $ aio app state list --match 'gl*b'
+
+  $ aio app state list --json
+
+  $ aio app state list | less
+
+  $ aio app state list | wc -l
+```
+
+## `aio app state put KEY VALUE`
+
+Put a key-value
+
+```
+USAGE
+  $ aio app state put KEY VALUE [--json] [--region amer|emea] [-t <value>]
+
+ARGUMENTS
+  KEY    State key
+  VALUE  State value
+
+FLAGS
+  -t, --ttl=<value>      Time to live in seconds. Default is 86400 (24 hours), max is 31536000 (1 year).
+      --region=<option>  State region. Defaults to 'AIO_STATE_REGION' env or 'amer' if neither is set.
+                         <options: amer|emea>
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Put a key-value
+
+ALIASES
+  $ aio app state put
+
+EXAMPLES
+  $ aio app state put key value
+
+  $ aio app state put key value --ttl 3600
+
+  $ aio app state put key value --json
+
+  $ cat value/from/file | xargs -0 ./bin/run.js app state put key
+```
+
+## `aio app state stats`
+
+Display stats
+
+```
+USAGE
+  $ aio app state stats [--json] [--region amer|emea]
+
+FLAGS
+  --region=<option>  State region. Defaults to 'AIO_STATE_REGION' env or 'amer' if neither is set.
+                     <options: amer|emea>
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Display stats
+
+ALIASES
+  $ aio app state stats
+
+EXAMPLES
+  $ aio app state stats
+
+  $ aio app state stats --json
+```
+
 ## `aio app test`
 
 Run tests for an Adobe I/O App
@@ -3108,7 +3280,7 @@ ALIASES
   $ aio plugins discover
 ```
 
-_See code: [src/commands/discover.ts](https://github.com/adobe/aio-cli/blob/10.1.0/src/commands/discover.ts)_
+_See code: [src/commands/discover.ts](https://github.com/adobe/aio-cli/blob/10.2.0/src/commands/discover.ts)_
 
 ## `aio event`
 
@@ -4268,7 +4440,7 @@ DESCRIPTION
   Clears all installed plugins.
 ```
 
-_See code: [src/commands/rollback.ts](https://github.com/adobe/aio-cli/blob/10.1.0/src/commands/rollback.ts)_
+_See code: [src/commands/rollback.ts](https://github.com/adobe/aio-cli/blob/10.2.0/src/commands/rollback.ts)_
 
 ## `aio rt`
 
@@ -13514,7 +13686,7 @@ DESCRIPTION
   - update user-installed plugins that are not core
 ```
 
-_See code: [src/commands/update.ts](https://github.com/adobe/aio-cli/blob/10.1.0/src/commands/update.ts)_
+_See code: [src/commands/update.ts](https://github.com/adobe/aio-cli/blob/10.2.0/src/commands/update.ts)_
 
 ## `aio where`
 
