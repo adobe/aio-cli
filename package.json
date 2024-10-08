@@ -8,8 +8,8 @@
   },
   "bugs": "https://github.com/adobe/aio-cli/issues",
   "dependencies": {
-    "@adobe/aio-cli-plugin-app": "^12",
-    "@adobe/aio-cli-plugin-app-dev": "^1",
+    "@adobe/aio-cli-plugin-app": "^13",
+    "@adobe/aio-cli-plugin-app-dev": "^2",
     "@adobe/aio-cli-plugin-app-storage": "^1",
     "@adobe/aio-cli-plugin-app-templates": "^2",
     "@adobe/aio-cli-plugin-auth": "^4",
