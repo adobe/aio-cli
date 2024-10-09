@@ -1,15 +1,16 @@
 {
   "name": "@adobe/aio-cli",
   "description": "Adobe I/O Extensible CLI\n\n*******   *******\n******     ******\n*****       *****\n****    *    ****\n***    ***    ***\n**    *****    **\n*         **    *\n",
-  "version": "10.1.0",
+  "version": "10.3.0",
   "author": "Adobe Inc.",
   "bin": {
     "aio": "bin/run"
   },
   "bugs": "https://github.com/adobe/aio-cli/issues",
   "dependencies": {
-    "@adobe/aio-cli-plugin-app": "^12",
-    "@adobe/aio-cli-plugin-app-dev": "^1",
+    "@adobe/aio-cli-plugin-app": "^13",
+    "@adobe/aio-cli-plugin-app-dev": "^2",
+    "@adobe/aio-cli-plugin-app-storage": "^1",
     "@adobe/aio-cli-plugin-app-templates": "^2",
     "@adobe/aio-cli-plugin-auth": "^4",
     "@adobe/aio-cli-plugin-certificate": "^2",
@@ -90,6 +91,7 @@
       "@adobe/aio-cli-plugin-runtime",
       "@adobe/aio-cli-plugin-app",
       "@adobe/aio-cli-plugin-app-dev",
+      "@adobe/aio-cli-plugin-app-storage",
       "@adobe/aio-cli-plugin-app-templates",
       "@adobe/aio-cli-plugin-auth",
       "@adobe/aio-cli-plugin-certificate",
