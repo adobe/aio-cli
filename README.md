@@ -96,7 +96,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (--version|-v)
-@adobe/aio-cli/10.3.0 darwin-arm64 node-v18.20.4
+@adobe/aio-cli/10.3.1 darwin-arm64 node-v18.20.4
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -156,10 +156,14 @@ USAGE
 * [`aio app logs`](#aio-app-logs)
 * [`aio app pack [PATH]`](#aio-app-pack-path)
 * [`aio app run`](#aio-app-run)
+* [`aio app state del [KEYS]`](#aio-app-state-del-keys)
 * [`aio app state delete [KEYS]`](#aio-app-state-delete-keys)
 * [`aio app state get KEY`](#aio-app-state-get-key)
 * [`aio app state list`](#aio-app-state-list)
+* [`aio app state ls`](#aio-app-state-ls)
 * [`aio app state put KEY VALUE`](#aio-app-state-put-key-value)
+* [`aio app state remove [KEYS]`](#aio-app-state-remove-keys)
+* [`aio app state rm [KEYS]`](#aio-app-state-rm-keys)
 * [`aio app state stats`](#aio-app-state-stats)
 * [`aio app test`](#aio-app-test)
 * [`aio app undeploy`](#aio-app-undeploy)
@@ -1666,6 +1670,46 @@ DESCRIPTION
 
 _See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/run.js)_
 
+## `aio app state del [KEYS]`
+
+Delete key-values
+
+```
+USAGE
+  $ aio app state del [KEYS...] [--json] [--region amer|emea] [--match <value>] [--force]
+
+ARGUMENTS
+  KEYS...  keys to delete. Above 5 keys, you will be prompted for confirmation
+
+FLAGS
+  --force            [use with caution!] force delete, no safety prompt
+  --match=<value>    [use with caution!] deletes ALL key-values matching the provided glob-like pattern
+  --region=<option>  State region. Defaults to 'AIO_STATE_REGION' env or 'amer' if neither is set.
+                     <options: amer|emea>
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Delete key-values
+
+ALIASES
+  $ aio app state del
+  $ aio app state remove
+  $ aio app state rm
+
+EXAMPLES
+  $ aio app state delete key
+
+  $ aio app state delete key1 key2 key3
+
+  $ aio app state delete --match 'gl*b'
+
+  $ aio app state delete --match 'gl*b' --json
+
+  $ aio app state delete --match 'be-carreful*' --force
+```
+
 ## `aio app state delete [KEYS]`
 
 Delete key-values
@@ -1690,7 +1734,9 @@ DESCRIPTION
   Delete key-values
 
 ALIASES
-  $ aio app state delete
+  $ aio app state del
+  $ aio app state remove
+  $ aio app state rm
 
 EXAMPLES
   $ aio app state delete key
@@ -1725,9 +1771,6 @@ GLOBAL FLAGS
 DESCRIPTION
   Get a key-value
 
-ALIASES
-  $ aio app state get
-
 EXAMPLES
   $ aio app state get key
 
@@ -1756,7 +1799,41 @@ DESCRIPTION
   List key-values
 
 ALIASES
+  $ aio app state ls
+
+EXAMPLES
   $ aio app state list
+
+  $ aio app state list --match 'gl*b'
+
+  $ aio app state list --json
+
+  $ aio app state list | less
+
+  $ aio app state list | wc -l
+```
+
+## `aio app state ls`
+
+List key-values
+
+```
+USAGE
+  $ aio app state ls [--json] [--region amer|emea] [-m <value>]
+
+FLAGS
+  -m, --match=<value>    [default: *] Glob-like pattern to filter keys
+      --region=<option>  State region. Defaults to 'AIO_STATE_REGION' env or 'amer' if neither is set.
+                         <options: amer|emea>
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  List key-values
+
+ALIASES
+  $ aio app state ls
 
 EXAMPLES
   $ aio app state list
@@ -1793,9 +1870,6 @@ GLOBAL FLAGS
 DESCRIPTION
   Put a key-value
 
-ALIASES
-  $ aio app state put
-
 EXAMPLES
   $ aio app state put key value
 
@@ -1804,6 +1878,86 @@ EXAMPLES
   $ aio app state put key value --json
 
   $ cat value/from/file | xargs -0 ./bin/run.js app state put key
+```
+
+## `aio app state remove [KEYS]`
+
+Delete key-values
+
+```
+USAGE
+  $ aio app state remove [KEYS...] [--json] [--region amer|emea] [--match <value>] [--force]
+
+ARGUMENTS
+  KEYS...  keys to delete. Above 5 keys, you will be prompted for confirmation
+
+FLAGS
+  --force            [use with caution!] force delete, no safety prompt
+  --match=<value>    [use with caution!] deletes ALL key-values matching the provided glob-like pattern
+  --region=<option>  State region. Defaults to 'AIO_STATE_REGION' env or 'amer' if neither is set.
+                     <options: amer|emea>
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Delete key-values
+
+ALIASES
+  $ aio app state del
+  $ aio app state remove
+  $ aio app state rm
+
+EXAMPLES
+  $ aio app state delete key
+
+  $ aio app state delete key1 key2 key3
+
+  $ aio app state delete --match 'gl*b'
+
+  $ aio app state delete --match 'gl*b' --json
+
+  $ aio app state delete --match 'be-carreful*' --force
+```
+
+## `aio app state rm [KEYS]`
+
+Delete key-values
+
+```
+USAGE
+  $ aio app state rm [KEYS...] [--json] [--region amer|emea] [--match <value>] [--force]
+
+ARGUMENTS
+  KEYS...  keys to delete. Above 5 keys, you will be prompted for confirmation
+
+FLAGS
+  --force            [use with caution!] force delete, no safety prompt
+  --match=<value>    [use with caution!] deletes ALL key-values matching the provided glob-like pattern
+  --region=<option>  State region. Defaults to 'AIO_STATE_REGION' env or 'amer' if neither is set.
+                     <options: amer|emea>
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Delete key-values
+
+ALIASES
+  $ aio app state del
+  $ aio app state remove
+  $ aio app state rm
+
+EXAMPLES
+  $ aio app state delete key
+
+  $ aio app state delete key1 key2 key3
+
+  $ aio app state delete --match 'gl*b'
+
+  $ aio app state delete --match 'gl*b' --json
+
+  $ aio app state delete --match 'be-carreful*' --force
 ```
 
 ## `aio app state stats`
@@ -1823,9 +1977,6 @@ GLOBAL FLAGS
 
 DESCRIPTION
   Display stats
-
-ALIASES
-  $ aio app state stats
 
 EXAMPLES
   $ aio app state stats
@@ -2151,7 +2302,7 @@ EXAMPLES
   $ aio autocomplete --refresh-cache
 ```
 
-_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v3.1.4/src/commands/autocomplete/index.ts)_
+_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v3.2.6/src/commands/autocomplete/index.ts)_
 
 ## `aio certificate`
 
@@ -3286,7 +3437,7 @@ ALIASES
   $ aio plugins discover
 ```
 
-_See code: [src/commands/discover.ts](https://github.com/adobe/aio-cli/blob/10.3.0/src/commands/discover.ts)_
+_See code: [src/commands/discover.ts](https://github.com/adobe/aio-cli/blob/10.3.1/src/commands/discover.ts)_
 
 ## `aio event`
 
@@ -3976,7 +4127,7 @@ DESCRIPTION
   Display help for aio.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.2.3/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.2.15/src/commands/help.ts)_
 
 ## `aio info`
 
@@ -4117,7 +4268,7 @@ EXAMPLES
   $ aio plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.2/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/index.ts)_
 
 ## `aio plugins add PLUGIN`
 
@@ -4216,7 +4367,7 @@ EXAMPLES
   $ aio plugins inspect myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.2/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/inspect.ts)_
 
 ## `aio plugins install PLUGIN`
 
@@ -4265,7 +4416,7 @@ EXAMPLES
     $ aio plugins install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.2/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/install.ts)_
 
 ## `aio plugins link PATH`
 
@@ -4285,6 +4436,7 @@ FLAGS
 
 DESCRIPTION
   Links a plugin into the CLI for development.
+
   Installation of a linked plugin will override a user-installed or core plugin.
 
   e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello'
@@ -4295,7 +4447,7 @@ EXAMPLES
   $ aio plugins link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.2/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/link.ts)_
 
 ## `aio plugins remove [PLUGIN]`
 
@@ -4336,7 +4488,7 @@ FLAGS
   --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.2/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/reset.ts)_
 
 ## `aio plugins uninstall [PLUGIN]`
 
@@ -4364,7 +4516,7 @@ EXAMPLES
   $ aio plugins uninstall myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.2/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/uninstall.ts)_
 
 ## `aio plugins unlink [PLUGIN]`
 
@@ -4408,7 +4560,7 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.2/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/update.ts)_
 
 ## `aio report`
 
@@ -4446,7 +4598,7 @@ DESCRIPTION
   Clears all installed plugins.
 ```
 
-_See code: [src/commands/rollback.ts](https://github.com/adobe/aio-cli/blob/10.3.0/src/commands/rollback.ts)_
+_See code: [src/commands/rollback.ts](https://github.com/adobe/aio-cli/blob/10.3.1/src/commands/rollback.ts)_
 
 ## `aio rt`
 
@@ -13692,7 +13844,7 @@ DESCRIPTION
   - update user-installed plugins that are not core
 ```
 
-_See code: [src/commands/update.ts](https://github.com/adobe/aio-cli/blob/10.3.0/src/commands/update.ts)_
+_See code: [src/commands/update.ts](https://github.com/adobe/aio-cli/blob/10.3.1/src/commands/update.ts)_
 
 ## `aio where`
 
