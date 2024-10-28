@@ -45,7 +45,7 @@
     "eslint-plugin-n": "15.7",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.1.1",
-    "execa": "^5.1.1",
+    "execa": "^9.5.0",
     "jest": "^29.0.1",
     "jest-fetch-mock": "^3.0.0",
     "jest-junit": "^16.0.0",
