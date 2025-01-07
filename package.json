@@ -29,9 +29,14 @@
     "@types/jest": "^29.5.2",
     "chalk": "^4.1.2",
     "inquirer": "^8.2.3",
-    "node-fetch": "^2.6.7",
+    "node-fetch": "^2.x",
     "ora": "^5.4.1",
     "semver": "^7.5.2"
+  },
+  "overrides": {
+    "node-fetch@^2.x": {
+      "whatwg-url": "14.x"
+    }
   },
   "devDependencies": {
     "@adobe/eslint-config-aio-lib-config": "^4.0.0",
