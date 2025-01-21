@@ -96,7 +96,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (--version|-v)
-@adobe/aio-cli/10.3.1 darwin-arm64 node-v18.20.4
+@adobe/aio-cli/10.3.2 darwin-arm64 node-v22.11.0
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -547,7 +547,7 @@ DESCRIPTION
   Create, run, test, and deploy Adobe I/O Apps
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/index.js)_
 
 ## `aio app add`
 
@@ -565,7 +565,7 @@ DESCRIPTION
   Add a new component to an existing Adobe I/O App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/add/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/add/index.js)_
 
 ## `aio app add action`
 
@@ -590,7 +590,7 @@ ALIASES
   $ aio app add actions
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/add/action.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/add/action.js)_
 
 ## `aio app add actions`
 
@@ -631,7 +631,7 @@ DESCRIPTION
   Add CI files
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/add/ci.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/add/ci.js)_
 
 ## `aio app add event`
 
@@ -656,7 +656,7 @@ ALIASES
   $ aio app add events
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/add/event.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/add/event.js)_
 
 ## `aio app add events`
 
@@ -729,7 +729,7 @@ ALIASES
   $ aio app add extensions
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/add/extension.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/add/extension.js)_
 
 ## `aio app add extensions`
 
@@ -777,7 +777,7 @@ ALIASES
   $ aio app add services
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/add/service.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/add/service.js)_
 
 ## `aio app add services`
 
@@ -820,7 +820,7 @@ DESCRIPTION
   Add web assets support
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/add/web-assets.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/add/web-assets.js)_
 
 ## `aio app build`
 
@@ -850,7 +850,7 @@ DESCRIPTION
   Use the --force-build flag to force a build even if one already exists.
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/build.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/build.js)_
 
 ## `aio app config`
 
@@ -872,7 +872,7 @@ ALIASES
   $ aio app config
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/config/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/config/index.js)_
 
 ## `aio app config get`
 
@@ -893,7 +893,7 @@ ALIASES
   $ aio app config get
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/config/get/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/config/get/index.js)_
 
 ## `aio app config get lf`
 
@@ -955,7 +955,7 @@ ALIASES
   $ aio app config get lf
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/config/get/log-forwarding.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/config/get/log-forwarding.js)_
 
 ## `aio app config get log-forwarding errors`
 
@@ -977,7 +977,7 @@ ALIASES
   $ aio app config get lf errors
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/config/get/log-forwarding/errors.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/config/get/log-forwarding/errors.js)_
 
 ## `aio app config set`
 
@@ -998,7 +998,7 @@ ALIASES
   $ aio app config set
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/config/set/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/config/set/index.js)_
 
 ## `aio app config set lf`
 
@@ -1040,7 +1040,7 @@ ALIASES
   $ aio app config set lf
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/config/set/log-forwarding.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/config/set/log-forwarding.js)_
 
 ## `aio app create [PATH]`
 
@@ -1062,7 +1062,7 @@ DESCRIPTION
   Create a new Adobe I/O App with default parameters
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/create.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/create.js)_
 
 ## `aio app delete`
 
@@ -1080,7 +1080,7 @@ DESCRIPTION
   Delete a component from an existing Adobe I/O App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/delete/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/delete/index.js)_
 
 ## `aio app delete action [ACTION-NAME]`
 
@@ -1106,7 +1106,7 @@ ALIASES
   $ aio app delete actions
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/delete/action.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/delete/action.js)_
 
 ## `aio app delete actions [ACTION-NAME]`
 
@@ -1149,7 +1149,7 @@ DESCRIPTION
   Delete existing CI files
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/delete/ci.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/delete/ci.js)_
 
 ## `aio app delete ext`
 
@@ -1199,7 +1199,7 @@ ALIASES
   $ aio app delete extensions
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/delete/extension.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/delete/extension.js)_
 
 ## `aio app delete extensions`
 
@@ -1247,7 +1247,7 @@ ALIASES
   $ aio app delete services
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/delete/service.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/delete/service.js)_
 
 ## `aio app delete services`
 
@@ -1288,7 +1288,7 @@ DESCRIPTION
   Delete existing web assets
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/delete/web-assets.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/delete/web-assets.js)_
 
 ## `aio app deploy`
 
@@ -1334,7 +1334,7 @@ DESCRIPTION
   Use the --force-deploy flag to force deploy changes, regardless of production Workspace being published in Exchange.
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/deploy.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/deploy.js)_
 
 ## `aio app dev`
 
@@ -1354,7 +1354,7 @@ DESCRIPTION
   Run your App Builder app locally
 ```
 
-_See code: [@adobe/aio-cli-plugin-app-dev](https://github.com/adobe/aio-cli-plugin-app-dev/blob/2.0.0/src/commands/app/dev/index.js)_
+_See code: [@adobe/aio-cli-plugin-app-dev](https://github.com/adobe/aio-cli-plugin-app-dev/blob/2.1.0/src/commands/app/dev/index.js)_
 
 ## `aio app get-url [ACTION]`
 
@@ -1377,7 +1377,7 @@ DESCRIPTION
   Get action URLs
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/get-url.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/get-url.js)_
 
 ## `aio app info`
 
@@ -1399,7 +1399,7 @@ DESCRIPTION
   Display settings/configuration in use by an Adobe I/O App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/info.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/info.js)_
 
 ## `aio app init [PATH]`
 
@@ -1438,7 +1438,7 @@ DESCRIPTION
   Create a new Adobe I/O App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/init.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/init.js)_
 
 ## `aio app install PATH`
 
@@ -1461,7 +1461,7 @@ DESCRIPTION
   This command will support installing apps packaged by 'aio app pack'.
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/install.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/install.js)_
 
 ## `aio app list`
 
@@ -1479,7 +1479,7 @@ DESCRIPTION
   List components for Adobe I/O App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/list/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/list/index.js)_
 
 ## `aio app list ext`
 
@@ -1550,7 +1550,7 @@ ALIASES
   $ aio app list extensions
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/list/extension.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/list/extension.js)_
 
 ## `aio app list extension-points`
 
@@ -1575,7 +1575,7 @@ ALIASES
   $ aio app list extension-points
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/list/extension-points.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/list/extension-points.js)_
 
 ## `aio app list extensions`
 
@@ -1622,7 +1622,7 @@ DESCRIPTION
   Fetch logs for an Adobe I/O App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/logs.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/logs.js)_
 
 ## `aio app pack [PATH]`
 
@@ -1644,7 +1644,7 @@ DESCRIPTION
   This command will support packaging apps for redistribution.
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/pack.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/pack.js)_
 
 ## `aio app run`
 
@@ -1668,7 +1668,7 @@ DESCRIPTION
   Run an Adobe I/O App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/run.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/run.js)_
 
 ## `aio app state del [KEYS]`
 
@@ -1676,7 +1676,7 @@ Delete key-values
 
 ```
 USAGE
-  $ aio app state del [KEYS...] [--json] [--region amer|emea] [--match <value>] [--force]
+  $ aio app state del [KEYS...] [--json] [--region amer|emea|apac] [--match <value>] [--force]
 
 ARGUMENTS
   KEYS...  keys to delete. Above 5 keys, you will be prompted for confirmation
@@ -1685,7 +1685,7 @@ FLAGS
   --force            [use with caution!] force delete, no safety prompt
   --match=<value>    [use with caution!] deletes ALL key-values matching the provided glob-like pattern
   --region=<option>  State region. Defaults to 'AIO_STATE_REGION' env or 'amer' if neither is set.
-                     <options: amer|emea>
+                     <options: amer|emea|apac>
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -1716,7 +1716,7 @@ Delete key-values
 
 ```
 USAGE
-  $ aio app state delete [KEYS...] [--json] [--region amer|emea] [--match <value>] [--force]
+  $ aio app state delete [KEYS...] [--json] [--region amer|emea|apac] [--match <value>] [--force]
 
 ARGUMENTS
   KEYS...  keys to delete. Above 5 keys, you will be prompted for confirmation
@@ -1725,7 +1725,7 @@ FLAGS
   --force            [use with caution!] force delete, no safety prompt
   --match=<value>    [use with caution!] deletes ALL key-values matching the provided glob-like pattern
   --region=<option>  State region. Defaults to 'AIO_STATE_REGION' env or 'amer' if neither is set.
-                     <options: amer|emea>
+                     <options: amer|emea|apac>
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -1756,14 +1756,14 @@ Get a key-value
 
 ```
 USAGE
-  $ aio app state get KEY [--json] [--region amer|emea]
+  $ aio app state get KEY [--json] [--region amer|emea|apac]
 
 ARGUMENTS
   KEY  State key
 
 FLAGS
   --region=<option>  State region. Defaults to 'AIO_STATE_REGION' env or 'amer' if neither is set.
-                     <options: amer|emea>
+                     <options: amer|emea|apac>
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -1785,12 +1785,12 @@ List key-values
 
 ```
 USAGE
-  $ aio app state list [--json] [--region amer|emea] [-m <value>]
+  $ aio app state list [--json] [--region amer|emea|apac] [-m <value>]
 
 FLAGS
   -m, --match=<value>    [default: *] Glob-like pattern to filter keys
       --region=<option>  State region. Defaults to 'AIO_STATE_REGION' env or 'amer' if neither is set.
-                         <options: amer|emea>
+                         <options: amer|emea|apac>
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -1819,12 +1819,12 @@ List key-values
 
 ```
 USAGE
-  $ aio app state ls [--json] [--region amer|emea] [-m <value>]
+  $ aio app state ls [--json] [--region amer|emea|apac] [-m <value>]
 
 FLAGS
   -m, --match=<value>    [default: *] Glob-like pattern to filter keys
       --region=<option>  State region. Defaults to 'AIO_STATE_REGION' env or 'amer' if neither is set.
-                         <options: amer|emea>
+                         <options: amer|emea|apac>
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -1853,7 +1853,7 @@ Put a key-value
 
 ```
 USAGE
-  $ aio app state put KEY VALUE [--json] [--region amer|emea] [-t <value>]
+  $ aio app state put KEY VALUE [--json] [--region amer|emea|apac] [-t <value>]
 
 ARGUMENTS
   KEY    State key
@@ -1862,7 +1862,7 @@ ARGUMENTS
 FLAGS
   -t, --ttl=<value>      Time to live in seconds. Default is 86400 (24 hours), max is 31536000 (1 year).
       --region=<option>  State region. Defaults to 'AIO_STATE_REGION' env or 'amer' if neither is set.
-                         <options: amer|emea>
+                         <options: amer|emea|apac>
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -1886,7 +1886,7 @@ Delete key-values
 
 ```
 USAGE
-  $ aio app state remove [KEYS...] [--json] [--region amer|emea] [--match <value>] [--force]
+  $ aio app state remove [KEYS...] [--json] [--region amer|emea|apac] [--match <value>] [--force]
 
 ARGUMENTS
   KEYS...  keys to delete. Above 5 keys, you will be prompted for confirmation
@@ -1895,7 +1895,7 @@ FLAGS
   --force            [use with caution!] force delete, no safety prompt
   --match=<value>    [use with caution!] deletes ALL key-values matching the provided glob-like pattern
   --region=<option>  State region. Defaults to 'AIO_STATE_REGION' env or 'amer' if neither is set.
-                     <options: amer|emea>
+                     <options: amer|emea|apac>
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -1926,7 +1926,7 @@ Delete key-values
 
 ```
 USAGE
-  $ aio app state rm [KEYS...] [--json] [--region amer|emea] [--match <value>] [--force]
+  $ aio app state rm [KEYS...] [--json] [--region amer|emea|apac] [--match <value>] [--force]
 
 ARGUMENTS
   KEYS...  keys to delete. Above 5 keys, you will be prompted for confirmation
@@ -1935,7 +1935,7 @@ FLAGS
   --force            [use with caution!] force delete, no safety prompt
   --match=<value>    [use with caution!] deletes ALL key-values matching the provided glob-like pattern
   --region=<option>  State region. Defaults to 'AIO_STATE_REGION' env or 'amer' if neither is set.
-                     <options: amer|emea>
+                     <options: amer|emea|apac>
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -1966,11 +1966,11 @@ Display stats
 
 ```
 USAGE
-  $ aio app state stats [--json] [--region amer|emea]
+  $ aio app state stats [--json] [--region amer|emea|apac]
 
 FLAGS
   --region=<option>  State region. Defaults to 'AIO_STATE_REGION' env or 'amer' if neither is set.
-                     <options: amer|emea>
+                     <options: amer|emea|apac>
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -2010,7 +2010,7 @@ DESCRIPTION
   If the extension has a hook called 'test' in its 'ext.config.yaml', the script specified will be run instead.
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/test.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/test.js)_
 
 ## `aio app undeploy`
 
@@ -2035,7 +2035,7 @@ DESCRIPTION
   Undeploys an Adobe I/O App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/undeploy.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/undeploy.js)_
 
 ## `aio app use [CONFIG_FILE_PATH]`
 
@@ -2082,7 +2082,7 @@ DESCRIPTION
   page in https://developer.adobe.com/console/
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.0.0/src/commands/app/use.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/13.1.3/src/commands/app/use.js)_
 
 ## `aio auth`
 
@@ -2302,7 +2302,7 @@ EXAMPLES
   $ aio autocomplete --refresh-cache
 ```
 
-_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v3.2.6/src/commands/autocomplete/index.ts)_
+_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v3.2.18/src/commands/autocomplete/index.ts)_
 
 ## `aio certificate`
 
@@ -3437,7 +3437,7 @@ ALIASES
   $ aio plugins discover
 ```
 
-_See code: [src/commands/discover.ts](https://github.com/adobe/aio-cli/blob/10.3.1/src/commands/discover.ts)_
+_See code: [src/commands/discover.ts](https://github.com/adobe/aio-cli/blob/10.3.2/src/commands/discover.ts)_
 
 ## `aio event`
 
@@ -4127,7 +4127,7 @@ DESCRIPTION
   Display help for aio.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.2.15/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.2.22/src/commands/help.ts)_
 
 ## `aio info`
 
@@ -4268,7 +4268,7 @@ EXAMPLES
   $ aio plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.26/src/commands/plugins/index.ts)_
 
 ## `aio plugins add PLUGIN`
 
@@ -4367,7 +4367,7 @@ EXAMPLES
   $ aio plugins inspect myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.26/src/commands/plugins/inspect.ts)_
 
 ## `aio plugins install PLUGIN`
 
@@ -4416,7 +4416,7 @@ EXAMPLES
     $ aio plugins install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.26/src/commands/plugins/install.ts)_
 
 ## `aio plugins link PATH`
 
@@ -4447,7 +4447,7 @@ EXAMPLES
   $ aio plugins link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.26/src/commands/plugins/link.ts)_
 
 ## `aio plugins remove [PLUGIN]`
 
@@ -4488,7 +4488,7 @@ FLAGS
   --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.26/src/commands/plugins/reset.ts)_
 
 ## `aio plugins uninstall [PLUGIN]`
 
@@ -4516,7 +4516,7 @@ EXAMPLES
   $ aio plugins uninstall myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.26/src/commands/plugins/uninstall.ts)_
 
 ## `aio plugins unlink [PLUGIN]`
 
@@ -4560,7 +4560,7 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.26/src/commands/plugins/update.ts)_
 
 ## `aio report`
 
@@ -4598,7 +4598,7 @@ DESCRIPTION
   Clears all installed plugins.
 ```
 
-_See code: [src/commands/rollback.ts](https://github.com/adobe/aio-cli/blob/10.3.1/src/commands/rollback.ts)_
+_See code: [src/commands/rollback.ts](https://github.com/adobe/aio-cli/blob/10.3.2/src/commands/rollback.ts)_
 
 ## `aio rt`
 
@@ -13844,7 +13844,7 @@ DESCRIPTION
   - update user-installed plugins that are not core
 ```
 
-_See code: [src/commands/update.ts](https://github.com/adobe/aio-cli/blob/10.3.1/src/commands/update.ts)_
+_See code: [src/commands/update.ts](https://github.com/adobe/aio-cli/blob/10.3.2/src/commands/update.ts)_
 
 ## `aio where`
 
