@@ -117,6 +117,7 @@ class DiscoCommand extends Command {
 }
 
 DiscoCommand.description = `Discover plugins to install
+Lists only plugins with prefix '@adobe/aio-cli-plugin'
 To install a plugin, run 'aio plugins install NAME'
 `
 
