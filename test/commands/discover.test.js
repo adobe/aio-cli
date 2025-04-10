@@ -23,7 +23,7 @@ beforeEach(() => {
   fetch.resetMocks()
   command = new TheCommand([])
   command.config = {
-    commands: [{ pluginName: 'baz' }],
+    commands: [{ pluginName: '@adobe/aio-cli-plugin-baz' }],
     runCommand: jest.fn()
   }
 })
@@ -39,8 +39,8 @@ describe('sorting', () => {
 
   const expectedResult = {
     objects: [
-      { package: { scope: 'adobe', name: 'foo', description: 'some foo', version: '1.0.0', date: genesis } },
-      { package: { scope: 'adobe', name: 'bar', description: 'some bar', version: '1.0.1', date: later } }
+      { package: { name: '@adobe/aio-cli-plugin-a', description: 'plugin a', version: '1.0.0', date: genesis } },
+      { package: { name: '@adobe/aio-cli-plugin-b', description: 'plugin b', version: '1.0.1', date: later } }
     ]
   }
   beforeEach(() => {
@@ -59,32 +59,32 @@ describe('sorting', () => {
     command.argv = ['--sort-field', 'name', '--sort-order', 'asc']
     await command.run()
     const splitOutput = stdout.output.split('\n')
-    expect(splitOutput[2]).toMatch('bar') // bar is first
-    expect(splitOutput[3]).toMatch('foo') // foo is second
+    expect(splitOutput[2]).toMatch('@adobe/aio-cli-plugin-a') // @adobe/aio-cli-plugin-a is first
+    expect(splitOutput[3]).toMatch('@adobe/aio-cli-plugin-b') // @adobe/aio-cli-plugin-b is second
   })
 
   test('sort-field=name, descending', async () => {
     command.argv = ['--sort-field', 'name', '--sort-order', 'desc']
     await command.run()
     const splitOutput = stdout.output.split('\n')
-    expect(splitOutput[2]).toMatch('foo') // foo is first
-    expect(splitOutput[3]).toMatch('bar') // bar is second
+    expect(splitOutput[2]).toMatch('@adobe/aio-cli-plugin-b') // @adobe/aio-cli-plugin-b is first
+    expect(splitOutput[3]).toMatch('@adobe/aio-cli-plugin-a') // @adobe/aio-cli-plugin-a is second
   })
 
   test('sort-field=date, ascending', async () => {
     command.argv = ['--sort-field', 'date', '--sort-order', 'asc']
     await command.run()
     const splitOutput = stdout.output.split('\n')
-    expect(splitOutput[2]).toMatch('foo') // foo is first
-    expect(splitOutput[3]).toMatch('bar') // bar is second
+    expect(splitOutput[2]).toMatch('@adobe/aio-cli-plugin-a') // @adobe/aio-cli-plugin-a is first
+    expect(splitOutput[3]).toMatch('@adobe/aio-cli-plugin-b') // @adobe/aio-cli-plugin-b is second
   })
 
   test('sort-field=date, descending', async () => {
     command.argv = ['--sort-field', 'date', '--sort-order', 'desc']
     await command.run()
     const splitOutput = stdout.output.split('\n')
-    expect(splitOutput[2]).toMatch('bar') // bar is first
-    expect(splitOutput[3]).toMatch('foo') // foo is second
+    expect(splitOutput[2]).toMatch('@adobe/aio-cli-plugin-b') // @adobe/aio-cli-plugin-b is first
+    expect(splitOutput[3]).toMatch('@adobe/aio-cli-plugin-a') // @adobe/aio-cli-plugin-a is second
   })
 })
 
@@ -95,22 +95,22 @@ test('interactive install', async () => {
 
   const expectedResult = {
     objects: [
-      { package: { scope: 'adobe', name: 'foo', description: 'some foo', version: '1.0.0', date: now } },
-      { package: { scope: 'adobe', name: 'bar', description: 'some bar', version: '1.0.1', date: tomorrow } },
-      { package: { scope: 'adobe', name: 'baz', description: 'some baz', version: '1.0.2', date: dayAfter } }
+      { package: { name: '@adobe/aio-cli-plugin-foo', description: 'some foo', version: '1.0.0', date: now } },
+      { package: { name: '@adobe/aio-cli-plugin-bar', description: 'some bar', version: '1.0.1', date: tomorrow } },
+      { package: { name: '@adobe/aio-cli-plugin-baz', description: 'some baz', version: '1.0.2', date: dayAfter } }
     ]
   }
   fetch.mockResponseOnce(JSON.stringify(expectedResult))
 
   command.argv = ['-i']
   inquirer.prompt = jest.fn().mockResolvedValue({
-    plugins: ['bar', 'foo']
+    plugins: ['@adobe/aio-cli-plugin-bar', '@adobe/aio-cli-plugin-foo']
   })
 
   const result = await command.run()
-  expect(result).toEqual(['bar', 'foo'])
+  expect(result).toEqual(['@adobe/aio-cli-plugin-bar', '@adobe/aio-cli-plugin-foo'])
   const arg = inquirer.prompt.mock.calls[0][0] // first arg of first call
-  expect(arg[0].choices.map(elem => elem.value)).toEqual(['bar', 'foo']) // baz was an existing plugin, filtered out
+  expect(arg[0].choices.map(elem => elem.value)).toEqual(['@adobe/aio-cli-plugin-bar', '@adobe/aio-cli-plugin-foo']) // @adobe/aio-cli-plugin-baz was an existing plugin, filtered out
 })
 
 test('interactive install - no choices', async () => {
@@ -118,7 +118,7 @@ test('interactive install - no choices', async () => {
 
   const expectedResult = {
     objects: [
-      { package: { scope: 'adobe', name: 'baz', description: 'some baz', version: '1.0.2', date: now } }
+      { package: { name: '@adobe/aio-cli-plugin-baz', description: 'some baz', version: '1.0.2', date: now } }
     ]
   }
   fetch.mockResponseOnce(JSON.stringify(expectedResult))
