@@ -11,7 +11,6 @@
  */
 
 const { Command, Flags, ux } = require('@oclif/core')
-const fetch = require('node-fetch')
 const inquirer = require('inquirer')
 const { sortValues } = require('../helpers')
 
