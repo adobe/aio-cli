@@ -62,7 +62,6 @@ describe('Node.js version check', () => {
   })
 
   test('should not show warning for supported Node.js version', async () => {
-    // Mock Node.js version to v22.0.0
     Object.defineProperty(process, 'version', {
       value: 'v22.14.0'
     })
@@ -70,14 +69,13 @@ describe('Node.js version check', () => {
     const AIOCommand = require('../src/index')
     await AIOCommand.run(['--version'])
 
-    // Check that warning was not displayed
+    // Check warning is not displayed
     expect(logSpy).not.toHaveBeenCalledWith(
       expect.stringContaining('Warning: You are using Node.js version')
     )
   })
 
   test('should show warning for unsupported Node.js version', async () => {
-    // Mock Node.js version to v23.0.0
     Object.defineProperty(process, 'version', {
       value: 'v23.0.0'
     })
@@ -85,7 +83,7 @@ describe('Node.js version check', () => {
     const AIOCommand = require('../src/index')
     await AIOCommand.run(['--version'])
 
-    // Check that warning was displayed
+    // Check warning is displayed
     expect(logSpy).toHaveBeenCalledWith(
       expect.stringContaining('Warning: You are using Node.js version')
     )
