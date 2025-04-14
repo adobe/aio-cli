@@ -45,3 +45,49 @@ describe('run command', () => {
     process.argv = temp
   })
 })
+
+describe('Node.js version check', () => {
+  const originalVersion = process.version
+  let logSpy
+
+  beforeEach(() => {
+    logSpy = jest.spyOn(console, 'log').mockImplementation()
+  })
+
+  afterEach(() => {
+    jest.restoreAllMocks()
+    Object.defineProperty(process, 'version', {
+      value: originalVersion
+    })
+  })
+
+  test('should not show warning for supported Node.js version', async () => {
+    // Mock Node.js version to v22.0.0
+    Object.defineProperty(process, 'version', {
+      value: 'v22.14.0'
+    })
+
+    const AIOCommand = require('../src/index')
+    await AIOCommand.run(['--version'])
+
+    // Check that warning was not displayed
+    expect(logSpy).not.toHaveBeenCalledWith(
+      expect.stringContaining('Warning: You are using Node.js version')
+    )
+  })
+
+  test('should show warning for unsupported Node.js version', async () => {
+    // Mock Node.js version to v23.0.0
+    Object.defineProperty(process, 'version', {
+      value: 'v23.0.0'
+    })
+
+    const AIOCommand = require('../src/index')
+    await AIOCommand.run(['--version'])
+
+    // Check that warning was displayed
+    expect(logSpy).toHaveBeenCalledWith(
+      expect.stringContaining('Warning: You are using Node.js version')
+    )
+  })
+})
