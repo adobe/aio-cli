@@ -16,7 +16,14 @@ jest.mock('@oclif/core', () => {
   return {
     ...jest.requireActual('@oclif/core'),
     Config: {
-      load: () => ({})
+      load: () => ({
+        pjson: {
+          engines: {
+            node: '>=18 <23'
+          }
+        },
+        options: {}
+      })
     },
     Command: jest.fn(),
     run: async function (cmd) {
@@ -71,7 +78,7 @@ describe('Node.js version check', () => {
 
     // Check warning is not displayed
     expect(logSpy).not.toHaveBeenCalledWith(
-      expect.stringContaining('Warning: You are using Node.js version')
+      expect.stringContaining('Warning: Node.js version')
     )
   })
 
@@ -85,7 +92,7 @@ describe('Node.js version check', () => {
 
     // Check warning is displayed
     expect(logSpy).toHaveBeenCalledWith(
-      expect.stringContaining('Warning: You are using Node.js version')
+      expect.stringContaining('Warning: Node.js version v23.0.0 is not supported')
     )
   })
 })

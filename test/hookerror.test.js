@@ -28,7 +28,13 @@ jest.mock('@oclif/core', () => {
     Config: {
       load: () => {
         return {
-          runHook: mockRunHook
+          pjson: {
+            engines: {
+              node: '>=18 <23'
+            }
+          },
+          runHook: mockRunHook,
+          options: {}
         }
       }
     },
