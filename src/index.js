@@ -30,7 +30,7 @@ AIOCommand.run = async (argv, opts) => {
   // Check Node.js version
   const nodeVersion = process.version
   if (!semver.satisfies(nodeVersion, config.pjson.engines.node)) {
-    console.log(chalk.yellow(`⚠️ Warning: Node.js version ${nodeVersion} is not supported. Supported versions are Node.js 18, 20, and 22.`))
+    console.log(chalk.yellow(`⚠️ Warning: Node.js version ${nodeVersion} is not supported. Supported versions are ${config.pjson.engines.node}.`))
   }
 
   // the second parameter is the root path to the CLI containing the command
