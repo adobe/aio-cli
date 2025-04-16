@@ -11,6 +11,8 @@
  */
 
 const { Command, run, Config } = require('@oclif/core')
+const semver = require('semver')
+const chalk = require('chalk')
 
 class AIOCommand extends Command { }
 
@@ -24,6 +26,12 @@ AIOCommand.run = async (argv, opts) => {
   // seem like it would only
   // ||  module.parent && module.parent.parent && module.parent.parent.filename
   const config = await Config.load(opts || __dirname)
+
+  // Check Node.js version
+  const nodeVersion = process.version
+  if (!semver.satisfies(nodeVersion, config.pjson.engines.node)) {
+    console.log(chalk.yellow(`⚠️ Warning: Node.js version ${nodeVersion} is not supported. Supported versions are ${config.pjson.engines.node}.`))
+  }
 
   // the second parameter is the root path to the CLI containing the command
   try {
