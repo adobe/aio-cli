@@ -29,14 +29,8 @@
     "@types/jest": "^29.5.2",
     "chalk": "^4.1.2",
     "inquirer": "^8.2.3",
-    "node-fetch": "^2.x",
     "ora": "^5.4.1",
     "semver": "^7.5.2"
-  },
-  "overrides": {
-    "node-fetch@^2.x": {
-      "whatwg-url": "14.x"
-    }
   },
   "devDependencies": {
     "@adobe/eslint-config-aio-lib-config": "^4.0.0",
@@ -52,7 +46,6 @@
     "eslint-plugin-promise": "^6.6.0",
     "execa": "^5.1.1",
     "jest": "^29.0.1",
-    "jest-fetch-mock": "^3.0.0",
     "jest-junit": "^16.0.0",
     "jest-plugin-fs": "^2.9.0",
     "oclif": "^4",
