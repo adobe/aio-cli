@@ -10,7 +10,6 @@
  * governing permissions and limitations under the License.
  */
 
-const fetch = require('node-fetch')
 const inquirer = require('inquirer')
 const { stdout } = require('stdout-stderr')
 const helpers = require('../../src/helpers')
@@ -30,7 +29,6 @@ let command
 
 beforeEach(() => {
   jest.clearAllMocks()
-  fetch.resetMocks()
   command = new TheCommand([])
   command.config = {
     commands: [{ pluginName: 'baz' }],
