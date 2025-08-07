@@ -97,7 +97,7 @@ class DiscoCommand extends Command {
       // ours only, this could become a flag, searching for oclif-plugin reveals some more
       const adobeOnly = json.objects
         .map(e => e.package)
-        .filter(elem => elem.scope === 'adobe')
+        .filter(elem => elem.name && elem.name.startsWith('@adobe/aio-cli-plugin'))
 
       sortValues(adobeOnly, {
         descending: flags['sort-order'] !== 'asc',
@@ -116,6 +116,7 @@ class DiscoCommand extends Command {
 }
 
 DiscoCommand.description = `Discover plugins to install
+Lists only plugins with prefix '@adobe/aio-cli-plugin'
 To install a plugin, run 'aio plugins install NAME'
 `
 

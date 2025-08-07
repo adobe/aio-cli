@@ -16,7 +16,14 @@ jest.mock('@oclif/core', () => {
   return {
     ...jest.requireActual('@oclif/core'),
     Config: {
-      load: () => ({})
+      load: () => ({
+        pjson: {
+          engines: {
+            node: '>=18 <23'
+          }
+        },
+        options: {}
+      })
     },
     Command: jest.fn(),
     run: async function (cmd) {
@@ -43,5 +50,49 @@ describe('run command', () => {
     const result = await testCommand.run()
     expect(result[0]).toEqual('a')
     process.argv = temp
+  })
+})
+
+describe('Node.js version check', () => {
+  const originalVersion = process.version
+  let logSpy
+
+  beforeEach(() => {
+    logSpy = jest.spyOn(console, 'log').mockImplementation()
+  })
+
+  afterEach(() => {
+    jest.restoreAllMocks()
+    Object.defineProperty(process, 'version', {
+      value: originalVersion
+    })
+  })
+
+  test('should not show warning for supported Node.js version', async () => {
+    Object.defineProperty(process, 'version', {
+      value: 'v22.14.0'
+    })
+
+    const AIOCommand = require('../src/index')
+    await AIOCommand.run(['--version'])
+
+    // Check warning is not displayed
+    expect(logSpy).not.toHaveBeenCalledWith(
+      expect.stringContaining('Warning: Node.js version')
+    )
+  })
+
+  test('should show warning for unsupported Node.js version', async () => {
+    Object.defineProperty(process, 'version', {
+      value: 'v23.0.0'
+    })
+
+    const AIOCommand = require('../src/index')
+    await AIOCommand.run(['--version'])
+
+    // Check warning is displayed
+    expect(logSpy).toHaveBeenCalledWith(
+      expect.stringContaining('Warning: Node.js version v23.0.0 is not supported')
+    )
   })
 })

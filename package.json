@@ -1,7 +1,7 @@
 {
   "name": "@adobe/aio-cli",
   "description": "Adobe I/O Extensible CLI\n\n*******   *******\n******     ******\n*****       *****\n****    *    ****\n***    ***    ***\n**    *****    **\n*         **    *\n",
-  "version": "10.3.2",
+  "version": "10.3.4",
   "author": "Adobe Inc.",
   "bin": {
     "aio": "bin/run"
@@ -54,7 +54,7 @@
     "typescript": "^5.3.3"
   },
   "engines": {
-    "node": ">=18"
+    "node": "^18 || ^20 || ^22"
   },
   "files": [
     "/bin",

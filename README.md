@@ -96,7 +96,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (--version|-v)
-@adobe/aio-cli/10.3.2 darwin-arm64 node-v22.11.0
+@adobe/aio-cli/10.3.4 darwin-arm64 node-v20.18.2
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -3430,6 +3430,7 @@ FLAGS
 
 DESCRIPTION
   Discover plugins to install
+  Lists only plugins with prefix '@adobe/aio-cli-plugin'
   To install a plugin, run 'aio plugins install NAME'
 
 
@@ -3437,7 +3438,7 @@ ALIASES
   $ aio plugins discover
 ```
 
-_See code: [src/commands/discover.ts](https://github.com/adobe/aio-cli/blob/10.3.2/src/commands/discover.ts)_
+_See code: [src/commands/discover.ts](https://github.com/adobe/aio-cli/blob/10.3.4/src/commands/discover.ts)_
 
 ## `aio event`
 
@@ -4335,6 +4336,7 @@ FLAGS
 
 DESCRIPTION
   Discover plugins to install
+  Lists only plugins with prefix '@adobe/aio-cli-plugin'
   To install a plugin, run 'aio plugins install NAME'
 
 
@@ -4598,7 +4600,7 @@ DESCRIPTION
   Clears all installed plugins.
 ```
 
-_See code: [src/commands/rollback.ts](https://github.com/adobe/aio-cli/blob/10.3.2/src/commands/rollback.ts)_
+_See code: [src/commands/rollback.ts](https://github.com/adobe/aio-cli/blob/10.3.4/src/commands/rollback.ts)_
 
 ## `aio rt`
 
@@ -13844,7 +13846,7 @@ DESCRIPTION
   - update user-installed plugins that are not core
 ```
 
-_See code: [src/commands/update.ts](https://github.com/adobe/aio-cli/blob/10.3.2/src/commands/update.ts)_
+_See code: [src/commands/update.ts](https://github.com/adobe/aio-cli/blob/10.3.4/src/commands/update.ts)_
 
 ## `aio where`
 
