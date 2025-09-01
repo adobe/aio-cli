@@ -54,7 +54,7 @@
     "typescript": "^5.3.3"
   },
   "engines": {
-    "node": "^18 || ^20 || ^22"
+    "node": ">=18"
   },
   "files": [
     "/bin",
