@@ -15,6 +15,16 @@ const { stdout } = require('stdout-stderr')
 jest.setTimeout(3000)
 jest.useFakeTimers()
 
+const originalFetch = global.fetch
+
+afterEach(() => {
+  global.fetch = originalFetch
+})
+
+beforeEach(() => {
+  global.fetch = jest.fn()
+})
+
 global.setFetchMock = (ok = true, mockData = {}) => {
   global.fetch = jest.fn().mockResolvedValue({
     ok,

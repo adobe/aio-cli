@@ -131,8 +131,9 @@ test('interactive install - no choices', async () => {
 })
 
 test('json result error', async () => {
-  setFetchMock(false, 'not json')
+  const errorMessage = 'Invalid JSON response'
+  setFetchMock(false, errorMessage)
 
   command.argv = []
-  await expect(command.run()).rejects.toThrow()
+  await expect(command.run()).rejects.toThrow(errorMessage)
 })
