@@ -10,7 +10,6 @@
  * governing permissions and limitations under the License.
  */
 
-const fetch = require('node-fetch')
 const { prompt, sortValues, getNpmLatestVersion, getNpmLocalVersion, hideNPMWarnings } = require('../src/helpers')
 const inquirer = require('inquirer')
 const { stderr } = require('stdout-stderr')
@@ -20,7 +19,6 @@ jest.mock('fs')
 jest.mock('inquirer')
 
 beforeEach(() => {
-  fetch.resetMocks()
   fs.readFileSync.mockRestore()
 })
 
@@ -205,7 +203,7 @@ test('getNpmLatestVersion', async () => {
     }
   }
 
-  fetch.mockResponseOnce(JSON.stringify(json))
+  setFetchMock(true, json)
   return expect(getNpmLatestVersion('foo')).resolves.toEqual(json['dist-tags'].latest)
 })
 
