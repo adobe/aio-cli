@@ -78,6 +78,7 @@
     "topicSeparator": " ",
     "commands": "./src/commands",
     "bin": "aio",
+    "helpClass": "./src/custom-help",
     "plugins": [
       "@oclif/plugin-help",
       "@oclif/plugin-plugins",
