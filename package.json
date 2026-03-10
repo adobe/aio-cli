@@ -7,6 +7,11 @@
     "aio": "bin/run"
   },
   "bugs": "https://github.com/adobe/aio-cli/issues",
+  "overrides": {
+    "@oclif/plugin-plugins": {
+      "@oclif/core": "4.8.3"
+    }
+  },
   "dependencies": {
     "@adobe/aio-cli-plugin-app": "^14",
     "@adobe/aio-cli-plugin-app-dev": "^2",
