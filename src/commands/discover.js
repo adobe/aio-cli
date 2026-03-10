@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-const { Command, Flags, ux } = require('@oclif/core')
+const { Command, Flags } = require('@oclif/core')
 const inquirer = require('inquirer')
 const { sortValues } = require('../helpers')
 
@@ -66,24 +66,20 @@ class DiscoCommand extends Command {
       day: 'numeric'
     }
 
-    const columns = {
-      name: {
-        width: 10,
-        get: row => `${row.name}`
-      },
-      version: {
-        minWidth: 10,
-        get: row => `${row.version}`
-      },
-      description: {
-        get: row => `${row.description}`
-      },
-      published: {
-        get: row => `${new Date(row.date).toLocaleDateString('en', options)}`
-      }
+    const getters = [
+      row => `${row.name}`,
+      row => `${row.version}`,
+      row => `${row.description}`,
+      row => `${new Date(row.date).toLocaleDateString('en', options)}`
+    ]
+    const headers = ['name', 'version', 'description', 'published']
+    const widths = headers.map((h, i) => Math.max(h.length, ...plugins.map(p => getters[i](p).length)) + 2)
+
+    this.log(headers.map((h, i) => h.padEnd(widths[i])).join(''))
+    this.log(widths.map(w => '─'.repeat(w - 1)).join(''))
+    for (const plugin of plugins) {
+      this.log(getters.map((g, i) => g(plugin).padEnd(widths[i])).join(''))
     }
-    // skip ones that aren't from us
-    ux.table(plugins, columns)
   }
 
   async run () {

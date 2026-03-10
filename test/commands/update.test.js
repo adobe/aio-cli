@@ -32,7 +32,8 @@ beforeEach(() => {
   command = new TheCommand([])
   command.config = {
     commands: [],
-    runCommand: jest.fn()
+    runCommand: jest.fn(),
+    runHook: jest.fn().mockResolvedValue({ successes: [], failures: [] })
   }
 })
 
@@ -46,7 +47,8 @@ function mockConfig (corePlugins, installedPlugins) {
       }
     },
     plugins: installedPlugins,
-    runCommand: jest.fn()
+    runCommand: jest.fn(),
+    runHook: jest.fn().mockResolvedValue({ successes: [], failures: [] })
   }
 }
 

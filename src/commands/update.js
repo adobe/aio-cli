@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-const { Command, Flags, ux } = require('@oclif/core')
+const { Command, Flags } = require('@oclif/core')
 const inquirer = require('inquirer')
 const chalk = require('chalk')
 const ora = require('ora')
@@ -31,21 +31,16 @@ class UpdateCommand extends Command {
    * @param {string} colOptions.col3 the heading text for the third column
    */
   async __list (plugins, { col1 = 'user plugin updates available', col2 = 'current', col3 = 'latest' } = {}) {
-    const columns = {
-      [col1]: {
-        width: 10,
-        get: row => row.asterisk ? `${row.name}${chalk.yellow('*')}` : `${row.name}`
-      },
-      [col2]: {
-        minWidth: 10,
-        get: row => `${row.currentVersion}`
-      },
-      [col3]: {
-        get: row => `${row.latestVersion}`
-      }
-    }
+    const col1Width = Math.max(col1.length, ...plugins.map(p => p.name.length + (p.asterisk ? 1 : 0))) + 2
+    const col2Width = Math.max(col2.length, ...plugins.map(p => p.currentVersion.length)) + 2
 
-    ux.table(plugins, columns)
+    this.log(col1.padEnd(col1Width) + col2.padEnd(col2Width) + col3)
+    for (const plugin of plugins) {
+      const name = plugin.asterisk ? `${plugin.name}${chalk.yellow('*')}` : plugin.name
+      const visualLength = plugin.name.length + (plugin.asterisk ? 1 : 0)
+      const namePadding = ' '.repeat(col1Width - visualLength)
+      this.log(name + namePadding + plugin.currentVersion.padEnd(col2Width) + plugin.latestVersion)
+    }
   }
 
   /**

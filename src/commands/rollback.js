@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-const { Command, Flags, ux } = require('@oclif/core')
+const { Command, Flags } = require('@oclif/core')
 const inquirer = require('inquirer')
 const { prompt, hideNPMWarnings } = require('../helpers')
 
@@ -24,18 +24,17 @@ class RollbackCommand extends Command {
    * @param {Array<InstalledPlugin>} plugins the installed plugins
    */
   async __list (plugins) {
-    const columns = {
-      plugin: {
-        width: 10,
-        get: row => `${row.name}`
-      },
-      version: {
-        minWidth: 10,
-        get: row => `${row.version}`
-      }
-    }
+    const getters = [
+      row => `${row.name}`,
+      row => `${row.version}`
+    ]
+    const headers = ['plugin', 'version']
+    const widths = headers.map((h, i) => Math.max(h.length, ...plugins.map(p => getters[i](p).length)) + 2)
 
-    ux.table(plugins, columns)
+    this.log(headers.map((h, i) => h.padEnd(widths[i])).join(''))
+    for (const plugin of plugins) {
+      this.log(getters.map((g, i) => g(plugin).padEnd(widths[i])).join(''))
+    }
   }
 
   /**
