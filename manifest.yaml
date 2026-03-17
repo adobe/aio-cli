@@ -1,0 +1,7 @@
+type: navigation
+order: 1
+title: AIO-CLI user guide
+openApiEngine: stoplight
+pages:
+  - title: User Guide
+    url: README.md

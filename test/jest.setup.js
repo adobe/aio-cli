@@ -15,8 +15,22 @@ const { stdout } = require('stdout-stderr')
 jest.setTimeout(3000)
 jest.useFakeTimers()
 
-const fetch = require('jest-fetch-mock')
-jest.setMock('node-fetch', fetch)
+const originalFetch = global.fetch
+
+afterEach(() => {
+  global.fetch = originalFetch
+})
+
+beforeEach(() => {
+  global.fetch = jest.fn()
+})
+
+global.setFetchMock = (ok = true, mockData = {}) => {
+  global.fetch = jest.fn().mockResolvedValue({
+    ok,
+    json: () => ok ? Promise.resolve(mockData) : Promise.reject(mockData)
+  })
+}
 
 // trap console log
 // note: if you use console.log, some of these tests will start failing because they depend on the order/position of the output

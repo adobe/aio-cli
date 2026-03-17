@@ -30,7 +30,7 @@ jobs:
           git branch
       - uses: actions/setup-node@v1
         with:
-          node-version: 18
+          node-version: 22
       - run: |
           npm pkg set name=${{ github.event.inputs.package-name }}
           npm pkg set bin.aio-next="./bin/run"

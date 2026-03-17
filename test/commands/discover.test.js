@@ -10,7 +10,6 @@
  * governing permissions and limitations under the License.
  */
 
-const fetch = require('node-fetch')
 const inquirer = require('inquirer')
 const TheCommand = require('../../src/commands/discover')
 const { stdout } = require('stdout-stderr')
@@ -20,7 +19,6 @@ jest.mock('inquirer')
 let command
 
 beforeEach(() => {
-  fetch.resetMocks()
   command = new TheCommand([])
   command.config = {
     commands: [{ pluginName: '@adobe/aio-cli-plugin-baz' }],
@@ -44,13 +42,14 @@ describe('sorting', () => {
     ]
   }
   beforeEach(() => {
-    fetch.mockResponseOnce(JSON.stringify(expectedResult))
+    setFetchMock(true, expectedResult)
   })
 
   test('unknown sort-field', async () => {
-    fetch.mockResponseOnce(JSON.stringify({
+    setFetchMock(true, {
       objects: []
-    }))
+    })
+
     command.argv = ['--sort-field', 'unknown']
     await expect(command.run()).rejects.toThrow('Expected --sort-field=')
   })
@@ -100,7 +99,7 @@ test('interactive install', async () => {
       { package: { name: '@adobe/aio-cli-plugin-baz', description: 'some baz', version: '1.0.2', date: dayAfter } }
     ]
   }
-  fetch.mockResponseOnce(JSON.stringify(expectedResult))
+  setFetchMock(true, expectedResult)
 
   command.argv = ['-i']
   inquirer.prompt = jest.fn().mockResolvedValue({
@@ -121,7 +120,7 @@ test('interactive install - no choices', async () => {
       { package: { name: '@adobe/aio-cli-plugin-baz', description: 'some baz', version: '1.0.2', date: now } }
     ]
   }
-  fetch.mockResponseOnce(JSON.stringify(expectedResult))
+  setFetchMock(true, expectedResult)
 
   command.argv = ['-i']
   inquirer.prompt = jest.fn().mockResolvedValue({
@@ -132,7 +131,9 @@ test('interactive install - no choices', async () => {
 })
 
 test('json result error', async () => {
-  fetch.mockResponse()
+  const errorMessage = 'Invalid JSON response'
+  setFetchMock(false, errorMessage)
+
   command.argv = []
-  await expect(command.run()).rejects.toThrow('FetchError: invalid json response body')
+  await expect(command.run()).rejects.toThrow(errorMessage)
 })
