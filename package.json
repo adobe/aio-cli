@@ -20,11 +20,11 @@
     "@adobe/aio-cli-plugin-info": "^4",
     "@adobe/aio-cli-plugin-runtime": "^8",
     "@adobe/aio-cli-plugin-telemetry": "^2",
-    "@oclif/core": "2.11.9",
+    "@oclif/core": "2.16.0",
     "@oclif/plugin-autocomplete": "^3.2.41",
     "@oclif/plugin-help": "^6.0.12",
     "@oclif/plugin-not-found": "^2.3.26",
-    "@oclif/plugin-plugins": "^5",
+    "@oclif/plugin-plugins": "^5.4.58",
     "@oclif/plugin-warn-if-update-available": "^3",
     "@types/jest": "^29.5.2",
     "chalk": "^4.1.2",
@@ -128,6 +128,10 @@
     "setupFilesAfterEnv": [
       "<rootDir>/test/jest.setup.js"
     ]
+  },
+  "overrides": {
+    "rimraf": "^5.0.7",
+    "tar": "^7.4.3"
   },
   "repository": "adobe/aio-cli",
   "scripts": {
