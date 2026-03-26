@@ -10,9 +10,10 @@
  * governing permissions and limitations under the License.
  */
 
-const { Command, Flags, ux } = require('@oclif/core')
+const { Command, Flags } = require('@oclif/core')
 const inquirer = require('inquirer')
 const { prompt, hideNPMWarnings } = require('../helpers')
+const { printTable } = require('../table')
 
 require('../types.jsdoc') // get types
 /* global InstalledPlugin */
@@ -35,7 +36,7 @@ class RollbackCommand extends Command {
       }
     }
 
-    ux.table(plugins, columns)
+    printTable(plugins, columns)
   }
 
   /**
@@ -108,7 +109,7 @@ class RollbackCommand extends Command {
    */
   async run () {
     const { flags } = await this.parse(RollbackCommand)
-    const plugins = this.config.plugins.filter(p => p.type === 'user')
+    const plugins = this.config.getPluginsList().filter(p => p.type === 'user')
 
     if (plugins.length === 0) {
       this.log('no installed plugins to clear')

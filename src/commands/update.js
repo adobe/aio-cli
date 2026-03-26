@@ -10,12 +10,13 @@
  * governing permissions and limitations under the License.
  */
 
-const { Command, Flags, ux } = require('@oclif/core')
+const { Command, Flags } = require('@oclif/core')
 const inquirer = require('inquirer')
 const chalk = require('chalk')
 const ora = require('ora')
 const semver = require('semver')
 const { prompt, getNpmLatestVersion, getNpmLocalVersion, hideNPMWarnings } = require('../helpers')
+const { printTable } = require('../table')
 
 require('../types.jsdoc') // get types
 /* global ToUpdatePlugin */
@@ -45,7 +46,7 @@ class UpdateCommand extends Command {
       }
     }
 
-    ux.table(plugins, columns)
+    printTable(plugins, columns)
   }
 
   /**
@@ -130,7 +131,7 @@ class UpdateCommand extends Command {
     // Filter installed plugins:
     // - remove any plugin that is in core, that is not from the @adobe namespace
     // These will not be updateable for compatibility reasons
-    const installedPlugins = this.config.plugins
+    const installedPlugins = this.config.getPluginsList()
       .filter(p => this.__coreUpdateable(p))
       // remove the cli itself from the plugin list
       .filter(plugin => plugin.name !== this.config.pjson.name)
