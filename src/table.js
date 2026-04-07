@@ -10,6 +10,19 @@
  * governing permissions and limitations under the License.
  */
 
+const stringWidth = require('string-width')
+
+/**
+ * Pad a string to a given display width, accounting for ANSI escape sequences.
+ *
+ * @param {string} str - the string to pad
+ * @param {number} width - the target display width
+ * @returns {string} the padded string
+ */
+function padEndVisible (str, width) {
+  return str + ' '.repeat(Math.max(0, width - stringWidth(str)))
+}
+
 /**
  * Print a table to stdout, compatible with the ux.table API removed in @oclif/core v4.
  *
@@ -24,12 +37,12 @@ function printTable (data, columns) {
 
   const widths = headers.map((h, i) => {
     const min = Math.max(columns[h].minWidth || 0, columns[h].width || 0)
-    return Math.max(h.length, min, ...rows.map(r => r[i].length))
+    return Math.max(stringWidth(h), min, ...rows.map(r => stringWidth(r[i])))
   })
 
-  console.log(headers.map((h, i) => h.padEnd(widths[i])).join('  '))
+  console.log(headers.map((h, i) => padEndVisible(h, widths[i])).join('  '))
   console.log(widths.map(w => '─'.repeat(w)).join('  '))
-  rows.forEach(row => console.log(row.map((c, i) => c.padEnd(widths[i])).join('  ')))
+  rows.forEach(row => console.log(row.map((c, i) => padEndVisible(c, widths[i])).join('  ')))
 }
 
 module.exports = { printTable }
