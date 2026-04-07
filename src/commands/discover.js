@@ -10,9 +10,10 @@
  * governing permissions and limitations under the License.
  */
 
-const { Command, Flags, ux } = require('@oclif/core')
+const { Command, Flags } = require('@oclif/core')
 const inquirer = require('inquirer')
 const { sortValues } = require('../helpers')
+const { printTable } = require('../table')
 
 /*
 This is how cordova does it:
@@ -83,7 +84,7 @@ class DiscoCommand extends Command {
       }
     }
     // skip ones that aren't from us
-    ux.table(plugins, columns)
+    printTable(plugins, columns)
   }
 
   async run () {

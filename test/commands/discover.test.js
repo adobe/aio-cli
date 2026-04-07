@@ -22,7 +22,8 @@ beforeEach(() => {
   command = new TheCommand([])
   command.config = {
     commands: [{ pluginName: '@adobe/aio-cli-plugin-baz' }],
-    runCommand: jest.fn()
+    runCommand: jest.fn(),
+    runHook: jest.fn().mockResolvedValue({ successes: [], failures: [] })
   }
 })
 
