@@ -31,8 +31,7 @@
     "inquirer": "^8.2.3",
     "ora": "^5.4.1",
     "semver": "^7.5.2",
-    "string-width": "^4.2.3",
-    "strip-ansi": "^6.0.1"
+    "string-width": "^4.2.3"
   },
   "devDependencies": {
     "@adobe/eslint-config-aio-lib-config": "^5.0.0",
