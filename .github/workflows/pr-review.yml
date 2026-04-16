@@ -1,0 +1,62 @@
+name: PR Review
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+  issue_comment:
+    types: [created]
+
+jobs:
+  check:
+    # NOTE: comment body matching is exact — /review or /pr-reviewer with no trailing spaces, newlines, or mixed case
+    # This does not fail the workflow; non-matching comments simply do not trigger the job
+    if: |
+      (github.event_name == 'pull_request' && github.event.pull_request.head.repo.fork == false) ||
+      (github.event_name == 'issue_comment' && github.event.issue.pull_request != null &&
+       (github.event.comment.body == '/review' || github.event.comment.body == '/pr-reviewer'))
+    runs-on: ubuntu-latest
+    outputs:
+      allowed: ${{ steps.gate.outputs.allowed }}
+      pr_number: ${{ steps.gate.outputs.pr_number }}
+      head_sha: ${{ steps.gate.outputs.head_sha }}
+    steps:
+      - name: Gate check
+        id: gate
+        run: |
+          set -euo pipefail
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            echo "allowed=true" >> $GITHUB_OUTPUT
+            echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
+            echo "head_sha=$HEAD_SHA" >> $GITHUB_OUTPUT
+          else
+            # Fall back to "none" if user is not a collaborator (gh api returns 404) so allowed=false is output cleanly
+            PERM=$(gh api repos/$GITHUB_REPOSITORY/collaborators/$COMMENT_USER_LOGIN/permission --jq '.permission' 2>/dev/null || echo "none")
+            # Intentionally require admin or maintain; write collaborators are excluded to
+            # limit who can trigger potentially expensive/sensitive review automation.
+            if [ "$PERM" = "admin" ] || [ "$PERM" = "maintain" ]; then
+              DATA=$(gh api repos/$GITHUB_REPOSITORY/pulls/$ISSUE_NUMBER)
+              echo "allowed=true" >> $GITHUB_OUTPUT
+              echo "pr_number=$ISSUE_NUMBER" >> $GITHUB_OUTPUT
+              echo "head_sha=$(echo "$DATA" | jq -r '.head.sha')" >> $GITHUB_OUTPUT
+            else
+              echo "allowed=false" >> $GITHUB_OUTPUT
+            fi
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          EVENT_NAME: ${{ github.event_name }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          COMMENT_USER_LOGIN: ${{ github.event.comment.user.login }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          # GITHUB_REPOSITORY is set automatically by GitHub Actions (owner/repo)
+
+  review:
+    needs: check
+    if: needs.check.outputs.allowed == 'true'
+    uses: adobe/aio-reusable-workflows/.github/workflows/pr-review.yml@main
+    with:
+      pr_number: ${{ needs.check.outputs.pr_number }}
+      head_sha: ${{ needs.check.outputs.head_sha }}
+    secrets:
+      AWS_BEARER_TOKEN_BEDROCK: ${{ secrets.APP_BUILDER_AWS_BEARER_TOKEN_BEDROCK }}
