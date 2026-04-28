@@ -24,6 +24,12 @@ future: use keywords ecosytem:aio-cli-plugin
 
 class DiscoCommand extends Command {
   async _install (plugins) {
+    const dateOptions = {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    }
+
     // get installed plugins
     const installedPlugins = this.config.commands.map(elem => {
       return elem.pluginName
@@ -34,8 +40,10 @@ class DiscoCommand extends Command {
         return !installedPlugins.includes(elem.name)
       })
       .map(elem => { // map to expected inquirer format
+        const date = new Date(elem.date).toLocaleDateString('en', dateOptions)
         return {
-          name: `${elem.name}@${elem.version}`,
+          name: `${chalk.bold(elem.name)} · ${elem.version} · ${date}\n    ${chalk.gray(elem.description)}`,
+          short: elem.name,
           value: elem.name
         }
       })
