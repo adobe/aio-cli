@@ -12,8 +12,8 @@
 
 const { Command, Flags } = require('@oclif/core')
 const inquirer = require('inquirer')
+const chalk = require('chalk')
 const { sortValues } = require('../helpers')
-const { printTable } = require('../table')
 
 /*
 This is how cordova does it:
@@ -61,30 +61,19 @@ class DiscoCommand extends Command {
   }
 
   async _list (plugins) {
-    const options = {
+    const dateOptions = {
       year: 'numeric',
       month: 'long',
       day: 'numeric'
     }
 
-    const columns = {
-      name: {
-        width: 10,
-        get: row => `${row.name}`
-      },
-      version: {
-        minWidth: 10,
-        get: row => `${row.version}`
-      },
-      description: {
-        get: row => `${row.description}`
-      },
-      published: {
-        get: row => `${new Date(row.date).toLocaleDateString('en', options)}`
-      }
+    console.log(chalk.bold(`Discover plugins (${plugins.length})`))
+    console.log()
+    for (const plugin of plugins) {
+      const date = new Date(plugin.date).toLocaleDateString('en', dateOptions)
+      console.log(`  ● ${chalk.bold(plugin.name)} · ${plugin.version} · ${date}`)
+      console.log(`    ${chalk.gray(plugin.description)}`)
     }
-    // skip ones that aren't from us
-    printTable(plugins, columns)
   }
 
   async run () {

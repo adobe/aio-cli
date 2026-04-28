@@ -37,12 +37,12 @@ function printTable (data, columns) {
 
   const widths = headers.map((h, i) => {
     const min = Math.max(columns[h].minWidth || 0, columns[h].width || 0)
-    return Math.max(stringWidth(h), min, ...rows.map(r => stringWidth(r[i])))
+    return Math.max(stringWidth(h), min, ...rows.map(r => stringWidth(r[i]))) + 2
   })
 
-  console.log(headers.map((h, i) => padEndVisible(h, widths[i])).join('  '))
-  console.log(widths.map(w => '─'.repeat(w)).join('  '))
-  rows.forEach(row => console.log(row.map((c, i) => padEndVisible(c, widths[i])).join('  ')))
+  console.log(headers.map((h, i) => padEndVisible(h, widths[i])).join(''))
+  console.log(widths.map(w => '─'.repeat(w - 1)).join(' '))
+  rows.forEach(row => console.log(row.map((c, i) => padEndVisible(c, widths[i])).join('')))
 }
 
-module.exports = { printTable }
+module.exports = { printTable, padEndVisible }
