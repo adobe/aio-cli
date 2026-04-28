@@ -1,0 +1,33 @@
+name: Dependabot Coverage Upload
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  check:
+    if: github.event.issue.pull_request != null && github.event.comment.body == '/upload-coverage'
+    runs-on: ubuntu-latest
+    outputs:
+      allowed: ${{ steps.gate.outputs.allowed }}
+    steps:
+      - name: Gate check
+        id: gate
+        run: |
+          set -euo pipefail
+          PERM=$(gh api repos/$GITHUB_REPOSITORY/collaborators/$COMMENT_USER_LOGIN/permission --jq '.permission' 2>/dev/null || echo "none")
+          if [ "$PERM" = "admin" ] || [ "$PERM" = "maintain" ]; then
+            echo "allowed=true" >> $GITHUB_OUTPUT
+          else
+            echo "allowed=false" >> $GITHUB_OUTPUT
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMMENT_USER_LOGIN: ${{ github.event.comment.user.login }}
+
+  upload:
+    needs: check
+    if: needs.check.outputs.allowed == 'true'
+    uses: adobe/aio-reusable-workflows/.github/workflows/dependabot-coverage-upload.yml@main
+    secrets:
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
