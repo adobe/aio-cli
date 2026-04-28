@@ -60,7 +60,7 @@ describe('sorting', () => {
     await command.run()
     const splitOutput = stdout.output.split('\n')
     expect(splitOutput[2]).toMatch('@adobe/aio-cli-plugin-a') // @adobe/aio-cli-plugin-a is first
-    expect(splitOutput[3]).toMatch('@adobe/aio-cli-plugin-b') // @adobe/aio-cli-plugin-b is second
+    expect(splitOutput[4]).toMatch('@adobe/aio-cli-plugin-b') // @adobe/aio-cli-plugin-b is second
   })
 
   test('sort-field=name, descending', async () => {
@@ -68,7 +68,7 @@ describe('sorting', () => {
     await command.run()
     const splitOutput = stdout.output.split('\n')
     expect(splitOutput[2]).toMatch('@adobe/aio-cli-plugin-b') // @adobe/aio-cli-plugin-b is first
-    expect(splitOutput[3]).toMatch('@adobe/aio-cli-plugin-a') // @adobe/aio-cli-plugin-a is second
+    expect(splitOutput[4]).toMatch('@adobe/aio-cli-plugin-a') // @adobe/aio-cli-plugin-a is second
   })
 
   test('sort-field=date, ascending', async () => {
@@ -76,7 +76,7 @@ describe('sorting', () => {
     await command.run()
     const splitOutput = stdout.output.split('\n')
     expect(splitOutput[2]).toMatch('@adobe/aio-cli-plugin-a') // @adobe/aio-cli-plugin-a is first
-    expect(splitOutput[3]).toMatch('@adobe/aio-cli-plugin-b') // @adobe/aio-cli-plugin-b is second
+    expect(splitOutput[4]).toMatch('@adobe/aio-cli-plugin-b') // @adobe/aio-cli-plugin-b is second
   })
 
   test('sort-field=date, descending', async () => {
@@ -84,7 +84,7 @@ describe('sorting', () => {
     await command.run()
     const splitOutput = stdout.output.split('\n')
     expect(splitOutput[2]).toMatch('@adobe/aio-cli-plugin-b') // @adobe/aio-cli-plugin-b is first
-    expect(splitOutput[3]).toMatch('@adobe/aio-cli-plugin-a') // @adobe/aio-cli-plugin-a is second
+    expect(splitOutput[4]).toMatch('@adobe/aio-cli-plugin-a') // @adobe/aio-cli-plugin-a is second
   })
 })
 

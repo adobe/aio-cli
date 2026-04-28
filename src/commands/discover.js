@@ -12,8 +12,8 @@
 
 const { Command, Flags } = require('@oclif/core')
 const inquirer = require('inquirer')
+const chalk = require('chalk')
 const { sortValues } = require('../helpers')
-const { printTable } = require('../table')
 
 /*
 This is how cordova does it:
@@ -24,6 +24,12 @@ future: use keywords ecosytem:aio-cli-plugin
 
 class DiscoCommand extends Command {
   async _install (plugins) {
+    const dateOptions = {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    }
+
     // get installed plugins
     const installedPlugins = this.config.commands.map(elem => {
       return elem.pluginName
@@ -34,8 +40,10 @@ class DiscoCommand extends Command {
         return !installedPlugins.includes(elem.name)
       })
       .map(elem => { // map to expected inquirer format
+        const date = new Date(elem.date).toLocaleDateString('en', dateOptions)
         return {
-          name: `${elem.name}@${elem.version}`,
+          name: `${chalk.bold(elem.name)} · ${elem.version} · ${date}\n    ${chalk.gray(elem.description)}`,
+          short: elem.name,
           value: elem.name
         }
       })
@@ -61,30 +69,19 @@ class DiscoCommand extends Command {
   }
 
   async _list (plugins) {
-    const options = {
+    const dateOptions = {
       year: 'numeric',
       month: 'long',
       day: 'numeric'
     }
 
-    const columns = {
-      name: {
-        width: 10,
-        get: row => `${row.name}`
-      },
-      version: {
-        minWidth: 10,
-        get: row => `${row.version}`
-      },
-      description: {
-        get: row => `${row.description}`
-      },
-      published: {
-        get: row => `${new Date(row.date).toLocaleDateString('en', options)}`
-      }
+    console.log(chalk.bold(`Discover plugins (${plugins.length})`))
+    console.log()
+    for (const plugin of plugins) {
+      const date = new Date(plugin.date).toLocaleDateString('en', dateOptions)
+      console.log(`  ● ${chalk.bold(plugin.name)} · ${plugin.version} · ${date}`)
+      console.log(`    ${chalk.gray(plugin.description)}`)
     }
-    // skip ones that aren't from us
-    printTable(plugins, columns)
   }
 
   async run () {
