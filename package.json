@@ -47,7 +47,7 @@
     "oclif": "^4",
     "rimraf": "^5.0.7",
     "stdout-stderr": "^0.1.9",
-    "typescript": "^5.3.3"
+    "typescript": "^6.0.3"
   },
   "engines": {
     "node": ">=20"
