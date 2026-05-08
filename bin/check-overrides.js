@@ -113,10 +113,26 @@ process.stderr.write(`${baselineVulns} vulnerabilities\n\n`)
 
 const results = []
 
+// ── signal handlers ──────────────────────────────────────────────────────────
+
+const activeTmpDirs = new Set()
+
+function cleanupTmpDirs() {
+  for (const dir of activeTmpDirs) {
+    try { fs.rmSync(dir, { recursive: true, force: true }) } catch {}
+  }
+}
+
+process.on('SIGINT', () => { cleanupTmpDirs(); process.exit(130) })
+process.on('SIGTERM', () => { cleanupTmpDirs(); process.exit(143) })
+
+// ─────────────────────────────────────────────────────────────────────────────
+
 for (const entry of entries) {
   process.stderr.write(`  Checking "${entry.label}"… `)
 
   const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'check-overrides-'))
+  activeTmpDirs.add(tmpDir)
   try {
     const testPkg = JSON.parse(originalPkg)
     deleteAtDotPath(testPkg.overrides, entry.dotPath)
@@ -147,6 +163,7 @@ for (const entry of entries) {
     process.stderr.write(canRemove ? 'safe to remove\n' : `still needed (+${newVulns} vuln${newVulns !== 1 ? 's' : ''})\n`)
   } finally {
     fs.rmSync(tmpDir, { recursive: true, force: true })
+    activeTmpDirs.delete(tmpDir)
   }
 }
 
@@ -181,7 +198,7 @@ if (MARKDOWN) {
     }
   }
 } else {
-  const w = Math.max(...results.map(r => r.label.length)) + 2
+  const w = (results.length ? Math.max(...results.map(r => r.label.length)) : 0) + 2
   console.log('\nOverride Removal Report')
   console.log('='.repeat(60))
   for (const r of results) {
