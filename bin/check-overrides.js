@@ -25,13 +25,18 @@ function npm(...args) {
 }
 
 function auditVulnCount() {
-  const { stdout } = npm('audit', '--json')
+  const { stdout, stderr, status } = npm('audit', '--json')
+  let parsed
   try {
-    const { metadata: { vulnerabilities: v } } = JSON.parse(stdout)
-    return (v.critical || 0) + (v.high || 0) + (v.moderate || 0) + (v.low || 0)
+    parsed = JSON.parse(stdout)
   } catch {
-    return 0
+    throw new Error(`npm audit returned non-JSON output (exit ${status}):\n${stderr || stdout || '(no output)'}`)
   }
+  if (!parsed?.metadata?.vulnerabilities) {
+    throw new Error(`npm audit JSON missing expected metadata.vulnerabilities field:\n${stdout}`)
+  }
+  const v = parsed.metadata.vulnerabilities
+  return (v.critical || 0) + (v.high || 0) + (v.moderate || 0) + (v.low || 0)
 }
 
 /**
@@ -91,7 +96,14 @@ if (entries.length === 0) {
 }
 
 process.stderr.write('Checking baseline audit… ')
-const baselineVulns = auditVulnCount()
+let baselineVulns
+try {
+  baselineVulns = auditVulnCount()
+} catch (e) {
+  process.stderr.write('failed\n')
+  console.error(`Error: could not establish baseline — ${e.message}`)
+  process.exit(2)
+}
 process.stderr.write(`${baselineVulns} vulnerabilities\n\n`)
 
 const results = []
@@ -114,7 +126,14 @@ for (const entry of entries) {
       continue
     }
 
-    const vulns = auditVulnCount()
+    let vulns
+    try {
+      vulns = auditVulnCount()
+    } catch (e) {
+      results.push({ ...entry, canRemove: false, error: `audit failed: ${e.message}` })
+      process.stderr.write('audit failed\n')
+      continue
+    }
     const newVulns = vulns - baselineVulns
     const canRemove = newVulns <= 0
 
