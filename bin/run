@@ -11,12 +11,11 @@ the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTA
 OF ANY KIND, either express or implied. See the License for the specific language
 governing permissions and limitations under the License.
 */
-// Multiple plugins each initialize roarr which adds an error listener on process.stderr.
+
+// Multiple plugins each initialize roarr which adds an error listener on process.stderr 
+// and process.stdout.
 // Raise the limit to accommodate all bundled plugins without false leak warnings.
 // 30 is chosen to exceed the maximum number of bundled plugins (currently ~12).
-process.stderr.setMaxListeners(30)
-// Multiple plugins each initialize roarr which adds an error listener on process.stderr.
-// Raise the limit to accommodate all bundled plugins without false leak warnings.
 process.stderr.setMaxListeners(30)
 process.stdout.setMaxListeners(30)
 
