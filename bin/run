@@ -12,6 +12,11 @@ OF ANY KIND, either express or implied. See the License for the specific languag
 governing permissions and limitations under the License.
 */
 
+// Multiple plugins each initialize roarr which adds an error listener on process.stderr.
+// Raise the limit to accommodate all bundled plugins without false leak warnings.
+process.stderr.setMaxListeners(30)
+process.stdout.setMaxListeners(30)
+
 require('../src/').run()
   .then(() => require('@oclif/core/flush'))
   .catch(require('@oclif/core/handle'))
