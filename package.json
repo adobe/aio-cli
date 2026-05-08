@@ -144,8 +144,11 @@
     "posttest": "npm run lint",
     "lint": "eslint src test e2e",
     "gen-health": "node bin/gen-health-table.js",
-    "prepack": "oclif manifest && oclif readme",
+    "prepare": "npm run check-overrides",
+    "prepack": "npm run check-overrides && oclif manifest && oclif readme",
     "version": "oclif readme && git add README.md",
-    "e2e": "jest --collectCoverage=false --testRegex './e2e/e2e.js'"
+    "e2e": "jest --collectCoverage=false --testRegex './e2e/e2e.js'",
+    "check-overrides": "node bin/check-overrides.js",
+    "check-overrides:md": "node bin/check-overrides.js --markdown"
   }
 }
