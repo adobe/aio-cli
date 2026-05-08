@@ -27,6 +27,7 @@ Adobe I/O Extensible CLI
 * [Getting started](#getting-started)
 * [Technical requirements](#technical-requirements)
 * [Proxy Support](#proxy-support)
+* [Agent detection](#agent-detection)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
@@ -88,6 +89,31 @@ You can verify if you set the proxy info properly by running:
 aio info
 ```
 
+# Agent detection
+
+Agent-vs-human detection is implemented in **@adobe/aio-cli-plugin-telemetry**. That plugin's hooks run for every CLI command (including all plugin commands), so metrics can attribute invocations correctly regardless of which plugin handles the command.
+
+The telemetry plugin reads environment variables that many AI coding tools set when executing terminal commands and adds `invocation_context` (`agent` or `human`) and optional `agent_name` to the telemetry payload. This is used for **metrics and optimization only**; it is not a guarantee (not every agent sets these variables).
+
+**Environment variables the telemetry plugin checks (in order):**
+
+| Variable | When set | Used as |
+|----------|----------|---------|
+| `AGENT` | Proposed standard ([agentsmd/agents.md #136](https://github.com/agentsmd/agents.md/issues/136)) | Agent name or `generic` if value is `1`/`true` |
+| `AI_AGENT` | Same | Agent name or `generic` |
+| `AIO_AGENT` | Adobe opt-in for scripts/wrappers | `aio-opt-in` |
+| `AIO_INVOCATION_CONTEXT` | Set to `agent` for opt-in | `aio-opt-in` |
+| `CURSOR_AGENT` | Cursor | `cursor` |
+| `CLAUDECODE` / `CLAUDE_CODE` | Claude Code | `claude` |
+| `GEMINI_CLI` | Gemini CLI | `gemini` |
+| `CODEX_SANDBOX` | Codex | `codex` |
+| `AUGMENT_AGENT` | Augment | `augment` |
+| `CLINE_ACTIVE` | Cline | `cline` |
+| `OPENCODE_CLIENT` | OpenCode | `opencode` |
+| `REPL_ID` | Replit | `replit` |
+
+If none of these are set, the invocation is reported as human.
+
 # Usage
 
 <!-- usage -->
@@ -96,7 +122,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (--version|-v)
-@adobe/aio-cli/11.0.2 darwin-arm64 node-v22.18.0
+@adobe/aio-cli/11.0.1 darwin-arm64 node-v22.21.1
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
