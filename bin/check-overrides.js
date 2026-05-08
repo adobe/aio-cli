@@ -11,6 +11,7 @@
 
 const { spawnSync } = require('child_process')
 const fs = require('fs')
+const os = require('os')
 const path = require('path')
 
 const ROOT = process.cwd()
@@ -20,12 +21,12 @@ const MARKDOWN = process.argv.includes('--markdown')
 
 // ── helpers ──────────────────────────────────────────────────────────────────
 
-function npm(...args) {
-  return spawnSync('npm', args, { cwd: ROOT, encoding: 'utf8' })
+function npm(cwd, ...args) {
+  return spawnSync('npm', args, { cwd, encoding: 'utf8' })
 }
 
-function auditVulnCount() {
-  const { stdout, stderr, status } = npm('audit', '--json')
+function auditVulnCount(cwd) {
+  const { stdout, stderr, status } = npm(cwd, 'audit', '--json')
   let parsed
   try {
     parsed = JSON.parse(stdout)
@@ -80,7 +81,6 @@ function deleteAtDotPath(obj, dotPath) {
 // ── main ─────────────────────────────────────────────────────────────────────
 
 const originalPkg = fs.readFileSync(PKG_PATH, 'utf8')
-const originalLock = fs.readFileSync(LOCK_PATH, 'utf8')
 const pkg = JSON.parse(originalPkg)
 const overrides = pkg.overrides || {}
 
@@ -97,12 +97,17 @@ if (entries.length === 0) {
 
 process.stderr.write('Checking baseline audit… ')
 let baselineVulns
+const baselineDir = fs.mkdtempSync(path.join(os.tmpdir(), 'check-overrides-baseline-'))
 try {
-  baselineVulns = auditVulnCount()
+  fs.writeFileSync(path.join(baselineDir, 'package.json'), originalPkg)
+  fs.copyFileSync(LOCK_PATH, path.join(baselineDir, 'package-lock.json'))
+  baselineVulns = auditVulnCount(baselineDir)
 } catch (e) {
   process.stderr.write('failed\n')
   console.error(`Error: could not establish baseline — ${e.message}`)
   process.exit(2)
+} finally {
+  fs.rmSync(baselineDir, { recursive: true, force: true })
 }
 process.stderr.write(`${baselineVulns} vulnerabilities\n\n`)
 
@@ -111,14 +116,15 @@ const results = []
 for (const entry of entries) {
   process.stderr.write(`  Checking "${entry.label}"… `)
 
-  const testPkg = JSON.parse(originalPkg)
-  deleteAtDotPath(testPkg.overrides, entry.dotPath)
-
-  fs.writeFileSync(PKG_PATH, JSON.stringify(testPkg, null, 2))
-
+  const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'check-overrides-'))
   try {
+    const testPkg = JSON.parse(originalPkg)
+    deleteAtDotPath(testPkg.overrides, entry.dotPath)
+    fs.writeFileSync(path.join(tmpDir, 'package.json'), JSON.stringify(testPkg, null, 2))
+    fs.copyFileSync(LOCK_PATH, path.join(tmpDir, 'package-lock.json'))
+
     const { status, stderr } = npm(
-      'install', '--package-lock-only', '--ignore-scripts', '--no-audit', '--silent'
+      tmpDir, 'install', '--package-lock-only', '--ignore-scripts', '--no-audit', '--silent'
     )
     if (status !== 0) {
       results.push({ ...entry, canRemove: false, error: stderr?.trim() || 'npm install failed' })
@@ -128,7 +134,7 @@ for (const entry of entries) {
 
     let vulns
     try {
-      vulns = auditVulnCount()
+      vulns = auditVulnCount(tmpDir)
     } catch (e) {
       results.push({ ...entry, canRemove: false, error: `audit failed: ${e.message}` })
       process.stderr.write('audit failed\n')
@@ -140,8 +146,7 @@ for (const entry of entries) {
     results.push({ ...entry, canRemove, newVulns })
     process.stderr.write(canRemove ? 'safe to remove\n' : `still needed (+${newVulns} vuln${newVulns !== 1 ? 's' : ''})\n`)
   } finally {
-    fs.writeFileSync(PKG_PATH, originalPkg)
-    fs.writeFileSync(LOCK_PATH, originalLock)
+    fs.rmSync(tmpDir, { recursive: true, force: true })
   }
 }
 
