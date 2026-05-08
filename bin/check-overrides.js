@@ -4,9 +4,15 @@
  * Checks each npm override in package.json and reports whether it can be safely removed.
  *
  * For each override: temporarily removes it, re-resolves the lockfile (no actual install),
- * runs npm audit, then restores the original files.
+ * runs npm audit, then cleans up. Original files are never modified.
  *
- * Usage: node bin/check-overrides.js [--markdown]
+ * Exits 0 if all overrides are still needed, 1 if any can be removed.
+ * Runs as part of prepack to prevent publishing with stale overrides.
+ *
+ * Note: npm audit makes network requests to the registry. In network-restricted
+ * environments pass --prefer-offline to use only locally cached advisory data.
+ *
+ * Usage: node bin/check-overrides.js [--markdown] [--prefer-offline]
  */
 
 const { spawnSync } = require('child_process')
@@ -18,6 +24,7 @@ const ROOT = process.cwd()
 const PKG_PATH = path.join(ROOT, 'package.json')
 const LOCK_PATH = path.join(ROOT, 'package-lock.json')
 const MARKDOWN = process.argv.includes('--markdown')
+const PREFER_OFFLINE = process.argv.includes('--prefer-offline')
 
 // ── helpers ──────────────────────────────────────────────────────────────────
 
@@ -26,7 +33,9 @@ function npm(cwd, ...args) {
 }
 
 function auditVulnCount(cwd) {
-  const { stdout, stderr, status } = npm(cwd, 'audit', '--json')
+  const args = ['audit', '--json']
+  if (PREFER_OFFLINE) args.push('--prefer-offline')
+  const { stdout, stderr, status } = npm(cwd, ...args)
   let parsed
   try {
     parsed = JSON.parse(stdout)
@@ -143,7 +152,8 @@ for (const entry of entries) {
       tmpDir, 'install', '--package-lock-only', '--ignore-scripts', '--no-audit', '--silent'
     )
     if (status !== 0) {
-      results.push({ ...entry, canRemove: false, error: stderr?.trim() || 'npm install failed' })
+      // stderr may be null if the process was killed by a signal
+      results.push({ ...entry, canRemove: false, error: (stderr ?? '').trim() || 'npm install failed' })
       process.stderr.write('install failed\n')
       continue
     }
@@ -160,7 +170,12 @@ for (const entry of entries) {
     const canRemove = newVulns <= 0
 
     results.push({ ...entry, canRemove, newVulns })
-    process.stderr.write(canRemove ? 'safe to remove\n' : `still needed (+${newVulns} vuln${newVulns !== 1 ? 's' : ''})\n`)
+    if (canRemove) {
+      const note = newVulns < 0 ? ` (removing reduces vulns by ${-newVulns})` : ''
+      process.stderr.write(`safe to remove${note}\n`)
+    } else {
+      process.stderr.write(`still needed (+${newVulns} vuln${newVulns !== 1 ? 's' : ''})\n`)
+    }
   } finally {
     fs.rmSync(tmpDir, { recursive: true, force: true })
     activeTmpDirs.delete(tmpDir)
@@ -181,7 +196,8 @@ if (MARKDOWN) {
     console.log('## Safe to Remove\n')
     console.log('These overrides no longer affect the audit result and can be deleted from `package.json`:\n')
     for (const r of removable) {
-      console.log(`- \`${r.label}\` → \`${r.val}\``)
+      const note = r.newVulns < 0 ? ` _(removing this actually reduces vulns by ${-r.newVulns})_` : ''
+      console.log(`- \`${r.label}\` → \`${r.val}\`${note}`)
     }
     console.log()
   }
@@ -206,7 +222,8 @@ if (MARKDOWN) {
     if (r.error) {
       console.log(`  ERROR  ${label}${r.error}`)
     } else if (r.canRemove) {
-      console.log(`  REMOVE ${label}no longer needed`)
+      const note = r.newVulns < 0 ? ` (removing reduces vulns by ${-r.newVulns})` : 'no longer needed'
+      console.log(`  REMOVE ${label}${note}`)
     } else {
       console.log(`  KEEP   ${label}removing adds +${r.newVulns} vuln${r.newVulns !== 1 ? 's' : ''}`)
     }
