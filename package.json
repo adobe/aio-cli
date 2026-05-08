@@ -126,7 +126,6 @@
     ]
   },
   "overrides": {
-    "rimraf": "^5.0.7",
     "tar": "^7.4.3",
     "@octokit/rest": "^20.0.2",
     "@tootallnate/once": "3.0.1",
