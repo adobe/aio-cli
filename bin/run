@@ -19,6 +19,15 @@ governing permissions and limitations under the License.
 process.stderr.setMaxListeners(30)
 process.stdout.setMaxListeners(30)
 
+// `@oclif/core` v4 exposes `handle` and `flush` as named exports on their
+// respective subpath modules. Passing the module object (instead of the
+// function) to `Promise#catch` / `Promise#then` silently drops the
+// handler: errors escape to Node's default uncaught-exception printer
+// instead of oclif's renderer, and `flush()` is never invoked.
+// Destructure the functions explicitly so both paths run as intended.
+const { handle } = require('@oclif/core/handle')
+const { flush } = require('@oclif/core/flush')
+
 require('../src/').run()
-  .then(() => require('@oclif/core/flush'))
-  .catch(require('@oclif/core/handle'))
+  .then(flush)
+  .catch(handle)
