@@ -10364,23 +10364,23 @@ Retrieves a Rule
 
 ```
 USAGE
-  $ aio rt rule get NAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version]
-    [--help]
+  $ aio rt rule get NAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u <value>]
+    [-i] [--debug <value>] [-v] [--version] [--help]
 
 ARGUMENTS
   NAME  Name of the rule
 
 FLAGS
-  -i, --insecure       bypass certificate check
-  -u, --auth           [env: WHISK_AUTH] whisk auth
-  -v, --verbose        Verbose output
-      --apihost        [env: WHISK_APIHOST] whisk API host
-      --apiversion     [env: WHISK_APIVERSION] whisk API version
-      --cert           client cert
-      --debug=<value>  Debug level output
-      --help           Show help
-      --key            client key
-      --version        Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        [env: WHISK_AUTH] whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     [env: WHISK_APIHOST] whisk API host
+      --apiversion=<value>  [env: WHISK_APIVERSION] whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Retrieves a Rule
@@ -10395,26 +10395,26 @@ Retrieves a list of Rules
 
 ```
 USAGE
-  $ aio rt rule list [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version]
-    [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
+  $ aio rt rule list [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u <value>] [-i]
+    [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
 
 FLAGS
-  -c, --count          show only the total number of rules
-  -i, --insecure       bypass certificate check
-  -l, --limit=<value>  Limit number of rules returned (min: 0, max: 50)
-  -n, --name           sort results by name
-  -s, --skip=<value>   Skip number of rules returned
-  -u, --auth           [env: WHISK_AUTH] whisk auth
-  -v, --verbose        Verbose output
-      --apihost        [env: WHISK_APIHOST] whisk API host
-      --apiversion     [env: WHISK_APIVERSION] whisk API version
-      --cert           client cert
-      --debug=<value>  Debug level output
-      --help           Show help
-      --json           output raw json
-      --key            client key
-      --name-sort      sort results by name
-      --version        Show version
+  -c, --count               show only the total number of rules
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       Limit number of rules returned (min: 0, max: 50)
+  -n, --name                sort results by name
+  -s, --skip=<value>        Skip number of rules returned
+  -u, --auth=<value>        [env: WHISK_AUTH] whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     [env: WHISK_APIHOST] whisk API host
+      --apiversion=<value>  [env: WHISK_APIVERSION] whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Retrieves a list of Rules
@@ -10431,26 +10431,26 @@ Retrieves a list of Rules
 
 ```
 USAGE
-  $ aio rt rule ls [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version]
-    [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
+  $ aio rt rule ls [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u <value>] [-i]
+    [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
 
 FLAGS
-  -c, --count          show only the total number of rules
-  -i, --insecure       bypass certificate check
-  -l, --limit=<value>  Limit number of rules returned (min: 0, max: 50)
-  -n, --name           sort results by name
-  -s, --skip=<value>   Skip number of rules returned
-  -u, --auth           [env: WHISK_AUTH] whisk auth
-  -v, --verbose        Verbose output
-      --apihost        [env: WHISK_APIHOST] whisk API host
-      --apiversion     [env: WHISK_APIVERSION] whisk API version
-      --cert           client cert
-      --debug=<value>  Debug level output
-      --help           Show help
-      --json           output raw json
-      --key            client key
-      --name-sort      sort results by name
-      --version        Show version
+  -c, --count               show only the total number of rules
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       Limit number of rules returned (min: 0, max: 50)
+  -n, --name                sort results by name
+  -s, --skip=<value>        Skip number of rules returned
+  -u, --auth=<value>        [env: WHISK_AUTH] whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     [env: WHISK_APIHOST] whisk API host
+      --apiversion=<value>  [env: WHISK_APIVERSION] whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Retrieves a list of Rules
@@ -10467,23 +10467,23 @@ Gets the status of a rule
 
 ```
 USAGE
-  $ aio rt rule status NAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version]
-    [--help]
+  $ aio rt rule status NAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u <value>]
+    [-i] [--debug <value>] [-v] [--version] [--help]
 
 ARGUMENTS
   NAME  Name of the rule
 
 FLAGS
-  -i, --insecure       bypass certificate check
-  -u, --auth           [env: WHISK_AUTH] whisk auth
-  -v, --verbose        Verbose output
-      --apihost        [env: WHISK_APIHOST] whisk API host
-      --apiversion     [env: WHISK_APIVERSION] whisk API version
-      --cert           client cert
-      --debug=<value>  Debug level output
-      --help           Show help
-      --key            client key
-      --version        Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        [env: WHISK_AUTH] whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     [env: WHISK_APIHOST] whisk API host
+      --apiversion=<value>  [env: WHISK_APIVERSION] whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Gets the status of a rule
@@ -10631,8 +10631,8 @@ Fire a trigger for Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio rt trigger fire TRIGGERNAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
-    [--version] [--help] [-p <value>...] [-P <value>]
+  $ aio rt trigger fire TRIGGERNAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+    <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>...] [-P <value>]
 
 ARGUMENTS
   TRIGGERNAME  The name of the trigger
@@ -10641,14 +10641,14 @@ FLAGS
   -P, --param-file=<value>  FILE containing parameter values in JSON format
   -i, --insecure            bypass certificate check
   -p, --param=<value>...    parameter values in KEY VALUE format
-  -u, --auth                [env: WHISK_AUTH] whisk auth
+  -u, --auth=<value>        [env: WHISK_AUTH] whisk auth
   -v, --verbose             Verbose output
-      --apihost             [env: WHISK_APIHOST] whisk API host
-      --apiversion          [env: WHISK_APIVERSION] whisk API version
-      --cert                client cert
+      --apihost=<value>     [env: WHISK_APIHOST] whisk API host
+      --apiversion=<value>  [env: WHISK_APIVERSION] whisk API version
+      --cert=<value>        client cert
       --debug=<value>       Debug level output
       --help                Show help
-      --key                 client key
+      --key=<value>         client key
       --version             Show version
 
 DESCRIPTION
@@ -10664,23 +10664,23 @@ Get a trigger for Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio rt trigger get TRIGGERPATH [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
-    [--version] [--help]
+  $ aio rt trigger get TRIGGERPATH [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+    <value>] [-i] [--debug <value>] [-v] [--version] [--help]
 
 ARGUMENTS
   TRIGGERPATH  The name/path of the trigger, in the format /NAMESPACE/NAME
 
 FLAGS
-  -i, --insecure       bypass certificate check
-  -u, --auth           [env: WHISK_AUTH] whisk auth
-  -v, --verbose        Verbose output
-      --apihost        [env: WHISK_APIHOST] whisk API host
-      --apiversion     [env: WHISK_APIVERSION] whisk API version
-      --cert           client cert
-      --debug=<value>  Debug level output
-      --help           Show help
-      --key            client key
-      --version        Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        [env: WHISK_AUTH] whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     [env: WHISK_APIHOST] whisk API host
+      --apiversion=<value>  [env: WHISK_APIVERSION] whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Get a trigger for Adobe I/O Runtime
@@ -10695,26 +10695,26 @@ Lists all of your triggers for Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio rt trigger list [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version]
-    [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
+  $ aio rt trigger list [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u <value>] [-i]
+    [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
 
 FLAGS
-  -c, --count          show only the total number of triggers
-  -i, --insecure       bypass certificate check
-  -l, --limit=<value>  [default: 30] only return LIMIT number of triggers (min: 0, max: 50)
-  -n, --name           sort results by name
-  -s, --skip=<value>   exclude the first SKIP number of triggers from the result
-  -u, --auth           [env: WHISK_AUTH] whisk auth
-  -v, --verbose        Verbose output
-      --apihost        [env: WHISK_APIHOST] whisk API host
-      --apiversion     [env: WHISK_APIVERSION] whisk API version
-      --cert           client cert
-      --debug=<value>  Debug level output
-      --help           Show help
-      --json           output raw json
-      --key            client key
-      --name-sort      sort results by name
-      --version        Show version
+  -c, --count               show only the total number of triggers
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       [default: 30] only return LIMIT number of triggers (min: 0, max: 50)
+  -n, --name                sort results by name
+  -s, --skip=<value>        exclude the first SKIP number of triggers from the result
+  -u, --auth=<value>        [env: WHISK_AUTH] whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     [env: WHISK_APIHOST] whisk API host
+      --apiversion=<value>  [env: WHISK_APIVERSION] whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Lists all of your triggers for Adobe I/O Runtime
@@ -10731,26 +10731,26 @@ Lists all of your triggers for Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio rt trigger ls [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version]
-    [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
+  $ aio rt trigger ls [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u <value>] [-i]
+    [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
 
 FLAGS
-  -c, --count          show only the total number of triggers
-  -i, --insecure       bypass certificate check
-  -l, --limit=<value>  [default: 30] only return LIMIT number of triggers (min: 0, max: 50)
-  -n, --name           sort results by name
-  -s, --skip=<value>   exclude the first SKIP number of triggers from the result
-  -u, --auth           [env: WHISK_AUTH] whisk auth
-  -v, --verbose        Verbose output
-      --apihost        [env: WHISK_APIHOST] whisk API host
-      --apiversion     [env: WHISK_APIVERSION] whisk API version
-      --cert           client cert
-      --debug=<value>  Debug level output
-      --help           Show help
-      --json           output raw json
-      --key            client key
-      --name-sort      sort results by name
-      --version        Show version
+  -c, --count               show only the total number of triggers
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       [default: 30] only return LIMIT number of triggers (min: 0, max: 50)
+  -n, --name                sort results by name
+  -s, --skip=<value>        exclude the first SKIP number of triggers from the result
+  -u, --auth=<value>        [env: WHISK_AUTH] whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     [env: WHISK_APIHOST] whisk API host
+      --apiversion=<value>  [env: WHISK_APIVERSION] whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Lists all of your triggers for Adobe I/O Runtime
@@ -14884,23 +14884,23 @@ Retrieves a Rule
 
 ```
 USAGE
-  $ aio runtime rule get NAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version]
-    [--help]
+  $ aio runtime rule get NAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u <value>]
+    [-i] [--debug <value>] [-v] [--version] [--help]
 
 ARGUMENTS
   NAME  Name of the rule
 
 FLAGS
-  -i, --insecure       bypass certificate check
-  -u, --auth           [env: WHISK_AUTH] whisk auth
-  -v, --verbose        Verbose output
-      --apihost        [env: WHISK_APIHOST] whisk API host
-      --apiversion     [env: WHISK_APIVERSION] whisk API version
-      --cert           client cert
-      --debug=<value>  Debug level output
-      --help           Show help
-      --key            client key
-      --version        Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        [env: WHISK_AUTH] whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     [env: WHISK_APIHOST] whisk API host
+      --apiversion=<value>  [env: WHISK_APIVERSION] whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Retrieves a Rule
@@ -14917,26 +14917,26 @@ Retrieves a list of Rules
 
 ```
 USAGE
-  $ aio runtime rule list [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version]
-    [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
+  $ aio runtime rule list [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u <value>] [-i]
+    [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
 
 FLAGS
-  -c, --count          show only the total number of rules
-  -i, --insecure       bypass certificate check
-  -l, --limit=<value>  Limit number of rules returned (min: 0, max: 50)
-  -n, --name           sort results by name
-  -s, --skip=<value>   Skip number of rules returned
-  -u, --auth           [env: WHISK_AUTH] whisk auth
-  -v, --verbose        Verbose output
-      --apihost        [env: WHISK_APIHOST] whisk API host
-      --apiversion     [env: WHISK_APIVERSION] whisk API version
-      --cert           client cert
-      --debug=<value>  Debug level output
-      --help           Show help
-      --json           output raw json
-      --key            client key
-      --name-sort      sort results by name
-      --version        Show version
+  -c, --count               show only the total number of rules
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       Limit number of rules returned (min: 0, max: 50)
+  -n, --name                sort results by name
+  -s, --skip=<value>        Skip number of rules returned
+  -u, --auth=<value>        [env: WHISK_AUTH] whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     [env: WHISK_APIHOST] whisk API host
+      --apiversion=<value>  [env: WHISK_APIVERSION] whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Retrieves a list of Rules
@@ -14955,26 +14955,26 @@ Retrieves a list of Rules
 
 ```
 USAGE
-  $ aio runtime rule ls [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version]
-    [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
+  $ aio runtime rule ls [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u <value>] [-i]
+    [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
 
 FLAGS
-  -c, --count          show only the total number of rules
-  -i, --insecure       bypass certificate check
-  -l, --limit=<value>  Limit number of rules returned (min: 0, max: 50)
-  -n, --name           sort results by name
-  -s, --skip=<value>   Skip number of rules returned
-  -u, --auth           [env: WHISK_AUTH] whisk auth
-  -v, --verbose        Verbose output
-      --apihost        [env: WHISK_APIHOST] whisk API host
-      --apiversion     [env: WHISK_APIVERSION] whisk API version
-      --cert           client cert
-      --debug=<value>  Debug level output
-      --help           Show help
-      --json           output raw json
-      --key            client key
-      --name-sort      sort results by name
-      --version        Show version
+  -c, --count               show only the total number of rules
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       Limit number of rules returned (min: 0, max: 50)
+  -n, --name                sort results by name
+  -s, --skip=<value>        Skip number of rules returned
+  -u, --auth=<value>        [env: WHISK_AUTH] whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     [env: WHISK_APIHOST] whisk API host
+      --apiversion=<value>  [env: WHISK_APIVERSION] whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Retrieves a list of Rules
@@ -14991,23 +14991,23 @@ Gets the status of a rule
 
 ```
 USAGE
-  $ aio runtime rule status NAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version]
-    [--help]
+  $ aio runtime rule status NAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u <value>]
+    [-i] [--debug <value>] [-v] [--version] [--help]
 
 ARGUMENTS
   NAME  Name of the rule
 
 FLAGS
-  -i, --insecure       bypass certificate check
-  -u, --auth           [env: WHISK_AUTH] whisk auth
-  -v, --verbose        Verbose output
-      --apihost        [env: WHISK_APIHOST] whisk API host
-      --apiversion     [env: WHISK_APIVERSION] whisk API version
-      --cert           client cert
-      --debug=<value>  Debug level output
-      --help           Show help
-      --key            client key
-      --version        Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        [env: WHISK_AUTH] whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     [env: WHISK_APIHOST] whisk API host
+      --apiversion=<value>  [env: WHISK_APIVERSION] whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Gets the status of a rule
@@ -15165,8 +15165,8 @@ Fire a trigger for Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio runtime trigger fire TRIGGERNAME [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
-    [--version] [--help] [-p <value>...] [-P <value>]
+  $ aio runtime trigger fire TRIGGERNAME [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+    <value>] [-i] [--debug <value>] [-v] [--version] [--help] [-p <value>...] [-P <value>]
 
 ARGUMENTS
   TRIGGERNAME  The name of the trigger
@@ -15175,14 +15175,14 @@ FLAGS
   -P, --param-file=<value>  FILE containing parameter values in JSON format
   -i, --insecure            bypass certificate check
   -p, --param=<value>...    parameter values in KEY VALUE format
-  -u, --auth                [env: WHISK_AUTH] whisk auth
+  -u, --auth=<value>        [env: WHISK_AUTH] whisk auth
   -v, --verbose             Verbose output
-      --apihost             [env: WHISK_APIHOST] whisk API host
-      --apiversion          [env: WHISK_APIVERSION] whisk API version
-      --cert                client cert
+      --apihost=<value>     [env: WHISK_APIHOST] whisk API host
+      --apiversion=<value>  [env: WHISK_APIVERSION] whisk API version
+      --cert=<value>        client cert
       --debug=<value>       Debug level output
       --help                Show help
-      --key                 client key
+      --key=<value>         client key
       --version             Show version
 
 DESCRIPTION
@@ -15200,23 +15200,23 @@ Get a trigger for Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio runtime trigger get TRIGGERPATH [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v]
-    [--version] [--help]
+  $ aio runtime trigger get TRIGGERPATH [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u
+    <value>] [-i] [--debug <value>] [-v] [--version] [--help]
 
 ARGUMENTS
   TRIGGERPATH  The name/path of the trigger, in the format /NAMESPACE/NAME
 
 FLAGS
-  -i, --insecure       bypass certificate check
-  -u, --auth           [env: WHISK_AUTH] whisk auth
-  -v, --verbose        Verbose output
-      --apihost        [env: WHISK_APIHOST] whisk API host
-      --apiversion     [env: WHISK_APIVERSION] whisk API version
-      --cert           client cert
-      --debug=<value>  Debug level output
-      --help           Show help
-      --key            client key
-      --version        Show version
+  -i, --insecure            bypass certificate check
+  -u, --auth=<value>        [env: WHISK_AUTH] whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     [env: WHISK_APIHOST] whisk API host
+      --apiversion=<value>  [env: WHISK_APIVERSION] whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --key=<value>         client key
+      --version             Show version
 
 DESCRIPTION
   Get a trigger for Adobe I/O Runtime
@@ -15233,26 +15233,26 @@ Lists all of your triggers for Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio runtime trigger list [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version]
-    [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
+  $ aio runtime trigger list [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u <value>] [-i]
+    [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
 
 FLAGS
-  -c, --count          show only the total number of triggers
-  -i, --insecure       bypass certificate check
-  -l, --limit=<value>  [default: 30] only return LIMIT number of triggers (min: 0, max: 50)
-  -n, --name           sort results by name
-  -s, --skip=<value>   exclude the first SKIP number of triggers from the result
-  -u, --auth           [env: WHISK_AUTH] whisk auth
-  -v, --verbose        Verbose output
-      --apihost        [env: WHISK_APIHOST] whisk API host
-      --apiversion     [env: WHISK_APIVERSION] whisk API version
-      --cert           client cert
-      --debug=<value>  Debug level output
-      --help           Show help
-      --json           output raw json
-      --key            client key
-      --name-sort      sort results by name
-      --version        Show version
+  -c, --count               show only the total number of triggers
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       [default: 30] only return LIMIT number of triggers (min: 0, max: 50)
+  -n, --name                sort results by name
+  -s, --skip=<value>        exclude the first SKIP number of triggers from the result
+  -u, --auth=<value>        [env: WHISK_AUTH] whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     [env: WHISK_APIHOST] whisk API host
+      --apiversion=<value>  [env: WHISK_APIVERSION] whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Lists all of your triggers for Adobe I/O Runtime
@@ -15271,26 +15271,26 @@ Lists all of your triggers for Adobe I/O Runtime
 
 ```
 USAGE
-  $ aio runtime trigger ls [--cert] [--key] [--apiversion] [--apihost] [-u] [-i] [--debug <value>] [-v] [--version]
-    [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
+  $ aio runtime trigger ls [--cert <value>] [--key <value>] [--apiversion <value>] [--apihost <value>] [-u <value>] [-i]
+    [--debug <value>] [-v] [--version] [--help] [-l <value>] [-s <value>] [-c] [--json] [--name-sort] [-n]
 
 FLAGS
-  -c, --count          show only the total number of triggers
-  -i, --insecure       bypass certificate check
-  -l, --limit=<value>  [default: 30] only return LIMIT number of triggers (min: 0, max: 50)
-  -n, --name           sort results by name
-  -s, --skip=<value>   exclude the first SKIP number of triggers from the result
-  -u, --auth           [env: WHISK_AUTH] whisk auth
-  -v, --verbose        Verbose output
-      --apihost        [env: WHISK_APIHOST] whisk API host
-      --apiversion     [env: WHISK_APIVERSION] whisk API version
-      --cert           client cert
-      --debug=<value>  Debug level output
-      --help           Show help
-      --json           output raw json
-      --key            client key
-      --name-sort      sort results by name
-      --version        Show version
+  -c, --count               show only the total number of triggers
+  -i, --insecure            bypass certificate check
+  -l, --limit=<value>       [default: 30] only return LIMIT number of triggers (min: 0, max: 50)
+  -n, --name                sort results by name
+  -s, --skip=<value>        exclude the first SKIP number of triggers from the result
+  -u, --auth=<value>        [env: WHISK_AUTH] whisk auth
+  -v, --verbose             Verbose output
+      --apihost=<value>     [env: WHISK_APIHOST] whisk API host
+      --apiversion=<value>  [env: WHISK_APIVERSION] whisk API version
+      --cert=<value>        client cert
+      --debug=<value>       Debug level output
+      --help                Show help
+      --json                output raw json
+      --key=<value>         client key
+      --name-sort           sort results by name
+      --version             Show version
 
 DESCRIPTION
   Lists all of your triggers for Adobe I/O Runtime
