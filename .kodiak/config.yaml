@@ -1,0 +1,38 @@
+version: 1.0
+
+#### If you have questions about this, please contact #kodiak-security on Slack. ####
+
+# Every repository requires a unique Service Now ID number. You need to create a new service using
+# the Service Registry Portal https://adobe.service-now.com/service_registry_portal.do#/search
+# You should NOT leave this default!
+snow:
+  - id: 537580 # Rundeck https://adobe.service-now.com/service_registry_portal.do#/service/537580
+
+notifications:
+  jira:
+    default:
+      project: APPBLD # Project queue in which the security ticket will be created. Can be any valid JIRA project.
+      filters:
+        include:
+          branch: master
+          risk_rating: R3 # Will ticket for R1-R3 issues
+      fields:
+        assignee:
+          name: gauravgu
+        customfield_11800: APPBLD-4876 # Jira epic security tickets will be assigned to.
+        watchers: # Everyone who is an admin on your repository should be a watcher.
+          - gauravgu
+          - akshijai
+          - anvishwa
+          - divysharma
+          - garora
+          - spaliwal
+          - sandeepr
+          - sachamol
+          - moganti
+        labels: # You can add additional labels to your tickets here.
+          - "OriginatingProcess=Kodiak"
+          - "AB-Security"
+          - "kodiak-ticket"
+        components:
+          - name: "App Builder" # Add any you'd like 
