@@ -96,7 +96,7 @@ $ npm install -g @adobe/aio-cli
 $ aio COMMAND
 running command...
 $ aio (--version|-v)
-@adobe/aio-cli/11.1.2 darwin-arm64 node-v24.11.1
+@adobe/aio-cli/11.1.3 darwin-arm64 node-v24.11.1
 $ aio --help [COMMAND]
 USAGE
   $ aio COMMAND
@@ -15374,7 +15374,7 @@ DESCRIPTION
   Discover, install, or uninstall a new template into an existing Adobe Developer App Builder App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.1/src/commands/templates/index.js)_
+_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.3/src/commands/templates/index.js)_
 
 ## `aio templates disco`
 
@@ -15426,7 +15426,7 @@ ALIASES
   $ aio templates disco
 ```
 
-_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.1/src/commands/templates/discover.js)_
+_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.3/src/commands/templates/discover.js)_
 
 ## `aio templates i PATH`
 
@@ -15497,7 +15497,7 @@ DESCRIPTION
   List all App Builder templates that are installed
 ```
 
-_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.1/src/commands/templates/info.js)_
+_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.3/src/commands/templates/info.js)_
 
 ## `aio templates install PATH`
 
@@ -15550,7 +15550,7 @@ EXAMPLES
   $ aio templates install @scope/npm-package-name@tagOrVersion
 ```
 
-_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.1/src/commands/templates/install.js)_
+_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.3/src/commands/templates/install.js)_
 
 ## `aio templates remove NAME`
 
@@ -15576,7 +15576,7 @@ EXAMPLES
   $ aio templates remove @adobe/app-builder-template
 ```
 
-_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.1/src/commands/templates/remove.js)_
+_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.3/src/commands/templates/remove.js)_
 
 ## `aio templates rm NAME`
 
@@ -15620,7 +15620,7 @@ DESCRIPTION
   Clears all installed templates
 ```
 
-_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.1/src/commands/templates/rollback.js)_
+_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.3/src/commands/templates/rollback.js)_
 
 ## `aio templates sub NAME GITHUBREPOURL`
 
@@ -15672,7 +15672,7 @@ EXAMPLES
   $ aio templates submit @adobe/app-builder-template https://github.com/adobe/app-builder-template
 ```
 
-_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.1/src/commands/templates/submit.js)_
+_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.3/src/commands/templates/submit.js)_
 
 ## `aio templates un PACKAGE-NAME`
 
@@ -15716,7 +15716,7 @@ ALIASES
   $ aio templates un
 ```
 
-_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.1/src/commands/templates/uninstall.js)_
+_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.3/src/commands/templates/uninstall.js)_
 
 ## `aio update`
 
