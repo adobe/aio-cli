@@ -126,7 +126,6 @@
     ]
   },
   "overrides": {
-    "tar": "^7.4.3",
     "@octokit/rest": "^20.0.2",
     "@yeoman/conflicter": {
       "diff": "^8.0.4"
