@@ -32,7 +32,9 @@ function npm(cwd, ...args) {
   return spawnSync('npm', args, { cwd, encoding: 'utf8' })
 }
 
-function auditVulnCount(cwd) {
+const SEVERITIES = ['critical', 'high', 'moderate', 'low']
+
+function auditVulnBreakdown(cwd) {
   const args = ['audit', '--json']
   if (PREFER_OFFLINE) args.push('--prefer-offline')
   const { stdout, stderr, status } = npm(cwd, ...args)
@@ -46,7 +48,35 @@ function auditVulnCount(cwd) {
     throw new Error(`npm audit JSON missing expected metadata.vulnerabilities field:\n${stdout}`)
   }
   const v = parsed.metadata.vulnerabilities
-  return (v.critical || 0) + (v.high || 0) + (v.moderate || 0) + (v.low || 0)
+  const breakdown = {}
+  for (const sev of SEVERITIES) breakdown[sev] = v[sev] || 0
+  return breakdown
+}
+
+/**
+ * Compares two severity breakdowns. An override is only safe to remove if NO
+ * severity bucket gets worse — a moderate-vulnerability count dropping while an
+ * equal number of highs appear must NOT be reported as "safe" just because the
+ * flat total is unchanged (this under-reports real severity regressions).
+ */
+function compareBreakdowns(baseline, candidate) {
+  const deltas = {}
+  let regressed = false
+  let totalDelta = 0
+  for (const sev of SEVERITIES) {
+    const d = candidate[sev] - baseline[sev]
+    deltas[sev] = d
+    totalDelta += d
+    if (d > 0) regressed = true
+  }
+  return { regressed, deltas, totalDelta }
+}
+
+function formatDeltas(deltas) {
+  const parts = SEVERITIES
+    .filter(sev => deltas[sev] !== 0)
+    .map(sev => `${deltas[sev] > 0 ? '+' : ''}${deltas[sev]} ${sev}`)
+  return parts.length ? parts.join(', ') : 'no change'
 }
 
 /**
@@ -105,12 +135,12 @@ if (entries.length === 0) {
 }
 
 process.stderr.write('Checking baseline audit… ')
-let baselineVulns
+let baselineBreakdown
 const baselineDir = fs.mkdtempSync(path.join(os.tmpdir(), 'check-overrides-baseline-'))
 try {
   fs.writeFileSync(path.join(baselineDir, 'package.json'), originalPkg)
   fs.copyFileSync(LOCK_PATH, path.join(baselineDir, 'package-lock.json'))
-  baselineVulns = auditVulnCount(baselineDir)
+  baselineBreakdown = auditVulnBreakdown(baselineDir)
 } catch (e) {
   process.stderr.write('failed\n')
   console.error(`Error: could not establish baseline — ${e.message}`)
@@ -118,7 +148,8 @@ try {
 } finally {
   fs.rmSync(baselineDir, { recursive: true, force: true })
 }
-process.stderr.write(`${baselineVulns} vulnerabilities\n\n`)
+const baselineVulns = SEVERITIES.reduce((sum, sev) => sum + baselineBreakdown[sev], 0)
+process.stderr.write(`${baselineVulns} vulnerabilities (${SEVERITIES.map(s => `${baselineBreakdown[s]} ${s}`).join(', ')})\n\n`)
 
 const results = []
 
@@ -158,23 +189,23 @@ for (const entry of entries) {
       continue
     }
 
-    let vulns
+    let breakdown
     try {
-      vulns = auditVulnCount(tmpDir)
+      breakdown = auditVulnBreakdown(tmpDir)
     } catch (e) {
       results.push({ ...entry, canRemove: false, error: `audit failed: ${e.message}` })
       process.stderr.write('audit failed\n')
       continue
     }
-    const newVulns = vulns - baselineVulns
-    const canRemove = newVulns <= 0
+    const { regressed, deltas, totalDelta } = compareBreakdowns(baselineBreakdown, breakdown)
+    const canRemove = !regressed
 
-    results.push({ ...entry, canRemove, newVulns })
+    results.push({ ...entry, canRemove, deltas, totalDelta })
     if (canRemove) {
-      const note = newVulns < 0 ? ` (removing reduces vulns by ${-newVulns})` : ''
+      const note = totalDelta < 0 ? ` (${formatDeltas(deltas)})` : ''
       process.stderr.write(`safe to remove${note}\n`)
     } else {
-      process.stderr.write(`still needed (+${newVulns} vuln${newVulns !== 1 ? 's' : ''})\n`)
+      process.stderr.write(`still needed (${formatDeltas(deltas)})\n`)
     }
   } finally {
     fs.rmSync(tmpDir, { recursive: true, force: true })
@@ -194,9 +225,9 @@ if (MARKDOWN) {
 
   if (removable.length) {
     console.log('## Safe to Remove\n')
-    console.log('These overrides no longer affect the audit result and can be deleted from `package.json`:\n')
+    console.log('These overrides do not make any severity bucket worse and can be deleted from `package.json`:\n')
     for (const r of removable) {
-      const note = r.newVulns < 0 ? ` _(removing this actually reduces vulns by ${-r.newVulns})_` : ''
+      const note = r.totalDelta < 0 ? ` _(removing this actually improves the audit: ${formatDeltas(r.deltas)})_` : ''
       console.log(`- \`${r.label}\` → \`${r.val}\`${note}`)
     }
     console.log()
@@ -204,12 +235,12 @@ if (MARKDOWN) {
 
   if (needed.length) {
     console.log('## Still Needed\n')
-    console.log('Removing these overrides would introduce new vulnerabilities:\n')
+    console.log('Removing these overrides would make at least one severity bucket worse (even if the flat total looks unchanged):\n')
     for (const r of needed) {
       if (r.error) {
         console.log(`- \`${r.label}\` — ⚠️ error during check: ${r.error}`)
       } else {
-        console.log(`- \`${r.label}\` → \`${r.val}\` — removing adds **+${r.newVulns}** vuln${r.newVulns !== 1 ? 's' : ''}`)
+        console.log(`- \`${r.label}\` → \`${r.val}\` — removing changes: **${formatDeltas(r.deltas)}**`)
       }
     }
   }
@@ -222,10 +253,10 @@ if (MARKDOWN) {
     if (r.error) {
       console.log(`  ERROR  ${label}${r.error}`)
     } else if (r.canRemove) {
-      const note = r.newVulns < 0 ? ` (removing reduces vulns by ${-r.newVulns})` : 'no longer needed'
+      const note = r.totalDelta < 0 ? ` (${formatDeltas(r.deltas)})` : 'no longer needed'
       console.log(`  REMOVE ${label}${note}`)
     } else {
-      console.log(`  KEEP   ${label}removing adds +${r.newVulns} vuln${r.newVulns !== 1 ? 's' : ''}`)
+      console.log(`  KEEP   ${label}removing changes: ${formatDeltas(r.deltas)}`)
     }
   }
   console.log()
