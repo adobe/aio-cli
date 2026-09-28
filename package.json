@@ -50,7 +50,7 @@
     "typescript": "^5.3.3"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=20.17.0"
   },
   "files": [
     "/bin",
@@ -126,11 +126,7 @@
     ]
   },
   "overrides": {
-    "tar": "^7.4.3",
-    "@octokit/rest": "^20.0.2",
-    "@yeoman/conflicter": {
-      "diff": "^8.0.4"
-    }
+    "@octokit/rest": "^20.0.2"
   },
   "repository": "adobe/aio-cli",
   "scripts": {

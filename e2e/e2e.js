@@ -56,7 +56,7 @@ test('cli init test', async () => {
   await fse.mkdir(testFolder)
   process.chdir(testFolder)
 
-  await execa('node', ['../bin/run', 'app', 'init', '-y', '--no-login', '--no-extensions'], { stderr: 'inherit' })
+  await execa('node', ['../bin/run', 'app', 'init', '-y', '--no-login', '--standalone-app'], { stderr: 'inherit' })
 
   const files = [
     'actions/generic/index.js',

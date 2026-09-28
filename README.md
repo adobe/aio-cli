@@ -606,7 +606,7 @@ DESCRIPTION
   Create, run, test, and deploy Adobe I/O Apps
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/index.js)_
 
 ## `aio app add`
 
@@ -625,7 +625,7 @@ DESCRIPTION
   Add a new component to an existing Adobe I/O App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/add/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/add/index.js)_
 
 ## `aio app add action`
 
@@ -651,7 +651,7 @@ ALIASES
   $ aio app add actions
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/add/action.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/add/action.js)_
 
 ## `aio app add actions`
 
@@ -694,7 +694,7 @@ DESCRIPTION
   Add CI files
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/add/ci.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/add/ci.js)_
 
 ## `aio app add db`
 
@@ -750,7 +750,7 @@ ALIASES
   $ aio app add events
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/add/event.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/add/event.js)_
 
 ## `aio app add events`
 
@@ -826,7 +826,7 @@ ALIASES
   $ aio app add extensions
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/add/extension.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/add/extension.js)_
 
 ## `aio app add extensions`
 
@@ -876,7 +876,7 @@ ALIASES
   $ aio app add services
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/add/service.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/add/service.js)_
 
 ## `aio app add services`
 
@@ -921,7 +921,7 @@ DESCRIPTION
   Add web assets support
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/add/web-assets.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/add/web-assets.js)_
 
 ## `aio app build`
 
@@ -952,7 +952,7 @@ DESCRIPTION
   Use the --force-build flag to force a build even if one already exists.
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/build.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/build.js)_
 
 ## `aio app clean`
 
@@ -978,7 +978,7 @@ DESCRIPTION
   Note that this will require a full rebuild on your next build command.
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/clean.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/clean.js)_
 
 ## `aio app config`
 
@@ -1001,7 +1001,7 @@ ALIASES
   $ aio app config
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/config/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/config/index.js)_
 
 ## `aio app config get`
 
@@ -1023,7 +1023,7 @@ ALIASES
   $ aio app config get
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/config/get/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/config/get/index.js)_
 
 ## `aio app config get lf`
 
@@ -1088,7 +1088,7 @@ ALIASES
   $ aio app config get lf
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/config/get/log-forwarding.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/config/get/log-forwarding.js)_
 
 ## `aio app config get log-forwarding errors`
 
@@ -1111,7 +1111,7 @@ ALIASES
   $ aio app config get lf errors
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/config/get/log-forwarding/errors.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/config/get/log-forwarding/errors.js)_
 
 ## `aio app config set`
 
@@ -1133,7 +1133,7 @@ ALIASES
   $ aio app config set
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/config/set/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/config/set/index.js)_
 
 ## `aio app config set lf`
 
@@ -1177,7 +1177,7 @@ ALIASES
   $ aio app config set lf
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/config/set/log-forwarding.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/config/set/log-forwarding.js)_
 
 ## `aio app create [PATH]`
 
@@ -1200,7 +1200,7 @@ DESCRIPTION
   Create a new Adobe I/O App with default parameters
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/create.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/create.js)_
 
 ## `aio app db col create COLLECTION`
 
@@ -2412,7 +2412,7 @@ DESCRIPTION
   Delete a component from an existing Adobe I/O App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/delete/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/delete/index.js)_
 
 ## `aio app delete action [ACTION-NAME]`
 
@@ -2439,7 +2439,7 @@ ALIASES
   $ aio app delete actions
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/delete/action.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/delete/action.js)_
 
 ## `aio app delete actions [ACTION-NAME]`
 
@@ -2484,7 +2484,7 @@ DESCRIPTION
   Delete existing CI files
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/delete/ci.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/delete/ci.js)_
 
 ## `aio app delete ext`
 
@@ -2536,7 +2536,7 @@ ALIASES
   $ aio app delete extensions
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/delete/extension.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/delete/extension.js)_
 
 ## `aio app delete extensions`
 
@@ -2586,7 +2586,7 @@ ALIASES
   $ aio app delete services
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/delete/service.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/delete/service.js)_
 
 ## `aio app delete services`
 
@@ -2629,7 +2629,7 @@ DESCRIPTION
   Delete existing web assets
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/delete/web-assets.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/delete/web-assets.js)_
 
 ## `aio app deploy`
 
@@ -2676,7 +2676,7 @@ DESCRIPTION
   Use the --force-deploy flag to force deploy changes, regardless of production Workspace being published in Exchange.
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/deploy.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/deploy.js)_
 
 ## `aio app dev`
 
@@ -2719,7 +2719,7 @@ DESCRIPTION
   Get action URLs
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/get-url.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/get-url.js)_
 
 ## `aio app info`
 
@@ -2742,7 +2742,7 @@ DESCRIPTION
   Display settings/configuration in use by an Adobe I/O App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/info.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/info.js)_
 
 ## `aio app init [PATH]`
 
@@ -2786,7 +2786,7 @@ DESCRIPTION
   Create a new Adobe I/O App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/init.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/init.js)_
 
 ## `aio app install PATH`
 
@@ -2811,7 +2811,7 @@ DESCRIPTION
   This command will support installing apps packaged by 'aio app pack'.
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/install.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/install.js)_
 
 ## `aio app list`
 
@@ -2830,7 +2830,7 @@ DESCRIPTION
   List components for Adobe I/O App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/list/index.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/list/index.js)_
 
 ## `aio app list ext`
 
@@ -2904,7 +2904,7 @@ ALIASES
   $ aio app list extensions
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/list/extension.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/list/extension.js)_
 
 ## `aio app list extension-points`
 
@@ -2930,7 +2930,7 @@ ALIASES
   $ aio app list extension-points
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/list/extension-points.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/list/extension-points.js)_
 
 ## `aio app list extensions`
 
@@ -2979,7 +2979,7 @@ DESCRIPTION
   Fetch logs for an Adobe I/O App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/logs.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/logs.js)_
 
 ## `aio app pack [PATH]`
 
@@ -3004,7 +3004,7 @@ DESCRIPTION
   This command will support packaging apps for redistribution.
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/pack.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/pack.js)_
 
 ## `aio app run`
 
@@ -3028,7 +3028,7 @@ DESCRIPTION
   Run an Adobe I/O App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/run.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/run.js)_
 
 ## `aio app state del [KEYS]`
 
@@ -3372,7 +3372,7 @@ DESCRIPTION
   If the extension has a hook called 'test' in its 'ext.config.yaml', the script specified will be run instead.
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/test.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/test.js)_
 
 ## `aio app undeploy`
 
@@ -3398,7 +3398,7 @@ DESCRIPTION
   Undeploys an Adobe I/O App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/undeploy.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/undeploy.js)_
 
 ## `aio app use [CONFIG_FILE_PATH]`
 
@@ -3446,7 +3446,7 @@ DESCRIPTION
   page in https://developer.adobe.com/console/
 ```
 
-_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.8.1/src/commands/app/use.js)_
+_See code: [@adobe/aio-cli-plugin-app](https://github.com/adobe/aio-cli-plugin-app/blob/14.10.0/src/commands/app/use.js)_
 
 ## `aio auth`
 
@@ -4003,7 +4003,7 @@ DESCRIPTION
   Console plugin for the Adobe I/O CLI
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.1/src/commands/console/index.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.4/src/commands/console/index.js)_
 
 ## `aio console api`
 
@@ -4020,7 +4020,7 @@ DESCRIPTION
   Manage API services available to your Organization
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.1/src/commands/console/api/index.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.4/src/commands/console/api/index.js)_
 
 ## `aio console api list`
 
@@ -4043,7 +4043,7 @@ ALIASES
   $ aio console api ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.1/src/commands/console/api/list.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.4/src/commands/console/api/list.js)_
 
 ## `aio console api ls`
 
@@ -4084,7 +4084,7 @@ ALIASES
   $ aio open
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.1/src/commands/console/open.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.4/src/commands/console/open.js)_
 
 ## `aio console org`
 
@@ -4101,7 +4101,7 @@ DESCRIPTION
   Manage your Adobe I/O Console Organizations
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.1/src/commands/console/org/index.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.4/src/commands/console/org/index.js)_
 
 ## `aio console org list`
 
@@ -4123,7 +4123,7 @@ ALIASES
   $ aio console org ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.1/src/commands/console/org/list.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.4/src/commands/console/org/list.js)_
 
 ## `aio console org ls`
 
@@ -4187,7 +4187,7 @@ ALIASES
   $ aio console org sel
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.1/src/commands/console/org/select.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.4/src/commands/console/org/select.js)_
 
 ## `aio console project`
 
@@ -4204,7 +4204,7 @@ DESCRIPTION
   Manage your Adobe I/O Console Projects
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.1/src/commands/console/project/index.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.4/src/commands/console/project/index.js)_
 
 ## `aio console project create`
 
@@ -4230,7 +4230,7 @@ ALIASES
   $ aio console project init
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.1/src/commands/console/project/create.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.4/src/commands/console/project/create.js)_
 
 ## `aio console project init`
 
@@ -4277,7 +4277,7 @@ ALIASES
   $ aio console project ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.1/src/commands/console/project/list.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.4/src/commands/console/project/list.js)_
 
 ## `aio console project ls`
 
@@ -4344,7 +4344,7 @@ ALIASES
   $ aio console project sel
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.1/src/commands/console/project/select.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.4/src/commands/console/project/select.js)_
 
 ## `aio console publickey`
 
@@ -4361,7 +4361,7 @@ DESCRIPTION
   Manage Public Key Bindings for your Adobe I/O Console Workspaces
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.1/src/commands/console/publickey/index.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.4/src/commands/console/publickey/index.js)_
 
 ## `aio console publickey delete IDORFINGERPRINT`
 
@@ -4385,7 +4385,7 @@ DESCRIPTION
   Delete a public key certificate from the selected Workspace
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.1/src/commands/console/publickey/delete.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.4/src/commands/console/publickey/delete.js)_
 
 ## `aio console publickey list`
 
@@ -4407,7 +4407,7 @@ DESCRIPTION
   List the public key certificates bound to the selected Workspace
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.1/src/commands/console/publickey/list.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.4/src/commands/console/publickey/list.js)_
 
 ## `aio console publickey upload FILE`
 
@@ -4432,7 +4432,7 @@ DESCRIPTION
   Upload a public key certificate to the selected Workspace
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.1/src/commands/console/publickey/upload.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.4/src/commands/console/publickey/upload.js)_
 
 ## `aio console where`
 
@@ -4454,7 +4454,7 @@ ALIASES
   $ aio where
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.1/src/commands/console/where/index.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.4/src/commands/console/where/index.js)_
 
 ## `aio console workspace`
 
@@ -4474,7 +4474,7 @@ ALIASES
   $ aio console ws
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.1/src/commands/console/workspace/index.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.4/src/commands/console/workspace/index.js)_
 
 ## `aio console workspace api`
 
@@ -4494,7 +4494,7 @@ ALIASES
   $ aio console ws api
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.1/src/commands/console/workspace/api/index.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.4/src/commands/console/workspace/api/index.js)_
 
 ## `aio console workspace api add`
 
@@ -4525,7 +4525,7 @@ ALIASES
   $ aio console ws api add
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.1/src/commands/console/workspace/api/add.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.4/src/commands/console/workspace/api/add.js)_
 
 ## `aio console workspace api list`
 
@@ -4552,7 +4552,7 @@ ALIASES
   $ aio console ws api ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.1/src/commands/console/workspace/api/list.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.4/src/commands/console/workspace/api/list.js)_
 
 ## `aio console workspace api ls`
 
@@ -4606,7 +4606,7 @@ ALIASES
   $ aio console ws init
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.1/src/commands/console/workspace/create.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.4/src/commands/console/workspace/create.js)_
 
 ## `aio console workspace dl [DESTINATION]`
 
@@ -4661,7 +4661,7 @@ ALIASES
   $ aio console ws dl
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.1/src/commands/console/workspace/download.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.4/src/commands/console/workspace/download.js)_
 
 ## `aio console workspace init`
 
@@ -4714,7 +4714,7 @@ ALIASES
   $ aio console ws ls
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.1/src/commands/console/workspace/list.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.4/src/commands/console/workspace/list.js)_
 
 ## `aio console workspace ls`
 
@@ -4790,7 +4790,7 @@ ALIASES
   $ aio console ws sel
 ```
 
-_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.1/src/commands/console/workspace/select.js)_
+_See code: [@adobe/aio-cli-plugin-console](https://github.com/adobe/aio-cli-plugin-console/blob/5.4.4/src/commands/console/workspace/select.js)_
 
 ## `aio console ws`
 
@@ -15374,7 +15374,7 @@ DESCRIPTION
   Discover, install, or uninstall a new template into an existing Adobe Developer App Builder App
 ```
 
-_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.3/src/commands/templates/index.js)_
+_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.4/src/commands/templates/index.js)_
 
 ## `aio templates disco`
 
@@ -15426,7 +15426,7 @@ ALIASES
   $ aio templates disco
 ```
 
-_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.3/src/commands/templates/discover.js)_
+_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.4/src/commands/templates/discover.js)_
 
 ## `aio templates i PATH`
 
@@ -15497,7 +15497,7 @@ DESCRIPTION
   List all App Builder templates that are installed
 ```
 
-_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.3/src/commands/templates/info.js)_
+_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.4/src/commands/templates/info.js)_
 
 ## `aio templates install PATH`
 
@@ -15550,7 +15550,7 @@ EXAMPLES
   $ aio templates install @scope/npm-package-name@tagOrVersion
 ```
 
-_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.3/src/commands/templates/install.js)_
+_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.4/src/commands/templates/install.js)_
 
 ## `aio templates remove NAME`
 
@@ -15576,7 +15576,7 @@ EXAMPLES
   $ aio templates remove @adobe/app-builder-template
 ```
 
-_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.3/src/commands/templates/remove.js)_
+_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.4/src/commands/templates/remove.js)_
 
 ## `aio templates rm NAME`
 
@@ -15620,7 +15620,7 @@ DESCRIPTION
   Clears all installed templates
 ```
 
-_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.3/src/commands/templates/rollback.js)_
+_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.4/src/commands/templates/rollback.js)_
 
 ## `aio templates sub NAME GITHUBREPOURL`
 
@@ -15672,7 +15672,7 @@ EXAMPLES
   $ aio templates submit @adobe/app-builder-template https://github.com/adobe/app-builder-template
 ```
 
-_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.3/src/commands/templates/submit.js)_
+_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.4/src/commands/templates/submit.js)_
 
 ## `aio templates un PACKAGE-NAME`
 
@@ -15716,7 +15716,7 @@ ALIASES
   $ aio templates un
 ```
 
-_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.3/src/commands/templates/uninstall.js)_
+_See code: [@adobe/aio-cli-plugin-app-templates](https://github.com/adobe/aio-cli-plugin-app-templates/blob/2.1.4/src/commands/templates/uninstall.js)_
 
 ## `aio update`
 
