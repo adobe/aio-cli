@@ -17,3 +17,17 @@ All third-party contributions to this project must be accompanied by a signed co
 All submissions should come in the form of pull requests and need to be reviewed by project committers. Read [GitHub's pull request documentation](https://help.github.com/articles/about-pull-requests/) for more information on sending pull requests.
 
 Lastly, please follow the [pull request template](PULL_REQUEST_TEMPLATE.md) when submitting a pull request!
+
+## End-to-end tests
+
+The `E2E tests` GitHub Actions workflow runs after each push to `master`, including
+merged pull requests, and can also be started manually using `workflow_dispatch`.
+It uses Node.js 22 on Ubuntu and installs dependencies from the committed lockfile.
+This is a post-merge regression check, not a merge or publishing gate.
+
+To run the same suite locally:
+
+```sh
+npm ci --legacy-peer-deps
+npm run e2e -- --ci --runInBand
+```
