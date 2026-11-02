@@ -26,3 +26,4 @@ notifications:
           - "kodiak-ticket"
         components:
           - name: "CLI" # Add any you'd like
+          - name: "Security"
