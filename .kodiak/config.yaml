@@ -1,22 +1,28 @@
 version: 1.0
 
+#### If you have questions about this, please contact #kodiak-security on Slack. ####
+
+# Every repository requires a unique Service Now ID number. You need to create a new service using
+# the Service Registry Portal https://adobe.service-now.com/service_registry_portal.do#/search
+# You should NOT leave this default!
 snow:
-  - id: 537580
+  - id: 537580 # Rundeck https://adobe.service-now.com/service_registry_portal.do#/service/537580
 
 notifications:
   jira:
     default:
-      project: APPBLD
+      project: APPBLD # Project queue in which the security ticket will be created. Can be any valid JIRA project.
       ticket_type: Security+
       ticketing_method: grouped
       filters:
         include:
-          risk_rating: R2
+          branch: master
+          risk_rating: R2 # Will ticket for R1-R2 issues
       fields:
-        labels:
+        customfield_11800: APPBLD-4876 # Jira epic security tickets will be assigned to.
+        labels: # You can add additional labels to your tickets here.
           - "OriginatingProcess=Kodiak"
-          - "Repository=aio-cli"
+          - "AB-Security"
+          - "kodiak-ticket"
         components:
-          - name: "CLI"
-          - name: "Security"
-        customfield_11800: "APPBLD-4876" # Epic Link: Kodiak Auto-Detected Vulnerabilities
+          - name: "CLI" # Add any you'd like
