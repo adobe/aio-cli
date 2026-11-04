@@ -12,27 +12,18 @@ notifications:
   jira:
     default:
       project: APPBLD # Project queue in which the security ticket will be created. Can be any valid JIRA project.
+      ticket_type: Security+
+      ticketing_method: grouped
       filters:
         include:
           branch: master
-          risk_rating: R3 # Will ticket for R1-R3 issues
+          risk_rating: R2 # Will ticket for R1-R2 issues
       fields:
-        assignee:
-          name: gauravgu
         customfield_11800: APPBLD-4876 # Jira epic security tickets will be assigned to.
-        watchers: # Everyone who is an admin on your repository should be a watcher.
-          - gauravgu
-          - akshijai
-          - anvishwa
-          - divysharma
-          - garora
-          - spaliwal
-          - sandeepr
-          - sachamol
-          - moganti
         labels: # You can add additional labels to your tickets here.
           - "OriginatingProcess=Kodiak"
           - "AB-Security"
           - "kodiak-ticket"
         components:
-          - name: "App Builder" # Add any you'd like 
+          - name: "CLI" # Add any you'd like
+          - name: "Security"
