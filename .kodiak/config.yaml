@@ -16,7 +16,8 @@ notifications:
       ticketing_method: grouped
       filters:
         include:
-          branch: master
+          branch:
+            - master
           risk_rating: R2 # Will ticket for R1-R2 issues
       fields:
         customfield_11800: APPBLD-4876 # Jira epic security tickets will be assigned to.
