@@ -126,7 +126,10 @@
     ]
   },
   "overrides": {
-    "@octokit/rest": "^20.0.2"
+    "@octokit/rest": "^20.0.2",
+    "yeoman-generator": {
+      "simple-git": "^4.1.0"
+    }
   },
   "repository": "adobe/aio-cli",
   "scripts": {
