@@ -127,6 +127,12 @@
   },
   "overrides": {
     "@octokit/rest": "^20.0.2",
+    "external-editor": {
+      "tmp": "^0.2.7"
+    },
+    "get-uri": {
+      "basic-ftp": "^6.2.6"
+    },
     "yeoman-generator": {
       "simple-git": "^4.1.0"
     }
