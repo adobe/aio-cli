@@ -3,6 +3,8 @@ name: E2E tests
 on:
   push:
     branches: [master]
+  pull_request:
+    branches: [master]
   workflow_dispatch:
 
 permissions:
@@ -12,16 +14,23 @@ jobs:
   e2e:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        # 20.17.0 is the minimum in package.json engines. Node >=20.19 and >=22.12
+        # can require() ES modules, so only this version catches a plugin that
+        # require()s an ESM-only dependency.
+        node-version: [20.17.0, 22.x, 24.x]
     steps:
       - name: Check out source
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           persist-credentials: false
 
-      - name: Set up Node.js
+      - name: Set up Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: 22
+          node-version: ${{ matrix.node-version }}
           cache: npm
 
       - name: Install dependencies
@@ -36,7 +45,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
-          name: e2e-results
+          name: e2e-results-node-${{ matrix.node-version }}
           path: ${{ runner.temp }}/e2e-results/junit.xml
           if-no-files-found: warn
           retention-days: 14

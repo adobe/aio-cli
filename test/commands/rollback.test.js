@@ -103,10 +103,16 @@ test('clear (--no-confirm)', () => {
   return doRunCommand(['--no-confirm'], async () => {
     const results = (await spy.mock.calls[0][0]).filter(p => p.type === 'user')
     expect(results.length).toEqual(3)
+    expect(helpers.prompt).not.toHaveBeenCalled()
+    expect(command.config.runCommand.mock.calls).toEqual([
+      ['plugins:uninstall', ['plugin1']],
+      ['plugins:uninstall', ['plugin2']],
+      ['plugins:uninstall', ['plugin3']]
+    ])
   })
 })
 
-test('clear (--confirm)', () => {
+test('clear (--confirm), declined', () => {
   const corePlugins = ['core1']
   const installedPlugins = [
     { name: 'core1', version: '0.1', type: 'core' },
@@ -115,12 +121,35 @@ test('clear (--confirm)', () => {
     { name: 'plugin3', version: '0.1', type: 'user' }
   ]
 
+  helpers.prompt.mockResolvedValueOnce(false)
   command.config = mockConfig(corePlugins, installedPlugins)
   const spy = jest.spyOn(command, '__clear')
 
   return doRunCommand(['--confirm'], async () => {
     const results = (await spy.mock.calls[0][0]).filter(p => p.type === 'user')
     expect(results.length).toEqual(3)
+    expect(helpers.prompt).toHaveBeenCalledWith('Uninstall 3 plugin(s)?')
+    expect(command.config.runCommand).not.toHaveBeenCalled()
+  })
+})
+
+test('clear (--confirm), accepted', () => {
+  const corePlugins = ['core1']
+  const installedPlugins = [
+    { name: 'core1', version: '0.1', type: 'core' },
+    { name: 'plugin1', version: '0.1', type: 'user' },
+    { name: 'plugin2', version: '0.1', type: 'user' }
+  ]
+
+  helpers.prompt.mockResolvedValueOnce(true)
+  command.config = mockConfig(corePlugins, installedPlugins)
+
+  return doRunCommand(['--confirm'], async () => {
+    expect(helpers.prompt).toHaveBeenCalledWith('Uninstall 2 plugin(s)?')
+    expect(command.config.runCommand.mock.calls).toEqual([
+      ['plugins:uninstall', ['plugin1']],
+      ['plugins:uninstall', ['plugin2']]
+    ])
   })
 })
 
@@ -143,6 +172,10 @@ test('clear (--interactive)', () => {
   return doRunCommand(['--interactive'], async () => {
     const results = (await spy.mock.calls[0][0]).filter(p => p.type === 'user')
     expect(results.length).toEqual(3)
+    expect(command.config.runCommand.mock.calls).toEqual([
+      ['plugins:uninstall', ['plugin1']],
+      ['plugins:uninstall', ['plugin2']]
+    ])
   })
 })
 
