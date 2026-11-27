@@ -166,10 +166,17 @@ test('needs update (--no-confirm)', () => {
     const filteredPlugins = installedPlugins.filter(p => !corePlugins.includes(p.name))
     expect(lastInstallCall[0].length).toEqual(filteredPlugins.length)
     expect(lastInstallCall[0].length).toEqual(3)
+    expect(helpers.prompt).not.toHaveBeenCalled()
+    // user-installed core plugins must be rolled back, never updated
+    expect(command.config.runCommand.mock.calls).toEqual([
+      ['plugins:install', ['plugin1']],
+      ['plugins:install', ['plugin2']],
+      ['plugins:install', ['plugin3']]
+    ])
   })
 })
 
-test('needs update (--confirm)', () => {
+test('needs update (--confirm), declined', () => {
   const corePlugins = ['@adobe/core1', 'core2-non-adobe']
   const installedPlugins = [
     { name: '@adobe/core1', version: '0.1.0', type: 'core' },
@@ -181,6 +188,7 @@ test('needs update (--confirm)', () => {
 
   helpers.getNpmLatestVersion.mockImplementation(() => '0.2.0')
   helpers.getNpmLocalVersion.mockImplementation(() => '0.1.0')
+  helpers.prompt.mockResolvedValueOnce(false)
   command.config = mockConfig(corePlugins, installedPlugins)
 
   const spyProcessPlugins = jest.spyOn(command, '__processPlugins')
@@ -194,6 +202,30 @@ test('needs update (--confirm)', () => {
     const filteredPlugins = installedPlugins.filter(p => p.type === 'user')
     expect(lastInstallCall[0].length).toEqual(filteredPlugins.length)
     expect(lastInstallCall[0].length).toEqual(3)
+    expect(helpers.prompt).toHaveBeenCalledWith('Update 3 user plugin(s)?')
+    expect(command.config.runCommand).not.toHaveBeenCalled()
+  })
+})
+
+test('needs update (--confirm), accepted', () => {
+  const corePlugins = ['@adobe/core1']
+  const installedPlugins = [
+    { name: '@adobe/core1', version: '0.1.0', type: 'core' },
+    { name: 'plugin1', version: '0.1.0', type: 'user' },
+    { name: 'plugin2', version: '0.1.0', type: 'user' }
+  ]
+
+  helpers.getNpmLatestVersion.mockImplementation(() => '0.2.0')
+  helpers.getNpmLocalVersion.mockImplementation(() => '0.1.0')
+  helpers.prompt.mockResolvedValueOnce(true)
+  command.config = mockConfig(corePlugins, installedPlugins)
+
+  return doRunCommand(['--confirm'], async () => {
+    expect(helpers.prompt).toHaveBeenCalledWith('Update 2 user plugin(s)?')
+    expect(command.config.runCommand.mock.calls).toEqual([
+      ['plugins:install', ['plugin1']],
+      ['plugins:install', ['plugin2']]
+    ])
   })
 })
 
@@ -277,6 +309,10 @@ test('interactive', () => {
     const filteredPlugins = installedPlugins.filter(p => p.type === 'user')
     expect(lastInteractiveCall[0].length).toEqual(filteredPlugins.length)
     expect(lastInteractiveCall[0].length).toEqual(3)
+    expect(command.config.runCommand.mock.calls).toEqual([
+      ['plugins:install', ['plugin1']],
+      ['plugins:install', ['plugin2']]
+    ])
   })
 })
 

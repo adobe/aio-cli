@@ -20,10 +20,17 @@ Lastly, please follow the [pull request template](PULL_REQUEST_TEMPLATE.md) when
 
 ## End-to-end tests
 
-The `E2E tests` GitHub Actions workflow runs after each push to `master`, including
-merged pull requests, and can also be started manually using `workflow_dispatch`.
-It uses Node.js 22 on Ubuntu and installs dependencies from the committed lockfile.
-This is a post-merge regression check, not a merge or publishing gate.
+The `E2E tests` GitHub Actions workflow runs on pull requests to `master`, after each
+push to `master` (including merged pull requests), and manually using `workflow_dispatch`.
+It runs on Ubuntu with Node.js 20.17.0 (the minimum in `engines`), 22 and 24, and installs
+dependencies from the committed lockfile.
+
+The suite runs the real `bin/run` and checks that:
+
+- errors render through oclif
+- every bundled plugin is installed and every command module loads
+- `aio certificate` and `aio config` work offline
+- `aio app init` creates a project (needs network access)
 
 To run the same suite locally:
 
